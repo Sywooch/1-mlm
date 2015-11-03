@@ -3,20 +3,11 @@
     <a href="javascript:;"
        class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
            <span class="username username-hide-on-mobile"><?php
-            if(!Yii::$app->user->isGuest):
                 echo  \Yii::$app->user->identity->username;?>
                 <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
                 <img alt="" class="img-circle" src="mertonic/layouts/layout4/img/avatar9.jpg" />
-            <?php
-            else:
-               //echo $this->render('_main_modal_eauth', compact('models'));
-            ?>
-            <button type="button" data-toggle="modal" data-target="#w0">log-in</button>
-            <?php
-            endif;
-            ?></span>
+            </span>
 </a>
-    <?php if(!Yii::$app->user->isGuest): ?>
     <ul class="dropdown-menu dropdown-menu-default">
         <li>
             <a href="page_user_profile_1.html">
@@ -48,6 +39,4 @@
                 <i class="icon-key"></i> Log Out </a>
         </li>
     </ul>
-    <?php
-endif; ?>
 </li>

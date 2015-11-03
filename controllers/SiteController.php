@@ -12,6 +12,7 @@ use app\models\User;
 
 class SiteController extends Controller
 {
+    private $siteUrl="https://gmail.com/";
 /*
  public function behaviors()
     {
@@ -62,6 +63,10 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+/*
+        if(\Yii::$app->user->isGuest)
+            {return $this->redirect($this->siteUrl);}
+*/
         return $this->render('index');
     }
 /*
@@ -82,6 +87,8 @@ class SiteController extends Controller
 */
 
     public function actionLogin() {
+        if(\Yii::$app->user->isGuest)
+            {return $this->redirect($this->siteUrl);}
         $serviceName = \Yii::$app->getRequest()->getQueryParam('service');
         if (isset($serviceName)) {
             /** @var $eauth \nodge\eauth\ServiceBase */
@@ -131,11 +138,17 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
 
+        if(\Yii::$app->user->isGuest)
+            {return $this->redirect($this->siteUrl);}
+
         return $this->goHome();
     }
 
     public function actionContact()
     {
+        if(\Yii::$app->user->isGuest)
+            {return $this->redirect($this->siteUrl);}
+
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -149,6 +162,9 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
+        if(\Yii::$app->user->isGuest)
+            {return $this->redirect($this->siteUrl);}
+
         return $this->render('about');
     }
 }
