@@ -1,6 +1,7 @@
 <?php
 $this->title = '1-mlm';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
     <!-- BEGIN PAGE BASE CONTENT -->
     <!-- BEGIN DASHBOARD STATS 1-->
