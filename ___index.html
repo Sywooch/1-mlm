@@ -8,12 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>1-й МЛМ Ресурс</title>
 <meta name="description" content="Startup Landing Page">
-<link rel="shortcut icon" href="s/img/favicon.ico" type="image/x-icon">
-<link rel="icon" href="s/img/favicon.ico" type="image/x-icon">
-<link href="s/css/bootstrap.min.css" rel="stylesheet">
-<link href="s/css/font-awesome.min.css" rel="stylesheet">
-<link href="s/css/magnific-popup.css" rel="stylesheet">
-<link href="s/css/main.css" rel="stylesheet">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/magnific-popup.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
   <style>
     .col-md-offset-4{margin-left: 0% !important;}
     .container {
@@ -71,73 +71,50 @@
     }
     .close:hover { background: #00d9ff; }
   </style>
-  <style>
 
-    .socbtn.facebook-btn {
-      background-color: #38559c;
-    }
+  <!--
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/ui.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-loading/lada.min.css" rel="stylesheet">
+  -->
 
-    .socbtn.googleplus-btn {
-      background-color: #d13b20;
-    }
-    .socbtn.vkontakte-btn {
-      background-color: #466fa1;
-    }
-    .socbtn.linkedin-btn {
-      background-color: #4875b4;
-    }
-    .socbtn, .socbtn:hover {
-      display: block;
-      font-size: 14px;
-      line-height: 30px;
-      font-weight: 600;
-      color: #ffffff;
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      margin: 0px 0px 10px 0px;
-      background-color: #eeeeee;
-      transition: all 0.5s;
-    }
-
-  </style>
 </head>
-<body>
+<body>opacity=70
 <!-- BEGIN LOGIN BOX *****************************************************************-->
-<div id="openModal" class="modalDialog">
-  <div>
-    <a href="#close" title="Close" class="close">X</a>
-<table  border="0" align="center" style="margin-top: 20px">
-  <tr>
-    <td>
-          <a
-             href="javascript:void(0)"
-             onclick="window.location.href='http://1-mlm.com/my/web/index.php?r=site%2Flogin&amp;service=facebook'"
-             class="socbtn facebook-btn" >Facebook</a>
-    </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>
-          <a
-              href="javascript:void(0)"
-              onclick="window.location.href='http://1-mlm.com/my/web/index.php?r=site%2Flogin&amp;service=google'"
-              class="socbtn googleplus-btn">Google+</a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-          <a
-              href="javascript:void(0)"
-              onclick="window.location.href='http://1-mlm.com/my/web/index.php?r=site%2Flogin&amp;service=vkontakte'"
-              class="socbtn vkontakte-btn" >Vkontakte</a>
-    </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>
-          <a
-              href="javascript:void(0)"
-              onclick="window.location.href='http://1-mlm.com/my/web/index.php?r=site%2Flogin&amp;service=linkedin_oauth2'"
-              class="socbtn linkedin-btn">linkedin</a>
-    </td>
-  </tr>
-</table>
+<div id="openModal" class="modalDialog account"><div>
+  <a href="#close" title="Close" class="close">X</a>
+  <div class="container" id="login-block">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-md-offset-4">
+        <div class="account-wall">
+          <i class="user-img icons-faces-users-03"></i>
+          <div class="social-btn">
+            <button type="button" class="btn-fb btn btn-lg btn-block btn-primary"
+                    onclick="window.location.href='http://1-mlm.com/my/web/index.php?r=site%2Flogin&amp;service=facebook'"
+                    >
+              <i class="icons-socialmedia-08 pull-left"></i>Facebook
+            </button>
+            <button type="button" class="btn-fb btn btn-lg btn-block btn-primary"
+                    onclick="window.location.href='http://1-mlm.com/my/web/index.php?r=site%2Flogin&amp;service=vkontakte'"
+                    >
+              <i class="icons-socialmedia-08 pull-left"></i>Vkontakte
+            </button>
+            <button type="button" class="btn btn-lg btn-block btn-danger"
+                    onclick="window.location.href='http://1-mlm.com/my/web/index.php?r=site%2Flogin&amp;service=google'"
+                    >
+              <i class="icons-socialmedia-16 pull-left"></i>Google+
+            </button>
+            <button type="button" class="btn btn-lg btn-block btn-blue"
+                    onclick="window.location.href='http://1-mlm.com/my/web/index.php?r=site%2Flogin&amp;service=linkedin_oauth2'"
+                    >
+              <i class="icons-socialmedia-05 pull-left"></i>linkedin
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 <!-- END LOGIN BOX *****************************************************************-->
 <!--hero section-->
@@ -150,7 +127,7 @@
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href=""><img class="logo-nav" alt="logo" src="s/img/logo-nav.png"><img class="logo-head" alt="logo" src="s/img/logo-head.png"></a> </div>
+        <a class="navbar-brand" href=""><img class="logo-nav" alt="logo" src="img/logo-nav.png"><img class="logo-head" alt="logo" src="img/logo-head.png"></a> </div>
       <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
         <ul class="nav navbar-nav nav-left">
           <li><a href="#features">преимущества</a></li>
@@ -179,7 +156,7 @@
       <div class="col-md-12">
         <h1>1-й млм ресурс</h1>
         <h2>Все для вашего бизнеса, теперь млм строим просто!</h2>
-        <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
+        <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-hero"><img src="img/play-btn.png" alt="play"></a> </div>
         <div class="cta-btn"> <a
                 href="javascript:void(0)" onclick="location.href='#openModal'"
                 class="btn">попробуйте бесплатно 15 дней</a>
@@ -205,10 +182,10 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="featured-sites">
-          <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100" ></a> </li>
-          <li><a href="" title="Site Name"><img src="s/img/site-2.png" alt="site" height="50" width="100"></a></li>
-          <li><a href="" title="Site Name"><img src="s/img/site-3.png" alt="site" height="50" width="100"></a></li>
-          <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100"></a></li>
+          <li><a href="" title="Site Name"><img src="img/site-1.png" alt="site" height="50" width="100" ></a> </li>
+          <li><a href="" title="Site Name"><img src="img/site-2.png" alt="site" height="50" width="100"></a></li>
+          <li><a href="" title="Site Name"><img src="img/site-3.png" alt="site" height="50" width="100"></a></li>
+          <li><a href="" title="Site Name"><img src="img/site-1.png" alt="site" height="50" width="100"></a></li>
         </ul>
       </div>
     </div>
@@ -226,15 +203,15 @@
       <h3>Reasons why you should choose this product</h3>
     </header>
     <div class="row">
-      <div class="col-sm-4"> <img src="s/img/benefits-1.png" alt="benefits of product">
+      <div class="col-sm-4"> <img src="img/benefits-1.png" alt="benefits of product">
         <h4>Lorem Lpsum</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
       </div>
-      <div class="col-sm-4"> <img src="s/img/benefits-2.png" alt="benefits of product">
+      <div class="col-sm-4"> <img src="img/benefits-2.png" alt="benefits of product">
         <h4>Lorem Lpsum</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
       </div>
-      <div class="col-sm-4"> <img src="s/img/benefits-3.png" alt="benefits of product">
+      <div class="col-sm-4"> <img src="img/benefits-3.png" alt="benefits of product">
         <h4>Lorem Lpsum</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
       </div>
@@ -252,7 +229,7 @@
     <!--feature 1-->
     
     <div class="row">
-      <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-1.png" alt="feature"> </div>
+      <div class="col-md-7 col-md-push-5 text-center"> <img src="img/feature-1.png" alt="feature"> </div>
       <div class="col-md-5 col-md-pull-7">
         <article>
           <h2>Идея 1 mlm</h2>
@@ -270,7 +247,7 @@
     
     <!--feature 2-->
     <div class="row">
-      <div class="col-md-7 text-center"> <img src="s/img/feature-2.png" alt="feature"> </div>
+      <div class="col-md-7 text-center"> <img src="img/feature-2.png" alt="feature"> </div>
       <div class="col-md-5">
         <article>
           <h2>Как работает система?</h2>
@@ -287,7 +264,7 @@
     
     <!--feature 3-->
     <div class="row">
-      <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-3.png" alt="feature"> </div>
+      <div class="col-md-7 col-md-push-5 text-center"> <img src="img/feature-3.png" alt="feature"> </div>
       <div class="col-md-5 col-md-pull-7">
         <article>
           <h2>Почему  Вам понравится 1 mlm?</h2>
@@ -310,14 +287,14 @@
 <!--Video section-->
 
 <section class="video-tour text-center">
-  <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-tour"><img src="s/img/play-btn-vs.png" alt="play"></a>
+  <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-tour"><img src="img/play-btn-vs.png" alt="play"></a>
     <!--<h2>Video 1 mlm</h2>-->
   </div>
   
   <!--HTML5 Video-->
-  <video autoplay loop muted id="bgvid" poster="s/video/poster.jpg">
-    <source src="s/video/vb.mp4" type="video/mp4">
-    <source src="s/video/vb.webm" type="video/webm">
+  <video autoplay loop muted id="bgvid" poster="video/poster.jpg">
+    <source src="video/vb.mp4" type="video/mp4">
+    <source src="video/vb.webm" type="video/webm">
   </video>
   <!--HTML5 Video end--> 
   
@@ -352,7 +329,7 @@
         
         <!--review 1-->
         
-        <figure class="text-center"><img src="s/img/review-1.jpg" alt="face" class="img-circle"> </figure>
+        <figure class="text-center"><img src="img/review-1.jpg" alt="face" class="img-circle"> </figure>
         <blockquote>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
           <cite>— Ashley Doe, CEO Abc Organisation</cite> </blockquote>
@@ -364,7 +341,7 @@
         
         <!--review 2-->
         
-        <figure class="text-center"><img src="s/img/review-2.jpg" alt="face" class="img-circle"> </figure>
+        <figure class="text-center"><img src="img/review-2.jpg" alt="face" class="img-circle"> </figure>
         <blockquote>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
           <cite>— John Doe, CEO Abc Organisation</cite> </blockquote>
@@ -376,7 +353,7 @@
         
         <!--review 3-->
         
-        <figure class="text-center"><img src="s/img/review-3.jpg" alt="face" class="img-circle"> </figure>
+        <figure class="text-center"><img src="img/review-3.jpg" alt="face" class="img-circle"> </figure>
         <blockquote>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
           <cite>— Michael Doe, CEO Xyz Organisation</cite> </blockquote>
@@ -475,7 +452,7 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="team-details">
-          <figure><img src="s/img/team-1.jpg" alt="Team Member">
+          <figure><img src="img/team-1.jpg" alt="Team Member">
             <figcaption>
               <div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit rutrum eleifend arcu. Lorem ipsum dolor sit amet consectetur.</p>
@@ -498,7 +475,7 @@
       </div>
       <div class="col-sm-4">
         <div class="team-details">
-          <figure><img src="s/img/team-2.jpg" alt="Team Member">
+          <figure><img src="img/team-2.jpg" alt="Team Member">
             <figcaption>
               <div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit rutrum eleifend arcu. Lorem ipsum dolor sit amet consectetur.</p>
@@ -523,7 +500,7 @@
       </div>
       <div class="col-sm-4">
         <div class="team-details">
-          <figure><img src="s/img/team-3.jpg" alt="Team Member">
+          <figure><img src="img/team-3.jpg" alt="Team Member">
             <figcaption>
               <div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit rutrum eleifend arcu. Lorem ipsum dolor sit amet consectetur.</p>
@@ -634,17 +611,17 @@
   </div>
 </footer>
 <!--site-footer end-->
-<script src="s/js/jquery-2.1.4.min.js"></script>
-<script src="s/js/bootstrap.min.js"></script> 
-<script src="s/js/waypoints.min.js"></script> 
-<script src="s/js/jquery.animateNumber.min.js"></script> 
-<script src="s/js/waypoints-sticky.min.js"></script> 
-<script src="s/js/retina.min.js"></script> 
-<script src="s/js/jquery.magnific-popup.min.js"></script> 
-<script src="s/js/jquery.ajaxchimp.min.js"></script> 
-<script src="s/js/tweetie.min.js"></script> 
-<script src="s/js/main.js"></script> 
+<script src="js/jquery-2.1.4.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/waypoints.min.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/waypoints-sticky.min.js"></script> 
+<script src="js/retina.min.js"></script> 
+<script src="js/jquery.magnific-popup.min.js"></script> 
+<script src="js/jquery.ajaxchimp.min.js"></script> 
+<script src="js/tweetie.min.js"></script> 
+<script src="js/main.js"></script> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
-<script src="s/js/gmap.js"></script>
+<script src="js/gmap.js"></script>
 </body>
 </html>
