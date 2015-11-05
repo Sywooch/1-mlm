@@ -5,8 +5,11 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $baseUrl  = '@web';
     public $css = [
+        "mertonic/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css",
+        "mertonic/global/css/components.min.css",
+        "mertonic/pages/css/profile.min.css",
         "//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all",
         "mertonic/global/plugins/font-awesome/css/font-awesome.min.css",
         "mertonic/global/plugins/simple-line-icons/simple-line-icons.min.css",
@@ -22,8 +25,7 @@ class AppAsset extends AssetBundle
         "mertonic/layouts/layout4/css/themes/light.min.css",
         "mertonic/layouts/layout4/css/custom.min.css"
     ];
-    public $js = [
-    ];
+    public $js = [];
     public $depends = [
         //'yii\web\YiiAsset',
         //'yii\bootstrap\BootstrapAsset',

@@ -171,4 +171,15 @@ class SiteController extends Controller
 */
         return $this->render('about');
     }
+    private function chkusr()
+    {
+        if(\Yii::$app->user->isGuest)
+            {return $this->redirect($this->siteUrl);}
+    }
+/***************************************************************/
+    public function actionProfile()
+    {
+        //$this->chkusr();
+        return $this->render('profile');
+    }
 }
