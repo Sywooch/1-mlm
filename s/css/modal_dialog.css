@@ -1,0 +1,108 @@
+#modal-1 h5 {
+        text-align: center;
+        font-weight: 100;
+        font-size: 16px;
+}
+
+.socbtn.odnoklassniki-btn {
+	background-color: #2d95b7 !important;
+}
+
+.socbtn.facebook-btn:hover {
+	background-color: #2D447D !important;
+}
+
+.socbtn.googleplus-btn:hover {
+	background-color: #A72F1A !important;
+}
+
+.socbtn.vkontakte-btn:hover {
+	background-color: #385981 !important;
+}
+
+.socbtn.odnoklassniki-btn:hover {
+	background-color: #1884a7 !important;
+}
+
+
+.socbtn.facebook-btn span {
+	//background-image: url("../img/facebook-btn.png");
+        margin-right: 10px;
+}
+
+.socbtn.googleplus-btn span {
+	//background-image: url("../img/googleplus-btn.png");
+        margin-right: 10px;
+}
+
+.socbtn.vkontakte-btn span {
+	//background-image: url("../img/vkontakte-btn.png");
+        margin-right: 10px;
+}
+
+.socbtn.odnoklassniki-btn span {
+	//background-image: url("../img/odnoklassniki-btn.png");
+        margin-right: 10px;
+}
+
+#UserLogin_username, #UserLogin_password {
+        height: 34px !important;
+	border: 1px solid #D8D8D8;
+}
+
+#modal-1 .btn-warning {
+	color: #FFF;
+	background-color: #FFB74B;
+	border-color: #FFAD31;
+        padding: 2px 8px;
+        font-size: 12px;
+        line-height: 1.5;
+        border-radius: 3px;
+}
+
+#modal-1 h4 a {
+       color: #359EEF;
+       text-decoration: none;
+       font-size: 18px;
+       font-weight: 100;
+}
+
+#modal-1 h4 a:hover, #modal-1 h4 a:focus {
+       color: #1078C8;
+       text-decoration: underline;
+}
+
+#modal-1 .btn-success {
+    color: #FFF;
+    background-color: #49BC4E;
+    border-color: #3FAC44;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+#modal-1 .modal-footer .btn {
+display: inline-block;
+margin-bottom: 0px;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 11px;
+line-height: 1.42857;
+border-radius: 4px;
+-moz-user-select: none;
+color: #333;
+background-color: #FFF;
+border-color: #CCC;
+}
+
+#formlogin1 {
+    display: none;
+}
