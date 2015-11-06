@@ -60,15 +60,26 @@ class SiteController extends Controller
             ],
         ];
     }
-
+/*********** Страницы кабинета начало *****************/
     public function actionIndex()
     {
-/*
-        if(\Yii::$app->user->isGuest)
-            {return $this->redirect($this->siteUrl);}
-*/
+/*  if(\Yii::$app->user->isGuest)
+    {return $this->redirect($this->siteUrl);}    */
         return $this->render('index');
     }
+       
+    public function actionProfile()
+    {
+        //$this->chkusr();
+        return $this->render('profile');
+    }
+    
+    public function actionAccount()
+    {
+        return $this->render('account');
+    }
+    
+/*********** Страницы кабинета конец *****************/
 /*
     public function actionLogin()
     {
@@ -177,9 +188,5 @@ class SiteController extends Controller
             {return $this->redirect($this->siteUrl);}
     }
 /***************************************************************/
-    public function actionProfile()
-    {
-        //$this->chkusr();
-        return $this->render('profile');
-    }
+ 
 }
