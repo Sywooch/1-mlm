@@ -27,9 +27,9 @@
                         </a>
                     </li>
                     <li class="nav-item start ">
-                        <a href="page/dashboard_2.html" class="nav-link ">
+                        <a href="index.php?r=site%2Fteam" class="nav-link ">
                             <i class="icon-bulb"></i>
-                            <span class="title">главная 2</span>
+                            <span class="title">Команда</span>
                             <span class="badge badge-success">1</span>
                         </a>
                     </li>
@@ -43,25 +43,105 @@
                     <li class="nav-item start ">
                         <a href="index.php?r=site%2Faccount" class="nav-link">
                     <i class="icon-user"></i>
-                    <span class="title">Профиль 2</span>
+                    <span class="title">Настройка профиля</span>
                     <span class="arrow"></span>
                 </a>
                     </li>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="index.php?r=site%2Flanding" class="nav-link">
+                            <i class="icon-user"></i>
+                            <span class="title">Landing</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="index.php?r=site%2Flanding2" class="nav-link">
+                            <i class="icon-user"></i>
+                            <span class="title">Landing 2</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="index.php?r=site%2Flanding3" class="nav-link">
+                            <i class="icon-user"></i>
+                            <span class="title">Landing 3</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="index.php?r=site%2Fmc" class="nav-link">
+                            <i class="icon-user"></i>
+                            <span class="title">Мастер Класс</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="index.php?r=site%2Ftraining" class="nav-link">
+                            <i class="icon-user"></i>
+                            <span class="title">Обучение</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="index.php?r=site%2Fcompany" class="nav-link">
+                            <i class="icon-user"></i>
+                            <span class="title">Компания</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="index.php?r=site%2Fnews" class="nav-link">
+                            <i class="icon-user"></i>
+                            <span class="title">Новости</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    </li>
+                    <!--<li class="nav-item start ">
+                       <a href="index.php?r=site%2Faccount" class="nav-link">
+                           <i class="icon-user"></i>
+                           <span class="title">Профиль 2</span>
+                           <span class="arrow"></span>
+                       </a>
+                   </li>
+                   </li>
+                  <li class="nav-item start ">
+                       <a href="index.php?r=site%2Faccount" class="nav-link">
+                           <i class="icon-user"></i>
+                           <span class="title">Профиль 2</span>
+                           <span class="arrow"></span>
+                       </a>
+                   </li>
+                   </li>
+                   <li class="nav-item start ">
+                       <a href="index.php?r=site%2Faccount" class="nav-link">
+                           <i class="icon-user"></i>
+                           <span class="title">Профиль 2</span>
+                           <span class="arrow"></span>
+                       </a>
+                   </li>-->
                 </ul>
             </li>
-            <li class="heading">
+            <!--<li class="heading">
                 <h3 class="uppercase">Features</h3>
             </li>
             <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+                <a href="index.php?r=site%2Fteam" class="nav-link nav-toggle">
                     <i class="icon-diamond"></i>
-                    <span class="title">UI Features</span>
+                    <span class="title">Команда</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="page/ui_colors.html" class="nav-link ">
-                            <span class="title">Color Library</span>
+                        <a href="index.php?r=site%2Fteam" class="nav-link ">
+                            <span class="title">Команда</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
@@ -894,7 +974,7 @@
                             <i class="icon-bar-chart"></i> Item 3 </a>
                     </li>
                 </ul>
-            </li>
+            </li>-->
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

@@ -67,19 +67,62 @@ class SiteController extends Controller
     {return $this->redirect($this->siteUrl);}    */
         return $this->render('index');
     }
-       
+
     public function actionProfile()
     {
         //$this->chkusr();
         return $this->render('profile');
     }
-    
+    public function actionTeam()
+    {
+        return $this->render('team');
+    }
+
     public function actionAccount()
     {
         return $this->render('account');
     }
-    
-/*********** Страницы кабинета конец *****************/
+
+    public function actionLanding()
+    {
+        return $this->render('landing');
+    }
+
+    public function actionLanding2()
+    {
+        return $this->render('landing2');
+    }
+
+    public function actionLanding3()
+    {
+        return $this->render('landing3');
+    }
+
+    public function actionMc()
+    {
+        return $this->render('mc');
+    }
+
+    public function actionTraining()
+    {
+        return $this->render('training');
+    }
+
+    public function actionCompany()
+    {
+        return $this->render('company');
+    }
+
+    public function actionNews()
+    {
+        return $this->render('news');
+    }
+
+
+
+
+
+    /*********** Страницы кабинета конец *****************/
 /*
     public function actionLogin()
     {
@@ -188,5 +231,5 @@ class SiteController extends Controller
             {return $this->redirect($this->siteUrl);}
     }
 /***************************************************************/
- 
+
 }
