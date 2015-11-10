@@ -63,22 +63,19 @@ class SiteController extends Controller
             ],
         ];
     }
-/*********** РЎС‚СЂР°РЅРёС†С‹ РєР°Р±РёРЅРµС‚Р° РЅР°С‡Р°Р»Рѕ *****************/
+/****************************************************************/
     public function actionIndex()
     {
         //$this->chkusr();
         return $this->render('index');
     }
 
-<<<<<<< HEAD
-=======
     public function actionTmp()
     {
         //$this->chkusr();
         return $this->render('tmp');
     }
 
->>>>>>> origin/master
     public function actionProfile()
     {
         //$this->chkusr();
@@ -154,7 +151,6 @@ class SiteController extends Controller
         }
         else{return $this->goHome();}
     }
-<<<<<<< HEAD
 
     public function actionLanding()
     {
@@ -190,16 +186,6 @@ class SiteController extends Controller
     {
         return $this->render('news');
     }
-
-
-
-
-
-    /*********** Страницы кабинета конец *****************/
-=======
-    
-/*********** РЎС‚СЂР°РЅРёС†С‹ РєР°Р±РёРЅРµС‚Р° РєРѕРЅРµС† *****************/
->>>>>>> origin/master
 /*
     public function actionLogin()
     {

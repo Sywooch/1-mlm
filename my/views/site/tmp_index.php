@@ -1,11 +1,4 @@
 <?php
-
-$identity = \Yii::$app->getUser()->getIdentity()->profile;
-$usrDt = \app\models\Users::find()->select('fn,ln,userpic')
-    ->where(['socid' => $identity["id"]])
-    ->andWhere(['service' => $identity["service"]])
-    ->one();
-
 $this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
 
 $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
@@ -19,8 +12,6 @@ $this->registerJsFile("/my/web/mertonic/global/plugins/jquery-validation/js/addi
 $this->registerJsFile("/my/web/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/my/web/mertonic/pages/scripts/form-wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
-$this->registerJsFile('http://www.youtube.com/player_api');
-
 $this->title = '1-mlm';
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,7 +19,7 @@ $this->title = '1-mlm';
     <div class="row">
         <div class="col-md-12">
             <div class="m-heading-1 border-green m-bordered">
-                <h3>Добро пажаловать, <?php echo $usrDt->fn,' ',$usrDt->ln; ?></h3>
+                <h3>Добро пажаловать [имя пользователя который авторизировался]</h3>
                 <p> Вы легко и быстро сможете сами разобраться, как работает Система, посмотрев короткий видеообзор. </p>
                 <p> Ваш кольсунтальтант: [имя пользователя который пригласил]
                     <a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank">[кнопка на профиль спонсора] the official documentation</a>
@@ -98,7 +89,7 @@ $this->title = '1-mlm';
                                         <button class="close" data-dismiss="alert"></button> Your form validation is successful! </div>
                                     <div class="tab-pane active" id="tab1">
                                         <h3 class="block">Начните с просмотра этого видео</h3>
-                                        <div id="player"></div>
+                                        <iframe width="640" height="360" src="https://www.youtube.com/embed/tylvmEpKcLY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                     <div class="tab-pane" id="tab2">
                                         <h3 class="block">Видео обзор системы</h3>
@@ -172,9 +163,9 @@ $this->title = '1-mlm';
                                     <div class="col-md-offset-3 col-md-9">
                                         <a href="javascript:;" class="btn default button-previous">
                                             <i class="fa fa-angle-left"></i> Back </a>
-                                        <button id="nxt_bnt" class="btn btn-outline green button-next" disabled=""> Continue
+                                        <a href="javascript:;" class="btn btn-outline green button-next"> Continue
                                             <i class="fa fa-angle-right"></i>
-                                        </button>
+                                        </a>
                                         <a href="javascript:;" class="btn green button-submit"> Submit
                                             <i class="fa fa-check"></i>
                                         </a>
@@ -187,42 +178,4 @@ $this->title = '1-mlm';
             </div>
         </div>
     </div>
-
-<script>
-
-    // create youtube player
-    var player;
-    function onYouTubePlayerAPIReady() {
-        player = new YT.Player('player',{
-            height: '360',
-            width: '640',
-            videoId: 'tylvmEpKcLY',
-            playerVars: {
-                'autoplay': 0,
-                'controls': 0,
-                'showinfo': '0',
-                'rel': 0
-            },
-            events: {
-                //'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-    /*
-     // autoplay video
-     function onPlayerReady(event) {
-     event.target.playVideo();
-     }
-     */
-    // when video ends
-    function onPlayerStateChange(event) {
-        if(event.data === 0) {
-            // alert('done');
-            $("#nxt_bnt").attr("disabled", false);
-        }
-    }
-
-</script>
-
      <!-- END PAGE BASE CONTENT -->
