@@ -53,6 +53,9 @@ class VKontakteOAuth2Service extends Service
 		$this->attributes['name'] = $info['first_name'] . ' ' . $info['last_name'];
 		$this->attributes['url'] = 'http://vk.com/id' . $info['uid'];
 
+
+
+
 		/*if (!empty($info['nickname']))
 			$this->attributes['username'] = $info['nickname'];
 		else

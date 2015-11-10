@@ -23,8 +23,19 @@ class AppAsset extends AssetBundle
         "mertonic/global/css/plugins.min.css",
         "mertonic/layouts/layout4/css/layout.min.css",
         "mertonic/layouts/layout4/css/themes/light.min.css",
-        "mertonic/layouts/layout4/css/custom.min.css"
+        "mertonic/layouts/layout4/css/custom.min.css",
+
+        "mertonic/global/plugins/select2/css/select2.min.css",
+        "mertonic/global/plugins/select2/css/select2-bootstrap.min.css"
     ];
+
+
+
+
+
+
+
+
     public $js = [];
     public $depends = [
         //'yii\web\YiiAsset',

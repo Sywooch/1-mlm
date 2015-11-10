@@ -697,7 +697,7 @@ var App = function() {
                 } else {
                     height = $(this).css('height');
                 }
-/***/
+/**
                  $(this).slimScroll({
                     allowPageScroll: true, // allow page scroll when the element scroll is ended
                     size: '7px',
@@ -710,7 +710,7 @@ var App = function() {
                     railVisible: ($(this).attr("data-rail-visible") == "1" ? true : false),
                     disableFadeOut: true
                 });
-/***/
+**/
                 $(this).attr("data-initialized", "1");
             });
         },

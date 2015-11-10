@@ -33,14 +33,14 @@ $config = [
                     'clientSecret' => 'IoCs27vO0tfd7USoTbK4',
                 ],
                 'google' => [
-                    // register your app here: https://code.google.com/apis/console/
+            // register your app here: https://code.google.com/apis/console/
                     'class' => 'nodge\eauth\services\GoogleOAuth2Service',
                     'clientId' => '...',
                     'clientSecret' => '...',
                     'title' => 'Google',
                 ],
                 'linkedin_oauth2' => [
-                    // register your app here: https://www.linkedin.com/secure/developer
+            // register your app here: https://www.linkedin.com/secure/developer
                     'class' => 'nodge\eauth\services\LinkedinOAuth2Service',
                     'clientId' => '...',
                     'clientSecret' => '...',

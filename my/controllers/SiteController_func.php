@@ -70,15 +70,12 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-<<<<<<< HEAD
-=======
     public function actionTmp()
     {
         //$this->chkusr();
         return $this->render('tmp');
     }
 
->>>>>>> origin/master
     public function actionProfile()
     {
         //$this->chkusr();
@@ -87,11 +84,7 @@ class SiteController extends Controller
         }
         else{return $this->goHome();}
     }
-    public function actionTeam()
-    {
-        return $this->render('team');
-    }
-
+    
     public function actionAccount()
     {
         //this->chkusr();
@@ -154,52 +147,8 @@ class SiteController extends Controller
         }
         else{return $this->goHome();}
     }
-<<<<<<< HEAD
-
-    public function actionLanding()
-    {
-        return $this->render('landing');
-    }
-
-    public function actionLanding2()
-    {
-        return $this->render('landing2');
-    }
-
-    public function actionLanding3()
-    {
-        return $this->render('landing3');
-    }
-
-    public function actionMc()
-    {
-        return $this->render('mc');
-    }
-
-    public function actionTraining()
-    {
-        return $this->render('training');
-    }
-
-    public function actionCompany()
-    {
-        return $this->render('company');
-    }
-
-    public function actionNews()
-    {
-        return $this->render('news');
-    }
-
-
-
-
-
-    /*********** Страницы кабинета конец *****************/
-=======
     
 /*********** РЎС‚СЂР°РЅРёС†С‹ РєР°Р±РёРЅРµС‚Р° РєРѕРЅРµС† *****************/
->>>>>>> origin/master
 /*
     public function actionLogin()
     {
@@ -350,5 +299,5 @@ class SiteController extends Controller
             {return $this->redirect($this->siteUrl);}
     }
 /***************************************************************/
-
+ 
 }
