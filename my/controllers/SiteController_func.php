@@ -69,7 +69,13 @@ class SiteController extends Controller
         //$this->chkusr();
         return $this->render('index');
     }
-       
+
+    public function actionTmp()
+    {
+        //$this->chkusr();
+        return $this->render('tmp');
+    }
+
     public function actionProfile()
     {
         //$this->chkusr();
