@@ -7,12 +7,18 @@ use yii\bootstrap\Modal;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
-
+/*
 $this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
 $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+*/
+
+
+
+
+
 
 /*
 <!-- BEGIN THEME GLOBAL SCRIPTS-->
@@ -781,6 +787,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 <script src="mertonic/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<!--------------------------------------------------------------------------------------------------------------------->
 <script src="mertonic/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
@@ -788,8 +795,30 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 <script src="mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
+<!-- END PAGE LEVEL PLUGINS-->
 
+
+
+
+
+
+<!---
+
+<script src="mertonic/global/scripts/app.js" type="text/javascript"></script>
+<script src="mertonic/pages/scripts/dashboard.js" type="text/javascript"></script>
+<script src="mertonic/layouts/layout4/scripts/layout.js" type="text/javascript"></script>
+<script src="mertonic/layouts/layout4/scripts/demo.js" type="text/javascript"></script>
+<script src="mertonic/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
+
+-----------------------------------------------------------
+
+<script src="mertonic/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="mertonic/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+<script src="mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
+<script src="mertonic/pages/scripts/form-wizard.min.js" type="text/javascript"></script>
+------->
+<!--------------------------------------------------------------------->
 
 
 <?php // echo $this->render('_main_modal_eauth', compact('models'));?>

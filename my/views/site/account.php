@@ -1,4 +1,12 @@
 <?php
+$this->registerJsFile('/my/web/mertonic/global/scripts/app_acc.js');
+
+$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+
+
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -124,7 +132,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </div>
                                         <div class="tab-pane fade" id="tab_1_2">
                                             <?php
-                                                echo $this->render('_account_edit_photo', [
+                                               echo $this->render('_account_edit_photo', [
                                                  'model' => $model
                                                 ]); ?>
                                         </div>
