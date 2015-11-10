@@ -385,8 +385,9 @@ var App = function() {
 
     // Handles Bootstrap Tooltips.
     var handleTooltips = function() {
+/*
         // global tooltips
-        $('.tooltips').tooltip();
+       $('.tooltips').tooltip();
 
         // portlet tooltips
         $('.portlet > .portlet-title .fullscreen').tooltip({
@@ -409,6 +410,7 @@ var App = function() {
             container: 'body',
             title: 'Collapse/Expand'
         });
+*/
     };
 
     // Handles Bootstrap Dropdowns
@@ -460,7 +462,7 @@ var App = function() {
     var lastPopedPopover;
 
     var handlePopovers = function() {
-        $('.popovers').popover();
+  /*      $('.popovers').popover();
 
         // close last displayed popover
 
@@ -468,7 +470,7 @@ var App = function() {
             if (lastPopedPopover) {
                 lastPopedPopover.popover('hide');
             }
-        });
+        });*/
     };
 
     // Handles scrollable contents using jQuery SlimScroll plugin.
@@ -695,7 +697,7 @@ var App = function() {
                 } else {
                     height = $(this).css('height');
                 }
-
+/*
                  $(this).slimScroll({
                     allowPageScroll: true, // allow page scroll when the element scroll is ended
                     size: '7px',
@@ -708,7 +710,7 @@ var App = function() {
                     railVisible: ($(this).attr("data-rail-visible") == "1" ? true : false),
                     disableFadeOut: true
                 });
-
+*/
                 $(this).attr("data-initialized", "1");
             });
         },

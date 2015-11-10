@@ -1,87 +1,52 @@
 <?php
-
 namespace app\models;
-
 use Yii;
-
-/**
- * This is the model class for table "users".
- *
- * @property string $uid
- * @property string $id
- * @property string $fb
- * @property string $api
- * @property string $userpic
- * @property string $ref
- * @property string $ref2
- * @property string $ref3
- * @property string $ref4
- * @property string $ref5
- * @property integer $c
- * @property string $fn
- * @property string $ln
- * @property integer $city
- * @property integer $country
- * @property string $ip
- * @property string $mobile
- * @property string $skype
- * @property string $email
- * @property string $purse
- * @property string $regdate
- * @property string $paydate
- * @property string $active
- * @property integer $days
- * @property integer $level
- * @property integer $team
- * @property string $money
- * @property string $paid
- * @property string $earned
- * @property string $done
- * @property string $bonus
- * @property integer $rating
- * @property integer $clicks
- * @property string $reglink
- * @property string $site
- * @property string $ytch
- * @property string $playlist
- * @property string $sent
- * @property string $pwd
- * @property string $metrika
- * @property string $added
- * @property string $friends
- * @property string $star
- * @property integer $class
- * @property string $profit
- */
+use yii\web\UploadedFile;
 class Users extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'users';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
-            [['uid', 'id', 'fb', 'api', 'userpic', 'ref', 'ref2', 'ref3', 'ref4', 'ref5', 'c', 'fn', 'ln', 'city', 'country', 'ip', 'mobile', 'skype', 'email', 'purse', 'regdate', 'paydate', 'active', 'days', 'level', 'team', 'money', 'paid', 'earned', 'done', 'bonus', 'rating', 'clicks', 'reglink', 'site', 'ytch', 'playlist', 'sent', 'pwd', 'metrika', 'added', 'friends', 'star', 'class', 'profit'], 'required'],
-            [['c', 'city', 'country', 'days', 'level', 'team', 'rating', 'clicks', 'metrika', 'friends', 'class'], 'integer'],
+           /*
+            [['uid', 'id', 'fb', 'api', 'userpic', 'ref', 'ref2', 'ref3',
+            'ref4', 'ref5', 'c', 'fn', 'ln', 'city', 'country', 'ip', 'mobile',
+            'skype', 'email', 'purse', 'regdate', 'paydate', 'active', 'days',
+            'level', 'team', 'money', 'paid', 'earned', 'done', 'bonus', 'rating',
+            'clicks', 'reglink', 'site', 'ytch', 'playlist', 'sent', 'pwd',
+            'metrika', 'added', 'friends', 'star', 'class', 'profit'], 'required'],
+           */
+            [['c', 'city', 'country', 'days', 'level', 'team', 'rating',
+                'clicks', 'metrika', 'friends', 'class'], 'integer'],
             [['regdate', 'paydate', 'active', 'done', 'sent', 'added'], 'safe'],
             [['money', 'paid', 'earned', 'bonus', 'profit'], 'number'],
             [['uid', 'fb', 'ref2', 'ref3', 'ref4', 'ref5', 'ip'], 'string', 'max' => 15],
             [['id', 'star'], 'string', 'max' => 6],
             [['api'], 'string', 'max' => 2],
-            [['userpic'], 'string', 'max' => 125],
-            [['ref'], 'string', 'max' => 10],
+            [['socid','service'], 'string'],
+            [
+                ['userpic'], 'file',
+                'skipOnEmpty' => false,
+                'extensions'  =>  ['png', 'jpg', 'gif'],
+                'maxSize'     => 1024*1024
+            ],
+
+
+            /*[['ref'], 'string', 'max' => 10],*/
             [['fn'], 'string', 'max' => 20],
             [['ln', 'skype'], 'string', 'max' => 25],
-            [['mobile'], 'string', 'max' => 14],
-            [['email'], 'email', 'message'=>"Неправильный адрес электронной почты"],
+
+    /*!!!*/        [['mobile'], 'string', 'max' => 16],
+            [['mobile'], 'match',
+                'pattern' => "/^[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}$/i",
+                'message'=>"Неправильный номер телефона"],
+
+            [['email'], 'email',  'message'=>"Неправильный адрес электронной почты"],
+            [['email'], 'unique', 'message'=>"Адрес электронной почты уже существует"],
             [['purse', 'site'], 'string', 'max' => 30],
             [['reglink'], 'string', 'max' => 75],
             [['ytch'], 'string', 'max' => 24],
@@ -90,9 +55,6 @@ class Users extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [

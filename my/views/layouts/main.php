@@ -8,6 +8,30 @@ use app\assets\AppAsset;
 
 AppAsset::register($this);
 
+$this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
+$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+
+/*
+<!-- BEGIN THEME GLOBAL SCRIPTS-->
+<script src="mertonic/global/scripts/app.js" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS-->
+<script src="mertonic/pages/scripts/dashboard.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS-->
+<script src="mertonic/layouts/layout4/scripts/layout.js" type="text/javascript"></script>
+<script src="mertonic/layouts/layout4/scripts/demo.js" type="text/javascript"></script>
+<script src="mertonic/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
+<!-- END THEME LAYOUT SCRIPTS -->
+*/
+
+
+
+
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -765,17 +789,8 @@ AppAsset::register($this);
 <script src="mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN THEME GLOBAL SCRIPTS-->
-<script src="mertonic/global/scripts/app.js" type="text/javascript"></script>
-<!-- END THEME GLOBAL SCRIPTS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS-->
-<script src="mertonic/pages/scripts/dashboard.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<!-- BEGIN THEME LAYOUT SCRIPTS-->
-<script src="mertonic/layouts/layout4/scripts/layout.js" type="text/javascript"></script>
-<script src="mertonic/layouts/layout4/scripts/demo.js" type="text/javascript"></script>
-<script src="mertonic/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
-<!-- END THEME LAYOUT SCRIPTS -->
+
+
 
 <?php // echo $this->render('_main_modal_eauth', compact('models'));?>
 <?php $this->endBody() ?>
