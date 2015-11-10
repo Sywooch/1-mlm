@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -84,9 +85,20 @@ class SiteController extends Controller
         }
         else{return $this->goHome();}
     }
+
     public function actionTeam()
     {
-        return $this->render('team');
+        //$this->chkusr();
+        if ( !\Yii::$app->user->isGuest ){
+            $array=['98d69c', '625759', 'bd066e', '7e57ea', '1caaf1', '84e53a', '9a1a29'];
+            return $this->render('team', [
+                'dataProvider' => new ActiveDataProvider([
+                    'query' => Users::find()
+                        ->where(['id'=>$array])
+                ])
+            ]);
+        }
+        else{return $this->goHome();}
     }
 
     public function actionAccount()
