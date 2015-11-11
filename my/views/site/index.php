@@ -199,7 +199,7 @@ $this->title = '1-mlm';
             videoId: 'tylvmEpKcLY',
             playerVars: {
                 'autoplay': 0,
-                'controls': 1,
+                'controls': 0,
                 'showinfo': '0',
                 'rel': 0
             },

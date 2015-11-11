@@ -241,7 +241,7 @@ class SiteController extends Controller
             else{
                 \Yii::$app->db->createCommand()
                     ->insert('users', [
-                        'id'=>mktime(),
+                       // 'id'=>mktime(),
                         'fn' => $firstName,
                         'ln' => $lastName,
                         'socid' => $identity["id"],
