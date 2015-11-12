@@ -360,7 +360,9 @@
                     </li>
                     <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
-                    <?php echo $this->render('_main_userdropdown', compact('models')); ?>
+                    <?php echo $this->render('_main_userdropdown', [
+                        'this'=>$this
+                    ]); ?>
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->
                     <li class="dropdown dropdown-extended quick-sidebar-toggler">

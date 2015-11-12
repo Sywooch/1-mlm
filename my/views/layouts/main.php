@@ -66,7 +66,9 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
 <?php $this->beginBody() ?>
 <!-- BEGIN HEADER -->
-<?php echo $this->render('_main_header', compact('models'));?>
+<?php echo $this->render('_main_header', [
+    'this'=>$this
+]);?>
 <!-- END HEADER -->
 <!-- BEGIN HEADER & CONTENT DIVIDER -->
 <div class="clearfix"> </div>
@@ -717,7 +719,11 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 <script src="mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS-->
 
-
+<pre>
+    <?php
+        //print_r($this->getView());
+    ?>
+</pre>
 
 
 

@@ -1,3 +1,18 @@
+<?php
+$identity = \Yii::$app->getUser()->getIdentity()->profile;
+$usr = \app\models\Users::find()->select('id')
+    ->where(['socid' => $identity["id"]])
+    ->andWhere(['service' => $identity["service"]])
+    ->one();
+
+$cntMemCom=\app\models\Commands::find()->select('id')
+    ->where(['refusr_id' => $usr->id])
+    ->count();
+
+list($mod,$act) = explode("/",\Yii::$app->request->get(r));
+unset($mod);
+?>
+
 <div class="page-sidebar-wrapper">
     <!-- BEGIN SIDEBAR -->
     <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
@@ -19,28 +34,28 @@
                     <span class="arrow open"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item start active open">
+                    <li class="nav-item start <?= ( ""==$act ) ? 'active open' : null; ?>">
                         <a href="index.php" class="nav-link ">
                             <i class="icon-bar-chart"></i>
                             <span class="title">главная 1</span>
                             <span class="selected"></span>
                         </a>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fteam" class="nav-link ">
                             <i class="icon-bulb"></i>
                             <span class="title">Команда</span>
-                            <span class="badge badge-success">1</span>
+                            <span class="badge badge-success"><?= $cntMemCom ?></span>
                         </a>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "profile"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fprofile" class="nav-link">
                     <i class="icon-user"></i>
                     <span class="title">Профиль</span>
                     <span class="arrow"></span>
                 </a>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "account"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Faccount" class="nav-link">
                     <i class="icon-user"></i>
                     <span class="title">Настройка профиля</span>
@@ -48,7 +63,7 @@
                 </a>
                     </li>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "landing"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Landing</span>
@@ -56,7 +71,7 @@
                         </a>
                     </li>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "landing2"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding2" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Landing 2</span>
@@ -64,7 +79,7 @@
                         </a>
                     </li>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "landing3"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding3" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Landing 3</span>
@@ -72,7 +87,7 @@
                         </a>
                     </li>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "mc"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fmc" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Мастер Класс</span>
@@ -80,7 +95,7 @@
                         </a>
                     </li>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Ftraining" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Обучение</span>
@@ -88,7 +103,7 @@
                         </a>
                     </li>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fcompany" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Компания</span>
@@ -96,7 +111,7 @@
                         </a>
                     </li>
                     </li>
-                    <li class="nav-item start ">
+                    <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fnews" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Новости</span>

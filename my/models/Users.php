@@ -2,6 +2,7 @@
 namespace app\models;
 use Yii;
 use yii\web\UploadedFile;
+
 class Users extends \yii\db\ActiveRecord
 {
     public static function tableName()
@@ -12,66 +13,55 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-           /*
-            [['uid', 'id', 'fb', 'api', 'userpic', 'ref', 'ref2', 'ref3',
-            'ref4', 'ref5', 'c', 'fn', 'ln', 'city', 'country', 'ip', 'mobile',
-            'skype', 'email', 'purse', 'regdate', 'paydate', 'active', 'days',
-            'level', 'team', 'money', 'paid', 'earned', 'done', 'bonus', 'rating',
-            'clicks', 'reglink', 'site', 'ytch', 'playlist', 'sent', 'pwd',
-            'metrika', 'added', 'friends', 'star', 'class', 'profit'], 'required'],
-           */
-            [['c', 'city', 'country', 'days', 'level', 'team', 'rating',
-                'clicks', 'metrika', 'friends', 'class'], 'integer'],
+            [['level', 'c', 'city', 'country', 'days', 'team',
+                'rating', 'clicks', 'metrika', 'friends', 'class'], 'integer'],
             [['regdate', 'paydate', 'active', 'done', 'sent', 'added'], 'safe'],
             [['money', 'paid', 'earned', 'bonus', 'profit'], 'number'],
-            [['uid', 'fb', 'ref2', 'ref3', 'ref4', 'ref5', 'ip'], 'string', 'max' => 15],
-            [['id', 'star'], 'string', 'max' => 6],
+            [['socid', 'ref2', 'ref3', 'ref4', 'ref5', 'ip'], 'string', 'max' => 15],
+            [['service', 'fn'], 'string', 'max' => 20],
+            [['refdt', 'star'], 'string', 'max' => 6],
+            [['ln', 'skype'], 'string', 'max' => 25],
             [['api'], 'string', 'max' => 2],
-            [['socid','service'], 'string'],
+            [['ref'], 'string', 'max' => 20],/*10*/
+            [['purse', 'site'], 'string', 'max' => 30],
+            [['reglink'], 'string', 'max' => 75],
+            [['ytch'], 'string', 'max' => 24],
+            [['playlist'], 'string', 'max' => 34],
+            [['pwd'], 'string', 'max' => 32],
             [
                 ['userpic'], 'file',
                 'skipOnEmpty' => false,
                 'extensions'  =>  ['png', 'jpg', 'gif'],
                 'maxSize'     => 1024*1024
             ],
-
-
-            /*[['ref'], 'string', 'max' => 10],*/
-            [['fn'], 'string', 'max' => 20],
-            [['ln', 'skype'], 'string', 'max' => 25],
-
-    /*!!!*/        [['mobile'], 'string', 'max' => 16],
+            [['mobile'], 'string', 'max' => 16],
             [['mobile'], 'match',
                 'pattern' => "/^[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}$/i",
                 'message'=>"Неправильный номер телефона"],
-
             [['email'], 'email',  'message'=>"Неправильный адрес электронной почты"],
             [['email'], 'unique', 'message'=>"Адрес электронной почты уже существует"],
-            [['purse', 'site'], 'string', 'max' => 30],
-            [['reglink'], 'string', 'max' => 75],
-            [['ytch'], 'string', 'max' => 24],
-            [['playlist'], 'string', 'max' => 34],
-            [['pwd'], 'string', 'max' => 32]
         ];
     }
 
     public function attributeLabels()
     {
         return [
-            'uid' => 'Uid',
             'id' => 'ID',
-            'fb' => 'Fb',
-            'api' => 'Api',
+            'socid' => 'Socid',
+            'service' => 'Service',
+            'refdt' => 'Refdt',
+            'level' => 'Level',
             'userpic' => 'Userpic',
-            'ref' => 'Ref',
+            'fn' => 'Fn',
             'ref2' => 'Ref2',
             'ref3' => 'Ref3',
             'ref4' => 'Ref4',
             'ref5' => 'Ref5',
             'c' => 'C',
-            'fn' => 'Fn',
-            'ln' => 'Ln',
             'city' => 'City',
+            'ln' => 'Ln',
+            'api' => 'Api',
+            'ref' => 'Ref',
             'country' => 'Country',
             'ip' => 'Ip',
             'mobile' => 'Mobile',
@@ -82,9 +72,8 @@ class Users extends \yii\db\ActiveRecord
             'paydate' => 'Paydate',
             'active' => 'Active',
             'days' => 'Days',
-            'level' => 'Level',
-            'team' => 'Team',
             'money' => 'Money',
+            'team' => 'Team',
             'paid' => 'Paid',
             'earned' => 'Earned',
             'done' => 'Done',

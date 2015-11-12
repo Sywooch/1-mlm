@@ -64,17 +64,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' =>  'ln',
                     'label'     =>  'Фамилия'
                 ],
-                [
+                /*[
                     'attribute' =>  'city',
                     'label'     =>  'Город'
+                ],*/
+                [
+                    'attribute' =>  'title',
+                    'label'     =>  'Уровень'
                 ],
                 [
                     'header' => 'Действия',
                     'format' => 'raw',
-                    'value'  =>  function($model)
+                    'value'  =>  function($dataProvider)
                     {
                         return $this->render('_team_edit', [
-                            'model' => $model
+                            'dt' => $dataProvider
                         ]);
                     }
                     /*'class'     =>  ActionColumn::className(),*/

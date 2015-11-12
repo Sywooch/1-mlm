@@ -8,6 +8,8 @@
         'label' => '',
     ]
 ]);
-echo $model->fn, $model->city;
+
+echo $dt["fn"], ' ', $dt["ln"];
+
 \yii\bootstrap\Modal::end();
 ?>

@@ -6,11 +6,7 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?
     <div class="form-group">
         <div class="fileinput fileinput-new" data-provides="fileinput">
             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                <img src="<?php
-                   if( empty($model->userpic) )
-                        {echo "http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";}
-                    else{echo Yii::getAlias('@web').'/imgs/'.$model->userpic;}
-                ?>" alt="user picture" width="140"/>
+                <img src="<?= $model->userpic; ?>" alt="user picture" width="140"/>
             </div>
             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
             <div>

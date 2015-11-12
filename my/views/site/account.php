@@ -20,11 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="portlet light profile-sidebar-portlet bordered">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class="profile-userpic">
-                                        <img src="<?php
-                                        if( empty($model->userpic) )
-                                        {echo "http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";}
-                                        else{echo Yii::getAlias('@web').'/imgs/'.$model->userpic;}
-                                        ?>" class="img-responsive" alt=""> </div>
+                                        <img src="<?= $model->userpic; ?>" class="img-responsive" alt=""> </div>
                                     <!-- END SIDEBAR USERPIC -->
                                     <!-- SIDEBAR USER TITLE -->
                                     <div class="profile-usertitle">

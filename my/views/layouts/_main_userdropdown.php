@@ -5,16 +5,14 @@ $usrDt = \app\models\Users::find()->select('fn,ln,userpic')
         ->andWhere(['service' => $identity["service"]])
         ->one();
 ?>
+
 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 <li class="dropdown dropdown-user dropdown-dark">
     <a href="javascript:;"
        class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
            <span class="username username-hide-on-mobile"><?php echo $usrDt->fn,' ',$usrDt->ln; ?></span>
                 <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                <img alt="user picture" class="img-circle" src="<?php
-                if( empty($usrDt->userpic) )
-                    {echo "http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";}
-                else{echo Yii::getAlias('@web').'/imgs/'.$usrDt->userpic;} ?>" />
+                <img alt="user picture" class="img-circle" src="<?= $usrDt->userpic; ?>" />
             </a>
     <ul class="dropdown-menu dropdown-menu-default">
         <li>

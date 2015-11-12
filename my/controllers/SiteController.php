@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Commands;
 use Yii;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
@@ -11,6 +12,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\User;
 use app\models\Users;
+use app\models\Levels;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
 
@@ -90,11 +92,32 @@ class SiteController extends Controller
     {
         //$this->chkusr();
         if ( !\Yii::$app->user->isGuest ){
-            $array=['98d69c', '625759', 'bd066e', '7e57ea', '1caaf1', '84e53a', '9a1a29'];
+            $query=new \yii\db\Query();
+            $query1=new \yii\db\Query();
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+
+            $usr = \app\models\Users::find()->select('id')
+                ->where(['socid' => $identity["id"]])
+                ->andWhere(['service' => $identity["service"]])
+                ->one();
+
+            $array=$query1->select('c.id AS id')
+                     ->from([Commands::tableName().' c'])
+                     ->where(['c.refusr_id'=>$usr->id])->all();
+
+            for($i=0;$i<sizeof($array);$i++){
+                $arr[]=$array[$i]["id"];
+            }
+
+            //$arr=['98d69c', '625759', 'bd066e', '7e57ea', '1caaf1', '84e53a', '9a1a29'];
+
             return $this->render('team', [
                 'dataProvider' => new ActiveDataProvider([
-                    'query' => Users::find()
-                        ->where(['id'=>$array])
+                    'query' =>
+                        $query->select('u.fn AS fn, u.ln AS ln, l.title AS title')
+                            ->from([Users::tableName().' u'])
+                            ->innerJoin(Levels::tableName().' l','l.id = u.level')
+                            ->where(['u.id'=>$arr])
                 ])
             ]);
         }
@@ -125,7 +148,7 @@ class SiteController extends Controller
                          \Yii::$app->db->createCommand("
                                         UPDATE `users` SET
                                             `active`='" . date("Y-m-d") . "',
-                                            `userpic`='{$flname}'
+                                            `userpic`='".Yii::getAlias('@web')."/imgs/{$flname}'
                                         WHERE
                                             `socid`='{$identity["id"]}'
                                         AND
@@ -239,9 +262,30 @@ class SiteController extends Controller
                     ->execute();
             }
             else{
+
+                switch($identity["service"])
+                {
+                    case "facebook":
+                        $pitureUrl="http://graph.facebook.com/".$identity["id"]."/picture?type=square";
+                    break;
+                    case "vkontakte":
+                        $usrPic=json_decode
+                        (
+                            file_get_contents('http://api.vkontakte.ru/method/users.get?uids='.
+                                $identity["id"].
+                                '&fields=photo_100')
+                        );
+                        $pitureUrl=$usrPic->response[0]->photo_100;
+                    break;
+                    default:
+                        $pitureUrl="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
+                    break;
+                }
+
                 \Yii::$app->db->createCommand()
                     ->insert('users', [
                        // 'id'=>mktime(),
+                        'userpic'=>$pitureUrl,
                         'fn' => $firstName,
                         'ln' => $lastName,
                         'socid' => $identity["id"],
