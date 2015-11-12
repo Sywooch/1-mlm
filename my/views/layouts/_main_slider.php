@@ -8,9 +8,11 @@ $usr = \app\models\Users::find()->select('id')
 $cntMemCom=\app\models\Commands::find()->select('id')
     ->where(['refusr_id' => $usr->id])
     ->count();
-
-list($mod,$act) = explode("/",\Yii::$app->request->get(r));
-unset($mod);
+if( !empty(\Yii::$app->request->get("r")) )
+{
+    list($mod,$act) = explode("/",\Yii::$app->request->get("r"));
+    unset($mod);
+}else{$act=null;}
 ?>
 
 <div class="page-sidebar-wrapper">
@@ -29,15 +31,15 @@ unset($mod);
             <li class="nav-item start active open">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">главная</span>
+                    <span class="title">МЕНЮ</span>
                     <span class="selected"></span>
                     <span class="arrow open"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item start <?= ( ""==$act ) ? 'active open' : null; ?>">
+                    <li class="nav-item start <?= ( null==$act ) ? 'active open' : null; ?>">
                         <a href="index.php" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">главная 1</span>
+                            <span class="title">Главная</span>
                             <span class="selected"></span>
                         </a>
                     </li>
