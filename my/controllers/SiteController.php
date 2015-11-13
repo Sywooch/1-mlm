@@ -133,7 +133,7 @@ class SiteController extends Controller
             $array=$query1->select('c.id AS id')
                      ->from([Commands::tableName().' c'])
                      ->where(['c.refusr_id'=>$usr->id])->all();
-
+            $arr=array();
             for($i=0;$i<sizeof($array);$i++){
                 $arr[]=$array[$i]["id"];
             }
