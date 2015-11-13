@@ -79,6 +79,35 @@ class SiteController extends Controller
         return $this->render('tmp');
     }
 
+    public function actionDelusr()
+    {
+        if (!\Yii::$app->user->isGuest)
+        {
+           $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            $usr = Users::find()->select('id, level')
+                ->where(['socid' => $identity["id"]])
+                ->andWhere(['service' => $identity["service"]])
+                ->one();
+            if($usr->level>4)return $this->goHome();
+            Users::findOne($usr->id)->delete();
+
+            $refusr = Commands::find()
+                ->select('refusr_id AS id')
+                ->where(['users_id' => $usr->id])
+                ->one();
+            $refusr->id;//kto menya priglasil
+
+            \Yii::$app->db->createCommand("
+                                        UPDATE `commands` SET
+                                            `refusr_id`='{$refusr->id}'
+                                        WHERE
+                                            `refusr_id`='{$usr->id}'
+                                ")
+                ->execute();
+        }
+        return $this->goHome();
+    }
+
     public function actionProfile()
     {
         //$this->chkusr();
@@ -110,6 +139,7 @@ class SiteController extends Controller
             }
 
             //$arr=['98d69c', '625759', 'bd066e', '7e57ea', '1caaf1', '84e53a', '9a1a29'];
+            if( sizeof($arr)<1 ) return $this->render('team_empty');
 
             return $this->render('team', [
                 'dataProvider' => new ActiveDataProvider([

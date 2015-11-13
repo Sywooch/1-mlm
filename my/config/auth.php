@@ -20,15 +20,16 @@ return [
         'vkontakte' => [
             // register your app here: https://vk.com/editapp?act=create&site=1
             'class' => 'nodge\eauth\services\VKontakteOAuth2Service',
-
-//            'clientId' => '5129822',
-//            'clientSecret' => 'IoCs27vO0tfd7USoTbK4',
-
+//Pavel
+            'clientId' => '5129822',
+            'clientSecret' => 'IoCs27vO0tfd7USoTbK4',
+//Vitaliy
             //'clientId' => '5143320',
             //'clientSecret' => 'O7vsoqQCG5q8fy6QHjUJ',
             /***********************************************/
-            'clientId' => '5130699',
-            'clientSecret' => '4B25v7qHSl0NODAekOuh',
+//Hosting
+           // 'clientId' => '5130699',
+           // 'clientSecret' => '4B25v7qHSl0NODAekOuh',
             /***********************************************/
 
         ],

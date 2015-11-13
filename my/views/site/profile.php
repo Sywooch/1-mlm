@@ -22,7 +22,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!-- SIDEBAR BUTTONS -->
                                     <div class="profile-userbuttons">
                                         <button type="button" class="btn btn-circle green btn-sm">Follow</button>
-                                        <button type="button" class="btn btn-circle red btn-sm">Message</button>
+                                        <button
+                                            onClick="if (confirm('Вы уверены, что хотите удалить свой аккаунт?'))
+                                                  window.location.href='index.php?r=site%2Fdelusr';"
+                                            type="button" class="btn btn-circle red btn-sm">Удалить аккаунт</button>
                                     </div>
                                     <!-- END SIDEBAR BUTTONS -->
                                     <!-- SIDEBAR MENU -->
