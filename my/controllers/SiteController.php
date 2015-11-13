@@ -130,7 +130,7 @@ class SiteController extends Controller
                 ->andWhere(['service' => $identity["service"]])
                 ->one();
 
-            $array=$query1->select('c.id AS id')
+            $array=$query1->select('c.users_id AS id')
                      ->from([Commands::tableName().' c'])
                      ->where(['c.refusr_id'=>$usr->id])->all();
             $arr=array();
@@ -140,7 +140,7 @@ class SiteController extends Controller
 
             //$arr=['98d69c', '625759', 'bd066e', '7e57ea', '1caaf1', '84e53a', '9a1a29'];
             if( sizeof($arr)<1 ) return $this->render('team_empty');
-
+            
             return $this->render('team', [
                 'dataProvider' => new ActiveDataProvider([
                     'query' =>
