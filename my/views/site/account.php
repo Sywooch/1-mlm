@@ -117,7 +117,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <a href="#tab_1_2" data-toggle="tab"> Изменение аватара </a>
                                         </li>
 										<li>
-                                            <a href="#tab_1_3" data-toggle="tab"> Настройки приватности </a>
+                                            <a href="#tab_1_3" data-toggle="tab"> Социальные Аккаунты </a>
                                         </li>
                                         
                                     </ul>
