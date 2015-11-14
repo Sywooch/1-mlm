@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!-- END SIDEBAR USER TITLE -->
                                     <!-- SIDEBAR BUTTONS -->
                                     <div class="profile-userbuttons">
-                                        <button type="button" class="btn btn-circle green btn-sm">Сменить тарифный план</button>
+                                        <button type="button" class="btn btn-circle green btn-sm">тарифный план</button>
                                         <button
                                             onClick="if (confirm('Вы уверены, что хотите удалить свой аккаунт?'))
                                                   window.location.href='index.php?r=site%2Fdelusr';"
@@ -46,16 +46,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!-- SIDEBAR MENU -->
                                     <div class="profile-usermenu">
                                         <ul class="nav">
-                                            <li>
+                                           <!-- <li>
                                                 <a href="page_user_profile_1.html">
                                                     <i class="icon-home"></i> Профиль </a>
-                                            </li>
+                                            </li>-->
                                             <li class="active">
-                                                <a href="page_user_profile_1_account.html">
+                                                <a href="index.php?r=site%2Faccount">
                                                     <i class="icon-settings"></i> Настройки аккаунта </a>
                                             </li>
                                             <li>
-                                                <a href="page_user_profile_1_help.html">
+                                                <a href="index.php?r=site%2Fhelp">
                                                     <i class="icon-info"></i> Помощь </a>
                                             </li>
                                         </ul>
@@ -67,21 +67,22 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="portlet light bordered">
                                     <!-- STAT -->
                                     <div class="row list-separated profile-stat">
-                                        <div class="col-md-4 col-sm-4 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 37 </div>
-                                            <div class="uppercase profile-stat-text"> Projects </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-6">
+                                            <div class="uppercase profile-stat-title"> 0 $ </div>
+                                            <div class="uppercase profile-stat-text"> начистненно по партнерке </div>
                                         </div>
-                                        <div class="col-md-4 col-sm-4 col-xs-6">
+                                        <!--<div class="col-md-4 col-sm-4 col-xs-6">
                                             <div class="uppercase profile-stat-title"> 51 </div>
                                             <div class="uppercase profile-stat-text"> Tasks </div>
                                         </div>
                                         <div class="col-md-4 col-sm-4 col-xs-6">
                                             <div class="uppercase profile-stat-title"> 61 </div>
                                             <div class="uppercase profile-stat-text"> Uploads </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <!-- END STAT -->
                                     <div>
+<<<<<<< HEAD
                                     <?php
                                          for($i=0;$i<sizeof($lastFive);$i++):
                                     ?>
@@ -95,6 +96,22 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <?php
                                          endfor;
                                     ?>
+=======
+                                        <h4 class="profile-desc-title">Ваши партнеры</h4>
+                                        <span class="profile-desc-text"> 5 последных регистраций </span>
+                                        <div class="margin-top-20 profile-desc-link">
+                                            <i class="fa fa-globe"></i>
+                                            <a href="http://www.keenthemes.com">www.keenthemes.com</a>
+                                        </div>
+                                        <div class="margin-top-20 profile-desc-link">
+                                            <i class="fa fa-twitter"></i>
+                                            <a href="http://www.twitter.com/keenthemes/">@keenthemes</a>
+                                        </div>
+                                        <div class="margin-top-20 profile-desc-link">
+                                            <i class="fa fa-facebook"></i>
+                                            <a href="http://www.facebook.com/keenthemes/">keenthemes</a>
+                                        </div>
+>>>>>>> origin/master
                                     </div>
                                 </div>
                                 <!-- END PORTLET MAIN -->
@@ -121,7 +138,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <a href="#tab_1_2" data-toggle="tab"> Изменение аватара </a>
                                         </li>
 										<li>
-                                            <a href="#tab_1_3" data-toggle="tab"> Настройки приватности </a>
+                                            <a href="#tab_1_3" data-toggle="tab"> Социальные Аккаунты </a>
                                         </li>
                                         
                                     </ul>

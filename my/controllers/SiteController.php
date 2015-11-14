@@ -241,6 +241,16 @@ class SiteController extends Controller
         else{return $this->goHome();}
     }
 
+    public function actionHelp()
+    {
+        return $this->render('help');
+    }
+
+    public function actionPricing()
+    {
+        return $this->render('pricing');
+    }
+
     public function actionLanding()
     {
         return $this->render('landing');
