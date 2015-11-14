@@ -70,6 +70,15 @@ class SiteController extends Controller
     public function actionIndex()
     {
         //$this->chkusr();
+        if (!\Yii::$app->user->isGuest) {
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            $model = Users::find()
+                ->where(['socid' => $identity["id"]])
+                ->andWhere(['service' => $identity["service"]]);
+            return $this->render('index', [
+                'model' => $model->one(),
+            ]);
+        }
         return $this->render('index');
     }
 
@@ -84,24 +93,20 @@ class SiteController extends Controller
         if (!\Yii::$app->user->isGuest)
         {
            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            $usr = Users::find()->select('id, level')
+            $usr = Users::find()->select('refdt, ref, level')
                 ->where(['socid' => $identity["id"]])
                 ->andWhere(['service' => $identity["service"]])
                 ->one();
             if($usr->level>4)return $this->goHome();
             Users::findOne($usr->id)->delete();
 
-            $refusr = Commands::find()
-                ->select('refusr_id AS id')
-                ->where(['users_id' => $usr->id])
-                ->one();
-            $refusr->id;//kto menya priglasil
+         //   $usr->ref;//kto menya priglasil
 
             \Yii::$app->db->createCommand("
-                                        UPDATE `commands` SET
-                                            `refusr_id`='{$refusr->id}'
+                                        UPDATE `users` SET
+                                            `ref`='{$usr->ref}'
                                         WHERE
-                                            `refusr_id`='{$usr->id}'
+                                            `ref`='{$usr->refdt}'
                                 ")
                 ->execute();
         }
@@ -125,14 +130,14 @@ class SiteController extends Controller
             $query1=new \yii\db\Query();
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
-            $usr = \app\models\Users::find()->select('id')
+            $usr = Users::find()->select('refdt')
                 ->where(['socid' => $identity["id"]])
                 ->andWhere(['service' => $identity["service"]])
                 ->one();
 
-            $array=$query1->select('c.users_id AS id')
-                     ->from([Commands::tableName().' c'])
-                     ->where(['c.refusr_id'=>$usr->id])->all();
+            $array=$query1->select('u.id AS id')
+                     ->from([Users::tableName().' u'])
+                     ->where(['u.ref'=>$usr->refdt])->all();
             $arr=array();
             for($i=0;$i<sizeof($array);$i++){
                 $arr[]=$array[$i]["id"];
@@ -144,7 +149,7 @@ class SiteController extends Controller
             return $this->render('team', [
                 'dataProvider' => new ActiveDataProvider([
                     'query' =>
-                        $query->select('u.fn AS fn, u.ln AS ln, l.title AS title')
+                        $query->select('u.fn AS fn, u.ln AS ln, l.title AS title, u.userpic AS userpic')
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
                             ->where(['u.id'=>$arr])
@@ -311,10 +316,11 @@ class SiteController extends Controller
                         $pitureUrl="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
                     break;
                 }
-
                 \Yii::$app->db->createCommand()
                     ->insert('users', [
                        // 'id'=>mktime(),
+                        'ip'=>$_SERVER['REMOTE_ADDR'],
+                        'refdt'=>$this->ukey(),
                         'userpic'=>$pitureUrl,
                         'fn' => $firstName,
                         'ln' => $lastName,
@@ -325,6 +331,34 @@ class SiteController extends Controller
                     ])->execute();
             }
         }
+/*********************************/
+    protected function ukey()
+    {
+        for(;;)
+        {
+            $key=$this->rand_str();
+            $cntKey=Users::find()
+                ->where(['refdt' => $key])->count();
+            if(0==$cntKey){break;}
+        }
+        return $key;
+    }
+    protected function rand_str
+    (
+        $length = 10,
+        $chars = 'qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM1234567890'
+    )
+    {
+        $chars_length = (strlen($chars) - 1);
+        $string = $chars{rand(0, $chars_length)};
+        for ($i = 1; $i < $length; $i = strlen($string))
+        {
+            $r = $chars{rand(0, $chars_length)};
+            if ($r != $string{$i - 1}) $string .=  $r;
+        }
+        return $string;
+    }
+/*********************************/
     public function actionLogin() {
         /*
         if(\Yii::$app->user->isGuest)

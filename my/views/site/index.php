@@ -6,16 +6,18 @@ $usrDt = \app\models\Users::find()->select('fn,ln,userpic')
     ->andWhere(['service' => $identity["service"]])
     ->one();
 
-$this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
+$this->registerJsFile('/my/web/mertonic/global/scripts/app_acc.js');
 
-$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
 $this->registerJsFile("/my/web/mertonic/global/plugins/select2/js/select2.full.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/my/web/mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/my/web/mertonic/global/plugins/jquery-validation/js/additional-methods.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+
+
 $this->registerJsFile("/my/web/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/my/web/mertonic/pages/scripts/form-wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
@@ -111,10 +113,10 @@ $this->title = '1-mlm';
                                         <div class="embed-responsive embed-responsive-16by9">
                                             <center>
                                                 <h5 class="block">Здесь дублируем поля профиля ( с траницы настройка профиля) </h5>
-                                                <!--?php
+                                                <?php
                                                 echo $this->render('_account_edit_info', [
                                                     'model' => $model
-                                                ]); ?>-->
+                                                ]); ?>
                                             </center>
                                         </div>
 

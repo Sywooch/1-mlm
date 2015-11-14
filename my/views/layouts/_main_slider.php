@@ -1,12 +1,12 @@
 <?php
 $identity = \Yii::$app->getUser()->getIdentity()->profile;
-$usr = \app\models\Users::find()->select('id')
+$usr = \app\models\Users::find()->select('refdt')
     ->where(['socid' => $identity["id"]])
     ->andWhere(['service' => $identity["service"]])
     ->one();
-
-$cntMemCom=\app\models\Commands::find()->select('id')
-    ->where(['refusr_id' => $usr->id])
+$cntMemCom=
+    \app\models\Users::find()->select('id')
+        ->where(['ref' => $usr->refdt])
     ->count();
 if( !empty(\Yii::$app->request->get("r")) )
 {
