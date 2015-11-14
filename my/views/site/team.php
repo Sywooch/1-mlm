@@ -14,11 +14,17 @@ $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' 
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
-
+$this->registerJsFile('/my/web/metronic/theme/assets/global/plugins/datatables/datatables.min.js', ['depends' => 'yii\web\JqueryAsset']);
 $css = <<<'STYLE'
 .tbl-header *
 {
     text-align: center;
+}
+
+.dt-buttons {
+    margin-top: 0px !important;
+    float: left !important;
+    margin-right: 20px;
 }
 STYLE;
 $this->registerCss($css);
@@ -99,3 +105,87 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
     </div>
 <!-- END PAGE BASE CONTENT -->
+
+<!-- BEGIN NEW CONTENT -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-body">
+                <div class="dataTables_wrapper no-footer" id="sample_1_wrapper">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                                <div id="sample_1_length" class="dataTables_length">
+                                    <label>
+                                        <select class="form-control input-sm input-xsmall input-inline" aria-controls="sample_1" name="sample_1_length">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="-1">All</option>
+                                        </select> entries
+                                    </label>
+                                </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="dt-buttons">
+                                <a aria-controls="sample_1" tabindex="0" class="dt-button buttons-excel buttons-flash btn yellow btn-outline">
+                                    <span>Excel</span>
+                                    <div style="position: absolute; left: 0px; top: 0px; width: 56px; height: 32px; z-index: 99;">
+                                        <embed id="ZeroClipboard_TableToolsMovie_2" src="//cdn.datatables.net/buttons/1.0.0/swf/flashExport.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboard_TableToolsMovie_2" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=2&amp;width=56&amp;height=32" wmode="transparent" align="middle" height="32" width="56">
+                                    </div>
+                                </a>
+                                <a aria-controls="sample_1" tabindex="0" class="dt-button buttons-pdf buttons-html5 btn green btn-outline">
+                                    <span>PDF</span>
+                                </a>
+                                <a aria-controls="sample_1" tabindex="0" class="dt-button buttons-print btn dark btn-outline">
+                                    <span>Print</span>
+                                </a>
+                            </div>
+                            <div class="dataTables_filter" id="sample_1_filter">
+                                <label>
+                                    Search:<input aria-controls="sample_1" placeholder="" class="form-control input-sm input-small input-inline" type="search">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-scrollable">
+                        <table class="table table-striped table-bordered table-hover" id="sample_2">
+                            <thead>
+                            <tr>
+                                <th> Id </th>
+                                <th> Имя </th>
+                                <th> Фамилия </th>
+                                <th> Уровень </th>
+                                <th> Страна и город </th>
+                                <th> Контакты </th>
+                                <th> Опции </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td> 1 </td>
+                                <td> Алекандр </td>
+                                <td> Цыбулевсий </td>
+                                <td> Новичок </td>
+                                <td> Украина, Киев </td>
+                                <td> Конт. </td>
+                                <td> Опц. </td>
+                            </tr>
+                            <tr>
+                                <td> 2 </td>
+                                <td> Dilbar </td>
+                                <td> Isakova </td>
+                                <td> Новичок </td>
+                                <td> Украина, Киев </td>
+                                <td> Конт. </td>
+                                <td> Опц. </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END CONTENT -->
