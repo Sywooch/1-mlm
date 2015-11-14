@@ -56,8 +56,10 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <span class="title">Профиль off</span>
 
                 </a>
-                    </li>-->
-                    <li class="nav-item start <?= ( "account"==$act ) ? 'active open' : null; ?>">
+ </li>-->
+                    <li class="nav-item start <?php echo ( "account"==$act ) ? 'active open' : null;
+                    echo ( "help"==$act ) ? 'active open' : null;
+                    ?>">
                         <a href="index.php?r=site%2Faccount" class="nav-link">
                     <i class="icon-user"></i>
                     <span class="title">Профиль</span>
@@ -65,14 +67,22 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
                     </li>
                     </li>
-                    <li class="nav-item start <?= ( "landing"==$act ) ? 'active open' : null; ?>">
+            <li class="nav-item start <?= ( "pricing"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Fpricing" class="nav-link">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Тарифы</span>
+
+                </a>
+            </li>
+            </li>
+            <li class="nav-item start <?= ( "landing"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Создание страниц</span>
                             <!---->
                         </a>
                     </li>
-                    </li>
+            </li>
                     <!--<li class="nav-item start <?= ( "landing2"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding2" class="nav-link">
                             <i class="icon-user"></i>
@@ -88,39 +98,40 @@ if( !empty(\Yii::$app->request->get("r")) )
 
                         </a>
                     </li>-->
-                    </li>
-                    <li class="nav-item start <?= ( "mc"==$act ) ? 'active open' : null; ?>">
+
+            </li>
+             <li class="nav-item start <?= ( "mc"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fmc" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Мастер Класс</span>
 
                         </a>
-                    </li>
-                    </li>
-                    <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
+             </li>
+            </li>
+             <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Ftraining" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Обучение</span>
 
                         </a>
                     </li>
-                    </li>
-                    <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
+            </li>
+             <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fcompany" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Компания</span>
 
                         </a>
                     </li>
-                    </li>
-                    <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
+            </li>
+             <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fnews" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Новости</span>
 
                         </a>
                     </li>
-                    </li>
+            </li>
                     <!--<li class="nav-item start ">
                        <a href="index.php?r=site%2Faccount" class="nav-link">
                            <i class="icon-user"></i>

@@ -231,6 +231,11 @@ class SiteController extends Controller
         return $this->render('help');
     }
 
+    public function actionPricing()
+    {
+        return $this->render('pricing');
+    }
+
     public function actionLanding()
     {
         return $this->render('landing');
