@@ -112,7 +112,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <!-- END PAGE BASE CONTENT -->
 
 <!-- BEGIN NEW CONTENT -->
-<div class="row">
+<!--<div class="row">
     <div class="col-md-12">
         <div class="portlet light bordered">
             <div class="portlet-body">
@@ -192,5 +192,5 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- END CONTENT -->
