@@ -219,8 +219,23 @@ class SiteController extends Controller
                 }
             }
 
+            $query3=new \yii\db\Query();
+            $usrDt=$query3->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt, u.active AS active, l.title AS level, u.userpic AS userpic')
+                ->from([Users::tableName().' u'])
+                ->innerJoin(Levels::tableName().' l','l.id = u.level')
+                ->where(['u.socid' => $identity["id"]])
+                ->andWhere(['u.service' => $identity["service"]])->one();
+
+            $query5=new \yii\db\Query();
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.userpic AS userpic')
+                ->from([Users::tableName().' u'])
+                ->where(['u.ref' => $usrDt["refdt"]])
+                ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
+
             return $this->render('account', [
                 'model' => $model->one(),
+                'usrDt'=> $usrDt,
+                'lastFive'=>$lastFive
             ]);
         }
         else{return $this->goHome();}

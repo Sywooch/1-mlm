@@ -1,4 +1,8 @@
 <?php
+
+
+
+
 $this->registerJsFile('/my/web/mertonic/global/scripts/app_acc.js');
 
 $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -25,8 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="profile-usertitle">
                                         <div class="profile-usertitle-name"><?php
                                             echo $model->fn,' ',$model->ln;
-                                            ?></div>
-                                        <div class="profile-usertitle-job"> <?php //echo $model->level; ?> </div>
+                                            ?></div><br />Дата последнего входа: <?= $usrDt["active"]; ?>
+                                        <br />
+                                        <div class="profile-usertitle-job"> <?php echo $usrDt["level"]; ?> </div>
                                     </div>
                                     <!-- END SIDEBAR USER TITLE -->
                                     <!-- SIDEBAR BUTTONS -->
@@ -77,20 +82,19 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                     <!-- END STAT -->
                                     <div>
-                                        <h4 class="profile-desc-title">About Marcus Doe</h4>
-                                        <span class="profile-desc-text"> Lorem ipsum dolor sit amet diam nonummy nibh dolore. </span>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-globe"></i>
-                                            <a href="http://www.keenthemes.com">www.keenthemes.com</a>
-                                        </div>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-twitter"></i>
-                                            <a href="http://www.twitter.com/keenthemes/">@keenthemes</a>
-                                        </div>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-facebook"></i>
-                                            <a href="http://www.facebook.com/keenthemes/">keenthemes</a>
-                                        </div>
+                                    <?php
+                                         for($i=0;$i<sizeof($lastFive);$i++):
+                                    ?>
+                                        <img alt="user picture" class="img-circle"
+                                           style="margin-left: 5px;margin-top: -8px;height: 39px;display: inline-block;"
+                                           src="<?php echo $lastFive[$i]["userpic"];?>">
+                                        <span class="username username-hide-on-mobile"><?php
+                                            echo $lastFive[$i]["fn"], ' ',$lastFive[$i]["ln"]
+                                        ?></span>
+                                        <br /><br />
+                                    <?php
+                                         endfor;
+                                    ?>
                                     </div>
                                 </div>
                                 <!-- END PORTLET MAIN -->
