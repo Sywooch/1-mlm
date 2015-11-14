@@ -100,13 +100,15 @@ class SiteController extends Controller
             if($usr->level>4)return $this->goHome();
             Users::findOne($usr->id)->delete();
 
-         //   $usr->ref;//kto menya priglasil
+            if( !empty($usr->refdt) )
+                {$ref=$usr->refdt;}
+            else{$ref=2;}
 
             \Yii::$app->db->createCommand("
                                         UPDATE `users` SET
                                             `ref`='{$usr->ref}'
                                         WHERE
-                                            `ref`='{$usr->refdt}'
+                                            `ref`='{$ref}'
                                 ")
                 ->execute();
         }
@@ -164,9 +166,11 @@ class SiteController extends Controller
         //this->chkusr();
         if (!\Yii::$app->user->isGuest){
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
+
             $model = Users::find()
                 ->where(['socid' => $identity["id"]])
                 ->andWhere(['service' => $identity["service"]]);
+
                 //->where(['service' => $identity["service"]]);
                 //->one();
 

@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <div class="profile-usertitle-name"><?php
                                             echo $model->fn,' ',$model->ln;
                                             ?></div>
-                                        <div class="profile-usertitle-job"> Новичек </div>
+                                        <div class="profile-usertitle-job"> <?php //echo $model->level; ?> </div>
                                     </div>
                                     <!-- END SIDEBAR USER TITLE -->
                                     <!-- SIDEBAR BUTTONS -->
