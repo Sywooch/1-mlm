@@ -226,6 +226,11 @@ class SiteController extends Controller
         else{return $this->goHome();}
     }
 
+    public function actionHelp()
+    {
+        return $this->render('help');
+    }
+
     public function actionLanding()
     {
         return $this->render('landing');
