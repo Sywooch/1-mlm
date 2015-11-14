@@ -737,13 +737,13 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 <script src="mertonic/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
 
 -----------------------------------------------------------
-
+<!---
 <script src="mertonic/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
 <script src="mertonic/pages/scripts/form-wizard.min.js" type="text/javascript"></script>
-------->
+
 <!--------------------------------------------------------------------->
 
 

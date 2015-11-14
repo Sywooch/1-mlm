@@ -1,15 +1,26 @@
 <?php
-$this->title = 'profile';
+
+$this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
+$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+
+$this->registerCssFile('/my/web/mertonic/pages/css/pricing.min.css');
+
+$this->title = 'pricing';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="portlet light portlet-fit bordered">
     <div class="portlet-title">
         <div class="caption">
-            <i class="icon-share font-green"></i>
+            <!--<i class="icon-share font-green"></i>-->
             <span class="caption-subject font-green bold uppercase">Тарифы пакетов доступа</span>
         </div>
+        <!--
         <div class="actions">
             <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
                 <i class="icon-cloud-upload"></i>
@@ -22,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <i class="icon-trash"></i>
             </a>
         </div>
+        -->
     </div>
     <div class="portlet-body">
         <div class="pricing-content-1">
