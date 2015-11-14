@@ -14,7 +14,9 @@ $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' 
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/metronic/theme/assets/global/scripts/datatable.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/metronic/theme/assets/global/plugins/datatables/datatables.min.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/metronic/theme/assets/global/plugins/adtatable/plugins/bootstrap/datatables.bootstrap.js', ['depends' => 'yii\web\JqueryAsset']);
 $css = <<<'STYLE'
 .tbl-header *
 {
@@ -35,14 +37,15 @@ $this->params['breadcrumbs'][] = $this->title;
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="row">
     <div class="col-md-12">
-        <div class="note note-info">
-            <h4 class="block">Ваша 1-я линия</h4>
-            <p> Для поиска по имени или фамилии используете сочетание клавиш на клавиатуре: Ctrl+F </p>
-        </div>
+        <div class="portlet light bordered">
+            <div class="note note-info">
+                <h4 class="block">Ваша 1-я линия</h4>
+                <p> Для поиска по имени или фамилии используете сочетание клавиш на клавиатуре: Ctrl+F </p>
+            </div>
         <?php echo GridView::widget([
             'dataProvider'  =>  $dataProvider,
             'tableOptions'  =>  [
-                'class'     =>  'table table-stripped table-hover block-center'
+                'class'     =>  'table table-striped table-bordered table-hover'
             ],
             'rowOptions'   =>  [
                 'style'    =>  'text-align: center; background-color:'
@@ -103,7 +106,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ]
         ]);
         ?>
+        </div>
     </div>
+</div>
 <!-- END PAGE BASE CONTENT -->
 
 <!-- BEGIN NEW CONTENT -->
