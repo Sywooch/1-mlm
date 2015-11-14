@@ -50,34 +50,34 @@ if( !empty(\Yii::$app->request->get("r")) )
                             <span class="badge badge-success"><?= $cntMemCom ?></span>
                         </a>
                     </li>
-                    <li class="nav-item start <?= ( "profile"==$act ) ? 'active open' : null; ?>">
+                    <!--<li class="nav-item start <?= ( "profile"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fprofile" class="nav-link">
                     <i class="icon-user"></i>
-                    <span class="title">Профиль</span>
-                    <span class="arrow"></span>
+                    <span class="title">Профиль off</span>
+
                 </a>
-                    </li>
+                    </li>-->
                     <li class="nav-item start <?= ( "account"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Faccount" class="nav-link">
                     <i class="icon-user"></i>
-                    <span class="title">Настройка профиля</span>
-                    <span class="arrow"></span>
+                    <span class="title">Профиль</span>
+
                 </a>
                     </li>
                     </li>
                     <li class="nav-item start <?= ( "landing"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding" class="nav-link">
                             <i class="icon-user"></i>
-                            <span class="title">Landing</span>
-                            <span class="arrow"></span>
+                            <span class="title">Создание страниц</span>
+                            <!---->
                         </a>
                     </li>
                     </li>
-                    <li class="nav-item start <?= ( "landing2"==$act ) ? 'active open' : null; ?>">
+                    <!--<li class="nav-item start <?= ( "landing2"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding2" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Landing 2</span>
-                            <span class="arrow"></span>
+
                         </a>
                     </li>
                     </li>
@@ -85,15 +85,15 @@ if( !empty(\Yii::$app->request->get("r")) )
                         <a href="index.php?r=site%2Flanding3" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Landing 3</span>
-                            <span class="arrow"></span>
+
                         </a>
-                    </li>
+                    </li>-->
                     </li>
                     <li class="nav-item start <?= ( "mc"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fmc" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Мастер Класс</span>
-                            <span class="arrow"></span>
+
                         </a>
                     </li>
                     </li>
@@ -101,7 +101,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         <a href="index.php?r=site%2Ftraining" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Обучение</span>
-                            <span class="arrow"></span>
+
                         </a>
                     </li>
                     </li>
@@ -109,7 +109,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         <a href="index.php?r=site%2Fcompany" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Компания</span>
-                            <span class="arrow"></span>
+
                         </a>
                     </li>
                     </li>
@@ -117,7 +117,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         <a href="index.php?r=site%2Fnews" class="nav-link">
                             <i class="icon-user"></i>
                             <span class="title">Новости</span>
-                            <span class="arrow"></span>
+
                         </a>
                     </li>
                     </li>
@@ -125,7 +125,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                        <a href="index.php?r=site%2Faccount" class="nav-link">
                            <i class="icon-user"></i>
                            <span class="title">Профиль 2</span>
-                           <span class="arrow"></span>
+
                        </a>
                    </li>
                    </li>
@@ -133,7 +133,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                        <a href="index.php?r=site%2Faccount" class="nav-link">
                            <i class="icon-user"></i>
                            <span class="title">Профиль 2</span>
-                           <span class="arrow"></span>
+
                        </a>
                    </li>
                    </li>
@@ -141,7 +141,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                        <a href="index.php?r=site%2Faccount" class="nav-link">
                            <i class="icon-user"></i>
                            <span class="title">Профиль 2</span>
-                           <span class="arrow"></span>
+
                        </a>
                    </li>-->
                 </ul>
@@ -153,7 +153,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <a href="index.php?r=site%2Fteam" class="nav-link nav-toggle">
                     <i class="icon-diamond"></i>
                     <span class="title">Команда</span>
-                    <span class="arrow"></span>
+
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
@@ -209,7 +209,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <li class="nav-item  ">
                         <a href="javascript:;" class="nav-link nav-toggle">
                             <span class="title">Page Progress Bar</span>
-                            <span class="arrow"></span>
+
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item ">

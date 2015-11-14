@@ -3,8 +3,8 @@
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm',
-    'username' => 'root',
-    'password' => '',
+    'username' => 'mlm',
+    'password' => '12345678@',
     'charset' => 'utf8',
 ];
 /*

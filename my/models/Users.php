@@ -22,7 +22,7 @@ class Users extends \yii\db\ActiveRecord
             [['refdt', 'star'], 'string', 'max' => 6],
             [['ln', 'skype'], 'string', 'max' => 25],
             [['api'], 'string', 'max' => 2],
-            [['ref'], 'string', 'max' => 20],/*10*/
+        //    [['ref'], 'string', 'max' => 20],/*10*/
             [['purse', 'site'], 'string', 'max' => 30],
             [['reglink'], 'string', 'max' => 75],
             [['ytch'], 'string', 'max' => 24],
@@ -35,9 +35,9 @@ class Users extends \yii\db\ActiveRecord
                 'maxSize'     => 1024*1024
             ],
             [['mobile'], 'string', 'max' => 16],
-            [['mobile'], 'match',
+  /*          [['mobile'], 'match',
                 'pattern' => "/^[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}$/i",
-                'message'=>"Неправильный номер телефона"],
+                'message'=>"Неправильный номер телефона"], */
             [['email'], 'email',  'message'=>"Неправильный адрес электронной почты"],
             [['email'], 'unique', 'message'=>"Адрес электронной почты уже существует"],
         ];
