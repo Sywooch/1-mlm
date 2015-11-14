@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 $this->registerJsFile('/my/web/mertonic/global/scripts/app_acc.js');
 
 $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -82,7 +78,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                     <!-- END STAT -->
                                     <div>
-<<<<<<< HEAD
                                     <?php
                                          for($i=0;$i<sizeof($lastFive);$i++):
                                     ?>
@@ -95,23 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <br /><br />
                                     <?php
                                          endfor;
-                                    ?>
-=======
-                                        <h4 class="profile-desc-title">Ваши партнеры</h4>
-                                        <span class="profile-desc-text"> 5 последных регистраций </span>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-globe"></i>
-                                            <a href="http://www.keenthemes.com">www.keenthemes.com</a>
-                                        </div>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-twitter"></i>
-                                            <a href="http://www.twitter.com/keenthemes/">@keenthemes</a>
-                                        </div>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-facebook"></i>
-                                            <a href="http://www.facebook.com/keenthemes/">keenthemes</a>
-                                        </div>
->>>>>>> origin/master
+?>
                                     </div>
                                 </div>
                                 <!-- END PORTLET MAIN -->
