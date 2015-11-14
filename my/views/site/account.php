@@ -6,7 +6,6 @@ $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['de
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -32,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!-- END SIDEBAR USER TITLE -->
                                     <!-- SIDEBAR BUTTONS -->
                                     <div class="profile-userbuttons">
-                                        <button type="button" class="btn btn-circle green btn-sm">Следовать</button>
+                                        <button type="button" class="btn btn-circle green btn-sm">Сменить тарифный план</button>
                                         <button
                                             onClick="if (confirm('Вы уверены, что хотите удалить свой аккаунт?'))
                                                   window.location.href='index.php?r=site%2Fdelusr';"
@@ -171,7 +170,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                 </div>
                             </div>
-                            
                                         </div>
                                     </div>
                                 </div>

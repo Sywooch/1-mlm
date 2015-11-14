@@ -31,7 +31,7 @@
               <entry file="file://$PROJECT_DIR$/views/site/account.php">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.189099">
-                    <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+                    <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
                     <folding />
                   </state>
                 </provider>
@@ -51,9 +51,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5676127">
-              <caret line="20" column="145" selection-start-line="20" selection-start-column="145" selection-end-line="20" selection-end-column="145" />
-              <folding />
+            <state vertical-scroll-proportion="0.68781304">
+              <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
+              <folding>
+                <element signature="e#7014#7183#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,8 +113,8 @@
         <option value="$PROJECT_DIR$/config/auth.php" />
         <option value="$PROJECT_DIR$/config/db.php" />
         <option value="$PROJECT_DIR$/controllers/SiteController.php" />
-        <option value="$PROJECT_DIR$/views/site/account.php" />
         <option value="$PROJECT_DIR$/views/layouts/_main_slider.php" />
+        <option value="$PROJECT_DIR$/views/site/account.php" />
         <option value="$PROJECT_DIR$/views/site/index.php" />
       </list>
     </option>
@@ -730,19 +732,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+    <entry file="file://$PROJECT_DIR$/views/site/account.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5676127">
-          <caret line="20" column="145" selection-start-line="20" selection-start-column="145" selection-end-line="20" selection-end-column="145" />
+        <state vertical-scroll-proportion="0.189099">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/account.php">
+    <entry file="file://$PROJECT_DIR$/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.189099">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding />
+        <state vertical-scroll-proportion="0.68781304">
+          <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
+          <folding>
+            <element signature="e#7014#7183#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
