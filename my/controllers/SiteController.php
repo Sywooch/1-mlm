@@ -249,7 +249,7 @@ class SiteController extends Controller
                 ->andWhere(['u.service' => $identity["service"]])->one();
 
             $query5=new \yii\db\Query();
-            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.userpic AS userpic')
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.socid AS socid, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
                 ->where(['u.ref' => $usrDt["refdt"]])
                 ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
@@ -278,7 +278,7 @@ class SiteController extends Controller
                 ->andWhere(['u.service' => $identity["service"]])->one();
 
             $query5=new \yii\db\Query();
-            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.userpic AS userpic')
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.socid AS socid, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
                 ->where(['u.ref' => $usrDt["refdt"]])
                 ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
@@ -290,6 +290,21 @@ class SiteController extends Controller
             ]);
         }
         else{return $this->goHome();}
+    }
+
+    public function actionRef()
+    {
+        if( !empty(\Yii::$app->request->get("refid")) )
+        {
+            $refdt=\Yii::$app->request->get("refid");
+            $usrDt=Users::find()
+                ->where(['refdt' => $refdt]);
+            if( $usrDt->count()>0 )
+            {
+                Yii::$app->session->set('refuserId', $refdt);
+            }
+        }
+        return $this->goHome();
     }
 
     public function actionCalendar()
@@ -312,6 +327,11 @@ class SiteController extends Controller
     {
         //this->chkusr();
         return $this->render('pricing');
+    }
+
+    public function actionLand()
+    {
+        return $this->render('land');
     }
 
     public function actionLanding()
@@ -420,6 +440,7 @@ class SiteController extends Controller
                        // 'id'=>mktime(),
                         'ip'=>$_SERVER['REMOTE_ADDR'],
                         'refdt'=>$this->ukey(),
+                        'ref'=>Yii::$app->session->get('refuserId'),
                         'userpic'=>$pitureUrl,
                         'fn' => $firstName,
                         'ln' => $lastName,

@@ -7,6 +7,19 @@ use yii\bootstrap\Modal;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
+
+
+if( !empty(\Yii::$app->request->get("r")) )
+{
+    list($mod,$act) = explode("/",\Yii::$app->request->get("r"));
+    unset($mod);
+}else{$act=null;}
+
+if( (\Yii::$app->user->isGuest) && ("land"!=$act) ):
+    echo $this->render('_main_start');
+elseif("land"==$act):
+    //landing page
+elseif(!\Yii::$app->user->isGuest):
 /*
 $this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
 $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -752,3 +765,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 </body>
 </html>
 <?php $this->endPage() ?>
+
+<?php
+endif;
+?>
