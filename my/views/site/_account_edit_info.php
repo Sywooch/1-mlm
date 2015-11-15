@@ -2,6 +2,7 @@
 use yii\widgets\ActiveForm;
 
 $form = ActiveForm::begin();?>
+
     <div class="form-group">
         <?=$form->field(
             $model, 'fn', ["template" => "<label>Имя</label>

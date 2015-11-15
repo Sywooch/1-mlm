@@ -36,10 +36,12 @@ $usrDt = \app\models\Users::find()->select('fn,ln,userpic')
             </a>
         </li>
         <li class="divider"> </li>
+<!--
         <li>
             <a href="page_user_lock_1.html">
                 <i class="icon-lock"></i> Lock Screen </a>
         </li>
+-->
         <li>
             <a href="index.php?r=/site/logout">
                 <i class="icon-key"></i> Выход </a>
