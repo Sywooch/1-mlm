@@ -17,574 +17,163 @@ if( !empty(\Yii::$app->request->get("r")) )
 
 <div class="page-sidebar-wrapper">
     <!-- BEGIN SIDEBAR -->
-    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-    <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
     <div class="page-sidebar navbar-collapse collapse">
         <!-- BEGIN SIDEBAR MENU -->
-        <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
-        <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
-        <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
-        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-        <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
-        <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <ul class="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-            <li class="nav-item start active open">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-home"></i>
-                    <span class="title">МЕНЮ</span>
-                    <span class="selected"></span>
-                    <span class="arrow open"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item start <?= ( null==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php" class="nav-link ">
-                            <i class="icon-bar-chart"></i>
-                            <span class="title">Главная</span>
-                            <span class="selected"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fteam" class="nav-link ">
-                            <i class="icon-bulb"></i>
-                            <span class="title">Команда</span>
-                            <span class="badge badge-success"><?= $cntMemCom ?></span>
-                        </a>
-                    </li>
-                    <!--<li class="nav-item start <?= ( "profile"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fprofile" class="nav-link">
-                    <i class="icon-user"></i>
-                    <span class="title">Профиль off</span>
 
-                </a>
- </li>-->
-                    <li class="nav-item start <?php echo ( "account"==$act ) ? 'active open' : null;
-                    echo ( "help"==$act ) ? 'active open' : null;
-                    ?>">
-                        <a href="index.php?r=site%2Faccount" class="nav-link">
-                    <i class="icon-user"></i>
-                    <span class="title">Профиль</span>
-
-                </a>
-                    </li>
-                    </li>
-            <li class="nav-item start <?= ( "pricing"==$act ) ? 'active open' : null; ?>">
-                <a href="index.php?r=site%2Fpricing" class="nav-link">
-                    <i class="icon-briefcase"></i>
-                    <span class="title">Тарифы</span>
-
-                </a>
-            </li>
-            </li>
-            <li class="nav-item start <?= ( "landing"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Flanding" class="nav-link">
-                            <i class="icon-user"></i>
-                            <span class="title">Создание страниц</span>
-                            <!---->
-                        </a>
-                    </li>
-            </li>
-                    <!--<li class="nav-item start <?= ( "landing2"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Flanding2" class="nav-link">
-                            <i class="icon-user"></i>
-                            <span class="title">Landing 2</span>
-
-                        </a>
-                    </li>
-                    </li>
-                    <li class="nav-item start <?= ( "landing3"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Flanding3" class="nav-link">
-                            <i class="icon-user"></i>
-                            <span class="title">Landing 3</span>
-
-                        </a>
-                    </li>-->
-
-            </li>
-             <li class="nav-item start <?= ( "mc"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fmc" class="nav-link">
-                            <i class="icon-user"></i>
-                            <span class="title">Мастер Класс</span>
-
-                        </a>
-             </li>
-            </li>
-             <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Ftraining" class="nav-link">
-                            <i class="icon-user"></i>
-                            <span class="title">Обучение</span>
-
-                        </a>
-                    </li>
-            </li>
-             <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fcompany" class="nav-link">
-                            <i class="icon-user"></i>
-                            <span class="title">Компания</span>
-
-                        </a>
-                    </li>
-            </li>
-             <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fnews" class="nav-link">
-                            <i class="icon-user"></i>
-                            <span class="title">Новости</span>
-
-                        </a>
-                    </li>
-            </li>
-                    <!--<li class="nav-item start ">
-                       <a href="index.php?r=site%2Faccount" class="nav-link">
-                           <i class="icon-user"></i>
-                           <span class="title">Профиль 2</span>
-
-                       </a>
-                   </li>
-                   </li>
-                  <li class="nav-item start ">
-                       <a href="index.php?r=site%2Faccount" class="nav-link">
-                           <i class="icon-user"></i>
-                           <span class="title">Профиль 2</span>
-
-                       </a>
-                   </li>
-                   </li>
-                   <li class="nav-item start ">
-                       <a href="index.php?r=site%2Faccount" class="nav-link">
-                           <i class="icon-user"></i>
-                           <span class="title">Профиль 2</span>
-
-                       </a>
-                   </li>-->
-                </ul>
-            </li>
-            <!--<li class="heading">
-                <h3 class="uppercase">Features</h3>
-            </li>
-            <li class="nav-item  ">
+        <li class="nav-item start active open">
+            <a href="index.php?r=site%2Findex" class="nav-link ">
+                <i class="icon-home"></i>
+                <span class="title">Главная</span>
+                <span class="badge badge-success">home</span>
+            </a>
+        </li>
+        <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=site%2Fteam" class="nav-link nav-toggle">
                     <i class="icon-diamond"></i>
                     <span class="title">Команда</span>
+                    <span class="badge badge-success"><?= $cntMemCom ?></span>
+                </a>
+              </li>
 
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="index.php?r=site%2Fteam" class="nav-link ">
-                            <span class="title">Команда</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_general.html" class="nav-link ">
-                            <span class="title">General Components</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_buttons.html" class="nav-link ">
-                            <span class="title">Buttons</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_confirmations.html" class="nav-link ">
-                            <span class="title">Popover Confirmations</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_icons.html" class="nav-link ">
-                            <span class="title">Font Icons</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_socicons.html" class="nav-link ">
-                            <span class="title">Social Icons</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_typography.html" class="nav-link ">
-                            <span class="title">Typography</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_tabs_accordions_navs.html" class="nav-link ">
-                            <span class="title">Tabs, Accordions & Navs</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_timeline.html" class="nav-link ">
-                            <span class="title">Timeline</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_tree.html" class="nav-link ">
-                            <span class="title">Tree View</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <span class="title">Page Progress Bar</span>
 
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="page/ui_page_progress_style_1.html" class="nav-link "> Flash </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="page/ui_page_progress_style_2.html" class="nav-link "> Big Counter </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_blockui.html" class="nav-link ">
-                            <span class="title">Block UI</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_bootstrap_growl.html" class="nav-link ">
-                            <span class="title">Bootstrap Growl Notifications</span>
+        <li class="nav-item start <?php echo ( "account"==$act ) ? 'active open' : null;
+        echo ( "help"==$act ) ? 'active open' : null;
+        ?>">
+            <a href="index.php?r=site%2Faccount" class="nav-link">
+                <i class="icon-user"></i>
+                <span class="title">Профиль</span>
+
+            </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  <?php echo ( "account"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Faccount" class="nav-link ">
+                            <i class="icon-settings"></i>
+                            <span class="title">Настойки аккаунта</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_notific8.html" class="nav-link ">
-                            <span class="title">Notific8 Notifications</span>
+                    <li class="nav-item  <?php echo ( "help"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Fhelp" class="nav-link ">
+                            <i class="icon-settings"></i>
+                            <span class="title">Помощь</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_toastr.html" class="nav-link ">
-                            <span class="title">Toastr Notifications</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_bootbox.html" class="nav-link ">
-                            <span class="title">Bootbox Dialogs</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_alerts_api.html" class="nav-link ">
-                            <span class="title">Metronic Alerts API</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_session_timeout.html" class="nav-link ">
-                            <span class="title">Session Timeout</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_idle_timeout.html" class="nav-link ">
-                            <span class="title">User Idle Timeout</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_modals.html" class="nav-link ">
-                            <span class="title">Modals</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_extended_modals.html" class="nav-link ">
-                            <span class="title">Extended Modals</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_tiles.html" class="nav-link ">
-                            <span class="title">Tiles</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_datepaginator.html" class="nav-link ">
-                            <span class="title">Date Paginator</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/ui_nestable.html" class="nav-link ">
-                            <span class="title">Nestable List</span>
-                        </a>
-                    </li>
+
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-puzzle"></i>
-                    <span class="title">Components</span>
-                    <span class="arrow"></span>
-                </a>
+        <li class="nav-item start <?= ( "pricing"==$act ) ? 'active open' : null; ?>">
+            <a href="index.php?r=site%2Fpricing" class="nav-link">
+                <i class="icon-briefcase"></i>
+                <span class="title">Тарифы</span>
+
+            </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="page/components_date_time_pickers.html" class="nav-link ">
-                            <span class="title">Date & Time Pickers</span>
+                        <a href="index.php?r=site%2Fpricing" class="nav-link ">
+                            <i class="icon-wallet"></i>
+                            <span class="title">Выбор тарифа</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="page/components_color_pickers.html" class="nav-link ">
-                            <span class="title">Color Pickers</span>
+                        <a href="index.php?r=site%2Fpricing2" class="nav-link ">
+                            <i class="icon-wallet"></i>
+                            <span class="title"> Оплата</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_select2.html" class="nav-link ">
-                            <span class="title">Select2 Dropdowns</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_bootstrap_select.html" class="nav-link ">
-                            <span class="title">Bootstrap Select</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_multi_select.html" class="nav-link ">
-                            <span class="title">Multi Select</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_bootstrap_select_splitter.html" class="nav-link ">
-                            <span class="title">Select Splitter</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_typeahead.html" class="nav-link ">
-                            <span class="title">Typeahead Autocomplete</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_bootstrap_tagsinput.html" class="nav-link ">
-                            <span class="title">Bootstrap Tagsinput</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_bootstrap_switch.html" class="nav-link ">
-                            <span class="title">Bootstrap Switch</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_bootstrap_maxlength.html" class="nav-link ">
-                            <span class="title">Bootstrap Maxlength</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_bootstrap_fileinput.html" class="nav-link ">
-                            <span class="title">Bootstrap File Input</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_bootstrap_touchspin.html" class="nav-link ">
-                            <span class="title">Bootstrap Touchspin</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_form_tools.html" class="nav-link ">
-                            <span class="title">Form Widgets & Tools</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_context_menu.html" class="nav-link ">
-                            <span class="title">Context Menu</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_editors.html" class="nav-link ">
-                            <span class="title">Markdown & WYSIWYG Editors</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_code_editors.html" class="nav-link ">
-                            <span class="title">Code Editors</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_ion_sliders.html" class="nav-link ">
-                            <span class="title">Ion Range Sliders</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_noui_sliders.html" class="nav-link ">
-                            <span class="title">NoUI Range Sliders</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/components_knob_dials.html" class="nav-link ">
-                            <span class="title">Knob Circle Dials</span>
-                        </a>
-                    </li>
+
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-settings"></i>
-                    <span class="title">Form Stuff</span>
-                    <span class="arrow"></span>
-                </a>
+        <li class="nav-item start <?= ( "landing"==$act ) ? 'active open' : null; ?>">
+            <a href="index.php?r=site%2Flanding" class="nav-link">
+                <i class="icon-layers"></i>
+                <span class="title">Создание страниц</span>
+
+            </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="page/form_controls.html" class="nav-link ">
-                                        <span class="title">Bootstrap Form
-                                            <br>Controls</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_controls_md.html" class="nav-link ">
-                                        <span class="title">Material Design
-                                            <br>Form Controls</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_icheck.html" class="nav-link ">
-                            <span class="title">iCheck Controls</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_layouts.html" class="nav-link ">
-                            <span class="title">Form Layouts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_editable.html" class="nav-link ">
-                            <span class="title">Form X-editable</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_wizard.html" class="nav-link ">
-                            <span class="title">Form Wizard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_validation.html" class="nav-link ">
-                            <span class="title">Form Validation</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_image_crop.html" class="nav-link ">
-                            <span class="title">Image Cropping</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_fileupload.html" class="nav-link ">
-                            <span class="title">Multiple File Upload</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/form_dropzone.html" class="nav-link ">
-                            <span class="title">Dropzone File Upload</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-briefcase"></i>
-                    <span class="title">Tables</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <span class="title">Static Tables</span>
+                        <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
+                            <i class="icon-layers"></i>
+                            <span class="title">Вариант 1</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item ">
-                                <a href="page/table_static_basic.html" class="nav-link "> Basic Tables </a>
+                                <a href="index.php?r=site%2Flanding" class="nav-link "> Вариант 1 а </a>
                             </li>
                             <li class="nav-item ">
-                                <a href="page/table_static_responsive.html" class="nav-link "> Responsive Tables </a>
+                                <a href="index.php?r=site%2Flanding" class="nav-link "> Вариант 1 б </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <span class="title">Datatables</span>
+                        <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
+                            <i class="icon-layers"></i>
+                            <span class="title">Вариант 2</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item ">
-                                <a href="page/table_datatables_managed.html" class="nav-link "> Managed Datatables </a>
+                                <a href="page/table_datatables_managed.html" class="nav-link "> Вариант 2 а </a>
                             </li>
                             <li class="nav-item ">
-                                <a href="page/table_datatables_buttons.html" class="nav-link "> Buttons Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="page/table_datatables_colreorder.html" class="nav-link "> Colreorder Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_rowreorder.html" class="nav-link "> Rowreorder Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="page/table_datatables_scroller.html" class="nav-link "> Scroller Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="page/table_datatables_fixedheader.html" class="nav-link "> FixedHeader Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="page/table_datatables_responsive.html" class="nav-link "> Responsive Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="page/table_datatables_editable.html" class="nav-link "> Editable Datatables </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="page/table_datatables_ajax.html" class="nav-link "> Ajax Datatables </a>
+                                <a href="page/table_datatables_buttons.html" class="nav-link "> Вариант 2 б </a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="?p=" class="nav-link nav-toggle">
-                    <i class="icon-wallet"></i>
-                    <span class="title">Portlets</span>
-                    <span class="arrow"></span>
-                </a>
+        <li class="nav-item start <?= ( "mc"==$act ) ? 'active open' : null; ?>">
+            <a href="index.php?r=site%2Fmc" class="nav-link">
+                <i class="icon-user"></i>
+                <span class="title">Мастер Класс</span>
+
+            </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="page/portlet_boxed.html" class="nav-link ">
-                            <span class="title">Boxed Portlets</span>
+                        <a href="index.php?r=site%2Fmc" class="nav-link ">
+                            <span class="title">Создание МК</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="page/portlet_light.html" class="nav-link ">
-                            <span class="title">Light Portlets</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/portlet_solid.html" class="nav-link ">
-                            <span class="title">Solid Portlets</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/portlet_ajax.html" class="nav-link ">
-                            <span class="title">Ajax Portlets</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page/portlet_draggable.html" class="nav-link ">
-                            <span class="title">Draggable Portlets</span>
+                        <a href="index.php?r=site%2Fmc" class="nav-link ">
+                            <span class="title">Архив МК</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-bar-chart"></i>
-                    <span class="title">Charts</span>
-                    <span class="arrow"></span>
-                </a>
+        <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
+            <a href="index.php?r=site%2Ftraining" class="nav-link">
+                <i class="icon-folder"></i>
+                <span class="title">Обучение</span>
+
+            </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="page/charts_amcharts.html" class="nav-link ">
-                            <span class="title">amChart</span>
+                            <i class="icon-folder"></i>
+                            <span class="title">Бесплатное</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
                         <a href="page/charts_flotcharts.html" class="nav-link ">
-                            <span class="title">Flotchart</span>
+                            <i class="icon-folder"></i>
+                            <span class="title">Курсы</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
                         <a href="page/charts_flowchart.html" class="nav-link ">
-                            <span class="title">Flowchart</span>
+                            <i class="icon-folder"></i>
+                            <span class="title">Книги</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-pointer"></i>
-                    <span class="title">Maps</span>
-                    <span class="arrow"></span>
-                </a>
+        <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
+            <a href="index.php?r=site%2Fcompany" class="nav-link">
+                <i class="icon-pointer"></i>
+                <span class="title">Компания</span>
+
+            </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="page/maps_google.html" class="nav-link ">
@@ -598,10 +187,47 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
+        <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
+            <a href="index.php?r=site%2Fnews" class="nav-link">
+                <i class="icon-user"></i>
+                <span class="title">Новости</span>
+
+            </a>
+        </li>
+
             <li class="heading">
-                <h3 class="uppercase">Layouts</h3>
+                <h3 class="uppercase">В ближайшее время</h3>
             </li>
-            <li class="nav-item  ">
+
+            <li class="nav-item start <?= ( "calendar"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Fcalendar" class="nav-link nav-toggle">
+                    <i class="icon-calendar"></i>
+                    <span class="title">Календарь</span>
+                    <span class="badge badge-danger">скоро</span>
+                </a>
+            </li>
+
+            <li class="nav-item start <?= ( "todo"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Ftodo" class="nav-link nav-toggle">
+                    <i class="icon-check"></i>
+                    <span class="title">Мои задачи</span>
+                    <span class="badge badge-danger">скоро</span>
+                </a>
+            </li>
+
+            <li class="nav-item start <?= ( "inbox"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Finbox" class="nav-link nav-toggle">
+                    <i class="icon-envelope-open"></i>
+                    <span class="title">Мои Сообщения</span>
+                    <span class="badge badge-danger">скоро</span>
+                </a>
+            </li>
+
+
+
+
+
+            <!--<li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-layers"></i>
                     <span class="title">Page Layouts</span>
@@ -1002,7 +628,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                             <i class="icon-bar-chart"></i> Item 3 </a>
                     </li>
                 </ul>
-            </li>-->
+            </li>--->
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

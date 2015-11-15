@@ -292,6 +292,22 @@ class SiteController extends Controller
         else{return $this->goHome();}
     }
 
+    public function actionCalendar()
+    {
+        return $this->render('calendar');
+    }
+
+    public function actionTodo()
+    {
+        return $this->render('todo');
+    }
+
+
+    public function actionInbox()
+    {
+        return $this->render('inbox');
+    }
+
     public function actionPricing()
     {
         //this->chkusr();

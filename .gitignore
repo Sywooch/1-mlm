@@ -1,3 +1,4 @@
+.idea/*
 my/.idea/*
 my/config/auth.php
 my/config/db.php

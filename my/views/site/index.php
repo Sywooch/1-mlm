@@ -31,7 +31,7 @@ $this->title = '1-mlm';
     <div class="col-md-12">
         <div class="m-heading-1 border-green m-bordered">
             <h3>Добро пажаловать,<b> <?php echo $usrDt->fn,' ',$usrDt->ln; ?> </b></h3>
-            <p> Вы легко и быстро сможете сами разобраться, как работает Система, посмотрев короткий видеообзор. </p>
+
             <p> Ваш кольсунтальтант: [имя пользователя который пригласил]
                 <a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank"> [ кнопка на профиль спонсора ]</a>
             </p>
