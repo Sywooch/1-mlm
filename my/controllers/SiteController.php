@@ -246,6 +246,22 @@ class SiteController extends Controller
         return $this->render('help');
     }
 
+    public function actionCalendar()
+    {
+        return $this->render('calendar');
+    }
+
+    public function actionTodo()
+    {
+        return $this->render('todo');
+    }
+
+
+    public function actionInbox()
+    {
+        return $this->render('inbox');
+    }
+
     public function actionPricing()
     {
         return $this->render('pricing');

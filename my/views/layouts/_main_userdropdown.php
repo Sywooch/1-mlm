@@ -16,22 +16,22 @@ $usrDt = \app\models\Users::find()->select('fn,ln,userpic')
             </a>
     <ul class="dropdown-menu dropdown-menu-default">
         <li>
-            <a href="index.php?r=site%2Fprofile">
-                <i class="icon-user"></i> My Profile </a>
+            <a href="index.php?r=site%2Faccount">
+                <i class="icon-user"></i> Мой профиль </a>
         </li>
         <li>
-            <a href="app_calendar.html">
-                <i class="icon-calendar"></i> My Calendar </a>
+            <a href="index.php?r=site%2Fcalendar">
+                <i class="icon-calendar"></i> Мой календарь </a>
         </li>
         <li>
-            <a href="app_inbox.html">
-                <i class="icon-envelope-open"></i> My Inbox
+            <a href="index.php?r=site%2Finbox">
+                <i class="icon-envelope-open"></i> Сообщения
                 <span class="badge badge-danger"> 3 </span>
             </a>
         </li>
         <li>
-            <a href="app_todo_2.html">
-                <i class="icon-rocket"></i> My Tasks
+            <a href="index.php?r=site%2Ftodo">
+                <i class="icon-rocket"></i> Мои задания
                 <span class="badge badge-success"> 7 </span>
             </a>
         </li>
@@ -42,7 +42,7 @@ $usrDt = \app\models\Users::find()->select('fn,ln,userpic')
         </li>
         <li>
             <a href="index.php?r=/site/logout">
-                <i class="icon-key"></i> Log Out </a>
+                <i class="icon-key"></i> Выход </a>
         </li>
     </ul>
 </li>
