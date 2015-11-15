@@ -10,6 +10,12 @@ $usrDt = \app\models\Users::find()->select('fn,ln,userpic')
 
 $this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
 
+$js =<<<'SCRIPT'
+$(document).ready(function() {
+    $('#sample_1').DataTable();
+} );
+SCRIPT;
+
 $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -17,6 +23,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 $this->registerJsFile('/my/web/metronic/theme/assets/global/scripts/datatable.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/metronic/theme/assets/global/plugins/datatables/datatables.min.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/metronic/theme/assets/global/plugins/adtatable/plugins/bootstrap/datatables.bootstrap.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJs($js);
 $css = <<<'STYLE'
 .tbl-header *
 {
@@ -30,6 +37,8 @@ $css = <<<'STYLE'
 }
 STYLE;
 $this->registerCss($css);
+$this->registerCssFile('/my/web/metronic/theme/assets/global/plugins/datatables/datatables.min.css');
+$this->registerCssFile('/my/web/metronic/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css');
 
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
@@ -45,7 +54,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php echo GridView::widget([
             'dataProvider'  =>  $dataProvider,
             'tableOptions'  =>  [
-                'class'     =>  'table table-striped table-bordered table-hover'
+                'class'     =>  'table table-striped table-bordered table-hover',
+                'id' => 'sample_1'
             ],
             'rowOptions'   =>  [
                 'style'    =>  'text-align: center; background-color:'
@@ -67,11 +77,13 @@ $this->params['breadcrumbs'][] = $this->title;
             */
                 [
                     'attribute' =>  'fn',
-                    'label'     =>  'Имя'
+                    'label'     =>  'Имя',
+                    'options' => ['style' => 'width: 220px; max-width: 220px;']
                 ],
                 [
                     'attribute' =>  'ln',
-                    'label'     =>  'Фамилия'
+                    'label'     =>  'Фамилия',
+                    'options' => ['style' => 'width: 220px; max-width: 220px;']
                 ],
                 /*[
                     'attribute' =>  'city',
@@ -84,6 +96,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'header' => 'Действия',
                     'format' => 'raw',
+                    'options' => ['style' => 'width: 100px; max-width: 100px;'],
                     'value'  =>  function($dataProvider)
                     {
                         return $this->render('_team_edit', [
