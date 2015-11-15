@@ -6,20 +6,20 @@ $usrDt = \app\models\Users::find()->select('fn,ln,userpic')
     ->andWhere(['service' => $identity["service"]])
     ->one();
 
-$this->registerJsFile('/my/web/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 
-$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
-$this->registerJsFile("/my/web/mertonic/global/plugins/select2/js/select2.full.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/my/web/mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/my/web/mertonic/global/plugins/jquery-validation/js/additional-methods.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("/mertonic/global/plugins/select2/js/select2.full.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/additional-methods.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
 
-$this->registerJsFile("/my/web/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/my/web/mertonic/pages/scripts/form-wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("/mertonic/pages/scripts/form-wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
 $this->registerJsFile('http://www.youtube.com/player_api');
 

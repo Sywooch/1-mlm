@@ -8,7 +8,7 @@ $usrDt = \app\models\Users::find()->select('fn,ln,userpic')
     ->andWhere(['service' => $identity["service"]])
     ->one();
 
-$this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
+$this->registerJsFile('/mertonic/global/scripts/app.js');
 
 $js =<<<'SCRIPT'
 $(document).ready(function() {
@@ -16,13 +16,13 @@ $(document).ready(function() {
 } );
 SCRIPT;
 
-$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/metronic/theme/assets/global/scripts/datatable.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/metronic/theme/assets/global/plugins/datatables/datatables.min.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/metronic/theme/assets/global/plugins/adtatable/plugins/bootstrap/datatables.bootstrap.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/metronic/theme/assets/global/scripts/datatable.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/metronic/theme/assets/global/plugins/datatables/datatables.min.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/metronic/theme/assets/global/plugins/adtatable/plugins/bootstrap/datatables.bootstrap.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJs($js);
 $css = <<<'STYLE'
 .tbl-header *
@@ -38,8 +38,8 @@ $css = <<<'STYLE'
 }
 STYLE;
 $this->registerCss($css);
-$this->registerCssFile('/my/web/metronic/theme/assets/global/plugins/datatables/datatables.min.css');
-$this->registerCssFile('/my/web/metronic/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css');
+$this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/datatables.min.css');
+$this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css');
 
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
