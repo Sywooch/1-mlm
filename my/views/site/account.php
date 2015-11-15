@@ -107,13 +107,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="col-md-12">
 									
                             <div class="portlet light bordered">
-                                <div class="portlet-title">
+                                <div class="portlet-title tabbable-line">
                                     <div class="caption">
                                         <i class="icon-settings"></i>
-                                        <span class="caption-subject font-purple-soft bold uppercase">Настройки профиля</span>
+                                        <span class="caption-subject font-purple-soft bold uppercase" style="font-size: 14px;">Настройки профиля</span>
                                     </div>
-                                </div>
-                                <div class="portlet-body">
                                     <ul class="nav nav-tabs">
                                         <li class="active">
                                             <a href="#tab_1_1" data-toggle="tab"> Персональные данные </a>
@@ -121,10 +119,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <li>
                                             <a href="#tab_1_2" data-toggle="tab"> Изменение аватара </a>
                                         </li>
-										<li>
+                                        <li>
                                             <a href="#tab_1_3" data-toggle="tab"> Социальные Аккаунты </a>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="portlet-body">
+
                                     <div class="tab-content">
                                         <div class="tab-pane fade active in" id="tab_1_1">
                                             <?php

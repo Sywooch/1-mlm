@@ -15,7 +15,7 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?
                  <span class="fileinput-exists"> Изменить </span>
                 <?=
                     $form->field(
-                        $model, 'userpic', ["template" => "\n{input}\n{hint}\n{error}</div>"]
+                        $model, 'userpic', ["template" => "<div>\n{input}\n{hint}\n{error}</div>"]
                     )->fileInput();
                 ?>
                 <!--

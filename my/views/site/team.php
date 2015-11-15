@@ -28,6 +28,7 @@ $css = <<<'STYLE'
 .tbl-header *
 {
     text-align: center;
+    height: 25px !important;
 }
 
 .dt-buttons {
