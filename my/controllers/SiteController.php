@@ -177,6 +177,25 @@ class SiteController extends Controller
             if(\Yii::$app->request->post()){
 /*****************************/
                 $p = \Yii::$app->request->post();
+                if( 'soc'==$p["Users"]["formtype"] )
+                {
+                    if ($model->count() > 0)
+                    {
+                        \Yii::$app->db->createCommand("
+                                UPDATE `users` SET
+                                    `active`='" . date("Y-m-d") . "',
+                                    `facebook`='{$p["Users"]["facebook"]}',
+                                    `vkontakte`='{$p["Users"]["vkontakte"]}',
+                                    `linkedin`='{$p["Users"]["linkedin"]}',
+                                    `googleplus`='{$p["Users"]["googleplus"]}',
+                                WHERE
+                                    `socid`='{$identity["id"]}'
+                                AND
+                                    `service` = '{$identity["service"]}'
+                        ")
+                        ->execute();
+                    }
+                }
                  if( 'picture'==$p["Users"]["formtype"] ) {
                      $upf = new Users();
                      $upf->userpic = UploadedFile::getInstance($upf, 'userpic');
@@ -186,7 +205,7 @@ class SiteController extends Controller
                              ->saveAs(Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . 'imgs' . DIRECTORY_SEPARATOR . $flname);
                          \Yii::$app->db->createCommand("
                                         UPDATE `users` SET
-                                            `active`='" . date("Y-m-d") . "',
+                                            `active`='".date("Y-m-d")."',
                                             `userpic`='".Yii::getAlias('@web')."/imgs/{$flname}'
                                         WHERE
                                             `socid`='{$identity["id"]}'
@@ -201,12 +220,14 @@ class SiteController extends Controller
                     if ($model->count() > 0) {
                         \Yii::$app->db->createCommand("
                                 UPDATE `users` SET
-                                    `active`='" . date("Y-m-d") . "',
+                                    `active`='".date("Y-m-d")."',
                                     `fn`='{$p["Users"]["fn"]}',
                                     `ln`='{$p["Users"]["ln"]}',
                                     `email`='{$p["Users"]["email"]}',
                                     `mobile`='{$p["Users"]["mobile"]}',
                                     `skype`='{$p["Users"]["skype"]}',
+                                    `city`='{$p["Users"]["city"]}',
+                                    `country`='{$p["Users"]["country"]}',
                                     `purse`='{$p["Users"]["purse"]}',
                                     `rating`='{$p["Users"]["rating"]}'
                                 WHERE
@@ -220,7 +241,8 @@ class SiteController extends Controller
             }
 
             $query3=new \yii\db\Query();
-            $usrDt=$query3->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt, u.active AS active, l.title AS level, u.userpic AS userpic')
+            $usrDt=$query3->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt,
+                u.active AS active, l.title AS level, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
                 ->innerJoin(Levels::tableName().' l','l.id = u.level')
                 ->where(['u.socid' => $identity["id"]])
@@ -243,46 +265,78 @@ class SiteController extends Controller
 
     public function actionHelp()
     {
-        return $this->render('help');
+        //this->chkusr();
+        if (!\Yii::$app->user->isGuest){
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+
+            $query3=new \yii\db\Query();
+            $usrDt=$query3->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt,
+                u.active AS active, l.title AS level, u.userpic AS userpic')
+                ->from([Users::tableName().' u'])
+                ->innerJoin(Levels::tableName().' l','l.id = u.level')
+                ->where(['u.socid' => $identity["id"]])
+                ->andWhere(['u.service' => $identity["service"]])->one();
+
+            $query5=new \yii\db\Query();
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.userpic AS userpic')
+                ->from([Users::tableName().' u'])
+                ->where(['u.ref' => $usrDt["refdt"]])
+                ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
+
+
+            return $this->render('help', [
+                'usrDt'=> $usrDt,
+                'lastFive'=>$lastFive
+            ]);
+        }
+        else{return $this->goHome();}
     }
 
     public function actionPricing()
     {
+        //this->chkusr();
         return $this->render('pricing');
     }
 
     public function actionLanding()
     {
+        //this->chkusr();
         return $this->render('landing');
     }
 
     public function actionLanding2()
     {
+        //this->chkusr();
         return $this->render('landing2');
     }
 
     public function actionLanding3()
     {
+        //this->chkusr();
         return $this->render('landing3');
     }
 
     public function actionMc()
     {
+        //this->chkusr();
         return $this->render('mc');
     }
 
     public function actionTraining()
     {
+        //this->chkusr();
         return $this->render('training');
     }
 
     public function actionCompany()
     {
+        //this->chkusr();
         return $this->render('company');
     }
 
     public function actionNews()
     {
+        //this->chkusr();
         return $this->render('news');
     }
 /*

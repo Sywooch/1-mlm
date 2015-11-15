@@ -37,6 +37,23 @@ $form = ActiveForm::begin();?>
                             <i class=\"fa fa-skype\"></i>\n{input}\n{hint}\n{error}</div>"])
             ->textInput(['placeholder' => 'Логин skype',"class"=>"form-control"]); ?>
     </div>
+
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'city', ["template" => "<label>Город</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+        )->textInput(["class"=>"form-control"]); ?>
+    </div>
+
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'country', ["template" => "<label>Страна</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+        )->textInput(["class"=>"form-control"]); ?>
+    </div>
+
     <div class="form-group">
          <?=$form->field(
             $model, 'purse', ["template" => "<label>Ваш номер кошелька</label>

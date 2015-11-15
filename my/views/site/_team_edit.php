@@ -4,7 +4,7 @@
 'toggleButton' =>
     [
         'tag' => 'button',
-        'class' => 'btn btn-primary glyphicon glyphicon-pencil',
+        'class' => 'btn btn-primary icon-user',
         'label' => '',
     ]
 ]);

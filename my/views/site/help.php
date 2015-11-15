@@ -18,17 +18,23 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="portlet light profile-sidebar-portlet bordered">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class="profile-userpic">
-                                        <img src="#" class="img-responsive" alt=""> </div>
+                                        <img src="<?= $usrDt["userpic"]; ?>" class="img-responsive" alt="">
+                                    </div>
                                     <!-- END SIDEBAR USERPIC -->
                                     <!-- SIDEBAR USER TITLE -->
                                     <div class="profile-usertitle">
-                                        <div class="profile-usertitle-name">имя</div>
-                                        <div class="profile-usertitle-job">  </div>
+                                        <div class="profile-usertitle-name"><?php
+                                            echo $usrDt["fn"],' ',$usrDt["ln"];
+                                            ?></div><br />Дата последнего входа: <?= $usrDt["active"]; ?>
+                                        <br />
+                                        <div class="profile-usertitle-job"> <?php echo $usrDt["level"]; ?> </div>
                                     </div>
                                     <!-- END SIDEBAR USER TITLE -->
                                     <!-- SIDEBAR BUTTONS -->
                                     <div class="profile-userbuttons">
-                                        <button type="button" class="btn btn-circle green btn-sm">тарифный план</button>
+                                        <button
+                                            onClick="window.location.href='index.php?r=site%2Fpricing';"
+                                            type="button" class="btn btn-circle green btn-sm">тарифный план</button>
                                         <button
                                             onClick="if (confirm('Вы уверены, что хотите удалить свой аккаунт?'))
                                                   window.location.href='index.php?r=site%2Fdelusr';"
@@ -72,18 +78,20 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!-- END STAT -->
                                     <div>
                                         <h4 class="profile-desc-title">Ваши партнеры</h4>
-                                        <span class="profile-desc-text"> 5 последных регистраций </span>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-globe"></i>
-                                            <a href="http://www.keenthemes.com">www.keenthemes.com</a>
-                                        </div>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-twitter"></i>
-                                            <a href="http://www.twitter.com/keenthemes/">@keenthemes</a>
-                                        </div>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-facebook"></i>
-                                            <a href="http://www.facebook.com/keenthemes/">keenthemes</a>
+                                        <span class="profile-desc-text"> 5 последных регистраций </span><br /><br />
+                                        <div>
+                                            <?php
+                                            for($i=0;$i<sizeof($lastFive);$i++):
+                                                ?>
+                                                <img alt="user picture" class="img-circle"
+                                                     style="margin-left: 5px;margin-top: -8px;height: 39px;display: inline-block;"
+                                                     src="<?php echo $lastFive[$i]["userpic"];?>">
+                                                <span class="username username-hide-on-mobile"><?php
+                                                    echo $lastFive[$i]["fn"], ' ',$lastFive[$i]["ln"]
+                                                    ?></span>
+                                                <br /><br />
+                                                <?php
+                                            endfor; ?>
                                         </div>
                                     </div>
                                 </div>

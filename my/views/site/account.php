@@ -19,7 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="portlet light profile-sidebar-portlet bordered">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class="profile-userpic">
-                                        <img src="<?= $model->userpic; ?>" class="img-responsive" alt=""> </div>
+                                        <img src="<?= $model->userpic; ?>" class="img-responsive" alt="">
+                                    </div>
                                     <!-- END SIDEBAR USERPIC -->
                                     <!-- SIDEBAR USER TITLE -->
                                     <div class="profile-usertitle">
@@ -32,7 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!-- END SIDEBAR USER TITLE -->
                                     <!-- SIDEBAR BUTTONS -->
                                     <div class="profile-userbuttons">
-                                        <button type="button" class="btn btn-circle green btn-sm">тарифный план</button>
+                                        <button
+                                            onClick="window.location.href='index.php?r=site%2Fpricing';"
+                                            type="button" class="btn btn-circle green btn-sm">тарифный план</button>
                                         <button
                                             onClick="if (confirm('Вы уверены, что хотите удалить свой аккаунт?'))
                                                   window.location.href='index.php?r=site%2Fdelusr';"
@@ -78,6 +81,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                     <!-- END STAT -->
                                     <div>
+                                        <h4 class="profile-desc-title">Ваши партнеры</h4>
+                                        <span class="profile-desc-text"> 5 последных регистраций </span><br /><br />
                                     <?php
                                          for($i=0;$i<sizeof($lastFive);$i++):
                                     ?>
@@ -89,8 +94,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         ?></span>
                                         <br /><br />
                                     <?php
-                                         endfor;
-?>
+                                         endfor; ?>
                                     </div>
                                 </div>
                                 <!-- END PORTLET MAIN -->
@@ -119,7 +123,6 @@ $this->params['breadcrumbs'][] = $this->title;
 										<li>
                                             <a href="#tab_1_3" data-toggle="tab"> Социальные Аккаунты </a>
                                         </li>
-                                        
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade active in" id="tab_1_1">
@@ -135,37 +138,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 ]); ?>
                                         </div>
                                         <div class="tab-pane fade" id="tab_1_3">
-                                             <form action="#">
-                                                 <div class="form-group">
-                                                            <table class="table table-light table-hover">
-                                                                <tr>
-                                                                    <td> Enim eiusmod high life accusamus terry richardson ad squid wolf moon </td>
-                                                                    <td>
-                                                                        <label class="uniform-inline">
-                                                                            <input type="checkbox" value="" /> Yes </label>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> Enim eiusmod high life accusamus terry richardson ad squid wolf moon </td>
-                                                                    <td>
-                                                                        <label class="uniform-inline">
-                                                                            <input type="checkbox" value="" /> Yes </label>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> Enim eiusmod high life accusamus terry richardson ad squid wolf moon </td>
-                                                                    <td>
-                                                                        <label class="uniform-inline">
-                                                                            <input type="checkbox" value="" /> Yes </label>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <div class="margin-top-10">
-                                                                <a href="javascript:;" class="btn red"> Сохранить изменения </a>
-                                                                <a href="javascript:;" class="btn default"> Отменить </a>
-                                                            </div>
-                                                 </div>
-                                             </form>
+                                            <?php
+                                            echo $this->render('_account_edit_soc', [
+                                                'model' => $model
+                                            ]); ?>
                                         </div>
                                     </div>
                                 </div>

@@ -13,7 +13,7 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['level', 'c', 'city', 'country', 'days', 'team',
+            [['level', 'c', 'days', 'team',
                 'rating', 'clicks', 'metrika', 'friends', 'class'], 'integer'],
             [['regdate', 'paydate', 'active', 'done', 'sent', 'added'], 'safe'],
             [['money', 'paid', 'earned', 'bonus', 'profit'], 'number'],
@@ -24,6 +24,9 @@ class Users extends \yii\db\ActiveRecord
             [['api'], 'string', 'max' => 2],
         //    [['ref'], 'string', 'max' => 20],/*10*/
             [['purse', 'site'], 'string', 'max' => 30],
+
+            [['city', 'country'], 'string', 'max' => 30],
+
             [['reglink'], 'string', 'max' => 75],
             [['ytch'], 'string', 'max' => 24],
             [['playlist'], 'string', 'max' => 34],
