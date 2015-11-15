@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,700" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1-й МЛМ Ресурс</title>
+    <meta name="description" content="Startup Landing Page">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="shortcut icon" href="s/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="s/img/favicon.ico" type="image/x-icon">
+    <!--<link href="s/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="s/css/font-awesome.min.css" rel="stylesheet">
+    <link href="s/css/magnific-popup.css" rel="stylesheet">
+    <link href="s/css/main.css" rel="stylesheet">
+    <style>
+        .col-md-offset-4{margin-left: 0% !important;}
+        .container {
+            padding-right: 0px !important;;
+            padding-left: 0px !important;;
+        }
+        .modalDialog {
+            position: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 99999;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;
+            display: none;
+            pointer-events: none;
+        }
+        .modalDialog:target {
+            display: block;
+            pointer-events: auto;
+        }
+        .modalDialog > div {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+            border-radius: 10px;
+            background: #fff;
+            background: -moz-linear-gradient(#fff, #505c99);
+            background: -webkit-linear-gradient(#fff, #505c99);
+            background: -o-linear-gradient(#fff, #505c99);
+
+        }
+        .close {
+            background: #606061;
+            color: #FFFFFF;
+            line-height: 25px;
+            position: absolute;
+            right: -12px;
+            text-align: center;
+            top: -10px;
+            width: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+        }
+        .close:hover { background: #00d9ff; }
+    </style>
+    <style>
+
+        .socbtn.facebook-btn {
+            background-color: #38559c;
+        }
+
+        .socbtn.googleplus-btn {
+            background-color: #d13b20;
+        }
+        .socbtn.vkontakte-btn {
+            background-color: #466fa1;
+        }
+        .socbtn.linkedin-btn {
+            background-color: #4875b4;
+        }
+        .socbtn, .socbtn:hover {
+            display: block;
+            font-size: 14px;
+            line-height: 30px;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            margin: 0px 0px 10px 0px;
+            background-color: #eeeeee;
+            transition: all 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+<!-- BEGIN LOGIN BOX *****************************************************************-->
+
+<div class="modal fade" id="modal-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title" id="myModalLabel"><span>Вход и Регистрация -  Используя социальные сети</span></h5>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!--<h5 class="col-md-12 wl"><span>Используя социальные сети</span></h5>-->
+                    <div data-ulogin-inited="1446737975834" class="col-md-12 wl" id="uLogin1" data-ulogin="lang=ru;display=buttons;fields=first_name,last_name,email,phone,photo,photo_big,city,country;providers=facebook,twitter,vkontakte,odnoklassniki,mailru,googleplus;optional=phone;hidden=;redirect_uri=;receiver=http%3A%2F%2Fjoinetwork.ru%2Fxd_custom.html;callback=LoginAutorizer">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <a style="" href="javascript:void(0)"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=facebook'" class="socbtn facebook-btn" data-uloginbutton="facebook"><span><img src="s/img/facebook-btn.png" width="25" ></span>Facebook</a>
+
+                            <a style="" href="javascript:void(0)"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=google'" class="socbtn googleplus-btn" data-uloginbutton="googleplus"><span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+</a>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <a style="" href="javascript:void(0)"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=vkontakte'" class="socbtn vkontakte-btn" data-uloginbutton="vkontakte"><span><img src="s/img/vkontakte-btn.png" width="25" ></span>Vkontakte</a>
+                            <a href="javascript:void(0)"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=linkedin_oauth2'" class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki"><span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span>Закрыть</span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END LOGIN BOX *****************************************************************-->
+<!--hero section-->
+
+<header class="hero-section">
+
+    <!--navigation-->
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href=""><img class="logo-nav" alt="logo" src="s/img/logo-nav.png"><img class="logo-head" alt="logo" src="s/img/logo-head.png"></a> </div>
+            <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+                <ul class="nav navbar-nav nav-left">
+                    <li><a href="#features">преимущества</a></li>
+                    <li><a href="#reviews">отзывы</a></li>
+                    <li><a href="#pricing">прайс</a></li>
+                    <li><a href="http://blog.1-mlm.com">блог</a></li>
+                    <!--<li><a href="#contact">Contact</a></li>-->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="#modal" data-toggle="modal" data-target="#modal-1"><i class="fa fa-sign-in"></i> вход</a></li>
+                    <!--<li><a  class="btn" href="javascript:void(0)"
+                           onclick="location.href='#openModal'">регистрация</a></li>-->
+                    <li><a class="btn" href="#modal" data-toggle="modal" data-target="#modal-1">регистрация</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--navigation end-->
+    <!--Приветственное сообщение-->
+    <section class="container text-center welcome-message">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>1-й млм ресурс</h1>
+                <h2>Автоматизация бизнеса на 80%</h2>
+                <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
+                <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
+                                        data-target="#modal-1">попробуйте бесплатно</a>
+                    <p>уже используют <span class="total-number-1">0</span> пользователей</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Приветственное сообщение end-->
+
+</header>
+
+<!--hero section end-->
+
+<!--MLM Компании on-->
+
+<section class="featured-on section-spacing text-center">
+    <div class="container">
+        <header class="section-header">
+            <h3>дистрибьюторы компаний использующие 1 mlm</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="featured-sites">
+                    <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100" ></a> </li>
+                    <li><a href="" title="Site Name"><img src="s/img/site-2.png" alt="site" height="50" width="100"></a></li>
+                    <li><a href="" title="Site Name"><img src="s/img/site-3.png" alt="site" height="50" width="100"></a></li>
+                    <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--MLM Компании on end-->
+
+<!--benefits-->
+
+<section class="benefits section-spacing text-center" id="features">
+    <div class="container">
+        <header class="section-header">
+            <h2>Кому будет полезно использовать 1 mlm ресурс?</h2>
+            <h3></h3>
+        </header>
+        <div class="row">
+            <div class="col-sm-4"> <img src="s/img/benefits-1.png" alt="benefits of product"><br>
+                <h4>Инфо бизнесмены</h4>
+                <p>Полный набор инструментов для ведения инфо бизнеса в одном месте.</p>
+            </div>
+            <div class="col-sm-4"> <img src="s/img/benefits-2.png" alt="benefits of product">
+                <h4>"Сетевики"</h4>
+                <p>Млм предпримематели смогут комфортно строить и обучаьть свою команду.</p>
+            </div>
+            <div class="col-sm-4"> <img src="s/img/benefits-3.png" alt="benefits of product">
+                <h4>Интернет предпринематели</h4>
+                <p>Смогут быстро настроить и продвигать свои товары или услуги.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--benefits end-->
+
+<!--Features-->
+
+<div class="features section-spacing">
+    <div class="container">
+
+        <!--feature 1-->
+
+        <div class="row">
+            <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-1.png" alt="feature"> </div>
+            <div class="col-md-5 col-md-pull-7">
+                <article>
+                    <h2>Идея 1 mlm</h2>
+                    <p>Предоставить современную профессиональную маркетинговую систему для маштабного развития и автоматизации сетевого и партнёрского бизнеса, используя эффективные Интернет инструменты совместно с обучающими программами для максимального освобождения Вашего времени. </p>
+                    <ul>
+                        <li>Простота настройки</li>
+                        <li>Удобство использования</li>
+                        <li>Предсказуемый Результат</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+
+        <!--feature 1 end-->
+
+        <!--feature 2-->
+        <div class="row">
+            <div class="col-md-7 text-center"> <img src="s/img/feature-2.png" alt="feature"> </div>
+            <div class="col-md-5">
+                <article>
+                    <h2>Как работает система?</h2>
+                    <p>Aвтоматизация Вашего бизнеса благодаря маркетинговой системе  происходит в три этапа. Единожды правильно настроенная система способна освободить 80% Вашего времени, которое уходит на работу с командой, увеличить темпы роста Вашей структуры! </p>
+                    <ul>
+                        <li>Настройка</li>
+                        <li>Подключение</li>
+                        <li>Дупликация</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <!--feature 2 end-->
+
+        <!--feature 3-->
+        <div class="row">
+            <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-3.png" alt="feature"> </div>
+            <div class="col-md-5 col-md-pull-7">
+                <article>
+                    <h2>Почему  Вам понравится 1 mlm?</h2>
+                    <p>Важные преимущества нашей системы: </p>
+                    <ul>
+                        <li>Для начала не нужны технические знания</li>
+                        <li>У Вас есть несколько наставников</li>
+                        <li>Первые 15 дней использование бесплатно</li>
+                        <li>Не нужны большие финансовые вложения</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <!--feature 3 end-->
+    </div>
+</div>
+
+<!--Features end-->
+
+<!--Video section-->
+
+<section class="video-tour text-center">
+    <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-tour"><img src="s/img/play-btn-vs.png" alt="play"></a>
+        <!--<h2>Video 1 mlm</h2>-->
+    </div>
+
+    <!--HTML5 Video-->
+    <video autoplay loop muted id="bgvid" poster="s/video/poster.jpg">
+        <source src="s/video/vb.mp4" type="video/mp4">
+        <source src="s/video/vb.webm" type="video/webm">
+    </video>
+    <!--HTML5 Video end-->
+
+</section>
+
+<!--Video section end-->
+
+<!--Tour-->
+
+<section class="tour section-spacing text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 center-block">
+                <h2>Приступить к использованию <a
+                        class="btn" href="#modal" data-toggle="modal" data-target="#modal-1"
+                        >пройдите регистрацию <i class="fa fa-arrow-right"></i></a></h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Tour end-->
+
+<!--reviews-->
+
+<section class="reviews section-spacing" id="reviews">
+    <div class="container">
+        <header class="section-header text-center">
+            <h2>Отзывы от наших пользователей</h2>
+            <h3>Что наши пользователи говорят о сервисе...</h3>
+        </header>
+        <div class="row">
+            <div class="col-sm-4">
+
+                <!--review 1-->
+
+                <figure class="text-center"><img src="s/img/review-1.jpg" alt="face" class="img-circle"> </figure>
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
+                    <cite>— Ashley Doe, CEO Abc Organisation</cite> </blockquote>
+
+                <!--review 1 end-->
+
+            </div>
+            <div class="col-sm-4">
+
+                <!--review 2-->
+
+                <figure class="text-center"><img src="s/img/review-2.jpg" alt="face" class="img-circle"> </figure>
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
+                    <cite>— John Doe, CEO Abc Organisation</cite> </blockquote>
+
+                <!--review 2 end-->
+
+            </div>
+            <div class="col-sm-4">
+
+                <!--review 3-->
+
+                <figure class="text-center"><img src="s/img/review-3.jpg" alt="face" class="img-circle"> </figure>
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
+                    <cite>— Michael Doe, CEO Xyz Organisation</cite> </blockquote>
+
+                <!--review 3 end-->
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--reviews end-->
+
+<!--Pricing-->
+
+<section class="pricing section-spacing text-center" id="pricing">
+    <div class="container">
+        <header class="section-header">
+            <h2>Отличный Сервис по цене чашки кофе )</h2>
+            <h3>Бесплатная регистрация. 15 дней бесплатной пробной версии. Не нужна кредитная карта.</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+
+                <!--PRICE TABLE-->
+                <div class="plan">
+                    <div class="plan-details">
+                        <div class="header">
+                            <h4>BASIC</h4>
+                        </div>
+                        <div class="price"> <span class="currency">$</span><span class="price-amount">2</span><span class="period">/ месяц</span> </div>
+                        <ul class="plan-features">
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>1</span> Комания</li>
+                        </ul>
+                    </div>
+                    <div class="buy-button">  <!--<a class="btn" href="#">выбрать</a>-->
+                        <p>Идеальное решение для новичков</p>
+                    </div>
+                </div>
+                <!--PRICE TABLE END-->
+
+                <!--PRICE TABLE-->
+                <div class="plan">
+                    <div class="plan-details">
+                        <div class="header">
+                            <h4>PREMIUM</h4>
+                        </div>
+                        <div class="price"> <span class="currency">$</span><span class="price-amount">10</span><span class="period">/ месяц</span> </div>
+                        <ul class="plan-features">
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp; <span>5</span> Компаний</li>
+                        </ul>
+                    </div>
+                    <div class="buy-button"> <!--<a class="btn" href="#">выбрать</a>-->
+                        <p>Подойдет настоящим Лидерам</p>
+                    </div>
+                </div>
+                <!--PRICE TABLE END-->
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Pricing end-->
+
+<!--cta section-->
+
+<section class="cta-section section-spacing text-center">
+    <div class="container">
+        <header class="section-header">
+            <h2>Попробуйте запустить сегодня!</h2>
+            <h3>И получите <strong>сотни новых партнеров</strong> используя наши удивительные инструменты.</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-12"> <a class="btn" href="#modal" data-toggle="modal" data-target="#modal-1">Начать сейчас!</a>
+                <p>Есть вопрос?  &nbsp;<a href="skype:support.mlm?add" title="Позвонить Сейчас? Просто Кликните Здесь!" ><span style="background-color: #ffff00;">   &nbsp;skype: support.mlm &nbsp;</span> </a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--cta section end-->
+
+<!--Team-->
+
+<!--Team end-->
+
+
+<!--sub-form-->
+<section class="sub-form section-spacing text-center">
+    <div class="container">
+        <header class="section-header">
+            <h2>Подпишитесь на нашу рассылку</h2>
+            <h3>Подписаться на ежемесячные обновления продуктов и эксклюзивные предложения </h3>
+        </header>
+        <div class="row">
+            <div class="col-md-6 center-block col-sm-11">
+                <form id="mc-form">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Email Address" required id="mc-email">
+            <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">Подписаться <i class="fa fa-envelope"></i> </button>
+            </span> </div>
+                    <label for="mc-email" id="mc-notification"></label>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--sub-form end-->
+
+<!--site-footer-->
+<footer class="site-footer section-spacing text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="footer-links"><a href="">Terms of Use</a> <a href="">Privacy Policy</a></p>
+            </div>
+            <div class="col-md-4"> <small>&copy; 2015 1 mlm. все для вашего бизнеса.</small></div>
+            <div class="col-md-4">
+                <!--social-->
+
+                <ul class="social">
+                    <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                </ul>
+
+                <!--social end-->
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!--site-footer end-->
+<link href="s/css/modal_dialog.css" rel="stylesheet">
+<script src="s/js/modal_dialog.js"></script>
+
+<!--<script src="s/js/jquery-2.1.4.min.js"></script>
+<script src="s/js/bootstrap.min.js"></script> -->
+<script src="s/js/waypoints.min.js"></script>
+<script src="s/js/jquery.animateNumber.min.js"></script>
+<script src="s/js/waypoints-sticky.min.js"></script>
+<script src="s/js/retina.min.js"></script>
+<script src="s/js/jquery.magnific-popup.min.js"></script>
+<script src="s/js/jquery.ajaxchimp.min.js"></script>
+<script src="s/js/tweetie.min.js"></script>
+<script src="s/js/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="s/js/gmap.js"></script>
+
+
+</body>
+</html>
