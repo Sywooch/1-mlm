@@ -328,7 +328,7 @@ class SiteController extends Controller
         //this->chkusr();
         return $this->render('pricing');
     }
-
+/********************************************************************/
     public function actionLand()
     {
         return $this->render('land');
@@ -351,7 +351,7 @@ class SiteController extends Controller
         //this->chkusr();
         return $this->render('landing3');
     }
-
+/********************************************************************/
     public function actionMc()
     {
         //this->chkusr();
