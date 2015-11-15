@@ -31,29 +31,66 @@
       <file leaf-file-name="team.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/site/team.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state vertical-scroll-proportion="-20.26923">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/auth.php">
+      <file leaf-file-name="_team_edit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/site/_team_edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.807693">
-              <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/db.php">
+      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="189" column="79" selection-start-line="189" selection-start-column="79" selection-end-line="189" selection-end-column="79" />
+              <folding>
+                <element signature="e#35#59#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/site/profile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="226" column="50" selection-start-line="226" selection-start-column="50" selection-end-line="226" selection-end-column="50" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_account_edit_photo.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/site/_account_edit_photo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49656358">
+              <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_account_edit_soc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/site/_account_edit_soc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <marker date="1447588413837" expanded="true" signature="304:392" placeholder="..." />
+                <marker date="1447588413837" expanded="true" signature="645:733" placeholder="..." />
+                <marker date="1447588413837" expanded="true" signature="980:1069" placeholder="..." />
+                <marker date="1447588413837" expanded="true" signature="1320:1409" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,16 +141,16 @@
         <option value="$PROJECT_DIR$/assets/AppAsset.php" />
         <option value="$PROJECT_DIR$/views/site/pricing.php" />
         <option value="$PROJECT_DIR$/views/site/help.php" />
-        <option value="$PROJECT_DIR$/views/site/_account_edit_photo.php" />
         <option value="$PROJECT_DIR$/views/site/_team_edit.php" />
         <option value="$PROJECT_DIR$/views/site/_account_edit_info.php" />
         <option value="$PROJECT_DIR$/models/Users.php" />
         <option value="$PROJECT_DIR$/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/views/site/_account_edit_companies.php" />
         <option value="$PROJECT_DIR$/views/site/_account_edit_soc.php" />
+        <option value="$PROJECT_DIR$/config/auth.php" />
+        <option value="$PROJECT_DIR$/views/site/_account_edit_photo.php" />
         <option value="$PROJECT_DIR$/views/site/account.php" />
         <option value="$PROJECT_DIR$/views/site/team.php" />
-        <option value="$PROJECT_DIR$/config/auth.php" />
       </list>
     </option>
   </component>
@@ -173,7 +210,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -254,6 +290,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -382,6 +419,48 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/views/site/team.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="189" column="79" selection-start-line="189" selection-start-column="79" selection-end-line="189" selection-end-column="79" />
+          <folding>
+            <element signature="e#35#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bower-asset/bootstrap/docs/_includes/css/sass.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34892085">
@@ -515,13 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3739566">
-          <caret line="27" column="92" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/_main_slider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14190318">
@@ -561,13 +633,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
           <caret line="35" column="104" selection-start-line="35" selection-start-column="104" selection-end-line="35" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/_team_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17028381">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -575,13 +641,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5964912">
           <caret line="27" column="19" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/_account_edit_photo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70951587">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -592,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/_account_edit_soc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.30550918">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/site/_account_edit_companies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42570952">
@@ -606,32 +659,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3280702">
-          <caret line="151" column="28" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.422807">
-          <caret line="189" column="79" selection-start-line="189" selection-start-column="79" selection-end-line="189" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/team.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.807693">
-          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.15292096">
+          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -640,6 +671,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/_account_edit_soc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <marker date="1447588413837" expanded="true" signature="304:392" placeholder="..." />
+            <marker date="1447588413837" expanded="true" signature="645:733" placeholder="..." />
+            <marker date="1447588413837" expanded="true" signature="980:1069" placeholder="..." />
+            <marker date="1447588413837" expanded="true" signature="1320:1409" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.730769">
+          <caret line="111" column="126" selection-start-line="111" selection-start-column="126" selection-end-line="111" selection-end-column="126" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/team.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.26923">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/_team_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="189" column="79" selection-start-line="189" selection-start-column="79" selection-end-line="189" selection-end-column="79" />
+          <folding>
+            <element signature="e#35#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="226" column="50" selection-start-line="226" selection-start-column="50" selection-end-line="226" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/_account_edit_photo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49656358">
+          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
           <folding />
         </state>
       </provider>
