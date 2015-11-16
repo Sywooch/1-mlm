@@ -81,7 +81,7 @@ $form = ActiveForm::begin();?>
                 "placeholder" => "Если продвигаете 1 компанию...",
                 "readonly" => true,
                 "class"=>"form-control",
-                "value"=>'http://1-mlm.com/index.php?site/ref&refid='.$model->ref
+                "value"=>'http://1-mlm.com/index.php?site/ref&refid='.$model->refdt
             ]); ?>
     </div>
 
