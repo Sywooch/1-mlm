@@ -537,6 +537,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="s/js/gmap.js"></script>
 
-
+<input type="hidden" id="usrall" value="<?= \app\models\Users::find()->count(); ?>" />
 </body>
 </html>
