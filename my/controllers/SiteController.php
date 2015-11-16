@@ -14,6 +14,7 @@ use app\models\User;
 use app\models\Users;
 use app\models\Levels;
 use app\models\UploadForm;
+use app\models\Lp;
 use yii\web\UploadedFile;
 
 class SiteController extends Controller
@@ -331,13 +332,96 @@ class SiteController extends Controller
 /********************************************************************/
     public function actionLand()
     {
-        return $this->render('land');
+        $this->layout = "landing";
+
+        if (!\Yii::$app->user->isGuest){
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+
+            $query10=new \yii\db\Query();
+            $usr=$query10->from([Users::tableName()])
+                ->where(['socid' => $identity["id"]])
+                ->one();
+
+            $query11=new \yii\db\Query();
+            $data=$query11->from([Lp::tableName()])
+                ->where(['uid' => $usr["id"]])
+                ->one();
+
+
+            return $this->render('land', [
+                'data'=>$data
+            ]);
+        }
+        //else{return $this->goHome();}
+
+        //return $this->render('land');
     }
 
     public function actionLanding()
     {
         //this->chkusr();
-        return $this->render('landing');
+        if (!\Yii::$app->user->isGuest){
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+
+            /*$model = Users::find()
+                ->where(['socid' => $identity["id"]])
+                ->andWhere(['service' => $identity["service"]]);*/
+
+            //->where(['service' => $identity["service"]]);
+            //->one();
+
+            $query10=new \yii\db\Query();
+            $usr=$query10->from([Users::tableName()])
+                ->where(['socid' => $identity["id"]])
+                ->andWhere(['service' => $identity["service"]])
+                ->one();
+
+            $model = Lp::find()
+                ->where(['uid' => $usr["id"]]);
+
+            if(\Yii::$app->request->post()){
+                /*****************************/
+                $p = \Yii::$app->request->post();
+
+                /*****************************/
+                if( 'change'==$p["Lp"] ) {
+                    \Yii::$app->db->createCommand("
+                                UPDATE `lp` SET
+                                    `h1`='{$p["h1"]}',
+                                    `h2`='{$p["h2"]}',
+                                    `h3`='{$p["h3"]}',
+                                    `yt1`='{$p["yt1"]}',
+                                    `h1c`='{$p["h1c"]}',
+                                    `h2c`='{$p["h2c"]}',
+                                    `h3c`='{$p["h3c"]}',
+                                    `button`='{$p["button"]}'
+                                WHERE
+                                    `uid`='{$usr["id"]}'
+                        ")
+                        ->execute();
+
+                }
+            }
+
+            $query11=new \yii\db\Query();
+            $_usr=$query11->from([Users::tableName()])
+                ->where(['socid' => $identity["id"]])
+                ->andWhere(['service' => $identity["service"]])
+                ->one();
+
+            $query12=new \yii\db\Query();
+            $data=$query12->from([Lp::tableName()])
+                ->where(['uid' => $_usr["id"]])
+                ->one();
+
+            return $this->render('landing', [
+                'data' => $data,
+                'model' => $model
+            ]);
+        }
+        else{return $this->goHome();}
+
+        //return $this->render('landing');
     }
 
     public function actionLanding2()

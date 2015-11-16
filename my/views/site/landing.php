@@ -26,77 +26,121 @@ $this->params['breadcrumbs'][] = $this->title;
                         <a href="https://github.com/ifightcrime/bootstrap-growl/" target="_blank"> the official github respository </a>
                     </p>
                 </div>
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="title">Notification text:</label>
-                        <div class="col-md-5">
-                            <input id="growl_text" type="text" class="form-control" value="Some demo text goes here" placeholder="enter a text ..." /> </div>
+                <?php
+                use yii\widgets\ActiveForm;
+
+                $form = ActiveForm::begin();?>
+                <!--<div class="form-group">
+                    <label class="col-md-3 control-label" for="title">Notification text:</label>
+                    <div class="col-md-5">
+                        <input id="growl_text" type="text" class="form-control" value="Some demo text goes here" placeholder="enter a text ..." /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="title">Life:</label>
+                    <div class="col-md-5">
+                        <select id="growl_type" class="form-control input-small input-inline">
+                            <option value="info">Info</option>
+                            <option value="danger">Danger</option>
+                            <option value="success">Success</option>
+                            <option value="warning">Warning</option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="title">Life:</label>
-                        <div class="col-md-5">
-                            <select id="growl_type" class="form-control input-small input-inline">
-                                <option value="info">Info</option>
-                                <option value="danger">Danger</option>
-                                <option value="success">Success</option>
-                                <option value="warning">Warning</option>
-                            </select>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="title">Align:</label>
+                    <div class="col-md-5">
+                        <select id="growl_align" class="form-control input-small input-inline">
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                            <option value="center">Center</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="title">Width:</label>
+                    <div class="col-md-5">
+                        <input id="growl_width" type="text" class="form-control input-small input-inline" value="250" placeholder="enter a width ..." /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="title">Allow dismiss ?</label>
+                    <div class="col-md-5">
+                        <div class="checkbox-list">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="glowl_dismiss" checked value="1"> </label>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="title">Align:</label>
-                        <div class="col-md-5">
-                            <select id="growl_align" class="form-control input-small input-inline">
-                                <option value="left">Left</option>
-                                <option value="right">Right</option>
-                                <option value="center">Center</option>
-                            </select>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="title">Life:</label>
+                    <div class="col-md-5">
+                        <select id="growl_delay" class="form-control input-small input-inline">
+                            <option value="5000">5 second</option>
+                            <option value="10000">10 seconds</option>
+                            <option value="12000">12 seconds</option>
+                            <option value="15000">15 seconds</option>
+                        </select>
+                        <span class="help-block"> Time while the message will be displayed. </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="title">Offset:</label>
+                    <div class="col-md-5">
+                        <select id="growl_offset" class="form-control input-small input-inline">
+                            <option value="top">Top</option>
+                            <option value="bottom">Bottom</option>
+                        </select>
+                        <input id="growl_offset_val" type="text" class="form-control input-small input-inline" value="100" placeholder="enter offset ..." /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="title"></label>
+                    <div class="col-md-5">
+                        <a href="javascript:;" class="btn red btn-lg" id="bs_growl_show"> Show Notification! </a>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Заголовок №1</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h1" type="text" value="<?=$data['h1']?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Заголовок №2</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h2" type="text" value="<?=$data['h2']?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Заголовок №3</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h3" type="text" value="<?=$data['h3']?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Id ролика с Youtube</label>
+                            <input class="form-control" placeholder="Вставьте id ролика" name="yt" type="text" value="<?=$data['yt1']?>">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="title">Width:</label>
-                        <div class="col-md-5">
-                            <input id="growl_width" type="text" class="form-control input-small input-inline" value="250" placeholder="enter a width ..." /> </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="title">Allow dismiss ?</label>
-                        <div class="col-md-5">
-                            <div class="checkbox-list">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="glowl_dismiss" checked value="1"> </label>
-                            </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Цвет заголовка №1</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h1c" type="text" value="<?=$data['h1c']?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Цвет заголовка №2</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h2c" type="text" value="<?=$data['h2c']?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Цвет заголовка №3</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h3c" type="text" value="<?=$data['h3c']?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Надпись на кнопке</label>
+                            <input class="form-control" placeholder="Вставьте id ролика" name="button" type="text" value="<?=$data['button']?>">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="title">Life:</label>
-                        <div class="col-md-5">
-                            <select id="growl_delay" class="form-control input-small input-inline">
-                                <option value="5000">5 second</option>
-                                <option value="10000">10 seconds</option>
-                                <option value="12000">12 seconds</option>
-                                <option value="15000">15 seconds</option>
-                            </select>
-                            <span class="help-block"> Time while the message will be displayed. </span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="title">Offset:</label>
-                        <div class="col-md-5">
-                            <select id="growl_offset" class="form-control input-small input-inline">
-                                <option value="top">Top</option>
-                                <option value="bottom">Bottom</option>
-                            </select>
-                            <input id="growl_offset_val" type="text" class="form-control input-small input-inline" value="100" placeholder="enter offset ..." /> </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="title"></label>
-                        <div class="col-md-5">
-                            <a href="javascript:;" class="btn red btn-lg" id="bs_growl_show"> Show Notification! </a>
-                        </div>
-                    </div>
-                </form>
+                </div>
+                <input id="users-formtype" name="Lp" value="change" type="hidden">
+                <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save">СОХРАНИТЬ СТРАНИЦУ</button>
+                <?php $form->end(); ?>
             </div>
         </div>
     </div>
 </div>
 <!-- END PAGE BASE CONTENT -->
+
