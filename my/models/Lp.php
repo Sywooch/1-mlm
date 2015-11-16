@@ -50,7 +50,7 @@ class Lp extends \yii\db\ActiveRecord
             [['desc'], 'string', 'max' => 250],
             [['keywords'], 'string', 'max' => 140],
             [['h1', 'h2', 'h3'], 'string', 'max' => 100],
-            [['h1c', 'h2c', 'h3c'], 'string', 'max' => 6],
+            [['h1c', 'h2c', 'h3c'], 'string', 'max' => 7],
             [['yt1', 'yt2'], 'string', 'max' => 11],
             [['bg'], 'string', 'max' => 125],
             [['autoplay'], 'string', 'max' => 1],

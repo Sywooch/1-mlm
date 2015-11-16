@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <?php
                 use yii\widgets\ActiveForm;
+                use kartik\widgets\ColorInput;
 
                 $form = ActiveForm::begin();?>
                 <!--<div class="form-group">
@@ -100,42 +101,80 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Заголовок №1</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h1" type="text" value="<?=$data['h1']?>">
+                            <!--<label>Заголовок №1</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h1" type="text" value="<?=$data['h1']?>">-->
+                            <?=$form->field(
+                                $model, 'h1', ['template' => "<label>Заголовок №1</label>\n{input}\n{hint}\n{error}" ]
+                            )->textInput(['placeholder' => 'Текст заголовка']);
+                            ?>
                         </div>
                         <div class="form-group">
-                            <label>Заголовок №2</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h2" type="text" value="<?=$data['h2']?>">
+                            <!--<label>Заголовок №2</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h2" type="text" value="<?=$data['h2']?>">-->
+                            <?=$form->field(
+                                $model, 'h2', ['template' => "<label>Заголовок №2</label>\n{input}\n{hint}\n{error}" ]
+                            )->textInput(['placeholder' => 'Текст заголовка']);
+                            ?>
                         </div>
                         <div class="form-group">
-                            <label>Заголовок №3</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h3" type="text" value="<?=$data['h3']?>">
+                            <!--<label>Заголовок №3</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h3" type="text" value="<?=$data['h3']?>">-->
+                            <?=$form->field(
+                                $model, 'h3', ['template' => "<label>Заголовок №3</label>\n{input}\n{hint}\n{error}" ]
+                            )->textInput(['placeholder' => 'Текст заголовка']);
+                            ?>
                         </div>
                         <div class="form-group">
-                            <label>Id ролика с Youtube</label>
-                            <input class="form-control" placeholder="Вставьте id ролика" name="yt" type="text" value="<?=$data['yt1']?>">
+                            <!--<label>Id ролика с Youtube</label>
+                            <input class="form-control" placeholder="Вставьте id ролика" name="yt" type="text" value="<?=$data['yt1']?>">-->
+                            <?=$form->field(
+                                $model, 'yt1', ['template' => "<label>Id ролика с Youtube</label>\n{input}\n{hint}\n{error}" ]
+                            )->textInput(['placeholder' => 'Вставьте id ролика']);
+                            ?>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Цвет заголовка №1</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h1c" type="text" value="<?=$data['h1c']?>">
+                            <!--<label>Цвет заголовка №1</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h1c" type="text" value="<?=$data['h1c']?>">-->
+                            <?=$form->field(
+                                $model, 'h1c', ['template' => "<label>Цвет заголовка №1</label>\n{input}\n{hint}\n{error}" ]
+                            )->widget(ColorInput::classname(),[
+                                'options' => ['placeholder' => '6 символов цвета']
+                            ]);
+                            ?>
                         </div>
                         <div class="form-group">
-                            <label>Цвет заголовка №2</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h2c" type="text" value="<?=$data['h2c']?>">
+                            <!--<label>Цвет заголовка №2</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h2c" type="text" value="<?=$data['h2c']?>">-->
+                            <?=$form->field(
+                                $model, 'h2c', ['template' => "<label>Цвет заголовка №2</label>\n{input}\n{hint}\n{error}" ]
+                            )->widget(ColorInput::classname(),[
+                                'options' => ['placeholder' => '6 символов цвета']
+                            ]);
+                            ?>
                         </div>
                         <div class="form-group">
-                            <label>Цвет заголовка №3</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h3c" type="text" value="<?=$data['h3c']?>">
+                            <!--<label>Цвет заголовка №3</label>
+                            <input class="form-control" placeholder="Текст заголовка" name="h3c" type="text" value="<?=$data['h3c']?>">-->
+                            <?=$form->field(
+                                $model, 'h3c', ['template' => "<label>Цвет заголовка №3</label>\n{input}\n{hint}\n{error}" ]
+                            )->widget(ColorInput::classname(),[
+                                'options' => ['placeholder' => '6 символов цвета']
+                            ]);
+                            ?>
                         </div>
                         <div class="form-group">
-                            <label>Надпись на кнопке</label>
-                            <input class="form-control" placeholder="Вставьте id ролика" name="button" type="text" value="<?=$data['button']?>">
+                            <!--<label>Надпись на кнопке</label>
+                            <input class="form-control" placeholder="Вставьте id ролика" name="button" type="text" value="<?=$data['button']?>">-->
+                            <?=$form->field(
+                                $model, 'button', ['template' => "<label>Надпись на кнопке</label>\n{input}\n{hint}\n{error}" ]
+                            )->textInput(['placeholder' => 'Призыв к действию']);
+                            ?>
                         </div>
                     </div>
                 </div>
-                <input id="users-formtype" name="Lp" value="change" type="hidden">
+                <input id="users-formtype" name="Land" value="change" type="hidden">
                 <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save">СОХРАНИТЬ СТРАНИЦУ</button>
                 <?php $form->end(); ?>
             </div>

@@ -384,17 +384,17 @@ class SiteController extends Controller
                 $p = \Yii::$app->request->post();
 
                 /*****************************/
-                if( 'change'==$p["Lp"] ) {
+                if( 'change'==$p["Land"] ) {
                     \Yii::$app->db->createCommand("
                                 UPDATE `lp` SET
-                                    `h1`='{$p["h1"]}',
-                                    `h2`='{$p["h2"]}',
-                                    `h3`='{$p["h3"]}',
-                                    `yt1`='{$p["yt1"]}',
-                                    `h1c`='{$p["h1c"]}',
-                                    `h2c`='{$p["h2c"]}',
-                                    `h3c`='{$p["h3c"]}',
-                                    `button`='{$p["button"]}'
+                                    `h1`='{$p["Lp"]["h1"]}',
+                                    `h2`='{$p["Lp"]["h2"]}',
+                                    `h3`='{$p["Lp"]["h3"]}',
+                                    `yt1`='{$p["Lp"]["yt1"]}',
+                                    `h1c`='{$p["Lp"]["h1c"]}',
+                                    `h2c`='{$p["Lp"]["h2c"]}',
+                                    `h3c`='{$p["Lp"]["h3c"]}',
+                                    `button`='{$p["Lp"]["button"]}'
                                 WHERE
                                     `uid`='{$usr["id"]}'
                         ")
@@ -416,7 +416,7 @@ class SiteController extends Controller
 
             return $this->render('landing', [
                 'data' => $data,
-                'model' => $model
+                'model' => $model->one()
             ]);
         }
         else{return $this->goHome();}

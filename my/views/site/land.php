@@ -25,9 +25,9 @@
         </div>
     </div>
     <div id="main" style="background-image: url(<?php echo $bg;?>); background-position: center center; background-repeat: no-repeat; background-size: cover;">
-        <h1 <?php if ($data["h1c"]) echo "style='color: #".$data['h1c']."'" ?>><?=$data["h1"]?></h1>
-        <h2 <?php if ($data["h2c"]) echo "style='color: #".$data['h2c']."'" ?>><?=$data["h2"]?></h2>
-        <h3 <?php if ($data["h3c"]) echo "style='color: #".$data['h3c']."'" ?>><?=$data["h3"]?></h3>
+        <h1 <?php if ($data["h1c"]) echo "style='color: ".$data['h1c']."'" ?>><?=$data["h1"]?></h1>
+        <h2 <?php if ($data["h2c"]) echo "style='color: ".$data['h2c']."'" ?>><?=$data["h2"]?></h2>
+        <h3 <?php if ($data["h3c"]) echo "style='color: ".$data['h3c']."'" ?>><?=$data["h3"]?></h3>
         <div id="youtube">
             <iframe id="ytplayer" width="500" height="300" src="//www.youtube.com/embed/<?=$data["yt1"]?>?rel=0&controls=0&showinfo=0&autoplay=1&" frameborder="0" allowfullscreen></iframe>
             <div class="watermark"></div>
