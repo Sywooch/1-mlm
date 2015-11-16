@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 
 $this->registerJsFile('/mertonic/global/scripts/app.js');
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -8,32 +9,23 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
 
 $this->registerCssFile('/mertonic/pages/css/pricing.min.css');
 
+=======
+$this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
+$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerCssFile('/my/web/mertonic/pages/css/pricing.min.css');
+>>>>>>> Stashed changes
 $this->title = 'pricing';
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
-
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="portlet light portlet-fit bordered">
     <div class="portlet-title">
         <div class="caption">
-            <!--<i class="icon-share font-green"></i>-->
             <span class="caption-subject font-green bold uppercase">Тарифы пакетов доступа</span>
         </div>
-        <!--
-        <div class="actions">
-            <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                <i class="icon-cloud-upload"></i>
-            </a>
-            <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                <i class="icon-wrench"></i>
-            </a>
-            <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
-            <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                <i class="icon-trash"></i>
-            </a>
-        </div>
-        -->
     </div>
     <div class="portlet-body">
         <div class="pricing-content-1">
@@ -46,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="arrow-down border-top-blue"></div>
                         <div class="price-table-pricing">
                             <h3>
-                                2<span class="price-sign">$</span></h3>
+                                2<span class="price-sign">&nbsp;$</span></h3>
                             <p>в месяц</p>
                         </div>
                         <div class="price-table-content">
@@ -54,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="col-xs-3 text-right mobile-padding">
                                     <i class="icon-user"></i>
                                 </div>
-                                <div class="col-xs-9 text-left mobile-padding">3 Members</div>
+                                <div class="col-xs-9 text-left mobile-padding">1 Страница</div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
@@ -89,7 +81,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="arrow-down border-top-red"></div>
                         <div class="price-table-pricing">
                             <h3>
-                                10<span class="price-sign">$</span></h3>
+                                10<span class="price-sign">&nbsp;$</span></h3>
                             <p>в месяц</p>
                         </div>
                         <div class="price-table-content">
@@ -97,7 +89,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="col-xs-3 text-right mobile-padding">
                                     <i class="icon-user"></i>
                                 </div>
-                                <div class="col-xs-9 text-left mobile-padding">5 Members</div>
+                                <div class="col-xs-9 text-left mobile-padding">3 Страница</div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
@@ -141,7 +133,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="col-xs-3 text-right mobile-padding">
                                     <i class="icon-user-follow"></i>
                                 </div>
-                                <div class="col-xs-9 text-left mobile-padding">20 Members</div>
+                                <div class="col-xs-9 text-left mobile-padding">10 Страниц</div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
@@ -176,7 +168,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="arrow-down border-top-purple"></div>
                         <div class="price-table-pricing">
                             <h3>
-                                50<span class="price-sign">$</span></h3>
+                                50<span class="price-sign">&nbsp;$</span></h3>
                             <p>в месяц</p>
                         </div>
                         <div class="price-table-content">
@@ -184,7 +176,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="col-xs-3 text-right mobile-padding">
                                     <i class="icon-users"></i>
                                 </div>
-                                <div class="col-xs-9 text-left mobile-padding">100 Members</div>
+                                <div class="col-xs-9 text-left mobile-padding">25 Страниц</div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">

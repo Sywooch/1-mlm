@@ -93,7 +93,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <li class="nav-item  ">
                         <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
                             <i class="icon-layers"></i>
-                            <span class="title">Вариант 1</span>
+                            <span class="title">Конструктор</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
@@ -108,7 +108,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <li class="nav-item  ">
                         <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
                             <i class="icon-layers"></i>
-                            <span class="title">Вариант 2</span>
+                            <span class="title">Мои ссылки</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
