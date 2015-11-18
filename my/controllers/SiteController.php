@@ -332,33 +332,20 @@ class SiteController extends Controller
 /********************************************************************/
     public function actionLand()
     {
+        $landid=(int)\Yii::$app->request->get("landid");
         $this->layout = "landing";
-
-        if (!\Yii::$app->user->isGuest){
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-
-            $query10=new \yii\db\Query();
-            $usr=$query10->from([Users::tableName()])
-                ->where(['socid' => $identity["id"]])
+        $query=new \yii\db\Query();
+        $data=$query->from([Lp::tableName()])
+                ->where(['id' => $landid])
                 ->one();
-
-            $query11=new \yii\db\Query();
-            $data=$query11->from([Lp::tableName()])
-                ->where(['uid' => $usr["id"]])
-                ->one();
-
-
-            return $this->render('land', [
-                'data'=>$data
-            ]);
-        }
-        //else{return $this->goHome();}
-
-        //return $this->render('land');
+        return $this->render('land', [
+             'data'=>$data
+        ]);
     }
 
     public function actionLanding()
     {
+
         //this->chkusr();
         if (!\Yii::$app->user->isGuest){
             $identity = \Yii::$app->getUser()->getIdentity()->profile;

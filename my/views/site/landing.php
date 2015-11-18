@@ -1,4 +1,7 @@
 <?php
+use yii\widgets\ActiveForm;
+use kartik\widgets\ColorInput;
+
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -27,9 +30,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     </p>
                 </div>
                 <?php
-                use yii\widgets\ActiveForm;
-                use kartik\widgets\ColorInput;
-
                 $form = ActiveForm::begin();?>
                 <!--<div class="form-group">
                     <label class="col-md-3 control-label" for="title">Notification text:</label>
