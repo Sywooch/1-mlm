@@ -105,15 +105,8 @@ class SiteController extends Controller
                 {$ref=$usr->refdt;}
             else{$ref=2;}
 
-            \Yii::$app->db->createCommand("
-                                        UPDATE `users` SET
-                                            `ref`='{$usr->ref}'
-                                        WHERE
-                                            `ref`='{$ref}'
-                                ")
-                ->execute();
-            $users = new Users();
-
+            $users = Users::findOne(['ref'=>$ref]);
+            $users->ref=$usr->ref;
             $users->update();
         }
         return $this->goHome();
@@ -253,7 +246,7 @@ class SiteController extends Controller
                 ->andWhere(['u.service' => $identity["service"]])->one();
 
             $query5=new \yii\db\Query();
-            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.socid AS socid, u.userpic AS userpic')
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, vkontakte, u.socid AS socid, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
                 ->where(['u.ref' => $usrDt["refdt"]])
                 ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
@@ -281,7 +274,7 @@ class SiteController extends Controller
                 ->andWhere(['u.service' => $identity["service"]])->one();
 
             $query5=new \yii\db\Query();
-            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.socid AS socid, u.userpic AS userpic')
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, vkontakte, u.socid AS socid, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
                 ->where(['u.ref' => $usrDt["refdt"]])
                 ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
