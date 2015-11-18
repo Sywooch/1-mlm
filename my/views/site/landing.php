@@ -1,4 +1,7 @@
 <?php
+use yii\widgets\ActiveForm;
+use kartik\widgets\ColorInput;
+
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -84,7 +87,12 @@ $this->registerJs($js);
                     <?php $formlpmenu->end(); ?>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+                <?php
+                $form = ActiveForm::begin();?>
+>>>>>>> origin/master
                 <!--<div class="form-group">
                     <label class="col-md-3 control-label" for="title">Notification text:</label>
                     <div class="col-md-5">

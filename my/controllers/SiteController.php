@@ -332,7 +332,9 @@ class SiteController extends Controller
 /********************************************************************/
     public function actionLand()
     {
+        $landid=(int)\Yii::$app->request->get("landid");
         $this->layout = "landing";
+<<<<<<< HEAD
 
         $landid = (int)\Yii::$app->request->get("landid");
 
@@ -346,11 +348,20 @@ class SiteController extends Controller
         return $this->render('land', [
             'data'=>$data,
             'user'=>$usr->one()
+=======
+        $query=new \yii\db\Query();
+        $data=$query->from([Lp::tableName()])
+                ->where(['id' => $landid])
+                ->one();
+        return $this->render('land', [
+             'data'=>$data
+>>>>>>> origin/master
         ]);
     }
 
     public function actionLanding()
     {
+
         //this->chkusr();
         if (!\Yii::$app->user->isGuest){
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
