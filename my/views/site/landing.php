@@ -58,8 +58,6 @@ $this->registerJs($js);
                 <div class="row">
                     <div class="col-md-12">
                     <?php
-                        use yii\widgets\ActiveForm;
-                        use kartik\widgets\ColorInput;
 
                         $formlpmenu = ActiveForm::begin();
                     //echo $level["maxLandPage"];
@@ -87,12 +85,9 @@ $this->registerJs($js);
                     <?php $formlpmenu->end(); ?>
                     </div>
                 </div>
-<<<<<<< HEAD
 
-=======
                 <?php
                 $form = ActiveForm::begin();?>
->>>>>>> origin/master
                 <!--<div class="form-group">
                     <label class="col-md-3 control-label" for="title">Notification text:</label>
                     <div class="col-md-5">
