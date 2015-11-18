@@ -72,12 +72,21 @@
                 scrollamount="1"
                 scrolldelay="20"
                 align="middle"
-                direction="right"
+                direction="left"
 
                 height="50" width="300">
-                Здесь будет выводиться список поьзователей
+                <!--Здесь будет выводиться список пользователей-->
+                <?php
+                    $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(5)->all();
 
+                    //print_r($lastTwentyRegUsers);
+                    foreach($lastTwentyRegUsers as $lt) {
+                        echo $this->render('_main_list_users', [
+                            'user' => $lt
+                        ]);
+                    }
 
+                ?>
 
             </marquee>
             <!-- END HEADER SEARCH BOX -->
