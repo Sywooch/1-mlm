@@ -760,7 +760,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 <!--------------------------------------------------------------------->
 
 
-<?php // echo $this->render('_main_modal_eauth', compact('models'));?>
+<?php //echo $this->render('_main_modal_eauth', compact('models'));?>
 <?php $this->endBody() ?>
 </body>
 </html>

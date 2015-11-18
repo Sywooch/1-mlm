@@ -33,6 +33,19 @@ return [
             /***********************************************/
 
         ],
+        'yandex' => [
+            // register your app here: https://oauth.yandex.ru/client/my
+            'class' => 'nodge\eauth\services\YandexOAuth2Service',
+            'clientId' => '0c6983e0587b424d899b45d06ad97fb9',
+            'clientSecret' => '430c4adcd6c648b0b5f2bd533e9dcea4',
+            'title' => 'Yandex',
+        ],
+        'mailru' => [
+            // register your app here: http://api.mail.ru/sites/my/add
+            'class' => 'nodge\eauth\services\MailruOAuth2Service',
+            'clientId' => '739194',
+            'clientSecret' => 'cecccd2845f644954fa76394c2982e15',
+        ],
         'google' => [
             // register your app here: https://code.google.com/apis/console/
             'class' => 'nodge\eauth\services\GoogleOAuth2Service',

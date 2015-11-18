@@ -123,17 +123,33 @@
                     <div data-ulogin-inited="1446737975834" class="col-md-12 wl" id="uLogin1" data-ulogin="lang=ru;display=buttons;fields=first_name,last_name,email,phone,photo,photo_big,city,country;providers=facebook,twitter,vkontakte,odnoklassniki,mailru,googleplus;optional=phone;hidden=;redirect_uri=;receiver=http%3A%2F%2Fjoinetwork.ru%2Fxd_custom.html;callback=LoginAutorizer">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <a style="" href="javascript:void(0)"
-                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=facebook'" class="socbtn facebook-btn" data-uloginbutton="facebook"><span><img src="s/img/facebook-btn.png" width="25" ></span>Facebook</a>
-
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=facebook'"
+                               class="socbtn facebook-btn" data-uloginbutton="facebook">
+                                <span><img src="s/img/facebook-btn.png" width="25" ></span>Facebook</a>
                             <a style="" href="javascript:void(0)"
-                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=google'" class="socbtn googleplus-btn" data-uloginbutton="googleplus"><span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+</a>
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=google'"
+                               class="socbtn googleplus-btn" data-uloginbutton="googleplus">
+                                <span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+</a>
+                            <a style="" href="javascript:void(0)"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=vkontakte'"
+                               class="socbtn vkontakte-btn" data-uloginbutton="vkontakte">
+                                <span><img src="s/img/vkontakte-btn.png" width="25" ></span>Vkontakte</a>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a style="" href="javascript:void(0)"
-                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=vkontakte'" class="socbtn vkontakte-btn" data-uloginbutton="vkontakte"><span><img src="s/img/vkontakte-btn.png" width="25" ></span>Vkontakte</a>
+<!--------------------------------------------------------------------------------->
                             <a href="javascript:void(0)"
-                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=linkedin_oauth2'" class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki"><span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
-
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=linkedin_oauth2'"
+                               class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki">
+                                <span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
+                            <a href="javascript:void(0)"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=yandex'"
+                               class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki">
+                                <span><img src="s/img/linkedin-icon.png" width="25" ></span>Yandex</a>
+                            <a href="javascript:void(0)"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=mailru'"
+                               class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki">
+                                <span><img src="s/img/linkedin-icon.png" width="25" ></span>Mailru</a>
+<!--------------------------------------------------------------------------------->
                         </div>
                     </div>
                     <div class="clearfix"></div>
