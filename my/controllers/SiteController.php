@@ -334,27 +334,19 @@ class SiteController extends Controller
     {
         $this->layout = "landing";
 
-        if (!\Yii::$app->user->isGuest){
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        $landid = (int)\Yii::$app->request->get("landid");
 
-            $query10=new \yii\db\Query();
-            $usr=$query10->from([Users::tableName()])
-                ->where(['socid' => $identity["id"]])
-                ->one();
+        $query11=new \yii\db\Query();
+        $data=$query11->from([Lp::tableName()])
+                      ->where(['id' => $landid])
+                      ->one();
 
-            $query11=new \yii\db\Query();
-            $data=$query11->from([Lp::tableName()])
-                ->where(['uid' => $usr["id"]])
-                ->one();
+        $usr = Users::find()->where(['id' => $data["uid"]]);
 
-
-            return $this->render('land', [
-                'data'=>$data
-            ]);
-        }
-        //else{return $this->goHome();}
-
-        //return $this->render('land');
+        return $this->render('land', [
+            'data'=>$data,
+            'user'=>$usr->one()
+        ]);
     }
 
     public function actionLanding()
@@ -369,6 +361,7 @@ class SiteController extends Controller
 
             //->where(['service' => $identity["service"]]);
             //->one();
+            $mes = "";
 
             $query10=new \yii\db\Query();
             $usr=$query10->from([Users::tableName()])
@@ -376,16 +369,46 @@ class SiteController extends Controller
                 ->andWhere(['service' => $identity["service"]])
                 ->one();
 
+            $query13=new \yii\db\Query();
+            $usrLev=$query13
+                ->from([Levels::tableName()])
+                ->where(['id' => $usr["level"]])->one();
+
             $model = Lp::find()
                 ->where(['uid' => $usr["id"]]);
+                //->andWhere(['id' => $landid]);
+
+            $landid = \Yii::$app->request->get("landid");
+
+            if (isset($landid)) {
+                if ($landid == 0) {
+                    if ($model->count() == $usrLev["maxLandPage"]) {
+                        $mes = "Вы исчерпали кол-во создание страниц. Смените тарифный план для увеличение к-ва";
+                    } else {
+                        \Yii::$app->db->createCommand("
+                                INSERT `lp` SET
+                                    `name`='Новый лэндПэйдж',
+                                    `uid`='{$usr["id"]}'
+                        ")
+                            ->execute();
+                        $mes = "Поздравляю вы создали новую страничку";
+                    }
+                } else {
+                    $model_lp = Lp::find()
+                        ->where(['uid' => $usr["id"]])
+                        ->andWhere(['id' => $landid]);
+                }
+            }
 
             if(\Yii::$app->request->post()){
                 /*****************************/
                 $p = \Yii::$app->request->post();
 
                 /*****************************/
+
+
                 if( 'change'==$p["Land"] ) {
-                    \Yii::$app->db->createCommand("
+                    /*\Yii::$app->db->createCommand("
                                 UPDATE `lp` SET
                                     `h1`='{$p["Lp"]["h1"]}',
                                     `h2`='{$p["Lp"]["h2"]}',
@@ -397,8 +420,28 @@ class SiteController extends Controller
                                     `button`='{$p["Lp"]["button"]}'
                                 WHERE
                                     `uid`='{$usr["id"]}'
+                                AND
+                                    `id` = '{$p["Lp"]["id"]}'
                         ")
-                        ->execute();
+                        ->execute();*/
+                    $lp = Lp::findOne(
+                        [
+                            'uid' => $usr["id"],
+                            'id' => $p["Lp"]["id"]
+                        ]);
+
+                    $lp->h1 = $p["Lp"]["h1"];
+                    $lp->h2 = $p["Lp"]["h2"];
+                    $lp->h3 = $p["Lp"]["h3"];
+                    $lp->yt1 = $p["Lp"]["yt1"];
+                    $lp->h1c = $p["Lp"]["h1c"];
+                    $lp->h2c = $p["Lp"]["h2c"];
+                    $lp->h3c = $p["Lp"]["h3c"];
+                    $lp->button = $p["Lp"]["button"];
+                    $lp->update();
+
+                    $save = "good";
+                    $mes = "Ваша страничка обновлена";
 
                 }
             }
@@ -411,13 +454,28 @@ class SiteController extends Controller
 
             $query12=new \yii\db\Query();
             $data=$query12->from([Lp::tableName()])
-                ->where(['uid' => $_usr["id"]])
-                ->one();
+                ->where(['uid' => $_usr["id"]]);
 
-            return $this->render('landing', [
-                'data' => $data,
-                'model' => $model->one()
-            ]);
+            if ($model_lp) {
+
+                return $this->render('landing', [
+                    'data' => $data->one(),
+                    'model' => $model,
+                    'level' => $usrLev,
+                    'count_p' => $data->count(),
+                    'm' => $mes,
+                    'lp' => $model_lp->one(),
+                    'save' => $save
+                ]);
+            } else {
+                return $this->render('landing', [
+                    'data' => $data->one(),
+                    'model' => $model,
+                    'level' => $usrLev,
+                    'count_p' => $data->count(),
+                    'm' => $mes
+                ]);
+            }
         }
         else{return $this->goHome();}
 

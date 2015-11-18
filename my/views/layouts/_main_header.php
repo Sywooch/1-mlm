@@ -55,7 +55,7 @@
         <div class="page-top">
             <!-- BEGIN HEADER SEARCH BOX -->
             <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-            <form class="search-form" action="page/page_general_search_2.html" method="GET">
+            <!--<form class="search-form" action="page/page_general_search_2.html" method="GET">
                 <div class="input-group">
                     <input type="text" class="form-control input-sm" placeholder="Поиск..." name="query">
                             <span class="input-group-btn">
@@ -64,7 +64,22 @@
                                 </a>
                             </span>
                 </div>
-            </form>
+            </form>-->
+            <marquee
+                onmouseover="this.stop();"
+                onmouseout="this.start();"
+
+                scrollamount="1"
+                scrolldelay="20"
+                align="middle"
+                direction="right"
+
+                height="50" width="300">
+                Здесь будет выводиться список поьзователей
+
+
+
+            </marquee>
             <!-- END HEADER SEARCH BOX -->
             <!-- BEGIN TOP NAVIGATION MENU -->
             <div class="top-menu">

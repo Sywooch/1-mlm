@@ -2,7 +2,27 @@
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<?php
+$js = <<<'SCRIPT'
 
+ $(function(){
+      // bind change event to select
+      $('#lp-id').on('change', function () {
+          if ($(this).val() != '') {
+              var url = 'index.php?r=site%2Flanding&landid=' + $(this).val();
+          }
+           // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+              //alert(url);
+          }
+          return false;
+      });
+ });
+
+SCRIPT;
+$this->registerJs($js);
+?>
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="row">
     <div class="col-md-12">
@@ -12,25 +32,59 @@ $this->params['breadcrumbs'][] = $this->title;
                     <i class="fa fa-cogs font-green-sharp"></i>
                     <span class="caption-subject font-green-sharp bold uppercase">Создание страницы</span>
                 </div>
-                <div class="tools">
+                <!--<div class="tools">
                     <a href="javascript:;" class="collapse"> </a>
                     <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                     <a href="javascript:;" class="reload"> </a>
                     <a href="javascript:;" class="remove"> </a>
-                </div>
+                </div>-->
             </div>
             <div class="portlet-body">
-                <div class="note note-success">
-                    <h4 class="block">первый вариант ( стандарт )</h4>
-                    <p> Pretty simple jQuery plugin that turns standard Bootstrap alerts into hovering "Growl-like" notifications. For more info please check
-                        <a href="https://github.com/ifightcrime/bootstrap-growl/" target="_blank"> the official github respository </a>
-                    </p>
-                </div>
                 <?php
-                use yii\widgets\ActiveForm;
-                use kartik\widgets\ColorInput;
+                if (($m != '') && ($save!='good')) {
+                ?>
+                <div class="note note-success">
 
-                $form = ActiveForm::begin();?>
+                    <h4 class="block">Внимание</h4>
+                    <p>
+                        <?=$m; ?>
+                    </p>
+
+                </div>
+                <?php } ?>
+                <div class="row">
+                    <div class="col-md-12">
+                    <?php
+                        use yii\widgets\ActiveForm;
+                        use kartik\widgets\ColorInput;
+
+                        $formlpmenu = ActiveForm::begin();
+                    //echo $level["maxLandPage"];
+                        $params = [
+                            'prompt' => '-выберите из списка-'
+                        ];
+
+                        //$lp=\app\models\Lp::find()->all();
+                        $youcomp=array();
+
+                        $companies = \yii\Helpers\ArrayHelper::map($model->all(),'id','name');
+                        if( sizeof($youcomp)<1  )
+                        {$youcomp=['0'=>'Создать страницу'];}
+                        $items=[
+                            'Создание'=>$youcomp,
+                            'Редактирование'=>$companies
+                        ];
+
+                        echo $formlpmenu->field( $model->one(), 'id', ["template" => "<label>Ваши странички</label>\n{input}\n{hint}\n{error}"] )
+                            ->dropDownList($items,$params);
+                    ?>
+                    <!--<input id="users-formtype" name="Land" value="addLp" type="hidden">
+                    <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save" <?php //if ($count_p == $level['maxLandPage']) echo 'disabled'; ?>>СОЗДАТЬ СТРАНИЦУ</button>-->
+                        <input id="users-formtype" name="List" value="change" type="hidden">
+                    <?php $formlpmenu->end(); ?>
+                    </div>
+                </div>
+
                 <!--<div class="form-group">
                     <label class="col-md-3 control-label" for="title">Notification text:</label>
                     <div class="col-md-5">
@@ -98,77 +152,66 @@ $this->params['breadcrumbs'][] = $this->title;
                         <a href="javascript:;" class="btn red btn-lg" id="bs_growl_show"> Show Notification! </a>
                     </div>
                 </div> -->
+                <?php if ($lp) { ?>
+                <?php
+
+
+                $form = ActiveForm::begin();?>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <!--<label>Заголовок №1</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h1" type="text" value="<?=$data['h1']?>">-->
                             <?=$form->field(
-                                $model, 'h1', ['template' => "<label>Заголовок №1</label>\n{input}\n{hint}\n{error}" ]
+                                $lp, 'h1', ['template' => "<label>Заголовок №1</label>\n{input}\n{hint}\n{error}" ]
                             )->textInput(['placeholder' => 'Текст заголовка']);
                             ?>
                         </div>
                         <div class="form-group">
-                            <!--<label>Заголовок №2</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h2" type="text" value="<?=$data['h2']?>">-->
                             <?=$form->field(
-                                $model, 'h2', ['template' => "<label>Заголовок №2</label>\n{input}\n{hint}\n{error}" ]
+                                $lp, 'h2', ['template' => "<label>Заголовок №2</label>\n{input}\n{hint}\n{error}" ]
                             )->textInput(['placeholder' => 'Текст заголовка']);
                             ?>
                         </div>
                         <div class="form-group">
-                            <!--<label>Заголовок №3</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h3" type="text" value="<?=$data['h3']?>">-->
                             <?=$form->field(
-                                $model, 'h3', ['template' => "<label>Заголовок №3</label>\n{input}\n{hint}\n{error}" ]
+                                $lp, 'h3', ['template' => "<label>Заголовок №3</label>\n{input}\n{hint}\n{error}" ]
                             )->textInput(['placeholder' => 'Текст заголовка']);
                             ?>
                         </div>
                         <div class="form-group">
-                            <!--<label>Id ролика с Youtube</label>
-                            <input class="form-control" placeholder="Вставьте id ролика" name="yt" type="text" value="<?=$data['yt1']?>">-->
                             <?=$form->field(
-                                $model, 'yt1', ['template' => "<label>Id ролика с Youtube</label>\n{input}\n{hint}\n{error}" ]
+                                $lp, 'yt1', ['template' => "<label>Id ролика с Youtube</label>\n{input}\n{hint}\n{error}" ]
                             )->textInput(['placeholder' => 'Вставьте id ролика']);
                             ?>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <!--<label>Цвет заголовка №1</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h1c" type="text" value="<?=$data['h1c']?>">-->
                             <?=$form->field(
-                                $model, 'h1c', ['template' => "<label>Цвет заголовка №1</label>\n{input}\n{hint}\n{error}" ]
+                                $lp, 'h1c', ['template' => "<label>Цвет заголовка №1</label>\n{input}\n{hint}\n{error}" ]
                             )->widget(ColorInput::classname(),[
                                 'options' => ['placeholder' => '6 символов цвета']
                             ]);
                             ?>
                         </div>
                         <div class="form-group">
-                            <!--<label>Цвет заголовка №2</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h2c" type="text" value="<?=$data['h2c']?>">-->
                             <?=$form->field(
-                                $model, 'h2c', ['template' => "<label>Цвет заголовка №2</label>\n{input}\n{hint}\n{error}" ]
+                                $lp, 'h2c', ['template' => "<label>Цвет заголовка №2</label>\n{input}\n{hint}\n{error}" ]
                             )->widget(ColorInput::classname(),[
                                 'options' => ['placeholder' => '6 символов цвета']
                             ]);
                             ?>
                         </div>
                         <div class="form-group">
-                            <!--<label>Цвет заголовка №3</label>
-                            <input class="form-control" placeholder="Текст заголовка" name="h3c" type="text" value="<?=$data['h3c']?>">-->
                             <?=$form->field(
-                                $model, 'h3c', ['template' => "<label>Цвет заголовка №3</label>\n{input}\n{hint}\n{error}" ]
+                                $lp, 'h3c', ['template' => "<label>Цвет заголовка №3</label>\n{input}\n{hint}\n{error}" ]
                             )->widget(ColorInput::classname(),[
                                 'options' => ['placeholder' => '6 символов цвета']
                             ]);
                             ?>
                         </div>
                         <div class="form-group">
-                            <!--<label>Надпись на кнопке</label>
-                            <input class="form-control" placeholder="Вставьте id ролика" name="button" type="text" value="<?=$data['button']?>">-->
                             <?=$form->field(
-                                $model, 'button', ['template' => "<label>Надпись на кнопке</label>\n{input}\n{hint}\n{error}" ]
+                                $lp, 'button', ['template' => "<label>Надпись на кнопке</label>\n{input}\n{hint}\n{error}" ]
                             )->textInput(['placeholder' => 'Призыв к действию']);
                             ?>
                         </div>
@@ -176,10 +219,34 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <input id="users-formtype" name="Land" value="change" type="hidden">
                 <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save">СОХРАНИТЬ СТРАНИЦУ</button>
+                    <?= \yii\helpers\Html::hiddenInput('Lp[id]', $lp['id'], ["id"=>"users-formtype"]); ?>
                 <?php $form->end(); ?>
+                <?php } ?>
             </div>
         </div>
     </div>
 </div>
 <!-- END PAGE BASE CONTENT -->
 
+<?php if ($save=="good") { ?>
+<div class="fade modal <?= ("good"==$save)?"in":null; ?>" style="display: block; padding-right: 17px;" id="GoodsaveWindow"  role="dialog" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                        onclick='$("#GoodsaveWindow").removeClass("fade modal in");//$("#GoodsaveWindow").addClass("fade modal");'
+                    >×</button>
+            </div>
+            <div class="modal-body">
+                <div
+                    style="color:green" align="center"
+                    >Данные успешно обновлены</div>
+                <br />
+                <button type="button"
+                        onclick='$("#GoodsaveWindow").removeClass("fade modal in");//$("#GoodsaveWindow").addClass("fade modal");'>
+                    Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>

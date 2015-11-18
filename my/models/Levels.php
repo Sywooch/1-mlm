@@ -23,7 +23,7 @@ class Levels extends \yii\db\ActiveRecord
             'title' => 'Title',
             'webinar' => 'Webinar',
             'days' => 'Days',
-            ' maxLandPage' => 'Max Land Page',
+            'maxLandPage' => 'Max Land Page',
         ];
     }
 }

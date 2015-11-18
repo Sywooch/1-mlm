@@ -43,7 +43,7 @@ class Lp extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['uid', 'name', 'desc', 'keywords', 'h1', 'h2', 'h3', 'h1c', 'h2c', 'h3c', 'yt1', 'yt2', 'bg', 'autoplay', 'url', 'button', 'group', 'clicks'], 'required'],
+           // [['uid', 'name', 'desc', 'keywords', 'h1', 'h2', 'h3', 'h1c', 'h2c', 'h3c', 'yt1', 'yt2', 'bg', 'autoplay', 'url', 'button', 'group', 'clicks'], 'required'],
             [['clicks'], 'integer'],
             [['uid'], 'string', 'max' => 15],
             [['name'], 'string', 'max' => 25],
