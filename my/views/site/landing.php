@@ -87,7 +87,7 @@ $this->registerJs($js);
                 </div>
 
                 <?php
-                $form = ActiveForm::begin();?>
+                $form = ActiveForm::begin();?> <!-- -->
                 <!--<div class="form-group">
                     <label class="col-md-3 control-label" for="title">Notification text:</label>
                     <div class="col-md-5">
