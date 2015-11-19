@@ -10,8 +10,8 @@
     <meta property="og:image" content="<?=$user["userpic"]?>" />
     <meta name="robots" content="noindex,nofollow">
     <title><?=$data["name"]?></title>
-    <link rel="stylesheet" type="text/css" href="lp777/777.css" />
-    <link href="/favicon.ico" rel="icon">
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/lp777/777.css" />
+    <link href="<?=Yii::getAlias('@web') ?>/favicon.ico" rel="icon">
 
 </head>
 <body>

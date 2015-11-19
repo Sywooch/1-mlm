@@ -32,8 +32,8 @@ $this->title = '1-mlm';
         <div class="m-heading-1 border-green m-bordered">
             <h3>Добро пажаловать,<b> <?php echo $usrDt->fn,' ',$usrDt->ln; ?> </b></h3>
 
-            <p> Ваш кольсунтальтант: [имя пользователя который пригласил]
-                <a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank"> [ кнопка на профиль спонсора ]</a>
+            <p> Ваш кольсунтальтант: <a href="https://vk.com/id<?=$consultant->socid; ?>"><?php echo $consultant->fn,' ',$consultant->ln; ?></a><!--[имя пользователя который пригласил]-->
+                <!--<a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank"> [ кнопка на профиль спонсора ]</a>-->
             </p>
         </div>
         <div class="portlet light bordered" id="form_wizard_1">

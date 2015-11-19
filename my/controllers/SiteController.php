@@ -76,8 +76,12 @@ class SiteController extends Controller
             $model = Users::find()
                 ->where(['socid' => $identity["id"]])
                 ->andWhere(['service' => $identity["service"]]);
+            $consultant = Users::find()
+                ->where(['socid' => $model->one()["ref"]])
+                ->andWhere(['service' => "vkontakte"]);
             return $this->render('index', [
                 'model' => $model->one(),
+                'consultant' => $consultant->one()
             ]);
         }
         return $this->render('index');

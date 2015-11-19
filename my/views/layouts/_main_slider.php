@@ -141,7 +141,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
-        <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
+        <!--<li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Ftraining" class="nav-link">
                 <i class="icon-folder"></i>
                 <span class="title">Обучение</span>
@@ -186,7 +186,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li>-->
         <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Fnews" class="nav-link">
                 <i class="icon-user"></i>
@@ -224,7 +224,54 @@ if( !empty(\Yii::$app->request->get("r")) )
             </li>
 
 
+            <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Ftraining" class="nav-link">
+                    <i class="icon-folder"></i>
+                    <span class="title">Обучение</span>
+                    <span class="badge badge-danger">скоро</span>
 
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="page/charts_amcharts.html" class="nav-link ">
+                            <i class="icon-folder"></i>
+                            <span class="title">Бесплатное</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="page/charts_flotcharts.html" class="nav-link ">
+                            <i class="icon-folder"></i>
+                            <span class="title">Курсы</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="page/charts_flowchart.html" class="nav-link ">
+                            <i class="icon-folder"></i>
+                            <span class="title">Книги</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Fcompany" class="nav-link">
+                    <i class="icon-pointer"></i>
+                    <span class="title">Компания</span>
+                    <span class="badge badge-danger">скоро</span>
+
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="page/maps_google.html" class="nav-link ">
+                            <span class="title">Google Maps</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="page/maps_vector.html" class="nav-link ">
+                            <span class="title">Vector Maps</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
 
             <!--<li class="nav-item  ">
