@@ -2,7 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/assets/AppAsset.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/controllers/SiteController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/controllers/old_SiteController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/models/Users.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vendor/nodge/yii2-eauth/src/oauth1/ServiceProxy.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/_main_modal.php" charset="UTF-8" />
@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/views/layouts/_main_start.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/main.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_account_edit_soc.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/site/_landing_list.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/land.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/profile.php" charset="UTF-8" />
   </component>

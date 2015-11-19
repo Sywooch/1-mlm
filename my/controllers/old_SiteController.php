@@ -105,13 +105,9 @@ class SiteController extends Controller
                 {$ref=$usr->refdt;}
             else{$ref=2;}
 
-            \Yii::$app->db->createCommand("
-                                        UPDATE `users` SET
-                                            `ref`='{$usr->ref}'
-                                        WHERE
-                                            `ref`='{$ref}'
-                                ")
-                ->execute();
+            $users = Users::findOne(['ref'=>$ref]);
+            $users->ref=$usr->ref;
+            $users->update();
         }
         return $this->goHome();
     }
@@ -250,7 +246,7 @@ class SiteController extends Controller
                 ->andWhere(['u.service' => $identity["service"]])->one();
 
             $query5=new \yii\db\Query();
-            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.socid AS socid, u.userpic AS userpic')
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, vkontakte, u.socid AS socid, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
                 ->where(['u.ref' => $usrDt["refdt"]])
                 ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
@@ -266,7 +262,6 @@ class SiteController extends Controller
 
     public function actionHelp()
     {
-        //this->chkusr();
         if (!\Yii::$app->user->isGuest){
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
@@ -279,7 +274,7 @@ class SiteController extends Controller
                 ->andWhere(['u.service' => $identity["service"]])->one();
 
             $query5=new \yii\db\Query();
-            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, u.socid AS socid, u.userpic AS userpic')
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln, vkontakte, u.socid AS socid, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
                 ->where(['u.ref' => $usrDt["refdt"]])
                 ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
@@ -326,15 +321,12 @@ class SiteController extends Controller
 
     public function actionPricing()
     {
-        //this->chkusr();
         return $this->render('pricing');
     }
 /********************************************************************/
     public function actionLand()
     {
-        $landid=(int)\Yii::$app->request->get("landid");
         $this->layout = "landing";
-
         $landid = (int)\Yii::$app->request->get("landid");
 
         $query11=new \yii\db\Query();
@@ -363,13 +355,6 @@ class SiteController extends Controller
         //this->chkusr();
         if (!\Yii::$app->user->isGuest){
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
-
-            /*$model = Users::find()
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]]);*/
-
-            //->where(['service' => $identity["service"]]);
-            //->one();
             $mes = "";
 
             $query10=new \yii\db\Query();
@@ -388,6 +373,7 @@ class SiteController extends Controller
                 //->andWhere(['id' => $landid]);
 
             $landid = \Yii::$app->request->get("landid");
+            $model_lp=false;
 
             if (isset($landid)) {
                 if ($landid == 0) {
@@ -417,22 +403,6 @@ class SiteController extends Controller
 
 
                 if( 'change'==$p["Land"] ) {
-                    /*\Yii::$app->db->createCommand("
-                                UPDATE `lp` SET
-                                    `h1`='{$p["Lp"]["h1"]}',
-                                    `h2`='{$p["Lp"]["h2"]}',
-                                    `h3`='{$p["Lp"]["h3"]}',
-                                    `yt1`='{$p["Lp"]["yt1"]}',
-                                    `h1c`='{$p["Lp"]["h1c"]}',
-                                    `h2c`='{$p["Lp"]["h2c"]}',
-                                    `h3c`='{$p["Lp"]["h3c"]}',
-                                    `button`='{$p["Lp"]["button"]}'
-                                WHERE
-                                    `uid`='{$usr["id"]}'
-                                AND
-                                    `id` = '{$p["Lp"]["id"]}'
-                        ")
-                        ->execute();*/
                     $lp = Lp::findOne(
                         [
                             'uid' => $usr["id"],
@@ -542,8 +512,10 @@ class SiteController extends Controller
         ]);
     }
 ***********************************************************************************************************************/
-        private function usrEnter(){
+        private function usrEnter()
+        {
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
+
             list($firstName, $lastName) = explode(" ",  $identity["name"]);
 
             $usrDt=Users::find()
@@ -551,23 +523,17 @@ class SiteController extends Controller
                 ->andWhere(['service' => $identity["service"]]);
                 //->one();
 
-            if( $usrDt->count()>0 ) {
-                /*$usrDt->one()->active=date("Y-m-d");
-                $usrDt->one()->fn=date("Y-m-d");
-                $usrDt->one()->save();*/
-
-                \Yii::$app->db->createCommand("
-                                UPDATE `users` SET
-                                `active`='".date("Y-m-d")."'
-                                WHERE
-                                `socid`='{$identity["id"]}'
-                                AND
-                                `service` = '{$identity["service"]}'
-                        ")
-                    ->execute();
+            if( $usrDt->count()>0 )
+            {
+                $users = Users::findOne([
+                    'socid'=>$identity["id"],
+                    'service'=>$identity["service"]
+                ]);
+                $users->active=date("Y-m-d");
+                $users->update();
             }
-            else{
-
+            else
+            {
                 switch($identity["service"])
                 {
                     case "facebook":
@@ -586,20 +552,42 @@ class SiteController extends Controller
                         $pitureUrl="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
                     break;
                 }
-                \Yii::$app->db->createCommand()
-                    ->insert('users', [
-                       // 'id'=>mktime(),
-                        'ip'=>$_SERVER['REMOTE_ADDR'],
-                        'refdt'=>$this->ukey(),
-                        'ref'=>Yii::$app->session->get('refuserId'),
-                        'userpic'=>$pitureUrl,
-                        'fn' => $firstName,
-                        'ln' => $lastName,
-                        'socid' => $identity["id"],
-                        'service' => $identity["service"],
-                        'regdate'=>date("Y-m-d"),
-                        'active'=>date("Y-m-d")
-                    ])->execute();
+                $users = new Users();
+
+                $users->ip=$_SERVER['REMOTE_ADDR'];
+                $users->refdt=$this->ukey();
+                $users->ref=Yii::$app->session->get('refuserId');
+                $users->userpic=$pitureUrl;
+                $users->fn=$firstName;
+                $users->ln=$lastName;
+                $users->socid=$identity["id"];
+                $users->service=$identity["service"];
+                $users->regdate=date("Y-m-d");
+                $users->active=date("Y-m-d");
+
+                switch($identity["service"])
+                {
+                    case "facebook":
+                        $users->facebook=$identity["url"];
+                    break;
+                    case "vkontakte":
+                        $users->vkontakte=$identity["url"];
+                    break;
+                    case "linkedin_oauth2":
+                        $users->linkedin=$identity["url"];
+                    break;
+                    case "google":
+                        $users->googleplus=$identity["url"];
+                    break;
+                    case "yandex":
+                        $users->yandex=$identity["url"];
+                    break;
+                    case "mailru":
+                        $users->mailru=$identity["url"];
+                    break;
+                }
+
+                $users->save();
             }
         }
 /*********************************/
