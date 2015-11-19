@@ -1,22 +1,12 @@
 <?php
-<<<<<<< Updated upstream
 
 $this->registerJsFile('/mertonic/global/scripts/app.js');
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
-
 $this->registerCssFile('/mertonic/pages/css/pricing.min.css');
 
-=======
-$this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
-$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerCssFile('/my/web/mertonic/pages/css/pricing.min.css');
->>>>>>> Stashed changes
 $this->title = 'pricing';
 $this->params['breadcrumbs'][] = $this->title;
 ?>

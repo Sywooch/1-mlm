@@ -1,29 +1,35 @@
 <?php
-use yii\widgets\ActiveForm;
 use yii\Helpers\ArrayHelper;
+use yii\Helpers\Html;
+use app\models\Lp;
+use app\models\Users;
 
-$form = ActiveForm::begin();
+$identity = \Yii::$app->getUser()->getIdentity()->profile;
+$query = new \yii\db\Query();
+
+$usr=$query->from([Users::tableName()])
+    ->where(['socid' => $identity["id"]])
+    ->andWhere(['service' => $identity["service"]])
+    ->one();
+
 $params = [
     'prompt' => '-выберите из списка-'
 ];
 
-$youcomp=array();
-
-$lendList = ArrayHelper::map($model->all(),'id','name');
-if( sizeof($youcomp)<1  )
-{$youcomp=['0'=>'Создать страницу'];}
 $items=[
-    'Создание'=>$youcomp,
-    'Редактирование'=>$lendList
+    'Создание'=>[
+        '0'=>'Создать страницу'
+    ],
+    'Редактирование'=>ArrayHelper::map(Lp::find()
+        ->where(['uid' => $usr["id"]])
+        ->all(),
+        'id','name')
 ];
 
-echo $form->field( $model->one(), 'id',
-["template" => "<label>Ваши странички</label>\n{input}\n{hint}\n{error}"] )
-    ->dropDownList($items,$params);
+$lpId=\Yii::$app->request->get("lp");
+$lpId=( !empty($lpId) )? $lpId: 1;
+
+echo Html::activeDropDownList(
+    Lp::find()->where( ['id'=>$lpId] )->one(),
+    'id', $items);
 ?>
-
-<input id="users-formtype" name="List" value="change" type="hidden">
-
-<?php $form->end(); ?>
-</div>
-</div>

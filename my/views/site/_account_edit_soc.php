@@ -1,6 +1,6 @@
 <?php
 use yii\widgets\ActiveForm;
-$form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?>
+$form = ActiveForm::begin();?>
 
     <div class="form-group">
             <?=$form->field(
@@ -29,6 +29,22 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?
     <div class="form-group">
         <?=$form->field(
             $model, 'googleplus', ["template" => "<label>googleplus</label>
+                            <div class=\"input-icon\">
+                             <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
+        )->textInput(["class"=>"form-control"]); ?>
+    </div>
+
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'yandex', ["template" => "<label>yandex</label>
+                            <div class=\"input-icon\">
+                             <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
+        )->textInput(["class"=>"form-control"]); ?>
+    </div>
+
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'mailru', ["template" => "<label>mail.ru</label>
                             <div class=\"input-icon\">
                              <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
         )->textInput(["class"=>"form-control"]); ?>
