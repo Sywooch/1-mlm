@@ -276,8 +276,6 @@ class SiteController extends Controller
                                     `service` = '{$identity["service"]}'
                         ")
                             ->execute();
-
-
                     }
                 }
             }
