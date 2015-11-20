@@ -45,7 +45,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <span class="title">Профиль</span>
 
             </a>
-                <ul class="sub-menu">
+                <!--<ul class="sub-menu">
                     <li class="nav-item  <?php echo ( "account"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Faccount" class="nav-link ">
                             <i class="icon-settings"></i>
@@ -59,7 +59,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         </a>
                     </li>
 
-                </ul>
+                </ul>-->
             </li>
         <li class="nav-item start <?= ( "pricing"==$act ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Fpricing" class="nav-link">
@@ -122,7 +122,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
-        <li class="nav-item start <?= ( "mc"==$act ) ? 'active open' : null; ?>">
+        <!--<li class="nav-item start <?= ( "mc"==$act ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Fmc" class="nav-link">
                 <i class="icon-user"></i>
                 <span class="title">Мастер Класс</span>
@@ -140,7 +140,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li>-->
         <!--<li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Ftraining" class="nav-link">
                 <i class="icon-folder"></i>
@@ -268,6 +268,26 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <li class="nav-item  ">
                         <a href="page/maps_vector.html" class="nav-link ">
                             <span class="title">Vector Maps</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item start <?php //echo( "mc"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Fmc" class="nav-link">
+                    <i class="icon-user"></i>
+                    <span class="title">Мастер Класс</span>
+                    <span class="badge badge-danger">скоро</span>
+
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="index.php?r=site%2Fmc" class="nav-link ">
+                            <span class="title">Создание МК</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="index.php?r=site%2Fmc" class="nav-link ">
+                            <span class="title">Архив МК</span>
                         </a>
                     </li>
                 </ul>
