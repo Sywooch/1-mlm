@@ -17,7 +17,10 @@ class Users extends \yii\db\ActiveRecord
                 'rating', 'clicks', 'metrika', 'friends', 'class'], 'integer'],
             [['regdate', 'paydate', 'active', 'done', 'sent', 'added'], 'safe'],
             [['money', 'paid', 'earned', 'bonus', 'profit'], 'number'],
-            [['socid', 'ref2', 'ref3', 'ref4', 'ref5', 'ip'], 'string', 'max' => 15],
+            [['ref2', 'ref3', 'ref4', 'ref5', 'ip'], 'string', 'max' => 15],
+
+            [['socid'], 'string', 'max' => 50],
+
             [['service', 'fn'], 'string', 'max' => 20],
             [['refdt', 'star'], 'string', 'max' => 6],
             [['ln', 'skype'], 'string', 'max' => 25],

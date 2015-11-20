@@ -596,6 +596,7 @@ class SiteController extends Controller
                         $pitureUrl="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
                     break;
                 }
+                /*
                 $users = new Users();
 
                 $users->ip=$_SERVER['REMOTE_ADDR'];
@@ -631,7 +632,36 @@ class SiteController extends Controller
                     break;
                 }
 
-                $users->save();
+                $users->save();*/
+                \Yii::$app->db->createCommand
+                ("
+                    INSERT INTO users
+                    (
+                                   `ip`,
+                                   `refdt`,
+                                   `ref`,
+                                   `userpic`,
+                                   `fn`,
+                                   `ln`,
+                                   `socid`,
+                                   `service`,
+                                   `regdate`,
+                                   `active`
+
+                    ) VALUES
+                    (
+                                   '".$_SERVER['REMOTE_ADDR']."',
+                                   '".$this->ukey()."',
+                                   '".Yii::$app->session->get('refuserId')."',
+                                   '".$pitureUrl."',
+                                   '".$firstName."',
+                                   '".$lastName."',
+                                   '".$identity["id"]."',
+                                   '".$identity["service"]."',
+                                   '".date("Y-m-d")."',
+                                   '".date("Y-m-d")."'
+                    );
+                    ")->execute();
             }
         }
 /*********************************/
