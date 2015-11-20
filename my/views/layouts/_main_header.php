@@ -74,10 +74,10 @@
                 align="middle"
                 direction="left"
 
-                height="50" width="500">
+                height="50" width="630">
                 <!--Здесь будет выводиться список пользователей-->
                 <?php
-                    $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(5)->all();
+                    $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();
 
                     //print_r($lastTwentyRegUsers);
                     foreach($lastTwentyRegUsers as $lt) {

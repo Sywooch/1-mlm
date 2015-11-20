@@ -2,7 +2,7 @@
 $style_user = <<<'STYLE'
 .user_item {
     display: inline;
-    margin-right: 15px;
+    margin-right: 25px;
 }
 
 .user_item img {

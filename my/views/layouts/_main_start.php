@@ -104,6 +104,24 @@
             transition: all 0.5s;
         }
 
+        .cta-btn .btn {
+            padding: 10px 37px !important;
+        }
+
+        .white {
+            background-color: white;
+            padding-top: 20px;
+        }
+
+        .user_item {
+            display: inline;
+            margin-right: 25px;
+        }
+
+        .user_item img {
+            border-radius: 15px !important;
+        }
+
     </style>
 </head>
 <body>
@@ -213,6 +231,36 @@
 </header>
 
 <!--hero section end-->
+
+<!-- 20 last users start -->
+<section class="white">
+    <marquee
+        onmouseover="this.stop();"
+        onmouseout="this.start();"
+
+        scrollamount="1"
+        scrolldelay="20"
+        align="middle"
+        direction="left"
+
+        height="50">
+        <!--Здесь будет выводиться список пользователей-->
+        <?php
+        $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();
+
+        //print_r($lastTwentyRegUsers);
+        foreach($lastTwentyRegUsers as $lt) {
+            echo $this->render('_main_list_users', [
+                'user' => $lt
+            ]);
+        }
+
+        ?>
+
+    </marquee>
+</section>
+<!-- 20 last users end -->
+
 
 <!--MLM Компании on-->
 

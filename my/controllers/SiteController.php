@@ -147,7 +147,8 @@ class SiteController extends Controller
             return $this->render('team', [
                 'dataProvider' => new ActiveDataProvider([
                     'query' =>
-                        $query->select('u.fn AS fn, u.ln AS ln, l.title AS title, u.userpic AS userpic')
+                        $query->select('u.fn AS fn, u.ln AS ln, l.title AS title, u.userpic AS userpic, u.country AS country,
+                        u.mobile AS mobile, u.skype AS skype, u.email AS email, u.vkontakte AS vkontakte')
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
                             ->where(['u.id'=>$arr])

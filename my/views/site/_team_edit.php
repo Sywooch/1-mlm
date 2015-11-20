@@ -1,6 +1,6 @@
 <?php
 \yii\bootstrap\Modal::begin([
-'header' => '<h2>Редактирование</h2>',
+'header' => '<h2>Информация о пользователе</h2>',
 'toggleButton' =>
     [
         'tag' => 'button',
@@ -8,8 +8,25 @@
         'label' => '',
     ]
 ]);
-
-echo $dt["fn"], ' ', $dt["ln"];
-
+?>
+<!--echo $dt["fn"], ' ', $dt["ln"];-->
+<div class="row">
+    <div class="col-md-4">
+        <img src="<?=$dt['userpic']?>" height="150">
+    </div>
+    <div class="col-md-8" style="text-align: left; margin-left: -18px;">
+        Имя: <?=$dt["fn"]?><br>
+        Фамилия: <?=$dt["ln"]?><br>
+        <?php if ( !is_numeric($dt['country']) ) :?>
+        Страна: <?=$dt['country']?> <br>
+        <?php endif;?>
+        Уровень: <?=$dt["title"]?><br>
+        Телефон: <?=$dt["mobile"]?><br>
+        Скайп: <?=$dt["skype"]?><br>
+        E-mail: <?=$dt["email"]?><br>
+        Вконтакте: <a href="<?=$dt["vkontakte"]?>">Ссылка</a><br>
+    </div>
+</div>
+<?php
 \yii\bootstrap\Modal::end();
 ?>
