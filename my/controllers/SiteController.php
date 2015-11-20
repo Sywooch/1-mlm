@@ -68,6 +68,32 @@ class SiteController extends Controller
         ];
     }
 /****************************************************************/
+    public function actionAr()
+    {
+        $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        $users100 = Users::findOne(
+                   [
+                       'socid'=>$identity["id"],
+                       'service'=>$identity["service"]
+                   ]);
+
+                   $users100->fn=10;
+                   if ($users100->validate())
+                   {
+                       $arrUsr[]=$users100->save(false);
+                   }
+
+                   $users101 = new Users();
+                   $users101->setIsNewRecord(true);
+                   $users101->fn="WOW";
+
+                   if ($users101->validate())
+                   {
+                       $arrUsr[]=$users101->save(false);
+                   }
+                   var_dump($arrUsr);die;
+    }
+
     public function actionIndex()
     {
         //$this->chkusr();
@@ -125,7 +151,7 @@ class SiteController extends Controller
 
     public function actionTeam()
     {
-        if ( !\Yii::$app->user->isGuest ){
+       if ( !\Yii::$app->user->isGuest ){
             $query=new \yii\db\Query();
             $query1=new \yii\db\Query();
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
