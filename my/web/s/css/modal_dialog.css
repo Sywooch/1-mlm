@@ -24,6 +24,15 @@
 	background-color: #1884a7 !important;
 }
 
+.socbtn.yandex-btn:hover {
+	background-color: #AA2020 !important;
+}
+
+.socbtn.mailru-btn:hover {
+	background-color: #DEB60A !important;
+}
+
+
 
 .socbtn.facebook-btn span {
 	//background-image: url("../img/facebook-btn.png");
@@ -42,6 +51,16 @@
 
 .socbtn.odnoklassniki-btn span {
 	//background-image: url("../img/odnoklassniki-btn.png");
+        margin-right: 10px;
+}
+
+.socbtn.yandex-btn span {
+	//background-image: url("../img/yandex-btn.png");
+        margin-right: 10px;
+}
+
+.socbtn.mailru-btn span {
+	//background-image: url("../img/mailru-btn.png");
         margin-right: 10px;
 }
 

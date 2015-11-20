@@ -90,6 +90,13 @@
         .socbtn.linkedin-btn {
             background-color: #4875b4;
         }
+        .socbtn.yandex-btn {
+            background-color: #D22626;
+        }
+        .socbtn.mailru-btn {
+            background-color: #FFCF00;
+        }
+
         .socbtn, .socbtn:hover {
             display: block;
             font-size: 14px;
@@ -161,12 +168,12 @@
                                 <span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
                             <a href="javascript:void(0)"
                                onclick="window.location.href='index.php?r=site%2Flogin&amp;service=yandex'"
-                               class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki">
-                                <span><img src="s/img/linkedin-icon.png" width="25" ></span>Yandex</a>
+                               class="socbtn yandex-btn" data-uloginbutton="odnoklassniki">
+                                <span><img src="s/img/yandex-btn.png" width="25" ></span>Yandex</a>
                             <a href="javascript:void(0)"
                                onclick="window.location.href='index.php?r=site%2Flogin&amp;service=mailru'"
-                               class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki">
-                                <span><img src="s/img/linkedin-icon.png" width="25" ></span>Mailru</a>
+                               class="socbtn mailru-btn" data-uloginbutton="odnoklassniki">
+                                <span><img src="s/img/mailru-btn.png" width="25" ></span>Mailru</a>
 <!--------------------------------------------------------------------------------->
                         </div>
                     </div>
