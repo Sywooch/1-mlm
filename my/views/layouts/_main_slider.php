@@ -21,11 +21,11 @@ if( !empty(\Yii::$app->request->get("r")) )
         <!-- BEGIN SIDEBAR MENU -->
         <ul class="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
 
-        <li class="nav-item start active open">
+        <li class="nav-item start <?= ( (""==$act) || ("index"==$act) ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Findex" class="nav-link ">
                 <i class="icon-home"></i>
                 <span class="title">Главная</span>
-                <span class="badge badge-success">home</span>
+                <!--<span class="badge badge-success">home</span>-->
             </a>
         </li>
         <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">

@@ -375,6 +375,7 @@ class SiteController extends Controller
     {
         $this->layout = "landing";
         $landid = (int)\Yii::$app->request->get("landid");
+        $landtype = (int)\Yii::$app->request->get("landtype");
 
         $query11=new \yii\db\Query();
         $data=$query11->from([Lp::tableName()])
@@ -383,7 +384,7 @@ class SiteController extends Controller
 
         $usr = Users::find()->where(['id' => $data["uid"]]);
 
-        return $this->render('land', [
+        return $this->render('land_'.$landtype, [
             'data'=>$data,
             'user'=>$usr->one()
         ]);

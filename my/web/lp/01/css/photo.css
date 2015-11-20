@@ -1,0 +1,62 @@
+#photo {
+  width: 375px;
+  margin: 3px auto;
+  display: block;
+  float: left;
+}
+
+#photo img {
+  width: 70px;
+  height: 70px;
+  border: solid 2px #ddd;
+  border-radius: 70px;
+  float: left;
+  margin-left: 10px;
+}
+
+#photo p{
+  margin: 0;
+  padding: 10px;
+  float: left;
+  text-align: left;
+  font-size: 20px;
+}
+
+#photo p a{font-size: 24px;}
+
+#main h1 {
+	color: #FFF;
+	font-size: 32px;
+	text-transform: uppercase;
+	padding: 15px 0px 10px;
+}
+
+#main h2 {
+	font-size: 28px;
+	color: #FFB000;
+}
+
+#main h3 {
+	font-size: 24px;
+	color: #42556B;
+}
+
+.btn {
+	font-size: 14px;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+}
+
+.btn.big {
+	padding: 15px 25px;
+	font-size: 20px;
+}
+
+.btn.yellow, .btn.yellow:hover {
+	color: #111 !important;
+	text-shadow: 0px -1px 0px #222;
+	background-color: #FFC000;
+	border-radius: 4px;
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.45);
+}
