@@ -11,6 +11,7 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
 
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
+$save=(isSet($save))?$save:"www";
 ?>
 <?php
 $js = <<<'SCRIPT'

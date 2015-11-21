@@ -74,7 +74,7 @@
                 align="middle"
                 direction="left"
 
-                height="50" width="630">
+                height="50" width="500">
                 <!--Здесь будет выводиться список пользователей-->
                 <?php
                     $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();

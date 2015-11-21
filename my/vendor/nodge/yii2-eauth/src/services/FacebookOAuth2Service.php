@@ -52,7 +52,7 @@ class FacebookOAuth2Service extends Service
 
 		$this->attributes['id'] = $info['id'];
 		$this->attributes['name'] = $info['name'];
-		$this->attributes['url'] = $info['link'];
+		//$this->attributes['url'] = $info['link'];
 
 		return true;
 	}

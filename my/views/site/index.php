@@ -30,11 +30,13 @@ $this->title = '1-mlm';
 <div class="row">
     <div class="col-md-12">
         <div class="m-heading-1 border-green m-bordered">
-            <h3>Добро пажаловать,<b> <?php echo $usrDt->fn,' ',$usrDt->ln; ?> </b></h3>
+            <?php if( !empty($consultant) ): ?>
+			<h3>Добро пажаловать,<b> <?php echo $usrDt->fn,' ',$usrDt->ln; ?> </b></h3>
 
             <p> Ваш кольсунтальтант: <a href="https://vk.com/id<?=$consultant->socid; ?>"><?php echo $consultant->fn,' ',$consultant->ln; ?></a><!--[имя пользователя который пригласил]-->
                 <!--<a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank"> [ кнопка на профиль спонсора ]</a>-->
             </p>
+			<?php endif; ?>
         </div>
         <div class="portlet light bordered" id="form_wizard_1">
             <div class="portlet-title">

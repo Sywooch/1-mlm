@@ -96,18 +96,19 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        //$this->chkusr();
-        if (!\Yii::$app->user->isGuest) {
+        if (!\Yii::$app->user->isGuest)
+        {
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
             $model = Users::find()
                 ->where(['socid' => $identity["id"]])
                 ->andWhere(['service' => $identity["service"]]);
+
             $consultant = Users::find()
-                ->where(['socid' => $model->one()["ref"]])
-                ->andWhere(['service' => "vkontakte"]);
+                ->where(['refdt' => $model->one()["ref"]])->one();
+
             return $this->render('index', [
                 'model' => $model->one(),
-                'consultant' => $consultant->one()
+                'consultant' => $consultant
             ]);
         }
         return $this->render('index');
@@ -506,6 +507,8 @@ class SiteController extends Controller
             $data=$query12->from([Lp::tableName()])
                 ->where(['uid' => $_usr["id"]]);
 
+
+            $save=( !empty($save) )?$save:null;
             if ($model_lp) {
                 return $this->render('landing', [
                     'data' => $data->one(),
