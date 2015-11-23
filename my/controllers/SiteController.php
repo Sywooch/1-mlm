@@ -95,18 +95,28 @@ class SiteController extends Controller
     }
 
     public function actionInnsave(){
-            if (!\Yii::$app->user->isGuest) {
+            /*if (!\Yii::$app->user->isGuest) {
                 if (\Yii::$app->request->isAjax) {
                     return Users::saveChange(\Yii::$app->request->post());
                 }
-            }
-            return 0;
+            }*/
+            //echo json_decode(\Yii::$app->request->post("data"));
+        echo "<pre>";
+        print_r
+        (
+            \Yii::$app->request->post()
+        );
+        echo "</pre>";
     }
 
     public function actionIndex()
     {
         if (!\Yii::$app->user->isGuest)
         {
+            if (\Yii::$app->request->isAjax) {
+                return $this->actionInnsave();
+            }
+
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
             $model = Users::find()
                 ->where(['socid' => $identity["id"]])

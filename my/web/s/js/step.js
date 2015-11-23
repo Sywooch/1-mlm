@@ -7,10 +7,11 @@ $( document ).ready(function() {
        else if( 3==$("#stepIndex").val() )
          {
          $.ajax({
-         type: 'POST',
-         url: 'index.php?r=site/index',
-         data:{
-            'Users-fn': $("#users-fn").val(),
+         url: 'active',//"index.php?r=site%2Finnsave",
+         type: "POST",
+         dataType: "json",
+         //data:{www:'www'},
+           /* 'Users-fn': $("#users-fn").val(),
             'Users-ln': $("#users-ln").val(),
             'Users-email': $("#users-email").val(),
             'Users-mobile': $("#users-mobile").val(),
@@ -24,8 +25,10 @@ $( document ).ready(function() {
             'Users-googleplus': $("#users-googleplus").val(),
             'Users-yandex': $("#users-yandex").val(),
             'Users-mailru': $("#users-mailru").val()
-         },
+             */
+         //},
          success: function(dt){
+             console.log(dt);
             if(1==dt)
             {
                 $("#nxt_bnt").attr("disabled", false);
