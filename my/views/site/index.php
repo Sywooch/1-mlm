@@ -1,11 +1,4 @@
 <?php
-
-$identity = \Yii::$app->getUser()->getIdentity()->profile;
-$usrDt = \app\models\Users::find()->select('fn,ln,userpic')
-    ->where(['socid' => $identity["id"]])
-    ->andWhere(['service' => $identity["service"]])
-    ->one();
-
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
@@ -24,6 +17,7 @@ $this->registerJsFile("/mertonic/pages/scripts/form-wizard.min.js"/*, ['depends'
 $this->registerJsFile('//www.youtube.com/player_api');
 
 $this->title = '1-mlm';
+
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
 <!-- BEGIN PAGE BASE CONTENT -->
@@ -31,7 +25,7 @@ $this->title = '1-mlm';
     <div class="col-md-12">
         <div class="m-heading-1 border-green m-bordered">
             <?php if( !empty($consultant) ): ?>
-			<h3>Добро пажаловать,<b> <?php echo $usrDt->fn,' ',$usrDt->ln; ?> </b></h3>
+			<h3>Добро пажаловать,<b> <?php echo $model["fn"],' ',$model["ln"]; ?> </b></h3>
 			<p>
 			<table border="0">
                 <tr>
@@ -106,7 +100,7 @@ $this->title = '1-mlm';
                                 <div class="alert alert-danger display-none">
                                     <button class="close" data-dismiss="alert"></button> Ошибка! Пожалуйста, проверьте ниже. </div>
                                 <div class="alert alert-success display-none">
-                                    <button class="close" data-dismiss="alert"></button> Поздравляем! Вы на шаг ближе к цели! </div>
+                                    <button class="close" data-dismiss="alert"></button> ***Поздравляем! Вы на шаг ближе к цели! </div>
                                 <div class="tab-pane active" id="tab1">
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <div align="center">
@@ -118,14 +112,12 @@ $this->title = '1-mlm';
                                     <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
                                 </div>
                                 <div class="tab-pane" id="tab2">
-
                                         <div class="embed-responsive embed-responsive-16by9">
                                             <div align="center">
-                                                <h5 class="block">Здесь дублируем поля профиля ( с траницы настройка профиля) </h5>
                                                 <?php
-                                               /* echo $this->render('_account_edit_info', [
+                                               echo $this->render('_index_edit_info', [
                                                     'model' => $model
-                                                ]);*/ ?>
+                                                ]); ?>
                                             </div>
                                         </div>
 
@@ -162,6 +154,7 @@ $this->title = '1-mlm';
                                     <button id="nxt_bnt" class="btn btn-outline green button-next" disabled=""> Continue
                                         <i class="fa fa-angle-right"></i>
                                     </button>
+                                    <input type="hidden" id="stepIndex" value="1" />
                                     <a href="javascript:;" class="btn green button-submit"> Submit
                                         <i class="fa fa-check"></i>
                                     </a>
@@ -174,7 +167,6 @@ $this->title = '1-mlm';
         </div>
     </div>
 </div>
-
 <script>
     // create youtube player
     var player;
@@ -185,7 +177,7 @@ $this->title = '1-mlm';
             videoId: 'HBseUoVjSZo',
             playerVars: {
                 'autoplay': 0,
-                'controls': 0,
+                'controls': 1,
                 'showinfo': '0',
                 'rel': 0
             },
@@ -204,10 +196,9 @@ $this->title = '1-mlm';
     // when video ends
     function onPlayerStateChange(event) {
         if(event.data === 0) {
-            // alert('done');
             $("#nxt_bnt").attr("disabled", false);
+            $("#stepIndex").val("2");
         }
     }
 </script>
-
 <!-- END PAGE BASE CONTENT -->

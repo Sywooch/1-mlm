@@ -100,4 +100,35 @@ class Users extends \yii\db\ActiveRecord
             'profit' => 'Profit',
         ];
     }
+    public function saveChange($p){
+        $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        $a = $users = Users::findOne([
+            'socid'=>$identity["id"],
+            'service'=>$identity["service"]
+        ]);
+
+        if($a) {
+            $users->active=date("Y-m-d");
+
+            $users->fn=$p["Users-fn"];
+            $users->ln=$p["Users-ln"];
+            $users->email=$p["Users-email"];
+            $users->mobile=$p["Users-mobile"];
+            $users->skype=$p["Users-skype"];
+            $users->city=$p["Users-city"];
+            $users->country=$p["Users-country"];
+            $users->purse=$p["Users-purse"];
+
+            $users->facebook=$p["Users-facebook"];
+            $users->vkontakte=$p["Users-vkontakte"];
+            $users->linkedin=$p["Users-linkedin"];
+            $users->googleplus=$p["Users-googleplus"];
+            $users->yandex=$p["Users-yandex"];
+            $users->mailru=$p["Users-mailru"];
+
+            $users->update(false);
+            return 1;
+        }
+        return 0;
+    }
 }

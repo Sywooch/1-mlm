@@ -94,6 +94,15 @@ class SiteController extends Controller
                    var_dump($arrUsr);die;
     }
 
+    public function actionInnsave(){
+            if (!\Yii::$app->user->isGuest) {
+                if (\Yii::$app->request->isAjax) {
+                    return Users::saveChange(\Yii::$app->request->post());
+                }
+            }
+            return 0;
+    }
+
     public function actionIndex()
     {
         if (!\Yii::$app->user->isGuest)
