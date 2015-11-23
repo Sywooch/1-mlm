@@ -1,3 +1,19 @@
+<?php
+
+//print_r($this->consultant);
+
+
+/*
+    $identity = \Yii::$app->getUser()->getIdentity()->profile;
+    $model = Users::find()
+    ->where(['socid' => $identity["id"]])
+    ->andWhere(['service' => $identity["service"]]);
+
+    $consultant = Users::find()
+    ->where(['refdt' => $model->one()["ref"]])->one();
+*/
+
+?>
 <!-- BEGIN HEADER -->
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
