@@ -161,7 +161,7 @@
                             <a style="" href="javascript:void(0)"
                                onclick="window.location.href='index.php?r=site%2Flogin&amp;service=google'"
                                class="socbtn googleplus-btn" data-uloginbutton="googleplus">
-                                <span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+</a>
+                                <span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+ - скоро</a>
                             <a style="" href="javascript:void(0)"
                                onclick="window.location.href='index.php?r=site%2Flogin&amp;service=vkontakte'"
                                class="socbtn vkontakte-btn" data-uloginbutton="vkontakte">
@@ -176,7 +176,7 @@
                             <a href="javascript:void(0)"
                                onclick="window.location.href='index.php?r=site%2Flogin&amp;service=yandex'"
                                class="socbtn yandex-btn" data-uloginbutton="odnoklassniki">
-                                <span><img src="s/img/yandex-btn.png" width="25" ></span>Yandex</a>
+                                <span><img src="s/img/yandex-btn.png" width="25" ></span>Yandex - скоро</a>
                             <a href="javascript:void(0)"
                                onclick="window.location.href='index.php?r=site%2Flogin&amp;service=mailru'"
                                class="socbtn mailru-btn" data-uloginbutton="odnoklassniki">
@@ -314,21 +314,20 @@
 <section class="benefits section-spacing text-center" id="features">
     <div class="container">
         <header class="section-header">
-            <h2>Кому будет полезно использовать 1 mlm ресурс?</h2>
-            <h3></h3>
+            <h2>Преимущества 1 mlm ресурса</h2>
         </header>
         <div class="row">
             <div class="col-sm-4"> <img src="s/img/benefits-1.png" alt="benefits of product"><br>
-                <h4>Инфо бизнесмены</h4>
-                <p>Полный набор инструментов для ведения инфо бизнеса в одном месте.</p>
+                <h4>Чистый код</h4>
+                <p>Валидный код страниц способствует тому, что в разных браузерах наш сайт  будет также хорошо отображаться. </p>
             </div>
             <div class="col-sm-4"> <img src="s/img/benefits-2.png" alt="benefits of product">
-                <h4>"Сетевики"</h4>
-                <p>Млм предпримематели смогут комфортно строить и обучаьть свою команду.</p>
+                <h4>Адаптивный дизайн</h4>
+                <p>это корректное отображение сайта на различных устройствах,  динамически подстраивающийся под размеры окна браузера.</p>
             </div>
             <div class="col-sm-4"> <img src="s/img/benefits-3.png" alt="benefits of product">
-                <h4>Интернет предпринематели</h4>
-                <p>Смогут быстро настроить и продвигать свои товары или услуги.</p>
+                <h4>Простота во всем</h4>
+                <p>структура сайта, а также навигация,  удобна и интуитивно понятна для пользователей любого возраста и уровня подготовки.</p>
             </div>
         </div>
     </div>

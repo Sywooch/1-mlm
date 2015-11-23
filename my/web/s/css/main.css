@@ -1,35 +1,5 @@
-
 /* ==========================================================================
-   Table Of Content
-   ========================================================================== 
-   
-   
-   1.General
-   2.Hero section
-   3.Navbar 
-   4.Play button
-   5.Featured on
-   6.Benefits
-   7.Features
-   8.video tour
-   9.tour
-   10.Pricing
-   11.reviews
-   12.cta section
-   13.Team
-   14.Twitter feed
-   15.Contact us
-   16.Subscription form styles
-   17.site footer 
-   18.Social
-   19.Small devices (tablets, 768px and up)
-   20.Medium devices (desktops, 992px and up)
-   
-*/
-
-
-/* ==========================================================================
-   1.General
+   1.Общий css
    ========================================================================== */
    
 body {
@@ -944,7 +914,9 @@ blockquote::before {
 .navbar-brand { padding: 0; }
 
 .nav-left { padding-left: 3em; }
+
 /*updata from 7.5em to 5.5em*/
+
 .welcome-message { margin-top: 0.5em; }
 
 .welcome-message h1 { font-size: 56px; }
@@ -1037,4 +1009,3 @@ blockquote::before {
     border-width: 15px;
     margin-top: -15px;
 }
-Fork me on Github
