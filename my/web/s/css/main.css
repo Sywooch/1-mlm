@@ -825,7 +825,7 @@ blockquote cite {
 .footer-links a {
   color: #8A8A8A;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .footer-links a:hover { color: #fa5454; }
@@ -945,7 +945,7 @@ blockquote::before {
 
 .nav-left { padding-left: 3em; }
 /*updata from 7.5em to 5.5em*/
-.welcome-message { margin-top: 5.5em; }
+.welcome-message { margin-top: 0.5em; }
 
 .welcome-message h1 { font-size: 56px; }
 

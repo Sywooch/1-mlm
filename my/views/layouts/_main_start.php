@@ -119,7 +119,7 @@
             background-color: white;
             padding-top: 8px;
             position: absolute;
-            top: 700px;
+            top: 600px;
             height: 45px;
         }
 
@@ -597,10 +597,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <p class="footer-links"><a href="">Terms of Use</a> <a href="">Privacy Policy</a></p>
+                <p class="footer-links"><a href="">...</a></p>
             </div>
-            <div class="col-md-4"> <small>&copy; 2015 1 mlm. все для вашего бизнеса.</small></div>
+            <div class="col-md-4"> <small>&copy; 2015 1 mlm. Все для вашего бизнеса.</small></div>
             <div class="col-md-4">
+
                 <!--social-->
 
                 <ul class="social">
@@ -610,6 +611,10 @@
                 </ul>
 
                 <!--social end-->
+
+            </div>
+            <div class="col-md-12">
+                <p class="footer-links"><span style="color: #05549e; font-size: 12px;"><a href="">политика конфиденциальности</a> <a href="">отказ от ответственности</a></span></p>
 
             </div>
         </div>

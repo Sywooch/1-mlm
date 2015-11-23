@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <span class="caption-subject font-green bold uppercase">Выбор тарифа</span>
         </div>
     </div>
-    <div><p align="center">Все тарифы снижены до 31.12.2015</p></div>
+    <div><p align="center"><span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2015</p></div>
     <div class="portlet-body">
         <div class="pricing-content-1">
             <div class="row">

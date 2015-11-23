@@ -179,7 +179,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
             <div class="tab-content">
                 <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
                     <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
-                        <h3 class="list-heading">________________________</h3>
+                        <h3 class="list-heading">Ваш консультант</h3>
                         <ul class="media-list list-items">
                             <li class="media">
                                 <div class="media-status">

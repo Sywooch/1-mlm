@@ -150,12 +150,16 @@ $this->title = '1-mlm';
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-9">
                                     <a href="javascript:;" class="btn default button-previous">
-                                        <i class="fa fa-angle-left"></i> Back </a>
-                                    <button id="nxt_bnt" class="btn btn-outline green button-next" disabled=""> Continue
+                                        <i class="fa fa-angle-left"></i> Назад </a>
+                                    <button id="nxt_bnt" class="btn btn-outline green button-next" disabled=""> Дальше
                                         <i class="fa fa-angle-right"></i>
                                     </button>
+<<<<<<< Updated upstream
                                     <input type="hidden" id="stepIndex" value="1" />
                                     <a href="javascript:;" class="btn green button-submit"> Submit
+=======
+                                    <a href="javascript:;" class="btn green button-submit"> Отправить
+>>>>>>> Stashed changes
                                         <i class="fa fa-check"></i>
                                     </a>
                                 </div>
