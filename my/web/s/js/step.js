@@ -4,7 +4,7 @@ $( document ).ready(function() {
         {
             $("#nxt_bnt").attr("disabled", true);
         }
-       else if( 2<$("#stepIndex").val() )
+       else if( 3==$("#stepIndex").val() )
          {
          $.ajax({
          type: 'POST',
@@ -27,12 +27,19 @@ $( document ).ready(function() {
          },
          success: function(dt){
             if(1==dt)
+            {
                 $("#nxt_bnt").attr("disabled", false);
+                alert("WOW");
+            }
          }
          });
         }
     });
 
-
-
+   $("#users-fn").blur(function(){
+        if( 2==$("#stepIndex").val() ) {
+            $("#nxt_bnt").attr("disabled", false);
+            $("#stepIndex").val("3");
+        }
+       });
 });
