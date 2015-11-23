@@ -12,7 +12,9 @@
     <title><?=$data["name"]?></title>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/lp777/777.css" />
     <link href="<?=Yii::getAlias('@web') ?>/favicon.ico" rel="icon">
-
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -39,7 +41,7 @@
             <h3 style="color: #fff">самое интересное Вас ждет внутри. Регистрация в 1 клик!</h3>
         </div>
         <div id="share">
-            <script type="text/javascript">(function() {
+            <!--<script type="text/javascript">(function() {
                     if (window.pluso)if (typeof window.pluso.start == "function") return;
                     if (window.ifpluso==undefined) { window.ifpluso = 1;
                         var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
@@ -48,7 +50,15 @@
                         var h=d[g]('body')[0];
                         h.appendChild(s);
                     }})();</script>
-            <div class="pluso" data-background="none;" data-options="medium,square,line,horizontal,counter,sepcounter=1,theme=14" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email" data-user="1654282972"></div>
+            <div class="pluso" data-background="none;" data-options="medium,square,line,horizontal,counter,sepcounter=1,theme=14" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email" data-user="1654282972"></div>-->
+            <div class="social-likes">
+                <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+                <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+                <div class="mailru" title="Поделиться ссылкой в Моём мире">Мой мир</div>
+                <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+                <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
+                <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+            </div>
         </div>
     </div>
     <div id="footer">

@@ -133,6 +133,9 @@
         }
 
     </style>
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
 </head>
 <body>
 <!-- BEGIN LOGIN BOX *****************************************************************-->
@@ -561,11 +564,20 @@
 <section class="sub-form section-spacing text-center">
     <div class="container">
         <header class="section-header">
-            <h2>Подпишитесь на нашу рассылку</h2>
-            <h3>Подписаться на ежемесячные обновления продуктов и эксклюзивные предложения </h3>
+            <h2>Социальные сети</h2>
+            <div class="social-likes">
+                <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+                <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+                <div class="mailru" title="Поделиться ссылкой в Моём мире">Мой мир</div>
+                <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+                <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
+                <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+            </div>
+            <!--<h2>Подпишитесь на нашу рассылку</h2>
+            <h3>Подписаться на ежемесячные обновления продуктов и эксклюзивные предложения </h3>-->
         </header>
         <div class="row">
-            <div class="col-md-6 center-block col-sm-11">
+            <!--<div class="col-md-6 center-block col-sm-11">
                 <form id="mc-form">
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Email Address" required id="mc-email">
@@ -574,7 +586,7 @@
             </span> </div>
                     <label for="mc-email" id="mc-notification"></label>
                 </form>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>

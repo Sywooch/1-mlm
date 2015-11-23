@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html hola_ext_inject="inited" class="landing_page js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+<html class="landing_page js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Language" content="pt">
 
@@ -8,10 +8,10 @@
     <meta name="keywords" content="<?=$data["keywords"]?>">
     <meta name="robots" content="noindex, follow">
 
-    <meta property="fb:app_id" content="356692267740215">
+    <!--<meta property="fb:app_id" content="356692267740215">-->
     <meta property="og:title" content="<?=$data["name"]?>">
     <meta property="og:description" content="<?=$data["desc"]?>">
-    <meta property="og:url" content="http://warthunder.com/">
+    <!--<meta property="og:url" content="http://warthunder.com/">-->
     <meta property="og:type" content="website">
     <meta property="og:image" content="<?=$user["userpic"]?>">
 
@@ -27,9 +27,13 @@
     <!--<link rel="stylesheet" href="http://static.warthunder.com/css/modern/jquery_ui/jquery-ui.min.css">-->
 
     <title><?=$data["name"]?></title>
-    <base href="http://warthunder.com/" local="false" host="">
+    <!--<base href="http://warthunder.com/" local="false" host="">-->
 
     <link href="https://1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
 
 
     <script async="" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflpCdzwa/www-widgetapi.js" id="www-widgetapi-script" type="text/javascript"></script><script src="https://www.google-analytics.com/analytics.js" async="" type="text/javascript"></script><script src="https://www.googleadservices.com/pagead/conversion_async.js" async="" type="text/javascript"></script><script src="https://www.googletagmanager.com/gtm.js?id=GTM-HWDXK" async=""></script><script src="https://mc.yandex.ru/metrika/watch.js" async="" type="text/javascript"></script><script src="https://www.youtube.com/player_api"></script><script>window.startTime = new Date().getTime();</script>
@@ -309,8 +313,16 @@
                 <img src="<?=$user['userpic']?>">
                 <p>Ваш личный консультант:<br><?php echo $user["fn"].' '.$user["ln"];?></p>
             </div>
-            <div class="pluso" data-background="none;" data-options="medium,square,line,horizontal,counter,sepcounter=1,theme=14" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email" data-user="1654282972">
-                <div class="pluso-110010011001-14"><span class="pluso-wrap" style="background:none;"><div style="background: rgb(65, 101, 139) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="ВКонтакте" class="pluso-vkontakte"></a><b title="0">0</b></div><div style="background: rgb(244, 150, 15) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Одноклассники" class="pluso-odnoklassniki"></a><b title="0">0</b></div><div style="background: rgb(57, 87, 154) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Facebook" class="pluso-facebook"></a><b title="0">0</b></div><div style="background: rgb(0, 171, 240) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Twitter" class="pluso-twitter"></a><b title="0">0</b></div><div style="background: rgb(190, 51, 8) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Google+" class="pluso-google"></a><b title="0">0</b></div><div style="background: rgb(47, 105, 161) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Мой Мир@Mail.Ru" class="pluso-moimir"></a><b title="0">0</b></div><div style="background: rgb(95, 50, 176) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Отправить на email" class="pluso-email"></a><b title="0">0</b></div><a href="https://pluso.ru/" class="pluso-more"></a></span><span class="pluso-counter"><b title="0">0</b></span></div>
+            <div class="pluso">
+                <div class="social-likes">
+                    <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+                    <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+                    <div class="mailru" title="Поделиться ссылкой в Моём мире">Мой мир</div>
+                    <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+                    <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
+                    <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+                </div>
+                <!--<div class="pluso-110010011001-14"><span class="pluso-wrap" style="background:none;"><div style="background: rgb(65, 101, 139) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="ВКонтакте" class="pluso-vkontakte"></a><b title="0">0</b></div><div style="background: rgb(244, 150, 15) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Одноклассники" class="pluso-odnoklassniki"></a><b title="0">0</b></div><div style="background: rgb(57, 87, 154) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Facebook" class="pluso-facebook"></a><b title="0">0</b></div><div style="background: rgb(0, 171, 240) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Twitter" class="pluso-twitter"></a><b title="0">0</b></div><div style="background: rgb(190, 51, 8) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Google+" class="pluso-google"></a><b title="0">0</b></div><div style="background: rgb(47, 105, 161) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Мой Мир@Mail.Ru" class="pluso-moimir"></a><b title="0">0</b></div><div style="background: rgb(95, 50, 176) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Отправить на email" class="pluso-email"></a><b title="0">0</b></div><a href="https://pluso.ru/" class="pluso-more"></a></span><span class="pluso-counter"><b title="0">0</b></span></div>-->
             </div>
             <!--<table>
                 <tbody><tr>

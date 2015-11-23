@@ -461,8 +461,14 @@ class SiteController extends Controller
             $landid = \Yii::$app->request->get("landid");
             $model_lp=false;
             $save=null;
+
+            if ($model->count() == $usrLev["maxLandPage"]) {
+                $mes = "Вы исчерпали кол-во создание страниц. Смените тарифный план для увеличение к-ва";
+            }
+
             if (isset($landid)) {
                 if ($landid == 0) {
+                    $tab = 1;
                     if ($model->count() == $usrLev["maxLandPage"]) {
                         $mes = "Вы исчерпали кол-во создание страниц. Смените тарифный план для увеличение к-ва";
                     } else {
@@ -475,10 +481,13 @@ class SiteController extends Controller
                         $mes = "Поздравляю вы создали новую страничку";
                     }
                 } else {
+                    $tab = 2;
                     $model_lp = Lp::find()
                         ->where(['uid' => $usr["id"]])
                         ->andWhere(['id' => $landid]);
                 }
+            } else {
+                $tab = 1;
             }
 
             if(\Yii::$app->request->post()){
@@ -531,7 +540,8 @@ class SiteController extends Controller
                     'count_p' => $data->count(),
                     'm' => $mes,
                     'lp' => $model_lp->one(),
-                    'save' => $save
+                    'save' => $save,
+                    't' => $tab
                 ]);
             } else {
                 return $this->render('landing', [
@@ -539,7 +549,8 @@ class SiteController extends Controller
                     'model' => $model,
                     'level' => $usrLev,
                     'count_p' => $data->count(),
-                    'm' => $mes
+                    'm' => $mes,
+                    't' => $tab
                 ]);
             }
         }
