@@ -12,7 +12,7 @@
 <!--echo $dt["fn"], ' ', $dt["ln"];-->
 <div class="row">
     <div class="col-md-4">
-        <img src="<?=$dt['userpic']?>" height="150">
+        <img src="mp.php/<?=$dt['userpic']?>" height="150">
     </div>
     <div class="col-md-8" style="text-align: left; margin-left: -18px;">
         Имя: <?=$dt["fn"]?><br>
