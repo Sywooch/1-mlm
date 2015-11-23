@@ -154,12 +154,8 @@ $this->title = '1-mlm';
                                     <button id="nxt_bnt" class="btn btn-outline green button-next" disabled=""> Дальше
                                         <i class="fa fa-angle-right"></i>
                                     </button>
-<<<<<<< Updated upstream
                                     <input type="hidden" id="stepIndex" value="1" />
-                                    <a href="javascript:;" class="btn green button-submit"> Submit
-=======
                                     <a href="javascript:;" class="btn green button-submit"> Отправить
->>>>>>> Stashed changes
                                         <i class="fa fa-check"></i>
                                     </a>
                                 </div>
