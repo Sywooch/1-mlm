@@ -5,9 +5,21 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use yii\bootstrap\Modal;
 use app\assets\AppAsset;
+use app\models\Users;
 
 AppAsset::register($this);
 
+
+    $identity = \Yii::$app->getUser()->getIdentity()->profile;
+    $model = Users::find()
+    ->where(['socid' => $identity["id"]])
+    ->andWhere(['service' => $identity["service"]]);
+
+    $consultant = Users::find()
+    ->where(['refdt' => $model->one()["ref"]])->one();
+
+$cntConTeam=Users::find()
+    ->where(['ref' => $consultant["refdt"]])->count();
 
 if( !empty(\Yii::$app->request->get("r")) )
 {
@@ -126,6 +138,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
     </a>
     <div class="page-quick-sidebar-wrapper" data-close-on-body-click="false">
         <div class="page-quick-sidebar">
+            <!--
             <ul class="nav nav-tabs">
                 <li class="active">
                     <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Users
@@ -162,21 +175,141 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                     </ul>
                 </li>
             </ul>
+            -->
             <div class="tab-content">
                 <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
                     <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
-                        <h3 class="list-heading">Staff</h3>
+                        <h3 class="list-heading">________________________</h3>
                         <ul class="media-list list-items">
                             <li class="media">
                                 <div class="media-status">
-                                    <span class="badge badge-success">8</span>
+                                    <span class="badge badge-success"><?= $cntConTeam;?></span>
                                 </div>
-                                <img class="media-object" src="mertonic/layouts/layout/img/avatar3.jpg" alt="...">
+                                <img class="media-object" src="<?php echo "mp.php/".$consultant["userpic"]; ?>" alt="...">
                                 <div class="media-body">
-                                    <h4 class="media-heading">Bob Nilson</h4>
-                                    <div class="media-heading-sub"> Project Manager </div>
+                                    <h4 class="media-heading"><?php
+                                        echo '&nbsp;<b>',$consultant["fn"],' ',$consultant["ln"],'</b>';
+                                        ?></h4>
+                                    <div class="media-heading-sub">Ваш кольсунтальтант</div>
+                                    <div class="media-heading-sub">
+                                    <?php if( !empty($consultant["skype"]) ): ?>
+                                        <a href="skype:<?php echo $consultant["skype"];?>?call">
+                                            <img src="https://az659314.vo.msecnd.net/assets/20151109092457/images/responsive/elements/favicon.ico"
+                                               style="border: none;" /></a>&nbsp;
+                                    <?php
+                                    endif;?>
+                                    <?php if( !empty($consultant["facebook"]) ): ?>
+                                        <a href="<?php echo $consultant["facebook"];?>" target="_blank">
+                                            <img src="http://www.cambridgeenglish.org.ru/images/facebook-round-16x16.png"
+                                                 style="border: none;" /></a>&nbsp;
+                                        <?php
+                                    endif;?>
+
+                                        <?php if( !empty($consultant["vkontakte"]) ): ?>
+                                            <a href="<?php echo $consultant["vkontakte"];?>" target="_blank">
+                                                <img src="http://pravo-ros.ru/wp-content/uploads/2013/05/VK_logo.png"
+                                                     style="border: none;" /></a>&nbsp;
+                                            <?php
+                                        endif;?>
+                                        <?php if( !empty($consultant["linkedin"]) ): ?>
+                                            <a href="<?php echo $consultant["linkedin"];?>" target="_blank">
+                                                <img src="http://www.ihi.org/_layouts/IHI/1033/Images/Icons/LinkedIn_Logo16px.png"
+                                                     style="border: none;" /></a>&nbsp;
+                                            <?php
+                                        endif;?>
+                                        <?php if( !empty($consultant["googleplus"]) ): ?>
+                                            <a href="<?php echo $consultant["googleplus"];?>" target="_blank">
+                                                <img src="https://www.med.unc.edu/timetoconceive/images/GooglePlusLogo02.png/@@images/bba79109-8512-4c53-ab49-ec089794e883.png"
+                                                     style="border: none;" /></a>&nbsp;
+                                            <?php
+                                        endif;?>
+                                        <?php if( !empty($consultant["yandex"]) ): ?>
+                                            <a href="<?php echo $consultant["yandex"];?>" target="_blank">
+                                                <img src="http://www.aquajournal.ru/forum/images/misc/yandex-logo.png"
+                                                     style="border: none;" /></a>&nbsp;
+                                            <?php
+                                        endif;?>
+                                        <?php if( !empty($consultant["mailru"]) ): ?>
+                                            <a href="<?php echo $consultant["mailru"];?>" target="_blank">
+                                                <img src="http://x-race.info.images.1c-bitrix-cdn.ru/bitrix/templates/x-raceCalendar/components/bitrix/asd.share.buttons/share/images/mailru.png?1447097337608"
+                                                     style="border: none;" /></a>
+                                            <?php
+                                        endif;?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </div>
+
                                 </div>
                             </li>
+                            <!--
                             <li class="media">
                                 <img class="media-object" src="mertonic/layouts/layout/img/avatar1.jpg" alt="...">
                                 <div class="media-body">
@@ -201,7 +334,9 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                     <div class="media-heading-sub"> CEO </div>
                                 </div>
                             </li>
+                            -->
                         </ul>
+                        <!--
                         <h3 class="list-heading">Customers</h3>
                         <ul class="media-list list-items">
                             <li class="media">
@@ -263,7 +398,9 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                 </div>
                             </li>
                         </ul>
+                        -->
                     </div>
+                    <!--
                     <div class="page-quick-sidebar-item">
                         <div class="page-quick-sidebar-chat-user">
                             <div class="page-quick-sidebar-nav">
@@ -365,6 +502,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                             </div>
                         </div>
                     </div>
+                    -->
                 </div>
                 <div class="tab-pane page-quick-sidebar-alerts" id="quick_sidebar_tab_2">
                     <div class="page-quick-sidebar-alerts-list">

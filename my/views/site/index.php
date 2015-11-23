@@ -32,12 +32,17 @@ $this->title = '1-mlm';
         <div class="m-heading-1 border-green m-bordered">
             <?php if( !empty($consultant) ): ?>
 			<h3>Добро пажаловать,<b> <?php echo $usrDt->fn,' ',$usrDt->ln; ?> </b></h3>
-            <p> Ваш кольсунтальтант: <!--<a href="https://vk.com/id<?=$consultant->socid; ?>">-->
-               <li class="dropdown dropdown-extended quick-sidebar-toggler">
-                    <?php echo $consultant->fn,' ',$consultant->ln; ?>
-                <!--</a>-->
-                </li>
-            </p>
+			<p>
+			<table border="0">
+                <tr>
+                    <td>Ваш кольсунтальтант:</td>
+                    <td>
+                        <div class="dropdown dropdown-extended quick-sidebar-toggler" style="cursor: pointer;">
+                            <?php echo '&nbsp;<b>',$consultant->fn,' ',$consultant->ln,'</b>'; ?>
+                        </div>
+                    </td>
+                </tr>
+			</table>
 			<?php endif; ?>
         </div>
         <div class="portlet light bordered" id="form_wizard_1">
