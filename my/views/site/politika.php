@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,700" rel="stylesheet">-->
     <link href="//fonts.googleapis.com/css?family=Roboto:100,300&subset=cyrillic' rel='stylesheet' type='text/css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>1-й МЛМ Ресурс</title>
-    <meta name="description" content="Startup Landing Page">
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+    <title>Политика конфиденциальности |  1-й МЛМ Ресурс</title>
+    <meta name="description" content="Политика конфиденциальности">
     <link rel="shortcut icon" href="s/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="s/img/favicon.ico" type="image/x-icon">
-    <!--<link href="s/css/bootstrap.min.css" rel="stylesheet">-->
-    <link href="s/css/font-awesome.min.css" rel="stylesheet">
-    <link href="s/css/magnific-popup.css" rel="stylesheet">
     <link href="s/css/main.css" rel="stylesheet">
 </head>
 <body>
@@ -138,4 +129,7 @@
 Пожалуйста, помните, что Вы контролируете те данные, которые Вы сообщаете нам при использовании Сервисов. В конечном счете, Вы несете ответственность за сохранение в тайне Вашей личности, паролей и/или любой другой личной информации, находящейся в Вашем распоряжении в процессе пользования Сервисами. Всегда будьте осторожны и ответственны в отношении Вашей личной информации. Мы не несем ответственности за использование и не можем контролировать использование другими лицами любой информации, которую Вы предоставляете им, и Вы должны соблюдать осторожность в выборе личной информации, которую Вы передаете третьим лицам через Сервисы. Точно так же мы не несем ответственности за содержание личной информации или другой информации, которую Вы получаете от других пользователей через Сервисы, и Вы использованием Сервиса и Сайта освобождаете нас от любой ответственности в связи с содержанием любой личной информации или другой информации, которую Вы можете получить, пользуясь Сервисами. Мы не можем гарантировать и мы не несем никакой ответственности за проверку, точность личной информации или другой информации, предоставленной третьими лицами. Использованием Сервиса и Сайта Вы освобождаете нас от любой ответственности в связи с использованием подобной личной информации или иной информации о других.
 
             <h2>Связь с нами</h2>
-Если у Вас есть вопросы или предложения относительно Политики конфиденциальности, пожалуйста, напишите нам на: support@1-mlm.com.
+Если у Вас есть вопросы или предложения относительно Политики конфиденциальности, пожалуйста,
+            напишите нам на: support@1-mlm.com.
+
+            </div></div></section></body>
