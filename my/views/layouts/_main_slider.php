@@ -698,6 +698,34 @@ if( !empty(\Yii::$app->request->get("r")) )
             </li>--->
         </ul>
         <!-- END SIDEBAR MENU -->
+
+
+        <script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script>
+
+        <!-- VK Widget -->
+        <div id="vk_groups"></div>
+        <script type="text/javascript">
+            VK.Widgets.Group("vk_groups", {mode: 1, width: "235", height: "200", color1: 'FFFFFF', color2: '276798', color3: '5B7FA6'}, 76966334);
+        </script>
+        <!--  VK -->
+        <br>
+        <script src="https://apis.google.com/js/platform.js"></script>
+
+<script>
+  function onYtEvent(payload) {
+    if (payload.eventType == 'subscribe') {
+      // Add code to handle subscribe event.
+    } else if (payload.eventType == 'unsubscribe') {
+      // Add code to handle unsubscribe event.
+    }
+    if (window.console) { // for debugging only
+      window.console.log('YT event: ', payload);
+    }
+  }
+</script>
+
+<div class="g-ytsubscribe" data-channelid="UC4Q97tIPa3_xn3uUdjybPQw" data-layout="full" data-count="default" data-onytevent="onYtEvent"></div>
+
     </div>
     <!-- END SIDEBAR -->
 </div>
