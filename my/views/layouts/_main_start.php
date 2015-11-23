@@ -614,7 +614,7 @@
 
             </div>
             <div class="col-md-12">
-                <p class="footer-links"><span style="color: #05549e; font-size: 12px;"><a href="">политика конфиденциальности</a> <a href="">отказ от ответственности</a></span></p>
+                <p class="footer-links"><span style="color: #05549e; font-size: 12px;"><a href="index.php?r=site%2Fpolitika">политика конфиденциальности</a> <a href="index.php?r=site%2Fotkaz">отказ от ответственности</a></span></p>
 
             </div>
         </div>

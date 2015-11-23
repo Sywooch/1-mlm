@@ -8,6 +8,8 @@
     <file url="file://$PROJECT_DIR$/views/layouts/_main_modal_eauth.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/_main_start.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/main.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/layouts/otkaz.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/layouts/politika.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_account_edit_soc.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_landing_list.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/land_1.php" charset="UTF-8" />
