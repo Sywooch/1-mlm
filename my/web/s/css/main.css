@@ -35,13 +35,13 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 100;  /*  font-weight: 400;  */
   font-size: 16px;
   overflow-x: hidden;
 }
 
 p {
-  font-weight: 400;
+  font-weight: 100;   /*  font-weight: 400;  */
   color: #4c4c4c;
   font-size: 17px;
 }
@@ -52,7 +52,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 200;   /*  font-weight: 600;  */
   color: #4c4c4c;
 }
 
@@ -87,7 +87,7 @@ li {
 }
 
 b,
-strong { font-weight: 600; }
+strong { font-weight: 200; } /*  strong { font-weight: 600; }   */
 
 /* ==========================================================================
    2.Hero section
@@ -121,14 +121,14 @@ strong { font-weight: 600; }
 .welcome-message h1 {
   font-size: 36px;
   color: #fff;
-  font-weight: 400;
+  font-weight: 200;  /*  font-weight: 400;  */
   margin: 0 0 24px;
 }
 
 .welcome-message h2 {
   font-size: 22px;
   color: #fff;
-  font-weight: 400;
+  font-weight: 200;   /*  font-weight: 600;  */
   margin: 0;
 }
 
@@ -142,7 +142,7 @@ strong { font-weight: 600; }
   line-height: 1.5;
   border: none;
   border-radius: 3px;
-  font-weight: 400;
+  font-weight: 200;  /*  font-weight: 600;  */
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
 }
@@ -285,13 +285,13 @@ transform:translateY(0);
 
 .section-header h2 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 200;   /*  font-weight: 600;  */
   margin-top: 0;
 }
 
 .section-header h3 {
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 100;   /*  font-weight: 300;  */
   margin: 0;
 }
 
@@ -393,7 +393,7 @@ transform:translateY(0);
 .video-tour h2 {
   font-size: 24px;
   color: #fff;
-  font-weight: 400;
+  font-weight: 200;  /*  font-weight: 400;  */
   margin-bottom: 0;
 }
 
@@ -429,7 +429,7 @@ transform:translateY(0);
 
 .tour h2 {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 200;   /*  font-weight: 400;  */
   margin: 0;
 }
 
@@ -514,7 +514,7 @@ transform:translateY(0);
 
 .buy-button p {
   margin: 12px 0 0;
-  font-weight: 300;
+  font-weight: 100;   /*  font-weight: 300;  */
 }
 
 /* ==========================================================================
@@ -541,12 +541,12 @@ blockquote::before {
 
 blockquote p {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 200;  /*  font-weight: 400;  */
 }
 
 blockquote cite {
   font-size: 17.5px;
-  font-weight: 400;
+  font-weight: 200;  /*  font-weight: 400;  */
   color: #AEAFAF;
   font-style: normal;
 }
@@ -561,13 +561,13 @@ blockquote cite {
 
 .cta-section h2 {
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 200;  /*  font-weight: 600;  */
   color: #fff;
 }
 
 .cta-section .section-header h3 {
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 100; /*  font-weight: 300;  */
   color: #fff;
 }
 
@@ -713,7 +713,7 @@ blockquote cite {
 
 .tweet {
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 100;  /*  font-weight: 300;  */
   color: #fff;
 }
 
@@ -753,9 +753,9 @@ blockquote cite {
   margin: 12px 0 14px;
 }
 
-.map-address { font-weight: 300; }
+.map-address { font-weight: 100; }   /*  font-weight: 300;  */
 
-.map-email { font-weight: 400; }
+.map-email { font-weight: 100; }    /*  font-weight: 400;  */
 
 /* ==========================================================================
    16.Subscription form styles
@@ -781,7 +781,7 @@ blockquote cite {
   color: #4c4c4c;
   box-shadow: none;
   height: 60px;
-  font-weight: 400;
+  font-weight: 100;  /*  font-weight: 400;  */
   font-size: 16px;
   padding: 0 1.5em;
 }
@@ -798,7 +798,7 @@ blockquote cite {
 
 #mc-notification {
   margin: 0.75em 0 0;
-  font-weight: 400;
+  font-weight: 100;  /*  font-weight: 400;  */
   color: #8A8A8A;
   font-size: 17px;
 }
@@ -824,7 +824,7 @@ blockquote cite {
 .site-footer small,
 .footer-links a {
   color: #8A8A8A;
-  font-weight: 300;
+  font-weight: 100;  /*  font-weight: 300;  */
   font-size: 14px;
 }
 

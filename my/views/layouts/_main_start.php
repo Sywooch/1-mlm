@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,700" rel="stylesheet">
+   <!--<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,700" rel="stylesheet">-->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,300&subset=cyrillic' rel='stylesheet' type='text/css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -228,12 +229,14 @@
     <section class="container text-center welcome-message">
         <div class="row">
             <div class="col-md-12">
-                <h1>1-й млм ресурс</h1>
+                <!--<h1>1-й млм ресурс</h1>-->
+                <h1>1 mlm ресурс</h1>
                 <h2>Автоматизация бизнеса на 80%</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
                                         data-target="#modal-1">попробуйте бесплатно</a>
-                    <p>уже используют <span class="total-number-1">0</span> пользователей</p>
+                    <br><br>
+                    <h2>уже используют &nbsp; <span class="total-number-1"> 0 </span> &nbsp; пользователей</h2>
                 </div>
             </div>
         </div>
@@ -492,6 +495,44 @@
         <div class="row">
             <div class="col-md-12">
 
+                <!--PRICE TABLE-->
+                <div class="plan">
+                    <div class="plan-details">
+                        <div class="header">
+                            <h4>BASIC</h4>
+                        </div>
+                        <div class="price"> <span class="currency">$</span><span class="price-amount">2</span><span class="period">/ месяц</span> </div>
+                        <ul class="plan-features">
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>1</span> Комания</li>
+                        </ul>
+                    </div>
+                    <div class="buy-button">  <!--<a class="btn" href="#">выбрать</a>-->
+                        <p>Идеальное решение для новичков</p>
+                    </div>
+                </div>
+                <!--PRICE TABLE END-->
+
+                <!--PRICE TABLE-->
+                <div class="plan">
+                    <div class="plan-details">
+                        <div class="header">
+                            <h4>PREMIUM</h4>
+                        </div>
+                        <div class="price"> <span class="currency">$</span><span class="price-amount">10</span><span class="period">/ месяц</span> </div>
+                        <ul class="plan-features">
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>
+                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp; <span>5</span> Компаний</li>
+                        </ul>
+                    </div>
+                    <div class="buy-button"> <!--<a class="btn" href="#">выбрать</a>-->
+                        <p>Подойдет настоящим Лидерам</p>
+                    </div>
+                </div>
+                <!--PRICE TABLE END-->
+                <br>   <br>
                 <!--PRICE TABLE-->
                 <div class="plan">
                     <div class="plan-details">
