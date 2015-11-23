@@ -255,7 +255,7 @@
                 onmouseover="this.stop();"
                 onmouseout="this.start();"
 
-                scrollamount="1"
+                scrollamount="2"
                 scrolldelay="20"
                 align="middle"
                 direction="left"
