@@ -7,7 +7,7 @@ $( document ).ready(function() {
        else if( 3==$("#stepIndex").val() )
          {
          $.ajax({
-         url: 'active',//"index.php?r=site%2Finnsave",
+         url: "index.php?r=site/innsave",
          type: "POST",
          dataType: "json",
          //data:{www:'www'},
