@@ -94,31 +94,31 @@ if( !empty(\Yii::$app->request->get("r")) )
                         <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
                             <i class="icon-layers"></i>
                             <span class="title">Конструктор</span>
-                            <span class="arrow"></span>
+                            <!--<span class="arrow"></span>-->
                         </a>
-                        <ul class="sub-menu">
+                        <!--<ul class="sub-menu">
                             <li class="nav-item ">
                                 <a href="index.php?r=site%2Flanding" class="nav-link "> Вариант 1 а </a>
                             </li>
                             <li class="nav-item ">
                                 <a href="index.php?r=site%2Flanding" class="nav-link "> Вариант 1 б </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </li>
                     <li class="nav-item  ">
                         <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
                             <i class="icon-layers"></i>
                             <span class="title">Мои ссылки</span>
-                            <span class="arrow"></span>
+                            <!--<span class="arrow"></span>-->
                         </a>
-                        <ul class="sub-menu">
+                        <!--<ul class="sub-menu">
                             <li class="nav-item ">
                                 <a href="page/table_datatables_managed.html" class="nav-link "> Вариант 2 а </a>
                             </li>
                             <li class="nav-item ">
                                 <a href="page/table_datatables_buttons.html" class="nav-link "> Вариант 2 б </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </li>
                 </ul>
             </li>
