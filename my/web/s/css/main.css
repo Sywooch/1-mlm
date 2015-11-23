@@ -944,8 +944,8 @@ blockquote::before {
 .navbar-brand { padding: 0; }
 
 .nav-left { padding-left: 3em; }
-
-.welcome-message { margin-top: 7.5em; }
+/*updata from 7.5em to 5.5em*/
+.welcome-message { margin-top: 5.5em; }
 
 .welcome-message h1 { font-size: 56px; }
 
@@ -1006,3 +1006,35 @@ blockquote::before {
 
 .video-tour .play-btn img { width: 45%; }
 }
+
+
+.arrow_box {
+    position: relative;
+    background: #ffffff;
+    border: 2px solid #f5ef3d;
+    text-align: center;
+}
+.arrow_box:after, .arrow_box:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.arrow_box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-left-color: #ffffff;
+    border-width: 12px;
+    margin-top: -12px;
+}
+.arrow_box:before {
+    border-color: rgba(245, 239, 61, 0);
+    border-left-color: #f5ef3d;
+    border-width: 15px;
+    margin-top: -15px;
+}
+Fork me on Github

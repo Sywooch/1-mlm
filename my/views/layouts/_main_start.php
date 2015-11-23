@@ -117,7 +117,10 @@
 
         .white {
             background-color: white;
-            padding-top: 20px;
+            padding-top: 8px;
+            position: absolute;
+            top: 700px;
+            height: 45px;
         }
 
         .user_item {
@@ -241,30 +244,35 @@
 
 <!-- 20 last users start -->
 <section class="white">
-    <marquee
-        onmouseover="this.stop();"
-        onmouseout="this.start();"
+    <div class="row">
+        <div class="col-md-2 arrow_box">Новые пользователи:</div>
+        <div class="col-md-10">
+            <marquee
+                onmouseover="this.stop();"
+                onmouseout="this.start();"
 
-        scrollamount="1"
-        scrolldelay="20"
-        align="middle"
-        direction="left"
+                scrollamount="1"
+                scrolldelay="20"
+                align="middle"
+                direction="left"
 
-        height="50">
-        <!--Здесь будет выводиться список пользователей-->
-        <?php
-        $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();
+                height="50">
+                <!--Здесь будет выводиться список пользователей-->
+                <?php
+                $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();
 
-        //print_r($lastTwentyRegUsers);
-        foreach($lastTwentyRegUsers as $lt) {
-            echo $this->render('_main_list_users', [
-                'user' => $lt
-            ]);
-        }
+                //print_r($lastTwentyRegUsers);
+                foreach($lastTwentyRegUsers as $lt) {
+                    echo $this->render('_main_list_users', [
+                        'user' => $lt
+                    ]);
+                }
 
-        ?>
+                ?>
 
-    </marquee>
+            </marquee>
+        </div>
+    </div>
 </section>
 <!-- 20 last users end -->
 

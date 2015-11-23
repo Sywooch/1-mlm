@@ -12,6 +12,6 @@ STYLE;
 $this->registerCss($style_user);
 ?>
 <div class="user_item">
-    <img width="30" src="<?=$user['userpic']; ?>">
+    <img width="30" src="mp.php/<?=$user['userpic']; ?>">
     <a href="<?= $user["vkontakte"]; ?>"><?php echo $user["fn"]." "; ?></a>
 </div>
