@@ -106,7 +106,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         </ul>-->
                     </li>
                     <li class="nav-item  ">
-                        <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
+                        <a href="index.php?r=site%2Flinks" class="nav-link nav-toggle">
                             <i class="icon-layers"></i>
                             <span class="title">Мои ссылки</span>
                             <!--<span class="arrow"></span>-->
