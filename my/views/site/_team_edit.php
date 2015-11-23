@@ -1,6 +1,6 @@
 <?php
 \yii\bootstrap\Modal::begin([
-'header' => '<h2>Информация о пользователе</h2>',
+'header' => '<h3>Информация о пользователе</h3>',
 'toggleButton' =>
     [
         'tag' => 'button',
