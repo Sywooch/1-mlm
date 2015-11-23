@@ -396,6 +396,11 @@ class SiteController extends Controller
     {
         return $this->render('pricing');
     }
+
+    public function actionPricing2()
+    {
+        return $this->render('pricing2');
+    }
 /********************************************************************/
     public function actionLand()
     {

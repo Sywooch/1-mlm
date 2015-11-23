@@ -21,7 +21,7 @@ $this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/additional-
 $this->registerJsFile("/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/mertonic/pages/scripts/form-wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
-$this->registerJsFile('http://www.youtube.com/player_api');
+$this->registerJsFile('//www.youtube.com/player_api');
 
 $this->title = '1-mlm';
 //$this->params['breadcrumbs'][] = $this->title;
@@ -102,24 +102,24 @@ $this->title = '1-mlm';
                                     <button class="close" data-dismiss="alert"></button> Поздравляем! Вы на шаг ближе к цели! </div>
                                 <div class="tab-pane active" id="tab1">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <center>
+                                        <div align="center">
 
                                     <div id="player"></div>
 
-                                        </center>
+                                        </div>
                                         </div>
                                     <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
                                 </div>
                                 <div class="tab-pane" id="tab2">
 
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <center>
+                                            <div align="center">
                                                 <h5 class="block">Здесь дублируем поля профиля ( с траницы настройка профиля) </h5>
                                                 <?php
                                                /* echo $this->render('_account_edit_info', [
                                                     'model' => $model
                                                 ]);*/ ?>
-                                            </center>
+                                            </div>
                                         </div>
 
                                 </div>
@@ -169,7 +169,6 @@ $this->title = '1-mlm';
 </div>
 
 <script>
-
     // create youtube player
     var player;
     function onYouTubePlayerAPIReady() {
@@ -202,7 +201,6 @@ $this->title = '1-mlm';
             $("#nxt_bnt").attr("disabled", false);
         }
     }
-
 </script>
 
 <!-- END PAGE BASE CONTENT -->
