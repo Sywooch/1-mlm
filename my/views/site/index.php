@@ -35,7 +35,7 @@ $this->title = '1-mlm';
 			<p>
 			<table border="0">
                 <tr>
-                    <td>Ваш кольсунтальтант:</td>
+                    <td>Ваш консультант:</td>
                     <td>
                         <div class="dropdown dropdown-extended quick-sidebar-toggler" style="cursor: pointer;">
                             <?php echo '&nbsp;<b>',$consultant->fn,' ',$consultant->ln,'</b>'; ?>

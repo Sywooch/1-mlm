@@ -190,7 +190,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                     <h4 class="media-heading"><?php
                                         echo '&nbsp;<b>',$consultant["fn"],' ',$consultant["ln"],'</b>';
                                         ?></h4>
-                                    <div class="media-heading-sub">Ваш кольсунтальтант</div>
+                                    <div class="media-heading-sub">Ваш консультант</div>
                                     <div class="media-heading-sub">
                                     <?php if( !empty($consultant["skype"]) ): ?>
                                         <a href="skype:<?php echo $consultant["skype"];?>?call">
