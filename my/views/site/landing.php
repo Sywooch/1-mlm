@@ -68,8 +68,52 @@ $this->registerJs($js);
                         <?php
                             else:
                             ?>
-                            <h1>Hello</h1>
-                            <input type="text" name="h1" value="">
+                            <?php $form_n = ActiveForm::begin();?>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Название</label>
+                                        <input class="form-control" name="name" placeholder="Имя странички" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Заголовок №1</label>
+                                        <input class="form-control" name="h1" placeholder="Текст заголовка" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Заголовок №2</label>
+                                        <input class="form-control" name="h2" placeholder="Текст заголовка" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Заголовок №3</label>
+                                        <input class="form-control" name="h3" placeholder="Текст заголовка" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Id ролика с youtube</label>
+                                        <input id="lp-name" class="form-control" name="yt" placeholder="Вставьте id ролика" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Цвет заголовка №1</label>
+                                        <input class="form-control" name="h1c" placeholder="6 символов цвета" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Цвет заголовка №2</label>
+                                        <input class="form-control" name="h2c" placeholder="6 символов цвета" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Цвет заголовка №3</label>
+                                        <input class="form-control" name="h3c" placeholder="6 символов цвета" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Надись на кнопке</label>
+                                        <input class="form-control" name="button" placeholder="Призыв к действию" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <input id="users-formtype_2" name="Land_2" value="create" type="hidden">
+                            <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save">СОЗДАТЬ СТРАНИЦУ</button>
+                            <?php $form_n->end(); ?>
                         <?php endif; ?>
 
 
@@ -205,4 +249,33 @@ $this->registerJs($js);
         </div>
     </div>
 </div>
+<?php endif; ?>
+
+<?php if ($save=="create"): ?>
+    <div class="fade modal <?= ("create"==$save)?"in":null; ?>" style="display: block; padding-right: 17px;" id="GoodsaveWindow"  role="dialog" tabindex="-1">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            onclick='
+                        $("#GoodsaveWindow").removeClass("fade modal in");
+                        $("#GoodsaveWindow").css("display", "none");
+                        //$("#GoodsaveWindow").addClass("fade modal");'
+                        >×</button>
+                </div>
+                <div class="modal-body">
+                    <div
+                        style="color:green" align="center"
+                        >Данные успешно обновлены</div>
+                    <br />
+                    <button type="button"
+                            onclick='
+                        $("#GoodsaveWindow").removeClass("fade modal in");
+                        $("#GoodsaveWindow").css("display", "none");
+                        //$("#GoodsaveWindow").addClass("fade modal");'>
+                        Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php endif; ?>

@@ -482,13 +482,13 @@ class SiteController extends Controller
                     if ($model->count() == $usrLev["maxLandPage"]) {
                         $mes = "Вы исчерпали кол-во создание страниц. Смените тарифный план для увеличение к-ва";
                     } else {
-                        \Yii::$app->db->createCommand("
+                        /*\Yii::$app->db->createCommand("
                                 INSERT `lp` SET
                                     `name`='Новый лэндПэйдж',
                                     `uid`='{$usr["id"]}'
                         ")
                             ->execute();
-                        $mes = "Поздравляю вы создали новую страничку";
+                        $mes = "Поздравляю вы создали новую страничку";*/
                     }
                 } else {
                     $tab = 2;
@@ -502,7 +502,7 @@ class SiteController extends Controller
 
             if(\Yii::$app->request->post()){
                 /*****************************/
-                $p = \Yii::$app->request->post();
+                $p = Yii::$app->request->post();
                 /*****************************/
 
 
@@ -526,6 +526,26 @@ class SiteController extends Controller
 
                     $save = "good";
                     $mes = "Ваша страничка обновлена";
+
+                }
+
+                if( 'create'==$p["Land_2"] ) {
+                    $lp_n = new Lp;
+
+                    $lp_n->name = $p["name"];
+                    $lp_n->uid = $usr["id"];
+                    $lp_n->h1 = $p["h1"];
+                    $lp_n->h2 = $p["h2"];
+                    $lp_n->h3 = $p["h3"];
+                    $lp_n->yt1 = $p["yt"];
+                    $lp_n->h1c = $p["h1c"];
+                    $lp_n->h2c = $p["h2c"];
+                    $lp_n->h3c = $p["h3c"];
+                    $lp_n->button = $p["button"];
+                    $lp_n->save();
+
+                    $save = "create";
+                    $mes = "Ваша страничка создана";
 
                 }
             }
