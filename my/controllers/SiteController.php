@@ -140,12 +140,32 @@ class SiteController extends Controller
         if (!\Yii::$app->user->isGuest)
         {
            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            $usr = Users::find()->select('refdt, ref, level')
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]])
-                ->one();
+            $usr = Users::find()->select('refdt, ref, level');
+                switch($identity["service"])
+                {
+                    case "facebook":
+                        $usr=$usr->where(['facebook' => $identity["id"]]);
+                    break;
+                    case "vkontakte":
+                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                    break;
+                    case "linkedin_oauth2":
+                        $usr=$usr->where(['linkedin' => $identity["id"]]);
+                    break;
+                    case "google":
+                        $usr=$usr->where(['googleplus' => $identity["id"]]);
+                    break;
+                    case "yandex":
+                        $usr=$usr->where(['yandex' => $identity["id"]]);
+                    break;
+                    case "mailru":
+                        $usr=$usr->where(['mailru' => $identity["id"]]);
+                    break;
+                }
+            $usr=$usr->one();
+
             if($usr->level>4)return $this->goHome();
-            Users::findOne($usr->id)->delete();
+            Users::findOne($usr->id)->delete(false);
 
             if( !empty($usr->refdt) )
                 {$ref=$usr->refdt;}
@@ -153,7 +173,7 @@ class SiteController extends Controller
 
             $users = Users::findOne(['ref'=>$ref]);
             $users->ref=$usr->ref;
-            $users->update();
+            $users->update(false);
         }
         return $this->goHome();
     }
@@ -173,10 +193,29 @@ class SiteController extends Controller
             $query1=new \yii\db\Query();
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
-            $usr = Users::find()->select('refdt')
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]])
-                ->one();
+           $usr = Users::find()->select('refdt');
+           switch($identity["service"])
+           {
+               case "facebook":
+                   $usr=$usr->where(['facebook' => $identity["id"]]);
+                   break;
+               case "vkontakte":
+                   $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                   break;
+               case "linkedin_oauth2":
+                   $usr=$usr->where(['linkedin' => $identity["id"]]);
+                   break;
+               case "google":
+                   $usr=$usr->where(['googleplus' => $identity["id"]]);
+                   break;
+               case "yandex":
+                   $usr=$usr->where(['yandex' => $identity["id"]]);
+                   break;
+               case "mailru":
+                   $usr=$usr->where(['mailru' => $identity["id"]]);
+                   break;
+           }
+           $usr=$usr->one();
 
             $array=$query1->select('u.id AS id')
                      ->from([Users::tableName().' u'])
@@ -207,9 +246,28 @@ class SiteController extends Controller
         {
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
-            $model = Users::find()
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]]);
+            $model = Users::find();
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $model=$model->where(['facebook' => $identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $model=$model->where(['vkontakte' => $identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $model=$model->where(['linkedin' => $identity["id"]]);
+                    break;
+                case "google":
+                    $model=$model->where(['googleplus' => $identity["id"]]);
+                    break;
+                case "yandex":
+                    $model=$model->where(['yandex' => $identity["id"]]);
+                    break;
+                case "mailru":
+                    $model=$model->where(['mailru' => $identity["id"]]);
+                    break;
+            }
 
             if(\Yii::$app->request->post())
             {
@@ -218,7 +276,7 @@ class SiteController extends Controller
                 {
                     if ($model->count() > 0)
                     {
-/*
+
                         $users = Users::findOne([
                             'socid'=>$identity["id"],
                             'service'=>$identity["service"]
@@ -230,8 +288,8 @@ class SiteController extends Controller
                         $users->googleplus=$p["Users"]["googleplus"];
                         $users->yandex=$p["Users"]["yandex"];
                         $users->mailru=$p["Users"]["mailru"];
-                        $users->update();
-*/
+                        $users->update(false);
+/*
                         \Yii::$app->db->createCommand("
                                 UPDATE `users` SET
                                     `active`='".date("Y-m-d")."',
@@ -247,6 +305,7 @@ class SiteController extends Controller
                                     `service` = '{$identity["service"]}'
                         ")
                             ->execute();
+                        */
                     }
                 }
                  if( 'picture'==$p["Users"]["formtype"] )
@@ -259,14 +318,31 @@ class SiteController extends Controller
                          $upf->userpic
                              ->saveAs(Yii::getAlias('@webroot') .
                                  DIRECTORY_SEPARATOR . 'imgs' . DIRECTORY_SEPARATOR . $flname);
-                         /*$users = Users::findOne([
-                             'socid'=>$identity["id"],
-                             'service'=>$identity["service"]
-                         ]);
+                         switch($identity["service"])
+                         {
+                             case "facebook":
+                                 $users = Users::findOne(['facebook'=>$identity["id"]]);
+                             break;
+                             case "vkontakte":
+                                 $users = Users::findOne(['vkontakte'=>$identity["id"]]);
+                             break;
+                             case "linkedin_oauth2":
+                                 $users = Users::findOne(['linkedin'=>$identity["id"]]);
+                             break;
+                             case "google":
+                                 $users = Users::findOne(['googleplus'=>$identity["id"]]);
+                             break;
+                             case "yandex":
+                                 $users = Users::findOne(['yandex'=>$identity["id"]]);
+                             break;
+                             case "mailru":
+                                 $users = Users::findOne(['mailru'=>$identity["id"]]);
+                             break;
+                         }
                          $users->active=date("Y-m-d");
                          $users->userpic=Yii::getAlias('@web')."/imgs/".$flname;
-                         $users->update();
-                         */
+                         $users->update(false);
+                         /*
                          \Yii::$app->db->createCommand("
                                         UPDATE `users` SET
                                             `active`='".date("Y-m-d")."',
@@ -277,17 +353,34 @@ class SiteController extends Controller
                                             `service` = '{$identity["service"]}'
                                 ")
                              ->execute();
+                         */
                      }
                  }
                 if( 'personinfo'==$p["Users"]["formtype"] )
                 {
                     if ($model->count() > 0)
                     {
-/*
-                        $users = Users::findOne([
-                            'socid'=>$identity["id"],
-                            'service'=>$identity["service"]
-                        ]);
+                        switch($identity["service"])
+                        {
+                            case "facebook":
+                                $users = Users::findOne(['facebook'=>$identity["id"]]);
+                                break;
+                            case "vkontakte":
+                                $users = Users::findOne(['vkontakte'=>$identity["id"]]);
+                                break;
+                            case "linkedin_oauth2":
+                                $users = Users::findOne(['linkedin'=>$identity["id"]]);
+                                break;
+                            case "google":
+                                $users = Users::findOne(['googleplus'=>$identity["id"]]);
+                                break;
+                            case "yandex":
+                                $users = Users::findOne(['yandex'=>$identity["id"]]);
+                                break;
+                            case "mailru":
+                                $users = Users::findOne(['mailru'=>$identity["id"]]);
+                                break;
+                        }
                         $users->active=date("Y-m-d");
                         $users->fn=$p["Users"]["fn"];
                         $users->ln=$p["Users"]["ln"];
@@ -298,10 +391,9 @@ class SiteController extends Controller
                         $users->country=$p["Users"]["country"];
                         $users->purse=$p["Users"]["purse"];
                         $users->rating=$p["Users"]["rating"];
-
-                        $users->save();
+                        $users->save(false);
                         unset($users);
-*/
+/*
                         \Yii::$app->db->createCommand("
                                 UPDATE `users` SET
                                     `active`='".date("Y-m-d")."',
@@ -319,7 +411,7 @@ class SiteController extends Controller
                                 AND
                                     `service` = '{$identity["service"]}'
                         ")
-                            ->execute();
+                            ->execute();*/
                     }
                 }
             }
@@ -357,9 +449,30 @@ class SiteController extends Controller
             $usrDt=$query3->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt,
                 u.active AS active, l.title AS level, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
-                ->innerJoin(Levels::tableName().' l','l.id = u.level')
-                ->where(['u.socid' => $identity["id"]])
-                ->andWhere(['u.service' => $identity["service"]])->one();
+                ->innerJoin(Levels::tableName().' l','l.id = u.level');
+
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usrDt=$usrDt->where(['facebook' => $identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $usrDt=$usrDt->where(['vkontakte' => $identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $usrDt=$usrDt->where(['linkedin' => $identity["id"]]);
+                    break;
+                case "google":
+                    $usrDt=$usrDt->where(['googleplus' => $identity["id"]]);
+                    break;
+                case "yandex":
+                    $usrDt=$usrDt->where(['yandex' => $identity["id"]]);
+                    break;
+                case "mailru":
+                    $usrDt=$usrDt->where(['mailru' => $identity["id"]]);
+                    break;
+            }
+            $usrDt=$usrDt->one();
 
             $query5=new \yii\db\Query();
             $lastFive=$query5->select('u.fn AS fn, u.ln AS ln,
@@ -451,10 +564,29 @@ class SiteController extends Controller
             $mes = "";
 
             $query10=new \yii\db\Query();
-            $usr=$query10->from([Users::tableName()])
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]])
-                ->one();
+            $usr=$query10->from([Users::tableName()]);
+                        switch($identity["service"])
+                        {
+                            case "facebook":
+                                $usr=$usr->where(['facebook' => $identity["id"]]);
+                                break;
+                            case "vkontakte":
+                                $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                                break;
+                            case "linkedin_oauth2":
+                                $usr=$usr->where(['linkedin' => $identity["id"]]);
+                                break;
+                            case "google":
+                                $usr=$usr->where(['googleplus' => $identity["id"]]);
+                                break;
+                            case "yandex":
+                                $usr=$usr->where(['yandex' => $identity["id"]]);
+                                break;
+                            case "mailru":
+                                $usr=$usr->where(['mailru' => $identity["id"]]);
+                                break;
+                        }
+            $usr=$usr->one();
 
             $query13=new \yii\db\Query();
             $usrLev=$query13
@@ -642,19 +774,52 @@ class SiteController extends Controller
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
             list($firstName, $lastName) = explode(" ",  $identity["name"]);
 
-            $usrDt=Users::find()
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]]);
-                //->one();
-
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usrDt = Users::find()->where(['facebook'=>$identity["id"]]);
+                break;
+                case "vkontakte":
+                    $usrDt = Users::find()->where(['vkontakte'=>$identity["id"]]);
+                break;
+                case "linkedin_oauth2":
+                    $usrDt = Users::find()->where(['linkedin'=>$identity["id"]]);
+                break;
+                case "google":
+                    $usrDt = Users::find()->where(['googleplus'=>$identity["id"]]);
+                break;
+                case "yandex":
+                    $usrDt = Users::find()->where(['yandex'=>$identity["id"]]);
+                break;
+                case "mailru":
+                    $usrDt = Users::find()->where(['mailru'=>$identity["id"]]);
+                break;
+            }
             if( $usrDt->count()>0 )
             {
-                $users = Users::findOne([
-                    'socid'=>$identity["id"],
-                    'service'=>$identity["service"]
-                ]);
+                switch($identity["service"])
+                {
+                    case "facebook":
+                        $users = Users::findOne(['facebook'=>$identity["id"]]);
+                        break;
+                    case "vkontakte":
+                        $users = Users::findOne(['vkontakte'=>$identity["id"]]);
+                        break;
+                    case "linkedin_oauth2":
+                        $users = Users::findOne(['linkedin'=>$identity["id"]]);
+                        break;
+                    case "google":
+                        $users = Users::findOne(['googleplus'=>$identity["id"]]);
+                        break;
+                    case "yandex":
+                        $users = Users::findOne(['yandex'=>$identity["id"]]);
+                        break;
+                    case "mailru":
+                        $users = Users::findOne(['mailru'=>$identity["id"]]);
+                        break;
+                }
                 $users->active=date("Y-m-d");
-                $users->update();
+                $users->update(false);
             }
             else
             {
@@ -676,43 +841,41 @@ class SiteController extends Controller
                         $pitureUrl="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
                     break;
                 }
-                /*
                 $users = new Users();
-
                 $users->ip=$_SERVER['REMOTE_ADDR'];
                 $users->refdt=$this->ukey();
                 $users->ref=Yii::$app->session->get('refuserId');
                 $users->userpic=$pitureUrl;
                 $users->fn=$firstName;
                 $users->ln=$lastName;
-                $users->socid=$identity["id"];
-                $users->service=$identity["service"];
+                //$users->socid=$identity["id"];
+                //$users->service=$identity["service"];
                 $users->regdate=date("Y-m-d");
                 $users->active=date("Y-m-d");
 
                 switch($identity["service"])
                 {
                     case "facebook":
-                        $users->facebook=$identity["url"];
+                        $users->facebook=$identity["id"];
                     break;
                     case "vkontakte":
-                        $users->vkontakte=$identity["url"];
+                        $users->vkontakte=$identity["id"];
                     break;
                     case "linkedin_oauth2":
-                        $users->linkedin=$identity["url"];
+                        $users->linkedin=$identity["id"];
                     break;
                     case "google":
-                        $users->googleplus=$identity["url"];
+                        $users->googleplus=$identity["id"];
                     break;
                     case "yandex":
-                        $users->yandex=$identity["url"];
+                        $users->yandex=$identity["id"];
                     break;
                     case "mailru":
-                        $users->mailru=$identity["url"];
+                        $users->mailru=$identity["id"];
                     break;
                 }
-
-                $users->save();*/
+                $users->save(false);
+                /*
                 \Yii::$app->db->createCommand
                 ("
                     INSERT INTO users
@@ -741,7 +904,7 @@ class SiteController extends Controller
                                    '".date("Y-m-d")."',
                                    '".date("Y-m-d")."'
                     );
-                    ")->execute();
+                    ")->execute();*/
             }
         }
 /*********************************/
@@ -887,12 +1050,27 @@ class SiteController extends Controller
             $query=new \yii\db\Query();
             $query1=new \yii\db\Query();
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
-
-            $usr = Users::find()
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]])
-                ->one();
-
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usr=Users::find()->where(['facebook'=>$identity["id"]])->one();
+                    break;
+                case "vkontakte":
+                    $usr=Users::find()->where(['vkontakte'=>$identity["id"]])->one();
+                    break;
+                case "linkedin_oauth2":
+                    $usr=Users::find()->where(['linkedin'=>$identity["id"]])->one();
+                    break;
+                case "google":
+                    $usr=Users::find()->where(['google'=>$identity["id"]])->one();
+                    break;
+                case "yandex":
+                    $usr=Users::find()->where(['yandex'=>$identity["id"]])->one();
+                    break;
+                case "mailru":
+                    $usr=Users::find()->where(['mailru'=>$identity["id"]])->one();
+                    break;
+            }
             /*$array=$query1->select('id')
                 ->from([Lp::tableName()])
                 ->where(['uid'=>$usr['id']])->all();
