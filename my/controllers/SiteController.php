@@ -880,4 +880,37 @@ class SiteController extends Controller
         $this->layout = "otkaz";
         return $this->render('index');
     }
+
+    public function actionLinks()
+    {
+        if ( !\Yii::$app->user->isGuest ){
+            $query=new \yii\db\Query();
+            $query1=new \yii\db\Query();
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+
+            $usr = Users::find()
+                ->where(['socid' => $identity["id"]])
+                ->andWhere(['service' => $identity["service"]])
+                ->one();
+
+            /*$array=$query1->select('id')
+                ->from([Lp::tableName()])
+                ->where(['uid'=>$usr['id']])->all();
+            $arr=array();
+            for($i=0;$i<sizeof($array);$i++){
+                $arr[]=$array[$i]["id"];
+            }*/
+
+            return $this->render('links', [
+                'dataProvider' => new ActiveDataProvider([
+                    'query' =>
+                        $query->select('id, name')
+                            ->from([Lp::tableName()])
+                            ->where(['uid'=>$usr['id']])
+                ])
+            ]);
+        }
+        else{return $this->goHome();}
+        //return $this->render('links');
+    }
 }
