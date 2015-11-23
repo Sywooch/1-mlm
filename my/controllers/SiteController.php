@@ -872,12 +872,12 @@ class SiteController extends Controller
     public function actionPolitika()
     {
         $this->layout = "politika";
-        return $this->render('index');
+        return $this->render('politika');
     }
 
     public function actionOtkaz()
     {
         $this->layout = "otkaz";
-        return $this->render('index');
+        return $this->render('otkaz');
     }
 }
