@@ -9,9 +9,9 @@ $( document ).ready(function() {
          $.ajax({
          url: "index.php?r=site/innsave",
          type: "POST",
-         dataType: "json",
-         //data:{www:'www'},
-           /* 'Users-fn': $("#users-fn").val(),
+         //dataType: "json",
+         data:{
+            'Users-fn': $("#users-fn").val(),
             'Users-ln': $("#users-ln").val(),
             'Users-email': $("#users-email").val(),
             'Users-mobile': $("#users-mobile").val(),
@@ -25,17 +25,18 @@ $( document ).ready(function() {
             'Users-googleplus': $("#users-googleplus").val(),
             'Users-yandex': $("#users-yandex").val(),
             'Users-mailru': $("#users-mailru").val()
-             */
-         //},
+         },
          success: function(dt){
-             console.log(dt);
             if(1==dt)
             {
-                $("#nxt_bnt").attr("disabled", false);
-                alert("WOW");
+                $("#nxt_bnt").attr("disabled", true);
+                $("#stepIndex").val("4");
             }
          }
          });
+        }
+        else if( 4==$("#stepIndex").val() ) {
+            $("#nxt_bnt").attr("disabled", true);
         }
     });
 

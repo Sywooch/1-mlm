@@ -93,20 +93,17 @@ class SiteController extends Controller
                    }
                    var_dump($arrUsr);die;
     }
+    public function beforeAction($action) {
+        $this->enableCsrfValidation = false;
+        return parent::beforeAction($action);
+    }
 
     public function actionInnsave(){
-            /*if (!\Yii::$app->user->isGuest) {
+            if (!\Yii::$app->user->isGuest) {
                 if (\Yii::$app->request->isAjax) {
                     return Users::saveChange(\Yii::$app->request->post());
                 }
-            }*/
-            //echo json_decode(\Yii::$app->request->post("data"));
-        echo "<pre>";
-        print_r
-        (
-            \Yii::$app->request->post()
-        );
-        echo "</pre>";
+            }
     }
 
     public function actionIndex()
