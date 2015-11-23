@@ -472,7 +472,7 @@ class SiteController extends Controller
             $model_lp=false;
             $save=null;
 
-            if ($model->count() == $usrLev["maxLandPage"]) {
+            if (($model->count() == $usrLev["maxLandPage"]) && ($usrLev["maxLandPage"] != 5)) {
                 $mes = "Вы исчерпали кол-во создание страниц. Смените тарифный план для увеличение к-ва";
             }
 
@@ -872,4 +872,15 @@ class SiteController extends Controller
             {return $this->redirect($this->siteUrl);}
     }
 /***************************************************************/
+    public function actionPolitika()
+    {
+        $this->layout = "politika";
+        return $this->render('index');
+    }
+
+    public function actionOtkaz()
+    {
+        $this->layout = "otkaz";
+        return $this->render('index');
+    }
 }
