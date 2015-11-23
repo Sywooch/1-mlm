@@ -1,11 +1,27 @@
 <?php
 $identity = \Yii::$app->getUser()->getIdentity()->profile;
-$usrDt = \app\models\Users::find()->select('fn,ln,userpic')
-        ->where(['socid' => $identity["id"]])
-        ->andWhere(['service' => $identity["service"]])
-        ->one();
+switch($identity["service"])
+{
+    case "facebook":
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['facebook'=>$identity["id"]])->one();
+        break;
+    case "vkontakte":
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['vkontakte'=>$identity["id"]])->one();
+    break;
+    case "linkedin_oauth2":
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['linkedin'=>$identity["id"]])->one();
+    break;
+    case "google":
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['google'=>$identity["id"]])->one();
+    break;
+    case "yandex":
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['yandex'=>$identity["id"]])->one();
+    break;
+    case "mailru":
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['mailru'=>$identity["id"]])->one();
+    break;
+}
 ?>
-
 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 <li class="dropdown dropdown-user dropdown-dark">
     <a href="javascript:;"

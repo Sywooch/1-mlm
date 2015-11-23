@@ -102,11 +102,27 @@ class Users extends \yii\db\ActiveRecord
     }
     public function saveChange($p){
         $identity = \Yii::$app->getUser()->getIdentity()->profile;
-        $a = $users = Users::findOne([
-            'socid'=>$identity["id"],
-            'service'=>$identity["service"]
-        ]);
-
+        switch($identity["service"])
+        {
+            case "facebook":
+                $a = $users = Users::findOne(['facebook'=>$identity["id"]]);
+            break;
+            case "vkontakte":
+                $a = $users = Users::findOne(['vkontakte'=>$identity["id"]]);
+            break;
+            case "linkedin_oauth2":
+                $a = $users = Users::findOne(['linkedin'=>$identity["id"]]);
+            break;
+            case "google":
+                $a = $users = Users::findOne(['googleplus'=>$identity["id"]]);
+            break;
+            case "yandex":
+                $a = $users = Users::findOne(['yandex'=>$identity["id"]]);
+            break;
+            case "mailru":
+                $a = $users = Users::findOne(['mailru'=>$identity["id"]]);
+            break;
+        }
         if($a) {
             $users->active=date("Y-m-d");
 

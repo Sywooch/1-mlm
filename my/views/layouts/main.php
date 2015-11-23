@@ -9,11 +9,31 @@ use app\models\Users;
 
 AppAsset::register($this);
 
-
     $identity = \Yii::$app->getUser()->getIdentity()->profile;
-    $model = Users::find()
-    ->where(['socid' => $identity["id"]])
-    ->andWhere(['service' => $identity["service"]]);
+    switch($identity["service"])
+    {
+        case "facebook":
+            $model = Users::find()->where(['facebook'=>$identity["id"]]);
+        break;
+        case "vkontakte":
+            $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
+        break;
+        case "linkedin_oauth2":
+            $model = Users::find()->where(['linkedin'=>$identity["id"]]);
+        break;
+        case "google":
+            $model = Users::find()->where(['googleplus'=>$identity["id"]]);
+        break;
+        case "yandex":
+            $model = Users::find()->where(['yandex'=>$identity["id"]]);
+        break;
+        case "mailru":
+            $model = Users::find()->where(['mailru'=>$identity["id"]]);
+        break;
+        default:
+            $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
+        break;
+    }
 
     $consultant = Users::find()
     ->where(['refdt' => $model->one()["ref"]])->one();

@@ -1,9 +1,26 @@
 <?php
 $identity = \Yii::$app->getUser()->getIdentity()->profile;
-$usr = \app\models\Users::find()->select('refdt')
-    ->where(['socid' => $identity["id"]])
-    ->andWhere(['service' => $identity["service"]])
-    ->one();
+switch($identity["service"])
+{
+    case "facebook":
+        $usr=\app\models\Users::find()->select('refdt')->where(['facebook'=>$identity["id"]])->one();
+        break;
+    case "vkontakte":
+        $usr=\app\models\Users::find()->select('refdt')->where(['vkontakte'=>$identity["id"]])->one();
+        break;
+    case "linkedin_oauth2":
+        $usr=\app\models\Users::find()->select('refdt')->where(['linkedin'=>$identity["id"]])->one();
+        break;
+    case "google":
+        $usr=\app\models\Users::find()->select('refdt')->where(['google'=>$identity["id"]])->one();
+        break;
+    case "yandex":
+        $usr=\app\models\Users::find()->select('refdt')->where(['yandex'=>$identity["id"]])->one();
+        break;
+    case "mailru":
+        $usr=\app\models\Users::find()->select('refdt')->where(['mailru'=>$identity["id"]])->one();
+        break;
+}
 $cntMemCom=
     \app\models\Users::find()->select('id')
         ->where(['ref' => $usr->refdt])

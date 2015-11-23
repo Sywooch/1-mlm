@@ -13,5 +13,5 @@ $this->registerCss($style_user);
 ?>
 <div class="user_item">
     <img width="30" src="mp.php/<?=$user['userpic']; ?>">
-    <a href="<?= $user["vkontakte"]; ?>"><?php echo $user["fn"]." "; ?></a>
+    <a href="http://vk.com/id<?= $user["vkontakte"]; ?>"><?php echo $user["fn"]." "; ?></a>
 </div>

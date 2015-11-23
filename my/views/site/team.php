@@ -1,13 +1,29 @@
 <?php
 use yii\grid\GridView;
 use yii\grid\ActionColumn;
-
+use app\models\Users;
 $identity = \Yii::$app->getUser()->getIdentity()->profile;
-$usrDt = \app\models\Users::find()->select('fn,ln,userpic')
-    ->where(['socid' => $identity["id"]])
-    ->andWhere(['service' => $identity["service"]])
-    ->one();
-
+switch($identity["service"])
+{
+    case "facebook":
+        $usrDt = Users::find()->select('fn,ln,userpic')->where(['facebook'=>$identity["id"]])->one();
+    break;
+    case "vkontakte":
+        $usrDt = Users::find()->select('fn,ln,userpic')->where(['vkontakte'=>$identity["id"]])->one();
+    break;
+    case "linkedin_oauth2":
+        $usrDt = Users::find()->select('fn,ln,userpic')->where(['linkedin'=>$identity["id"]])->one();
+    break;
+    case "google":
+        $usrDt = Users::find()->select('fn,ln,userpic')->where(['googleplus'=>$identity["id"]])->one();
+    break;
+    case "yandex":
+        $usrDt = Users::find()->select('fn,ln,userpic')->where(['yandex'=>$identity["id"]])->one();
+    break;
+    case "mailru":
+        $usrDt = Users::find()->select('fn,ln,userpic')->where(['mailru'=>$identity["id"]])->one();
+    break;
+}
 $this->registerJsFile('/mertonic/global/scripts/app.js');
 
 $js =<<<'SCRIPT'

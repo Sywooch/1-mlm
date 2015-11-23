@@ -115,10 +115,27 @@ class SiteController extends Controller
             }
 
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            $model = Users::find()
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]]);
-
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
+                    break;
+                case "google":
+                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
+                    break;
+                case "yandex":
+                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
+                    break;
+                case "mailru":
+                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
+                    break;
+            }
             $consultant = Users::find()
                 ->where(['refdt' => $model->one()["ref"]])->one();
 
@@ -276,11 +293,28 @@ class SiteController extends Controller
                 {
                     if ($model->count() > 0)
                     {
+                        switch($identity["service"])
+                        {
+                            case "facebook":
+                                $users = Users::findOne(['facebook' => $identity["id"]]);
+                            break;
+                            case "vkontakte":
+                                $users = Users::findOne(['vkontakte' => $identity["id"]]);
+                            break;
+                            case "linkedin_oauth2":
+                                $users = Users::findOne(['linkedin' => $identity["id"]]);
+                            break;
+                            case "google":
+                                $users = Users::findOne(['googleplus' => $identity["id"]]);
+                            break;
+                            case "yandex":
+                                $users = Users::findOne(['yandex' => $identity["id"]]);
+                            break;
+                            case "mailru":
+                                $users = Users::findOne(['mailru' => $identity["id"]]);
+                            break;
+                        }
 
-                        $users = Users::findOne([
-                            'socid'=>$identity["id"],
-                            'service'=>$identity["service"]
-                        ]);
                         $users->active=date("Y-m-d");
                         $users->facebook=$p["Users"]["facebook"];
                         $users->vkontakte=$p["Users"]["vkontakte"];
@@ -417,12 +451,34 @@ class SiteController extends Controller
             }
 
             $query3=new \yii\db\Query();
+
             $usrDt=$query3->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt,
                 u.active AS active, l.title AS level, u.userpic AS userpic')
                 ->from([Users::tableName().' u'])
-                ->innerJoin(Levels::tableName().' l','l.id = u.level')
-                ->where(['u.socid' => $identity["id"]])
-                ->andWhere(['u.service' => $identity["service"]])->one();
+                ->innerJoin(Levels::tableName().' l','l.id = u.level');
+
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usrDt=$usrDt->where(['facebook'=>$identity["id"]]);
+                break;
+                case "vkontakte":
+                    $usrDt=$usrDt->where(['vkontakte'=>$identity["id"]]);
+                break;
+                case "linkedin_oauth2":
+                    $usrDt=$usrDt->where(['linkedin'=>$identity["id"]]);
+                break;
+                case "google":
+                    $usrDt=$usrDt->where(['googleplus'=>$identity["id"]]);
+                break;
+                case "yandex":
+                    $usrDt=$usrDt->where(['yandex'=>$identity["id"]]);
+                break;
+                case "mailru":
+                    $usrDt=$usrDt->where(['mailru'=>$identity["id"]]);
+                break;
+            }
+            $usrDt=$usrDt->one();
 
             $query5=new \yii\db\Query();
             $lastFive=$query5->select('u.fn AS fn, u.ln AS ln,
@@ -678,18 +734,31 @@ class SiteController extends Controller
 
                 }
             }
-
             $query11=new \yii\db\Query();
-            $_usr=$query11->from([Users::tableName()])
-                ->where(['socid' => $identity["id"]])
-                ->andWhere(['service' => $identity["service"]])
-                ->one();
-
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $_usr=$query11->from([Users::tableName()])->where(['facebook'=>$identity["id"]])->one();
+                break;
+                case "vkontakte":
+                    $_usr=$query11->from([Users::tableName()])->where(['vkontakte'=>$identity["id"]])->one();
+                break;
+                case "linkedin_oauth2":
+                    $_usr=$query11->from([Users::tableName()])->where(['linkedin'=>$identity["id"]])->one();
+                break;
+                case "google":
+                    $_usr=$query11->from([Users::tableName()])->where(['google'=>$identity["id"]])->one();
+                break;
+                case "yandex":
+                    $_usr=$query11->from([Users::tableName()])->where(['yandex'=>$identity["id"]])->one();
+                break;
+                case "mailru":
+                    $_usr=$query11->from([Users::tableName()])->where(['mailru'=>$identity["id"]])->one();
+                break;
+            }
             $query12=new \yii\db\Query();
             $data=$query12->from([Lp::tableName()])
                 ->where(['uid' => $_usr["id"]]);
-
-
             $save=( !empty($save) )?$save:null;
             if ($model_lp) {
                 return $this->render('landing', [
