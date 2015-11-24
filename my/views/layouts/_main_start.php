@@ -445,7 +445,7 @@
 
                 <!--review 1-->
 
-                <figure class="text-center"><img src="s/img/review-1.jpg" alt="face" class="img-circle"> </figure>
+                <figure class="text-center"><img src="s/img/otz-01.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
                 <blockquote>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
                     <cite>— Ashley Doe, CEO Abc Organisation</cite> </blockquote>
@@ -457,10 +457,10 @@
 
                 <!--review 2-->
 
-                <figure class="text-center"><img src="s/img/review-2.jpg" alt="face" class="img-circle"> </figure>
+                <figure class="text-center"><img src="s/img/otz-01.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
                 <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
-                    <cite>— John Doe, CEO Abc Organisation</cite> </blockquote>
+                    <p>Я просто в Шоке, от этих ребят,<br> они с ума сошли! текой сервис и практически на шару...  нет слов</p>
+                    <cite style="font-size: 15px;">— Александр Новиков, Алмазный огранщик</cite> </blockquote>
 
                 <!--review 2 end-->
 
@@ -469,7 +469,7 @@
 
                 <!--review 3-->
 
-                <figure class="text-center"><img src="s/img/review-3.jpg" alt="face" class="img-circle"> </figure>
+                <figure class="text-center"><img src="s/img/otz-01.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
                 <blockquote>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
                     <cite>— Michael Doe, CEO Xyz Organisation</cite> </blockquote>

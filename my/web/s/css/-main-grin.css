@@ -454,7 +454,7 @@ transform:translateY(0);
 }
 
 .price-amount {
-    font-size: 80px;   /*font-size: 110px;*/
+  font-size: 110px;
   line-height: 1;
 }
 
@@ -485,7 +485,6 @@ transform:translateY(0);
 .buy-button p {
   margin: 12px 0 0;
   font-weight: 100;   /*  font-weight: 300;  */
-    font-size: 14px;   /*new size*/
 }
 
 /* ==========================================================================
@@ -874,10 +873,7 @@ blockquote cite {
 
 .plan {
   width: 325px;
-    margin: 10px 1em;  /*margin: 0 1em 0;*/
-
-
-
+  margin: 0 1em 0;
 }
 
 blockquote { padding: 0 0 0 1em; }
@@ -960,8 +956,8 @@ blockquote::before {
 #bgvid { display: block; }
 
 .plan {
-    margin: 10px 15px;   /*margin: 0 1.5em 0;*/
-    width: 255px;   /*width: 350px;*/
+  margin: 0 1.5em 0;
+  width: 350px;
 }
 
 blockquote { padding: 0 0 0 3em; }
