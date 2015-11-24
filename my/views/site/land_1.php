@@ -36,7 +36,7 @@
             <div class="clear"></div>
         </div>
         <div id="cta">
-            <p><a onclick="btnclicked=1;" href="<?=$data["url"]?>" target="_self" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a></p>
+            <p><a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a></p>
 
             <h3 style="color: #fff">самое интересное Вас ждет внутри. Регистрация в 1 клик!</h3>
         </div>

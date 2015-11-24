@@ -301,7 +301,7 @@
                     </div>
 
                     <!--<div class="reg-link active" style="margin-top:155px;"><span> Кнопка </span></div>-->
-                    <a onclick="btnclicked=1;" href="<?=$data["url"]?>" target="_self" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a>
+                    <a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a>
 
                     <div style="display: block;" class="show-again"><span> VER </span></div>
                 </td>

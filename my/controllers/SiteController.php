@@ -609,7 +609,7 @@ class SiteController extends Controller
                 ->where(['id' => $landid])
                 ->one();
         return $this->render('land', [
-             'data'=>$data
+             'data'=>$data,
         ]);
     }
 
