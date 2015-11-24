@@ -531,7 +531,7 @@
                     </div>
                 </div>
                 <!--PRICE TABLE END-->
-                <br>   <br>
+                <!--<br>   <br>-->
                 <!--PRICE TABLE-->
                 <div class="plan">
                     <div class="plan-details">
