@@ -5,9 +5,6 @@ switch($identity["service"])
     case "facebook":
         $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['facebook'=>$identity["id"]])->one();
         break;
-    case "vkontakte":
-        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['vkontakte'=>$identity["id"]])->one();
-    break;
     case "linkedin_oauth2":
         $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['linkedin'=>$identity["id"]])->one();
     break;
@@ -19,6 +16,9 @@ switch($identity["service"])
     break;
     case "mailru":
         $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['mailru'=>$identity["id"]])->one();
+    break;
+	case "vkontakte":default:
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['vkontakte'=>$identity["id"]])->one();
     break;
 }
 ?>
