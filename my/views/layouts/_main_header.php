@@ -4,7 +4,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="index.php">
-                <img src="../../s/img/logo-nav.png" alt="logo" class="logo-default" /> </a>
+                <img src="../img/logo.png" alt="logo" class="logo-default" width="60" height="60"  /> 1 mlm</a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
