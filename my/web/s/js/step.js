@@ -31,12 +31,13 @@ $( document ).ready(function() {
             {
                 $("#nxt_bnt").attr("disabled", true);
                 $("#stepIndex").val("4");
+                $("#msg").html("Данные сохранены");
             }
          }
          });
         }
-        else if( 4==$("#stepIndex").val() ) {
-            $("#nxt_bnt").attr("disabled", true);
+        else if( 5==$("#stepIndex").val() ) {
+                window.location = "index.php?r=site/landing";
         }
     });
 
@@ -46,4 +47,42 @@ $( document ).ready(function() {
             $("#stepIndex").val("3");
         }
        });
+
+
+    $('#lp-id').on('change', function () {
+        if( 4==$("#stepIndex").val() ) {
+            $.ajax({
+                url: "index.php?r=site/innsave",
+                type: "POST",
+                //dataType: "json",
+                data:{
+                    'Users-companyid': $("#lp-id").val()
+                },
+                success: function(dt){
+                    if(1==dt)
+                    {
+                        $("#nxt_bnt").attr("disabled", false);
+                        $("#stepIndex").val("5");
+                        $("#msg").html("-Данные сохранены-");
+                    }
+                }
+            });
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

@@ -1,10 +1,46 @@
 <?php
+
+
+use yii\Helpers\ArrayHelper;
+use app\models\Lp;
+use app\models\Users;
+
+$identity = \Yii::$app->getUser()->getIdentity()->profile;
+$query = new \yii\db\Query();
+
+switch($identity["service"])
+{
+    case "facebook":
+        $usr=$query->from([Users::tableName()])->where(['facebook'=>$identity["id"]])->one();
+        break;
+    case "vkontakte":
+        $usr=$query->from([Users::tableName()])->where(['vkontakte'=>$identity["id"]])->one();
+        break;
+    case "linkedin_oauth2":
+        $usr=$query->from([Users::tableName()])->where(['linkedin'=>$identity["id"]])->one();
+        break;
+    case "google":
+        $usr=$query->from([Users::tableName()])->where(['googleplus'=>$identity["id"]])->one();
+        break;
+    case "yandex":
+        $usr=$query->from([Users::tableName()])->where(['yandex'=>$identity["id"]])->one();
+        break;
+    case "mailru":
+        $usr=$query->from([Users::tableName()])->where(['mailru'=>$identity["id"]])->one();
+        break;
+}
+
+
 $params = [
     'prompt' => '-выберите из списка-'
 ];
 
 $lp=\app\models\Lp::find()->all();
-$youcomp=array();
+
+$youcomp=ArrayHelper::map(Lp::find()
+    ->where(['uid' => $usr["id"]])
+    ->all(),
+    'id','name');
 
 $companies = \yii\Helpers\ArrayHelper::map($lp,'id','name');
 if( sizeof($youcomp)<1  )
@@ -14,6 +50,6 @@ $items=[
     'Компании'=>$companies
 ];
 
-echo $form->field( $model, 'rating', ["template" => "<label>Ваша компания</label>\n{input}\n{hint}\n{error}"] )
+echo $form->field( $model, 'companyid', ["template" => "<label>Ваша компания</label>\n{input}\n{hint}\n{error}"] )
     ->dropDownList($items,$params);
 ?>

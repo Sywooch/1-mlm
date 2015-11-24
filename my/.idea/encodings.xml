@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/views/layouts/otkaz.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/politika.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_account_edit_soc.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/site/_index_edit_companies.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_landing_list.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/land_1.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/land_2.php" charset="UTF-8" />
@@ -18,6 +19,7 @@
     <file url="file://$PROJECT_DIR$/views/site/otkaz.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/politika.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/profile.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/mertonic/pages/scripts/form-wizard.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/s/js/step.js" charset="UTF-8" />
   </component>
 </project>

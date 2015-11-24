@@ -126,22 +126,26 @@ class Users extends \yii\db\ActiveRecord
         if($a) {
             $users->active=date("Y-m-d");
 
-            $users->fn=$p["Users-fn"];
-            $users->ln=$p["Users-ln"];
-            $users->email=$p["Users-email"];
-            $users->mobile=$p["Users-mobile"];
-            $users->skype=$p["Users-skype"];
-            $users->city=$p["Users-city"];
-            $users->country=$p["Users-country"];
-            $users->purse=$p["Users-purse"];
+            if( !empty($p["Users-companyid"]) ){
+                $users->companyid = (int)$p["Users-companyid"];
+            }
+            else {
+                $users->fn = $p["Users-fn"];
+                $users->ln = $p["Users-ln"];
+                $users->email = $p["Users-email"];
+                $users->mobile = $p["Users-mobile"];
+                $users->skype = $p["Users-skype"];
+                $users->city = $p["Users-city"];
+                $users->country = $p["Users-country"];
+                $users->purse = $p["Users-purse"];
 
-            $users->facebook=$p["Users-facebook"];
-            $users->vkontakte=$p["Users-vkontakte"];
-            $users->linkedin=$p["Users-linkedin"];
-            $users->googleplus=$p["Users-googleplus"];
-            $users->yandex=$p["Users-yandex"];
-            $users->mailru=$p["Users-mailru"];
-
+                $users->facebook = $p["Users-facebook"];
+                $users->vkontakte = $p["Users-vkontakte"];
+                $users->linkedin = $p["Users-linkedin"];
+                $users->googleplus = $p["Users-googleplus"];
+                $users->yandex = $p["Users-yandex"];
+                $users->mailru = $p["Users-mailru"];
+            }
             $users->update(false);
             return 1;
         }

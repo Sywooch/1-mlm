@@ -12,7 +12,7 @@ $this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/additional-
 
 
 $this->registerJsFile("/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/mertonic/pages/scripts/form-wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("/mertonic/pages/scripts/form-wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
 $this->registerJsFile('//www.youtube.com/player_api');
 
@@ -85,13 +85,13 @@ $this->title = '1-mlm';
                                                 <i class="fa fa-check"></i> Выбор компани </span>
                                     </a>
                                 </li>
-                                <li>
+                                <!--<li>
                                     <a href="#tab4" data-toggle="tab" class="step">
                                         <span class="number"> 4 </span>
                                             <span class="desc">
                                                 <i class="fa fa-check"></i> Создание станицы </span>
                                     </a>
-                                </li>
+                                </li>-->
                             </ul>
                             <div id="bar" class="progress progress-striped" role="progressbar">
                                 <div class="progress-bar progress-bar-success"> </div>
@@ -100,7 +100,7 @@ $this->title = '1-mlm';
                                 <div class="alert alert-danger display-none">
                                     <button class="close" data-dismiss="alert"></button> Ошибка! Пожалуйста, проверьте ниже. </div>
                                 <div class="alert alert-success display-none">
-                                    <button class="close" data-dismiss="alert"></button> ***Поздравляем! Вы на шаг ближе к цели! </div>
+                                    <button class="close" data-dismiss="alert"></button><div id="msg"> ***Поздравляем! Вы на шаг ближе к цели! </div></div>
                                 <div class="tab-pane active" id="tab1">
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <div align="center">
@@ -120,11 +120,11 @@ $this->title = '1-mlm';
                                                 ]); ?>
                                             </div>
                                         </div>
-
                                 </div>
                                 <div class="tab-pane" id="tab3">
-                                    <h5 class="block">Здесь выпадающий список выбора компании </h5>
                                     <div class="form-group">
+
+                                    <!--
                                         <label class="control-label col-md-3">Выбрать компанию
                                             <span class="required"> * </span>
                                         </label>
@@ -132,18 +132,24 @@ $this->title = '1-mlm';
                                             <input type="text" class="form-control" name="card_name" />
                                             <span class="help-block"> </span>
                                         </div>
+                                    -->
+
+                                                <?php
+                                                echo $this->render('_index_edit_companies', [
+                                                    'model' => $model
+                                                ]); ?>
+
+
                                     </div>
-                                    <h3 class="block">Вашей компании нет в списке? </h3>
-                                    <h5 class="block">Перейдите к следующему шагу и создайте свою страничку </h5>
-                                    <h5 class="block">Видео инструкция по созданию страницы</h5>
+
 
                                 </div>
-                                <div class="tab-pane" id="tab4">
+                                <!--<div class="tab-pane" id="tab4">
                                     <h3 class="block">Создание страницы захвата</h3>
 
                                     <iframe width="640" height="360" src="https://www.youtube.com/embed/HBseUoVjSZo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                         <div class="form-actions">
@@ -155,7 +161,7 @@ $this->title = '1-mlm';
                                         <i class="fa fa-angle-right"></i>
                                     </button>
                                     <input type="hidden" id="stepIndex" value="1" />
-                                    <a href="javascript:;" class="btn green button-submit"> Отправить
+                                    <a href="index.php?r=site/landing" class="btn green button-submit"> Отправить
                                         <i class="fa fa-check"></i>
                                     </a>
                                 </div>
@@ -177,7 +183,7 @@ $this->title = '1-mlm';
             videoId: 'HBseUoVjSZo',
             playerVars: {
                 'autoplay': 0,
-                'controls': 1,
+                'controls': 0,
                 'showinfo': '0',
                 'rel': 0
             },
