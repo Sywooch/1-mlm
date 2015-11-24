@@ -32,13 +32,13 @@ h4 {
 }
 
 a {
-  color: #f56363;
+  color: #2a83d0;
   transition: all 0.3s ease-in-out;
 }
 
 a:hover,
 a:focus {
-  color: #fa5454;
+  color: #2da2f5;
   text-decoration: none;
 }
 
@@ -108,7 +108,7 @@ strong { font-weight: 200; } /*  strong { font-weight: 600; }   */
   font-size: 18px;
   text-align: center;
   text-decoration: none;
-  background-color: #f56363;
+  background-color: #008000;
   line-height: 1.5;
   border: none;
   border-radius: 3px;
@@ -119,7 +119,7 @@ strong { font-weight: 200; } /*  strong { font-weight: 600; }   */
 
 .btn:hover {
   color: #fff;
-  background-color: #fa5454;
+  background-color: #006108;
 }
 
 .btn:active,
@@ -128,7 +128,7 @@ strong { font-weight: 200; } /*  strong { font-weight: 600; }   */
 .btn:active:focus {
   color: #fff;
   outline: none;
-  background-color: #fa5454;
+  background-color: #008000;
 }
 
 .cta-btn p {
@@ -179,20 +179,20 @@ strong { font-weight: 200; } /*  strong { font-weight: 600; }   */
 .navbar-default.stuck .navbar-nav>li>a { color: #4c4c4c; }
 
 .navbar-default.stuck .navbar-nav > li > a:hover,
-.navbar-default.stuck .navbar-nav > li > a:focus { color: #fa5454; }
+.navbar-default.stuck .navbar-nav > li > a:focus { color: #2a83d0; }
 
 .navbar-default .btn { font-size: 16px; }
 
 .navbar-default.stuck .navbar-nav .btn {
   display: inline-block;
-  background: #f56363;
+  background: #008000;
   color: #fff;
-  border: 1px solid #f56363;
+  border: 1px solid #007500;
 }
 
 .navbar-default.stuck .navbar-nav .btn:hover,
 .navbar-default.stuck .navbar-nav .btn:focus {
-  background: #fa5454!important;
+  background: #006108 !important;
   color: #fff;
 }
 
@@ -335,7 +335,7 @@ transform:translateY(0);
 
 .features article li:before {
   content: "• ";
-  color: #f56363;
+  color: #008000;
   padding-right: .5em;
 }
 
@@ -798,7 +798,7 @@ blockquote cite {
   font-size: 14px;
 }
 
-.footer-links a:hover { color: #fa5454; }
+.footer-links a:hover { color: #2a83d0; }
 
 .footer-links a:first-child { padding-right: .4em; }
 
@@ -909,7 +909,7 @@ blockquote::before {
   padding: .75em 1.5em;
 }
 
-.navbar-default .btn:hover { background-color: #fa5454 !important; }
+.navbar-default .btn:hover { background-color: #008000 !important; }
 
 .navbar-brand { padding: 0; }
 

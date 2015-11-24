@@ -292,7 +292,7 @@
 <section class="featured-on section-spacing text-center">
     <div class="container">
         <header class="section-header">
-            <h3>дистрибьюторы компаний использующие 1 mlm</h3>
+            <!--<h3>дистрибьюторы компаний использующие 1 mlm</h3>-->
         </header>
         <div class="row">
             <div class="col-md-12">
