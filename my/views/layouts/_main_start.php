@@ -500,7 +500,7 @@
                         <div class="header">
                             <h4>BASIC</h4>
                         </div>
-                        <div class="price"> <span class="currency">$</span><span class="price-amount">2</span><span class="period">/ месяц</span> </div>
+                        <div class="price"> <small><strike>2</strike></small> <span class="currency">$</span><span class="price-amount">0</span><span class="period">/ месяц</span> </div>
                         <ul class="plan-features">
                             <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
                             <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>

@@ -26,9 +26,3 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-
-/my/.idea
-/my/config/auth.php
-/my/config/db.php
-
-my/config/db.php
