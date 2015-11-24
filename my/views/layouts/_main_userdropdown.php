@@ -17,9 +17,12 @@ switch($identity["service"])
     case "mailru":
         $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['mailru'=>$identity["id"]])->one();
     break;
-	case "vkontakte":default:
+	case "vkontakte":
+	default:
         $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['vkontakte'=>$identity["id"]])->one();
     break;
+	$object = new StdClass;
+	$usrDt=(!empty($usrDt))?$usrDt:$object;
 }
 ?>
 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
