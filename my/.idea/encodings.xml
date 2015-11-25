@@ -11,8 +11,10 @@
     <file url="file://$PROJECT_DIR$/views/layouts/otkaz.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/politika.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_account_edit_soc.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/site/_first_list_users.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_index_edit_companies.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_landing_list.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/site/first.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/land_1.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/land_2.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/links.php" charset="UTF-8" />

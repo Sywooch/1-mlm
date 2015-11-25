@@ -109,6 +109,10 @@ $this->registerJs($js);
                                         <label>Надись на кнопке</label>
                                         <input class="form-control" name="button" placeholder="Призыв к действию" type="text">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Id ролика 2 с youtube</label>
+                                        <input id="lp-name" class="form-control" name="yt" placeholder="Вставьте id ролика" type="text">
+                                    </div>
                                 </div>
                             </div>
                             <input id="users-formtype_2" name="Land_2" value="create" type="hidden">
@@ -195,15 +199,22 @@ $this->registerJs($js);
                                     </div>
 
                                     <div class="form-group">
-                                        <?php
-                                        echo $form->field(
-                                            $lp, 'id', [
-                                            "template" => "<label>Ваша ссылка</label>\n{input}\n{hint}\n{error}"])
-                                            ->textInput([
-                                                "readonly" => true,
-                                                "value"=>'http://1-mlm.com/1/'.$lp->id.'.html'
-                                            ]); ?>
+                                        <?=$form->field(
+                                            $lp, 'yt2', ['template' => "<label>Id ролика 2 с Youtube</label>\n{input}\n{hint}\n{error}" ]
+                                        )->textInput(['placeholder' => 'Вставьте id ролика']);
+                                        ?>
                                     </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <?php
+                                    echo $form->field(
+                                        $lp, 'id', [
+                                        "template" => "<label>Ваша ссылка</label>\n{input}\n{hint}\n{error}"])
+                                        ->textInput([
+                                            "readonly" => true,
+                                            "value"=>'http://1-mlm.com/1/'.$lp->id.'.html'
+                                        ]); ?>
                                 </div>
                             </div>
                             <input id="users-formtype" name="Land" value="change" type="hidden">

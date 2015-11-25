@@ -68,37 +68,14 @@ class SiteController extends Controller
         ];
     }
 /****************************************************************/
-    public function actionAr()
-    {
-        $identity = \Yii::$app->getUser()->getIdentity()->profile;
-        $users100 = Users::findOne(
-                   [
-                       'socid'=>$identity["id"],
-                       'service'=>$identity["service"]
-                   ]);
-
-                   $users100->fn=10;
-                   if ($users100->validate())
-                   {
-                       $arrUsr[]=$users100->save(false);
-                   }
-
-                   $users101 = new Users();
-                   $users101->setIsNewRecord(true);
-                   $users101->fn="WOW";
-
-                   if ($users101->validate())
-                   {
-                       $arrUsr[]=$users101->save(false);
-                   }
-                   var_dump($arrUsr);die;
-    }
     public function beforeAction($action) {
-        $this->enableCsrfValidation = false;
+        if("innsave"==$action->id){
+            $this->enableCsrfValidation = false;
+        }
         return parent::beforeAction($action);
     }
 
-    public function actionInnsave(){
+    public function actionInnsave() {
             if (!\Yii::$app->user->isGuest) {
                 if (\Yii::$app->request->isAjax) {
                     return Users::saveChange(\Yii::$app->request->post());
@@ -110,10 +87,6 @@ class SiteController extends Controller
     {
         if (!\Yii::$app->user->isGuest)
         {
-            if (\Yii::$app->request->isAjax) {
-                return $this->actionInnsave();
-            }
-
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
             switch($identity["service"])
             {
@@ -143,13 +116,19 @@ class SiteController extends Controller
                 'model' => $model->one(),
                 'consultant' => $consultant
             ]);
+        }else{
+            $this->layout = "first";
+            return $this->render("first");
         }
-        return $this->render('index');
     }
 
     public function actionTmp()
     {
-        return $this->render('tmp');
+        if (!\Yii::$app->user->isGuest)
+        {
+            return $this->render('tmp');
+        }
+        return $this->goHome();
     }
 
     public function actionDelusr()
@@ -200,7 +179,7 @@ class SiteController extends Controller
         if (!\Yii::$app->user->isGuest){
             return $this->render('profile');
         }
-        else{return $this->goHome();}
+        return $this->goHome();
     }
 
     public function actionTeam()
@@ -254,7 +233,7 @@ class SiteController extends Controller
                 ])
             ]);
         }
-        else{return $this->goHome();}
+        return $this->goHome();
     }
 
     public function actionAccount()
@@ -493,7 +472,7 @@ class SiteController extends Controller
                 'lastFive'=>$lastFive
             ]);
         }
-        else{return $this->goHome();}
+        return $this->goHome();
     }
 
     public function actionHelp()
@@ -543,7 +522,7 @@ class SiteController extends Controller
                 'lastFive'=>$lastFive
             ]);
         }
-        else{return $this->goHome();}
+        return $this->goHome();
     }
 
     public function actionRef()
@@ -563,28 +542,48 @@ class SiteController extends Controller
 
     public function actionCalendar()
     {
-        return $this->render('calendar');
+        if (!\Yii::$app->user->isGuest)
+        {
+            return $this->render('calendar');
+        }
+        return $this->goHome();
     }
 
     public function actionTodo()
     {
-        return $this->render('todo');
+        if (!\Yii::$app->user->isGuest)
+        {
+            return $this->render('todo');
+        }
+        return $this->goHome();
     }
 
 
     public function actionInbox()
     {
-        return $this->render('inbox');
+        if (!\Yii::$app->user->isGuest)
+        {
+            return $this->render('inbox');
+        }
+        return $this->goHome();
     }
 
     public function actionPricing()
     {
-        return $this->render('pricing');
+        if (!\Yii::$app->user->isGuest)
+        {
+            return $this->render('pricing');
+        }
+        return $this->goHome();
     }
 
     public function actionPricing2()
     {
-        return $this->render('pricing2');
+        if (!\Yii::$app->user->isGuest)
+        {
+            return $this->render('pricing2');
+        }
+        return $this->goHome();
     }
 /********************************************************************/
     public function actionLand()
@@ -595,8 +594,8 @@ class SiteController extends Controller
 
         $query11=new \yii\db\Query();
         $data=$query11->from([Lp::tableName()])
-                      ->where(['id' => $landid])
-                      ->one();
+            ->where(['id' => $landid])
+            ->one();
 
         $usr = Users::find()->where(['id' => $data["uid"]]);
 
@@ -606,10 +605,10 @@ class SiteController extends Controller
         ]);
         $query=new \yii\db\Query();
         $data=$query->from([Lp::tableName()])
-                ->where(['id' => $landid])
-                ->one();
+            ->where(['id' => $landid])
+            ->one();
         return $this->render('land', [
-             'data'=>$data,
+            'data'=>$data,
         ]);
     }
 
@@ -782,45 +781,72 @@ class SiteController extends Controller
                 ]);
             }
         }
-        else{return $this->goHome();}
-
-        //return $this->render('landing');
+        return $this->goHome();
     }
+
+/********************************************************************/
 
     public function actionLanding2()
     {
-        //this->chkusr();
-        return $this->render('landing2');
+        if(\Yii::$app->user->isGuest)
+        {
+            return $this->render('landing2');
+        }
+        return $this->goHome();
     }
 
     public function actionLanding3()
     {
-        //this->chkusr();
-        return $this->render('landing3');
+        if(\Yii::$app->user->isGuest)
+        {
+            return $this->render('landing3');
+        }
+        return $this->goHome();
     }
-/********************************************************************/
+
     public function actionMc()
     {
-        //this->chkusr();
-        return $this->render('mc');
+        if(\Yii::$app->user->isGuest)
+        {
+            return $this->render('mc');
+        }
+        return $this->goHome();
     }
 
     public function actionTraining()
     {
-        //this->chkusr();
-        return $this->render('training');
+        if(\Yii::$app->user->isGuest)
+        {
+            return $this->render('training');
+        }
+        return $this->goHome();
     }
 
     public function actionCompany()
     {
-        //this->chkusr();
-        return $this->render('company');
+        if(\Yii::$app->user->isGuest)
+        {
+            return $this->render('company');
+        }
+        return $this->goHome();
     }
 
     public function actionNews()
     {
-        //this->chkusr();
-        return $this->render('news');
+        if(\Yii::$app->user->isGuest)
+        {
+            return $this->render('news');
+        }
+        return $this->goHome();
+    }
+
+    public function actionAbout()
+    {
+         if(\Yii::$app->user->isGuest)
+         {
+             return $this->render('about');
+         }
+        return $this->goHome();
     }
 /*
     public function actionLogin()
@@ -1063,42 +1089,24 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-/*
-        if(\Yii::$app->user->isGuest)
-            {return $this->redirect($this->siteUrl);}
-*/
         return $this->goHome();
     }
 
     public function actionContact()
     {
-/*
-        if(\Yii::$app->user->isGuest)
-            {return $this->redirect($this->siteUrl);}
-*/
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+        if (!\Yii::$app->user->isGuest)
+        {
+            $model = new ContactForm();
+            if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+                Yii::$app->session->setFlash('contactFormSubmitted');
 
-            return $this->refresh();
+                return $this->refresh();
+            }
+            return $this->render('contact', [
+                'model' => $model,
+            ]);
         }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    public function actionAbout()
-    {
-/*
-        if(\Yii::$app->user->isGuest)
-            {return $this->redirect($this->siteUrl);}
-*/
-        return $this->render('about');
-    }
-    private function chkusr()
-    {
-        if(\Yii::$app->user->isGuest)
-            {return $this->redirect($this->siteUrl);}
+        return $this->goHome();
     }
 /***************************************************************/
     public function actionPolitika()
@@ -1157,7 +1165,6 @@ class SiteController extends Controller
                 ])
             ]);
         }
-        else{return $this->goHome();}
-        //return $this->render('links');
+        return $this->goHome();
     }
 }

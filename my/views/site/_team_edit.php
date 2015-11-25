@@ -54,38 +54,58 @@ $this->registerCss($css);
                 <td><i class="fa fa-paper-plane"></i></td>
                 <td>Уровень</td>
                 <td><?=$dt["title"]?></td>
-                <td></td>
+                <td>Линк</td>
             </tr>
+<?php
+            if( !empty($dt["email"]) ):
+?>
             <tr>
                 <td><i class="fa fa-envelope-o"></i></td>
                 <td>E-mail</td>
                 <td><?=$dt["email"]?></td>
                 <td><a href="mailto:<?=$dt["email"]?>"><i class="fa fa-paper-plane"></i></a></td>
             </tr>
+<?php
+            endif;
+            if( !empty($dt["mobile"]) ):
+?>
             <tr>
                 <td><i class="fa fa-mobile"></i></td>
                 <td>Телефон</td>
                 <td><?=$dt["mobile"]?></td>
                 <td><a href="tel:<?=$dt["mobile"]?>"><i class="fa fa-paper-plane"></i></a></td>
             </tr>
+<?php
+            endif;
+            if( !empty($dt["skype"]) ):
+?>
             <tr>
                 <td><i class="fa fa-skype"></i></td>
                 <td>Skype</td>
                 <td><?=$dt["skype"]?></td>
                 <td><a href="skype:<?=$dt["skype"]?>?call"><i class="fa fa-paper-plane"></i></a></td>
             </tr>
+<?php
+            endif;
+            if( !empty($dt["vkontakte"]) ):
+?>
             <tr>
                 <td><i class="fa fa-vk"></i></td>
                 <td>Вконтакте</td>
                 <td>vk.com</td>
-                <td><a href="<?=$dt["vkontakte"]?>"><i class="fa fa-paper-plane"></i></a></td>
+                <td><a href="http://vk.com/id<?=$dt["vkontakte"]?>"><i class="fa fa-paper-plane"></i></a></td>
             </tr>
+<?php
+            endif;
+            if( !empty($dt["facebook"]) ):
+?>
             <tr>
                 <td><i class="fa fa-facebook"></i></td>
                 <td>Facebook</td>
                 <td>facebook.com</td>
-                <td><a href="<?=$dt["facebook"]?>"><i class="fa fa-paper-plane"></i></a></td>
+                <td><a href="http://facebook.com/<?=$dt["facebook"]?>"><i class="fa fa-paper-plane"></i></a></td>
             </tr>
+            <?php endif; ?>
         </table>
     </div>
 </div>

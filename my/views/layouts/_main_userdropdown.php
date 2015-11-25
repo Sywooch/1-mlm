@@ -38,6 +38,7 @@ switch($identity["service"])
             <a href="index.php?r=site%2Faccount">
                 <i class="icon-user"></i> Мой профиль </a>
         </li>
+<!--
         <li>
             <a href="index.php?r=site%2Fcalendar">
                 <i class="icon-calendar"></i> Мой календарь </a>
@@ -54,6 +55,7 @@ switch($identity["service"])
                 <span class="badge badge-success"> 7 </span>
             </a>
         </li>
+-->
         <li class="divider"> </li>
 <!--
         <li>

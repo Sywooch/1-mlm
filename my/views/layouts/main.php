@@ -46,12 +46,6 @@ if( !empty(\Yii::$app->request->get("r")) )
     list($mod,$act) = explode("/",\Yii::$app->request->get("r"));
     unset($mod);
 }else{$act=null;}
-
-if( (\Yii::$app->user->isGuest) && ("land"!=$act) ):
-    echo $this->render('_main_start');
-elseif("land"==$act):
-    //landing page
-elseif(!\Yii::$app->user->isGuest):
 /*
 $this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
 $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -59,11 +53,6 @@ $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['de
 $this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 */
-
-
-
-
-
 
 /*
 <!-- BEGIN THEME GLOBAL SCRIPTS-->
@@ -78,10 +67,6 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 <script src="mertonic/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
 */
-
-
-
-
 
 ?>
 <?php $this->beginPage() ?>
@@ -889,17 +874,13 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 <script src="mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
 <script src="mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS-->
+<!---
 
 <pre>
     <?php
         //print_r($this->getView());
     ?>
 </pre>
-
-
-
-
-<!---
 
 <script src="mertonic/global/scripts/app.js" type="text/javascript"></script>
 <script src="mertonic/pages/scripts/dashboard.js" type="text/javascript"></script>
@@ -924,6 +905,3 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 </body>
 </html>
 <?php $this->endPage() ?>
-<?php
-endif;
-?>
