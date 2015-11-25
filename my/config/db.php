@@ -1,17 +1,12 @@
 <?php
-/*return [
+return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
 ];
-<<<<<<< Updated upstream
 /*
-=======
-
-*/
-
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm',

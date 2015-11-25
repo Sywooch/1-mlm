@@ -1,4 +1,6 @@
 <?php
+use yii\widgets\ActiveForm;
+
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -8,151 +10,111 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
 
 $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
+
+$form = ActiveForm::begin();?>
+<?php
+/*
+    id
+    uid
+    date
+    time
+    yt
+    class
+    title
+    description
+    url
+    download
+    speaker
+    button
+    link
+*/
 ?>
 
-                   <!-- BEGIN PAGE BASE CONTENT -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- BEGIN PROFILE SIDEBAR -->
-                            <div class="profile-sidebar">
-                                <!-- PORTLET MAIN -->
-                                <div class="portlet light profile-sidebar-portlet bordered">
-                                    <!-- SIDEBAR USERPIC -->
-                                    <div class="profile-userpic">
-                                        <img src="<?= $model->userpic; ?>" class="img-responsive" alt="">
-                                    </div>
-                                    <!-- END SIDEBAR USERPIC -->
-                                    <!-- SIDEBAR USER TITLE -->
-                                    <div class="profile-usertitle">
-                                        <div class="profile-usertitle-name"><?php
-                                            echo $model->fn,' ',$model->ln;
-                                            ?></div><br />Дата последнего входа: <?= $usrDt["active"]; ?>
-                                        <br />
-                                        <div class="profile-usertitle-job"> <?php echo $usrDt["level"]; ?> </div>
-                                    </div>
-                                    <!-- END SIDEBAR USER TITLE -->
-                                    <!-- SIDEBAR BUTTONS -->
-                                    <div class="profile-userbuttons">
-                                        <button
-                                            onClick="window.location.href='index.php?r=site%2Fpricing';"
-                                            type="button" class="btn btn-circle green btn-sm">тарифный план</button>
-                                        <button
-                                            onClick="if (confirm('Вы уверены, что хотите удалить свой аккаунт?'))
-                                                  window.location.href='index.php?r=site%2Fdelusr';"
-                                            type="button" class="btn btn-circle red btn-sm">Удалить аккаунт</button>
-                                    </div>
-                                    <!-- END SIDEBAR BUTTONS -->
-                                    <!-- SIDEBAR MENU -->
-                                    <div class="profile-usermenu">
-                                        <ul class="nav">
-                                           <!-- <li>
-                                                <a href="page_user_profile_1.html">
-                                                    <i class="icon-home"></i> Профиль </a>
-                                            </li>-->
-                                            <li class="active">
-                                                <a href="index.php?r=site%2Faccount">
-                                                    <i class="icon-settings"></i> Настройки аккаунта </a>
-                                            </li>
-                                            <li>
-                                                <a href="index.php?r=site%2Fhelp">
-                                                    <i class="icon-info"></i> Помощь </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- END MENU -->
-                                </div>
-                                <!-- END PORTLET MAIN -->
-                                <!-- PORTLET MAIN -->
-                                <div class="portlet light bordered">
-                                    <!-- STAT -->
-                                    <div class="row list-separated profile-stat">
-                                        <div class="col-md-12 col-sm-12 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 0 $ </div>
-                                            <div class="uppercase profile-stat-text"> начистненно по партнерке </div>
-                                        </div>
-                                        <!--<div class="col-md-4 col-sm-4 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 51 </div>
-                                            <div class="uppercase profile-stat-text"> Tasks </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 61 </div>
-                                            <div class="uppercase profile-stat-text"> Uploads </div>
-                                        </div>-->
-                                    </div>
-                                    <!-- END STAT -->
-                                    <div>
-                                        <h4 class="profile-desc-title">Ваши партнеры</h4>
-                                        <span class="profile-desc-text"> 5 последных регистраций </span><br /><br />
-                                    <?php
-                                         for($i=0;$i<sizeof($lastFive);$i++):
-                                    ?>
-                                    <a href="<?= $lastFive[$i]["vkontakte"]; ?>">
-                                        <img alt="user picture" class="img-circle"
-                                           style="margin-left: 5px;margin-top: -8px;height: 39px;display: inline-block;"
-                                           src="<?= $lastFive[$i]["userpic"]; ?>"><span class="username username-hide-on-mobile"><?php
-                                            echo $lastFive[$i]["fn"], ' ',$lastFive[$i]["ln"]
-                                        ?></span>
-                                     </a>
-                                        <br /><br />
-                                    <?php
-                                         endfor; ?>
-                                    </div>
-                                </div>
-                                <!-- END PORTLET MAIN -->
-                            </div>
-                            <!-- END BEGIN PROFILE SIDEBAR -->
-                            <!-- BEGIN PROFILE CONTENT -->
-                            <div class="profile-content">
-                                <div class="row">
-                                    <div class="col-md-12">
-									
-                            <div class="portlet light bordered">
-                                <div class="portlet-title tabbable-line">
-                                    <div class="caption">
-                                        <i class="icon-settings"></i>
-                                        <span class="caption-subject font-purple-soft bold uppercase" style="font-size: 14px;">Настройки мастер класса</span>
-                                    </div>
-                                    <ul class="nav nav-tabs">
-                                        <li class="active">
-                                            <a href="#tab_1_1" data-toggle="tab"> Персональные данные </a>
-                                        </li>
-                                        <li>
-                                            <a href="#tab_1_2" data-toggle="tab"> Изменение аватара </a>
-                                        </li>
-                                        <li>
-                                            <a href="#tab_1_3" data-toggle="tab"> Социальные Аккаунты </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="portlet-body">
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'fn', ["template" => "<label>Имя</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+        )->textInput(["class"=>"form-control"]); ?>
+    </div>
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'ln', ["template" => "<label>Фамилия</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+        )->textInput(["class"=>"form-control"]); ?>
+    </div>
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'email', ["template" => "<label>Ваш email</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-envelope-open\"></i>\n{input}\n{hint}\n{error}</div>"])
+            ->textInput(['placeholder' => 'example@gmail.com',"class"=>"form-control"]); ?>
+    </div>
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'mobile', ["template" => "<label>Номер телефона</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-call-end\"></i>\n{input}\n{hint}\n{error}</div>"])
+            ->textInput(['placeholder' => '+99(99)9999-9999', "class"=>"form-control",]); ?>
+    </div>
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'skype', ["template" => "<label>Ваш skype</label>
+                            <div class=\"input-icon\">
+                            <i class=\"fa fa-skype\"></i>\n{input}\n{hint}\n{error}</div>"])
+            ->textInput(['placeholder' => 'Логин skype',"class"=>"form-control"]); ?>
+    </div>
 
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade active in" id="tab_1_1">
-                                            <?php
-                                            echo $this->render('_account_edit_info', [
-                                                'model' => $model
-                                            ]); ?>
-                                        </div>
-                                        <div class="tab-pane fade" id="tab_1_2">
-                                            <?php
-                                               echo $this->render('_account_edit_photo', [
-                                                 'model' => $model
-                                                ]); ?>
-                                        </div>
-                                        <div class="tab-pane fade" id="tab_1_3">
-                                            <?php
-                                            echo $this->render('_account_edit_soc', [
-                                                'model' => $model
-                                            ]); ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END PROFILE CONTENT -->
-                        </div>
-                    </div>
-                    <!-- END PAGE BASE CONTENT -->
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'city', ["template" => "<label>Город</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+        )->textInput(["class"=>"form-control"]); ?>
+    </div>
+
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'country', ["template" => "<label>Страна</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+        )->textInput(["class"=>"form-control"]); ?>
+    </div>
+
+    <div class="form-group">
+        <?=$form->field(
+            $model, 'purse', ["template" => "<label>Ваш номер кошелька</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-wallet\"></i>\n{input}\n{hint}\n{error}</div>"])
+            ->textInput(["placeholder" => "Perfect money или Payeer","class"=>"form-control"]); ?>
+    </div>
+
+    <div class="form-group">
+        <?php echo $this->render('_account_edit_companies', [
+            'form' => $form,
+            'model' => $model
+        ]);?>
+    </div>
+
+    <div class="form-group">
+        <?php
+        echo $form->field(
+            $model, 'ref', [
+            "template" => "<label>Ваша рефереальная ссылка</label>
+                            <div class=\"input-icon\">
+                            <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"])
+            ->textInput([
+                "placeholder" => "Если продвигаете 1 компанию...",
+                "readonly" => true,
+                "class"=>"form-control",
+                "value"=>'http://1-mlm.com/index.php?site/ref&refid='.$model->refdt
+            ]); ?>
+    </div>
+
+    <div class="margiv-top-10">
+        <?= \yii\helpers\Html::hiddenInput('Users[formtype]', 'personinfo', ["id"=>"users-formtype"]); ?>
+        <?= '<button class="btn green"> Сохранить изменения </button>'; ?>
+        <a href="index.php?r=site%2Faccount" class="btn default"> Отменить </a>
+    </div>
+<?php $form->end(); ?>
