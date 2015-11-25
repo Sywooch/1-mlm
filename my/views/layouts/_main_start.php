@@ -291,9 +291,9 @@
 
 <section class="featured-on section-spacing text-center">
     <div class="container">
-        <header class="section-header">
+        <!--<header class="section-header">
             <h3>дистрибьюторы компаний использующие 1 mlm</h3>
-        </header>
+        </header>-->
         <div class="row">
             <div class="col-md-12">
                 <ul class="featured-sites">
@@ -309,31 +309,7 @@
 
 <!--MLM Компании on end-->
 
-<!--benefits-->
 
-<section class="benefits section-spacing text-center" id="features">
-    <div class="container">
-        <header class="section-header">
-            <h2>Преимущества 1 mlm ресурса</h2>
-        </header>
-        <div class="row">
-            <div class="col-sm-4"> <img src="s/img/benefits-1.png" alt="benefits of product"><br>
-                <h4>Чистый код</h4>
-                <p>Валидный код страниц способствует тому, что в разных браузерах наш сайт  будет также хорошо отображаться. </p>
-            </div>
-            <div class="col-sm-4"> <img src="s/img/benefits-2.png" alt="benefits of product">
-                <h4>Адаптивный дизайн</h4>
-                <p>это корректное отображение сайта на различных устройствах,  динамически подстраивающийся под размеры окна браузера.</p>
-            </div>
-            <div class="col-sm-4"> <img src="s/img/benefits-3.png" alt="benefits of product">
-                <h4>Простота во всем</h4>
-                <p>структура сайта, а также навигация,  удобна и интуитивно понятна для пользователей любого возраста и уровня подготовки.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--benefits end-->
 
 <!--Features-->
 
@@ -343,16 +319,23 @@
         <!--feature 1-->
 
         <div class="row">
-            <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-1.png" alt="feature"> </div>
+            <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-1.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5 col-md-pull-7">
                 <article>
                     <h2>Идея 1 mlm</h2>
-                    <p>Предоставить современную профессиональную маркетинговую систему для маштабного развития и автоматизации сетевого и партнёрского бизнеса, используя эффективные Интернет инструменты совместно с обучающими программами для максимального освобождения Вашего времени. </p>
+                    <p> Все интернет предприниматели  сталкиваются с трудностью -
+                        <strong>СОЗДАНИЕ КОММАНДНОЙ РАБОТЫ</strong></p> <p>Для этого необходимо использовать целый
+                        ряд ресурсов (сайтов) которые нужно еще и  правильно синхронизировать между собой. </p>
+                        <p>Это сложная задача, которая отнимает много времени и усилий.
+                        В млм ресурсе - все основные инструменты находятся в одном месте, а именно: </p>
                     <ul>
-                        <li>Простота настройки</li>
-                        <li>Удобство использования</li>
-                        <li>Предсказуемый Результат</li>
+                        <li>Страница захвата (LendingPage)</li>
+                        <li>Cписок холодный контактов (кандидаты)</li>
+                        <li>Cтатистика выполненых действий</li>
+                        <li>Взаимодействие с командой</li>
+                        <!--<li>Проведение вебинаров (обучение)</li>-->
                     </ul>
+
                 </article>
             </div>
         </div>
@@ -361,16 +344,20 @@
 
         <!--feature 2-->
         <div class="row">
-            <div class="col-md-7 text-center"> <img src="s/img/feature-2.png" alt="feature"> </div>
+            <div class="col-md-7 text-center"> <img src="s/img/feature-2.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5">
                 <article>
                     <h2>Как работает система?</h2>
-                    <p>Aвтоматизация Вашего бизнеса благодаря маркетинговой системе  происходит в три этапа. Единожды правильно настроенная система способна освободить 80% Вашего времени, которое уходит на работу с командой, увеличить темпы роста Вашей структуры! </p>
+                    <p>Aвтоматизация Вашего бизнеса благодаря системе  происходит в три этапа:</p>
                     <ul>
-                        <li>Настройка</li>
-                        <li>Подключение</li>
-                        <li>Дупликация</li>
+                        <li>Создание страницы</li>
+                        <li>Настройка кабинета под свой проект</li>
+                        <li>Создание трафика</li>
                     </ul>
+                    <br>
+                    <p> Единожды правильно настроенная система способна освободить до 80% Вашего времени.</p>
+                    <p> Которое лучше использовать на работу с командой, увеличивая темпы роста Вашей структуры! </p>
+
                 </article>
             </div>
         </div>
@@ -378,16 +365,22 @@
 
         <!--feature 3-->
         <div class="row">
-            <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-3.png" alt="feature"> </div>
+            <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-3.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5 col-md-pull-7">
                 <article>
-                    <h2>Почему  Вам понравится 1 mlm?</h2>
-                    <p>Важные преимущества нашей системы: </p>
+                    <h2>Кому подходит  1 mlm?</h2>
+                    <p>Существует миф о автоматизации млм бизнеса.<br>
+                        Всем хочется строить бизнес на автмате!<br>
+                        В реальности  100% автоматизации - НЕТ!<br>
+                        Вам прийдется принимать активное участие как и раньше, мы можем  только упростить ваш труд.<br>
+                        И по тому 1 mlm ресурс НЕ Подходит:
+                    </p>
                     <ul>
-                        <li>Для начала не нужны технические знания</li>
-                        <li>У Вас есть несколько наставников</li>
-                        <li>Первые 15 дней использование бесплатно</li>
-                        <li>Не нужны большие финансовые вложения</li>
+                        <li>Лентяям</li>
+                        <li>Скептикам</li>
+                        <li>Шаровикам</li>
+                        <li>и т.д.</li>
+                        <p>Всем остальным<br>  -  Рекомендуется как Отличный инструмент для рекрутинга</p>
                     </ul>
                 </article>
             </div>
@@ -415,6 +408,32 @@
 </section>
 
 <!--Video section end-->
+
+<!-- Преимущества 1 mlm ресурса - начало -->
+
+<section class="benefits section-spacing text-center" id="features">
+    <div class="container">
+        <header class="section-header">
+            <h2>Преимущества 1 mlm ресурса</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-4"> <img src="s/img/benefits-3.png" alt="benefits of product"><br>
+                <h4>Простота во всем</h4>
+                <p>Cтруктура сайта, а также навигация,  удобна и интуитивно понятна для пользователей любого возраста и уровня подготовки</p>
+            </div>
+            <div class="col-sm-4"> <img src="s/img/benefits-2.png" alt="benefits of product">
+                <h4>Адаптивный дизайн</h4>
+                <p>Это корректное отображение сайта на различных устройствах,  динамически подстраивающийся под размеры окна браузера</p>
+            </div>
+            <div class="col-sm-4"> <img src="s/img/benefits-1.png" alt="benefits of product" style="margin-bottom: 23px">
+                <h4>Чистый код</h4>
+                <p>Валидный код страниц способствует тому, что в разных браузерах, а также устройствах, сайт  будет также хорошо отображаться</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Преимущества 1 mlm ресурса - конец -->
 
 <!--Tour-->
 
@@ -445,10 +464,10 @@
 
                 <!--review 1-->
 
-                <figure class="text-center"><img src="s/img/otz-01.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
+                <figure class="text-center"><img src="s/img/otz-02.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
                 <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
-                    <cite>— Ashley Doe, CEO Abc Organisation</cite> </blockquote>
+                    <p>За первую неделю моя команда увеличелась в 2 раза.  Считаю что это Отлично! Спасибо за сервис. </p>
+                    <cite style="font-size: 16px;">— Игорь Сальников, Предприниматель</cite> </blockquote>
 
                 <!--review 1 end-->
 
@@ -459,8 +478,8 @@
 
                 <figure class="text-center"><img src="s/img/otz-01.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
                 <blockquote>
-                    <p>Я просто в Шоке, от этих ребят,<br> они с ума сошли! текой сервис и практически на шару...  нет слов</p>
-                    <cite style="font-size: 15px;">— Александр Новиков, Алмазный огранщик</cite> </blockquote>
+                    <p>Я просто в Шоке, от этих ребят,<br> они с ума сошли! Отличный сервис и практически на шару...  нет слов</p>
+                    <cite style="font-size: 16px;">— Александр Новиков, Алмазный огранщик</cite> </blockquote>
 
                 <!--review 2 end-->
 
@@ -469,10 +488,10 @@
 
                 <!--review 3-->
 
-                <figure class="text-center"><img src="s/img/otz-01.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
+                <figure class="text-center"><img src="s/img/otz-03.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
                 <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, repellat, voluptatem eveniet et illum itaque excepturi repudiandae officiis quibusdam deleniti. </p>
-                    <cite>— Michael Doe, CEO Xyz Organisation</cite> </blockquote>
+                    <p> Считаю, что благодаря Вашим отзывам и предложениям. Мы вместе сможем сделать этот сервис лучше </p>
+                    <cite style="font-size: 16px;">— Vitaliy Kovalenko, CEO</cite> </blockquote>
 
                 <!--review 3 end-->
 
@@ -582,7 +601,7 @@
 <section class="cta-section section-spacing text-center">
     <div class="container">
         <header class="section-header">
-            <h2>Попробуйте запустить сегодня!</h2>
+            <h2>Попробуйте запустить уже сегодня!</h2>
             <h3>И получите <strong>сотни новых партнеров</strong> используя наши удивительные инструменты.</h3>
         </header>
         <div class="row">
@@ -604,7 +623,7 @@
 <section class="sub-form section-spacing text-center">
     <div class="container">
         <header class="section-header">
-            <h2>Социальные сети</h2>
+            <h2>Поделитесь с друзьями и партнерами</h2>
             <div class="social-likes">
                 <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
                 <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
