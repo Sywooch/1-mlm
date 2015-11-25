@@ -378,8 +378,8 @@
                     <ul>
                         <li>Лентяям</li>
                         <li>Скептикам</li>
-                        <li>Шаровикам</li>
-                        <li>и т.д.</li>
+                        <li>Шаровикам и т.д.</li>
+                        <br>
                         <p>Всем остальным<br>  -  Рекомендуется как Отличный инструмент для рекрутинга</p>
                     </ul>
                 </article>
@@ -508,7 +508,7 @@
     <div class="container">
         <header class="section-header">
             <h2>Отличный Сервис по цене чашки кофе )</h2>
-            <h3>Бесплатная регистрация. 15 дней бесплатной пробной версии. Не нужна кредитная карта.</h3>
+            <p style="color: #ffffff; font-size: 16px;">Бесплатная регистрация, для активации не нужна кредитная карта.</p>
         </header>
         <div class="row">
             <div class="col-md-12">
@@ -517,13 +517,14 @@
                 <div class="plan">
                     <div class="plan-details">
                         <div class="header">
-                            <h4>BASIC</h4>
+                            <h4>Новичек</h4>
                         </div>
-                        <div class="price"> <small><strike>2</strike></small> <span class="currency">$</span><span class="price-amount">0</span><span class="period">/ месяц</span> </div>
+                        <div class="price"> <b><strike>2$</strike></b> <span class="price-amount">0</span><span class="currency">$</span><span class="period"></span> </div>
                         <ul class="plan-features">
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>1</span> Комания</li>
+                            <li align="left"><i class="fa fa-bullseye"></i> Страница - 1 </li>
+                            <li align="left"><i class="fa fa-university"></i> Компания - <span>1</span></li>
+                            <li align="left"><i class="fa fa-graduation-cap"></i> Мастер Класс - 0</li>
+                            <li align="left"><i class="fa fa-usd "></i> Партнерка - нет</li>
                         </ul>
                     </div>
                     <div class="buy-button">  <!--<a class="btn" href="#">выбрать</a>-->
@@ -536,13 +537,14 @@
                 <div class="plan">
                     <div class="plan-details">
                         <div class="header">
-                            <h4>PREMIUM</h4>
+                            <h4>Мастер</h4>
                         </div>
-                        <div class="price"> <span class="currency">$</span><span class="price-amount">10</span><span class="period">/ месяц</span> </div>
+                        <div class="price"> <b><strike>10$</strike></b> <span class="price-amount">2</span><span class="currency">$</span><span class="period">/ месяц</span> </div>
                         <ul class="plan-features">
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp; <span>5</span> Компаний</li>
+                            <li align="left"><i class="fa fa-bullseye"></i> Страниц - 3 </li>
+                            <li align="left"><i class="fa fa-university"></i> Компания - 3 </li>
+                            <li align="left"><i class="fa fa-graduation-cap"></i> Мастер Класс - да </li>
+                            <li align="left"><i class="fa fa-usd "></i> Партнерка - 50% </li>
                         </ul>
                     </div>
                     <div class="buy-button"> <!--<a class="btn" href="#">выбрать</a>-->
@@ -555,13 +557,14 @@
                 <div class="plan">
                     <div class="plan-details">
                         <div class="header">
-                            <h4>BASIC</h4>
+                            <h4>Лидер</h4>
                         </div>
-                        <div class="price"> <span class="currency">$</span><span class="price-amount">2</span><span class="period">/ месяц</span> </div>
+                        <div class="price"> <b><strike>25$</strike></b> <span class="price-amount">10</span><span class="currency">$</span><span class="period">/ месяц</span> </div>
                         <ul class="plan-features">
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>1</span> Комания</li>
+                            <li align="left"><i class="fa fa-bullseye"></i> Страниц - 10 </li>
+                            <li align="left"><i class="fa fa-university"></i> Компания - 10 </li>
+                            <li align="left"><i class="fa fa-graduation-cap"></i> Мастер Класс - да </li>
+                            <li align="left"><i class="fa fa-usd "></i> Партнерка - 50% </li>
                         </ul>
                     </div>
                     <div class="buy-button">  <!--<a class="btn" href="#">выбрать</a>-->
@@ -574,13 +577,14 @@
                 <div class="plan">
                     <div class="plan-details">
                         <div class="header">
-                            <h4>PREMIUM</h4>
+                            <h4>Профи</h4>
                         </div>
-                        <div class="price"> <span class="currency">$</span><span class="price-amount">10</span><span class="period">/ месяц</span> </div>
+                        <div class="price"> <b><strike>50$</strike></b> <span class="price-amount">25</span><span class="currency">$</span><span class="period">/ месяц</span> </div>
                         <ul class="plan-features">
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;Обучение</li>
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp;<span>24/7</span> Support</li>
-                            <li align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i> &nbsp;&nbsp;&nbsp; <span>5</span> Компаний</li>
+                            <li align="left"><i class="fa fa-bullseye"></i> Страниц - 25 </li>
+                            <li align="left"><i class="fa fa-university"></i> Компания - 25 </li>
+                            <li align="left"><i class="fa fa-graduation-cap"></i> Мастер Класс - да </li>
+                            <li align="left"><i class="fa fa-usd "></i> Партнерка - 50% </li>
                         </ul>
                     </div>
                     <div class="buy-button"> <!--<a class="btn" href="#">выбрать</a>-->
