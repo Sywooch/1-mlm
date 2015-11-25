@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Commands;
+use app\models\Hangouts;
 use Yii;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
@@ -804,14 +805,374 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************************************/
     public function actionMc()
     {
-        if(!\Yii::$app->user->isGuest)
+        if (!\Yii::$app->user->isGuest)
         {
-            return $this->render('mc');
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+
+            $model = Users::find();
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $model=$model->where(['facebook' => $identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $model=$model->where(['vkontakte' => $identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $model=$model->where(['linkedin' => $identity["id"]]);
+                    break;
+                case "google":
+                    $model=$model->where(['googleplus' => $identity["id"]]);
+                    break;
+                case "yandex":
+                    $model=$model->where(['yandex' => $identity["id"]]);
+                    break;
+                case "mailru":
+                    $model=$model->where(['mailru' => $identity["id"]]);
+                    break;
+            }
+
+            if(\Yii::$app->request->post())
+            {
+                $p = \Yii::$app->request->post();
+                if( 'soc'==$p["Users"]["formtype"] )
+                {
+                    if ($model->count() > 0)
+                    {
+                        switch($identity["service"])
+                        {
+                            case "facebook":
+                                $users = Users::findOne(['facebook' => $identity["id"]]);
+                                break;
+                            case "vkontakte":
+                                $users = Users::findOne(['vkontakte' => $identity["id"]]);
+                                break;
+                            case "linkedin_oauth2":
+                                $users = Users::findOne(['linkedin' => $identity["id"]]);
+                                break;
+                            case "google":
+                                $users = Users::findOne(['googleplus' => $identity["id"]]);
+                                break;
+                            case "yandex":
+                                $users = Users::findOne(['yandex' => $identity["id"]]);
+                                break;
+                            case "mailru":
+                                $users = Users::findOne(['mailru' => $identity["id"]]);
+                                break;
+                        }
+
+                        $users->active=date("Y-m-d");
+                        $users->facebook=$p["Users"]["facebook"];
+                        $users->vkontakte=$p["Users"]["vkontakte"];
+                        $users->linkedin=$p["Users"]["linkedin"];
+                        $users->googleplus=$p["Users"]["googleplus"];
+                        $users->yandex=$p["Users"]["yandex"];
+                        $users->mailru=$p["Users"]["mailru"];
+                        $users->update(false);
+                        /*
+                                                \Yii::$app->db->createCommand("
+                                                        UPDATE `users` SET
+                                                            `active`='".date("Y-m-d")."',
+                                                            `facebook`='{$p["Users"]["facebook"]}',
+                                                            `vkontakte`='{$p["Users"]["vkontakte"]}',
+                                                            `linkedin`='{$p["Users"]["linkedin"]}',
+                                                            `googleplus`='{$p["Users"]["googleplus"]}',
+                                                            `yandex`='{$p["Users"]["yandex"]}';
+                                                            `mailru`='{$p["Users"]["mailru"]}';
+                                                        WHERE
+                                                            `socid`='{$identity["id"]}'
+                                                        AND
+                                                            `service` = '{$identity["service"]}'
+                                                ")
+                                                    ->execute();
+                                                */
+                    }
+                }
+                if( 'picture'==$p["Users"]["formtype"] )
+                {
+                    $upf = new Users();
+                    $upf->userpic = UploadedFile::getInstance($upf, 'userpic');
+                    if ($upf->validate())
+                    {
+                        $flname = $identity["id"] . time() . '.' . $upf->userpic->extension;
+                        $upf->userpic
+                            ->saveAs(Yii::getAlias('@webroot') .
+                                DIRECTORY_SEPARATOR . 'imgs' . DIRECTORY_SEPARATOR . $flname);
+                        switch($identity["service"])
+                        {
+                            case "facebook":
+                                $users = Users::findOne(['facebook'=>$identity["id"]]);
+                                break;
+                            case "vkontakte":
+                                $users = Users::findOne(['vkontakte'=>$identity["id"]]);
+                                break;
+                            case "linkedin_oauth2":
+                                $users = Users::findOne(['linkedin'=>$identity["id"]]);
+                                break;
+                            case "google":
+                                $users = Users::findOne(['googleplus'=>$identity["id"]]);
+                                break;
+                            case "yandex":
+                                $users = Users::findOne(['yandex'=>$identity["id"]]);
+                                break;
+                            case "mailru":
+                                $users = Users::findOne(['mailru'=>$identity["id"]]);
+                                break;
+                        }
+                        $users->active=date("Y-m-d");
+                        $users->userpic=Yii::getAlias('@web')."/imgs/".$flname;
+                        $users->update(false);
+                        /*
+                        \Yii::$app->db->createCommand("
+                                       UPDATE `users` SET
+                                           `active`='".date("Y-m-d")."',
+                                           `userpic`='".Yii::getAlias('@web')."/imgs/{$flname}'
+                                       WHERE
+                                           `socid`='{$identity["id"]}'
+                                       AND
+                                           `service` = '{$identity["service"]}'
+                               ")
+                            ->execute();
+                        */
+                    }
+                }
+                if( 'personinfo'==$p["Users"]["formtype"] )
+                {
+                    if ($model->count() > 0)
+                    {
+                        switch($identity["service"])
+                        {
+                            case "facebook":
+                                $users = Users::findOne(['facebook'=>$identity["id"]]);
+                                break;
+                            case "vkontakte":
+                                $users = Users::findOne(['vkontakte'=>$identity["id"]]);
+                                break;
+                            case "linkedin_oauth2":
+                                $users = Users::findOne(['linkedin'=>$identity["id"]]);
+                                break;
+                            case "google":
+                                $users = Users::findOne(['googleplus'=>$identity["id"]]);
+                                break;
+                            case "yandex":
+                                $users = Users::findOne(['yandex'=>$identity["id"]]);
+                                break;
+                            case "mailru":
+                                $users = Users::findOne(['mailru'=>$identity["id"]]);
+                                break;
+                        }
+                        $users->active=date("Y-m-d");
+                        $users->fn=$p["Users"]["fn"];
+                        $users->ln=$p["Users"]["ln"];
+                        $users->email=$p["Users"]["email"];
+                        $users->mobile=$p["Users"]["mobile"];
+                        $users->skype=$p["Users"]["skype"];
+                        $users->city=$p["Users"]["city"];
+                        $users->country=$p["Users"]["country"];
+                        $users->purse=$p["Users"]["purse"];
+                        $users->rating=$p["Users"]["rating"];
+                        $users->save(false);
+                        unset($users);
+                        /*
+                                                \Yii::$app->db->createCommand("
+                                                        UPDATE `users` SET
+                                                            `active`='".date("Y-m-d")."',
+                                                            `fn`='{$p["Users"]["fn"]}',
+                                                            `ln`='{$p["Users"]["ln"]}',
+                                                            `email`='{$p["Users"]["email"]}',
+                                                            `mobile`='{$p["Users"]["mobile"]}',
+                                                            `skype`='{$p["Users"]["skype"]}',
+                                                            `city`='{$p["Users"]["city"]}',
+                                                            `country`='{$p["Users"]["country"]}',
+                                                            `purse`='{$p["Users"]["purse"]}',
+                                                            `rating`='{$p["Users"]["rating"]}'
+                                                        WHERE
+                                                            `socid`='{$identity["id"]}'
+                                                        AND
+                                                            `service` = '{$identity["service"]}'
+                                                ")
+                                                    ->execute();*/
+                    }
+                }
+            }
+
+            $query3=new \yii\db\Query();
+
+            $usrDt=$query3->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt,
+                u.active AS active, l.title AS level, u.userpic AS userpic')
+                ->from([Users::tableName().' u'])
+                ->innerJoin(Levels::tableName().' l','l.id = u.level');
+
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usrDt=$usrDt->where(['facebook'=>$identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $usrDt=$usrDt->where(['vkontakte'=>$identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $usrDt=$usrDt->where(['linkedin'=>$identity["id"]]);
+                    break;
+                case "google":
+                    $usrDt=$usrDt->where(['googleplus'=>$identity["id"]]);
+                    break;
+                case "yandex":
+                    $usrDt=$usrDt->where(['yandex'=>$identity["id"]]);
+                    break;
+                case "mailru":
+                    $usrDt=$usrDt->where(['mailru'=>$identity["id"]]);
+                    break;
+            }
+            $usrDt=$usrDt->one();
+
+            $query5=new \yii\db\Query();
+            $lastFive=$query5->select('u.fn AS fn, u.ln AS ln,
+            vkontakte, u.socid AS socid, u.userpic AS userpic')
+                ->from([Users::tableName().' u'])
+                ->where(['u.ref' => $usrDt["refdt"]])
+                ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
+
+            return $this->render('mcedit', [
+                'model' => $model->one(),
+                'usrDt'=> $usrDt,
+                'lastFive'=>$lastFive
+            ]);
         }
         return $this->goHome();
     }
+
+    public function actionMcarchive()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
+                    break;
+                case "google":
+                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
+                    break;
+                case "yandex":
+                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
+                    break;
+                case "mailru":
+                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
+                    break;
+            }
+
+            return $this->render('mcarchive', [
+                'dataProviderSys' => new ActiveDataProvider([
+                    'query' =>Hangouts::find()
+                        //->where([''=>''])
+                ]),
+                'dataProviderPartner' => new ActiveDataProvider([
+                    'query' =>Hangouts::find()
+                        ->where([ 'uid' => $model->one()["ref"] ])
+                ]),
+                'dataProviderMy' => new ActiveDataProvider([
+                    'query' =>Hangouts::find()
+                        ->where([ 'uid' => $model->one()["id"] ])
+                ])
+            ]);
+        }
+        return $this->goHome();
+    }
+/**************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function actionTraining()
     {

@@ -1,5 +1,5 @@
 <?php
-$this->title = 'profile';
+$this->title = 'Мастер класс';
 $this->params['breadcrumbs'][] = $this->title;
 
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
@@ -41,17 +41,30 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
                                 <div id="result"></div>
                                 <p><button class="btn medium alizarin" id="send2wall" title="Жмите здесь, чтобы разместить у себя на стене ВКонтакте приглашение на этот мастер-класс!">Отправить на стену ВК</button></p>
                                 <div class="col-md-6">
-                                    <h3>Ваше текущее время:</h3>
-                                    <p><iframe frameborder="no" scrolling="no" style="width:280px;height:150px;" src="https://time.yandex.ru/widget/?geoid=10347&lang=ru&layout=horiz&type=digital&face=serif"></iframe></p>
+                                    <h3>Киевское время:</h3>
+                                    <p><iframe frameborder="no" scrolling="no" style="width:280px;height:150px;"
+                                               src="https://time.yandex.ru/widget/?geoid=143&lang=ru&layout=horiz&type=digital&face=serif"></iframe></p>
                                 </div>
                                 <div class="col-md-6">
                                     <h3>Московское время:</h3>
-                                    <p><iframe frameborder="no" scrolling="no" style="width:280px;height:150px;" src="https://time.yandex.ru/widget/?geoid=213&lang=ru&layout=horiz&type=digital&face=serif"></iframe></p>
+                                    <p><iframe frameborder="no" scrolling="no" style="width:280px;height:150px;"
+                                               src="https://time.yandex.ru/widget/?geoid=213&lang=ru&layout=horiz&type=digital&face=serif"></iframe></p>
                                 </div>
                                 <div class="clear"></div>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
                     <div class="col-md-4">
                         <p><a href="https://plus.google.com/u/0/events/<?php //echo $mklas['onair'];?>" target="_blank" title="Вы можете войти в комнату и задать вопросы лично!"><i class="fa fa-external-link-square"></i>Войти в комнату мастер-класса</a></p>
                         <h4><i class="fa fa-comments-o"></i>Задавайте Ваши вопросы в комментариях:</h4>
