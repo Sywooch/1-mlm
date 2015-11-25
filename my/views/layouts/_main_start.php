@@ -264,7 +264,7 @@
             <div class="col-md-12">
                 <!--<h1>1-й млм ресурс</h1>-->
                 <h1>1 mlm ресурс</h1>
-                <h2>Автоматизация бизнеса на 80%</h2>
+                <h2>Автоматизация бизнеса на 80% !!!</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
                                         data-target="#modal-1">попробуйте бесплатно</a>
@@ -386,7 +386,7 @@
             <div class="col-md-7 text-center"> <img src="s/img/feature-2.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5">
                 <article>
-                    <h2>Как работает система?</h2>
+                    <h2>Как работает система???</h2>
                     <p>Aвтоматизация Вашего бизнеса благодаря системе  происходит в три этапа:</p>
                     <ul>
                         <li>Создание страницы</li>
