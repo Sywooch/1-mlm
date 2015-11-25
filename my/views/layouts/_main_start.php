@@ -265,7 +265,7 @@
                 <!--<h1>1-й млм ресурс</h1>-->
                 <h1>1 mlm ресурс</h1>
                 <h2>Автоматизация бизнеса на 80%</h2>
-                <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
+                <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
                                         data-target="#modal-1">попробуйте бесплатно</a>
                     <br><br>
@@ -433,7 +433,7 @@
 <!--Video section-->
 
 <section class="video-tour text-center">
-    <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-tour"><img src="s/img/play-btn-vs.png" alt="play"></a>
+    <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-tour"><img src="s/img/play-btn-vs.png" alt="play"></a>
         <!--<h2>Video 1 mlm</h2>-->
     </div>
 
