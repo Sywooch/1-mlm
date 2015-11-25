@@ -133,10 +133,43 @@
             border-radius: 15px !important;
         }
 
+        .featured-sites {
+            /*white-space: nowrap;
+            overflow: hidden;*/
+        }
+
+        #marquee {
+            position: relative;
+            white-space: nowrap;
+        }
+
     </style>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
+    <script>
+        $(function() {
+
+            var marquee = $("#marquee");
+            marquee.css({"overflow": "hidden", "width": "100%"});
+
+            // оболочка для текста ввиде span (IE не любит дивы с inline-block)
+            marquee.wrapInner("<span>");
+            marquee.find("span").css({  "display": "inline-block", "text-align":"center" });
+            marquee.append(marquee.find("span").clone()); // тут у нас два span с текстом
+
+            marquee.wrapInner("<div>");
+            marquee.find("div").css("width", "200%");
+
+            var reset = function() {
+                $(this).css("margin-left", "0%");
+                $(this).animate({ "margin-left": "-100%" }, 12000, 'linear', reset);
+            };
+
+            reset.call(marquee.find("div"));
+
+        });
+    </script>
 </head>
 <body>
 <!-- BEGIN LOGIN BOX *****************************************************************-->
@@ -296,12 +329,18 @@
         </header>-->
         <div class="row">
             <div class="col-md-12">
+                <div id="marquee">
                 <ul class="featured-sites">
                     <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100" ></a> </li>
                     <li><a href="" title="Site Name"><img src="s/img/site-2.png" alt="site" height="50" width="100"></a></li>
                     <li><a href="" title="Site Name"><img src="s/img/site-3.png" alt="site" height="50" width="100"></a></li>
                     <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100"></a></li>
+                    <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100" ></a> </li>
+                    <li><a href="" title="Site Name"><img src="s/img/site-2.png" alt="site" height="50" width="100"></a></li>
+                    <li><a href="" title="Site Name"><img src="s/img/site-3.png" alt="site" height="50" width="100"></a></li>
+                    <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100"></a></li>
                 </ul>
+                </div>
             </div>
         </div>
     </div>
