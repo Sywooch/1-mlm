@@ -3,7 +3,7 @@
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            
+
                 <a href="index.php">
                 <img src="../img/logo.png" alt="logo" class="logo-default" width="50" height="50"  />
                 <span style="color: #2a83d0; font-size: 23px;"><b>1 mlm</b></span></a>

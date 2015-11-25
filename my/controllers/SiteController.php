@@ -788,7 +788,7 @@ class SiteController extends Controller
 
     public function actionLanding2()
     {
-        if(\Yii::$app->user->isGuest)
+        if(!\Yii::$app->user->isGuest)
         {
             return $this->render('landing2');
         }
@@ -797,7 +797,7 @@ class SiteController extends Controller
 
     public function actionLanding3()
     {
-        if(\Yii::$app->user->isGuest)
+        if(!\Yii::$app->user->isGuest)
         {
             return $this->render('landing3');
         }
@@ -806,7 +806,7 @@ class SiteController extends Controller
 
     public function actionMc()
     {
-        if(\Yii::$app->user->isGuest)
+        if(!\Yii::$app->user->isGuest)
         {
             return $this->render('mc');
         }
@@ -815,7 +815,7 @@ class SiteController extends Controller
 
     public function actionTraining()
     {
-        if(\Yii::$app->user->isGuest)
+        if(!\Yii::$app->user->isGuest)
         {
             return $this->render('training');
         }
@@ -824,7 +824,7 @@ class SiteController extends Controller
 
     public function actionCompany()
     {
-        if(\Yii::$app->user->isGuest)
+        if(!\Yii::$app->user->isGuest)
         {
             return $this->render('company');
         }
@@ -833,7 +833,7 @@ class SiteController extends Controller
 
     public function actionNews()
     {
-        if(\Yii::$app->user->isGuest)
+        if(!\Yii::$app->user->isGuest)
         {
             return $this->render('news');
         }
@@ -842,7 +842,7 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
-         if(\Yii::$app->user->isGuest)
+         if(!\Yii::$app->user->isGuest)
          {
              return $this->render('about');
          }
