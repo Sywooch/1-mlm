@@ -6,10 +6,6 @@ return [
     'password' => '',
     'charset' => 'utf8',
 ];
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 /*
 return [
     'class' => 'yii\db\Connection',
