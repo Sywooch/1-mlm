@@ -13,8 +13,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <link rel="shortcut icon" href="s/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="s/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <!--<link href="s/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="s/css/font-awesome.min.css" rel="stylesheet">
     <link href="s/css/magnific-popup.css" rel="stylesheet">
