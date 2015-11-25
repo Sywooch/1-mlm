@@ -1,12 +1,17 @@
 <?php
-return [
+/*return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
 ];
+<<<<<<< Updated upstream
 /*
+=======
+
+*/
+>>>>>>> Stashed changes
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm',
@@ -14,7 +19,7 @@ return [
     'password' => '12345678@',
     'charset' => 'utf8',
 ];
-*/
+
 /*return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm_yii2',

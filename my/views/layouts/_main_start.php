@@ -631,7 +631,7 @@
                     </div>
                 </div>
                 <!--PRICE TABLE END-->
-
+<p style="color: #ffffff; font-size: 18px;"> Внимание !!! Все тарифы снижены до 31.12.2015</p>
             </div>
         </div>
     </div>
