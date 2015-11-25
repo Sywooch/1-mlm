@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -744,4 +742,3 @@
 <input type="hidden" id="usrall" value="<?= \app\models\Users::find()->count(); ?>" />
 </body>
 </html>
->>>>>>> origin/master
