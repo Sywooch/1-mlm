@@ -185,25 +185,36 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
-        <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
-            <a href="index.php?r=site%2Fcompany" class="nav-link">
-                <i class="icon-pointer"></i>
-                <span class="title">Компания</span>
-
-            </a>
+  -->
+            <li class="nav-item start <?php
+            echo( "mc"==$act ) ? 'active open' : null;
+            echo( "mcarchive"==$act ) ? 'active open' : null;
+            ?>">
+                <a href="#" class="nav-link">
+                    <i class="icon-user"></i>
+                    <span class="title">Мастер Класс</span>
+                </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="page/maps_google.html" class="nav-link ">
-                            <span class="title">Google Maps</span>
+                    <li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Fmc" class="nav-link ">
+                            <span class="title">Создание МК</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
-                        <a href="page/maps_vector.html" class="nav-link ">
-                            <span class="title">Vector Maps</span>
+                    <li class="nav-item <?=( "mcarchive"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Fmcarchive" class="nav-link ">
+                            <span class="title">Архив МК</span>
                         </a>
                     </li>
                 </ul>
-            </li>-->
+            </li>
+
+            <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Fcompany" class="nav-link">
+                    <i class="icon-pointer"></i>
+                    <span class="title">Компания</span>
+                </a>
+            </li>
+
         <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Fnews" class="nav-link">
                 <i class="icon-user"></i>
@@ -269,6 +280,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
+            <!--
             <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=site%2Fcompany" class="nav-link">
                     <i class="icon-pointer"></i>
@@ -289,30 +301,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
-            <li class="nav-item start <?php
-                echo( "mc"==$act ) ? 'active open' : null;
-                echo( "mcarchive"==$act ) ? 'active open' : null;
-            ?>">
-                <a href="#" class="nav-link">
-                    <i class="icon-user"></i>
-                    <span class="title">Мастер Класс</span>
-                    <span class="badge badge-danger">скоро</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fmc" class="nav-link ">
-                            <span class="title">Создание МК</span>
-                        </a>
-                    </li>
-                    <li class="nav-item <?=( "mcarchive"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fmcarchive" class="nav-link ">
-                            <span class="title">Архив МК</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
+            -->
             <!--<li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-layers"></i>

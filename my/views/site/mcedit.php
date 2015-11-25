@@ -8,7 +8,7 @@ $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' 
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-$this->title = 'profile';
+$this->title = 'mcedit';
 $this->params['breadcrumbs'][] = $this->title;
 
 $form = ActiveForm::begin();?>

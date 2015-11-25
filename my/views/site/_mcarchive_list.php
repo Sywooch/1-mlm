@@ -32,7 +32,7 @@ echo GridView::widget([
             {
                 return
                     $str="Мастер-класс от {$data->date}<br />".
-                        ( !empty($my) )?"Редактировать":null.
+                        /*( !empty($my) )?"Редактировать":null.*/
                         "Смотреть в записи: ".
                         $this->render('_mcarchive_video', [
                             'data' => $data

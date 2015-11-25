@@ -911,9 +911,10 @@ class SiteController extends Controller
                     ]);
                     $hangouts->title=$p["title"];
                     $hangouts->update(false);
+                }else{
+                    return $this->render('mcempty');
                 }
             }
-
             return $this->render('mcedit', [
                 'model' => $model
             ]);
@@ -1013,7 +1014,6 @@ class SiteController extends Controller
 
     public function actionCompany()
     {
-        //this->chkusr();
         if ( !\Yii::$app->user->isGuest ){
             $query1=new \yii\db\Query();
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
@@ -1052,7 +1052,6 @@ class SiteController extends Controller
             ]);
         }
         else{return $this->goHome();}
-        //return $this->render('company');
     }
 
     public function actionNews()
