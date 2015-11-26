@@ -36,9 +36,12 @@ $this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+
 $this->registerJsFile('/metronic/theme/assets/global/scripts/datatable.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/metronic/theme/assets/global/plugins/datatables/datatables.min.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/metronic/theme/assets/global/plugins/adtatable/plugins/bootstrap/datatables.bootstrap.js', ['depends' => 'yii\web\JqueryAsset']);
+
+
 $this->registerJs($js);
 $css = <<<'STYLE'
 .tbl-header *
@@ -58,8 +61,126 @@ $this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/datatab
 $this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css');
 
 $this->title = 'profile';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
+
+<!-- BEGIN PAGE BASE CONTENT -->
+<div class="m-heading-1 border-green m-bordered">
+    <h3 class="font-green">Ваша Команда</h3>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-blue">
+                    <i class="icon-settings font-blue"></i>
+                    <span class="caption-subject uppercase">Ваша 1-я линия </span>
+                </div>
+                <div class="actions">
+                    <!---------------------------------------------------------->
+                    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                        <i class="icon-support"></i></a>
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                    <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube-nocookie.com/embed/<?php
+                                            echo "iBfk37Fa3H0";
+                                            ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------>
+                </div>
+                <div class="tools"> </div>
+            </div>
+            <div class="portlet-body">
+                <?php echo GridView::widget([
+                    'dataProvider'  =>  $dataProvider,
+                    'tableOptions'  =>  [
+                        'class'     =>  'table table-striped table-bordered table-hover',
+                        'id' => 'sample_1'
+                    ],
+                    'rowOptions'   =>  [
+                        'style'    =>  'text-align: center; background-color:'
+                    ],
+                    'headerRowOptions'   =>  [
+                        'class'     =>  'tbl-header'
+                    ],
+                    /*'responsive'    =>  true,*/
+                    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
+                    'columns'   => [
+                        /*    [
+                                'attribute' =>  'date',
+                                'label'     =>  'Дата',
+                                'width'     =>  '300px',
+                                'value'     =>  function($model){
+                                    return date( "Y-m-d \n H:i", strtotime($model->date) );
+                                }
+                            ],
+                        */
+                        [
+                            'attribute' =>  'fn',
+                            'label'     =>  'Имя',
+                            'options' => ['style' => 'width: 220px; max-width: 220px;']
+                        ],
+                        [
+                            'attribute' =>  'ln',
+                            'label'     =>  'Фамилия',
+                            'options' => ['style' => 'width: 220px; max-width: 220px;']
+                        ],
+                        /*[
+                            'attribute' =>  'city',
+                            'label'     =>  'Город'
+                        ],*/
+                        [
+                            'attribute' =>  'title',
+                            'label'     =>  'Уровень'
+                        ],
+                        [
+                            'header' => 'Действия',
+                            'format' => 'raw',
+                            'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                            'value'  =>  function($dataProvider)
+                            {
+                                return $this->render('_team_edit', [
+                                    'dt' => $dataProvider
+                                ]);
+                            }
+                            /*'class'     =>  ActionColumn::className(),*/
+                            /*'width'     =>  '300px',*/
+                            /* 'buttons'   => [
+                                 'edit'=>function($model)
+                                 {
+                                     return $this->render('_team_edit', [
+                                         'model' => $model
+                                     ]);
+                                 }
+                             ],*/
+                            /*'template'    =>  '<div class="btn-group">{hidden}&nbsp;&nbsp;{edit}</div>'*/
+                        ]
+
+                    ]
+                ]);
+                ?>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+
+    </div>
+</div>
+<!-- END PAGE BASE CONTENT -->
+
+
+
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="row">
     <div class="col-md-12">
@@ -163,7 +284,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <!-- END PAGE BASE CONTENT -->
 
 <!-- BEGIN NEW CONTENT -->
-<!--<div class="row">
+<div class="row">
     <div class="col-md-12">
         <div class="portlet light bordered">
             <div class="portlet-body">
@@ -243,5 +364,5 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
-</div>-->
+</div>
 <!-- END CONTENT -->

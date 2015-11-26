@@ -11,6 +11,11 @@ $this->title = 'pricing';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!-- BEGIN PAGE BASE CONTENT -->
+<div class="m-heading-1 border-green m-bordered">
+    <h3 class="font-green">Тарифы уровня доступа</h3>
+</div>
+
+
 <div class="portlet light portlet-fit bordered">
     <div class="portlet-title">
         <div class="caption">

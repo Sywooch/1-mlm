@@ -18,17 +18,15 @@ $this->title = 'profile';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-
-
-<!-- BEGIN SAMPLE TABLE PORTLET-->
-<div class="portlet box blue">
+<div class="portlet light bordered">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-cogs"></i>Вашы страницы
+            <i class="fa fa-cogs font-blue"></i>
+            <span class="caption-subject font-blue uppercase">Вашы страницы</span>
         </div>
         <div class="tools">
             <!-- Кнопка видео подсказки и во всю ширину --->
-            <a class="btn-icon-only" data-toggle="modal" data-target="#w1help"  href="#w1help">
+            <a class="btn-circle btn-icon-only" data-toggle="modal" data-target="#w1help"  href="#w1help">
                 <i class="icon-support"></i></a>
             <a class="btn-icon-only fullscreen" href="javascript:;"> </a>
             <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
@@ -78,14 +76,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     <td> 3 </td>
                     <td> Table cell </td>
                     <td> Table cell </td>
-                 
+
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<!-- END SAMPLE TABLE PORTLET-->
+
+
+
+
+
+
+<!-- конец страницы-->
 
 
 

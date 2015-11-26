@@ -45,14 +45,6 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <!--<span class="badge badge-success">home</span>-->
             </a>
         </li>
-        <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">
-                <a href="index.php?r=site%2Fteam" class="nav-link nav-toggle">
-                    <i class="icon-diamond"></i>
-                    <span class="title">Команда</span>
-                    <span class="badge badge-success"><?= $cntMemCom ?></span>
-                </a>
-              </li>
-
 
         <li class="nav-item start <?php echo ( "account"==$act ) ? 'active open' : null;
         echo ( "help"==$act ) ? 'active open' : null;
@@ -78,31 +70,20 @@ if( !empty(\Yii::$app->request->get("r")) )
 
                 </ul>-->
             </li>
-        <li class="nav-item start <?php
-            echo ( "pricing"==$act ) ? 'active open' : null;
-            echo ( "pricing2"==$act ) ? 'active open' : null;
-        ?>">
-            <a href="index.php?r=site%2Fpricing" class="nav-link">
-                <i class="icon-briefcase"></i>
-                <span class="title">Тарифы</span>
 
-            </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  <?=( "pricing"==$act ) ? 'active open' : null;?>">
-                        <a href="index.php?r=site%2Fpricing" class="nav-link ">
-                            <i class="icon-wallet"></i>
-                            <span class="title">Выбор тарифа</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  <?=( "pricing2"==$act ) ? 'active open' : null;?>">
-                        <a href="index.php?r=site%2Fpricing2" class="nav-link ">
-                            <i class="icon-wallet"></i>
-                            <span class="title"> Оплата</span>
-                        </a>
-                    </li>
-
-                </ul>
+            <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Fteam" class="nav-link nav-toggle">
+                    <i class="icon-diamond"></i>
+                    <span class="title">Команда</span>
+                    <span class="badge badge-success"><?= $cntMemCom ?></span>
+                </a>
             </li>
+
+
+
+
+
+
         <li class="nav-item start <?php
         echo ( "landing"==$act ) ? 'active open' : null;
         echo ( "links"==$act ) ? 'active open' : null;
@@ -221,7 +202,36 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
             </li>
 
-        <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
+
+            <li class="nav-item start <?php
+            echo ( "pricing"==$act ) ? 'active open' : null;
+            echo ( "pricing2"==$act ) ? 'active open' : null;
+            ?>">
+                <a href="index.php?r=site%2Fpricing" class="nav-link">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Тарифы</span>
+
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  <?=( "pricing"==$act ) ? 'active open' : null;?>">
+                        <a href="index.php?r=site%2Fpricing" class="nav-link ">
+                            <i class="icon-wallet"></i>
+                            <span class="title">Выбор тарифа</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  <?=( "pricing2"==$act ) ? 'active open' : null;?>">
+                        <a href="index.php?r=site%2Fpricing2" class="nav-link ">
+                            <i class="icon-wallet"></i>
+                            <span class="title"> Оплата</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+            <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Fnews" class="nav-link">
                 <i class="icon-user"></i>
                 <span class="title">Новости</span>
