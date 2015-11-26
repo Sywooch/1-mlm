@@ -916,7 +916,8 @@ class SiteController extends Controller
                 }
             }
             return $this->render('mcedit', [
-                'model' => $model
+                'model' => Hangouts::find()
+                    ->where(['id'=>'25'])->one()
             ]);
         }
         return $this->goHome();
