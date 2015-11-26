@@ -27,10 +27,27 @@ $this->params['breadcrumbs'][] = $this->title;
             <i class="fa fa-cogs"></i>Вашы страницы
         </div>
         <div class="tools">
-            <a href="javascript:;" class="collapse"> </a>
-            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
-            <a href="javascript:;" class="reload"> </a>
-            <a href="javascript:;" class="remove"> </a>
+            <!-- Кнопка видео подсказки и во всю ширину --->
+            <a class="btn-icon-only" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                <i class="icon-support"></i></a>
+            <a class="btn-icon-only fullscreen" href="javascript:;"> </a>
+            <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
+                <div class="modal-dialog ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="560" height="315"
+                                    src="https://www.youtube-nocookie.com/embed/<?php
+                                    echo "iBfk37Fa3H0";
+                                    ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Кнопка видео подсказки и во всю ширину --->
         </div>
     </div>
     <div class="portlet-body">
@@ -39,41 +56,29 @@ $this->params['breadcrumbs'][] = $this->title;
                 <thead>
                 <tr>
                     <th> # </th>
-                    <th> Table heading </th>
-                    <th> Table heading </th>
-                    <th> Table heading </th>
-                    <th> Table heading </th>
-                    <th> Table heading </th>
-                    <th> Table heading </th>
+                    <th> Название </th>
+                    <th> Ссылка на страницу </th>
+
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td> 1 </td>
+                    <td> Название 2 </td>
                     <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
+
                 </tr>
                 <tr>
                     <td> 2 </td>
+                    <td> Название 3 </td>
                     <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
+
                 </tr>
                 <tr>
                     <td> 3 </td>
                     <td> Table cell </td>
                     <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
+                 
                 </tr>
                 </tbody>
             </table>
