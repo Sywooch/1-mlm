@@ -3,11 +3,11 @@
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-<!--
-                <a href="index.php">
-                <img src="../img/logo.png" alt="logo" class="logo-default" width="50" height="50"  />
-                <span style="color: #2a83d0; font-size: 23px;"><b>1 mlm</b></span></a>
--->
+            <!--
+                            <a href="index.php">
+                            <img src="../img/logo.png" alt="logo" class="logo-default" width="50" height="50"  />
+                            <span style="color: #2a83d0; font-size: 23px;"><b>1 mlm</b></span></a>
+            -->
 
             <img src="../../s/img/logo-nav.png" alt="logo" class="logo-default">
 
@@ -71,7 +71,7 @@
                             </span>
                 </div>
             </form>-->
-            <marquee
+            <!--<marquee
                 onmouseover="this.stop();"
                 onmouseout="this.start();"
 
@@ -81,20 +81,20 @@
                 direction="left"
 
                 height="50" width="500">
-                <!--Здесь будет выводиться список пользователей-->
+                <!--Здесь будет выводиться список пользователей
                 <?php
-                    $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();
+            $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();
 
-                    //print_r($lastTwentyRegUsers);
-                    foreach($lastTwentyRegUsers as $lt) {
-                        echo $this->render('_main_list_users', [
-                            'user' => $lt
-                        ]);
-                    }
+            //print_r($lastTwentyRegUsers);
+            foreach($lastTwentyRegUsers as $lt) {
+                echo $this->render('_main_list_users', [
+                    'user' => $lt
+                ]);
+            }
 
-                ?>
+            ?>
 
-            </marquee>
+            </marquee>-->
             <!-- END HEADER SEARCH BOX -->
             <!-- BEGIN TOP NAVIGATION MENU -->
             <div class="top-menu">

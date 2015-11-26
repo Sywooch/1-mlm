@@ -78,20 +78,23 @@ if( !empty(\Yii::$app->request->get("r")) )
 
                 </ul>-->
             </li>
-        <li class="nav-item start <?= ( "pricing"==$act ) ? 'active open' : null; ?>">
+        <li class="nav-item start <?php
+            echo ( "pricing"==$act ) ? 'active open' : null;
+            echo ( "pricing2"==$act ) ? 'active open' : null;
+        ?>">
             <a href="index.php?r=site%2Fpricing" class="nav-link">
                 <i class="icon-briefcase"></i>
                 <span class="title">Тарифы</span>
 
             </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
+                    <li class="nav-item  <?=( "pricing"==$act ) ? 'active open' : null;?>">
                         <a href="index.php?r=site%2Fpricing" class="nav-link ">
                             <i class="icon-wallet"></i>
                             <span class="title">Выбор тарифа</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item  <?=( "pricing2"==$act ) ? 'active open' : null;?>">
                         <a href="index.php?r=site%2Fpricing2" class="nav-link ">
                             <i class="icon-wallet"></i>
                             <span class="title"> Оплата</span>
@@ -100,14 +103,17 @@ if( !empty(\Yii::$app->request->get("r")) )
 
                 </ul>
             </li>
-        <li class="nav-item start <?= ( "landing"==$act ) ? 'active open' : null; ?>">
+        <li class="nav-item start <?php
+        echo ( "landing"==$act ) ? 'active open' : null;
+        echo ( "links"==$act ) ? 'active open' : null;
+        ?>">
             <a href="index.php?r=site%2Flanding" class="nav-link">
                 <i class="icon-layers"></i>
                 <span class="title">Создание страниц</span>
 
             </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
+                    <li class="nav-item  <?= ( "landing"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
                             <i class="icon-layers"></i>
                             <span class="title">Конструктор</span>
@@ -122,7 +128,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                             </li>
                         </ul>-->
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item  <?= ( "links"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flinks" class="nav-link nav-toggle">
                             <i class="icon-layers"></i>
                             <span class="title">Мои ссылки</span>

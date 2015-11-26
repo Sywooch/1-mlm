@@ -690,7 +690,7 @@ class SiteController extends Controller
                 $p = Yii::$app->request->post();
                 /*****************************/
 
-
+                $p["Land"]=( !empty($p["Land"]) )?$p["Land"]:null;
                 if( 'change'==$p["Land"] ) {
                     $lp = Lp::findOne(
                         [
@@ -714,6 +714,7 @@ class SiteController extends Controller
 
                 }
 
+                $p["Land_2"]=( !empty($p["Land_2"]) )?$p["Land_2"]:null;
                 if( 'create'==$p["Land_2"] ) {
                     $lp_n = new Lp;
 

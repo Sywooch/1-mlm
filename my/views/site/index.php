@@ -48,10 +48,34 @@ $this->title = '1-mlm';
                         </span>
                 </div>
                 <div class="actions">
-                    <!--<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+<!--
+                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
                         <i class="icon-cloud-upload"></i>
                     </a>
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+-->
+                    <!---------------------------------------------------------->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>
+                    <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube-nocookie.com/embed/<?php
+                                            echo "iBfk37Fa3H0";
+                                            ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------>
+
+
+
+                   <!-- <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
                         <i class="icon-wrench"></i>
                     </a>
                     <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
@@ -60,7 +84,7 @@ $this->title = '1-mlm';
                 </div>
             </div>
             <div class="portlet-body form">
-                <form action="#" class="form-horizontal" id="submit_form" method="POST">
+                <form action="#" id="submit_form" method="POST">
                     <div class="form-wizard">
                         <div class="form-body">
                             <ul class="nav nav-pills nav-justified steps">
@@ -112,18 +136,19 @@ $this->title = '1-mlm';
                                     <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
                                 </div>
                                 <div class="tab-pane" id="tab2">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <div align="center">
+                                        <!--<div class="embed-responsive embed-responsive-16by9">
+                                            <div align="center">-->
                                                 <?php
                                                echo $this->render('_index_edit_info', [
                                                     'model' => $model
                                                 ]); ?>
-                                            </div>
-                                        </div>
+                                          <!--  </div>
+                                        </div>-->
+                                    <center><h4 class="block">переход к следующему шагу - после заполения формы!</h4></center>
                                 </div>
                                 <div class="tab-pane" id="tab3">
                                     <div class="form-group">
-
+                                    Выберите компанию
                                     <!--
                                         <label class="control-label col-md-3">Выбрать компанию
                                             <span class="required"> * </span>
@@ -183,7 +208,7 @@ $this->title = '1-mlm';
             videoId: 'HBseUoVjSZo',
             playerVars: {
                 'autoplay': 0,
-                'controls': 0,
+                'controls': 1,
                 'showinfo': '0',
                 'rel': 0
             },

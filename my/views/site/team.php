@@ -64,6 +64,27 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="row">
     <div class="col-md-12">
         <div class="portlet light bordered">
+            <div align="right">
+                <!---------------------------------------------------------->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>
+                <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                            </div>
+                            <div class="modal-body">
+                                <iframe width="560" height="315"
+                                        src="https://www.youtube-nocookie.com/embed/<?php
+                                        echo "iBfk37Fa3H0";
+                                        ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------------------------------------------>
+            </div>
             <div class="note note-info">
                 <h4 class="block">Ваша 1-я линия</h4>
                 <p> Для поиска по имени или фамилии используете сочетание клавиш на клавиатуре: Ctrl+F </p>
