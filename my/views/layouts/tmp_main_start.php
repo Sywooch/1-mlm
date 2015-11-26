@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+//look view/site/first.php
+?><!DOCTYPE html>
 <html>
 <head>
    <!--<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,700" rel="stylesheet">-->

@@ -25,8 +25,8 @@ $this->registerCss($style_user);
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <link rel="shortcut icon" href="s/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="s/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <!--<link href="s/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="s/css/font-awesome.min.css" rel="stylesheet">
     <link href="s/css/magnific-popup.css" rel="stylesheet">
@@ -243,8 +243,8 @@ $this->registerCss($style_user);
             <div class="col-md-12">
                 <!--<h1>1-й млм ресурс</h1>-->
                 <h1>1 mlm ресурс</h1>
-                <h2>Автоматизация бизнеса на 80%</h2>
-                <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
+                <h2>Автоматизация бизнеса на 80% !!!</h2>
+                <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
                                         data-target="#modal-1">попробуйте бесплатно</a>
                     <br><br>
@@ -359,7 +359,7 @@ $this->registerCss($style_user);
             <div class="col-md-7 text-center"> <img src="s/img/feature-2.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5">
                 <article>
-                    <h2>Как работает система?</h2>
+                    <h2>Как работает система???</h2>
                     <p>Aвтоматизация Вашего бизнеса благодаря системе  происходит в три этапа:</p>
                     <ul>
                         <li>Создание страницы</li>
@@ -406,7 +406,7 @@ $this->registerCss($style_user);
 <!--Video section-->
 
 <section class="video-tour text-center">
-    <div class="play-btn"> <a href="https://www.youtube.com/watch?v=a_Iz8ErqwKE" class="play litebox-tour"><img src="s/img/play-btn-vs.png" alt="play"></a>
+    <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-tour"><img src="s/img/play-btn-vs.png" alt="play"></a>
         <!--<h2>Video 1 mlm</h2>-->
     </div>
 
@@ -604,7 +604,7 @@ $this->registerCss($style_user);
                     </div>
                 </div>
                 <!--PRICE TABLE END-->
-
+                <p style="color: #ffffff; font-size: 18px;"> Внимание !!! Все тарифы снижены до 31.12.2015</p>
             </div>
         </div>
     </div>
