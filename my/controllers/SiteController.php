@@ -564,6 +564,7 @@ class SiteController extends Controller
     {
         if (!\Yii::$app->user->isGuest)
         {
+            $this->layout = "inbox";
             return $this->render('inbox');
         }
         return $this->goHome();

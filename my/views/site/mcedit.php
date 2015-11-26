@@ -49,56 +49,61 @@ $form = ActiveForm::begin();?>
         <!------------------------------------------------------------>
     </div>
 
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'title', ["template" => "<label>Заголовок</label>
-                <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
-        ?>
-    </div>
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'description', ["template" => "<label>Описание</label>
-                <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
-        ?>
-    </div>
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'speaker', ["template" => "<label>Организатор</label>
-                <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
-        ?>
-    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <?=$form->field(
+                    $model, 'title', ["template" => "<label>Заголовок</label>
+                        <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
+                ?>
+            </div>
+            <div class="form-group">
+                <?=$form->field(
+                    $model, 'description', ["template" => "<label>Описание</label>
+                        <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
+                ?>
+            </div>
+            <div class="form-group">
+                <?=$form->field(
+                    $model, 'speaker', ["template" => "<label>Организатор</label>
+                        <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
+                ?>
+            </div>
 
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'yt', ["template" => "<label>ID youtube</label>
-                <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
-        ?>
+            <div class="form-group">
+                <?=$form->field(
+                    $model, 'yt', ["template" => "<label>ID youtube</label>
+                        <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
+                ?>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <?=$form->field(
+                    $model, 'url', ["template" => "<label>Имя</label>
+                        <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
+                ?>
+            </div>
+            <div class="form-group">
+                <?=$form->field(
+                    $model, 'download', ["template" => "<label>Имя</label>
+                        <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
+                ?>
+            </div>
+            <div class="form-group">
+                <?=$form->field(
+                    $model, 'button', ["template" => "<label>Имя</label>
+                        <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
+                ?>
+            </div>
+            <div class="form-group">
+                <?=$form->field(
+                    $model, 'link', ["template" => "<label>Имя</label>
+                        <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
+                ?>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'url', ["template" => "<label>Имя</label>
-                <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
-        ?>
-    </div>
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'download', ["template" => "<label>Имя</label>
-                <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
-        ?>
-    </div>
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'button', ["template" => "<label>Имя</label>
-                <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
-        ?>
-    </div>
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'link', ["template" => "<label>Имя</label>
-                <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
-        ?>
-    </div>
-
 
 
     <div class="margiv-top-10">
