@@ -8,7 +8,7 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?
             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
                 <img src="<?= $model->userpic; ?>" alt="user picture" width="140"/>
             </div>
-            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 150px; max-height: 150px;"> </div>
             <div>
                  <span class="btn default btn-file">
                  <span class="fileinput-new"> Выбрать картнику </span>
@@ -26,7 +26,7 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?
         <div class="clearfix margin-top-10">
             <span class="label label-danger">Важно!</span>
                <span style="left: 8px;position: relative;">
-                   Картинки поддерживаются в последних версиях браузеров : Firefox, Chrome, Opera, Safari and Internet Explorer 10.
+                   Размер фото дожен быть не более 250Х250 px
                </span>
         </div>
         <div class="margin-top-10">

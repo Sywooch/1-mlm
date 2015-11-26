@@ -109,12 +109,16 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="portlet light bordered">
                                 <div class="portlet-title tabbable-line">
                                     <div class="caption">
-                                        <i class="icon-settings"></i>
-                                        <span class="caption-subject font-purple-soft bold uppercase" style="font-size: 14px;">Настройки профиля</span>
+                                        <i class="icon-settings font-blue"></i>
+                                        <span class="caption-subject font-blue uppercase" style="font-size: 14px;">Настройки профиля</span>
                                     </div>
                                     <div align="right">
                                         <!---------------------------------------------------------->
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>
+                                        <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                                            <i class="icon-support"></i></a>
+                                        <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+
+                                        <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>-->
                                         <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                                             <div class="modal-dialog ">
                                                 <div class="modal-content">

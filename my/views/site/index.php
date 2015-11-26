@@ -1,35 +1,28 @@
 <?php
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
-
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-
 $this->registerJsFile("/mertonic/global/plugins/select2/js/select2.full.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/additional-methods.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-
-
 $this->registerJsFile("/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/mertonic/pages/scripts/form-wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-
 $this->registerJsFile('//www.youtube.com/player_api');
-
 $this->title = '1-mlm';
-
-//$this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="row">
     <div class="col-md-12">
         <div class="m-heading-1 border-green m-bordered">
             <?php if( !empty($consultant) ): ?>
-			<h3>Добро пажаловать,<b> <?php echo $model["fn"],' ',$model["ln"]; ?> </b></h3>
+			<h3>Добро пожаловать, <?php echo $model["fn"],' ',$model["ln"]; ?> </h3>
 			<p>
 			<table border="0">
                 <tr>
-                    <td>Ваш консультант:</td>
+                    <td>Ваш личный консультант:</td>
                     <td>
                         <div class="dropdown dropdown-extended quick-sidebar-toggler" style="cursor: pointer;">
                             <?php echo '&nbsp;<b>',$consultant->fn,' ',$consultant->ln,'</b>'; ?>
@@ -42,8 +35,8 @@ $this->title = '1-mlm';
         <div class="portlet light bordered" id="form_wizard_1">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class=" icon-layers font-red"></i>
-                        <span class="caption-subject font-red bold uppercase"> Всего несколько  шагов -
+                    <i class=" icon-layers font-blue"></i>
+                        <span class="caption-subject font-blue uppercase"> Всего несколько  шагов -
                             <span class="step-title"> Для настройки системы </span>
                         </span>
                 </div>
@@ -54,18 +47,22 @@ $this->title = '1-mlm';
                     </a>
 -->
                     <!---------------------------------------------------------->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>
+                    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                        <i class="icon-support"></i></a>
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+
+                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>-->
                     <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                         <div class="modal-dialog ">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                    <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                                    <h4 style="margin-top: 0px;"><div align="center">Помощь - Видео подсказка</div></h4>
                                 </div>
                                 <div class="modal-body">
                                     <iframe width="560" height="315"
                                             src="https://www.youtube-nocookie.com/embed/<?php
-                                            echo "iBfk37Fa3H0";
+                                            echo "HBseUoVjSZo";
                                             ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>

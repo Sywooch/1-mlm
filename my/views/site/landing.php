@@ -44,7 +44,11 @@ $this->registerJs($js);
                 </div>
                 <div align="right">
                     <!---------------------------------------------------------->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>
+                    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                        <i class="icon-support"></i></a>
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+
+                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>-->
                     <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                         <div class="modal-dialog ">
                             <div class="modal-content">
