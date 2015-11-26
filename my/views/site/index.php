@@ -1,4 +1,8 @@
 <?php
+$this->registerJsFile('/mertonic/global/plugins/jquery.pulsate.min.js');
+$this->registerJsFile('/mertonic/global/plugins/jquery-bootpag/jquery.bootpag.min.js');
+$this->registerJsFile('/mertonic/global/plugins/holder.js');
+
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
@@ -24,9 +28,10 @@ $this->title = '1-mlm';
                 <tr>
                     <td>Ваш личный консультант:</td>
                     <td>
+                        <div id="pulsate-regular" style="padding:5px;">
                         <div class="dropdown dropdown-extended quick-sidebar-toggler" style="cursor: pointer;">
                             <?php echo '&nbsp;<b>',$consultant->fn,' ',$consultant->ln,'</b>'; ?>
-                        </div>
+                        </div></div>
                     </td>
                 </tr>
 			</table>
