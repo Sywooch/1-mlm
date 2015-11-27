@@ -183,12 +183,12 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fmc" class="nav-link ">
+                        <a href="index.php?r=mc%2Fmc" class="nav-link ">
                             <span class="title">Создание МК</span>
                         </a>
                     </li>
                     <li class="nav-item <?=( "mcarchive"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fmcarchive" class="nav-link ">
+                        <a href="index.php?r=mc%2Fmcarchive" class="nav-link ">
                             <span class="title">Архив МК</span>
                         </a>
                     </li>
