@@ -21,7 +21,7 @@ $this->registerCss($css);
 'toggleButton' =>
     [
         'tag' => 'button',
-        'class' => 'btn btn-primary icon-user',
+        'class' => 'btn btn-circle btn-icon-only btn-default icon-user',
         'label' => '',
     ]
 ]);
