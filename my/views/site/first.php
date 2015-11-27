@@ -8,6 +8,7 @@ $style_user = <<<'STYLE'
 .user_item img {
     border-radius: 15px !important;
 }
+
 STYLE;
 $this->registerCss($style_user);
 ?><!DOCTYPE html>
@@ -137,6 +138,11 @@ $this->registerCss($style_user);
             border-top: solid 2px yellow;
             border-bottom: solid 2px yellow;
             padding-left: 10px;
+        }
+
+        .user_item {
+            display: inline-block;
+            margin-right: 20px;
         }
 
         .user_item img {
