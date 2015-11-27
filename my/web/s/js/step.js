@@ -18,7 +18,7 @@ $( document ).ready(function() {
             'Users-skype': $("#users-skype").val(),
             'Users-city': $("#users-city").val(),
             'Users-country': $("#users-country").val(),
-            'Users-purse': $("#users-purse").val(),
+            //'Users-purse': $("#users-purse").val(),
             'Users-facebook': $("#users-facebook").val(),
             'Users-vkontakte': $("#users-vkontakte").val(),
             'Users-linkedin': $("#users-linkedin").val(),

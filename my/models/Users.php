@@ -130,21 +130,22 @@ class Users extends \yii\db\ActiveRecord
                 $users->companyid = (int)$p["Users-companyid"];
             }
             else {
-                $users->fn = $p["Users-fn"];
-                $users->ln = $p["Users-ln"];
-                $users->email = $p["Users-email"];
-                $users->mobile = $p["Users-mobile"];
-                $users->skype = $p["Users-skype"];
-                $users->city = $p["Users-city"];
-                $users->country = $p["Users-country"];
-                $users->purse = $p["Users-purse"];
+                $users->fn     =  ( !empty($p["Users-fn"]) )?$p["Users-fn"]:null;
+                $users->ln     =  ( !empty($p["Users-ln"]) )?$p["Users-ln"]:null;
+                $users->email  =  ( !empty($p["Users-email"]) )?$p["Users-email"]:null;
+                $users->mobile =  ( !empty($p["Users-mobile"]) )?$p["Users-mobile"]:null;
+                $users->skype  =  ( !empty($p["Users-skype"]) )?$p["Users-skype"]:null;
+                $users->city   =  ( !empty($p["Users-city"]) )?$p["Users-city"]:null;
 
-                $users->facebook = $p["Users-facebook"];
-                $users->vkontakte = $p["Users-vkontakte"];
-                $users->linkedin = $p["Users-linkedin"];
-                $users->googleplus = $p["Users-googleplus"];
-                $users->yandex = $p["Users-yandex"];
-                $users->mailru = $p["Users-mailru"];
+                $users->country =  ( !empty($p["Users-country"]) )?$p["Users-country"]:null;
+                //$users->purse =  ( !empty($p["Users-purse"]) )?$p["Users-purse"]:null;
+
+                $users->facebook   =  ( !empty($p["Users-facebook"]) )?$p["Users-facebook"]:null;
+                $users->vkontakte  =  ( !empty($p["Users-vkontakte"]) )?$p["Users-vkontakte"]:null;
+                $users->linkedin   =  ( !empty($p["Users-linkedin"]) )?$p["Users-linkedin"]:null;
+                $users->googleplus =  ( !empty($p["Users-googleplus"]) )?$p["Users-googleplus"]:null;
+                $users->yandex     =  ( !empty($p["Users-yandex"]) )?$p["Users-yandex"]:null;
+                $users->mailru     =  ( !empty($p["Users-mailru"]) )?$p["Users-mailru"]:null;
             }
             $users->update(false);
             return 1;
