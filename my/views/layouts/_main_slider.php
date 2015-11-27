@@ -259,13 +259,13 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
             </li>
 
-            <li class="nav-item start <?= ( "inbox"==$act ) ? 'active open' : null; ?>">
+            <!--<li class="nav-item start <?= ( "inbox"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=site%2Finbox" class="nav-link nav-toggle">
                     <i class="icon-envelope-open"></i>
                     <span class="title">Мои Сообщения</span>
                     <span class="badge badge-danger">скоро</span>
                 </a>
-            </li>
+            </li>-->
 
 
             <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
