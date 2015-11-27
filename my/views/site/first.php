@@ -129,26 +129,52 @@ $this->registerCss($style_user);
         }
 
         .white {
-            background-color: white;
+            /*background-color: white;*/
             padding-top: 8px;
             position: absolute;
             top: 600px;
-            height: 45px;
-        }
-
-        .user_item {
-            display: inline;
-            margin-right: 25px;
+            height: 48px;
+            border-top: solid 2px yellow;
+            border-bottom: solid 2px yellow;
+            padding-left: 10px;
         }
 
         .user_item img {
             border-radius: 15px !important;
+            border: solid 1px white;
+        }
+
+        .user_item a {
+            color: white;
+        }
+
+        .marquee {
+            overflow:hidden;
+            /*zoom:1;*/
+            width:1200px;
+            /*font-size:12px;
+            line-height:16px;
+            position:relative;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+            background:#f6f6f6;*/
+            white-space:nowrap;
         }
 
     </style>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
+    <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.3.1/jquery.marquee.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('.marquee').marquee({
+                duplicated: true,
+                duration: 20000
+            });
+        })
+    </script>
 </head>
 <body>
 <!-- BEGIN LOGIN BOX *****************************************************************-->
@@ -269,16 +295,7 @@ $this->registerCss($style_user);
             </div>
         </div>
         <div class="col-md-10">
-            <marquee
-                onmouseover="this.stop();"
-                onmouseout="this.start();"
-
-                scrollamount="3"
-                scrolldelay="20"
-                align="middle"
-                direction="left"
-
-                height="50">
+            <div class="marquee">
                 <!--Здесь будет выводиться список пользователей-->
                 <?php
                 $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();
@@ -292,7 +309,7 @@ $this->registerCss($style_user);
 
                 ?>
 
-            </marquee>
+            </div>
         </div>
     </div>
 </section>
