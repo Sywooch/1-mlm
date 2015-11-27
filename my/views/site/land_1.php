@@ -36,7 +36,9 @@
             <div class="clear"></div>
         </div>
         <div id="cta">
-            <p><a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a></p>
+            <p><a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self"
+                  title="Жмите здесь, чтобы узнать больше!"
+                  class="btn big yellow pulse"><?=$data["button"]?></a></p>
 
             <h3 style="color: #fff">самое интересное Вас ждет внутри. Регистрация в 1 клик!</h3>
         </div>
@@ -62,12 +64,9 @@
         </div>
     </div>
     <div id="footer">
-        <center id="opros">
-            <big><b>МЫ ВКОНТАКТЕ</b></big>
-            <div id="vk_groups"></div>
-            <hr/>
-        </center>
-        <p id="copyright">&copy; 2015 <a href="http://delston-partners.com">Delston Partners&#8482;</a> | <a href="http://delston-partners.com/login">Войти в Личный Кабинет</a></p>
+        <p id="copyright">&copy; 2015 <a href="https://1-mlm.com/">
+                1-mlm.com&#8482;</a> | <a href="https://1-mlm.com/">
+                Войти в Личный Кабинет</a></p>
     </div>
 
 </body>
