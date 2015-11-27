@@ -52,7 +52,7 @@ $this->title = '1-mlm';
                     </a>
 -->
                     <!---------------------------------------------------------->
-                    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                    <a class="btn btn-circle btn-icon-only red-soft" data-toggle="modal" data-target="#w1help"  href="#w1help">
                         <i class="icon-support"></i></a>
                     <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
 

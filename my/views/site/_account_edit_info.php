@@ -1,3 +1,5 @@
+<!-- Пример кода для полей профиля   можно посмотреть на странице   http://localhost/page/form_controls_md.html   --->
+
 <?php
 use yii\widgets\ActiveForm;
 
