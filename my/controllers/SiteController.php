@@ -847,6 +847,15 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    public function actionBlog()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+            return $this->render('blog');
+        }
+        return $this->goHome();
+    }
+
     public function actionAbout()
     {
          if(!\Yii::$app->user->isGuest)

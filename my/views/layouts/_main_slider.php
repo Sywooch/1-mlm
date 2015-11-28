@@ -73,7 +73,7 @@ if( !empty(\Yii::$app->request->get("r")) )
 
             <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=site%2Fteam" class="nav-link nav-toggle">
-                    <i class="icon-diamond"></i>
+                    <i class="icon-users"></i>
                     <span class="title">Команда</span>
                     <span class="badge badge-success"><?= $cntMemCom ?></span>
                 </a>
@@ -89,14 +89,14 @@ if( !empty(\Yii::$app->request->get("r")) )
         echo ( "links"==$act ) ? 'active open' : null;
         ?>">
             <a href="index.php?r=site%2Flanding" class="nav-link">
-                <i class="icon-layers"></i>
+                <i class="icon-wrench"></i>
                 <span class="title">Создание страниц</span>
 
             </a>
                 <ul class="sub-menu">
                     <li class="nav-item  <?= ( "landing"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
-                            <i class="icon-layers"></i>
+                            <i class="icon-chemistry"></i>
                             <span class="title">Конструктор</span>
                             <!--<span class="arrow"></span>-->
                         </a>
@@ -111,7 +111,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                     <li class="nav-item  <?= ( "links"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flinks" class="nav-link nav-toggle">
-                            <i class="icon-layers"></i>
+                            <i class="icon-link"></i>
                             <span class="title">Мои ссылки</span>
                             <!--<span class="arrow"></span>-->
                         </a>
@@ -178,17 +178,19 @@ if( !empty(\Yii::$app->request->get("r")) )
             echo( "mcarchive"==$act ) ? 'active open' : null;
             ?>">
                 <a href="#" class="nav-link">
-                    <i class="icon-user"></i>
+                    <i class="icon-camcorder"></i>
                     <span class="title">Мастер Класс</span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=mc%2Fedit" class="nav-link ">
+                            <i class="icon-wrench"></i>
                             <span class="title">Создание МК</span>
                         </a>
                     </li>
                     <li class="nav-item <?=( "mcarchive"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=mc%2Fmcarchive" class="nav-link ">
+                            <i class="icon-eye"></i>
                             <span class="title">Архив МК</span>
                         </a>
                     </li>
@@ -197,8 +199,8 @@ if( !empty(\Yii::$app->request->get("r")) )
 
             <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=site%2Fcompany" class="nav-link">
-                    <i class="icon-pointer"></i>
-                    <span class="title">Компания</span>
+                    <i class="icon-info"></i>
+                    <span class="title">О Нас</span>
                 </a>
             </li>
 
@@ -232,12 +234,21 @@ if( !empty(\Yii::$app->request->get("r")) )
 
 
             <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
-            <a href="index.php?r=site%2Fnews" class="nav-link">
-                <i class="icon-user"></i>
-                <span class="title">Новости</span>
+            <a href="index.php?r=site%2Fblog" class="nav-link">
+                <i class="icon-book-open"></i>
+                <span class="title">Наш Блог</span>
 
             </a>
         </li>
+
+
+            <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=site%2Fnews" class="nav-link">
+                    <i class="icon-user"></i>
+                    <span class="title">Новости</span>
+
+                </a>
+            </li>
 
             <li class="heading">
                 <h3 class="uppercase">В ближайшее время</h3>
