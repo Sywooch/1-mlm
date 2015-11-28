@@ -46,7 +46,6 @@ class McController extends Controller
     {
         if(!\Yii::$app->user->isGuest)
         {
-
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
             switch($identity["service"])
             {
@@ -116,44 +115,81 @@ class McController extends Controller
                     $model=$model->where(['mailru' => $identity["id"]])->one();
                 break;
             }
-            if(\Yii::$app->request->post()){
+
+            if(\Yii::$app->request->post())
+            {
                 $p = \Yii::$app->request->post();
-                if ( (1 < $model->level) && ( 1 > $p["id"] ) )
+                $mcID=(int)$p["Hangouts"]["id"];
+
+                if ( (1 <= $model->level) && ( 1 > $mcID) )
                 {
                     $hangouts = new Hangouts;
-                    $hangouts->name = $p["name"];
                     $hangouts->uid=$model->id;
-
-//    $hangouts->date=$p["name"];
-//    $hangouts->time=$p["name"];
 /*
-    $hangouts->yt=$p["name"];
-    $hangouts->class=$p["name"];
-    $hangouts->title=$p["name"];
-    $hangouts->description=$p["name"];
-    $hangouts->url=$p["name"];
-    $hangouts->download=$p["name"];
-    $hangouts->speaker=$p["name"];
-    $hangouts->button=$p["name"];
-    $hangouts->link=$p["name"];
+                    $hangouts->name = $p["Hangouts"]["name"];
+                    $hangouts->date=@$p["Hangouts"]["date"];
+                    $hangouts->time=@$p["Hangouts"]["time"];
+                    $hangouts->class=@$p["Hangouts"]["class"];
 */
-                    $hangouts->save(false);
-                }elseif( (1 < $model->level) && ( 1 > $p["id"] ) )
-                {
+                    $hangouts->title=@$p["Hangouts"]["title"];
+                    $hangouts->description=@$p["Hangouts"]["description"];
+                    $hangouts->speaker=@$p["Hangouts"]["speaker"];
+                    $hangouts->yt=@$p["Hangouts"]["yt"];
+                    $hangouts->url=@$p["Hangouts"]["url"];
+                    $hangouts->download=@$p["Hangouts"]["download"];
+                    $hangouts->button=@$p["Hangouts"]["button"];
+                    $hangouts->link=@$p["Hangouts"]["link"];
 
+                    $hangouts->save(false);
+                    $mcID=$hangouts->id;
+
+                }elseif( (1 <= $model->level) && ( 1 <= $mcID ) )
+                {
                     $hangouts=Hangouts::findOne([
-                        'id'=>(int)$p["id"]
+                        'id'=>(int)$p["Hangouts"]["id"]
                     ]);
-                    $hangouts->title=$p["title"];
+
+                    $hangouts->uid=$model->id;
+/*                  $hangouts->name = $p["Hangouts"]["name"];
+                    $hangouts->date=@$p["Hangouts"]["date"];
+                    $hangouts->time=@$p["Hangouts"]["time"];
+                    $hangouts->class=@$p["Hangouts"]["class"];
+*/
+                    $hangouts->title=@$p["Hangouts"]["title"];
+                    $hangouts->description=@$p["Hangouts"]["description"];
+                    $hangouts->url=@$p["Hangouts"]["url"];
+                    $hangouts->download=@$p["Hangouts"]["download"];
+                    $hangouts->speaker=@$p["Hangouts"]["speaker"];
+                    $hangouts->yt=@$p["Hangouts"]["yt"];
+                    $hangouts->button=@$p["Hangouts"]["button"];
+                    $hangouts->link=@$p["Hangouts"]["link"];
+
                     $hangouts->update(false);
-                }else{
-                    return $this->render('mcempty');
+                    $mcID=(int)$p["Hangouts"]["id"];
                 }
+
+                return $this->render('mcedit', [
+                    'model' => Hangouts::find()
+                        ->where( [ 'id' => $mcID ] )
+                        ->one()
+                ]);
             }
-            return $this->render('mcedit', [
-                'model' => Hangouts::find()
-                    ->where(['id'=>'25'])->one()
-            ]);
+
+            if( !empty(\Yii::$app->request->get("id")) )
+            {
+                    return $this->render('mcedit', [
+                    'model' => Hangouts::find()
+                        ->where( [ 'id'=>(int)\Yii::$app->request->get("id") ] )
+                        ->one()
+                ]);
+            }
+
+           if($model->level<1)
+           {
+               return $this->render('mcempty');
+           }
+
+            return $this->render('mcnew');
         }
         return $this->goHome();
     }

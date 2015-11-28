@@ -80,25 +80,25 @@ $form = ActiveForm::begin();?>
         <div class="col-md-6">
             <div class="form-group">
                 <?=$form->field(
-                    $model, 'url', ["template" => "<label>Имя</label>
+                    $model, 'url', ["template" => "<label>url</label>
                         <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
                 ?>
             </div>
             <div class="form-group">
                 <?=$form->field(
-                    $model, 'download', ["template" => "<label>Имя</label>
+                    $model, 'download', ["template" => "<label>download</label>
                         <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
                 ?>
             </div>
             <div class="form-group">
                 <?=$form->field(
-                    $model, 'button', ["template" => "<label>Имя</label>
+                    $model, 'button', ["template" => "<label>button</label>
                         <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
                 ?>
             </div>
             <div class="form-group">
                 <?=$form->field(
-                    $model, 'link', ["template" => "<label>Имя</label>
+                    $model, 'link', ["template" => "<label>link</label>
                         <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
                 ?>
             </div>
@@ -107,7 +107,7 @@ $form = ActiveForm::begin();?>
 
 
     <div class="margiv-top-10">
-        <?= \yii\helpers\Html::hiddenInput('Users[formtype]', 'webinar', ["id"=>"users-formtype"]); ?>
+        <?= \yii\helpers\Html::hiddenInput('Hangouts[id]', $model->id, ["id"=>"Hangouts-id"]); ?>
         <?= '<button class="btn green"> Сохранить изменения </button>'; ?>
         <a href="index.php?r=site%2Faccount" class="btn default"> Отменить </a>
     </div>
