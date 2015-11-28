@@ -1,28 +1,35 @@
 <?php
-use yii\grid\GridView;
-use yii\grid\ActionColumn;
+//use yii\grid\GridView;
+//use yii\grid\ActionColumn;
 use app\models\Users;
+
+use kartik\grid\Module;
+//use kartik\widgets\GridView;
+//use kartik\grid\ActionColumn;
+use kartik\grid\GridView;
+//use kartik\form\ActiveForm;
+//use kartik\switchinput\SwitchInput;
 $identity = \Yii::$app->getUser()->getIdentity()->profile;
 switch($identity["service"])
 {
     case "facebook":
         $usrDt = Users::find()->select('fn,ln,userpic')->where(['facebook'=>$identity["id"]])->one();
-    break;
+        break;
     case "vkontakte":
         $usrDt = Users::find()->select('fn,ln,userpic')->where(['vkontakte'=>$identity["id"]])->one();
-    break;
+        break;
     case "linkedin_oauth2":
         $usrDt = Users::find()->select('fn,ln,userpic')->where(['linkedin'=>$identity["id"]])->one();
-    break;
+        break;
     case "google":
         $usrDt = Users::find()->select('fn,ln,userpic')->where(['googleplus'=>$identity["id"]])->one();
-    break;
+        break;
     case "yandex":
         $usrDt = Users::find()->select('fn,ln,userpic')->where(['yandex'=>$identity["id"]])->one();
-    break;
+        break;
     case "mailru":
         $usrDt = Users::find()->select('fn,ln,userpic')->where(['mailru'=>$identity["id"]])->one();
-    break;
+        break;
 }
 $this->registerJsFile('/mertonic/global/scripts/app.js');
 
@@ -105,6 +112,7 @@ $this->title = 'profile';
             <div class="portlet-body">
                 <?php echo GridView::widget([
                     'dataProvider'  =>  $dataProvider,
+                    'filterModel' => $searchModel,
                     'tableOptions'  =>  [
                         'class'     =>  'table table-striped table-bordered table-hover',
                         'id' => 'sample_1'
@@ -168,6 +176,11 @@ $this->title = 'profile';
                             /*'template'    =>  '<div class="btn-group">{hidden}&nbsp;&nbsp;{edit}</div>'*/
                         ]
 
+                    ],
+                    'exportConfig' => [
+                        GridView::CSV => [
+                            $pdf
+                        ],
                     ]
                 ]);
                 ?>
@@ -210,74 +223,74 @@ $this->title = 'profile';
                 <h4 class="block">Ваша 1-я линия</h4>
                 <p> Для поиска по имени или фамилии используете сочетание клавиш на клавиатуре: Ctrl+F </p>
             </div>
-        <?php echo GridView::widget([
-            'dataProvider'  =>  $dataProvider,
-            'tableOptions'  =>  [
-                'class'     =>  'table table-striped table-bordered table-hover',
-                'id' => 'sample_1'
-            ],
-            'rowOptions'   =>  [
-                'style'    =>  'text-align: center; background-color:'
-            ],
-            'headerRowOptions'   =>  [
-                'class'     =>  'tbl-header'
-            ],
-            /*'responsive'    =>  true,*/
-            'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
-            'columns'   => [
-            /*    [
-                    'attribute' =>  'date',
-                    'label'     =>  'Дата',
-                    'width'     =>  '300px',
-                    'value'     =>  function($model){
-                        return date( "Y-m-d \n H:i", strtotime($model->date) );
-                    }
+            <?php echo GridView::widget([
+                'dataProvider'  =>  $dataProvider,
+                'tableOptions'  =>  [
+                    'class'     =>  'table table-striped table-bordered table-hover',
+                    'id' => 'sample_1'
                 ],
-            */
-                [
-                    'attribute' =>  'fn',
-                    'label'     =>  'Имя',
-                    'options' => ['style' => 'width: 220px; max-width: 220px;']
+                'rowOptions'   =>  [
+                    'style'    =>  'text-align: center; background-color:'
                 ],
-                [
-                    'attribute' =>  'ln',
-                    'label'     =>  'Фамилия',
-                    'options' => ['style' => 'width: 220px; max-width: 220px;']
+                'headerRowOptions'   =>  [
+                    'class'     =>  'tbl-header'
                 ],
-                /*[
-                    'attribute' =>  'city',
-                    'label'     =>  'Город'
-                ],*/
-                [
-                    'attribute' =>  'title',
-                    'label'     =>  'Уровень'
-                ],
-                [
-                    'header' => 'Действия',
-                    'format' => 'raw',
-                    'options' => ['style' => 'width: 100px; max-width: 100px;'],
-                    'value'  =>  function($dataProvider)
-                    {
-                        return $this->render('_team_edit', [
-                            'dt' => $dataProvider
-                        ]);
-                    }
-                    /*'class'     =>  ActionColumn::className(),*/
-                    /*'width'     =>  '300px',*/
-                   /* 'buttons'   => [
-                        'edit'=>function($model)
+                /*'responsive'    =>  true,*/
+                'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
+                'columns'   => [
+                    /*    [
+                            'attribute' =>  'date',
+                            'label'     =>  'Дата',
+                            'width'     =>  '300px',
+                            'value'     =>  function($model){
+                                return date( "Y-m-d \n H:i", strtotime($model->date) );
+                            }
+                        ],
+                    */
+                    [
+                        'attribute' =>  'fn',
+                        'label'     =>  'Имя',
+                        'options' => ['style' => 'width: 220px; max-width: 220px;']
+                    ],
+                    [
+                        'attribute' =>  'ln',
+                        'label'     =>  'Фамилия',
+                        'options' => ['style' => 'width: 220px; max-width: 220px;']
+                    ],
+                    /*[
+                        'attribute' =>  'city',
+                        'label'     =>  'Город'
+                    ],*/
+                    [
+                        'attribute' =>  'title',
+                        'label'     =>  'Уровень'
+                    ],
+                    [
+                        'header' => 'Действия',
+                        'format' => 'raw',
+                        'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                        'value'  =>  function($dataProvider)
                         {
                             return $this->render('_team_edit', [
-                                'model' => $model
+                                'dt' => $dataProvider
                             ]);
                         }
-                    ],*/
-                    /*'template'    =>  '<div class="btn-group">{hidden}&nbsp;&nbsp;{edit}</div>'*/
-                ]
+                        /*'class'     =>  ActionColumn::className(),*/
+                        /*'width'     =>  '300px',*/
+                        /* 'buttons'   => [
+                             'edit'=>function($model)
+                             {
+                                 return $this->render('_team_edit', [
+                                     'model' => $model
+                                 ]);
+                             }
+                         ],*/
+                        /*'template'    =>  '<div class="btn-group">{hidden}&nbsp;&nbsp;{edit}</div>'*/
+                    ]
 
-            ]
-        ]);
-        ?>
+                ]
+            ]);
+            ?>
         </div>
     </div>
 </div>
@@ -291,17 +304,17 @@ $this->title = 'profile';
                 <div class="dataTables_wrapper no-footer" id="sample_1_wrapper">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                                <div id="sample_1_length" class="dataTables_length">
-                                    <label>
-                                        <select class="form-control input-sm input-xsmall input-inline" aria-controls="sample_1" name="sample_1_length">
-                                            <option value="5">5</option>
-                                            <option value="10">10</option>
-                                            <option value="15">15</option>
-                                            <option value="20">20</option>
-                                            <option value="-1">All</option>
-                                        </select> entries
-                                    </label>
-                                </div>
+                            <div id="sample_1_length" class="dataTables_length">
+                                <label>
+                                    <select class="form-control input-sm input-xsmall input-inline" aria-controls="sample_1" name="sample_1_length">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="-1">All</option>
+                                    </select> entries
+                                </label>
+                            </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <div class="dt-buttons">

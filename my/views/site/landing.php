@@ -78,6 +78,7 @@ $this->registerJs($js);
                 'model' => $model,
                 'level' => $level,
                 'count_p' => $count_p,
+                'lp'=>$lp,
                 'm' => $m,
                 't' => $t
             ]);?>

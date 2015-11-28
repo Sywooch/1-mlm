@@ -4,7 +4,7 @@ use yii\web\Controller;
 use app\models\Users;
 use app\models\Msgs;
 
-class YandexController extends Controller
+class MsgController extends Controller
 {
     public function actionIndex()
     {

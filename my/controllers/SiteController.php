@@ -185,43 +185,47 @@ class SiteController extends Controller
 
     public function actionTeam()
     {
-       if ( !\Yii::$app->user->isGuest ){
+        if ( !\Yii::$app->user->isGuest ){
             $query=new \yii\db\Query();
             $query1=new \yii\db\Query();
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
-           $usr = Users::find()->select('refdt');
-           switch($identity["service"])
-           {
-               case "facebook":
-                   $usr=$usr->where(['facebook' => $identity["id"]]);
-                   break;
-               case "vkontakte":
-                   $usr=$usr->where(['vkontakte' => $identity["id"]]);
-                   break;
-               case "linkedin_oauth2":
-                   $usr=$usr->where(['linkedin' => $identity["id"]]);
-                   break;
-               case "google":
-                   $usr=$usr->where(['googleplus' => $identity["id"]]);
-                   break;
-               case "yandex":
-                   $usr=$usr->where(['yandex' => $identity["id"]]);
-                   break;
-               case "mailru":
-                   $usr=$usr->where(['mailru' => $identity["id"]]);
-                   break;
-           }
-           $usr=$usr->one();
+            $usr = Users::find()->select('refdt');
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usr=$usr->where(['facebook' => $identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $usr=$usr->where(['linkedin' => $identity["id"]]);
+                    break;
+                case "google":
+                    $usr=$usr->where(['googleplus' => $identity["id"]]);
+                    break;
+                case "yandex":
+                    $usr=$usr->where(['yandex' => $identity["id"]]);
+                    break;
+                case "mailru":
+                    $usr=$usr->where(['mailru' => $identity["id"]]);
+                    break;
+            }
+            $usr=$usr->one();
+
+            $filter = new Users;
 
             $array=$query1->select('u.id AS id')
-                     ->from([Users::tableName().' u'])
-                     ->where(['u.ref'=>$usr->refdt])->all();
+                ->from([Users::tableName().' u'])
+                ->where(['u.ref'=>$usr->refdt])->all();
             $arr=array();
             for($i=0;$i<sizeof($array);$i++){
                 $arr[]=$array[$i]["id"];
             }
             if( sizeof($arr)<1 ) return $this->render('team_empty');
+
+            //$dataprovider =
 
             return $this->render('team', [
                 'dataProvider' => new ActiveDataProvider([
@@ -231,7 +235,8 @@ class SiteController extends Controller
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
                             ->where(['u.id'=>$arr])
-                ])
+                ]),
+                'searchModel' => $filter
             ]);
         }
         return $this->goHome();
@@ -702,7 +707,7 @@ class SiteController extends Controller
                     $lp_n->h1c = $p["h1c"];
                     $lp_n->h2c = $p["h2c"];
                     $lp_n->h3c = $p["h3c"];
-                    $lp_n->yandexmetrika = $p["Lp"]["yandexmetrika"];
+                    $lp_n->yandexmetrika = $p["yandexmetrika"];
                     $lp_n->button = $p["button"];
                     $lp_n->save();
 

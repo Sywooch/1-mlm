@@ -174,7 +174,7 @@ if( !empty(\Yii::$app->request->get("r")) )
             </li>
   -->
             <li class="nav-item start <?php
-            echo( "mc"==$act ) ? 'active open' : null;
+            echo( "edit"==$act ) ? 'active open' : null;
             echo( "mcarchive"==$act ) ? 'active open' : null;
             ?>">
                 <a href="#" class="nav-link">
@@ -183,7 +183,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=mc%2Fmc" class="nav-link ">
+                        <a href="index.php?r=mc%2Fedit" class="nav-link ">
                             <span class="title">Создание МК</span>
                         </a>
                     </li>
