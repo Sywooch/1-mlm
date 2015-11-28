@@ -35,8 +35,10 @@ switch($identity["service"])
         break;
 }
 
+$refID=( !empty($model->one()["ref"]) )?$model->one()["ref"]:"309120422"; //admin user refdt
+
 $consultant = Users::find()
-    ->where(['refdt' => $model->one()["ref"]])->one();
+    ->where(['refdt' => $refID])->one();
 
 $cntConTeam=Users::find()
     ->where(['ref' => $consultant["refdt"]])->count();

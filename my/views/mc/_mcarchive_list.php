@@ -28,17 +28,17 @@ echo GridView::widget([
             //'header' => 'Просмотр',
             'format' => 'raw',
             'options' => ['style' => 'width: 1000px; max-width: 1000px;'],
-            'value'  =>  function($data)
+            'value'  =>  function($data, $my, $refdt)
             {
+               $edit=( !empty($my) )?"<a href=\"index.php?r=mc/edit&id={$data->id}\">Редактировать</a><br />":null;
                 return
-                    $str="Мастер-класс от {$data->date}<br />".
-                        /*( !empty($my) )?"Редактировать":null.*/
+                    $str="{$edit}Мастер-класс от {$data->date}<br />".
                         "Смотреть в записи: ".
                         $this->render('_mcarchive_video', [
                             'data' => $data
                         ]).
                         "<br />".
-                        "Пригласить партнеров или кандидатов: Cсылка на мастер-класс для партнеров";
+                        "Пригласить партнеров или кандидатов: index.php?mc&ref=".$refdt;
             }
         ]
     ]

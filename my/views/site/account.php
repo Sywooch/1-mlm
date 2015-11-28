@@ -59,10 +59,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <a href="index.php?r=site%2Faccount">
                                                     <i class="icon-settings"></i> Настройки аккаунта </a>
                                             </li>
+                                            <!--
                                             <li>
                                                 <a href="index.php?r=site%2Fhelp">
                                                     <i class="icon-info"></i> Помощь </a>
                                             </li>
+                                            -->
                                         </ul>
                                     </div>
                                     <!-- END MENU -->

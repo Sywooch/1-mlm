@@ -13,7 +13,9 @@
     <file url="file://$PROJECT_DIR$/views/site/_first_list_users.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_index_edit_companies.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_landing_list.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/site/_landing_tab.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_mcarchive_list.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/site/error.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/first.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/land_1.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/land_2.php" charset="UTF-8" />

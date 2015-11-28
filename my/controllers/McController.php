@@ -7,19 +7,89 @@ use app\models\Hangouts;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use app\models\Users;
+use Yii;
 
 
 class McController extends Controller
 {
-    public function actionIndex()
+    public function ref()
     {
-        if (!\Yii::$app->user->isGuest)
+        if( !empty(\Yii::$app->request->get("refid")) )
         {
-            return $this->render('index');
+            $refdt=\Yii::$app->request->get("refid");
+            $usrDt=Users::find()
+                ->where(['refdt' => $refdt]);
+            if( $usrDt->count()>0 )
+            {
+                Yii::$app->session->set('refuserId', $refdt);
+            }
         }
     }
 
-    public function actionMc()
+    public function actionIndex()
+    {
+        $this->ref();
+        if (!\Yii::$app->user->isGuest)
+        {
+            $mcid=\Yii::$app->request->get("mcid");
+
+            return $this->render('index',[
+                'data'=>Hangouts::findOne(['id'=>$mcid])
+            ]);
+        }else
+        {
+            return $this->redirect( Yii::getAlias('@web') );
+        }
+    }
+
+    public function actionMcarchive()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
+                    break;
+                case "google":
+                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
+                    break;
+                case "yandex":
+                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
+                    break;
+                case "mailru":
+                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
+                    break;
+            }
+
+            return $this->render('mcarchive', [
+                'dataProviderSys' => new ActiveDataProvider([
+                    'query' =>Hangouts::find()
+                    //->where([''=>''])
+                ]),
+                'dataProviderPartner' => new ActiveDataProvider([
+                    'query' =>Hangouts::find()
+                        ->where([ 'uid' => $model->one()["ref"] ])
+                ]),
+                'dataProviderMy' => new ActiveDataProvider([
+                    'query' =>Hangouts::find()
+                        ->where([ 'uid' => $model->one()["id"] ])
+                ]),
+                'refdt'=>$model->one()["refdt"]
+            ]);
+        }
+        return $this->goHome();
+    }
+
+    public function actionEdit()
     {
         if (!\Yii::$app->user->isGuest)
         {
@@ -83,52 +153,6 @@ class McController extends Controller
             return $this->render('mcedit', [
                 'model' => Hangouts::find()
                     ->where(['id'=>'25'])->one()
-            ]);
-        }
-        return $this->goHome();
-    }
-
-    public function actionMcarchive()
-    {
-        if(!\Yii::$app->user->isGuest)
-        {
-
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            switch($identity["service"])
-            {
-                case "facebook":
-                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
-                    break;
-                case "vkontakte":
-                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
-                    break;
-                case "linkedin_oauth2":
-                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
-                    break;
-                case "google":
-                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
-                    break;
-                case "yandex":
-                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
-                    break;
-                case "mailru":
-                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
-                    break;
-            }
-
-            return $this->render('mcarchive', [
-                'dataProviderSys' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
-                        //->where([''=>''])
-                ]),
-                'dataProviderPartner' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
-                        ->where([ 'uid' => $model->one()["ref"] ])
-                ]),
-                'dataProviderMy' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
-                        ->where([ 'uid' => $model->one()["id"] ])
-                ])
             ]);
         }
         return $this->goHome();

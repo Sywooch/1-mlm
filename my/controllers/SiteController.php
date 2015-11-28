@@ -118,7 +118,7 @@ class SiteController extends Controller
                 'consultant' => $consultant
             ]);
         }else{
-            $this->layout = "first";
+            $this->layout = "empty";
             return $this->render("first");
         }
     }
@@ -538,7 +538,6 @@ class SiteController extends Controller
                 Yii::$app->session->set('refuserId', $refdt);
             }
         }
-        //return $this->goHome();
     }
 
     public function actionCalendar()
@@ -588,32 +587,6 @@ class SiteController extends Controller
         return $this->goHome();
     }
 /********************************************************************/
-    public function actionLand()
-    {
-        $this->layout = "landing";
-        $landid = (int)\Yii::$app->request->get("landid");
-        $landtype = (int)\Yii::$app->request->get("landtype");
-
-        $query11=new \yii\db\Query();
-        $data=$query11->from([Lp::tableName()])
-            ->where(['id' => $landid])
-            ->one();
-
-        $usr = Users::find()->where(['id' => $data["uid"]]);
-
-        return $this->render('land_'.$landtype, [
-            'data'=>$data,
-            'user'=>$usr->one()
-        ]);
-        $query=new \yii\db\Query();
-        $data=$query->from([Lp::tableName()])
-            ->where(['id' => $landid])
-            ->one();
-        return $this->render('land', [
-            'data'=>$data,
-        ]);
-    }
-
     public function actionLanding()
     {
         if (!\Yii::$app->user->isGuest){
@@ -707,6 +680,7 @@ class SiteController extends Controller
                     $lp->h1c = $p["Lp"]["h1c"];
                     $lp->h2c = $p["Lp"]["h2c"];
                     $lp->h3c = $p["Lp"]["h3c"];
+                    $lp->yandexmetrika = $p["Lp"]["yandexmetrika"];
                     $lp->button = $p["Lp"]["button"];
                     $lp->update();
 
@@ -728,6 +702,7 @@ class SiteController extends Controller
                     $lp_n->h1c = $p["h1c"];
                     $lp_n->h2c = $p["h2c"];
                     $lp_n->h3c = $p["h3c"];
+                    $lp_n->yandexmetrika = $p["Lp"]["yandexmetrika"];
                     $lp_n->button = $p["button"];
                     $lp_n->save();
 
@@ -806,205 +781,6 @@ class SiteController extends Controller
         }
         return $this->goHome();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**************************************************************/
-    public function actionMc()
-    {
-        if (!\Yii::$app->user->isGuest)
-        {
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            $model = Users::find();
-            switch($identity["service"])
-            {
-                case "facebook":
-                    $model=$model->where(['facebook' => $identity["id"]])->one();
-                break;
-                case "vkontakte":
-                    $model=$model->where(['vkontakte' => $identity["id"]])->one();
-                break;
-                case "linkedin_oauth2":
-                    $model=$model->where(['linkedin' => $identity["id"]])->one();
-                break;
-                case "google":
-                    $model=$model->where(['googleplus' => $identity["id"]])->one();
-                break;
-                case "yandex":
-                    $model=$model->where(['yandex' => $identity["id"]])->one();
-                break;
-                case "mailru":
-                    $model=$model->where(['mailru' => $identity["id"]])->one();
-                break;
-            }
-            if(\Yii::$app->request->post()){
-                $p = \Yii::$app->request->post();
-                if ( (1 < $model->level) && ( 1 > $p["id"] ) )
-                {
-                    $hangouts = new Hangouts;
-                    $hangouts->name = $p["name"];
-                    $hangouts->uid=$model->id;
-
-//    $hangouts->date=$p["name"];
-//    $hangouts->time=$p["name"];
-/*
-    $hangouts->yt=$p["name"];
-    $hangouts->class=$p["name"];
-    $hangouts->title=$p["name"];
-    $hangouts->description=$p["name"];
-    $hangouts->url=$p["name"];
-    $hangouts->download=$p["name"];
-    $hangouts->speaker=$p["name"];
-    $hangouts->button=$p["name"];
-    $hangouts->link=$p["name"];
-*/
-                    $hangouts->save(false);
-                }elseif( (1 < $model->level) && ( 1 > $p["id"] ) )
-                {
-
-                    $hangouts=Hangouts::findOne([
-                        'id'=>(int)$p["id"]
-                    ]);
-                    $hangouts->title=$p["title"];
-                    $hangouts->update(false);
-                }else{
-                    return $this->render('mcempty');
-                }
-            }
-            return $this->render('mcedit', [
-                'model' => Hangouts::find()
-                    ->where(['id'=>'25'])->one()
-            ]);
-        }
-        return $this->goHome();
-    }
-
-    public function actionMcarchive()
-    {
-        if(!\Yii::$app->user->isGuest)
-        {
-
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            switch($identity["service"])
-            {
-                case "facebook":
-                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
-                    break;
-                case "vkontakte":
-                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
-                    break;
-                case "linkedin_oauth2":
-                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
-                    break;
-                case "google":
-                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
-                    break;
-                case "yandex":
-                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
-                    break;
-                case "mailru":
-                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
-                    break;
-            }
-
-            return $this->render('mcarchive', [
-                'dataProviderSys' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
-                        //->where([''=>''])
-                ]),
-                'dataProviderPartner' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
-                        ->where([ 'uid' => $model->one()["ref"] ])
-                ]),
-                'dataProviderMy' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
-                        ->where([ 'uid' => $model->one()["id"] ])
-                ])
-            ]);
-        }
-        return $this->goHome();
-    }
-/**************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function actionTraining()
     {
@@ -1338,13 +1114,13 @@ class SiteController extends Controller
 /***************************************************************/
     public function actionPolitika()
     {
-        $this->layout = "politika";
+        $this->layout = "empty";
         return $this->render('politika');
     }
 
     public function actionOtkaz()
     {
-        $this->layout = "otkaz";
+        $this->layout = "empty";
         return $this->render('otkaz');
     }
 

@@ -9,4 +9,4 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
 $this->title = 'mcempty';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-смените тарифный план
+Cмените тарифный план
