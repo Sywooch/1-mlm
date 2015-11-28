@@ -73,7 +73,9 @@ $this->registerJs($js);
                     </li>
                 </ul>
             </div>
-            <?php echo $this->render('_landing_tab',[
+            <?php 
+			$lp=( !empty($lp) )?$lp:null;
+			echo $this->render('_landing_tab',[
                 'data' => $data,
                 'model' => $model,
                 'level' => $level,

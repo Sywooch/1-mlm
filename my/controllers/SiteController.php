@@ -409,7 +409,7 @@ class SiteController extends Controller
                         $users->city=$p["Users"]["city"];
                         $users->country=$p["Users"]["country"];
                         $users->purse=$p["Users"]["purse"];
-                        $users->rating=$p["Users"]["rating"];
+                        $users->companyid=$p["Users"]["companyid"];
                         $users->save(false);
                         unset($users);
 /*
@@ -424,7 +424,7 @@ class SiteController extends Controller
                                     `city`='{$p["Users"]["city"]}',
                                     `country`='{$p["Users"]["country"]}',
                                     `purse`='{$p["Users"]["purse"]}',
-                                    `rating`='{$p["Users"]["rating"]}'
+                                    `companyid`='{$p["Users"]["companyid"]}'
                                 WHERE
                                     `socid`='{$identity["id"]}'
                                 AND
