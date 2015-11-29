@@ -97,7 +97,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <a href="<?= $lastFive[$i]["vkontakte"]; ?>">
                                         <img alt="user picture" class="img-circle"
                                            style="margin-left: 5px;margin-top: -8px;height: 39px;display: inline-block;"
-                                           src="<?= $lastFive[$i]["userpic"]; ?>"><span class="username username-hide-on-mobile"><?php
+                                           src="<?= $lastFive[$i]["userpic"]; ?>">&nbsp;&nbsp;<span class="username username-hide-on-mobile"><?php
                                             echo $lastFive[$i]["fn"], ' ',$lastFive[$i]["ln"]
                                         ?></span>
                                      </a>

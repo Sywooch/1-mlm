@@ -22,9 +22,12 @@
                 <label>Ваш email</label>
                 <div class="input-icon">
                     <i class="icon-envelope-open"></i>
-                    <input type="text" id="users-email" class="form-control" name="Users[email]" value="<?= $model["email"]; ?>" placeholder="example@gmail.com">
-
-                    <div class="help-block"></div></div>
+                    <input type="text" id="users-email" class="form-control"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                           name="Users[email]" value="<?= $model["email"]; ?>"
+                           placeholder="example@mail.com">
+                    <div class="help-block"></div>
+                </div>
             </div>
 
             <div class="form-group">

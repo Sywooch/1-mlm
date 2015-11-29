@@ -41,13 +41,22 @@ $( document ).ready(function() {
         }
     });
 
-   $("#users-fn").blur(function(){
-        if( 2==$("#stepIndex").val() ) {
-            $("#nxt_bnt").attr("disabled", false);
-            $("#stepIndex").val("3");
-        }
-       });
+   $("#users-email").blur(function()
+   {
+       if( validateEmail( $("#users-email").val() ) )
+       {
+           if (2 == $("#stepIndex").val())
+           {
+               $("#nxt_bnt").attr("disabled", false);
+               $("#stepIndex").val("3");
+           }
+       }
+   });
 
+    function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+    }
 
     $('#lp-id').on('change', function () {
         if( 4==$("#stepIndex").val() ) {
