@@ -3,66 +3,113 @@
 <?php
 use yii\widgets\ActiveForm;
 
-$form = ActiveForm::begin();?>
+$form = ActiveForm::begin([
+    'options' => ['class'=>'form-horizontal']
+]);?>
 
-    <div class="form-group">
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'fn', ["template" => "<label>Имя</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+            $model, 'fn', ["template" => "<label class='col-md-2 control-label'>Имя</label>
+                            <div class='col-md-10'>
+                                <div class=\"input-icon\">
+                                    <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}
+                                    <div class=\"form-control-focus\"></div>
+                                    <span class=\"help-block\">Введите имя</span>
+                                </div>
+
+                            </div>"]
         )->textInput(["class"=>"form-control"]); ?>
     </div>
-    <div class="form-group">
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'ln', ["template" => "<label>Фамилия</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+            $model, 'ln', ["template" => "<label class='col-md-2 control-label'>Фамилия</label>
+                                <div class='col-md-10'>
+                                    <div class=\"input-icon\">
+                                        <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}
+                                        <div class=\"form-control-focus\"></div>
+                                        <span class=\"help-block\">Введите фамилию</span>
+                                    </div>
+
+                                </div>"]
         )->textInput(["class"=>"form-control"]); ?>
     </div>
-    <div class="form-group">
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'email', ["template" => "<label>Ваш email</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-envelope-open\"></i>\n{input}\n{hint}\n{error}</div>"])
-            ->textInput(['placeholder' => 'example@gmail.com',"class"=>"form-control"]); ?>
-    </div>
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'mobile', ["template" => "<label>Номер телефона</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-call-end\"></i>\n{input}\n{hint}\n{error}</div>"])
-            ->textInput(['placeholder' => '+99(99)9999-9999', "class"=>"form-control",]); ?>
-    </div>
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'skype', ["template" => "<label>Ваш skype</label>
-                            <div class=\"input-icon\">
-                            <i class=\"fa fa-skype\"></i>\n{input}\n{hint}\n{error}</div>"])
-            ->textInput(['placeholder' => 'Логин skype',"class"=>"form-control"]); ?>
-    </div>
+            $model, 'email', ["template" => "<label class='col-md-2 control-label'>Ваш Email</label>
+                                    <div class='col-md-10'>
+                                        <div class=\"input-icon\">
+                                            <i class=\"icon-envelope-open\"></i>\n{input}\n{hint}\n{error}
+                                            <div class=\"form-control-focus\"></div>
+                                            <span class=\"help-block\">Введите ваш Email</span>
+                                        </div>
 
-    <div class="form-group">
+                                    </div>"]
+        )->textInput(["placeholder"=>"example@gmail.com","class"=>"form-control"]); ?>
+    </div>
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'city', ["template" => "<label>Город</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+            $model, 'mobile', ["template" => "<label class='col-md-2 control-label'>Номер телефона</label>
+                                        <div class='col-md-10'>
+                                            <div class=\"input-icon\">
+                                                <i class=\"icon-screen-smartphone \"></i>\n{input}\n{hint}\n{error}
+                                                <div class=\"form-control-focus\"></div>
+                                                <span class=\"help-block\">Введите ваш номер мобильного телефона</span>
+                                            </div>
+
+                                        </div>"]
+        )->textInput(['placeholder' => '+99(99)9999-9999', "class"=>"form-control"]); ?>
+    </div>
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'skype', ["template" => "<label class='col-md-2 control-label'>Ваш скайп</label>
+                                            <div class='col-md-10'>
+                                                <div class=\"input-icon\">
+                                                    <i class=\"fa fa-skype\"></i>\n{input}\n{hint}\n{error}
+                                                    <div class=\"form-control-focus\"></div>
+                                                    <span class=\"help-block\">Введите ваш скайп</span>
+                                                </div>
+
+                                            </div>"]
+        )->textInput(['placeholder' => 'Логин skype',"class"=>"form-control"]); ?>
+    </div>
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'city', ["template" => "<label class='col-md-2 control-label'>Город</label>
+                                                <div class='col-md-10'>
+                                                    <div class=\"input-icon\">
+                                                        <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}
+                                                        <div class=\"form-control-focus\"></div>
+                                                        <span class=\"help-block\">Введите город</span>
+                                                    </div>
+
+                                                </div>"]
         )->textInput(["class"=>"form-control"]); ?>
     </div>
-
-    <div class="form-group">
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'country', ["template" => "<label>Страна</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}</div>"]
+            $model, 'country', ["template" => "<label class='col-md-2 control-label'>Страна</label>
+                                                    <div class='col-md-10'>
+                                                        <div class=\"input-icon\">
+                                                            <i class=\"icon-user\"></i>\n{input}\n{hint}\n{error}
+                                                            <div class=\"form-control-focus\"></div>
+                                                            <span class=\"help-block\">Введите страну</span>
+                                                        </div>
+
+                                                    </div>"]
         )->textInput(["class"=>"form-control"]); ?>
     </div>
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'purse', ["template" => "<label class='col-md-2 control-label'>Ваш номер кошелька</label>
+                                                        <div class='col-md-10'>
+                                                            <div class=\"input-icon\">
+                                                                <i class=\"icon-wallet\"></i>\n{input}\n{hint}\n{error}
+                                                                <div class=\"form-control-focus\"></div>
+                                                                <span class=\"help-block\">Введите ваш номер кошелька</span>
+                                                            </div>
 
-    <div class="form-group">
-         <?=$form->field(
-            $model, 'purse', ["template" => "<label>Ваш номер кошелька</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-wallet\"></i>\n{input}\n{hint}\n{error}</div>"])
-            ->textInput(["placeholder" => "Perfect money или Payeer","class"=>"form-control"]); ?>
+                                                        </div>"]
+        )->textInput(["placeholder" => "Perfect money или Payeer","class"=>"form-control"]); ?>
     </div>
 
     <div class="form-group">
@@ -72,19 +119,23 @@ $form = ActiveForm::begin();?>
         ]);?>
     </div>
 
-    <div class="form-group">
-        <?php
-        echo $form->field(
-            $model, 'ref', [
-                            "template" => "<label>Ваша рефереальная ссылка</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"])
-            ->textInput([
-                "placeholder" => "Если продвигаете 1 компанию...",
-                "readonly" => true,
-                "class"=>"form-control",
-                "value"=>'http://1-mlm.com/index.php?site/ref&refid='.$model->refdt
-            ]); ?>
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'ref', ["template" => "<label class='col-md-2 control-label'>Ваш реферальная ссылка</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Реферальная ссылка</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput([
+            "placeholder" => "Если продвигаете 1 компанию...",
+            "readonly" => true,
+            "class"=>"form-control",
+            "value"=>'http://1-mlm.com/index.php?site/ref&refid='.$model->refdt
+        ]); ?>
     </div>
 
     <div class="margiv-top-10">

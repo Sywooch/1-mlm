@@ -1,53 +1,87 @@
 <?php
 use yii\widgets\ActiveForm;
-$form = ActiveForm::begin();?>
 
-    <div class="form-group">
-            <?=$form->field(
-                $model, 'facebook', ["template" => "<label>facebook</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
-            )->textInput(["class"=>"form-control"]); ?>
-    </div>
+$form = ActiveForm::begin([
+    'options' => ['class'=>'form-horizontal']
+]);?>
 
-    <div class="form-group">
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'vkontakte', ["template" => "<label>vkontakte</label>
-                            <div class=\"input-icon\">
-                            <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
-        )->textInput(["class"=>"form-control"]); ?>
-    </div>
+            $model, 'facebook', ["template" => "<label class='col-md-2 control-label'>facebook</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваш facebook</span>
+                                                                </div>
 
-    <div class="form-group">
-        <?=$form->field(
-            $model, 'linkedin', ["template" => "<label>linkedin</label>
-                            <div class=\"input-icon\">
-                             <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
-        )->textInput(["class"=>"form-control"]); ?>
+                                                            </div>"]
+        )->textInput(["class"=>"form-control",]); ?>
     </div>
-
-    <div class="form-group">
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'googleplus', ["template" => "<label>googleplus</label>
-                            <div class=\"input-icon\">
-                             <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
-        )->textInput(["class"=>"form-control"]); ?>
+            $model, 'vkontakte', ["template" => "<label class='col-md-2 control-label'>vkontakte</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваш vkontakte</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput(["class"=>"form-control",]); ?>
     </div>
-
-    <div class="form-group">
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'yandex', ["template" => "<label>yandex</label>
-                            <div class=\"input-icon\">
-                             <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
-        )->textInput(["class"=>"form-control"]); ?>
+            $model, 'linkedin', ["template" => "<label class='col-md-2 control-label'>linkedin</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваш linkedin</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput(["class"=>"form-control",]); ?>
     </div>
-
-    <div class="form-group">
+    <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'mailru', ["template" => "<label>mail.ru</label>
-                            <div class=\"input-icon\">
-                             <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}</div>"]
-        )->textInput(["class"=>"form-control"]); ?>
+            $model, 'googleplus', ["template" => "<label class='col-md-2 control-label'>googleplus</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваш googleplus</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput(["class"=>"form-control",]); ?>
+    </div>
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'yandex', ["template" => "<label class='col-md-2 control-label'>yandex</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваш yandex</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput(["class"=>"form-control",]); ?>
+    </div>
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'mailru', ["template" => "<label class='col-md-2 control-label'>mail.ru</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваш mail.ru</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput(["class"=>"form-control",]); ?>
     </div>
 
         <div class="margin-top-10">
