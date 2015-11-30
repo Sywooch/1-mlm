@@ -1,8 +1,58 @@
-<?php //=$content?>
+<?php
+/*$js_1 = <<<'SCRIPT'
+$(document).ready(function() {
+    $('.media').on('click', function(){
+        alert($('.media input[type=hidden]').val());
+    });
+});
+SCRIPT;
+
+$this->registerJs($js_1);*/
+?>
 <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
-    <h3 class="list-heading">Staff</h3>
+    <h3 class="list-heading">Команда</h3>
     <ul class="media-list list-items">
-        <li class="media">
+        <?php
+        use app\models\Users;
+
+        $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        switch($identity["service"])
+        {
+            case "facebook":
+                $usrDt = Users::find()->where(['facebook'=>$identity["id"]])->one();
+                break;
+            case "vkontakte":
+                $usrDt = Users::find()->where(['vkontakte'=>$identity["id"]])->one();
+                break;
+            case "linkedin_oauth2":
+                $usrDt = Users::find()->where(['linkedin'=>$identity["id"]])->one();
+                break;
+            case "google":
+                $usrDt = Users::find()->where(['googleplus'=>$identity["id"]])->one();
+                break;
+            case "yandex":
+                $usrDt = Users::find()->where(['yandex'=>$identity["id"]])->one();
+                break;
+            case "mailru":
+                $usrDt = Users::find()->where(['mailru'=>$identity["id"]])->one();
+                break;
+        }
+
+        $lastTenRegUsers=\app\models\Users::find()
+            ->where(['ref'=>$usrDt['refdt']])
+            ->orderBy(['id' => SORT_ASC])
+            ->limit(10)
+            ->all();
+
+        //print_r($lastTwentyRegUsers);
+        foreach($lastTenRegUsers as $lt) {
+            echo $this->render('_main_message', [
+                'user' => $lt
+            ]);
+        }
+
+        ?>
+        <!--<li class="media">
             <div class="media-status">
                 <span class="badge badge-success">8</span>
             </div>
@@ -96,7 +146,7 @@
                 <div class="media-heading-sub"> Manager, Infomatic Inc </div>
                 <div class="media-heading-small"> Last seen 03:10 AM </div>
             </div>
-        </li>
+        </li>-->
     </ul>
 </div>
 <div class="page-quick-sidebar-item">
