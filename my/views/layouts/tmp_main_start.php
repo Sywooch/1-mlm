@@ -581,7 +581,7 @@
                         <div class="header">
                             <h4>Мастер</h4>
                         </div>
-                        <div class="price"> <b><strike>10$</strike></b> <span class="price-amount">2</span><span class="currency">$</span> <p>/ месяц</p> </div>
+                        <div class="price"> <b><strike style="color: #959695; font-size: 23px;">10$</strike></b> <span class="price-amount">2</span><span class="currency">$</span> <p>/ месяц</p> </div>
                         <ul class="plan-features">
                             <li align="left"><i class="fa fa-bullseye"></i> Страниц - 3 </li>
                             <li align="left"><i class="fa fa-university"></i> Компания - 3 </li>
