@@ -986,39 +986,69 @@ class SiteController extends Controller
                     break;
                 }
                 $users->save(false);
-                /*
-                \Yii::$app->db->createCommand
-                ("
-                    INSERT INTO users
-                    (
-                                   `ip`,
-                                   `refdt`,
-                                   `ref`,
-                                   `userpic`,
-                                   `fn`,
-                                   `ln`,
-                                   `socid`,
-                                   `service`,
-                                   `regdate`,
-                                   `active`
-
-                    ) VALUES
-                    (
-                                   '".$_SERVER['REMOTE_ADDR']."',
-                                   '".$this->ukey()."',
-                                   '".Yii::$app->session->get('refuserId')."',
-                                   '".$pitureUrl."',
-                                   '".$firstName."',
-                                   '".$lastName."',
-                                   '".$identity["id"]."',
-                                   '".$identity["service"]."',
-                                   '".date("Y-m-d")."',
-                                   '".date("Y-m-d")."'
-                    );
-                    ")->execute();*/
+                if( !empty($users->ref) )
+                {
+                    $this->sandMailFirst($users,$identity);
+                }
             }
         }
 /*********************************/
+
+    public function sandMailFirst($users,$iden)
+    {
+        /* получатель */
+        $to = Users::find()
+            ->where([
+                'refdt' => $users->ref
+            ])->one();
+
+        $to = $to->email;
+        if (empty($to)) $to = 'support@1-mlm.com';
+
+        /* тема/subject */
+        $subject = 'Поздравляем! У Вас новый кандидат!';
+
+        /* сообщение */
+        $message = '<p>Только что по Вашей ссылке был создан Личный кабинет для Вашего нового кандидата:</p>';
+
+        switch($iden["service"])
+        {
+            case "vkontakte":
+                $message .= '<p>Его данные: <a href="http://vk.com/id' . $iden["id"] . '">';
+            break;
+            case "facebook":
+                $message .= '<p>Его данные: <a href="http://facebook.com/' . $iden["id"] . '">';
+            break;
+            case "linkedin_oauth2":
+            break;
+            case "google":
+            break;
+            case "yandex":
+            break;
+            case "mailru":
+            break;
+        }
+
+        $message .= '<strong>'.$users->fn.' '.$users->ln.'</strong></a></p>';
+        $message .= '<p>Зайдите в свой Личный кабинет, чтобы связаться с ним по скайпу как можно скорее!</p>';
+        $message .= '<p>Служба поддержки системы "1-й млм Реусрс"</p>
+                    <p>Скайп: support.1-mlm.com</p>';
+
+        /* Для отправки HTML-почты вы можете установить шапку Content-type. */
+        $headers= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+
+        /* дополнительные шапки */
+        $headers .= "From: admin <admin@1-mlm.com>\r\n";
+        $headers .= "Cc: admin@1-mlm.com\r\n";
+        $headers .= "Bcc: admin@1-mlm.com\r\n";
+
+        /* и теперь отправим из */
+        mail($to, $subject,
+            $message,
+            $headers);
+    }
+
     protected function ukey()
     {
         for(;;)
