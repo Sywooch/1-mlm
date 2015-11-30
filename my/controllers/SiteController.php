@@ -986,10 +986,7 @@ class SiteController extends Controller
                     break;
                 }
                 $users->save(false);
-                if( !empty($users->ref) )
-                {
-                    $this->sandMailFirst($users,$identity);
-                }
+                $this->sandMailFirst($users,$identity);
             }
         }
 /*********************************/
