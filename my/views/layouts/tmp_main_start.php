@@ -712,7 +712,8 @@
                 <ul class="social">
                     <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-vk"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UC4Q97tIPa3_xn3uUdjybPQw" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
                 </ul>
 
                 <!--social end-->
