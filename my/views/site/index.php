@@ -122,6 +122,25 @@ $this->title = '1-mlm';
                             <div id="bar" class="progress progress-striped" role="progressbar">
                                 <div class="progress-bar progress-bar-success"> </div>
                             </div>
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <a href="javascript:;" class="btn default button-previous">
+                                            <i class="fa fa-angle-left"></i> Назад </a>
+                                        <button id="nxt_bnt" class="btn btn-outline green button-next" disabled=""> Дальше
+                                            <i class="fa fa-angle-right"></i>
+                                        </button>
+                                        <input type="hidden" id="stepIndex" value="1" />
+                                        <a href="index.php?r=site/landing" class="btn green button-submit"> Отправить
+                                            <i class="fa fa-check"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
+
                             <div class="tab-content">
                                 <div class="alert alert-danger display-none">
                                     <button class="close" data-dismiss="alert"></button> Ошибка! Пожалуйста, проверьте ниже. </div>
@@ -135,9 +154,10 @@ $this->title = '1-mlm';
 
                                         </div>
                                         </div>
-                                    <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
+
                                 </div>
                                 <div class="tab-pane" id="tab2">
+                                    <center><h4 class="block">переход к следующему шагу - после заполения формы!</h4></center>
                                         <!--<div class="embed-responsive embed-responsive-16by9">
                                             <div align="center">-->
                                                 <?php
@@ -146,7 +166,7 @@ $this->title = '1-mlm';
                                                 ]); ?>
                                           <!--  </div>
                                         </div>-->
-                                    <center><h4 class="block">переход к следующему шагу - после заполения формы!</h4></center>
+
                                 </div>
                                 <div class="tab-pane" id="tab3">
                                     <div class="form-group">
@@ -179,21 +199,7 @@ $this->title = '1-mlm';
                                 </div>-->
                             </div>
                         </div>
-                        <div class="form-actions">
-                            <div class="row">
-                                <div class="col-md-offset-3 col-md-9">
-                                    <a href="javascript:;" class="btn default button-previous">
-                                        <i class="fa fa-angle-left"></i> Назад </a>
-                                    <button id="nxt_bnt" class="btn btn-outline green button-next" disabled=""> Дальше
-                                        <i class="fa fa-angle-right"></i>
-                                    </button>
-                                    <input type="hidden" id="stepIndex" value="1" />
-                                    <a href="index.php?r=site/landing" class="btn green button-submit"> Отправить
-                                        <i class="fa fa-check"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </form>
             </div>
