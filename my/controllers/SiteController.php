@@ -531,7 +531,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function ref()
+    public function actionRef()
     {
         if( !empty(\Yii::$app->request->get("refid")) )
         {
@@ -543,6 +543,7 @@ class SiteController extends Controller
                 Yii::$app->session->set('refuserId', $refdt);
             }
         }
+        return $this->goHome();
     }
 
     public function actionCalendar()
@@ -999,7 +1000,7 @@ class SiteController extends Controller
                 'refdt' => $users->ref
             ])->one();
 
-        $to = $to->email;
+        $to = @$to->email;
         if (empty($to)) $to = 'support@1-mlm.com';
 
         /* тема/subject */
@@ -1029,16 +1030,16 @@ class SiteController extends Controller
         $message .= '<strong>'.$users->fn.' '.$users->ln.'</strong></a></p>';
         $message .= '<p>Зайдите в свой Личный кабинет, чтобы связаться с ним по скайпу как можно скорее!</p>';
         $message .= '<p>Служба поддержки системы "1-й млм Реусрс"</p>
-                    <p>Скайп: support.1-mlm.com</p>';
+                    <p>Скайп: support.mlm</p>';
 
         /* Для отправки HTML-почты вы можете установить шапку Content-type. */
         $headers= "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
         /* дополнительные шапки */
-        $headers .= "From: admin <admin@1-mlm.com>\r\n";
-        $headers .= "Cc: admin@1-mlm.com\r\n";
-        $headers .= "Bcc: admin@1-mlm.com\r\n";
+        $headers .= "From: support <support@1-mlm.com>\r\n";
+        $headers .= "Cc: support@1-mlm.com\r\n";
+        $headers .= "Bcc: support@1-mlm.com\r\n";
 
         /* и теперь отправим из */
         mail($to, $subject,
@@ -1078,7 +1079,6 @@ class SiteController extends Controller
         if(\Yii::$app->user->isGuest)
             {return $this->redirect($this->siteUrl);}
         */
-        $this->ref();
         $serviceName = \Yii::$app->getRequest()->getQueryParam('service');
         if (isset($serviceName)) {
             /** @var $eauth \nodge\eauth\ServiceBase */
