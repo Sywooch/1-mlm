@@ -100,7 +100,7 @@ class Users extends \yii\db\ActiveRecord
             'profit' => 'Profit',
         ];
     }
-    public function saveChange($p){
+    static public function saveChange($p){
         $identity = \Yii::$app->getUser()->getIdentity()->profile;
         switch($identity["service"])
         {

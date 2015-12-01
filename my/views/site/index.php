@@ -1,4 +1,28 @@
 <?php
+$css = <<<'STYLE'
+.btn.btn-outline.green
+{
+    position: absolute !important;
+    top: 45px !important;
+    right: 50px !important;
+}
+
+.btn.default.button-previous
+{
+    position: absolute !important;
+    top: 45px !important;
+    right: 170px !important;
+}
+
+.btn.green.button-submit
+{
+    position: absolute !important;
+    top: 45px !important;
+    right: 50px !important;
+}
+STYLE;
+$this->registerCss($css);
+
 $this->registerJsFile('/mertonic/global/plugins/jquery.pulsate.min.js');
 $this->registerJsFile('/mertonic/global/plugins/jquery-bootpag/jquery.bootpag.min.js');
 $this->registerJsFile('/mertonic/global/plugins/holder.js');
@@ -139,21 +163,19 @@ $this->title = '1-mlm';
                                 </div>
                             </div>
 
-                            <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
-
                             <div class="tab-content">
                                 <div class="alert alert-danger display-none">
                                     <button class="close" data-dismiss="alert"></button> Ошибка! Пожалуйста, проверьте ниже. </div>
                                 <div class="alert alert-success display-none">
                                     <button class="close" data-dismiss="alert"></button><div id="msg"> ***Поздравляем! Вы на шаг ближе к цели! </div></div>
                                 <div class="tab-pane active" id="tab1">
+                                    <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
+
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <div align="center">
-
-                                    <div id="player"></div>
-
+                                            <div id="player"></div>
                                         </div>
-                                        </div>
+                                    </div>
 
                                 </div>
                                 <div class="tab-pane" id="tab2">
