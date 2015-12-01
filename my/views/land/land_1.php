@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="<?=$data["desc"]?>" />
     <meta name="keywords" content="<?=$data["keywords"]?>" />
+
     <meta property="og:title" content="<?=$data["name"]?>"/>
     <meta property="og:description" content="<?=$data["desc"]?>" />
     <meta property="og:image" content="<?=$user["userpic"]?>" />
+
     <meta name="robots" content="noindex,nofollow">
     <title><?=$data["name"]?></title>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/lp777/777.css" />

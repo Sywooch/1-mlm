@@ -6,6 +6,7 @@ use yii\widgets\Breadcrumbs;
 use yii\bootstrap\Modal;
 use app\assets\AppAsset;
 use app\models\Users;
+use app\models\Lp;
 
 AppAsset::register($this);
 
@@ -48,6 +49,12 @@ if( !empty(\Yii::$app->request->get("r")) )
     list($mod,$act) = explode("/",\Yii::$app->request->get("r"));
     unset($mod);
 }else{$act=null;}
+
+    $compName=Lp::find()
+        ->select("name")
+        ->where([
+                'id'=>$consultant["companyid"]
+            ])->one()->name;
 /*
 $this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
 $this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -199,7 +206,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                         <h4 class="media-heading"><?php
                                             echo '&nbsp;<b>',$consultant["fn"],' ',$consultant["ln"],'</b>';
                                             ?></h4>
-                                        <div class="media-heading-sub">Ваш консультант</div>
+                                        <div class="media-heading-sub"><?= $compName; ?></div>
                                         <div class="media-heading-sub">
                                             <?php if( !empty($consultant["skype"]) ): ?>
                                                 <a href="skype:<?php echo $consultant["skype"];?>?call">
@@ -214,7 +221,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                                 <?php
                                             endif;?>
                                             <?php if( !empty($consultant["vkontakte"]) ): ?>
-                                                <a href="<?php echo $consultant["vkontakte"];?>" target="_blank">
+                                                <a href="https://vk.com/id<?php echo $consultant["vkontakte"];?>" target="_blank">
                                                     <img src="http://pravo-ros.ru/wp-content/uploads/2013/05/VK_logo.png"
                                                          style="border: none;" /></a>&nbsp;
                                                 <?php
