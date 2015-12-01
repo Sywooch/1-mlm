@@ -146,7 +146,7 @@
         <h2 <?php if ($data["h2c"]) echo "style='color: ".$data['h2c']."'" ?>><?=$data["h2"]?></h2>
         <h3 <?php if ($data["h3c"]) echo "style='color: ".$data['h3c']."'" ?>><?=$data["h3"]?></h3>
         <div id="youtube">
-            <iframe id="ytplayer" width="500" height="300" src="//www.youtube.com/embed/<?=$data["yt1"]?>?rel=0&controls=0&showinfo=0&autoplay=<?=$data["autoplay"]?>&" frameborder="0" allowfullscreen></iframe>
+            <iframe id="ytplayer" width="500" height="400" src="//www.youtube.com/embed/<?=$data["yt1"]?>?rel=0&controls=0&showinfo=0&autoplay=<?=$data["autoplay"]?>&" frameborder="0" allowfullscreen></iframe>
             <div class="watermark"></div>
             <div class="clear"></div>
         </div>

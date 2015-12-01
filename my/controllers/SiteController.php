@@ -16,6 +16,7 @@ use app\models\Users;
 use app\models\Levels;
 use app\models\UploadForm;
 use app\models\Lp;
+use app\models\Msgs;
 use yii\web\UploadedFile;
 
 class SiteController extends Controller
@@ -688,7 +689,9 @@ class SiteController extends Controller
                     $lp->h3c = $p["Lp"]["h3c"];
                     $lp->yandexmetrika = $p["Lp"]["yandexmetrika"];
                     $lp->button = $p["Lp"]["button"];
-                    $lp->update();
+                    $lp->desc = $p["Lp"]["desc"];
+                    $lp->keywords = $p["Lp"]["keywords"];
+                    $lp->update(false);
 
                     $save = "good";
                     $mes = "Ваша страничка обновлена";
@@ -696,7 +699,7 @@ class SiteController extends Controller
                 }
 
                 $p["Land_2"]=( !empty($p["Land_2"]) )?$p["Land_2"]:null;
-                if( 'create'==$p["Land_2"] ) {
+                if( 'template_1'==$p["Land_2"] ) {
                     $lp_n = new Lp;
 
                     $lp_n->name = $p["name"];
@@ -710,6 +713,32 @@ class SiteController extends Controller
                     $lp_n->h3c = $p["h3c"];
                     $lp_n->yandexmetrika = $p["yandexmetrika"];
                     $lp_n->button = $p["button"];
+                    $lp_n->landtype = 1;
+                    $lp_n->desc = $p["desc"];
+                    $lp_n->keywords = $p["keywords"];
+                    $lp_n->save();
+
+                    $save = "create";
+                    $mes = "Ваша страничка создана";
+
+                }
+                if( 'template_2'==$p["Land_2"] ) {
+                    $lp_n = new Lp;
+
+                    $lp_n->name = $p["name"];
+                    $lp_n->uid = $usr["id"];
+                    $lp_n->h1 = $p["h1"];
+                    $lp_n->h2 = $p["h2"];
+                    $lp_n->h3 = $p["h3"];
+                    $lp_n->yt1 = $p["yt"];
+                    $lp_n->h1c = $p["h1c"];
+                    $lp_n->h2c = $p["h2c"];
+                    $lp_n->h3c = $p["h3c"];
+                    $lp_n->yandexmetrika = $p["yandexmetrika"];
+                    $lp_n->button = $p["button"];
+                    $lp_n->landtype = 2;
+                    $lp_n->desc = $p["desc"];
+                    $lp_n->keywords = $p["keywords"];
                     $lp_n->save();
 
                     $save = "create";
@@ -750,7 +779,7 @@ class SiteController extends Controller
                     'level' => $usrLev,
                     'count_p' => $data->count(),
                     'm' => $mes,
-                    'lp' => $model_lp->one(),
+                    //'lp' => $model_lp->one(),
                     'save' => $save,
                     't' => $tab
                 ]);

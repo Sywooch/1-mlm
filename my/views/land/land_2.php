@@ -206,14 +206,14 @@
     </style>
 
 
-    <div id="language-selector" style="">
-        <span class="flag-2 pt"></span>
-    <span class="menu-2">
+    <!--<div id="language-selector" style="">
+        <span class="flag-2 pt"></span>-->
+    <!--<span class="menu-2">
          português 
 
         <span class="arrow-down o05"></span>
-    </span>
-        <ul>
+    </span>-->
+        <!--<ul>
 
             <a href="http://warthunder.ru/ru/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=ru" class="language-selector-link">
                 <li>
@@ -284,8 +284,8 @@
                     <span class="menu-2"> 日本の </span>
                 </li>
             </a>
-        </ul>
-    </div>
+        </ul>-->
+    <!--</div>-->
     <div class="space"></div>
 </div>
 
