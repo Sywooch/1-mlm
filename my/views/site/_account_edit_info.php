@@ -133,7 +133,7 @@ $form = ActiveForm::begin([
             "placeholder" => "Если продвигаете 1 компанию...",
             "readonly" => true,
             "class"=>"form-control",
-            "value"=>'https://1-mlm.com/'.$model->companyid.'-'.$model->id.'.html'
+            "value"=>'https://1-mlm.com/'.$model->companyid.'-'.$model->refdt.'.html'
         ]); ?>
     </div>
 

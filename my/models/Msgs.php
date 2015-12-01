@@ -28,7 +28,7 @@ class Msgs extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
+            //[['id'], 'required'],
             [['id', 'uid4', 'uid2'], 'integer'],
             [['msg'], 'string', 'max' => 200]
         ];

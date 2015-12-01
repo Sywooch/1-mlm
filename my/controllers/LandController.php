@@ -21,7 +21,7 @@ class LandController extends Controller
         }
         else
         {
-            $usr = Users::find()->where(['id' => $uid])->one();
+            $usr = Users::find()->where(['refdt' => $uid])->one();
         }
 
         return $this->render('land_'.$data["landtype"], [

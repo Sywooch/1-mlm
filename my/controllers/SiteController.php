@@ -16,6 +16,7 @@ use app\models\Users;
 use app\models\Levels;
 use app\models\UploadForm;
 use app\models\Lp;
+use app\models\Msgs;
 use yii\web\UploadedFile;
 
 class SiteController extends Controller
