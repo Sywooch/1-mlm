@@ -230,7 +230,6 @@
                             </div>
                         </div>
                         <div class="clearfix"></div>
-
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -240,6 +239,5 @@
         </div>
     </div>
     <!-- END LOGIN BOX *****************************************************************-->
-
 </body>
 </html>
