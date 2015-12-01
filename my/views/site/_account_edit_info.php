@@ -117,14 +117,15 @@ $form = ActiveForm::begin([
         ]);?>
     </div>
 
+<!--------------------------------------------------------------------------------------------------------------------->
     <div class="form-group form-md-line-input">
         <?=$form->field(
-            $model, 'ref', ["template" => "<label class='col-md-3 control-label'>Ваша ссылка</label>
+            $model, 'id', ["template" => "<label class='col-md-3 control-label'>Компании ссылка</label>
                                                             <div class='col-md-9'>
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваша Реферальная ссылка для выбраной компании</span>
+                                                                    <span class=\"help-block\">Ссылка для выбраной компании</span>
                                                                 </div>
 
                                                             </div>"]
@@ -132,10 +133,31 @@ $form = ActiveForm::begin([
             "placeholder" => "Если продвигаете 1 компанию...",
             "readonly" => true,
             "class"=>"form-control",
-            "value"=>'http://1-mlm.com/index.php?site/ref&refid='.$model->refdt
+            "value"=>'https://1-mlm.com/'.$model->companyid.'-'.$model->id.'.html'
         ]); ?>
     </div>
 
+
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'ref', ["template" => "<label class='col-md-3 control-label'>Ваша ссылка</label>
+                                                            <div class='col-md-9'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваша Реферальная ссылка</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput([
+            "placeholder" => "Если продвигаете 1 компанию...",
+            "readonly" => true,
+            "class"=>"form-control",
+            "value"=>'https://1-mlm.com/ref-'.$model->refdt.'.html'
+        ]); ?>
+    </div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
     <div class="margiv-top-10">
         <?= \yii\helpers\Html::hiddenInput('Users[formtype]', 'personinfo', ["id"=>"users-formtype"]); ?>
         <?= '<button class="btn green"> Сохранить изменения </button>'; ?>

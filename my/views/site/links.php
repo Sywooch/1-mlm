@@ -148,7 +148,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'header' => 'Ссылка на страницу',
                         'format' => 'raw',
                         'value' => function($data) {
-                            return '<a href=\'http://1-mlm.com/1/'.$data["id"].'.html\' target="_blank">http://1-mlm.com/1/'.$data["id"].'.html</a>';
+                            return '<a href=\'https://1-mlm.com/'.$data["id"].'.html\' target="_blank">https://1-mlm.com/'.$data["id"].'.html</a>';
                         }
                     ]
                 ]
