@@ -2,7 +2,7 @@
 
 
 ?>
-<li class="media">
+<li class="media" onclick="getMessages($(this).children('input').val());">
             <div class="media-status">
                 <!--<span class="badge badge-success">8</span>-->
             </div>
