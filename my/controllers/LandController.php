@@ -15,6 +15,11 @@ class LandController extends Controller
         $data=$query->from([Lp::tableName()])
             ->where(['id' => $landid])
             ->one();
+        
+        $lp=Lp::findOne(['id' => $landid]);
+        $lp->clicks=++$lp->clicks;
+        $lp->update(false);
+
         if( $data["id"]>401 )
         {
             $usr = Users::find()->where(['id' => $data["uid"]])->one();
