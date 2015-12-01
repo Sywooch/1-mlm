@@ -1211,4 +1211,151 @@ class SiteController extends Controller
         }
         return $this->goHome();
     }
+
+    public function actionListmessages()
+    {
+        if (\Yii::$app->request->isAjax) {
+            //return $this->render('ajax_test');
+            //echo "OK";
+            $this->layout = 'empty';
+            if (!\Yii::$app->user->isGuest){
+                $identity = \Yii::$app->getUser()->getIdentity()->profile;
+                $mes = "";
+
+                $query10=new \yii\db\Query();
+                $usr=$query10->from([Users::tableName()]);
+                switch($identity["service"])
+                {
+                    case "facebook":
+                        $usr=$usr->where(['facebook' => $identity["id"]]);
+                        break;
+                    case "vkontakte":
+                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                        break;
+                    case "linkedin_oauth2":
+                        $usr=$usr->where(['linkedin' => $identity["id"]]);
+                        break;
+                    case "google":
+                        $usr=$usr->where(['googleplus' => $identity["id"]]);
+                        break;
+                    case "yandex":
+                        $usr=$usr->where(['yandex' => $identity["id"]]);
+                        break;
+                    case "mailru":
+                        $usr=$usr->where(['mailru' => $identity["id"]]);
+                        break;
+                }
+                $usr=$usr->one();
+
+                $toid = (int)\Yii::$app->request->get("toid");
+
+                //$query13=new \yii\db\Query();
+                $listmsg=\yii::$app->db->createCommand('SELECT *
+                                                       FROM msgs
+                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
+                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();
+
+                echo $this->render('message', [
+                    'data' => $listmsg,
+                    'second_user' => $toid
+                ]);
+                /*->from([Msgs::tableName()])
+                ->where(['id' => $usr["level"]])->one();*/
+
+                /*$model = Lp::find()
+                    ->where(['uid' => $usr["id"]]);*/
+                //->andWhere(['id' => $landid]);
+
+
+
+                /*$query12=new \yii\db\Query();
+                $data=$query12->from([Lp::tableName()])
+                    ->where(['uid' => $_usr["id"]]);
+                $save=( !empty($save) )?$save:null;*/
+
+            }
+            return $this->goHome();
+        }
+    }
+
+    public function actionSendmessage()
+    {
+        if (\Yii::$app->request->isAjax) {
+            //return $this->render('ajax_test');
+            //echo "OK";
+            $this->layout = 'empty';
+            if (!\Yii::$app->user->isGuest){
+                $identity = \Yii::$app->getUser()->getIdentity()->profile;
+                $mes = "";
+
+                $query10=new \yii\db\Query();
+                $usr=$query10->from([Users::tableName()]);
+                switch($identity["service"])
+                {
+                    case "facebook":
+                        $usr=$usr->where(['facebook' => $identity["id"]]);
+                        break;
+                    case "vkontakte":
+                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                        break;
+                    case "linkedin_oauth2":
+                        $usr=$usr->where(['linkedin' => $identity["id"]]);
+                        break;
+                    case "google":
+                        $usr=$usr->where(['googleplus' => $identity["id"]]);
+                        break;
+                    case "yandex":
+                        $usr=$usr->where(['yandex' => $identity["id"]]);
+                        break;
+                    case "mailru":
+                        $usr=$usr->where(['mailru' => $identity["id"]]);
+                        break;
+                }
+                $usr=$usr->one();
+
+                $toid = (int)\Yii::$app->request->get("toid");
+
+                /*$query13=new \yii\db\Query();
+                $listmsg=\yii::$app->db->createCommand('SELECT *
+                                                       FROM msgs
+                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
+                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*/
+                $mes = new Msgs();
+                $mes->uid4 = $usr['id'];
+                $mes->uid2 = $toid;
+                $mes->msg = \Yii::$app->request->get("text");
+                $mes->save();
+
+                $listmsg=\yii::$app->db->createCommand('SELECT *
+                                                       FROM msgs
+                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
+                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();
+
+
+                echo $this->render('message', [
+                    'data' => $listmsg,
+                    'second_user' => $toid
+                ]);
+
+
+
+
+                /*->from([Msgs::tableName()])
+                ->where(['id' => $usr["level"]])->one();*/
+
+                /*$model = Lp::find()
+                    ->where(['uid' => $usr["id"]]);*/
+                //->andWhere(['id' => $landid]);
+
+
+
+                /*$query12=new \yii\db\Query();
+                $data=$query12->from([Lp::tableName()])
+                    ->where(['uid' => $_usr["id"]]);
+                $save=( !empty($save) )?$save:null;*/
+
+            }
+            return $this->goHome();
+        }
+    }
 }

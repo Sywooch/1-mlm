@@ -9,9 +9,51 @@ SCRIPT;
 
 $this->registerJs($js_1);*/
 ?>
-<div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
-    <h3 class="list-heading">Команда</h3>
-    <ul class="media-list list-items">
+<script type="text/javascript">
+    function getMessages(id2) {
+        $('#send_id').val(id2)
+        $('.page-quick-sidebar-chat-user-messages').html('');
+        $('#chart').css('display', 'none');
+        $.ajax({
+            //type: 'POST',
+            url: 'index.php?r=site%2Flistmessages&toid='+id2,
+            //data: 'toid='+id2,
+            success: function(data) {
+                $('.page-quick-sidebar-chat-user-messages').html(data);
+            }
+        });
+        $('.page-quick-sidebar-item').css('display', 'inline');
+    }
+
+    function sendMessage() {
+        $('.page-quick-sidebar-chat-user-messages').html('');
+        $.ajax({
+            //type: 'POST',
+            url: 'index.php?r=site%2Fsendmessage&toid='+$('#send_id').val()+'&text='+$('#m_text').val(),
+            //data: 'toid='+id2,
+            success: function(data) {
+                $('.page-quick-sidebar-chat-user-messages').html(data);
+            }
+        })
+    }
+
+    var timerId = setTimeout(function tick() {
+        if ($('#send_id').val() != '') {
+            $.ajax({
+                //type: 'POST',
+                url: 'index.php?r=site%2Flistmessages&toid=' + $('#send_id').val(),
+                //data: 'toid='+id2,
+                success: function (data) {
+                    $('.page-quick-sidebar-chat-user-messages').html(data);
+                }
+            });
+        }
+        timerId = setTimeout(tick, 20000);
+    }, 20000);
+</script>
+<div id="chart" class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
+    <h3 class="list-heading">РљРѕРјР°РЅРґР°</h3>
+    <ul class="media-list list-items" style="height: 510px !important; overflow-y: scroll;">
         <?php
         use app\models\Users;
 
@@ -149,14 +191,14 @@ $this->registerJs($js_1);*/
         </li>-->
     </ul>
 </div>
-<div class="page-quick-sidebar-item">
+<div class="page-quick-sidebar-item" class="display: none;">
     <div class="page-quick-sidebar-chat-user">
         <div class="page-quick-sidebar-nav">
-            <a href="javascript:;" class="page-quick-sidebar-back-to-list">
+            <a href="javascript:;" class="page-quick-sidebar-back-to-list" onclick="$('.page-quick-sidebar-chat-users').css('display', 'inline');">
                 <i class="icon-arrow-left"></i>Back</a>
         </div>
-        <div class="page-quick-sidebar-chat-user-messages">
-            <div class="post out">
+        <div class="page-quick-sidebar-chat-user-messages" style="height: 440px !important; overflow-y: scroll;">
+            <!--<div class="post out">
                 <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
                 <div class="message">
                     <span class="arrow"></span>
@@ -236,13 +278,14 @@ $this->registerJs($js_1);*/
                     <span class="datetime">20:17</span>
                     <span class="body"> Sure. I will check and buzz you if anything needs to be corrected. </span>
                 </div>
-            </div>
+            </div>        -->
         </div>
         <div class="page-quick-sidebar-chat-user-form">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type a message here...">
+                <input type="text" class="form-control" placeholder="Type a message here..." id="m_text">
+                <input type="hidden" id="send_id" value="">
                 <div class="input-group-btn">
-                    <button type="button" class="btn green">
+                    <button type="button" class="btn green" onclick="sendMessage(); return false;">
                         <i class="icon-paper-clip"></i>
                     </button>
                 </div>

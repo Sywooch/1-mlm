@@ -60,7 +60,7 @@ var QuickSidebar = function () {
             }
 
             var preparePost = function(dir, time, name, avatar, message) {
-                var tpl = '';
+                /*var tpl = '';
                 tpl += '<div class="post '+ dir +'">';
                 tpl += '<img class="avatar" alt="" src="' + Layout.getLayoutImgPath() + avatar +'.jpg"/>';
                 tpl += '<div class="message">';
@@ -73,7 +73,7 @@ var QuickSidebar = function () {
                 tpl += '</div>';
                 tpl += '</div>';
 
-                return tpl;
+                return tpl;*/
             };
 
             // handle post
