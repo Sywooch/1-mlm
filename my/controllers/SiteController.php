@@ -247,6 +247,7 @@ class SiteController extends Controller
     {
         if (!\Yii::$app->user->isGuest)
         {
+            $save=null;
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
             $model = Users::find();
@@ -309,23 +310,7 @@ class SiteController extends Controller
                         $users->yandex=$p["Users"]["yandex"];
                         $users->mailru=$p["Users"]["mailru"];
                         $users->update(false);
-/*
-                        \Yii::$app->db->createCommand("
-                                UPDATE `users` SET
-                                    `active`='".date("Y-m-d")."',
-                                    `facebook`='{$p["Users"]["facebook"]}',
-                                    `vkontakte`='{$p["Users"]["vkontakte"]}',
-                                    `linkedin`='{$p["Users"]["linkedin"]}',
-                                    `googleplus`='{$p["Users"]["googleplus"]}',
-                                    `yandex`='{$p["Users"]["yandex"]}';
-                                    `mailru`='{$p["Users"]["mailru"]}';
-                                WHERE
-                                    `socid`='{$identity["id"]}'
-                                AND
-                                    `service` = '{$identity["service"]}'
-                        ")
-                            ->execute();
-                        */
+                        $save='good';
                     }
                 }
                  if( 'picture'==$p["Users"]["formtype"] )
@@ -362,18 +347,7 @@ class SiteController extends Controller
                          $users->active=date("Y-m-d");
                          $users->userpic=Yii::getAlias('@web')."/imgs/".$flname;
                          $users->update(false);
-                         /*
-                         \Yii::$app->db->createCommand("
-                                        UPDATE `users` SET
-                                            `active`='".date("Y-m-d")."',
-                                            `userpic`='".Yii::getAlias('@web')."/imgs/{$flname}'
-                                        WHERE
-                                            `socid`='{$identity["id"]}'
-                                        AND
-                                            `service` = '{$identity["service"]}'
-                                ")
-                             ->execute();
-                         */
+                         $save='good';
                      }
                  }
                 if( 'personinfo'==$p["Users"]["formtype"] )
@@ -413,25 +387,7 @@ class SiteController extends Controller
                         $users->companyid=$p["Users"]["companyid"];
                         $users->save(false);
                         unset($users);
-/*
-                        \Yii::$app->db->createCommand("
-                                UPDATE `users` SET
-                                    `active`='".date("Y-m-d")."',
-                                    `fn`='{$p["Users"]["fn"]}',
-                                    `ln`='{$p["Users"]["ln"]}',
-                                    `email`='{$p["Users"]["email"]}',
-                                    `mobile`='{$p["Users"]["mobile"]}',
-                                    `skype`='{$p["Users"]["skype"]}',
-                                    `city`='{$p["Users"]["city"]}',
-                                    `country`='{$p["Users"]["country"]}',
-                                    `purse`='{$p["Users"]["purse"]}',
-                                    `companyid`='{$p["Users"]["companyid"]}'
-                                WHERE
-                                    `socid`='{$identity["id"]}'
-                                AND
-                                    `service` = '{$identity["service"]}'
-                        ")
-                            ->execute();*/
+                        $save='good';
                     }
                 }
             }
@@ -476,7 +432,8 @@ class SiteController extends Controller
             return $this->render('account', [
                 'model' => $model->one(),
                 'usrDt'=> $usrDt,
-                'lastFive'=>$lastFive
+                'lastFive'=>$lastFive,
+                'save'=>$save
             ]);
         }
         return $this->goHome();

@@ -189,3 +189,34 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
                     <!-- END PAGE BASE CONTENT -->
+<?php
+$save=( !empty($save) )?$save:null;
+
+if ($save=="good"): ?>
+<div class="fade modal <?= ("good"==$save)?"in":null; ?>" style="display: block; padding-right: 17px;" id="GoodsaveWindow"  role="dialog" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                        onclick='
+                        $("#GoodsaveWindow").removeClass("fade modal in");
+                        $("#GoodsaveWindow").css("display", "none");
+                        //$("#GoodsaveWindow").addClass("fade modal");'
+                    >×</button>
+            </div>
+            <div class="modal-body">
+                <div
+                    style="color:green" align="center"
+                    >Данные успешно обновлены</div>
+                <br />
+                <button type="button"
+                        onclick='
+                        $("#GoodsaveWindow").removeClass("fade modal in");
+                        $("#GoodsaveWindow").css("display", "none");
+                        //$("#GoodsaveWindow").addClass("fade modal");'>
+                    Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
