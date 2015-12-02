@@ -48,7 +48,9 @@ use kartik\widgets\ColorInput;
             <div class="form-group">
                 <?=$form->field(
                     $lp, 'desc', ['template' => "<label>Описание</label>\n{input}\n{hint}\n{error}" ]
-                )->textInput(['placeholder' => 'Введите описание']);
+                )
+                    ->textArea(['rows' => '6','placeholder' => 'Введите описание'])
+                //->textInput([]);
                 ?>
             </div>
         </div>
