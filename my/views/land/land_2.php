@@ -37,6 +37,8 @@
 
 
     <script async="" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflpCdzwa/www-widgetapi.js" id="www-widgetapi-script" type="text/javascript"></script><script src="https://www.google-analytics.com/analytics.js" async="" type="text/javascript"></script><script src="https://www.googleadservices.com/pagead/conversion_async.js" async="" type="text/javascript"></script><script src="https://www.googletagmanager.com/gtm.js?id=GTM-HWDXK" async=""></script><script src="https://mc.yandex.ru/metrika/watch.js" async="" type="text/javascript"></script><script src="https://www.youtube.com/player_api"></script><script>window.startTime = new Date().getTime();</script>
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
 </head>
 
 

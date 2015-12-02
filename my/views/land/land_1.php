@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/lp777/777.css" />
     <link href="<?=Yii::getAlias('@web') ?>/favicon.ico" rel="icon">
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -133,6 +134,8 @@
         }
 
     </style>
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
 </head>
 <body>
 <div id="wrapper">
