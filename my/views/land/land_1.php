@@ -1,3 +1,4 @@
+<?php echo Yii::getAlias('@web'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="ru">
 <head>
@@ -15,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/lp777/777.css" />
     <link href="<?=Yii::getAlias('@web') ?>/favicon.ico" rel="icon">
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -139,7 +140,7 @@
         <div class="content">
             <div id="photo">
                 <img src="<?=$user['userpic']?>" />
-                <p>Ваш личный консультант:<br/><?php echo $user["fn"].' '.$user["ln"];?></p>
+                <p>Ваш консультант:  <b><?php echo $user["fn"].' '.$user["ln"];?></b></p>
             </div>
         </div>
     </div>

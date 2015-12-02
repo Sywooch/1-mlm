@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,cyrillic);
+@import url(//fonts.googleapis.com/css?family=Roboto:100,300&subset=cyrillic);
 
 html, body, #wrapper, #header, #main, #footer {
   margin: 0;
@@ -8,7 +8,7 @@ html, body, #wrapper, #header, #main, #footer {
 
 body {
   background: #f2f2f1;
-  font-family: 'Open Sans Condensed', Tahoma, sans-serif;
+  font-family: 'Roboto', Roboto, sans-serif;
   font-size: 14px;
   color: #333;
 }
@@ -32,25 +32,25 @@ a {
 
 #header {
   width: 100%;
-  height: 75px;
+  height: 50px;
   border-bottom: solid 1px #111;
   text-align: center;
   background: #fff;
   clear: both;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #photo {
-  width: 375px;
+  width: 100%;
   margin: 3px auto;
   display: block;
 }
 
 #photo img {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border: solid 2px #ddd;
-  border-radius: 70px;
+  border-radius: 60px;
   float: left;
   margin-left: 10px;
 }
@@ -60,7 +60,8 @@ a {
   padding: 10px;
   float: left;
   text-align: left;
-  font-size: 20px;
+  font-size: 16px;
+  color: rgba(0,0,0, 0.45);
 }
 
 #photo p a{font-size: 24px;}
@@ -84,8 +85,8 @@ background-repeat: no-repeat;
 #main h1 {
   color: #fff;
   font-size: 32px;
-  text-transform: uppercase;
-  padding: 15px 0 10px 0;
+  text-transform: none;
+  padding: 0px 0 0px 0;
 }
 
 #main h2 {
