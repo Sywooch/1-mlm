@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="portlet-title">
         <div class="caption">
             <i class="fa fa-cogs font-blue"></i>
-            <span class="caption-subject font-blue uppercase">Вашы страницы</span>
+            <span class="caption-subject font-blue uppercase">Ваши страницы</span>
         </div>
         <div class="tools">
             <!-- Кнопка видео подсказки и во всю ширину --->
@@ -100,7 +100,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="portlet-title">
                 <div class="caption">
                     <i class="fa fa-cogs font-blue"></i>
-                   <span class="caption-subject font-blue uppercase">Вашы страницы</span>
+                   <span class="caption-subject font-blue uppercase">Ваши страницы</span>
                 </div>
 <div align="right">
     <!-- Кнопка видео подсказки и во всю ширину --->

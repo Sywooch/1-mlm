@@ -71,10 +71,12 @@ $this->title = 'profile';
 
 ?>
 
-<!-- BEGIN PAGE BASE CONTENT -->
+<!-- BEGIN PAGE BASE CONTENTc
+<!--
 <div class="m-heading-1 border-green m-bordered">
     <h3 class="font-green">Ваша Команда</h3>
 </div>
+-->
 <div class="row">
     <div class="col-md-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
@@ -112,7 +114,7 @@ $this->title = 'profile';
             <div class="portlet-body">
                 <?php echo GridView::widget([
                     'dataProvider'  =>  $dataProvider,
-                    'filterModel' => $searchModel,
+                   // 'filterModel' => $searchModel,
                     'tableOptions'  =>  [
                         'class'     =>  'table table-striped table-bordered table-hover',
                         'id' => 'sample_1'

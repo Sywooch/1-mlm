@@ -21,6 +21,8 @@ class Users extends \yii\db\ActiveRecord
 
             [['socid'], 'string', 'max' => 50],
 
+			[['facebook', 'mailru', 'vkontakte', 'linkedin', 'yandex', 'google'], 'string', 'max' => 30],
+			
             [['service', 'fn'], 'string', 'max' => 20],
             [['refdt', 'star'], 'string', 'max' => 6],
             [['ln', 'skype'], 'string', 'max' => 25],
