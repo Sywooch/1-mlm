@@ -10,7 +10,7 @@ use kartik\widgets\ColorInput;
                 ?>
                 <div class="note note-success">
 
-                    <h4 class="block">Внимание</h4>
+                    <h4 class="block">Извините!</h4>
                     <p>
                         <?= $m; ?>
                     </p>
@@ -238,7 +238,7 @@ use kartik\widgets\ColorInput;
                         foreach ($mod_list as $ml) {
                             ?>
                         <li <?php if ($i==1) echo 'class="active"' ?>>
-                            <a href="#tab_1_2_<?=$i?>" data-toggle="tab"><?php echo $ml['name']; $i++;?></a>
+                            <a href="#tab_1_2_<?=$i?>" data-toggle="tab"><?php echo '&nbsp;',$i,'&nbsp;'; $i++;?></a>
                         </li>
                     <?php
                         }

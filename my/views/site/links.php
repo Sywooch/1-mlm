@@ -139,6 +139,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'headerRowOptions'   =>  [
                     'class'     =>  'tbl-header'
                 ],
+                'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
                 'columns' => [
                     [
                         'attribute' => 'name',
