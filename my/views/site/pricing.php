@@ -11,10 +11,11 @@ $this->title = 'pricing';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!-- BEGIN PAGE BASE CONTENT -->
+<!--
 <div class="m-heading-1 border-green m-bordered">
     <h3 class="font-green">Тарифы уровня доступа</h3>
 </div>
-
+-->
 
 <div class="portlet light portlet-fit bordered">
     <div class="portlet-title">
@@ -47,7 +48,9 @@ $this->params['breadcrumbs'][] = $this->title;
             <!------------------------------------------------------------>
         </div>
     </div>
-    <div><p align="center"><span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2015</p></div>
+    <div><p align="center">
+            Ваш  текущий тарифный план - (мастер)<br />
+            <span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2015</p></div>
     <div class="portlet-body">
         <div class="pricing-content-1">
             <div class="row">

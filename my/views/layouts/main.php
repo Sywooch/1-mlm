@@ -159,11 +159,13 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                             <span class="badge badge-danger"></span>
                         </a>
                     </li>
+                    <!--
                     <li>
                         <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> Команда
                             <span class="badge badge-success"></span>
                         </a>
                     </li>
+                    -->
                     <!--
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> More

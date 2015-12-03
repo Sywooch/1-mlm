@@ -653,6 +653,11 @@ class SiteController extends Controller
                     $lp->button = $p["Lp"]["button"];
                     $lp->desc = $p["Lp"]["desc"];
                     $lp->keywords = $p["Lp"]["keywords"];
+
+                    $lp->socpic = $p["Lp"]["socpic"];
+                    $lp->autoplay = $p["Lp"]["autoplay"];
+                    $lp->bg = $p["Lp"]["bg"];
+
                     $lp->update(false);
 
                     $save = "good";
@@ -678,6 +683,11 @@ class SiteController extends Controller
                     $lp_n->landtype = 1;
                     $lp_n->desc = $p["desc"];
                     $lp_n->keywords = $p["keywords"];
+
+                    $lp_n->socpic = $p["socpic"];
+                    $lp_n->autoplay = $p["autoplay"];
+                    $lp_n->bg = $p["bg"];
+
                     $lp_n->save();
 
                     $save = "create";
@@ -701,6 +711,11 @@ class SiteController extends Controller
                     $lp_n->landtype = 2;
                     $lp_n->desc = $p["desc"];
                     $lp_n->keywords = $p["keywords"];
+
+                    $lp_n->socpic = $p["socpic"];
+                    $lp_n->autoplay = $p["autoplay"];
+                    $lp_n->bg = $p["bg"];
+
                     $lp_n->save();
 
                     $save = "create";

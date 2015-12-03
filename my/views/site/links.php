@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="portlet-title">
         <div class="caption">
             <i class="fa fa-cogs font-blue"></i>
-            <span class="caption-subject font-blue uppercase">Вашы страницы</span>
+            <span class="caption-subject font-blue uppercase">Ваши страницы</span>
         </div>
         <div class="tools">
             <!-- Кнопка видео подсказки и во всю ширину --->
@@ -50,36 +50,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="portlet-body">
         <div class="table-responsive">
-            <!--<table class="table">
-                <thead>
-                <tr>
-                    <th> # </th>
-                    <th> Название </th>
-                    <th> Ссылка на страницу </th>
-
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td> 1 </td>
-                    <td> Название 2 </td>
-                    <td> Table cell </td>
-
-                </tr>
-                <tr>
-                    <td> 2 </td>
-                    <td> Название 3 </td>
-                    <td> Table cell </td>
-
-                </tr>
-                <tr>
-                    <td> 3 </td>
-                    <td> Table cell </td>
-                    <td> Table cell </td>
-
-                </tr>
-                </tbody>
-            </table>-->
             <?php $j=0; ?>
             <?= GridView::widget([
                 'dataProvider'  =>  $dataProvider,
@@ -96,10 +66,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     [
                         'header' => '#',
-                       'value' => function($j) {
-                           global $j; ++$j;
-                           return $j;
-                       },
+                        'value' => function($j) {
+                            global $j; ++$j;
+                            return $j;
+                        },
                     ],
                     [
                         'attribute' => 'name',

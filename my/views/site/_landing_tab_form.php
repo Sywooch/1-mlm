@@ -41,20 +41,30 @@ use kartik\widgets\ColorInput;
             </div>
             <div class="form-group">
                 <?=$form->field(
-                    $lp, 'yandexmetrika', ['template' => "<label>ID Yandex Metrika</label>\n{input}\n{hint}\n{error}" ]
-                )->textInput(['placeholder' => 'Вставьте ID Yandex Metrika']);
+                    $lp, 'desc', ['template' => "<label>Описание</label>\n{input}\n{hint}\n{error}" ]
+                )
+                    ->textArea([
+                        'rows' => '11',
+                        'placeholder' => 'Введите описание']);
+                    //->textInput([]);
                 ?>
             </div>
             <div class="form-group">
                 <?=$form->field(
-                    $lp, 'desc', ['template' => "<label>Описание</label>\n{input}\n{hint}\n{error}" ]
-                )
-                    ->textArea(['rows' => '6','placeholder' => 'Введите описание'])
-                //->textInput([]);
+                    $lp, 'socpic', ['template' => "<label>Картинка для мета соц. сетей (700x500)</label>\n{input}\n{hint}\n{error}" ]
+                )->textInput(['placeholder' => 'Введите описание']);
                 ?>
             </div>
         </div>
         <div class="col-md-6">
+            <div class="form-group">
+                <?=$form->field(
+                    $lp, 'bg', ['template' => "<label>Цвет фона</label>\n{input}\n{hint}\n{error}" ]
+                )->widget(ColorInput::classname(),[
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_'.$i]
+                ]);
+                ?>
+            </div>
             <div class="form-group">
                 <?=$form->field(
                     $lp, 'h1c', ['template' => "<label>Цвет заголовка №1</label>\n{input}\n{hint}\n{error}" ]
@@ -106,6 +116,24 @@ use kartik\widgets\ColorInput;
                 <?=$form->field(
                     $lp, 'keywords', ['template' => "<label>Ключевые слова</label>\n{input}\n{hint}\n{error}" ]
                 )->textInput(['placeholder' => 'Введите ключевые слова']);
+                ?>
+            </div>
+            <div class="form-group">
+                <?=$form->field(
+                    $lp, 'yandexmetrika', ['template' => "<label>ID Yandex Metrika</label>\n{input}\n{hint}\n{error}" ]
+                )->textInput(['placeholder' => 'Вставьте ID Yandex Metrika']);
+                ?>
+            </div>
+            <div class="form-group">
+                <label>Автопрогрывание видео</label>
+                <!--<input name="autoplay" type="radio" value="1" >Вкл.
+                <input name="autoplay" type="radio" value="0" >Выкл.-->
+                <?=$form->field(
+                    $lp, 'autoplay', ['template' => "\n{input}\n{hint}\n{error}" ]
+                )->radioList([
+                    1 => 'Вкл.',
+                    0 => 'Выкл.'
+                ])
                 ?>
             </div>
         </div>

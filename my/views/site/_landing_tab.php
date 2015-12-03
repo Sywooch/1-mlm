@@ -10,7 +10,7 @@ use kartik\widgets\ColorInput;
                 ?>
                 <div class="note note-success">
 
-                    <h4 class="block">Извините!</h4>
+                    <h4 class="block">Внимание</h4>
                     <p>
                         <?= $m; ?>
                     </p>
@@ -60,15 +60,24 @@ use kartik\widgets\ColorInput;
                                         <input id="lp-name" class="form-control" name="yt" placeholder="Вставьте id ролика" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label>ID Yandex Metrika</label>
-                                        <input id="lp-name" class="form-control" name="yandexmetrika" placeholder="Вставьте ID Yandex Metrika" type="text">
-                                    </div>
-                                    <div class="form-group">
                                         <label>Описание</label>
                                         <input id="lp-name" class="form-control" name="desc" placeholder="Введите описание" type="text">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Картинка для мета соц. сетей (700x500)</label>
+                                        <input id="lp-name" class="form-control" name="socpic" placeholder="Введите описание" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Автопрогрывание видео</label>
+                                        <input name="autoplay" type="radio" value="1" >Вкл.
+                                        <input name="autoplay" type="radio" value="0" >Выкл.
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>ID Yandex Metrika</label>
+                                        <input id="lp-name" class="form-control" name="yandexmetrika" placeholder="Вставьте ID Yandex Metrika" type="text">
+                                    </div>
                                     <div class="form-group">
                                         <label>Цвет заголовка №1</label>
                                         <input class="form-control" name="h1c" placeholder="6 символов цвета" type="text">
@@ -92,6 +101,10 @@ use kartik\widgets\ColorInput;
                                     <div class="form-group">
                                         <label>Ключевые слова</label>
                                         <input id="lp-name" class="form-control" name="keywords" placeholder="Введите ключевые слова" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Цвет фона</label>
+                                        <input id="lp-name" class="form-control" name="bg" placeholder="6 символов цвета" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -124,15 +137,24 @@ use kartik\widgets\ColorInput;
                                         <input id="lp-name" class="form-control" name="yt" placeholder="Вставьте id ролика" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label>ID Yandex Metrika</label>
-                                        <input id="lp-name" class="form-control" name="yandexmetrika" placeholder="Вставьте ID Yandex Metrika" type="text">
-                                    </div>
-                                    <div class="form-group">
                                         <label>Описание</label>
                                         <input id="lp-name" class="form-control" name="desc" placeholder="Введите описание" type="text">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Картинка для мета соц. сетей (700x500)</label>
+                                        <input id="lp-name" class="form-control" name="socpic" placeholder="Введите описание" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Автопрогрывание видео</label>
+                                        <input name="autoplay" type="radio" value="1" >Вкл.
+                                        <input name="autoplay" type="radio" value="0" >Выкл.
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>ID Yandex Metrika</label>
+                                        <input id="lp-name" class="form-control" name="yandexmetrika" placeholder="Вставьте ID Yandex Metrika" type="text">
+                                    </div>
                                     <div class="form-group">
                                         <label>Цвет заголовка №1</label>
                                         <input class="form-control" name="h1c" placeholder="6 символов цвета" type="text">
@@ -156,6 +178,10 @@ use kartik\widgets\ColorInput;
                                     <div class="form-group">
                                         <label>Ключевые слова</label>
                                         <input id="lp-name" class="form-control" name="keywords" placeholder="Введите ключевые слова" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Цвет фона</label>
+                                        <input id="lp-name" class="form-control" name="bg" placeholder="6 символов цвета" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +264,7 @@ use kartik\widgets\ColorInput;
                         foreach ($mod_list as $ml) {
                             ?>
                         <li <?php if ($i==1) echo 'class="active"' ?>>
-                            <a href="#tab_1_2_<?=$i?>" data-toggle="tab"><?php echo '&nbsp;',$i,'&nbsp;'; $i++;?></a>
+                            <a href="#tab_1_2_<?=$i?>" data-toggle="tab"><?php echo "&nbsp;",$i,"&nbsp;"; $i++;?></a>
                         </li>
                     <?php
                         }
