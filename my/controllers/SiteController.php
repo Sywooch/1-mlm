@@ -111,8 +111,11 @@ class SiteController extends Controller
                     $model = Users::find()->where(['mailru'=>$identity["id"]]);
                     break;
             }
+
+            $conRef=( !empty($model->one()["ref"]) )?$model->one()["ref"]:"28020677";
+
             $consultant = Users::find()
-                ->where(['refdt' => $model->one()["ref"]])->one();
+                ->where(['refdt' => $conRef])->one();
 
             return $this->render('index', [
                 'model' => $model->one(),

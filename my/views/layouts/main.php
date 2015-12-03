@@ -36,7 +36,7 @@ switch($identity["service"])
         break;
 }
 
-$refID=( !empty($model->one()["ref"]) )?$model->one()["ref"]:"309120422"; //admin user refdt
+$refID=( !empty($model->one()["ref"]) )?$model->one()["ref"]:"28020677"; //admin user refdt
 
 $consultant = Users::find()
     ->where(['refdt' => $refID])->one();
@@ -156,12 +156,12 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Консультант
-                            <span class="badge badge-danger">***</span>
+                            <span class="badge badge-danger"></span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> Команда
-                            <span class="badge badge-success">***</span>
+                            <span class="badge badge-success"></span>
                         </a>
                     </li>
                     <!--
@@ -215,7 +215,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                                 <?php
                                             endif;?>
                                             <?php if( !empty($consultant["facebook"]) ): ?>
-                                                <a href="<?php echo $consultant["facebook"];?>" target="_blank">
+                                                <a href="https://facebook.com/<?php echo $consultant["facebook"];?>" target="_blank">
                                                     <img src="http://www.cambridgeenglish.org.ru/images/facebook-round-16x16.png"
                                                          style="border: none;" /></a>&nbsp;
                                                 <?php

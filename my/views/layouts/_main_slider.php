@@ -3,28 +3,34 @@ $identity = \Yii::$app->getUser()->getIdentity()->profile;
 switch($identity["service"])
 {
     case "facebook":
-        $usr=\app\models\Users::find()->select('refdt')->where(['facebook'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt')->where(['facebook'=>$identity["id"]])->one();
         break;
     case "vkontakte":
-        $usr=\app\models\Users::find()->select('refdt')->where(['vkontakte'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt')->where(['vkontakte'=>$identity["id"]])->one();
         break;
     case "linkedin_oauth2":
-        $usr=\app\models\Users::find()->select('refdt')->where(['linkedin'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt')->where(['linkedin'=>$identity["id"]])->one();
         break;
     case "google":
-        $usr=\app\models\Users::find()->select('refdt')->where(['google'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt')->where(['google'=>$identity["id"]])->one();
         break;
     case "yandex":
-        $usr=\app\models\Users::find()->select('refdt')->where(['yandex'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt')->where(['yandex'=>$identity["id"]])->one();
         break;
     case "mailru":
-        $usr=\app\models\Users::find()->select('refdt')->where(['mailru'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt')->where(['mailru'=>$identity["id"]])->one();
         break;
 }
 $cntMemCom=
     \app\models\Users::find()->select('id')
         ->where(['ref' => $usr->refdt])
-    ->count();
+        ->count();
+
+$cntLp=
+    \app\models\Lp::find()->select('id')
+        ->where(['uid' => $usr->id])
+        ->count();
+
 if( !empty(\Yii::$app->request->get("r")) )
 {
     list($mod,$act) = explode("/",\Yii::$app->request->get("r"));
@@ -113,6 +119,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         <a href="index.php?r=site%2Flinks" class="nav-link nav-toggle">
                             <i class="icon-link"></i>
                             <span class="title">Мои ссылки</span>
+                            <span class="badge badge-success"><?= $cntLp ?></span>
                             <!--<span class="arrow"></span>-->
                         </a>
                         <!--<ul class="sub-menu">
@@ -180,6 +187,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <a href="#" class="nav-link">
                     <i class="icon-camcorder"></i>
                     <span class="title">Мастер Класс</span>
+                    <span class="badge badge-danger">скоро</span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">

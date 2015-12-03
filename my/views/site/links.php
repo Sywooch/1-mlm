@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="portlet-title">
         <div class="caption">
             <i class="fa fa-cogs font-blue"></i>
-            <span class="caption-subject font-blue uppercase">Ваши страницы</span>
+            <span class="caption-subject font-blue uppercase">Вашы страницы</span>
         </div>
         <div class="tools">
             <!-- Кнопка видео подсказки и во всю ширину --->
@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="portlet-body">
         <div class="table-responsive">
-            <table class="table">
+            <!--<table class="table">
                 <thead>
                 <tr>
                     <th> # </th>
@@ -79,59 +79,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 </tr>
                 </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-<!-- конец страницы-->
-
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="portlet light bordered">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-cogs font-blue"></i>
-                   <span class="caption-subject font-blue uppercase">Ваши страницы</span>
-                </div>
-<div align="right">
-    <!-- Кнопка видео подсказки и во всю ширину --->
-    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
-        <i class="icon-support"></i></a>
-    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
-    <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
-        <div class="modal-dialog ">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
-                </div>
-                <div class="modal-body">
-                    <iframe width="560" height="315"
-                            src="https://www.youtube-nocookie.com/embed/<?php
-                            echo "iBfk37Fa3H0";
-                            ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-     <!-- Кнопка видео подсказки и во всю ширину --->
-</div>
-<div>
-    <div class="col-md-12">
-        <div class="portlet light bordered">
+            </table>-->
+            <?php $j=0; ?>
             <?= GridView::widget([
                 'dataProvider'  =>  $dataProvider,
                 'tableOptions'  =>  [
-                    'class'     =>  'table table-striped table-bordered table-hover'
+                    'class'     =>  'table'
                 ],
                 'rowOptions'   =>  [
                     'style'    =>  'text-align: center; background-color:'
@@ -141,6 +94,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
                 'columns' => [
+                    [
+                        'header' => '#',
+                       'value' => function($j) {
+                           global $j; ++$j;
+                           return $j;
+                       },
+                    ],
                     [
                         'attribute' => 'name',
                         'label' => 'Название'
@@ -158,4 +118,10 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
-        </div></div></div>
+
+
+
+
+
+
+<!-- конец страницы-->
