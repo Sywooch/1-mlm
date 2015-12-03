@@ -146,6 +146,18 @@
             padding: 0 !important;
         }
 
+        #main h1 {
+            font-size:28px;
+        }
+
+        #main h2 {
+            font-size:24px;
+        }
+
+        #main h3 {
+            font-size:20px;
+        }
+
     </style>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
