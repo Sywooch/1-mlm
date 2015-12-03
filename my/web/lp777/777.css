@@ -140,6 +140,7 @@ background-repeat: no-repeat;
   text-align: center;
   position: relative;
   top: -60px;
+  height: 50px;
 }
 
 #cta p {

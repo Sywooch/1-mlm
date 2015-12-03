@@ -9,7 +9,7 @@
 
     <meta property="og:title" content="<?=$data["name"]?>"/>
     <meta property="og:description" content="<?=$data["desc"]?>" />
-    <meta property="og:image" content="<?=$user["socpic"]?>" />
+    <meta property="og:image" content="<?=$data["socpic"]?>" />
 
     <meta name="robots" content="noindex,nofollow">
     <title><?=$data["name"]?></title>
@@ -133,6 +133,19 @@
             white-space:nowrap;
         }
 
+        h1, h2, h3 {
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+        }
+
+        h1 {
+            margin-top: 9px !important;
+        }
+
+        #share {
+            padding: 0 !important;
+        }
+
     </style>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
@@ -146,8 +159,16 @@
                 <p>Ваш консультант:  <b><?php echo $user["fn"].' '.$user["ln"];?></b></p>
             </div>
         </div>
+        <div class="social-likes">
+            <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+            <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+            <div class="mailru" title="Поделиться ссылкой в Моём мире">Мой мир</div>
+            <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+            <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
+            <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+        </div>
     </div>
-    <div id="main" style="background-color: #<?=$data["bg"]?>;?>">
+    <div id="main" style="background-color: <?=$data["bg"]?>; /*max-height: 600px;*/">
         <h1 <?php if ($data["h1c"]) echo "style='color: ".$data['h1c']."'" ?>><?=$data["h1"]?></h1>
         <h2 <?php if ($data["h2c"]) echo "style='color: ".$data['h2c']."'" ?>><?=$data["h2"]?></h2>
         <h3 <?php if ($data["h3c"]) echo "style='color: ".$data['h3c']."'" ?>><?=$data["h3"]?></h3>
@@ -174,14 +195,14 @@
                         h.appendChild(s);
                     }})();</script>
             <div class="pluso" data-background="none;" data-options="medium,square,line,horizontal,counter,sepcounter=1,theme=14" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email" data-user="1654282972"></div>-->
-            <div class="social-likes">
+            <!--<div class="social-likes">
                 <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
                 <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
                 <div class="mailru" title="Поделиться ссылкой в Моём мире">Мой мир</div>
                 <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
                 <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
                 <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
-            </div>
+            </div>-->
         </div>
     </div>
     <div id="footer">
