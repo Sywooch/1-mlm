@@ -212,7 +212,7 @@ background-repeat: no-repeat;
 .btn:hover {color: #111;}
 
 .btn.big {
-  padding: 15px 25px;
+  padding: 5px 20px;
   font-size: 20px;
 }
 

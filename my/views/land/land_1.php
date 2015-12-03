@@ -10,18 +10,20 @@
     <meta property="og:title" content="<?=$data["name"]?>"/>
     <meta property="og:description" content="<?=$data["desc"]?>" />
     <meta property="og:image" content="<?=$user["userpic"]?>" />
-
     <meta name="robots" content="noindex,nofollow">
+
     <title><?=$data["name"]?></title>
-    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/lp777/777.css" />
     <link href="<?=Yii::getAlias('@web') ?>/favicon.ico" rel="icon">
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/lp777/777.css" />
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
+
     <style>
         .modalDialog > div {
             width: 400px;
@@ -83,7 +85,7 @@
             font-weight: 600;
             color: #ffffff;
             text-decoration: none;
-            text-transform: uppercase;
+            text-transform: none;
             padding: 5px 10px;
             margin: 0px 0px 10px 0px;
             background-color: #eeeeee;
@@ -134,9 +136,9 @@
         }
 
     </style>
-    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
-    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
+
 </head>
+
 <body>
 <div id="wrapper">
     <div id="header">
@@ -164,16 +166,7 @@
             <h3 style="color: #fff">самое интересное Вас ждет внутри. Регистрация в 1 клик!</h3>
         </div>
         <div id="share">
-            <!--<script type="text/javascript">(function() {
-                    if (window.pluso)if (typeof window.pluso.start == "function") return;
-                    if (window.ifpluso==undefined) { window.ifpluso = 1;
-                        var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                        s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-                        s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-                        var h=d[g]('body')[0];
-                        h.appendChild(s);
-                    }})();</script>
-            <div class="pluso" data-background="none;" data-options="medium,square,line,horizontal,counter,sepcounter=1,theme=14" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email" data-user="1654282972"></div>-->
+        
             <div class="social-likes">
                 <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
                 <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
@@ -185,18 +178,19 @@
         </div>
     </div>
     <div id="footer">
-        <p id="copyright">&copy; 2015 <a href="#modal" data-toggle="modal" data-target="#modal-1">
+        <p id="copyright">&copy; 2015 <a href="//1-mlm.com" >
                 1-mlm.com&#8482;</a> | <a href="#modal" data-toggle="modal" data-target="#modal-1">
                 Войти в Личный Кабинет</a></p>
     </div>
 
     <!-- BEGIN LOGIN BOX *****************************************************************-->
+
     <div class="modal fade" id="modal-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <h5 class="modal-title" id="myModalLabel"><span>Вход и Регистрация -  Используя социальные сети</span></h5>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">закрыть</span></button>
+               <center><p id="myModalLabel"><font size="3" color="black" face="Arial">Вход и Регистрация -  Используя социальные сети</font></p></center>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -206,30 +200,30 @@
                                 <a style="" href="javascript:void(0)"
                                    onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=facebook&refid=<?=$user["refdt"]?>'"
                                    class="socbtn facebook-btn" data-uloginbutton="facebook">
-                                    <span><img src="s/img/facebook-btn.png" width="25" ></span>Facebook</a>
+                                    <span><img src="s/img/facebook-btn.png" width="25" ></span> Facebook</a>
                                 <a style="" href="javascript:void(0)"
                                    onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=google&refid=<?=$user["refdt"]?>'"
                                    class="socbtn googleplus-btn" data-uloginbutton="googleplus">
-                                    <span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+ - скоро</a>
+                                    <span><img src="s/img/googleplus-btn.png" width="25" ></span> Google+ - скоро</a>
                                 <a style="" href="javascript:void(0)"
                                    onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=vkontakte&refid=<?=$user["refdt"]?>'"
                                    class="socbtn vkontakte-btn" data-uloginbutton="vkontakte">
-                                    <span><img src="s/img/vkontakte-btn.png" width="25" ></span>Vkontakte</a>
+                                    <span><img src="s/img/vkontakte-btn.png" width="25" ></span> Vkontakte</a>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <!--------------------------------------------------------------------------------->
                                 <a href="javascript:void(0)"
                                    onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=linkedin_oauth2&refid=<?=$user["refdt"]?>'"
                                    class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki">
-                                    <span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
+                                    <span><img src="s/img/linkedin-icon.png" width="25" ></span> Linkedin</a>
                                 <a href="javascript:void(0)"
                                    onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=yandex&refid=<?=$user["refdt"]?>'"
                                    class="socbtn yandex-btn" data-uloginbutton="odnoklassniki">
-                                    <span><img src="s/img/yandex-btn.png" width="25" ></span>Yandex - скоро</a>
+                                    <span><img src="s/img/yandex-btn.png" width="25" ></span> Yandex - скоро</a>
                                 <a href="javascript:void(0)"
                                    onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=mailru&refid=<?=$user["refdt"]?>'"
                                    class="socbtn mailru-btn" data-uloginbutton="odnoklassniki">
-                                    <span><img src="s/img/mailru-btn.png" width="25" ></span>Mailru</a>
+                                    <span><img src="s/img/mailru-btn.png" width="25" ></span> Mailru</a>
                                 <!--------------------------------------------------------------------------------->
                             </div>
                         </div>
