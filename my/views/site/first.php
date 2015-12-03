@@ -329,8 +329,11 @@ $this->registerCss($style_user);
         <!--<header class="section-header">
             <h3>дистрибьюторы компаний использующие 1 mlm</h3>
         </header>-->
-        <div class="row">
-            <div class="col-md-12">
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="marquee" style="width: 1400px;">
                 <ul class="featured-sites">
                     <li><a href="" title="Site Name"><img src="s/img/site-1.png" alt="site" height="50" width="100" ></a> </li>
                     <li><a href="" title="Site Name"><img src="s/img/site-2.png" alt="site" height="50" width="100"></a></li>
