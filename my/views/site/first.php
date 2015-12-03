@@ -274,7 +274,7 @@ $this->registerCss($style_user);
         <div class="row">
             <div class="col-md-12">
                 <!--<h1>1-й млм ресурс</h1>-->
-                <h1>1 mlm ресурс</h1>
+                <h1><span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)<span class="currency">beta</span></span></h1>
                 <h2>Автоматизация бизнеса на 80% !!!</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
