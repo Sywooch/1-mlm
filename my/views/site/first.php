@@ -275,7 +275,7 @@ $this->registerCss($style_user);
             <div class="col-md-12">
                 <!--<h1>1-й млм ресурс</h1>-->
                 <h1><span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)<span class="currency">beta</span></span></h1>
-                <h2>Автоматизация бизнеса на 80%</h2>
+                <h2>Автоматизация рекрутинга на 80%</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
                                         data-target="#modal-1">попробуйте бесплатно</a>
@@ -698,7 +698,9 @@ $this->registerCss($style_user);
                 <!-- social 1 mlm -->
 
                 <ul class="social">
+                    <li><a href=" https://twitter.com/1mlmcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="https://vk.com/1mlmresource" target="_blank"><i class="fa fa-vk"></i></a></li>
+
                    <!-- <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>-->
                     <li><a href="https://www.youtube.com/channel/UC4Q97tIPa3_xn3uUdjybPQw" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
                 </ul>
