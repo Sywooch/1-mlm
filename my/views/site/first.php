@@ -278,7 +278,7 @@ $this->registerCss($style_user);
                 <h2>Автоматизация рекрутинга на 80%</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
-                                        data-target="#modal-1">попробуйте бесплатно</a>
+                                        data-target="#modal-1">для  Вас  бесплатно</a>
                     <br><br>
                     <h2>уже используют &nbsp; <span class="total-number-1"> 0 </span> &nbsp; пользователей</h2>
                 </div>
