@@ -32,22 +32,22 @@ $c_msg=\yii::$app->db->createCommand('SELECT count(status) AS c_msg
 
 ?>
 <li class="media" onclick="$(this).children('.ms').html(''); getMessages($(this).children('input').val()); readMessage($(this).children('input').val());">
-            <div class="media-status ms" style="float: right;">
-                <!--<span class="badge badge-success">8</span>-->
-                <?php if ($c_msg): ?>
-                <span class="badge badge-success"><?=$c_msg['c_msg'];?></span>
-                <?php endif; ?>
-            </div>
-            <img class="media-object" src="<?=$user['userpic']; ?>" alt="...">
-            <div class="media-body">
-                <h4 class="media-heading"><?php echo $user['fn'],' ',$user['ln']; ?></h4>
+    <div class="media-status ms" style="float: right;">
+        <!--<span class="badge badge-success">8</span>-->
+        <?php if ($c_msg): ?>
+            <span class="badge badge-success"><?=$c_msg['c_msg'];?></span>
+        <?php endif; ?>
+    </div>
+    <img class="media-object" src="<?=$user['userpic']; ?>" alt="...">
+    <div class="media-body">
+        <h4 class="media-heading"><?php echo $user['fn'],' ',$user['ln']; ?></h4>
 
-                <div class="media-heading-sub"> <!--Project Manager-->
-                    <?php
-                    $level = \app\models\Levels::find()->where(['id' => $user['level']])->one();
-                    echo $level['title'];
-                    ?>
-                </div>
-            </div>
+        <div class="media-heading-sub"> <!--Project Manager-->
+            <?php
+            $level = \app\models\Levels::find()->where(['id' => $user['level']])->one();
+            echo $level['title'];
+            ?>
+        </div>
+    </div>
     <input class="val_id" type="hidden" value="<?=$user['id']?>">
 </li>

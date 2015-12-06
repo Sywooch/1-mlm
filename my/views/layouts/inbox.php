@@ -8,8 +8,34 @@ $(document).ready(function() {
 SCRIPT;
 
 $this->registerJs($js_1);*/
+use app\models\Users;
+
+$identity = \Yii::$app->getUser()->getIdentity()->profile;
+switch($identity["service"])
+{
+    case "facebook":
+        $usrDt = Users::find()->where(['facebook'=>$identity["id"]])->one();
+        break;
+    case "vkontakte":
+        $usrDt = Users::find()->where(['vkontakte'=>$identity["id"]])->one();
+        break;
+    case "linkedin_oauth2":
+        $usrDt = Users::find()->where(['linkedin'=>$identity["id"]])->one();
+        break;
+    case "google":
+        $usrDt = Users::find()->where(['googleplus'=>$identity["id"]])->one();
+        break;
+    case "yandex":
+        $usrDt = Users::find()->where(['yandex'=>$identity["id"]])->one();
+        break;
+    case "mailru":
+        $usrDt = Users::find()->where(['mailru'=>$identity["id"]])->one();
+        break;
+}
 ?>
 <script type="text/javascript">
+    var uid = <?=$usrDt["id"]?>;
+
     function getMessages(id2) {
         $('#send_id').val(id2)
         $('.page-quick-sidebar-chat-user-messages').html('');
@@ -25,6 +51,20 @@ $this->registerJs($js_1);*/
         $('.page-quick-sidebar-item').css('display', 'inline');
     }
 
+    function readMessage(id4) {
+        //$('.page-quick-sidebar-chat-user-messages').html('');
+        $.ajax({
+            //type: 'POST',
+            url: 'index.php?r=site%2Freadmessage&fromid='+id4,
+            //data: 'toid='+id2,
+            success: function(data) {
+                //$('.page-quick-sidebar-chat-user-messages').html(data);
+                //$('#send_id').val('');
+            }
+        });
+
+    }
+
     function sendMessage() {
         $('.page-quick-sidebar-chat-user-messages').html('');
         $.ajax({
@@ -33,8 +73,22 @@ $this->registerJs($js_1);*/
             //data: 'toid='+id2,
             success: function(data) {
                 $('.page-quick-sidebar-chat-user-messages').html(data);
+                //$('#send_id').val('');
             }
-        })
+        });
+
+    }
+
+    function lum() {
+        $.ajax({
+            //type: 'POST',
+            url: 'index.php?r=site%2Flistusrmes',
+            //data: 'toid='+id2,
+            success: function(data) {
+                $('#lu').html(data);
+                //$('#send_id').val('');
+            }
+        });
     }
 
     var timerId = setTimeout(function tick() {
@@ -45,40 +99,25 @@ $this->registerJs($js_1);*/
                 //data: 'toid='+id2,
                 success: function (data) {
                     $('.page-quick-sidebar-chat-user-messages').html(data);
+                    readMessage($('#send_id').val());
                 }
             });
         }
+        lum();
         timerId = setTimeout(tick, 20000);
     }, 20000);
 </script>
+<style>
+    .ms {
+        /*right: 25px !important;*/
+        position: relative !important;
+    }
+</style>
 <div id="chart" class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
     <h3 class="list-heading">Команда</h3>
-    <ul class="media-list list-items" style="height: 510px !important; overflow-y: scroll;">
+    <ul class="media-list list-items" style="height: 510px !important; overflow-y: scroll;" id="lu">
         <?php
-        use app\models\Users;
 
-        $identity = \Yii::$app->getUser()->getIdentity()->profile;
-        switch($identity["service"])
-        {
-            case "facebook":
-                $usrDt = Users::find()->where(['facebook'=>$identity["id"]])->one();
-                break;
-            case "vkontakte":
-                $usrDt = Users::find()->where(['vkontakte'=>$identity["id"]])->one();
-                break;
-            case "linkedin_oauth2":
-                $usrDt = Users::find()->where(['linkedin'=>$identity["id"]])->one();
-                break;
-            case "google":
-                $usrDt = Users::find()->where(['googleplus'=>$identity["id"]])->one();
-                break;
-            case "yandex":
-                $usrDt = Users::find()->where(['yandex'=>$identity["id"]])->one();
-                break;
-            case "mailru":
-                $usrDt = Users::find()->where(['mailru'=>$identity["id"]])->one();
-                break;
-        }
 
         $lastTenRegUsers=\app\models\Users::find()
             ->where(['ref'=>$usrDt['refdt']])
@@ -89,7 +128,8 @@ $this->registerJs($js_1);*/
         //print_r($lastTwentyRegUsers);
         foreach($lastTenRegUsers as $lt) {
             echo $this->render('_main_message', [
-                'user' => $lt
+                'user' => $lt,
+                'user_id' => $usrDt['id']
             ]);
         }
 
@@ -194,7 +234,7 @@ $this->registerJs($js_1);*/
 <div class="page-quick-sidebar-item" class="display: none;">
     <div class="page-quick-sidebar-chat-user">
         <div class="page-quick-sidebar-nav">
-            <a href="javascript:;" class="page-quick-sidebar-back-to-list" onclick="$('.page-quick-sidebar-chat-users').css('display', 'inline');">
+            <a href="javascript:;" class="page-quick-sidebar-back-to-list" onclick="$('.page-quick-sidebar-chat-users').css('display', 'inline'); $('#send_id').val(''); ">
                 <i class="icon-arrow-left"></i>Back</a>
         </div>
         <div class="page-quick-sidebar-chat-user-messages" style="height: 440px !important; overflow-y: scroll;">

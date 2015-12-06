@@ -1,8 +1,27 @@
 <?php
 use yii\widgets\ActiveForm;
 use kartik\widgets\ColorInput;
-?>
+use app\models\Lp;
+$lp=Lp::find()->where(['id'=>1])->one();
 
+$lp->name=null;
+$lp->h1=null;
+$lp->h2=null;
+$lp->h3=null;
+$lp->h1c=null;
+$lp->h2c=null;
+$lp->h3c=null;
+$lp->yt1=null;
+$lp->button=null;
+$lp->keywords=null;
+$lp->desc=null;
+$lp->socpic=null;
+$lp->bg=null;
+$lp->yt2=null;
+$lp->yandexmetrika=null;
+$lp->autoplay=0;
+
+?>
 <?php $form = ActiveForm::begin();?>
 
     <div class="row">
@@ -51,7 +70,8 @@ use kartik\widgets\ColorInput;
             </div>
             <div class="form-group">
                 <?=$form->field(
-                    $lp, 'socpic', ['template' => "<label>Картинка для мета соц. сетей (700x500)</label>\n{input}\n{hint}\n{error}" ]
+                    $lp, 'socpic', ['template' => "<label>Картинка для мета соц. сетей (700x500)</label>
+                            \n{input}\n{hint}\n{error}" ]
                 )->textInput(['placeholder' => 'Введите описание']);
                 ?>
             </div>
@@ -61,7 +81,7 @@ use kartik\widgets\ColorInput;
                 <?=$form->field(
                     $lp, 'bg', ['template' => "<label>Цвет фона</label>\n{input}\n{hint}\n{error}" ]
                 )->widget(ColorInput::classname(),[
-                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_'.$i]
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_'.$type]
                 ]);
                 ?>
             </div>
@@ -69,7 +89,7 @@ use kartik\widgets\ColorInput;
                 <?=$form->field(
                     $lp, 'h1c', ['template' => "<label>Цвет заголовка №1</label>\n{input}\n{hint}\n{error}" ]
                 )->widget(ColorInput::classname(),[
-                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h1_'.$i]
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h1_'.$type]
                 ]);
                 ?>
             </div>
@@ -77,7 +97,7 @@ use kartik\widgets\ColorInput;
                 <?=$form->field(
                     $lp, 'h2c', ['template' => "<label>Цвет заголовка №2</label>\n{input}\n{hint}\n{error}" ]
                 )->widget(ColorInput::classname(),[
-                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h2_'.$i]
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h2_'.$type]
                 ]);
                 ?>
             </div>
@@ -85,7 +105,7 @@ use kartik\widgets\ColorInput;
                 <?=$form->field(
                     $lp, 'h3c', ['template' => "<label>Цвет заголовка №3</label>\n{input}\n{hint}\n{error}" ]
                 )->widget(ColorInput::classname(),[
-                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h3_'.$i]
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h3_'.$type]
                 ]);
                 ?>
             </div>
@@ -101,16 +121,6 @@ use kartik\widgets\ColorInput;
                     $lp, 'yt2', ['template' => "<label>Id ролика 2 с Youtube</label>\n{input}\n{hint}\n{error}" ]
                 )->textInput(['placeholder' => 'Вставьте id ролика']);
                 ?>
-            </div>
-            <div class="form-group">
-                <?php
-                echo $form->field(
-                    $lp, 'id', [
-                    "template" => "<label>Ваша ссылка</label>\n{input}\n{hint}\n{error}"])
-                    ->textInput([
-                        "readonly" => true,
-                        "value"=>'https://1-mlm.com/'.$lp->id.'.html'
-                    ]); ?>
             </div>
             <div class="form-group">
                 <?=$form->field(
@@ -140,8 +150,9 @@ use kartik\widgets\ColorInput;
 
 
     </div>
-    <input name="land" value="change" type="hidden">
+
+    <input id="users-formtype_<?=$type;?>" name="land" value="template_<?=$type;?>" type="hidden">
     <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save">СОХРАНИТЬ СТРАНИЦУ</button>
-<?= \yii\helpers\Html::hiddenInput('Lp[id]', $lp['id']); ?>
+
 
 <?php $form->end(); ?>

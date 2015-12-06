@@ -645,100 +645,95 @@ class SiteController extends Controller
                 $tab = 1;
             }
 
-            if(\Yii::$app->request->post()){
-                /*****************************/
-                $p = Yii::$app->request->post();
-                /*****************************/
+            if(\Yii::$app->request->post())
+            {
+                $land = Yii::$app->request->post("land");
+                $p = Yii::$app->request->post("Lp");
+                switch ($land)
+                {
+                    case "change":
+                        $lp = Lp::findOne(
+                            [
+                                'uid' => $usr["id"],
+                                'id' => $p["id"]
+                            ]);
 
-                $p["Land"]=( !empty($p["Land"]) )?$p["Land"]:null;
-                if( 'change'==$p["Land"] ) {
-                    $lp = Lp::findOne(
-                        [
-                            'uid' => $usr["id"],
-                            'id' => $p["Lp"]["id"]
-                        ]);
+                        $lp->name = $p["name"];
+                        $lp->h1 = $p["h1"];
+                        $lp->h2 = $p["h2"];
+                        $lp->h3 = $p["h3"];
+                        $lp->yt1 = $p["yt1"];
+                        $lp->h1c = $p["h1c"];
+                        $lp->h2c = $p["h2c"];
+                        $lp->h3c = $p["h3c"];
+                        $lp->yandexmetrika = $p["yandexmetrika"];
+                        $lp->button = $p["button"];
+                        $lp->desc = $p["desc"];
+                        $lp->keywords = $p["keywords"];
 
-                    $lp->name = $p["Lp"]["name"];
-                    $lp->h1 = $p["Lp"]["h1"];
-                    $lp->h2 = $p["Lp"]["h2"];
-                    $lp->h3 = $p["Lp"]["h3"];
-                    $lp->yt1 = $p["Lp"]["yt1"];
-                    $lp->h1c = $p["Lp"]["h1c"];
-                    $lp->h2c = $p["Lp"]["h2c"];
-                    $lp->h3c = $p["Lp"]["h3c"];
-                    $lp->yandexmetrika = $p["Lp"]["yandexmetrika"];
-                    $lp->button = $p["Lp"]["button"];
-                    $lp->desc = $p["Lp"]["desc"];
-                    $lp->keywords = $p["Lp"]["keywords"];
+                        $lp->socpic = $p["socpic"];
+                        $lp->autoplay = $p["autoplay"];
+                        $lp->bg = $p["bg"];
 
-                    $lp->socpic = $p["Lp"]["socpic"];
-                    $lp->autoplay = $p["Lp"]["autoplay"];
-                    $lp->bg = $p["Lp"]["bg"];
+                        $lp->update(false);
 
-                    $lp->update(false);
+                        $save = "good";
+                        $mes = "Ваша страничка обновлена";
+                    break;
+                    case "template_1":
+                        $lp_n = new Lp;
+                        $lp_n->name = $p["name"];
+                        $lp_n->uid = $usr["id"];
+                        $lp_n->h1 = $p["h1"];
+                        $lp_n->h2 = $p["h2"];
+                        $lp_n->h3 = $p["h3"];
+                        $lp_n->yt1 = $p["yt"];
+                        $lp_n->h1c = $p["h1c"];
+                        $lp_n->h2c = $p["h2c"];
+                        $lp_n->h3c = $p["h3c"];
+                        $lp_n->yandexmetrika = $p["yandexmetrika"];
+                        $lp_n->button = $p["button"];
+                        $lp_n->landtype = 1;
+                        $lp_n->desc = $p["desc"];
+                        $lp_n->keywords = $p["keywords"];
 
-                    $save = "good";
-                    $mes = "Ваша страничка обновлена";
+                        $lp_n->socpic = $p["socpic"];
+                        $lp_n->autoplay = $p["autoplay"];
+                        $lp_n->bg = $p["bg"];
 
+                        $lp_n->save(false);
+
+                        $save = "create";
+                        $mes = "Ваша страничка создана";
+                    break;
+                    case "template_2":
+                        $lp_n = new Lp;
+                        $lp_n->name = $p["name"];
+                        $lp_n->uid = $usr["id"];
+                        $lp_n->h1 = $p["h1"];
+                        $lp_n->h2 = $p["h2"];
+                        $lp_n->h3 = $p["h3"];
+                        $lp_n->yt1 = $p["yt"];
+                        $lp_n->h1c = $p["h1c"];
+                        $lp_n->h2c = $p["h2c"];
+                        $lp_n->h3c = $p["h3c"];
+                        $lp_n->yandexmetrika = $p["yandexmetrika"];
+                        $lp_n->button = $p["button"];
+                        $lp_n->landtype = 2;
+                        $lp_n->desc = $p["desc"];
+                        $lp_n->keywords = $p["keywords"];
+
+                        $lp_n->socpic = $p["socpic"];
+                        $lp_n->autoplay = $p["autoplay"];
+                        $lp_n->bg = $p["bg"];
+
+                        $lp_n->save(false);
+
+                        $save = "create";
+                        $mes = "Ваша страничка создана";
+                    break;
                 }
 
-                $p["Land_2"]=( !empty($p["Land_2"]) )?$p["Land_2"]:null;
-                if( 'template_1'==$p["Land_2"] ) {
-                    $lp_n = new Lp;
-
-                    $lp_n->name = $p["name"];
-                    $lp_n->uid = $usr["id"];
-                    $lp_n->h1 = $p["h1"];
-                    $lp_n->h2 = $p["h2"];
-                    $lp_n->h3 = $p["h3"];
-                    $lp_n->yt1 = $p["yt"];
-                    $lp_n->h1c = $p["h1c"];
-                    $lp_n->h2c = $p["h2c"];
-                    $lp_n->h3c = $p["h3c"];
-                    $lp_n->yandexmetrika = $p["yandexmetrika"];
-                    $lp_n->button = $p["button"];
-                    $lp_n->landtype = 1;
-                    $lp_n->desc = $p["desc"];
-                    $lp_n->keywords = $p["keywords"];
-
-                    $lp_n->socpic = $p["socpic"];
-                    $lp_n->autoplay = $p["autoplay"];
-                    $lp_n->bg = $p["bg"];
-
-                    $lp_n->save();
-
-                    $save = "create";
-                    $mes = "Ваша страничка создана";
-
-                }
-                if( 'template_2'==$p["Land_2"] ) {
-                    $lp_n = new Lp;
-
-                    $lp_n->name = $p["name"];
-                    $lp_n->uid = $usr["id"];
-                    $lp_n->h1 = $p["h1"];
-                    $lp_n->h2 = $p["h2"];
-                    $lp_n->h3 = $p["h3"];
-                    $lp_n->yt1 = $p["yt"];
-                    $lp_n->h1c = $p["h1c"];
-                    $lp_n->h2c = $p["h2c"];
-                    $lp_n->h3c = $p["h3c"];
-                    $lp_n->yandexmetrika = $p["yandexmetrika"];
-                    $lp_n->button = $p["button"];
-                    $lp_n->landtype = 2;
-                    $lp_n->desc = $p["desc"];
-                    $lp_n->keywords = $p["keywords"];
-
-                    $lp_n->socpic = $p["socpic"];
-                    $lp_n->autoplay = $p["autoplay"];
-                    $lp_n->bg = $p["bg"];
-
-                    $lp_n->save();
-
-                    $save = "create";
-                    $mes = "Ваша страничка создана";
-
-                }
             }
             $query11=new \yii\db\Query();
             switch($identity["service"])
@@ -1360,6 +1355,159 @@ class SiteController extends Controller
                     'data' => $listmsg,
                     'second_user' => $toid
                 ]);
+
+
+
+
+                /*->from([Msgs::tableName()])
+                ->where(['id' => $usr["level"]])->one();*/
+
+                /*$model = Lp::find()
+                    ->where(['uid' => $usr["id"]]);*/
+                //->andWhere(['id' => $landid]);
+
+
+
+                /*$query12=new \yii\db\Query();
+                $data=$query12->from([Lp::tableName()])
+                    ->where(['uid' => $_usr["id"]]);
+                $save=( !empty($save) )?$save:null;*/
+
+            }
+            return $this->goHome();
+        }
+    }
+	
+	public function actionListusrmes(){
+        if (\Yii::$app->request->isAjax) {
+            //return $this->render('ajax_test');
+            //echo "OK";
+            $this->layout = 'empty';
+            if (!\Yii::$app->user->isGuest){
+                $identity = \Yii::$app->getUser()->getIdentity()->profile;
+                $mes = "";
+
+                $query10=new \yii\db\Query();
+                $usr=$query10->from([Users::tableName()]);
+                switch($identity["service"])
+                {
+                    case "facebook":
+                        $usr=$usr->where(['facebook' => $identity["id"]]);
+                        break;
+                    case "vkontakte":
+                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                        break;
+                    case "linkedin_oauth2":
+                        $usr=$usr->where(['linkedin' => $identity["id"]]);
+                        break;
+                    case "google":
+                        $usr=$usr->where(['googleplus' => $identity["id"]]);
+                        break;
+                    case "yandex":
+                        $usr=$usr->where(['yandex' => $identity["id"]]);
+                        break;
+                    case "mailru":
+                        $usr=$usr->where(['mailru' => $identity["id"]]);
+                        break;
+                }
+                $usr=$usr->one();
+
+                //$toid = (int)\Yii::$app->request->get("toid");
+
+                //$query13=new \yii\db\Query();
+                $lastTenRegUsers=Users::find()
+                    ->where(['ref'=>$usr['refdt']])
+                    ->orderBy(['id' => SORT_ASC])
+                    ->limit(10)
+                    ->all();
+
+                echo $this->render('lum', [
+                    'data' => $lastTenRegUsers,
+                    'user' => $usr["id"],
+                ]);
+                /*->from([Msgs::tableName()])
+                ->where(['id' => $usr["level"]])->one();*/
+
+                /*$model = Lp::find()
+                    ->where(['uid' => $usr["id"]]);*/
+                //->andWhere(['id' => $landid]);
+
+
+
+                /*$query12=new \yii\db\Query();
+                $data=$query12->from([Lp::tableName()])
+                    ->where(['uid' => $_usr["id"]]);
+                $save=( !empty($save) )?$save:null;*/
+
+            }
+            return $this->goHome();
+        }
+    }
+
+    public function actionReadmessage()
+    {
+        if (\Yii::$app->request->isAjax) {
+            //return $this->render('ajax_test');
+            //echo "OK";
+            //$this->layout = 'empty';
+            if (!\Yii::$app->user->isGuest){
+                $identity = \Yii::$app->getUser()->getIdentity()->profile;
+                $mes = "";
+
+                $query10=new \yii\db\Query();
+                $usr=$query10->from([Users::tableName()]);
+                switch($identity["service"])
+                {
+                    case "facebook":
+                        $usr=$usr->where(['facebook' => $identity["id"]]);
+                        break;
+                    case "vkontakte":
+                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                        break;
+                    case "linkedin_oauth2":
+                        $usr=$usr->where(['linkedin' => $identity["id"]]);
+                        break;
+                    case "google":
+                        $usr=$usr->where(['googleplus' => $identity["id"]]);
+                        break;
+                    case "yandex":
+                        $usr=$usr->where(['yandex' => $identity["id"]]);
+                        break;
+                    case "mailru":
+                        $usr=$usr->where(['mailru' => $identity["id"]]);
+                        break;
+                }
+                $usr=$usr->one();
+
+                $fromid = (int)\Yii::$app->request->get("fromid");
+
+                /*$query13=new \yii\db\Query();
+                $listmsg=\yii::$app->db->createCommand('SELECT *
+                                                       FROM msgs
+                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
+                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*/
+                /*$mes = new Msgs();
+                $mes->uid4 = $usr['id'];
+                $mes->uid2 = $toid;
+                $mes->msg = \Yii::$app->request->get("text");
+                $mes->save();*/
+
+                \yii::$app->db->createCommand('UPDATE msgs
+                                               SET `status` = 0
+                                               WHERE ((uid4 = '.$fromid.') AND (uid2 = '.$usr["id"].'))')->execute();
+
+                return true;
+
+                /*$listmsg=\yii::$app->db->createCommand('SELECT *
+                                                       FROM msgs
+                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$fromid.')) OR
+                                                             ((uid4 = '.$fromid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*/
+
+
+                /*echo $this->render('message', [
+                    'data' => $listmsg,
+                    'second_user' => $fromid
+                ]);*/
 
 
 

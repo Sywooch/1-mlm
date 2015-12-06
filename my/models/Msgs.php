@@ -29,7 +29,7 @@ class Msgs extends \yii\db\ActiveRecord
     {
         return [
             //[['id'], 'required'],
-            [['id', 'uid4', 'uid2'], 'integer'],
+            [['id', 'uid4', 'uid2', 'status'], 'integer'],
             [['msg'], 'string', 'max' => 200]
         ];
     }
@@ -44,6 +44,7 @@ class Msgs extends \yii\db\ActiveRecord
             'uid4' => 'Uid4',
             'uid2' => 'Uid2',
             'msg' => 'Msg',
+            'status' => 'Status'
         ];
     }
 }
