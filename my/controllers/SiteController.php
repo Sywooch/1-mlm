@@ -7,6 +7,7 @@ use app\models\Hangouts;
 use Yii;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
+use yii\data\ArrayDataProvider;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -190,8 +191,6 @@ class SiteController extends Controller
     public function actionTeam()
     {
         if ( !\Yii::$app->user->isGuest ){
-            $query=new \yii\db\Query();
-            $query1=new \yii\db\Query();
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
             $usr = Users::find()->select('refdt');
@@ -220,7 +219,7 @@ class SiteController extends Controller
 
             $filter = new Users;
 
-            $array=$query1->select('u.id AS id')
+            $array=(new \yii\db\Query())->select('u.id AS id')
                 ->from([Users::tableName().' u'])
                 ->where(['u.ref'=>$usr->refdt])->all();
             $arr=array();
@@ -234,11 +233,29 @@ class SiteController extends Controller
             return $this->render('team', [
                 'dataProvider' => new ActiveDataProvider([
                     'query' =>
-                        $query->select('u.fn AS fn, u.ln AS ln, l.title AS title, u.userpic AS userpic, u.country AS country,
-                        u.mobile AS mobile, u.skype AS skype, u.email AS email, u.vkontakte AS vkontakte')
+                        (new \yii\db\Query())->select
+                        ([
+                            "IF (`active`<DATE_SUB(NOW(), INTERVAL 10 DAY),'yellow', 'green') AS `status`",
+                            'u.fn AS fn',
+                            'u.ln AS ln',
+                            'l.title AS title',
+                            'u.userpic AS userpic',
+                            'u.country AS country',
+                            'u.mobile AS mobile',
+                            'u.skype AS skype',
+                            'u.email AS email',
+                            'u.vkontakte AS vkontakte'
+                        ])
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
-                            ->where(['u.id'=>$arr])
+                            ->where(['u.id'=>$arr]),
+                            //->orderBy(['regdate' => SORT_DESC]),
+                        'sort' => [
+                            'attributes' => ['fn', 'ln'],
+                        ],
+                        'pagination' => [
+                            'pageSize' => 10,
+                        ]
                 ]),
                 'searchModel' => $filter
             ]);
@@ -867,6 +884,7 @@ class SiteController extends Controller
     {
          if(!\Yii::$app->user->isGuest)
          {
+             $this->layout="main2";
              return $this->render('about');
          }
         return $this->goHome();

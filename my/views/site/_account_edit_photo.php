@@ -1,6 +1,8 @@
 <?php
 use yii\widgets\ActiveForm;
+use yii\widgets\Pjax;
 
+Pjax::begin();
 $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?>
     <p> Здесь Вы можете поменять аватар своего профиля. Для этого нажмите на кнопку "Выбрать картинку" и выберите желаемую, а затем нажмите кнопку "Изменить". </p>
     <div class="form-group">
@@ -35,4 +37,7 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?
             <a href="index.php?r=site%2Faccount" class="btn default"> Отменить </a>
         </div>
     </div>
-<?php $form->end(); ?>
+<?php
+$form->end();
+Pjax::end();
+?>

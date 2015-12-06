@@ -159,13 +159,13 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                             <span class="badge badge-danger"></span>
                         </a>
                     </li>
-                    <!--
+
                     <li>
                         <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> Команда
                             <span class="badge badge-success"></span>
                         </a>
                     </li>
-                    -->
+
                     <!--
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> More
@@ -224,7 +224,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                             endif;?>
                                             <?php if( !empty($consultant["vkontakte"]) ): ?>
                                                 <a href="https://vk.com/id<?php echo $consultant["vkontakte"];?>" target="_blank">
-                                                    <img src="http://pravo-ros.ru/wp-content/uploads/2013/05/VK_logo.png"
+                                                    <img src="http://solpole.ru/images/Vk.png"
                                                          style="border: none;" /></a>&nbsp;
                                                 <?php
                                             endif;?>

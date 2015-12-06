@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/controllers/McController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/models/Users.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vendor/nodge/yii2-eauth/src/oauth1/ServiceProxy.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/about/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/_main_modal.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/_main_modal_eauth.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/main.php" charset="UTF-8" />
@@ -15,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/views/site/_landing_tab.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_landing_tab_form.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/_mcarchive_list.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/site/about.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/error.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/first.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/links.php" charset="UTF-8" />

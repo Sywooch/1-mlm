@@ -38,7 +38,7 @@ var QuickSidebar = function () {
         };
 
         initChatSlimScroll();
-        App.addResizeHandler(initChatSlimScroll); // reinitialize on window resize
+        //App.addResizeHandler(initChatSlimScroll); // reinitialize on window resize
 
         wrapper.find('.page-quick-sidebar-chat-users .media-list > .media').click(function () {
             wrapperChat.addClass("page-quick-sidebar-content-item-shown");
@@ -59,8 +59,8 @@ var QuickSidebar = function () {
                 return;
             }
 
-            var preparePost = function(dir, time, name, avatar, message) {
-                /*var tpl = '';
+            /*var preparePost = function(dir, time, name, avatar, message) {
+                var tpl = '';
                 tpl += '<div class="post '+ dir +'">';
                 tpl += '<img class="avatar" alt="" src="' + Layout.getLayoutImgPath() + avatar +'.jpg"/>';
                 tpl += '<div class="message">';
@@ -73,23 +73,23 @@ var QuickSidebar = function () {
                 tpl += '</div>';
                 tpl += '</div>';
 
-                return tpl;*/
+                return tpl;
             };
 
             // handle post
             var time = new Date();
             var message = preparePost('out', (time.getHours() + ':' + time.getMinutes()), "Bob Nilson", 'avatar3', text);
             message = $(message);
-            chatContainer.append(message);
+            chatContainer.append(message);*/
 
-            chatContainer.slimScroll({
+            /*chatContainer.slimScroll({
                 scrollTo: '1000000px'
-            });
+            });*/
 
             input.val("");
 
             // simulate reply
-            setTimeout(function(){
+            /*setTimeout(function(){
                 var time = new Date();
                 var message = preparePost('in', (time.getHours() + ':' + time.getMinutes()), "Ella Wong", 'avatar2', 'Lorem ipsum doloriam nibh...');
                 message = $(message);
@@ -98,8 +98,8 @@ var QuickSidebar = function () {
                 chatContainer.slimScroll({
                     scrollTo: '1000000px'
                 });
-            }, 3000);
-        };
+            }, 3000);*/
+        }; 
 
         wrapperChat.find('.page-quick-sidebar-chat-user-form .btn').click(handleChatMessagePost);
         wrapperChat.find('.page-quick-sidebar-chat-user-form .form-control').keypress(function (e) {
@@ -128,7 +128,7 @@ var QuickSidebar = function () {
         };
 
         initAlertsSlimScroll();
-        App.addResizeHandler(initAlertsSlimScroll); // reinitialize on window resize
+        //App.addResizeHandler(initAlertsSlimScroll); // reinitialize on window resize
     };
 
     // Handles quick sidebar settings
@@ -149,7 +149,7 @@ var QuickSidebar = function () {
         };
 
         initSettingsSlimScroll();
-        App.addResizeHandler(initSettingsSlimScroll); // reinitialize on window resize
+        //App.addResizeHandler(initSettingsSlimScroll); // reinitialize on window resize
     };
 
     return {

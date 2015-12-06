@@ -32,8 +32,8 @@ foreach ($data as $msg) {
             <img class="avatar" alt="" src="<?=$usrDt['userpic'];?>" />
             <div class="message">
                 <span class="arrow"></span>
-                <a href="javascript:;" class="name"><?php echo $usrDt['fn'], ' ', $usrDt['ln']?></a>
-                <span class="body"> <?=$msg['msg']?> </span>
+                <a style="color: black;" href="javascript:;" class="name"><?php echo $usrDt['fn'], ' ', $usrDt['ln']?></a>
+                <span style="color: white;" class="body"> <?=$msg['msg']?> </span>
             </div>
         </div>
     <?php
@@ -43,8 +43,8 @@ foreach ($data as $msg) {
             <img class="avatar" alt="" src="<?=$usrDt2['userpic'];?>" />
             <div class="message">
                 <span class="arrow"></span>
-                <a href="javascript:;" class="name"><?php echo $usrDt2['fn'], ' ', $usrDt2['ln']?></a>
-                <span class="body"> <?=$msg['msg']?> </span>
+                <a style="color: black;" href="javascript:;" class="name"><?php echo $usrDt2['fn'], ' ', $usrDt2['ln']?></a>
+                <span style="color: white;" class="body"> <?=$msg['msg']?> </span>
             </div>
         </div>
         <?php

@@ -1,14 +1,9 @@
 <?php
-//use yii\grid\GridView;
-//use yii\grid\ActionColumn;
-use app\models\Users;
-
-use kartik\grid\Module;
-//use kartik\widgets\GridView;
-//use kartik\grid\ActionColumn;
 use kartik\grid\GridView;
-//use kartik\form\ActiveForm;
-//use kartik\switchinput\SwitchInput;
+use app\models\Users;
+use yii\data\ActiveDataProvider;
+
+
 $identity = \Yii::$app->getUser()->getIdentity()->profile;
 switch($identity["service"])
 {
@@ -62,6 +57,22 @@ $css = <<<'STYLE'
     float: left !important;
     margin-right: 20px;
 }
+
+.yellow{
+  width: 45px;
+  height: 45px;
+  border-radius: 50% !important;
+  background-color: yellow;
+  border: 0px;
+}
+
+.green{
+  width: 45px;
+  height: 45px;
+  border-radius: 50% !important;
+  background-color: green;
+  border: 0px;
+}
 STYLE;
 $this->registerCss($css);
 $this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/datatables.min.css');
@@ -113,8 +124,8 @@ $this->title = 'profile';
             </div>
             <div class="portlet-body">
                 <?php echo GridView::widget([
-                    'dataProvider'  =>  $dataProvider,
-                   // 'filterModel' => $searchModel,
+                    'dataProvider'  => $dataProvider,
+                    //'filterModel' => $searchModel,
                     'tableOptions'  =>  [
                         'class'     =>  'table table-striped table-bordered table-hover',
                         'id' => 'sample_1'
@@ -138,6 +149,15 @@ $this->title = 'profile';
                             ],
                         */
                         [
+                            'header' => 'Статус',
+                            'format' => 'raw',
+                            'options' => ['style' => 'width: 50px; max-width: 50px;'],
+                            'value'  =>  function($dt)
+                            {
+                                return "<div class='{$dt["status"]}'></div>";
+                            }
+                        ],
+                        [
                             'attribute' =>  'fn',
                             'label'     =>  'Имя',
                             'options' => ['style' => 'width: 220px; max-width: 220px;']
@@ -147,10 +167,6 @@ $this->title = 'profile';
                             'label'     =>  'Фамилия',
                             'options' => ['style' => 'width: 220px; max-width: 220px;']
                         ],
-                        /*[
-                            'attribute' =>  'city',
-                            'label'     =>  'Город'
-                        ],*/
                         [
                             'attribute' =>  'title',
                             'label'     =>  'Уровень'
@@ -177,8 +193,8 @@ $this->title = 'profile';
                              ],*/
                             /*'template'    =>  '<div class="btn-group">{hidden}&nbsp;&nbsp;{edit}</div>'*/
                         ]
-
                     ],
+                    //'pjax'=>true,
        /*             'exportConfig' => [
                         GridView::CSV => [
                             $pdf

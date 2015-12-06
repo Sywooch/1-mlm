@@ -36,8 +36,10 @@ use kartik\widgets\ColorInput;
                     </ul>
                     <div class="tab-content">
                         <div id="tab_1_1_1" class="tab-pane active">
-                            <?php $form_n = ActiveForm::begin();?>
-                            <div class="row">
+
+
+<form method="post" action="/index.php?r=site%2Flanding">
+    <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Название</label>
@@ -78,18 +80,35 @@ use kartik\widgets\ColorInput;
                                         <label>ID Yandex Metrika</label>
                                         <input id="lp-name" class="form-control" name="yandexmetrika" placeholder="Вставьте ID Yandex Metrika" type="text">
                                     </div>
+<?php $form = ActiveForm::begin();?>
+                                    <?php
+                                    $cLp=\app\models\Lp::find()->where(['id'=>1])->one();
+                                    ?>
                                     <div class="form-group">
-                                        <label>Цвет заголовка №1</label>
-                                        <input class="form-control" name="h1c" placeholder="6 символов цвета" type="text">
+                                        <?=$form->field(
+                                            $cLp, 'h1c', ['template' => "<label>Цвет заголовка №1</label>\n{input}\n{hint}\n{error}" ]
+                                        )->widget(ColorInput::classname(),[
+                                            'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_hcol1a']
+                                        ]);
+                                        ?>
                                     </div>
                                     <div class="form-group">
-                                        <label>Цвет заголовка №2</label>
-                                        <input class="form-control" name="h2c" placeholder="6 символов цвета" type="text">
+                                        <?=$form->field(
+                                            $cLp, 'h2c', ['template' => "<label>Цвет заголовка №2</label>\n{input}\n{hint}\n{error}" ]
+                                        )->widget(ColorInput::classname(),[
+                                            'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_hcol2a']
+                                        ]);
+                                        ?>
                                     </div>
                                     <div class="form-group">
-                                        <label>Цвет заголовка №3</label>
-                                        <input class="form-control" name="h3c" placeholder="6 символов цвета" type="text">
+                                        <?=$form->field(
+                                            $cLp, 'h3c', ['template' => "<label>Цвет заголовка №3</label>\n{input}\n{hint}\n{error}" ]
+                                        )->widget(ColorInput::classname(),[
+                                            'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_hcol3a']
+                                        ]);
+                                        ?>
                                     </div>
+<?php $form->end(); ?>
                                     <div class="form-group">
                                         <label>Надись на кнопке</label>
                                         <input class="form-control" name="button" placeholder="Призыв к действию" type="text">
@@ -110,10 +129,11 @@ use kartik\widgets\ColorInput;
                             </div>
                             <input id="users-formtype_1" name="Land_2" value="template_1" type="hidden">
                             <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save">СОЗДАТЬ СТРАНИЦУ</button>
-                            <?php $form_n->end(); ?>
+</form>
                         </div>
+
                         <div id="tab_1_1_2" class="tab-pane">
-                            <?php $form_n = ActiveForm::begin();?>
+<form method="post" action="/index.php?r=site%2Flanding">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -155,18 +175,35 @@ use kartik\widgets\ColorInput;
                                         <label>ID Yandex Metrika</label>
                                         <input id="lp-name" class="form-control" name="yandexmetrika" placeholder="Вставьте ID Yandex Metrika" type="text">
                                     </div>
+<?php $form = ActiveForm::begin();?>
+<?php
+$cLp=\app\models\Lp::find()->where(['id'=>1])->one();
+?>
                                     <div class="form-group">
-                                        <label>Цвет заголовка №1</label>
-                                        <input class="form-control" name="h1c" placeholder="6 символов цвета" type="text">
+                                        <?=$form->field(
+                                            $cLp, 'h1c', ['template' => "<label>Цвет заголовка №1</label>\n{input}\n{hint}\n{error}" ]
+                                        )->widget(ColorInput::classname(),[
+                                            'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_hcol1']
+                                        ]);
+                                        ?>
                                     </div>
                                     <div class="form-group">
-                                        <label>Цвет заголовка №2</label>
-                                        <input class="form-control" name="h2c" placeholder="6 символов цвета" type="text">
+                                        <?=$form->field(
+                                            $cLp, 'h2c', ['template' => "<label>Цвет заголовка №2</label>\n{input}\n{hint}\n{error}" ]
+                                        )->widget(ColorInput::classname(),[
+                                            'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_hcol2']
+                                        ]);
+                                        ?>
                                     </div>
                                     <div class="form-group">
-                                        <label>Цвет заголовка №3</label>
-                                        <input class="form-control" name="h3c" placeholder="6 символов цвета" type="text">
+                                        <?=$form->field(
+                                            $cLp, 'h3c', ['template' => "<label>Цвет заголовка №3</label>\n{input}\n{hint}\n{error}" ]
+                                        )->widget(ColorInput::classname(),[
+                                            'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_hcol3']
+                                        ]);
+                                        ?>
                                     </div>
+<?php $form->end(); ?>
                                     <div class="form-group">
                                         <label>Надись на кнопке</label>
                                         <input class="form-control" name="button" placeholder="Призыв к действию" type="text">
@@ -187,7 +224,7 @@ use kartik\widgets\ColorInput;
                             </div>
                             <input id="users-formtype_2" name="Land_2" value="template_2" type="hidden">
                             <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save">СОЗДАТЬ СТРАНИЦУ</button>
-                            <?php $form_n->end(); ?>
+</form>
                         </div>
                         <div id="tab_1_1_3" class="tab-pane">
                             В разработке

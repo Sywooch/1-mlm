@@ -19,8 +19,8 @@ $this->registerCss($style_user);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>1-й МЛМ Ресурс -  Автоматизация рекрутинга на 80%</title>
-    <meta name="description" content="1-й МЛМ Ресурс - Автоматизация рекрутинга на 80%">
+    <title>1-й МЛМ Ресурс</title>
+    <meta name="description" content="1-й МЛМ Ресурс">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -28,11 +28,10 @@ $this->registerCss($style_user);
 
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-
+    <!--<link href="s/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="s/css/font-awesome.min.css" rel="stylesheet">
     <link href="s/css/magnific-popup.css" rel="stylesheet">
     <link href="s/css/main.css" rel="stylesheet">
-    <link href="s/css/modal_dialog.css" rel="stylesheet">
     <style>
         .col-md-offset-4{margin-left: 0% !important;}
         .container {
@@ -185,6 +184,7 @@ $this->registerCss($style_user);
 </head>
 <body>
 <!-- BEGIN LOGIN BOX *****************************************************************-->
+
 <div class="modal fade" id="modal-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -255,7 +255,7 @@ $this->registerCss($style_user);
                     <li><a href="#features">преимущества</a></li>
                     <li><a href="#reviews">отзывы</a></li>
                     <li><a href="#pricing">прайс</a></li>
-                    <li><a href="http://blog.1-mlm.com" target="_blank">блог</a></li>
+                    <li><a href="http://blog.1-mlm.com">блог</a></li>
                     <!--<li><a href="#contact">Contact</a></li>-->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -275,10 +275,10 @@ $this->registerCss($style_user);
             <div class="col-md-12">
                 <!--<h1>1-й млм ресурс</h1>-->
                 <h1><span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)<span class="currency">beta</span></span></h1>
-                <h2>Автоматизация рекрутинга на 80%</h2>
+                <h2>Автоматизация бизнеса на 80% !!!</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
-                                        data-target="#modal-1">для  Вас  бесплатно</a>
+                                        data-target="#modal-1">попробуйте бесплатно</a>
                     <br><br>
                     <h2>уже используют &nbsp; <span class="total-number-1"> 0 </span> &nbsp; пользователей</h2>
                 </div>
@@ -326,6 +326,10 @@ $this->registerCss($style_user);
 
 <section class="featured-on section-spacing text-center">
     <div class="container">
+        <!--<header class="section-header">
+            <h3>дистрибьюторы компаний использующие 1 mlm</h3>
+        </header>-->
+
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -343,16 +347,20 @@ $this->registerCss($style_user);
 
 <!--MLM Компании on end-->
 
-<!--  о 1 mlm  -->
+
+
+<!--Features-->
+
 <div class="features section-spacing">
     <div class="container">
 
-        <!-- идея 1 mlm блок 1-->
+        <!--feature 1-->
+
         <div class="row">
             <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-1.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5 col-md-pull-7">
                 <article>
-                    <h1>Идея 1 mlm</h1>
+                    <h2>Идея 1 mlm</h2>
                     <p> Все интернет предприниматели  сталкиваются с трудностью -
                         <strong>СОЗДАНИЕ КОММАНДНОЙ РАБОТЫ</strong></p> <p>Для этого необходимо использовать целый
                         ряд ресурсов (сайтов) которые нужно еще и  правильно синхронизировать между собой. </p>
@@ -370,14 +378,14 @@ $this->registerCss($style_user);
             </div>
         </div>
 
-        <!--идея 1 mlm блок 1 end-->
+        <!--feature 1 end-->
 
-        <!--как работает 1 mlm блок 2-->
+        <!--feature 2-->
         <div class="row">
             <div class="col-md-7 text-center"> <img src="s/img/feature-2.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5">
                 <article>
-                    <h1>Как работает система?</h1>
+                    <h2>Как работает система???</h2>
                     <p>Aвтоматизация Вашего бизнеса благодаря системе  происходит в три этапа:</p>
                     <ul>
                         <li>Создание страницы</li>
@@ -391,14 +399,14 @@ $this->registerCss($style_user);
                 </article>
             </div>
         </div>
-        <!--как работает 1 mlm блок 2 end-->
+        <!--feature 2 end-->
 
-        <!--кому подходит 1 mlm блок 3-->
+        <!--feature 3-->
         <div class="row">
             <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-3.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5 col-md-pull-7">
                 <article>
-                    <h1>Кому подходит  1 mlm?</h1>
+                    <h2>Кому подходит  1 mlm?</h2>
                     <p>Существует миф о автоматизации млм бизнеса.<br>
                         Всем хочется строить бизнес на автмате!<br>
                         В реальности  100% автоматизации - НЕТ!<br>
@@ -415,17 +423,19 @@ $this->registerCss($style_user);
                 </article>
             </div>
         </div>
-        <!--кому подходит 1 mlm блок 3 end-->
+        <!--feature 3 end-->
     </div>
 </div>
 
-<!-- о 1 mlm end -->
+<!--Features end-->
 
-<!-- 1 mlm Video блок -->
+<!--Video section-->
 
 <section class="video-tour text-center">
     <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-tour"><img src="s/img/play-btn-vs.png" alt="play"></a>
+        <!--<h2>Video 1 mlm</h2>-->
     </div>
+
     <!--HTML5 Video-->
     <video autoplay loop muted id="bgvid" poster="s/video/poster.jpg">
         <source src="s/video/vb.mp4" type="video/mp4">
@@ -435,7 +445,7 @@ $this->registerCss($style_user);
 
 </section>
 
-<!-- 1 mlm Video блок end -->
+<!--Video section end-->
 
 <!-- Преимущества 1 mlm ресурса - начало -->
 
@@ -550,8 +560,8 @@ $this->registerCss($style_user);
                         <div class="price"> <b><strike>2$</strike></b> <span class="price-amount">0</span><span class="currency">$</span><span class="period"></span> </div>
                         <ul class="plan-features">
                             <li align="left"><i class="fa fa-bullseye"></i> Страница - 1 </li>
-                            <li align="left"><i class="fa fa-university"></i> Компания - 1 </li>
-                            <li align="left"><i class="fa fa-graduation-cap"></i> Мастер Класс - 0 </li>
+                            <li align="left"><i class="fa fa-university"></i> Компания - <span>1</span></li>
+                            <li align="left"><i class="fa fa-graduation-cap"></i> Мастер Класс - 0</li>
                             <li align="left"><i class="fa fa-usd "></i> Партнерка - нет</li>
                         </ul>
                     </div>
@@ -683,29 +693,25 @@ $this->registerCss($style_user);
 </section>
 <!--sub-form end-->
 
-<!-- 1 mlm -footer -->
+<!--site-footer-->
 <footer class="site-footer section-spacing text-center">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-
-                <!-- Yandex.Metrika informer --><a href="https://metrika.yandex.ru/stat/?id=33980350&amp;from=informer"target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/33980350/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:33980350,lang:'ru'});return false}catch(e){}" /></a><!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter33980350 = new Ya.Metrika({ id:33980350, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ecommerce:"dataLayer" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/33980350" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
-
+                <p class="footer-links"><a href="">...</a></p>
             </div>
             <div class="col-md-4"> <small>&copy; 2015 1 mlm. Все для вашего бизнеса.</small></div>
             <div class="col-md-4">
 
-                <!-- social 1 mlm -->
+                <!--social-->
 
                 <ul class="social">
-                    <li><a href=" https://twitter.com/1mlmcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://vk.com/1mlmresource" target="_blank"><i class="fa fa-vk"></i></a></li>
-
-                   <!-- <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>-->
-                    <li><a href="https://www.youtube.com/channel/UC4Q97tIPa3_xn3uUdjybPQw" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                    <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
                 </ul>
 
-                <!-- social 1mlm end -->
+                <!--social end-->
 
             </div>
             <div class="col-md-12">
@@ -715,9 +721,12 @@ $this->registerCss($style_user);
         </div>
     </div>
 </footer>
-<!-- 1 mlm -footer end -->
-
+<!--site-footer end-->
+<link href="s/css/modal_dialog.css" rel="stylesheet">
 <script src="s/js/modal_dialog.js"></script>
+
+<!--<script src="s/js/jquery-2.1.4.min.js"></script>
+<script src="s/js/bootstrap.min.js"></script> -->
 <script src="s/js/waypoints.min.js"></script>
 <script src="s/js/jquery.animateNumber.min.js"></script>
 <script src="s/js/waypoints-sticky.min.js"></script>
@@ -730,6 +739,5 @@ $this->registerCss($style_user);
 <script src="s/js/gmap.js"></script>
 
 <input type="hidden" id="usrall" value="<?= \app\models\Users::find()->count(); ?>" />
-
 </body>
 </html>

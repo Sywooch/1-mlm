@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'yii\\imperavi\\' => array($vendorDir . '/asofter/yii2-imperavi-redactor'),
+    'yii\\amcharts\\' => array($vendorDir . '/asofter/yii2-amcharts'),
     'PHPExcel' => array($vendorDir . '/phpoffice/phpexcel/Classes'),
     'OAuth\\Unit' => array($vendorDir . '/lusitanian/oauth/tests'),
     'OAuth' => array($vendorDir . '/lusitanian/oauth/src'),

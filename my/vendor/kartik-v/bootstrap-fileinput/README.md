@@ -1,7 +1,7 @@
 bootstrap-fileinput
 ====================
 
-[![Bower version](https://badge.fury.io/bo/bootstrap-fileinput.svg)](http://badge.fury.io/bo/bootstrap-fileinput)
+[![BOWER version](https://badge-me.herokuapp.com/api/bower/kartik-v/bootstrap-fileinput.png)](http://badges.enytc.com/for/bower/kartik-v/bootstrap-fileinput)
 [![Latest Stable Version](https://poser.pugx.org/kartik-v/bootstrap-fileinput/v/stable)](https://packagist.org/packages/kartik-v/bootstrap-fileinput)
 [![License](https://poser.pugx.org/kartik-v/bootstrap-fileinput/license)](https://packagist.org/packages/kartik-v/bootstrap-fileinput)
 [![Packagist Downloads](https://poser.pugx.org/kartik-v/bootstrap-fileinput/downloads)](https://packagist.org/packages/kartik-v/bootstrap-fileinput)
@@ -12,7 +12,7 @@ An enhanced HTML 5 file input for Bootstrap 3.x with file preview for various fi
 
 This plugin was initially inspired by [this blog article](http://www.abeautifulsite.net/blog/2013/08/whipping-file-inputs-into-shape-with-bootstrap-3/) and [Jasny's File Input plugin](http://jasny.github.io/bootstrap/javascript/#fileinput). But the plugin has now matured with various additional features and enhancements to be a complete (yet simple) file management tool and solution for web developers. 
 
-> NOTE: The latest version of the plugin is v4.2.8 (dev-master). Refer the [CHANGE LOG](https://github.com/kartik-v/bootstrap-fileinput/blob/master/CHANGE.md) for details. 
+> NOTE: The latest version of the plugin v4.1.9 has been released. Refer the [CHANGE LOG](https://github.com/kartik-v/bootstrap-fileinput/blob/master/CHANGE.md) for details. 
 
 ## Features  
 
@@ -75,7 +75,6 @@ built upon HTML5 FormData and XMLHttpRequest Level 2 standards. Most modern brow
 11. Build up initial preview content (e.g. gallery of saved images). You can set initial preview actions (prebuilt support for initial preview delete). Other custom action buttons can be set for initial preview thumbnails as well. 
 12. Ensure plugin is still lean in size and optimized for performance inspite of the above features by optimally utilizing HTML5 & jquery features only.
 13. Automatically refresh preview with content from server as soon as an ajax upload finishes.
-14. Ability to resize images has been added since release v4.2.7. The browser must support HTML5 canvas for resizing images. In addition, this release includes various enhancements for upload management without a preview.
 
 > NOTE: Drag and Drop zone functionality, selectively appending or deleting files, and upload indicator with progress are ONLY AVAILABLE if you use AJAX BASED uploads (by setting `uploadUrl`).
 
@@ -100,11 +99,11 @@ You can use the `bower` package manager to install. Run:
 ### Using Composer
 You can use the `composer` package manager to install. Either run:
 
-    $ php composer.phar require kartik-v/bootstrap-fileinput "@dev"
+    $ php composer.phar require kartik-v/bootstrap-fileinput "dev-master"
 
 or add:
 
-    "kartik-v/bootstrap-fileinput": "@dev"
+    "kartik-v/bootstrap-fileinput": "dev-master"
 
 to your composer.json file
 
@@ -117,24 +116,19 @@ You can also manually install the plugin easily to your project. Just download t
 Step 1: Load the following assets in your header. 
 
 ```html
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 <link href="path/to/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<!-- canvas-to-blob.min.js is only needed if you wish to resize images before upload.
-     This must be loaded before fileinput.min.js -->
-<script src="path/to/js/plugins/canvas-to-blob.min.js" type="text/javascript"></script>
 <script src="path/to/js/fileinput.min.js"></script>
 <!-- bootstrap.js below is only needed if you wish to the feature of viewing details
      of text file preview via modal dialog -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- optionally if you need translation for your language then include 
     locale file as mentioned below -->
 <script src="path/to/js/fileinput_locale_<lang>.js"></script>
 ```
 
 If you noticed, you need to load the `jquery.min.js` and `bootstrap.min.css` in addition to the `fileinput.min.css` and `fileinput.min.js`. The locale file `fileinput_locale_<lang>.js` can be optionally included for translating for your language if needed.
-
-NOTE: The `canvas-to-blob.min.js` file is the source for the [JavaScript-Canvas-to-Blob plugin by blueimp](https://github.com/blueimp/JavaScript-Canvas-to-Blob). It is required to be loaded before `fileinput.js` if you wish to use the image resize feature of the **bootstrap-fileinput** plugin. For ease of access, the plugin source for JavaScript-Canvas-to-Blob is included in the `js/plugins` folder of this project repository.
 
 Step 2: Initialize the plugin on your page. For example,
 
@@ -161,9 +155,6 @@ As shown in the installation section, translations are now enabled with release 
 ## Plugin Options
 The plugin supports these following options:
 
-### language
-_string_ language configuration for the plugin to enable the plugin to display messages for your locale (you must set the ISO code for the language). You can have multiple language widgets on the same page. The locale JS file for the language code must be defined as mentioned in the translations section. The file must be loaded after `fileinput.js`.
-
 ### showCaption
 _boolean_ whether to display the file caption. Defaults to `true`.
 
@@ -178,18 +169,6 @@ _boolean_ whether to display the file upload button. Defaults to `true`. This wi
 
 ### showCancel
 _boolean_ whether to display the file upload cancel button. Defaults to `true`. This will be only enabled and displayed when an AJAX upload is in process.
-
-### showClose
-_boolean_ whether to display the close icon in the preview. Defaults to `true`. This will be only parsed when `showPreview` is true or when you are using the `{close}` tag in your preview templates.
-
-### showUploadedThumbs
-_boolean_ whether to persist display of the uploaded file thumbnails in the preview window (for ajax uploads) until the remove/clear button is pressed. Defaults to `true`.  When set to `false`, a next batch of files selected for upload will clear these thumbnails from preview.
-
-### autoReplace
-_boolean_ whether to automatically replace the files in the preview after the `maxFileCount` limit is reached and a new set of file(s) is/are selected. This will only work if a valid  `maxFileCount` is set. Defaults to `false`.
-
-### buttonLabelClass
-_string_ CSS class to be set for the button labels (i.e. browse, remove, upload, and cancel). Defaults to `hidden-xs`, whereby labels are hidden for small screen devices.
 
 ### captionClass
 _string_ any additional CSS class to append to the caption container.
@@ -250,8 +229,6 @@ _array_, the configuration for setting up important properties for each `initial
     - `width`: _string_, the CSS width of the image/content displayed.
     - `url`: _string_, the URL for deleting the image/content in the initial preview via AJAX post response. This will default to `deleteUrl` if not set.
     - `key`: _string|object_, the key that will be passed as data to the `url` via AJAX POST.
-    - `frameClass`: _string_, the additional frame css class to set for the file's thumbnail frame.
-    - `frameAttr`: _object_, the HTML attribute settings (set as key:value pairs) for the thumbnail frame.
     - `extra`: _object|function_, the extra data that will be passed as data to the initial preview delete url/AJAX server call via POST. This will default to `deleteExtraData` if not set.
 
 An example configuration of `initialPreviewConfig` (for the previously set `initialPreviewContent`) can be:
@@ -276,11 +253,6 @@ initialPreviewConfig: [
         width: '120px', 
         url: '/localhost/avatar/delete', 
         key: 101, 
-        frameClass: 'my-custom-frame-css',
-        frameAttr: {
-            style: 'height:80px',
-            title: 'My Custom Title',
-        },
         extra: function() { 
             return {id: $("#id").val()};
         },
@@ -382,7 +354,7 @@ _object_ the templates configuration for rendering each part of the layout. You 
 - `icon`: the icon to render before the caption text.
 - `caption`: the template for rendering the caption.
 - `modal`: the template for rendering the modal (for text file preview zooming).
-- `progress`: the template for the progress bar when upload is in progress (for batch/mass uploads and within each preview thumbnail for async/single uploads). The upload progress bar when displayed within each thumbnail will be wrapped inside a container having a CSS class of `file-thumb-progress`. The following tags will be parsed and replaced automatically: 
+- `progress`: the template for the progress bar when upload is in progress (for batch/mass uploads). The following tags will be parsed and replaced automatically:
     - `{percent}`: will be replaced with the upload progress percentage.
 - `footer`: the template for the footer section of each file preview thumbnail. The following tags will be parsed and replaced automatically:
     - `{actions}`: will be replaced with the output of the `actions` template.
@@ -403,7 +375,6 @@ _object_ the templates configuration for rendering each part of the layout. You 
 The `main1` and `main2` templates would automatically parse the following tags for replacement:
 
 - `{class}`: the CSS class as set in the `mainClass` property.
-- `{close}`: will be replaced with the close (cross) icon (by default on top right of the preview window). The layout template to control this markup is `layoutTemplates.close`.
 - `{preview}`: the content parsed by the `previewTemplate` and will be displayed only if `showPreview` is `true`.
 - `{caption}`: the content parsed by the `captionTemplate` and will be displayed only if `showCaption` is `true`.
 - `{remove}`: the file remove/clear button and will be displayed only if `showRemove` is `true`.
@@ -436,7 +407,7 @@ The `layoutTemplates` if not set will default to:
         '</div>',
     main2: '{preview}\n<div class="kv-upload-progress hide"></div>\n{remove}\n{cancel}\n{upload}\n{browse}\n',
     preview: '<div class="file-preview {class}">\n' +
-        '    {close}\n' +
+        '    <div class="close fileinput-remove">&times;</div>\n' +
         '    <div class="{dropClass}">\n' +
         '    <div class="file-preview-thumbnails">\n' +
         '    </div>\n' +
@@ -445,21 +416,17 @@ The `layoutTemplates` if not set will default to:
         '    <div class="kv-fileinput-error"></div>\n' +
         '    </div>\n' +
         '</div>',
-    close: '<div class="close fileinput-remove">&times;</div>',
     icon: '<span class="glyphicon glyphicon-file kv-caption-icon"></span>',
     caption: '<div tabindex="-1" class="form-control file-caption {class}">\n' +
         '   <span class="file-caption-ellipsis">&hellip;</span>\n' +
         '   <div class="file-caption-name"></div>\n' +
         '</div>',
-    btnDefault: '<button type="{type}" tabindex="500" title="{title}" class="{css}"{status}>{icon}{label}</button>',
-    btnLink: '<a href="{href}" tabindex="500" title="{title}" class="{css}"{status}>{icon}{label}</a>',
-    btnBrowse: '<div tabindex="500" class="{css}"{status}>{icon}{label}</div>',
     modal: '<div id="{id}" class="modal fade">\n' +
         '  <div class="modal-dialog modal-lg">\n' +
         '    <div class="modal-content">\n' +
         '      <div class="modal-header">\n' +
         '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\n' +
-        '        <h3 class="modal-title">{heading} <small>{title}</small></h3>\n' +
+        '        <h3 class="modal-title">Detailed Preview <small>{title}</small></h3>\n' +
         '      </div>\n' +
         '      <div class="modal-body">\n' +
         '        <textarea class="form-control" style="font-family:Monaco,Consolas,monospace; height: {height}px;" readonly>{body}</textarea>\n' +
@@ -467,9 +434,6 @@ The `layoutTemplates` if not set will default to:
         '    </div>\n' +
         '  </div>\n' +
         '</div>',
-    zoom: '<button type="button" class="btn btn-default btn-sm btn-block" title="{zoomTitle}: {caption}" onclick="{dialog}">\n' +
-        '   {zoomInd}\n' +
-        '</button>\n',
     progress: '<div class="progress">\n' +
         '    <div class="{class}" role="progressbar" aria-valuenow="{percent}" aria-valuemin="0" aria-valuemax="100" style="width:{percent}%;">\n' +
         '        {percent}%\n' +
@@ -477,7 +441,7 @@ The `layoutTemplates` if not set will default to:
         '</div>',
     footer: '<div class="file-thumbnail-footer">\n' +
         '    <div class="file-caption-name" style="width:{width}">{caption}</div>\n' +
-        '    {progress} {actions}\n' +
+        '    {actions}\n' +
         '</div>',
     actions: '<div class="file-actions">\n' +
         '    <div class="file-footer-buttons">\n' +
@@ -514,26 +478,8 @@ The following tags will be parsed and replaced in each of the templates:
 - `{type}`: will be replaced with the file type.
 - `{content}`: this is applicable only for the `generic` template. It will be replaced with the raw HTML markup as set in `initialPreview`. None of 
    the above tags will be parsed for the `generic` template.
-- `{dialog}`: currently applicable only for text file previews. Will be replaced with the JS code to launch the modal dialog.
-- `{zoomTitle}`: currently applicable only for text file previews. This will be replaced with the `msgZoomTitle` property. This is the title that is displayed on hover of the zoom button (which on clicking will display the text file).
-- `{zoomInd}`: currently applicable only for text file previews. This will be replaced with the `zoomIndicator` property. This is the title that is displayed on hover of the zoom button (which on clicking will display the text file).
-- `{heading}`: currently applicable only for text file previews. This represents the modal dialog heading title. This will be replaced with the `msgZoomModalHeading` property. 
 
-The following templates will be used in rendering the main buttons for upload, remove, cancel, and browse.
-
-- `btnDefault`: The template for upload, remove, and cancel buttons
-- `btnLink`: The template for upload button when used with ajax (i.e. when `uploadUrl` is set).
-- `btnBrowse`: The template for the browse button.
-
-The following tags will be parsed and auto replaced in the above button templates:
-
-- `{type}`: the HTML button type, defaults to `button` for most buttons and `submit` for form based uploads
-- `{title}`: the title to display on button hover.
-- `{css}`: the CSS class for the button. This is derived from settings for `uploadClass` or `removeClass` or `cancelClass` or `browseClass`.
-- `{status}`: the disabled status for the button if available (else will be blank).
-- `{icon}`: the button icon as identified by `uploadIcon` or `removeIcon` or `cancelIcon` or `browseIcon`.
-- `{label}`: the button label as identified by `uploadLabel` or `removeLabel` or `cancelLabel` or `browseLabel`.
-- `{href}`: applicable only for Upload button for ajax uploads and will be replaced with the `uploadUrl` property.
+As noted, if you are coming from an earlier release (before v2.4.0), all preview templates have now been combined into one property, instead of separate templates for image, text etc. 
 
 The `previewTemplates` if not set will default to:
 
@@ -544,7 +490,7 @@ The `previewTemplates` if not set will default to:
         '   {footer}\n' +
         '</div>\n',
     html: '<div class="file-preview-frame" id="{previewId}" data-fileindex="{fileindex}">\n' +
-        '    <object class="file-object" data="{data}" type="{type}" width="{width}" height="{height}">\n' +
+        '    <object data="{data}" type="{type}" width="{width}" height="{height}">\n' +
         '       ' + DEFAULT_PREVIEW + '\n' +
         '    </object>\n' + 
         '   {footer}\n' +
@@ -553,13 +499,12 @@ The `previewTemplates` if not set will default to:
         '   <img src="{data}" class="file-preview-image" title="{caption}" alt="{caption}" ' + STYLE_SETTING + '>\n' +
         '   {footer}\n' +
         '</div>\n',
-    text: '<div class="file-preview-frame{frameClass}" id="{previewId}" data-fileindex="{fileindex}">\n' +
-        '   <pre class="file-preview-text" title="{caption}" ' + STYLE_SETTING + '>{data}</pre>\n' +
-        '   <button type="button" class="btn btn-default btn-sm btn-block" title="{zoomText}: {caption}" onclick="{dialog}">\n' +
-        '       {zoomInd}\n' +
-        '   </button>\n' +
+    text: '<div class="file-preview-frame" id="{previewId}" data-fileindex="{fileindex}">\n' +
+        '   <div class="file-preview-text" title="{caption}" ' + STYLE_SETTING + '>\n' +
+        '       {data}\n' + 
+        '   </div>\n' + 
         '   {footer}\n' +
-        '</div>',
+        '</div>\n',
     video: '<div class="file-preview-frame" id="{previewId}" data-fileindex="{fileindex}" title="{caption}" ' + STYLE_SETTING + '>\n' +
         '   <video width="{width}" height="{height}" controls>\n' +
         '       <source src="{data}" type="{type}">\n' +
@@ -575,25 +520,22 @@ The `previewTemplates` if not set will default to:
         '   {footer}\n' +
         '</div>\n',
     flash: '<div class="file-preview-frame" id="{previewId}" data-fileindex="{fileindex}" title="{caption}" ' + STYLE_SETTING + '>\n' +
-        '   <object class="file-object" type="application/x-shockwave-flash" width="{width}" height="{height}" data="{data}">\n' +
+        '   <object type="application/x-shockwave-flash" width="{width}" height="{height}" data="{data}">\n' +
         OBJECT_PARAMS + '       ' + DEFAULT_PREVIEW + '\n' +
         '   </object>\n' + 
         '   {footer}\n' +
         '</div>\n',
     object: '<div class="file-preview-frame" id="{previewId}" data-fileindex="{fileindex}" title="{caption}" ' + STYLE_SETTING + '>\n' +
-        '    <object class="file-object" data="{data}" type="{type}" width="{width}" height="{height}">\n' +
+        '    <object data="{data}" type="{type}" width="{width}" height="{height}">\n' +
         '      <param name="movie" value="{caption}" />\n' +
         OBJECT_PARAMS + '           ' + DEFAULT_PREVIEW + '\n' +
         '   </object>\n' + 
         '   {footer}\n' +
         '</div>',
-    other: '<div class="file-preview-frame{frameClass}" id="{previewId}" data-fileindex="{fileindex}"' +
-        ' title="{caption}" ' + STYLE_SETTING + '>\n' +
-        '   <div class="file-preview-other-frame">\n'+
+    other: '<div class="file-preview-frame{frameClass}" id="{previewId}" data-fileindex="{fileindex}" title="{caption}" ' + STYLE_SETTING + '>\n' +
         '   ' + DEFAULT_PREVIEW + '\n' +
-        '   </div>\n' +
-        '   <div class="file-preview-other-footer">{footer}</div>\n' +
-        '</div>'
+        '   {footer}\n' +
+        '</div>',
 }
 ```
 
@@ -608,14 +550,9 @@ OBJECT_PARAMS = '      <param name="controller" value="true" />\n' +
     '      <param name="autoStart" value="false" />\n'+
     '      <param name="quality" value="high" />\n',
 DEFAULT_PREVIEW = '<div class="file-preview-other">\n' +
-    '   <span class="{previewFileIconClass}">{previewFileIcon}</span>\n' +
-    '</div>'
+    '       <i class="glyphicon glyphicon-file"></i>\n' +
+    '   </div>'
 ```
-
-where:
-
-- `{previewFileIcon}`: corresponds to the [previewFileIcon](#option-previewfileicon) property.
-- `{previewFileIconClass}`: corresponds to the [previewFileIconClass](#option-previewfileiconclass) property.
 
 ### allowedFileTypes
 
@@ -643,7 +580,7 @@ is validated first and generally precedes the `allowedFileExtensions` setting (a
 
 _array_ the list of allowed preview types for your widget. This by default supports all file types for preview. The plugin by default treats each
 file as an object if it does not match any of the previous types. To disable this behavior, you can remove `object` from the list of `allowedPreviewTypes`
-OR fine tune it through `allowedPreviewMimeTypes`. To disable content preview for all file-types and show the `previewIcon` instead as a thumbnail, set this to null, empty, or `false`.
+OR fine tune it through `allowedPreviewMimeTypes`.
 
 This is by default setup as following:
 ```js
@@ -653,10 +590,6 @@ This is by default setup as following:
 ### allowedPreviewMimeTypes
 
 _array_ the list of allowed mime types for preview. This is set to null by default which means all possible mime types are allowed. This setting works in combination with `allowedPreviewTypes` to filter only the needed file types allowed for preview. You can check this [list of allowed mime types](http://www.sitepoint.com/web-foundations/mime-types-complete-list/) to add to this list if needed.
-
-### defaultPreviewContent
-
-_string_ the default content / markup to show by default in the preview window whenever the files are cleared or the input is cleared. This can be useful for use cases like showing the default user profile picture or profile image before upload to overwrite. This is a bit different from `initialPreview` in the sense, that the `initialPreview` content will always be displayed unless it is deleted or overwritten based on `overwriteInitial`. The `defaultPreviewContent` on the other hand will only be shown ONLY on initialization OR whenever you clear the preview. At other times when files have been selected this will be overwritten temporarily until file(s) selected is/are cleared.
 
 ### customLayoutTags
 
@@ -713,7 +646,7 @@ _object_ the format settings (width and height) for rendering each preview file 
 {
     image: {width: "auto", height: "160px"},
     html: {width: "213px", height: "160px"},
-    text: {width: "160px", height: "136px"},
+    text: {width: "160px", height: "160px"},
     video: {width: "213px", height: "160px"},
     audio: {width: "213px", height: "80px"},
     flash: {width: "213px", height: "160px"},
@@ -759,49 +692,7 @@ This is by default setup as following:
 ```
 
 ### previewFileIcon
-_string_ the default icon to be shown in each preview file thumbnail when an unreadable file type for preview is detected. Defaults to `<i class="glyphicon glyphicon-file"></i>`.
-
-### previewFileIconClass
-_string_ the CSS class to be applied to the preview file icon container. Defaults to `file-icon-4x`.
-
-### previewFileIconSettings
-_object_ the preview icon markup settings for each file extension (type). You need to set this as `key: value` pairs, where the `key` corresponds to a file extension (e.g. `doc`, `docx`, `xls` etc.), and the `value` corresponds to the markup of the icon to be rendered. If this is not set OR a file extension is not set here, the preview will default to [previewFileIcon](#option-previewfileicon). Note that displaying the icons instead of file content is controlled via [allowedPreviewTypes](#option-allowedpreviewtypes) and [allowedPreviewMimeTypes](#option-allowedpreviewmimetypes).
-
-You can setup `previewFileIconSettings` as shown below:
-
-```js
-previewFileIconSettings: {
-    'doc': '<i class="fa fa-file-word-o text-primary"></i>',
-    'xls': '<i class="fa fa-file-excel-o text-success"></i>',
-    'ppt': '<i class="fa fa-file-powerpoint-o text-danger"></i>',
-    'jpg': '<i class="fa fa-file-photo-o text-warning"></i>',
-    'pdf': '<i class="fa fa-file-pdf-o text-danger"></i>',
-    'zip': '<i class="fa fa-file-archive-o text-muted"></i>',
-}
-```
-
-### previewFileExtSettings
-_object_ the extensions to be auto derived for each file extension (type). This is useful if you want to set the same icon for multiple file extension types. You need to set this as `key: value` pairs, where the `key` corresponds to a file extension as set in [previewFileIconSettings](#option-previewfileiconsettings) (e.g. `doc`, `docx`, `xls` etc.). The `value` will be a function callback that accepts the following parameter:
-
-- `ext`: _string_, the file extension (without the `.` [dot]) of the file currently selected in the preview 
-
-You can configure the callback to match the set of file extensions (via regex or similar) for each `key` and return a boolean output if the file extension matches. 
-
-For example, you can setup `previewFileExtSettings` as shown below:
-
-```js
-previewFileExtSettings: {
-    'doc': function(ext) {
-        return ext.match(/(doc|docx)$/i);
-    },
-    'xls': function(ext) {
-        return ext.match(/(xls|xlsx)$/i);
-    },
-    'ppt': function(ext) {
-        return ext.match(/(ppt|pptx)$/i);
-    }
-}
-```
+_string_ the icon to be shown in each preview file thumbnail when an unreadable file type for preview is detected. Defaults to `<i class="glyphicon glyphicon-file"></i>`.
 
 ### browseLabel
 _string_ the label to display for the file picker/browse button. Defaults to `Browse &hellip;`.
@@ -861,14 +752,10 @@ _object | function_ the extra data that will be passed as data to the url/AJAX s
  {id: 100, value: '100 Details'}
 ```
 
-As a function callback, the `uploadExtraData` can be setup as shown below. Note that for uploading individual file via thumbnail, the callback can also receive the thumbnail `previewId` and `index` as parameters. These are described below:
-
-- `previewId`: the identifier for the preview file container (only available when uploading each thumbnail file)
-- `index`: the zero-based sequential index of the loaded file in the preview list (only available when uploading each thumbnail file)
+As a function callback, it can be setup for example as:
 
 ```js
-// previewId and index is only available for individual file upload via the thumbnail
-function (previewId, index) {
+function() {
     var obj = {};
     $('.your-form-class').find('input').each(function() {
         var id = $(this).attr('id'), val = $(this).val();
@@ -878,46 +765,6 @@ function (previewId, index) {
 }
 ```
 
-### minImageWidth
-_int_ the minimum allowed image width in `px` if you are uploading image files. Defaults to `null` which means no limit on image width.
-
-### minImageHeight
-_int_ the minimum allowed image height in `px` if you are uploading image files. Defaults to `null` which means no limit on image height.
-
-### maxImageWidth
-_int_ the maximum allowed image width in `px` if you are uploading image files. Defaults to `null` which means no limit on image width. Note that if you set `resizeImage` property to `true`, then the entire image will be resized within this width.
-
-### maxImageHeight
-_int_ the maximum allowed image height in `px` if you are uploading image files. Defaults to `null` which means no limit on image height. Note that if you set `resizeImage` property to `true`, then the entire image will be resized within this height.
-
-### resizeImage
-_bool_ whether to add ability to resize uploaded images. Defaults to `false`. Note that resizing images requires HTML5 canvas support which is supported on most modern browsers. In addition, you must include the [JavaScript-Canvas-to-Blob plugin by blueimp](https://github.com/blueimp/JavaScript-Canvas-to-Blob) by including `canvas-to-blob.js` in your application. This JS file must be loaded before `fileinput.js` on the page. The JavaScript-Canvas-to-Blob source files are available in `js/plugins` folder of bootstrap-fileinput project page. The `canvas-to-blob.js` plugin is a polyfill for `canvas.toBlob` method and is needed for allowing the resized image files via HTML5 canvas to be returned as a blob. 
-
-### resizePreference
-_string_ preference to resize the image based on `width` or `height`. Defaults to `width`. This property is parsed only when `resizeImage` is `true`. If set to `width`, the `maxImageWidth` property is first tested and if image size is greater than this, then the image is resized to `maxImageWidth`. The image `height` is resized and adjusted in the same ratio as `width`. In case, the image width is already less than `maxImageWidth` then the `maxImageHeight` property is used to resize and width is adjusted in same ratio. 
-
-This will behave conversely, when `resizePreference` is set to `height` - the `maxImageHeight` will be first tested against image height and then the rest of steps will be similarly parsed with preference given to `height` instead of `width` as before. For example:
-
-```php
-// Example for resizePreference = 'width'
-// - will resize image width to 200 px if image width is > 200 px
-// - will resize image height to 200 px if image width is < 200 px and
-//   image height is > 200 px
-// if none of the above image will be returned as is
-$('#file-input').fileinput({
-    resizeImage: true,
-    maxImageWidth: 200,
-    maxImageHeight: 200,
-    resizePreference: 'width'
-});
-```
-
-### resizeQuality
-_float_ the quality of the resized image. This must be a decimal number between `0.00` to `1.00`. Defaults to `0.92`.
-
-### resizeDefaultImageType
-_string_ the default image mime type of the converted image after resize. Defaults to `image/jpeg`.
-
 ### maxFileSize
 _float_ the maximum file size for upload in KB.  If set to `0`, it means size allowed is unlimited. Defaults to `0`.
 
@@ -926,15 +773,6 @@ _int_ the minimum number of files allowed for each multiple upload. If set to `0
 
 ### maxFileCount
 _int_ the maximum number of files allowed for each multiple upload. If set to `0`, it means number of files allowed is unlimited. Defaults to `0`.
-
-### validateInitialCount
-_boolean_ whether to include initial preview file count (server uploaded files) in validating `minFileCount` and `maxFileCount`. Defaults to `false`.
-
-### msgZoomTitle
-_string_ the title displayed (before the file name) on hover of the zoom button for zooming the file content in a modal window. This is currently applicable only for text file previews. Defaults to `View details`.
-
-### msgZoomModalHeading
-_string_ the heading of the modal dialog that displays the zoomed file content. This is currently applicable only for text file previews.  This is currently applicable only for text file previews. Defaults to `Detailed Preview`.
 
 ### msgSizeTooLarge
 _string_ the message to be displayed when the file size exceeds maximum size. Defaults to:
@@ -1044,9 +882,6 @@ where:
 - `{name}`: will be replaced by the file name being uploaded
 - `{extensions}`: will be replaced by the comma separated list of extensions defined in `allowedFileExtensions`.
 
-### msgUploadAborted
-_string_ the message to be displayed when an ongoing ajax file upload is aborted by pressing the **Cancel** button. Defaults to `The file upload was aborted`. If this is set to null or empty, the internal ajax error message will be displayed.
-
 ### msgValidationError
 _string_ the exception message to be displayed within the caption container (instead of `msgFilesSelected`), 
 when a validation error is encountered. Defaults to `File Upload Error`.
@@ -1092,67 +927,6 @@ _string_ the message displayed when a folder has been dragged to the drop zone. 
 
 - `{n}`: the number of folders dropped.
 
-### msgImageWidthSmall
-_string_ the exception message to be displayed when the file selected for preview is an image and its width is less than the `minImageWidth` setting. Defaults to:
-
-```
-Width of image file "{name}" must be at least {size} px.
-```
-where:
-
-- `{name}`: will be replaced by the file name being uploaded
-- `{size}`: will be replaced by the `minImageWidth` setting.
-
-### msgImageHeightSmall
-_string_ the exception message to be displayed when the file selected for preview is an image and its height is less than the `minImageHeight` setting. Defaults to:
-
-```
-Width of image file "{name}" must be at least {size} px.
-```
-where:
-
-- `{name}`: will be replaced by the file name being uploaded
-- `{size}`: will be replaced by the `minImageHeight` setting.
-
-### msgImageWidthLarge
-_string_ the exception message to be displayed when the file selected for preview is an image and its width exceeds the `maxImageWidth` setting. Defaults to:
-
-```
-Width of image file "{name}" cannot exceed {size} px.
-```
-where:
-
-- `{name}`: will be replaced by the file name being uploaded
-- `{size}`: will be replaced by the `maxImageWidth` setting.
-
-### msgImageHeightLarge
-_string_ the exception message to be displayed when the file selected for preview is an image and its height exceeds the `maxImageHeight` setting. Defaults to:
-
-```
-Height of image file "{name}" cannot exceed {size} px.
-```
-where:
-
-- `{name}`: will be replaced by the file name being uploaded
-- `{size}`: will be replaced by the `maxImageHeight` setting.
-
-### msgImageResizeError
-_string_ the error message to be displayed when a resize validation error occurs due to invalid image dimensions. Defaults to:
-
-```
-Could not get the image dimensions to resize.
-```
-
-### msgImageResizeException
-_string_ the exception message to be displayed when any javascript exception is thrown during resizing of the image. Defaults to:
-
-```
-Error while resizing the image.<pre>{errors}</pre>.
-```
-where:
-
-- `{errors}`: will be replaced with the exception error message.
-
 ### progressClass
 _string_ the upload progress bar CSS class to be applied when AJAX upload is in process (applicable only for ajax uploads). Defaults to `progress-bar progress-bar-success progress-bar-striped active`. 
 
@@ -1168,15 +942,13 @@ _string_ the type of files that are to be displayed in the preview window. Defau
 
 Files other than `image` or `text` will be displayed as a thumbnail with the filename in the preview window.
 
-### zoomIndicator
-_string_ the icon for zooming the file content in a new modal dialog.  This is currently applicable only for text file previews. Defaults to `<i class="glyphicon glyphicon-zoom-in"></i>`.  The following variables will be replaced:
+### wrapTextLength
+_integer_ the number of characters after which the content will be stripped/wrapped for text preview. Defaults to `250`.
 
-### errorCloseButton
-_string_ the markup for the button to close the error container block. Note this button indicator must include the CSS class `kv-error-close`. If not set, this defaults to:
+### wrapIndicator
+_string_ the type of files that are to be displayed in the preview window. Defaults to ` <span class="wrap-indicator" title="{title}">[&hellip;]</span>`.  The following variables will be replaced:
 
-```html
-<span class="close kv-error-close">&times;</span>
-```
+- `{title}`: the content of the entire text file that will be displayed as a span title element.
 
 ### elErrorContainer
 _string_ the identifier for the container element displaying the error (e.g. `'#id'`). If not set, will default to the container with CSS class `kv-fileinput-error` inside the preview container (identified by `elPreviewContainer`). The `msgErrorClass` will be automatically appended to this container before displaying the error.
@@ -1271,8 +1043,7 @@ _object_ additional ajax settings to pass to the plugin before submitting the de
 _boolean_ whether to show details of the error stack from the server log when an error is encountered via ajax response. Defaults to `true`.
 
 ## Plugin Events
-
-The plugin supports the following events. 
+The plugin supports these events:
 
 ### File Events
 
@@ -1333,40 +1104,6 @@ $('#input-id').on('fileimageloaded', function(event, previewId) {
     console.log("fileimageloaded");
 });
 ```
-
-#### fileimagesloaded
-This event is triggered when all file images are fully loaded in the preview window. This is only applicable for image file previews and if `showPreview` is set to true. 
-
-**Example:**
-```js
-$('#input-id').on('fileimagesloaded', function(event) {
-    console.log("fileimagesloaded");
-});
-```
-
-#### fileimageresized
-This event is triggered when a file image in preview window is resized based on the `resizeImage` and `maxImageWidth`/`maxImageHeight` settings. This is only applicable for image file previews and if `showPreview` is set to true. Additional parameters available are: 
-
-- `previewId`: the identifier for the preview file container
-- `index`: the zero-based sequential index of the loaded file in the preview list
-
-**Example:**
-```js
-$('#input-id').on('fileimageresized', function(event, previewId, index) {
-    console.log("fileimageresized");
-});
-```
-
-#### fileimagesresized
-This event is triggered when all file images in preview window are resized based on the `resizeImage` and `maxImageWidth`/`maxImageHeight` settings. This is only applicable for image file previews and if `showPreview` is set to true. 
-
-**Example:**
-```js
-$('#input-id').on('fileimagesresized', function(event) {
-    console.log("fileimagesresized");
-});
-```
-
 #### filebrowse
 This event is triggered when the file browse button is clicked to open the file selection dialog.
 
@@ -1425,34 +1162,6 @@ $('#input-id').on('fileunlock', function(event, filestack, extraData) {
 });
 ```
 
-#### filepreremove
-This event is triggered before removal of each thumbnail file in ajax upload mode. This is different than `filepredelete` in the sense, that this is NOT applicable for thumbnails set via `initialPreview`. The additional parameters available with this event are:
-
-- `previewId`: the identifier of the preview thumbnail container.
-- `index`: the zero-based index of the file in the preview container.
-
->Note: You can call `event.preventDefault()` or `return false;` to abort the removal process.
-
-```js
-$('#input-id').on('filepreremove', function(event, id, index) {
-    if (!window.confirm('Do you wish to remove?')) {
-        event.preventDefault();
-    }
-});
-```
-
-#### fileremoved
-This event is triggered after removal of each thumbnail file in ajax upload mode. This is different than `filedeleted` in the sense, that this is NOT applicable for thumbnails set via `initialPreview`. The additional parameters available with this event are:
-
-- `previewId`: the identifier of the preview thumbnail container.
-- `index`: the zero-based index of the file in the preview container.
-
-```js
-$('#input-id').on('fileremoved', function(event, id, index) {
-    console.log('fileremoved id = ' + id);
-});
-```
-
 #### filepredelete
 This event is triggered before deletion of each thumbnail file in the `initialPreview` content set. Additional parameters available are: 
 
@@ -1486,20 +1195,8 @@ $('#input-id').on('fileunlock', function(event, filestack) {
 });
 ```
 
-#### filepreajax
-This event is triggered before submission of the upload ajax request. You could use this event to manipulate the `uploadExtraData` before its submitted via ajax. The following additional parameters are also available specifically and only if the upload is triggered via each thumbnail upload button.
-
-- `previewId`: the identifier of the preview thumbnail container.
-- `index`: the zero-based index of the file in the preview container.
-
-```js
-$('#input-id').on('filepreajax', function(event, previewId, index) {
-    console.log('File pre ajax triggered');
-});
-```
-
 #### filepreupload
-This event is triggered before upload of each thumbnail file. This event is triggered after `filepreajax` and within the ajax `beforeSend`. Additional parameters available are: 
+This event is triggered before upload of each thumbnail file. Additional parameters available are: 
 
 - `data`: This is a data object (associative array) that sends the following information, whose keys are:
     - `form`: the FormData object which is passed via XHR2 (or empty object if not available).
@@ -1592,22 +1289,6 @@ $('#input-id').on('filebatchuploadcomplete', function(event, files, extra) {
 });
 ```
 
-#### filesuccessremove
-This event is triggered after a successfully uploaded thumbnail is removed using the thumbnail delete button. This is usually applicable when you have **showUploadedThumbs** set to `true`. Additional parameters available are: 
-
-- `id`: the HTML ID attribute for the thumbnail container element.
-
-The event can return `false` to abort the thumbnail removal.
-
-```js
-$('#input-id').on('filesuccessremove', function(event, id) {
-    if (some_processing_function(id)) {
-       console.log('Uploaded thumbnail successfully removed');
-    } else {
-        return false; // abort the thumbnail removal
-    }
-});
-```
 #### filedisabled
 This event is triggered when the file input widget is disabled (prevents any modification) using the `disable` method.
 
@@ -1649,19 +1330,6 @@ $('#input-id').on('fileerror', function(event, data) {
 });
 ```
 
-#### fileimageresizeerror
-This event is triggered when an error or exception is received while resizing images (see `resizeImage` property). Additional parameters available are: 
-
-- `data`: This is a data object (associative array) that sends the following information, whose keys are:
-    - `id`: the preview thumbnail identifier (or undefined if not available)
-    - `index`: the file index/preview thumbnail index (or undefined if not available).
-
-```js
-$('#input-id').on('fileimageresizeerror', function(event, data) {
-    console.log('Image resize error');
-});
-```
-
 #### fileuploaderror
 This event is triggered when an upload or file input validation error is encountered primarily for ajax uploads (through the upload icon for each thumbnail or for every file uploaded when uploadAsync is `true`). Additional parameters available are: 
 
@@ -1676,7 +1344,7 @@ This event is triggered when an upload or file input validation error is encount
     - `jqXHR`: the `jQuery XMLHttpRequest` object used for this transaction (if available).
 
 ```js
-$('#input-id').on('fileuploaderror', function(event, data) {
+$('#input-id').on('fileuploaderror', function(event, data, previewId, index) {
     var form = data.form, files = data.files, extra = data.extra, 
         response = data.response, reader = data.reader;
     console.log('File upload error');
@@ -1795,7 +1463,6 @@ The above abort will be triggered at time of upload for (ajax uploads) OR at for
 ```js
 $('#input').on('filecustomerror', function(event, params) {
    // params.abortData will contain the additional abort data passed
-   // params.abortMessage will contain the aborted error message passed
 });
 ```
 
@@ -1832,12 +1499,6 @@ $('#input-id').fileinput('enable');
 Reset the file input.
 ```js
 $('#input-id').fileinput('reset');
-```
-
-### destroy
-Destroys the file input.
-```js
-$('#input-id').fileinput('destroy');
 ```
 
 ### refresh
