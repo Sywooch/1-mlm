@@ -1343,7 +1343,8 @@ class SiteController extends Controller
                 $mes->uid4 = $usr['id'];
                 $mes->uid2 = $toid;
                 $mes->msg = \Yii::$app->request->get("text");
-                $mes->save();
+                $mes->status=1;
+                $mes->save(false);
 
                 $listmsg=\yii::$app->db->createCommand('SELECT *
                                                        FROM msgs
