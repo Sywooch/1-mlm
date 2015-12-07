@@ -118,10 +118,18 @@ class SiteController extends Controller
             $consultant = Users::find()
                 ->where(['refdt' => $conRef])->one();
 
-            return $this->render('index', [
-                'model' => $model->one(),
-                'consultant' => $consultant
-            ]);
+            if ( 1==$model->one()["status"] )
+            {
+                    return $this->redirect("index.php?r=site%2Fcompany");
+            }
+            else
+            {
+                    return $this->render('index', [
+                    'model' => $model->one(),
+                    'consultant' => $consultant
+                ]);
+            }
+
         }else{
             $this->layout = "empty";
             return $this->render("first");

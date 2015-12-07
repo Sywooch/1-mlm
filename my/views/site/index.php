@@ -40,7 +40,6 @@ $this->registerJsFile("/mertonic/pages/scripts/form-wizard.js"/*, ['depends' => 
 $this->registerJsFile('//www.youtube.com/player_api');
 $this->title = '1-mlm';
 ?>
-
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="row">
     <div class="col-md-12">
