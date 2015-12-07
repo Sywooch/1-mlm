@@ -231,11 +231,11 @@ switch($identity["service"])
         </li>-->
     </ul>
 </div>
-<div class="page-quick-sidebar-item" class="display: none;">
+<div class="page-quick-sidebar-item" style="display: none;">
     <div class="page-quick-sidebar-chat-user">
         <div class="page-quick-sidebar-nav">
-            <a href="javascript:;" class="page-quick-sidebar-back-to-list" onclick="$('.page-quick-sidebar-chat-users').css('display', 'inline'); $('#send_id').val(''); ">
-                <i class="icon-arrow-left"></i>Back</a>
+            <a href="javascript:;" class="page-quick-sidebar-back-to-list" onclick="$('#chart').css('display', 'inline'); $('.page-quick-sidebar-item').css('display', 'none'); $('#send_id').val(''); ">
+                <i class="icon-arrow-left"></i>Назад</a>
         </div>
         <div class="page-quick-sidebar-chat-user-messages" style="height: 440px !important; overflow-y: scroll;">
             <!--<div class="post out">
@@ -322,7 +322,7 @@ switch($identity["service"])
         </div>
         <div class="page-quick-sidebar-chat-user-form">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type a message here..." id="m_text">
+                <input type="text" class="form-control" placeholder="Введите сообщение..." id="m_text">
                 <input type="hidden" id="send_id" value="">
                 <div class="input-group-btn">
                     <button type="button" class="btn green" onclick="sendMessage(); return false;">
