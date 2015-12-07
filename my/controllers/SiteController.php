@@ -244,14 +244,15 @@ class SiteController extends Controller
                             'u.mobile AS mobile',
                             'u.skype AS skype',
                             'u.email AS email',
-                            'u.vkontakte AS vkontakte'
+                            'u.vkontakte AS vkontakte',
+							'u.active AS active'
                         ])
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
                             ->where(['u.id'=>$arr]),
                             //->orderBy(['regdate' => SORT_DESC]),
                         'sort' => [
-                            'attributes' => ['fn', 'ln'],
+                            'attributes' => ['active', 'fn', 'ln'],
                         ],
                         'pagination' => [
                             'pageSize' => 10,

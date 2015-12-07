@@ -157,6 +157,11 @@ $this->title = 'profile';
                                 return "<div class='{$dt["status"]}'></div>";
                             }
                         ],
+						[
+                            'attribute' =>  'active',
+                            'label'     =>  'Вход',
+                            'options' => ['style' => 'width: 220px; max-width: 220px;']
+                        ],
                         [
                             'attribute' =>  'fn',
                             'label'     =>  'Имя',
