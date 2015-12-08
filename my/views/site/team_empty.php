@@ -2,4 +2,4 @@
 $this->title = 'team';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-your team is empty
+” вас пока еще нет кандидатов в команде
