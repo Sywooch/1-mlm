@@ -520,7 +520,13 @@ class SiteController extends Controller
 
     public function actionRef()
     {
-        if( !empty(\Yii::$app->request->get("refid")) )
+        $this->raddref();
+        return $this->goHome();
+    }
+	
+	private function raddref()
+	{
+		if( !empty(\Yii::$app->request->get("refid")) )
         {
             $refdt=\Yii::$app->request->get("refid");
             $usrDt=Users::find()
@@ -530,8 +536,7 @@ class SiteController extends Controller
                 Yii::$app->session->set('refuserId', $refdt);
             }
         }
-        return $this->goHome();
-    }
+	}
 
     public function actionCalendar()
     {
@@ -1107,6 +1112,7 @@ class SiteController extends Controller
         if(\Yii::$app->user->isGuest)
             {return $this->redirect($this->siteUrl);}
         */
+		$this->raddref();
         $serviceName = \Yii::$app->getRequest()->getQueryParam('service');
         if (isset($serviceName)) {
             /** @var $eauth \nodge\eauth\ServiceBase */

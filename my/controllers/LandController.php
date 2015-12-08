@@ -20,7 +20,7 @@ class LandController extends Controller
         $lp->clicks=++$lp->clicks;
         $lp->update(false);
 
-        if( $data["id"]>401 )
+        if( $data["id"]>501 )
         {
             $usr = Users::find()->where(['id' => $data["uid"]])->one();
         }
