@@ -7,6 +7,8 @@ use yii\grid\GridView;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
+        'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
+        'emptyText' => 'Еще нет кандидатов в команде',
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [

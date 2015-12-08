@@ -127,6 +127,8 @@ $this->title = 'profile';
                 <?php echo GridView::widget([
                     'dataProvider'  => $dataProvider,
                     //'filterModel' => $searchModel,
+                    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
+                    'emptyText' => 'Еще нет кандидатов в команде',
                     'tableOptions'  =>  [
                         'class'     =>  'table table-striped table-bordered table-hover',
                         'id' => 'sample_1'
