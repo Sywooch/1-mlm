@@ -90,7 +90,7 @@ switch($identity["service"])
             }
         });
     }
-
+/*
     var timerId = setTimeout(function tick() {
         if ($('#send_id').val() != '') {
             $.ajax({
@@ -106,6 +106,8 @@ switch($identity["service"])
         lum();
         timerId = setTimeout(tick, 20000);
     }, 20000);
+
+    */
 </script>
 <style>
     .ms {

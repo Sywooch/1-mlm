@@ -191,7 +191,7 @@ $this->title = '1-mlm';
                                 </div>
                                 <div class="tab-pane" id="tab3">
                                     <div class="form-group">
-                                    Выберите компанию
+                                        Или создайте свою собственную уникальную страницу для своих целей по готовому шаблону за пару минут.
                                     <!--
                                         <label class="control-label col-md-3">Выбрать компанию
                                             <span class="required"> * </span>
