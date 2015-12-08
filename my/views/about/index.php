@@ -44,7 +44,7 @@ $exportConfig=
     ];
 $gridColumns=
     [
-        //['class' => 'yii\grid\SerialColumn'],
+        ['class' => 'yii\grid\SerialColumn'],
         [
             'class' => 'kartik\grid\ExpandRowColumn',
             'value' => function ($model, $key, $index, $column) {

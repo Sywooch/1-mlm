@@ -26,7 +26,8 @@ switch($identity["service"])
         $usrDt = Users::find()->select('fn,ln,userpic')->where(['mailru'=>$identity["id"]])->one();
         break;
 }
-$this->registerJsFile('/mertonic/global/scripts/app.js');
+
+$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 
 $js =<<<'SCRIPT'
 $(document).ready(function() {
@@ -148,6 +149,46 @@ $this->title = 'profile';
                                 }
                             ],
                         */
+                        [
+                            'class' => 'kartik\grid\ExpandRowColumn',
+                            'value' => function ($model, $key, $index, $column) {
+                                return GridView::ROW_COLLAPSED;
+                            },
+                            'detail' => function ($model, $key, $index, $column) {
+
+                                $array=(new \yii\db\Query())->select('u.id AS id')
+                                    ->from([Users::tableName().' u'])
+                                    ->where(['u.ref'=>$model["refdt"]])->all();
+                                $arr=array();
+                                for($i=0;$i<sizeof($array);$i++){
+                                    $arr[]=$array[$i]["id"];
+                                }
+                                $dataProvider= new ActiveDataProvider([
+                                    'query' =>
+                                        (new \yii\db\Query())->select
+                                        ([
+                                            "IF (`active`<DATE_SUB(NOW(), INTERVAL 10 DAY),'yellow', 'green') AS `status`",
+                                            'u.fn AS fn',
+                                            'u.ln AS ln',
+                                            'l.title AS title',
+                                            'u.userpic AS userpic',
+                                            'u.country AS country',
+                                            'u.mobile AS mobile',
+                                            'u.skype AS skype',
+                                            'u.email AS email',
+                                            'u.vkontakte AS vkontakte',
+                                            'u.active AS active'
+                                        ])
+                                            ->from([Users::tableName().' u'])
+                                            ->innerJoin(\app\models\Levels::tableName().' l','l.id = u.level')
+                                            ->where(['u.id'=>$arr])
+                                ]);
+                                return Yii::$app->controller->renderPartial('_team_items', [
+                                    //'searchModel' => $searchModel,
+                                    'dataProvider' => $dataProvider,
+                                ]);
+                            },
+                        ],
                         [
                             'header' => 'Статус',
                             'format' => 'raw',

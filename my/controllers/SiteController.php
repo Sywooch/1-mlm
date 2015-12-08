@@ -197,7 +197,7 @@ class SiteController extends Controller
     }
 
     public function actionTeam()
-    {
+    {       // $this->layout = "main2";
         if ( !\Yii::$app->user->isGuest ){
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
@@ -253,7 +253,8 @@ class SiteController extends Controller
                             'u.skype AS skype',
                             'u.email AS email',
                             'u.vkontakte AS vkontakte',
-							'u.active AS active'
+							'u.active AS active',
+                            'u.refdt AS refdt'
                         ])
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
