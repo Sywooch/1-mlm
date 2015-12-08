@@ -16,10 +16,15 @@
  * >>>http://nix-tips.ru/yii2-eksport-v-excel-pdf-csv-i-drugie-formaty.html
  */
 use kartik\grid\GridView;
+use yii\helpers\Html;
+use app\models\Lp;
+use yii\data\ActiveDataProvider;
 
+$heading="table users";
 $exportConfig=
     [
-        GridView::TEXT => [
+        GridView::TEXT =>
+        [
             'label' => "export",
             'iconOptions' => ['class' => 'text-muted'],
             'showHeader' => true,
@@ -30,65 +35,83 @@ $exportConfig=
             'alertMsg' => "The TEXT export file will be generated for download.",
             'options' => ['title' => "Tab Delimited Text"],
             'mime' => 'text/plain',
-            'config' => [
+            'config' =>
+            [
                 'colDelimiter' => "\t",
                 'rowDelimiter' => "\r\n",
             ]
         ],
     ];
+$gridColumns=
+    [
+        //['class' => 'yii\grid\SerialColumn'],
+        [
+            'class' => 'kartik\grid\ExpandRowColumn',
+            'value' => function ($model, $key, $index, $column) {
+                return GridView::ROW_COLLAPSED;
+            },
+            'detail' => function ($model, $key, $index, $column) {
+
+                $dataProvider=(new ActiveDataProvider([
+                    'query'=>Lp::find()->where(['uid'=>3])
+                ]));
+
+                return Yii::$app->controller->renderPartial('_poitems', [
+                    //'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            },
+        ],
+
+        [
+            'attribute' =>  'ln',
+            'label'=>"surname"
+        ],
+        [
+            'attribute' =>  'level',
+            'label'=>"level",
+            'value'=>function($model){
+                return $model->levels[title];
+            }
+        ],
+        [
+            'header'=>"status",
+            'value'=>function($model){
+                return $model->levels[title];
+            }
+        ]
+    ];
 
 echo GridView::widget([
-    'dataProvider'  =>$dataProvider,
-    'filterModel'=>$searchModel,
-
-    /*'tableOptions'  =>  [
-        'class'     =>  'table table-striped table-bordered table-hover',
-        'id' => 'sample_1'
+    'dataProvider'    =>$dataProvider,
+    //filterModel'     =>$searchModel,
+    'columns'         =>$gridColumns,
+    'containerOptions'=>['style'=>'overflow: auto'], // only set when $responsive = false
+    'headerRowOptions'=>['class'=>'kartik-sheet-style'],
+    'filterRowOptions'=>['class'=>'kartik-sheet-style'],
+    'pjax'=>true,
+    'toolbar'=>
+    [
+        [
+            'content'=>
+            Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''], ['data-pjax'=>0, 'class'=>'btn btn-default',
+                'title'=>'Reset Grid'])
+        ],
+        '{export}',
+        '{toggleData}',
     ],
-    'rowOptions'   =>  [
-        'style'    =>  'text-align: center; background-color:'
-    ],
-    'headerRowOptions'   =>  [
-        'class'     =>  'tbl-header'
-    ],
-    'responsive'    =>  true,*/
-
-    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
-    'autoXlFormat'=>true,
-    'export'=>[
+    'export'=>
+    [
         'fontAwesome'=>true,
         'showConfirmAlert'=>false,
         'target'=>GridView::TARGET_BLANK
     ],
-    'columns'   =>
-        [
-            ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute' =>  'ln',
-                'label'=>"surname"
-            ],
-            [
-                'attribute' =>  'level',
-                'label'=>"level",
-                //'header'=>"level",
-                'value'=>function($model){
-                    return $model->levels[title];
-                }
-            ],
-            [
-                //'attribute' =>  'level',
-                //'label'=>"level",
-                'header'=>"status",
-                'value'=>function($model){
-                    return $model->levels[title];
-                }
-            ]
-        ],
-    'pjax'=>true,
-    'panel'=>[
-        'type'=>'primary',
-        'heading'=>'USERS table'
+    'panel'=>
+    [
+        'type'=>GridView::TYPE_PRIMARY,
+        'heading'=>$heading,
     ],
+    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
     'persistResize'=>true,
     'exportConfig'=>$exportConfig,
 ]);
