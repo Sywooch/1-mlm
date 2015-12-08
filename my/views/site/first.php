@@ -275,7 +275,7 @@ $this->registerCss($style_user);
             <div class="col-md-12">
                 <!--<h1>1-й млм ресурс</h1>-->
                 <h1><span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)<span class="currency">beta</span></span></h1>
-                <h2>Автоматизация бизнеса на 80% !!!</h2>
+                <h2>Автоматизация Рекрутинга на 80%</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
                                         data-target="#modal-1">попробуйте бесплатно</a>
@@ -360,7 +360,11 @@ $this->registerCss($style_user);
             <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-1.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5 col-md-pull-7">
                 <article>
-                    <h2>Идея 1 mlm</h2>
+                    <h1>Идея 1 mlm</h1>
+
+
+                    <p>Предоставить Вам профессиональную маркетинговую систему для маштабного развития и автоматизации
+                        сетевого и партнёрского бизнеса.</p>
                     <p> Все интернет предприниматели  сталкиваются с трудностью -
                         <strong>СОЗДАНИЕ КОММАНДНОЙ РАБОТЫ</strong></p> <p>Для этого необходимо использовать целый
                         ряд ресурсов (сайтов) которые нужно еще и  правильно синхронизировать между собой. </p>
@@ -385,7 +389,7 @@ $this->registerCss($style_user);
             <div class="col-md-7 text-center"> <img src="s/img/feature-2.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5">
                 <article>
-                    <h2>Как работает система???</h2>
+                    <h1>Как работает система???</h1>
                     <p>Aвтоматизация Вашего бизнеса благодаря системе  происходит в три этапа:</p>
                     <ul>
                         <li>Создание страницы</li>
@@ -406,7 +410,7 @@ $this->registerCss($style_user);
             <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-3.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5 col-md-pull-7">
                 <article>
-                    <h2>Кому подходит  1 mlm?</h2>
+                    <h1>Кому подходит  1 mlm?</h1>
                     <p>Существует миф о автоматизации млм бизнеса.<br>
                         Всем хочется строить бизнес на автмате!<br>
                         В реальности  100% автоматизации - НЕТ!<br>
@@ -560,7 +564,7 @@ $this->registerCss($style_user);
                         <div class="price"> <b><strike>2$</strike></b> <span class="price-amount">0</span><span class="currency">$</span><span class="period"></span> </div>
                         <ul class="plan-features">
                             <li align="left"><i class="fa fa-bullseye"></i> Страница - 1 </li>
-                            <li align="left"><i class="fa fa-university"></i> Компания - <span>1</span></li>
+                            <li align="left"><i class="fa fa-university"></i> Компания - 1 </li>
                             <li align="left"><i class="fa fa-graduation-cap"></i> Мастер Класс - 0</li>
                             <li align="left"><i class="fa fa-usd "></i> Партнерка - нет</li>
                         </ul>
@@ -586,7 +590,7 @@ $this->registerCss($style_user);
                         </ul>
                     </div>
                     <div class="buy-button"> <!--<a class="btn" href="#">выбрать</a>-->
-                        <p>Подойдет настоящим Лидерам</p>
+                        <p>Подойдет для 2-3 компаний</p>
                     </div>
                 </div>
                 <!--PRICE TABLE END-->
@@ -606,7 +610,7 @@ $this->registerCss($style_user);
                         </ul>
                     </div>
                     <div class="buy-button">  <!--<a class="btn" href="#">выбрать</a>-->
-                        <p>Идеальное решение для новичков</p>
+                        <p>Подойдет настоящим Лидерам</p>
                     </div>
                 </div>
                 <!--PRICE TABLE END-->
@@ -626,11 +630,11 @@ $this->registerCss($style_user);
                         </ul>
                     </div>
                     <div class="buy-button"> <!--<a class="btn" href="#">выбрать</a>-->
-                        <p>Подойдет настоящим Лидерам</p>
+                        <p>Отличное решение для профи в млм</p>
                     </div>
                 </div>
                 <!--PRICE TABLE END-->
-                <p style="color: #ffffff; font-size: 18px;"> Внимание !!! Все тарифы снижены до 31.12.2015</p>
+                <p style="color: #ffffff; font-size: 18px;"> Внимание !!! Все тарифы снижены до 31.12.2016</p>
             </div>
         </div>
     </div>
@@ -698,7 +702,7 @@ $this->registerCss($style_user);
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <p class="footer-links"><a href="">...</a></p>
+                <!-- Yandex.Metrika informer --><a href="https://metrika.yandex.ru/stat/?id=33980350&amp;from=informer"target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/33980350/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:33980350,lang:'ru'});return false}catch(e){}" /></a><!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter33980350 = new Ya.Metrika({ id:33980350, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ecommerce:"dataLayer" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/33980350" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
             </div>
             <div class="col-md-4"> <small>&copy; 2015 1 mlm. Все для вашего бизнеса.</small></div>
             <div class="col-md-4">
@@ -706,16 +710,18 @@ $this->registerCss($style_user);
                 <!--social-->
 
                 <ul class="social">
-                    <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://twitter.com/1mlmcom/" target="_blank"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                    <li><a href="https://vk.com/1mlmresource" target="_blank"><i class="fa fa-vk"></i></a></li>
+
+                    <li><a href="https://www.youtube.com/channel/UC4Q97tIPa3_xn3uUdjybPQw/" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
                 </ul>
 
                 <!--social end-->
 
             </div>
             <div class="col-md-12">
-                <p class="footer-links"><span style="color: #05549e; font-size: 12px;"><a href="index.php?r=site%2Fpolitika">политика конфиденциальности</a> <a href="index.php?r=site%2Fotkaz">отказ от ответственности</a></span></p>
+                <p class="footer-links"><span style="color: #05549e; font-size: 12px;"><a href="https://1-mlm.com/politika.html"  target="_blank">политика конфиденциальности</a> <a href="https://1-mlm.com/otkaz.html"  target="_blank">отказ от ответственности</a></span></p>
 
             </div>
         </div>
