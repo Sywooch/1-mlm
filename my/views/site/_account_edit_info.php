@@ -42,7 +42,7 @@ $form = ActiveForm::begin([
                                         </div>
 
                                     </div>"]
-        )->textInput(["placeholder"=>"example@gmail.com","class"=>"form-control"]); ?>
+        )->textInput(["placeholder"=>"","class"=>"form-control"]); ?>
     </div>
     <div class="form-group form-md-line-input">
         <?=$form->field(
@@ -51,11 +51,11 @@ $form = ActiveForm::begin([
                                             <div class=\"input-icon\">
                                                 <i class=\"icon-screen-smartphone \"></i>\n{input}\n{hint}\n{error}
                                                 <div class=\"form-control-focus\"></div>
-                                                <span class=\"help-block\">Введите ваш номер мобильного телефона</span>
+                                                <span class=\"help-block\">Введите номер телефона в формате: + .....</span>
                                             </div>
 
                                         </div>"]
-        )->textInput(['placeholder' => '+99(99)9999-9999', "class"=>"form-control"]); ?>
+        )->textInput(['placeholder' => '', "class"=>"form-control"]); ?>
     </div>
     <div class="form-group form-md-line-input">
         <?=$form->field(

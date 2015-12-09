@@ -11,24 +11,17 @@ $this->title = 'Выбор тарифа';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!-- BEGIN PAGE BASE CONTENT -->
-<!--
-<div class="m-heading-1 border-green m-bordered">
-    <h3 class="font-green">Тарифы уровня доступа</h3>
-</div>
--->
-
 <div class="portlet light portlet-fit bordered">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-cogs font-blue"></i>
-            <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
+            <i class="fa fa-cogs font-green-sharp"></i>
+            <span class="caption-subject font-green-sharp uppercase"><?= $this->title; ?></span>
         </div>
         <div align="right">
             <!---------------------------------------------------------->
             <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
                 <i class="icon-support"></i></a>
             <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
-            <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>-->
             <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                 <div class="modal-dialog ">
                     <div class="modal-content">
@@ -48,9 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <!------------------------------------------------------------>
         </div>
     </div>
-    <div><p align="center">
-            Ваш  текущий тарифный план - (мастер)<br />
-            <span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2015</p></div>
+    <div><p align="center" style="font-size: 18px;">
+            Ваш  текущий тарифный план - ... <br /></p></div>
     <div class="portlet-body">
         <div class="pricing-content-1">
             <div class="row">
@@ -68,27 +60,33 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="price-table-content">
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-user"></i>
+                                    <i class="icon-rocket"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Страница - 1 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-drawer"></i>
+                                    <i class="icon-briefcase"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Компания - 1 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-screen-smartphone"></i>
+                                    <i class="icon-magnet"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Мастер Класс - 0 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-refresh"></i>
+                                    <i class="icon-close"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Партнерка - нет </div>
+                            </div>
+                            <div class="row mobile-padding">
+                                <div class="col-xs-3 text-right mobile-padding">
+                                    <i class="icon-close"></i>
+                                </div>
+                                <div class="col-xs-9 text-left mobile-padding"> Поддержка - нет </div>
                             </div>
                         </div>
                         <div class="arrow-down arrow-grey"></div>
@@ -111,27 +109,33 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="price-table-content">
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-user"></i>
+                                    <i class="icon-rocket"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Страниц - 3 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-drawer"></i>
+                                    <i class="icon-briefcase"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Компания - 3 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-screen-smartphone"></i>
+                                    <i class="icon-magnet"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Мастер Класс - да </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-refresh"></i>
+                                    <i class="icon-wallet"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Партнерка - да </div>
+                            </div>
+                            <div class="row mobile-padding">
+                                <div class="col-xs-3 text-right mobile-padding">
+                                    <i class="icon-envelope-letter"></i>
+                                </div>
+                                <div class="col-xs-9 text-left mobile-padding"> Поддержка - e-mail </div>
                             </div>
                         </div>
                         <div class="arrow-down arrow-grey"></div>
@@ -155,27 +159,33 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="price-table-content">
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-user-follow"></i>
+                                    <i class="icon-rocket"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Страниц - 10 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-drawer"></i>
+                                    <i class="icon-briefcase"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Компания - 10 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-cloud-download"></i>
+                                    <i class="icon-magnet"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Мастер Класс - да </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-refresh"></i>
+                                    <i class="icon-wallet"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Партнерка - да </div>
+                            </div>
+                            <div class="row mobile-padding">
+                                <div class="col-xs-3 text-right mobile-padding">
+                                    <i class="icon-earphones-alt"></i>
+                                </div>
+                                <div class="col-xs-9 text-left mobile-padding"> Поддержка - skype </div>
                             </div>
                         </div>
                         <div class="arrow-down arrow-grey"></div>
@@ -198,27 +208,33 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="price-table-content">
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-users"></i>
+                                    <i class="icon-rocket"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Страниц - 25 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-drawer"></i>
+                                    <i class="icon-briefcase"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Компания - 25 </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-cloud-download"></i>
+                                    <i class="icon-magnet"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Мастер Класс - да </div>
                             </div>
                             <div class="row mobile-padding">
                                 <div class="col-xs-3 text-right mobile-padding">
-                                    <i class="icon-refresh"></i>
+                                    <i class="icon-wallet"></i>
                                 </div>
                                 <div class="col-xs-9 text-left mobile-padding"> Партнерка - да </div>
+                            </div>
+                            <div class="row mobile-padding">
+                                <div class="col-xs-3 text-right mobile-padding">
+                                    <i class="icon-earphones-alt"></i>
+                                </div>
+                                <div class="col-xs-9 text-left mobile-padding"> Поддержка - skype </div>
                             </div>
                         </div>
                         <div class="arrow-down arrow-grey"></div>
@@ -230,5 +246,8 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+    <div><p align="center"><span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2015</p></div>
 </div>
+
+
 <!-- END PAGE BASE CONTENT -->
