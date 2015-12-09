@@ -60,16 +60,16 @@ $css = <<<'STYLE'
 }
 
 .yellow{
-  width: 45px;
-  height: 45px;
+  width: 18px;
+  height: 18px;
   border-radius: 50% !important;
   background-color: yellow;
   border: 0px;
 }
 
 .green{
-  width: 45px;
-  height: 45px;
+  width: 18px;
+  height: 18px;
   border-radius: 50% !important;
   background-color: green;
   border: 0px;
@@ -192,9 +192,9 @@ $this->title = 'Ваша 1-я линия';
                             },
                         ],
                         [
-                            'header' => 'Статус',
+                            'header' => 'c',
                             'format' => 'raw',
-                            'options' => ['style' => 'width: 50px; max-width: 50px;'],
+                            'options' => ['style' => 'width: 30px; max-width: 50px;'],
                             'value'  =>  function($dt)
                             {
                                 return "<div class='{$dt["status"]}'></div>";
@@ -203,7 +203,7 @@ $this->title = 'Ваша 1-я линия';
 						[
                             'attribute' =>  'active',
                             'label'     =>  'Вход',
-                            'options' => ['style' => 'width: 220px; max-width: 220px;']
+                            'options' => ['style' => 'width: 100px; max-width: 100px;']
                         ],
                         [
                             'attribute' =>  'fn',
