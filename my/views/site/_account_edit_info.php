@@ -32,7 +32,8 @@ $form = ActiveForm::begin([
         )->textInput(["class"=>"form-control"]); ?>
     </div>
     <div class="form-group form-md-line-input">
-        <?=$form->field(
+        <?php
+		echo $form->field(
             $model, 'email', ["template" => "<label class='col-md-3 control-label'>Ваш Email</label>
                                     <div class='col-md-9'>
                                         <div class=\"input-icon\">
@@ -45,7 +46,8 @@ $form = ActiveForm::begin([
         );//->textInput(["placeholder"=>"example@gmail.com","class"=>"form-control"]); ?>
     </div>
     <div class="form-group form-md-line-input">
-        <?=$form->field(
+        <?php 
+		echo $form->field(
             $model, 'mobile', ["template" => "<label class='col-md-3 control-label'>Номер телефона</label>
                                         <div class='col-md-9'>
                                             <div class=\"input-icon\">
