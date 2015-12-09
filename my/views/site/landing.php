@@ -6,7 +6,7 @@ $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' 
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-$this->title = 'profile';
+$this->title = 'Создание страницы';
 $this->params['breadcrumbs'][] = $this->title;
 $save=(isSet($save))?$save:"www";
 ?>
@@ -36,16 +36,16 @@ $this->registerJs($js);
         <div class="portlet light bordered">
             <div class="portlet-title tabbable-line">
                 <div class="caption">
-                    <i class="fa fa-cogs font-green-sharp"></i>
-                    <span class="caption-subject font-green-sharp bold uppercase">Создание страницы</span>
+                    <i class="fa fa-cogs font-blue"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
                 </div>
                 <div align="right">
                     <!---------------------------------------------------------->
                     <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
                         <i class="icon-support"></i></a>
                     <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
-
-                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>-->
+                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help">
+                    <i class="icon-cloud-upload"></i></button>-->
                     <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                         <div class="modal-dialog ">
                             <div class="modal-content">

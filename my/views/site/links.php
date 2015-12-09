@@ -14,7 +14,7 @@ $css = <<<'STYLE'
 }
 STYLE;
 $this->registerCss($css);
-$this->title = 'profile';
+$this->title = 'Ваши страницы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="portlet-title">
         <div class="caption">
             <i class="fa fa-cogs font-blue"></i>
-            <span class="caption-subject font-blue uppercase">Ваши страницы</span>
+            <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
         </div>
         <div class="tools">
             <!-- Кнопка видео подсказки и во всю ширину --->

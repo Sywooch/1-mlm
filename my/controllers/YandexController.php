@@ -8,8 +8,8 @@ class YandexController extends Controller
     public function actionIndex()
     {
         $yanid=( !empty(\Yii::$app->request->get("yanid")) )?\Yii::$app->request->get("yanid"):null;
-        $a=Lp::find()->where(['yandexmetrika'=>$yanid])->one();
-        if($a)
+        $cnt=Lp::find()->where(['yandexmetrika'=>$yanid])->count();
+        if($cnt>0)
         {
             return $this->render('index');
         }

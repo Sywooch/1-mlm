@@ -373,4 +373,13 @@ return array (
       '@cakebake/bootstrap/select' => $vendorDir . '/cakebake/yii2-bootstrap-select',
     ),
   ),
+  'delagics/yii2-liqpay' => 
+  array (
+    'name' => 'delagics/yii2-liqpay',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@delagics/liqpay' => $vendorDir . '/delagics/yii2-liqpay',
+    ),
+  ),
 );

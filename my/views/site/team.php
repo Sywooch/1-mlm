@@ -79,7 +79,7 @@ $this->registerCss($css);
 $this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/datatables.min.css');
 $this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css');
 
-$this->title = 'profile';
+$this->title = 'Ваша 1-я линия';
 
 ?>
 
@@ -95,8 +95,8 @@ $this->title = 'profile';
         <div class="portlet light bordered">
             <div class="portlet-title">
                 <div class="caption font-blue">
-                    <i class="icon-settings font-blue"></i>
-                    <span class="caption-subject uppercase">Ваша 1-я линия </span>
+                    <i class="fa fa-cogs font-blue"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
                 </div>
                 <div class="actions">
                     <!---------------------------------------------------------->

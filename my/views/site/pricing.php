@@ -7,7 +7,7 @@ $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' =>
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerCssFile('/mertonic/pages/css/pricing.min.css');
 
-$this->title = 'pricing';
+$this->title = 'Выбор тарифа';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!-- BEGIN PAGE BASE CONTENT -->
@@ -20,8 +20,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="portlet light portlet-fit bordered">
     <div class="portlet-title">
         <div class="caption">
-            <i class=" icon-layers font-blue"></i>
-            <span class="caption-subject font-blue  uppercase">Выбор тарифа</span>
+            <i class="fa fa-cogs font-blue"></i>
+            <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
         </div>
         <div align="right">
             <!---------------------------------------------------------->

@@ -51,6 +51,7 @@ return array(
     'kartik\\alert\\' => array($vendorDir . '/kartik-v/yii2-widget-alert'),
     'kartik\\affix\\' => array($vendorDir . '/kartik-v/yii2-widget-affix'),
     'dosamigos\\fileinput\\' => array($vendorDir . '/2amigos/yii2-file-input-widget/src'),
+    'delagics\\liqpay\\' => array($vendorDir . '/delagics/yii2-liqpay'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'cakebake\\bootstrap\\select\\' => array($vendorDir . '/cakebake/yii2-bootstrap-select'),
     'Fxp\\Composer\\AssetPlugin\\' => array($vendorDir . '/fxp/composer-asset-plugin'),

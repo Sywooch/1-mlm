@@ -117,8 +117,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="portlet light bordered">
                                 <div class="portlet-title tabbable-line">
                                     <div class="caption">
-                                        <i class="icon-settings font-blue"></i>
-                                        <span class="caption-subject font-blue uppercase" style="font-size: 14px;">Настройки профиля</span>
+                                        <i class="fa fa-cogs font-blue"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase" style="font-size: 14px;">Настройки профиля</span>
                                     </div>
                                     <div align="right">
                                         <!---------------------------------------------------------->

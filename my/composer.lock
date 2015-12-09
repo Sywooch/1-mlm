@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "149ec345857c1aaf954c0c36f07cc516",
-    "content-hash": "00f82d57623b4a3fafccc5172cb1e75d",
+    "hash": "0169ad7eb891c63df0bc71cae9c496af",
+    "content-hash": "18b3c69fa7486be974c740a5e2f5a41e",
     "packages": [
         {
             "name": "2amigos/yii2-file-input-widget",
@@ -519,6 +519,56 @@
                 "markdown-extra"
             ],
             "time": "2015-03-06 05:28:07"
+        },
+        {
+            "name": "delagics/yii2-liqpay",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/delagics/yii2-liqpay.git",
+                "reference": "13fe5b8446c7fb2ec644447bef46886eec83c5d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/delagics/yii2-liqpay/zipball/13fe5b8446c7fb2ec644447bef46886eec83c5d5",
+                "reference": "13fe5b8446c7fb2ec644447bef46886eec83c5d5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "delagics\\liqpay\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL 3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Liqpay",
+                    "email": "support@liqpay.com",
+                    "homepage": "https://www.liqpay.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "SDK for Liqpay",
+            "homepage": "https://github.com/liqpay/sdk-php",
+            "keywords": [
+                "liqpay",
+                "pay",
+                "yii2"
+            ],
+            "time": "2015-10-10 14:33:25"
         },
         {
             "name": "ezyang/htmlpurifier",

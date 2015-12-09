@@ -1,6 +1,6 @@
 <?php
 use yii\widgets\ActiveForm;
-
+$this->title = 'Компания';
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -14,7 +14,8 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
         <div class="portlet light bordered">
             <div class="portlet-title">
                 <div class="caption">
-                    <span class="caption-subject font-green-sharp bold uppercase">Компания</span>
+                    <i class="fa fa-cogs font-blue"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
                 </div>
                 <div align="right">
                     <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal"

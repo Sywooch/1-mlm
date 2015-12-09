@@ -43,7 +43,8 @@
         "2amigos/yii2-file-input-widget": "~1.0",
         "geedmo/yamm3": "dev-master",
         "asofter/yii2-amcharts": "dev-master",
-        "asofter/yii2-imperavi-redactor": "dev-master"
+        "asofter/yii2-imperavi-redactor": "dev-master",
+        "delagics/yii2-liqpay": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
