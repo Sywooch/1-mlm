@@ -26,9 +26,10 @@ class PayController extends \yii\web\Controller
                 'language'=>'ru',
                 'subscribe' => '1',
                 'subscribe_periodicity' => 'month',
-
-                'server_url'=>'https://1-mlm.com/index.php?r=pay/check',
-                'result_url'=>'https://1-mlm.com/index.php?r=pay/check',
+				'subscribe_date_start'=date("Y-m-d H:i:s"),
+		
+                'server_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
+                'result_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
 
                 'order_id' => $this->odredId()
             ]);
