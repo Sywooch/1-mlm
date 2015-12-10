@@ -192,18 +192,13 @@ $this->title = 'Ваша 1-я линия';
                             },
                         ],
                         [
-                            'header' => 'c',
+                            'header'     =>  'Вход',
                             'format' => 'raw',
-                            'options' => ['style' => 'width: 30px; max-width: 50px;'],
+                            'options' => ['style' => 'width: 100px; max-width: 100px;'],
                             'value'  =>  function($dt)
                             {
-                                return "<div class='{$dt["status"]}'></div>";
+                                return "<div class='{$dt["status"]}'></div>".$dt["active"];
                             }
-                        ],
-						[
-                            'attribute' =>  'active',
-                            'label'     =>  'Вход',
-                            'options' => ['style' => 'width: 100px; max-width: 100px;']
                         ],
                         [
                             'attribute' =>  'fn',

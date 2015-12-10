@@ -42,7 +42,7 @@ use kartik\widgets\ColorInput;
                             <?=$this->render('_landing_tab_form_clr',['type'=>'2']);?>
                         </div>
                         <div id="tab_1_1_3" class="tab-pane">
-                            В разработке
+                            <?=$this->render('_landing_tab_form_clr',['type'=>'3']);?>
                         </div>
                         <div id="tab_1_1_4" class="tab-pane">
                             В разработке

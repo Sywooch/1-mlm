@@ -1,4 +1,35 @@
-<div class="page-header navbar navbar-fixed-top">
+<?php
+
+$identity = \Yii::$app->getUser()->getIdentity()->profile;
+
+$usr = \app\models\Users::find();
+switch($identity["service"])
+{
+    case "facebook":
+        $usr=$usr->where(['facebook' => $identity["id"]]);
+    break;
+    case "vkontakte":
+        $usr=$usr->where(['vkontakte' => $identity["id"]]);
+    break;
+    case "linkedin_oauth2":
+        $usr=$usr->where(['linkedin' => $identity["id"]]);
+    break;
+    case "google":
+        $usr=$usr->where(['googleplus' => $identity["id"]]);
+    break;
+    case "yandex":
+        $usr=$usr->where(['yandex' => $identity["id"]]);
+    break;
+    case "mailru":
+        $usr=$usr->where(['mailru' => $identity["id"]]);
+    break;
+}
+$usr=$usr->one();
+$brand=\app\models\Lp::find()->where(['id'=>$usr['companyid']])->one();
+
+$brand=$brand["brandicon"];
+
+?><div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
@@ -9,7 +40,12 @@
                             <span style="color: #2a83d0; font-size: 23px;"><b>1 mlm</b></span></a>
             -->
 
-            <img src="/img/logo.png" alt="logo" class="logo-default" width="50" height="50">
+            <img src="<?php
+            echo
+            (
+                (!empty($brand))?$brand:"/img/logo.png"
+            );
+            ?>" alt="logo" class="logo-default" width="50" height="50">
 
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->

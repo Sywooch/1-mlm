@@ -55,6 +55,14 @@ use kartik\widgets\ColorInput;
                 )->textInput(['placeholder' => 'Введите описание']);
                 ?>
             </div>
+            <hr />
+            <div class="form-group">
+                <?=$form->field(
+                    $lp, 'brandicon', ['template' => "<label>Бренд</label>
+                            \n{input}\n{hint}\n{error}" ]
+                )->textInput(['placeholder' => 'Введите адрес картинки']);
+                ?>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">

@@ -1,45 +1,14 @@
 <?php
-
 namespace app\models;
-
 use Yii;
-
-/**
- * This is the model class for table "lp".
- *
- * @property integer $id
- * @property string $uid
- * @property string $name
- * @property string $desc
- * @property string $keywords
- * @property string $h1
- * @property string $h2
- * @property string $h3
- * @property string $h1c
- * @property string $h2c
- * @property string $h3c
- * @property string $yt1
- * @property string $yt2
- * @property string $bg
- * @property string $autoplay
- * @property string $url
- * @property string $button
- * @property string $group
- * @property integer $clicks
- */
 class Lp extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
+
     public static function tableName()
     {
         return 'lp';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -59,9 +28,6 @@ class Lp extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [

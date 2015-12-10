@@ -20,6 +20,7 @@ $lp->bg=null;
 $lp->yt2=null;
 $lp->yandexmetrika=null;
 $lp->autoplay=0;
+$lp->brandicon=null;
 
 ?>
 <?php $form = ActiveForm::begin();?>
@@ -75,13 +76,21 @@ $lp->autoplay=0;
                 )->textInput(['placeholder' => 'Введите описание']);
                 ?>
             </div>
+            <hr />
+            <div class="form-group">
+                <?=$form->field(
+                    $lp, 'brandicon', ['template' => "<label>Бренд</label>
+                            \n{input}\n{hint}\n{error}" ]
+                )->textInput(['placeholder' => 'Введите адрес картинки']);
+                ?>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <?=$form->field(
                     $lp, 'bg', ['template' => "<label>Цвет фона</label>\n{input}\n{hint}\n{error}" ]
                 )->widget(ColorInput::classname(),[
-                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_'.$type]
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'bg_n'.$type]
                 ]);
                 ?>
             </div>
@@ -89,7 +98,7 @@ $lp->autoplay=0;
                 <?=$form->field(
                     $lp, 'h1c', ['template' => "<label>Цвет заголовка №1</label>\n{input}\n{hint}\n{error}" ]
                 )->widget(ColorInput::classname(),[
-                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h1_'.$type]
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h1_n'.$type]
                 ]);
                 ?>
             </div>
@@ -97,7 +106,7 @@ $lp->autoplay=0;
                 <?=$form->field(
                     $lp, 'h2c', ['template' => "<label>Цвет заголовка №2</label>\n{input}\n{hint}\n{error}" ]
                 )->widget(ColorInput::classname(),[
-                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h2_'.$type]
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h2_n'.$type]
                 ]);
                 ?>
             </div>
@@ -105,7 +114,7 @@ $lp->autoplay=0;
                 <?=$form->field(
                     $lp, 'h3c', ['template' => "<label>Цвет заголовка №3</label>\n{input}\n{hint}\n{error}" ]
                 )->widget(ColorInput::classname(),[
-                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h3_'.$type]
+                    'options' => ['placeholder' => '6 символов цвета', 'id'=>'col_h3_n'.$type]
                 ]);
                 ?>
             </div>
@@ -150,8 +159,8 @@ $lp->autoplay=0;
 
 
     </div>
-
-    <input id="users-formtype_<?=$type;?>" name="land" value="template_<?=$type;?>" type="hidden">
+    <input name="land" value="new" type="hidden">
+    <input name="Lp[landtype]" value="<?=$type; ?>" type="hidden">
     <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save">СОХРАНИТЬ СТРАНИЦУ</button>
 
 

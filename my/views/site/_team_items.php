@@ -12,19 +12,27 @@ use yii\grid\GridView;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' =>  'ln',
-                'header'     =>  'Фамилия',
-                'options' => ['style' => 'width: 220px; max-width: 220px;']
+                'header'     =>  'Вход',
+                'format' => 'raw',
+                'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                'value'  =>  function($dt)
+                {
+                    return "<div class='{$dt["status"]}'></div>".$dt["active"];
+                }
             ],
             [
                 'attribute' =>  'fn',
-                'header'     =>  'Имя',
+                'label'     =>  'Имя',
                 'options' => ['style' => 'width: 220px; max-width: 220px;']
             ],
             [
-                'attribute' =>  'active',
-                'header'     =>  'Вход',
+                'attribute' =>  'ln',
+                'label'     =>  'Фамилия',
                 'options' => ['style' => 'width: 220px; max-width: 220px;']
+            ],
+            [
+                'attribute' =>  'title',
+                'label'     =>  'Уровень'
             ],
             [
                 'header' => 'Действия',

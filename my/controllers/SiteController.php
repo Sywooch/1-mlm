@@ -672,7 +672,6 @@ class SiteController extends Controller
                                 'uid' => $usr["id"],
                                 'id' => $p["id"]
                             ]);
-
                         $lp->name = $p["name"];
                         $lp->h1 = $p["h1"];
                         $lp->h2 = $p["h2"];
@@ -685,17 +684,16 @@ class SiteController extends Controller
                         $lp->button = $p["button"];
                         $lp->desc = $p["desc"];
                         $lp->keywords = $p["keywords"];
-
+                        $lp->brandicon = $p["brandicon"];
                         $lp->socpic = $p["socpic"];
                         $lp->autoplay = $p["autoplay"];
                         $lp->bg = $p["bg"];
 
                         $lp->update(false);
-
                         $save = "good";
                         $mes = "Ваша страничка обновлена";
                     break;
-                    case "template_1":
+                    case "new":
                         $lp_n = new Lp;
                         $lp_n->name = $p["name"];
                         $lp_n->uid = $usr["id"];
@@ -708,47 +706,19 @@ class SiteController extends Controller
                         $lp_n->h3c = $p["h3c"];
                         $lp_n->yandexmetrika = $p["yandexmetrika"];
                         $lp_n->button = $p["button"];
-                        $lp_n->landtype = 1;
+                        $lp_n->landtype = $p["landtype"];
                         $lp_n->desc = $p["desc"];
                         $lp_n->keywords = $p["keywords"];
-
+                        $lp_n->brandicon = $p["brandicon"];
                         $lp_n->socpic = $p["socpic"];
                         $lp_n->autoplay = $p["autoplay"];
                         $lp_n->bg = $p["bg"];
 
                         $lp_n->save(false);
-
-                        $save = "create";
-                        $mes = "Ваша страничка создана";
-                    break;
-                    case "template_2":
-                        $lp_n = new Lp;
-                        $lp_n->name = $p["name"];
-                        $lp_n->uid = $usr["id"];
-                        $lp_n->h1 = $p["h1"];
-                        $lp_n->h2 = $p["h2"];
-                        $lp_n->h3 = $p["h3"];
-                        $lp_n->yt1 = $p["yt"];
-                        $lp_n->h1c = $p["h1c"];
-                        $lp_n->h2c = $p["h2c"];
-                        $lp_n->h3c = $p["h3c"];
-                        $lp_n->yandexmetrika = $p["yandexmetrika"];
-                        $lp_n->button = $p["button"];
-                        $lp_n->landtype = 2;
-                        $lp_n->desc = $p["desc"];
-                        $lp_n->keywords = $p["keywords"];
-
-                        $lp_n->socpic = $p["socpic"];
-                        $lp_n->autoplay = $p["autoplay"];
-                        $lp_n->bg = $p["bg"];
-
-                        $lp_n->save(false);
-
                         $save = "create";
                         $mes = "Ваша страничка создана";
                     break;
                 }
-
             }
             $query11=new \yii\db\Query();
             switch($identity["service"])
