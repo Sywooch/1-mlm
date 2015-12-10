@@ -66,4 +66,16 @@ class PayController extends \yii\web\Controller
         $number = date("YmdHis");
         return $number.$micro;
     }
+
+    public function actionStatus()
+    {
+        $liqpay = new LiqPay($this->_public_key, $this->_private_key);
+        $res = $liqpay->api("payment/status", [
+            'version' => '3',
+            'order_id'       => '101-101-101'
+        ]);
+        echo "<pre>";
+        print_r($res);
+        echo "</pre>";
+    }
 }
