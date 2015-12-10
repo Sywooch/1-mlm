@@ -19,6 +19,38 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <div class="row">
                         <div class="col-md-12">
+                        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-blue">
+                    <i class="fa fa-cogs font-blue"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase"><?php //$this->title; ?>Настройки профиля</span>
+                </div>
+                <div class="actions">
+                    <!---------------------------------------------------------->
+                    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                        <i class="icon-support"></i></a>
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                    <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube-nocookie.com/embed/<?php
+                                            echo "iBfk37Fa3H0";
+                                            ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------>
+                </div>
+                <div class="tools"> </div>
+            </div>
+            <div class="portlet-body">
                             <!-- BEGIN PROFILE SIDEBAR -->
                             <div class="profile-sidebar">
                                 <!-- PORTLET MAIN -->
@@ -117,14 +149,14 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="portlet light bordered">
                                 <div class="portlet-title tabbable-line">
                                     <div class="caption">
-                                        <i class="fa fa-cogs font-blue"></i>
-                                        <span class="caption-subject font-green-sharp bold uppercase" style="font-size: 14px;">Настройки профиля</span>
+                                        <!--<i class="fa fa-cogs font-blue"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase" style="font-size: 14px;">Настройки профиля</span>-->
                                     </div>
                                     <div align="right">
                                         <!---------------------------------------------------------->
-                                        <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                                        <!--<a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
                                             <i class="icon-support"></i></a>
-                                        <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>-->
 
                                         <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>-->
                                         <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
@@ -189,6 +221,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
                     <!-- END PAGE BASE CONTENT -->
+                    </div>
 <?php
 $save=( !empty($save) )?$save:null;
 

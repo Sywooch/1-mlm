@@ -43,11 +43,7 @@ $form = ActiveForm::begin([
                                         </div>
 
                                     </div>"]
-<<<<<<< HEAD
-        )->textInput(["placeholder"=>"","class"=>"form-control"]); ?>
-=======
         )->textInput([/*"placeholder"=>"example@gmail.com",*/"class"=>"form-control"]); ?>
->>>>>>> origin/master
     </div>
     <div class="form-group form-md-line-input">
         <?php echo
@@ -61,11 +57,7 @@ $form = ActiveForm::begin([
                                             </div>
 
                                         </div>"]
-<<<<<<< HEAD
-        )->textInput(['placeholder' => '', "class"=>"form-control"]); ?>
-=======
         )->textInput([/*'placeholder' => '+99(99)9999-9999',*/ "class"=>"form-control"]); ?>
->>>>>>> origin/master
     </div>
     <div class="form-group form-md-line-input">
         <?=$form->field(
