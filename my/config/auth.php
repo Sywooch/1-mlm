@@ -20,19 +20,25 @@ return [
         'vkontakte' => [
             // register your app here: https://vk.com/editapp?act=create&site=1
             'class' => 'nodge\eauth\services\VKontakteOAuth2Service',
-//Pavel
-            //'clientId' => '5129822',
-            //'clientSecret' => 'IoCs27vO0tfd7USoTbK4',
-//Vitaliy
-            'clientId' => '5148975',
-            'clientSecret' => 'iWTKQGXioPPWZAdNJO3S',
-            /***********************************************/
-//Hosting
-           // 'clientId' => '5130699',
-           // 'clientSecret' => '4B25v7qHSl0NODAekOuh',
-            /***********************************************/
-
+	    'clientId' => '5130699',
+	    'clientSecret' => '4B25v7qHSl0NODAekOuh',
         ],
+        
+        'twitter' => [
+				// register your app here: https://dev.twitter.com/apps/new
+				'class' => 'nodge\eauth\services\TwitterOAuth1Service',
+				'key' => 'c0fLHgrdplLvVVKU2WqxCeQxG',
+				'secret' => 'ziiqhPyUsdADanfzGNERsjLfeIlCJqGcpJhjRyFOwlArAUKE6y',
+			],
+        
+        'instagram' => [
+			// register your app here: https://instagram.com/developer/register/
+			'class' => 'nodge\eauth\services\InstagramOAuth2Service',
+			'clientId' => '35f6c3b7b2cd448e89be548161532a89',
+			'clientSecret' => '61692a3cbade4c0ba54fad102ccf3a24',
+		],
+
+        
         'yandex' => [
             // register your app here: https://oauth.yandex.ru/client/my
             'class' => 'nodge\eauth\services\YandexOAuth2Service',
