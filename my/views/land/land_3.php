@@ -88,6 +88,7 @@
 
         @media (max-width:641px) {
             #youtube {
+                background: transparent url("<?=Yii::getAlias('@web') ?>/tp3/iphone-bg.png") no-repeat scroll center center;
                 height: 200px;
                 background-size: 330px;
             }
@@ -99,7 +100,7 @@
             }
 
             #ytscr iframe {
-                margin-top: 25px;
+                margin-top: 32px;
             }
         }
 
@@ -169,7 +170,7 @@
         <div id="ytscr">
             <iframe id="ytplayer" src="https://www.youtube-nocookie.com/embed/<?=$data["yt1"]?>?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=<?=$data["autoplay"]?>" allowfullscreen="" frameborder="0" style="width: 100%; height: 100%;"></iframe>
         </div>
-        <p style="margin-top: 25px;"><a href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a></p>
+        <p style="margin-top: 25px;"><a href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a></p>
     </div>
 
 </div>

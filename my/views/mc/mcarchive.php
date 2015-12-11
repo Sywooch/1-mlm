@@ -27,11 +27,13 @@ $this->registerCss($css);
         <div class="portlet-title tabbable-line">
             <div class="caption">
                 <i class="icon-settings"></i>
-                <span class="caption-subject font-purple-soft bold uppercase" style="font-size: 14px;">Архив мастер классов</span>
+                <span class="caption-subject font-purple-soft bold uppercase">Архив мастер классов</span>
             </div>
-            <div align="right">
+            <div class="actions">
                 <!---------------------------------------------------------->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>
+                <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                    <i class="icon-support"></i></a>
+                <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
                 <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                     <div class="modal-dialog ">
                         <div class="modal-content">
@@ -50,6 +52,27 @@ $this->registerCss($css);
                 </div>
                 <!------------------------------------------------------------>
             </div>
+            <!--<div align="right">
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>
+                <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                            </div>
+                            <div class="modal-body">
+                                <iframe width="560" height="315"
+                                        src="https://www.youtube-nocookie.com/embed/<?php
+                                        echo "iBfk37Fa3H0";
+                                        ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>-->
             <ul class="nav nav-tabs">
                 <li class="active">
                     <a href="#tab_1_1" data-toggle="tab"> Системные  </a>
