@@ -112,6 +112,46 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </ul>
             </li>
 
+
+
+
+            <li class="nav-item start">
+                <a href="###" class="nav-link">
+                    <i class="icon-bulb"></i>
+                    <span class="title">Мои проекты</span>
+                </a>
+            </li>
+
+            <li class="nav-item start">
+                <a href="###" class="nav-link">
+                    <i class="icon-like"></i>
+                    <span class="title">Давайте дружить!</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item">
+                        <a href="###" class="nav-link nav-toggle">
+                            <i class="icon-cup"></i>
+                            <span class="title">Друзья в VK</span>
+
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="###" class="nav-link nav-toggle">
+                            <i class="icon-social-facebook"></i>
+                            <span class="title">Друзья в FB</span>
+                            <span class="badge badge-success"><?= $cntLp ?></span>
+                            <!--<span class="arrow"></span>-->
+                        </a>
+
+                    </li>
+                </ul>
+            </li>
+
+
+
+
             <li class="nav-item start <?php
             echo( "edit"==$act ) ? 'active open' : null;
             echo( "mcarchive"==$act ) ? 'active open' : null;
