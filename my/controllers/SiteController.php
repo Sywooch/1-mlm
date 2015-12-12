@@ -120,7 +120,7 @@ class SiteController extends Controller
 
             if ( 1==$model->one()["status"] )
             {
-                    return $this->redirect("index.php?r=site%2Fcompany");
+                    return $this->actionCompany();
             }
             else
             {
