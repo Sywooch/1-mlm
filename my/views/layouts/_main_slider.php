@@ -227,6 +227,13 @@ if( !empty(\Yii::$app->request->get("r")) )
             </a>
         </li>
 
+            <li class="nav-item start">
+                <a href="index.php?r=site%2Fcontact" class="nav-link">
+                    <i class="icon-bulb"></i>
+                    <span class="title">Контакт</span>
+                </a>
+            </li>
+
 
             <!--<li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=site%2Fnews" class="nav-link">

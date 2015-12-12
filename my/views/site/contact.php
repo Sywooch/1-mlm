@@ -6,7 +6,30 @@ use yii\captcha\Captcha;
 $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-contact">
+
+<br><br><br><br><br>
+
+
+<link href="https://hostpro.ua/wp-content/themes/hostpro/assets/css/style.css" rel="stylesheet">
+
+<section id="section2" data-scen-id="0" class="builder-section no-padding bg-img ng-touched ng-dirty-parse" style="cursor: text; background: url(&quot;https://hostpro.ua/wp-content/themes/hostpro/assets/photo/vps-bg.jpg&quot;) 50% 50% no-repeat;" ng-mouseup="deTextCustomize()">
+    <div class="wrap">
+        <div class="white-block">
+            <h3>Есть вопросы?</h3>
+            <p>Обращайтесь в техподдержку</p>
+            <p>с 10:00 до 20:00</p>
+            <span class="phone">(067) 233-67-55</span>
+            <span class="phone">support@1-mlm.com</span>
+            <div><a class="skype" href="skype:support.mlm?chat" style="" data-edit-now="false">support.mlm</a></div>
+            <br></div>
+    </div>
+</section>
+
+
+
+
+
+<!--<div class="site-contact">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
@@ -54,4 +77,4 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
     <?php endif; ?>
-</div>
+</div>-->
