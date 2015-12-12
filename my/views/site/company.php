@@ -14,8 +14,8 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
         <div class="portlet light bordered">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-cogs font-blue"></i>
-                    <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
+                    <i class="icon-info font-blue-sharp"></i>
+                    <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
                 </div>
                 <div align="right">
                     <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal"

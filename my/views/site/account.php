@@ -11,19 +11,13 @@ $this->title = 'Настройки профиля';
 ?>
 
                    <!-- BEGIN PAGE BASE CONTENT -->
-<!--
-<div class="m-heading-1 border-green m-bordered">
-    <h3 class="font-green">Ваш Профиль</h3>
-</div>
--->
-
-                    <div class="row">
-                        <div class="col-md-12">
-                        <div class="portlet light bordered">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
             <div class="portlet-title">
-                <div class="caption font-blue">
-                    <i class="fa fa-cogs font-blue"></i>
-                    <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
+                <div class="caption font-blue-sharp">
+                    <i class="icon-user font-blue-sharp"></i>
+                    <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
                 </div>
                 <div class="actions">
                     <!---------------------------------------------------------->

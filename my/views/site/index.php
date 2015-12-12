@@ -63,9 +63,9 @@ $this->title = '1-mlm';
         <div class="portlet light bordered" id="form_wizard_1">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class=" icon-layers font-blue"></i>
-                        <span class="caption-subject font-blue uppercase"> Всего несколько  шагов -
-                            <span class="step-title"> Для настройки системы </span>
+                    <i class="icon-list font-blue-sharp"></i>
+                        <span class="caption-subject font-blue-sharp"> Всего несколько  шагов -
+                            <span class="step-title"> переход к следующему шагу - после просмотра видео! </span>
                         </span>
                 </div>
                 <div class="actions">
