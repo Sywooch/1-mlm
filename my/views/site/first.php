@@ -249,7 +249,7 @@ $this->registerCss($style_user);
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">меню</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 <a class="navbar-brand" href=""><img class="logo-nav" alt="1-й МЛМ Ресурс" src="../img/logo.png" width="50" height="50"><img class="logo-head" alt="logo" src="../img/logo.png" width="80" height="80"></a> </div>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
                 <ul class="nav navbar-nav nav-left">
@@ -275,7 +275,7 @@ $this->registerCss($style_user);
         <div class="row">
             <div class="col-md-12">
                 <!--<h1>1-й млм ресурс</h1>-->
-                <h1><span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)<span class="currency">beta</span></span></h1>
+                <h1>New<span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)<span class="currency">beta</span></span></h1>
                 <h2>Автоматизация Рекрутинга на 80%</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=HBseUoVjSZo" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"

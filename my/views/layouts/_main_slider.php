@@ -75,7 +75,7 @@ if( !empty(\Yii::$app->request->get("r")) )
             <a href="index.php?r=site%2Flanding" class="nav-link">
                 <i class="icon-wrench"></i>
                 <span class="title">Создание страниц</span>
-
+                <span class="arrow"></span>
             </a>
                 <ul class="sub-menu">
                     <li class="nav-item  <?= ( "landing"==$act ) ? 'active open' : null; ?>">
