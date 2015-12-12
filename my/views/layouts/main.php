@@ -7,6 +7,7 @@ use yii\bootstrap\Modal;
 use app\assets\AppAsset;
 use app\models\Users;
 use app\models\Lp;
+use app\models\Links;
 
 AppAsset::register($this);
 
@@ -257,6 +258,11 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                     </div>
                                 </li>
                             </ul>
+                            <hr />
+                            <h3 class="list-heading">Проекты консультанта</h3>
+                            <?php
+                                $consult_proj = Links::find()->where(['uid' => $refID])->all();
+                            ?>
                         </div>
                     </div>
                     <div class="tab-pane page-quick-sidebar-chat" id="quick_sidebar_tab_2">

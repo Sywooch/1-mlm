@@ -9,10 +9,101 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <br><br><br><br><br>
 
+<style>
+    #section2 {
+        cursor: text;
+        background: transparent url("vps-bg.jpg") no-repeat scroll 50% 50%;
+    }
 
-<link href="https://hostpro.ua/wp-content/themes/hostpro/assets/css/style.css" rel="stylesheet">
+    .builder-section.bg-img .wrap::after {
+        content: "";
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        clear: both;
+    }
 
-<section id="section2" data-scen-id="0" class="builder-section no-padding bg-img ng-touched ng-dirty-parse" style="cursor: text; background: url(&quot;https://hostpro.ua/wp-content/themes/hostpro/assets/photo/vps-bg.jpg&quot;) 50% 50% no-repeat;" ng-mouseup="deTextCustomize()">
+    .no-padding {
+        padding: 0px !important;
+    }
+
+    .bg-img {
+        background-size: cover !important;
+        height: 280px;
+    }
+
+    .builder-section {
+        padding: 60px 0px;
+    }
+
+    .wrap {
+        width: 940px;
+        margin: 0px auto;
+        position: relative;
+        min-width: 940px;
+    }
+
+    .white-block {
+        background: rgba(255, 255, 255, 0.9) none repeat scroll 0% 0%;
+        box-sizing: border-box;
+        height: 280px;
+        padding: 10px 50px;
+        text-align: center;
+        width: 470px;
+        float: right;
+        margin-right: 30px;
+        line-height: 8px;
+    }
+
+    .white-block h3 {
+        color: #313131;
+        font-size: 36px;
+        margin-bottom: 7px;
+    }
+
+    .wrap p {
+        font-family: "ProximaNova",sans-serif;
+        font-size: 18px;
+        color: #333;
+        line-height: 23px;
+    }
+
+    .white-block p {
+        color: #313131;
+        font-size: 16px;
+        margin-bottom: 7px;
+    }
+
+    .white-block .phone {
+        display: block;
+        margin: 22px 0px 23px;
+        color: #313131;
+        font-size: 24px;
+        font-family: "ProximaNovaLight",sans-serif;
+    }
+
+    .white-block .skype {
+        display: inline-block;
+        position: relative;
+        margin-left: 23px;
+        color: #656565;
+        font-size: 16px;
+        /*border-bottom: 1px solid rgba(101, 101, 101, 0.5);*/
+        transition: border 0.3s ease 0s;
+    }
+
+    .white-block .skype::before {
+        left: -33px;
+        background-position: -56px -143px;
+        width: 25px;
+        height: 25px;
+    }
+</style>
+
+
+<!--<link href="https://hostpro.ua/wp-content/themes/hostpro/assets/css/style.css" rel="stylesheet">-->
+
+<section id="section2" data-scen-id="0" class="builder-section no-padding bg-img ng-touched ng-dirty-parse" ng-mouseup="deTextCustomize()">
     <div class="wrap">
         <div class="white-block">
             <h3>Есть вопросы?</h3>
@@ -20,7 +111,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <p>с 10:00 до 20:00</p>
             <span class="phone">(067) 233-67-55</span>
             <span class="phone">support@1-mlm.com</span>
-            <div><a class="skype" href="skype:support.mlm?chat" style="" data-edit-now="false">support.mlm</a></div>
+            <div><a class="skype" href="skype:support.mlm?chat" style="" data-edit-now="false"><i class="fa fa-skype"></i> support.mlm</a></div>
             <br></div>
     </div>
 </section>

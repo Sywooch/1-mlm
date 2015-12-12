@@ -26,6 +26,17 @@ class LinksController extends Controller
         ];
     }
 
+    public function actionProjects()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Links::find(),
+        ]);
+
+        return $this->render('projects', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Lists all Links models.
      * @return mixed

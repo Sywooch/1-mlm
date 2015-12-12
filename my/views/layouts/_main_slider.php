@@ -119,7 +119,26 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <a href="###" class="nav-link">
                     <i class="icon-bulb"></i>
                     <span class="title">Мои проекты</span>
+                    <span class="arrow"></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="nav-item">
+                        <a href="###" class="nav-link nav-авитьoggle">
+                            <i class="icon-puzzle"></i>
+                            <span class="title">Добавить</span>
+
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="###" class="nav-link nav-toggle">
+                            <i class="icon-link"></i>
+                            <span class="title">Список проектов</span>
+                            <!--<span class="arrow"></span>-->
+                        </a>
+
+                    </li>
+                </ul>
             </li>
 
             <li class="nav-item start">
