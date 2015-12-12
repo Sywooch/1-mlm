@@ -65,6 +65,9 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
                         <div class="form-group">
                             <?=$model['desc'];?>
                         </div>
+                        <div class="form-group">
+                            <a href="<?=$company_link;?>">Ссылка компании</a>
+                        </div>
                     </div>
                 </div>
             </div>

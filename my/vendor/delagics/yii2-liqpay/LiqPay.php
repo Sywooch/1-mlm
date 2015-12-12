@@ -107,6 +107,26 @@ class LiqPay extends InputWidget
      *
      * @throws InvalidArgumentException
      */
+
+    public function cnb_form_my($params, $formId = '', $autosubmit = false, $liqpayBtnNum = 11)
+    {
+
+        if (isset($params['language']) && in_array($params['language'], $this->_supportedLangs))
+            $lang = $params['language'];
+        elseif(isset($params['language']) && !in_array($params['language'], $this->_supportedLangs))
+            throw new \InvalidArgumentException('LiqPay: Language is not supported');
+        else
+            $lang = $params['language'] = self::DEFAULT_LANG;
+
+        $params = $this->cnb_params($params);
+
+        $form =
+            Html::hiddenInput('data', base64_encode(json_encode($params))).
+            Html::hiddenInput('signature', $this->cnb_signature($params));
+
+        return $form;
+    }
+
     public function cnb_form($params, $formId = '', $autosubmit = false, $liqpayBtnNum = 11)
     {
 

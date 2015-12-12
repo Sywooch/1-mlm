@@ -19,6 +19,7 @@ use app\models\UploadForm;
 use app\models\Lp;
 use app\models\Msgs;
 use yii\web\UploadedFile;
+use app\models\UsrCompaniesLink;
 
 class SiteController extends Controller
 {
@@ -195,7 +196,7 @@ class SiteController extends Controller
             $users->ref=$usr->ref;
             $users->update(false);
         }
-        return $this->goHome();
+        return $this->actionLogout();
     }
 
     public function actionProfile()
@@ -415,6 +416,29 @@ class SiteController extends Controller
                                 $users = Users::findOne(['mailru'=>$identity["id"]]);
                                 break;
                         }
+
+                        if
+                        (
+                                UsrCompaniesLink::find()->where([
+                                "uid"=>$users->id,
+                                "lp_id"=>$users->companyid
+                            ])->count()>0
+                        )
+                        {
+                                $usrCompLink=UsrCompaniesLink::findOne([
+                                "uid"=>$users->id,
+                                "lp_id"=>$users->companyid
+                            ]);
+                        }else
+                        {
+                            $usrCompLink = new UsrCompaniesLink();
+                            $usrCompLink->uid=$users->id;
+                            $usrCompLink->lp_id=$users->companyid;
+                        }
+
+                        $usrCompLink->link=$p["Users-comp"]["link"];
+                        $usrCompLink->save(false);
+
                         $users->active=date("Y-m-d");
                         $users->fn=$p["Users"]["fn"];
                         $users->ln=$p["Users"]["ln"];
@@ -425,7 +449,7 @@ class SiteController extends Controller
                         $users->country=$p["Users"]["country"];
                         $users->purse=$p["Users"]["purse"];
                         $users->companyid=$p["Users"]["companyid"];
-                        $users->save(false);
+                        $users->update(false);
                         unset($users);
                         $save='good';
                     }
@@ -582,7 +606,7 @@ class SiteController extends Controller
     {
         if (!\Yii::$app->user->isGuest)
         {
-            return $this->render('pricing');
+            return \app\controllers\PayController::PriceList();
         }
         return $this->goHome();
     }
@@ -844,9 +868,21 @@ class SiteController extends Controller
                             ->from([Lp::tableName()])
                             ->one();
             */
+
+            $refUsr = Users::find()
+                ->where([
+                    'refdt' => Yii::$app->session->get('refuserId')
+                ])->one();
+
+            $company=UsrCompaniesLink::find()->where([
+                "uid"=>$refUsr->id,
+                "lp_id"=>$usr["companyid"]
+            ])->one();
+
             return $this->render('company', [
                 'model' => Lp::find()->where(['id'=>$usr['companyid']])->one(),
-                'ref' =>$usr['refdt']
+                'ref' =>$usr['refdt'],
+                'company_link'=>$company->link
             ]);
         }
         else{return $this->goHome();}
@@ -971,6 +1007,14 @@ class SiteController extends Controller
                 $users->ip=$_SERVER['REMOTE_ADDR'];
                 $users->refdt=$this->ukey();
                 $users->ref=Yii::$app->session->get('refuserId');
+
+                $refUsr = Users::find()
+                    ->where([
+                        'refdt' => Yii::$app->session->get('refuserId')
+                    ])->one();
+
+                $users->companyid=@$refUsr->companyid;
+
                 $users->userpic=$pitureUrl;
                 $users->fn=$firstName;
                 $users->ln=$lastName;

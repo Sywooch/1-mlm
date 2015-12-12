@@ -7,8 +7,77 @@ use app\models\Users;
 
 class PayController extends \yii\web\Controller
 {
-    private $_public_key="i70959445638";
-    private $_private_key="LMwx5Wzmd7Zi1LTmuQvSmzhLgIOqL3gZF0VXjHiY";
+    const PUBLICKEY = "i70959445638";
+    const PRIVATEKEY = "LMwx5Wzmd7Zi1LTmuQvSmzhLgIOqL3gZF0VXjHiY";
+
+    private $_public_key=PUBLICKEY;
+    private $_private_key=PRIVATEKEY;
+
+    public function beforeAction($action)
+    {
+        if("check"==$action->id)
+        {
+            $this->enableCsrfValidation = false;
+        }
+        return parent::beforeAction($action);
+    }
+
+    public function PriceList()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+            return $this->render('//pay/index', [
+                'btn2'=>\app\controllers\PayController::lippayDt("2"),
+                'btn10'=>\app\controllers\PayController::lippayDt("10"),
+                'btn25'=>\app\controllers\PayController::lippayDt("25"),
+            ]);
+        }
+        return $this->goHome();
+    }
+
+    protected function lippayDt($cost)
+    {
+        $liqpay = new LiqPay
+        (
+            \app\controllers\PayController::PUBLICKEY,
+            \app\controllers\PayController::PRIVATEKEY
+        );
+
+        return $liqpay->cnb_form_my([
+            'version' => '3',
+            'amount' => $cost,
+            'currency' => 'USD',//UAH
+            'description' => $cost.':' . \app\controllers\PayController::usrId(),
+            'language'=>'ru',
+            'subscribe' => '1',
+            'subscribe_date_start'=>date("Y-m-d H:i:s"),
+            'subscribe_periodicity' => 'month',
+            'server_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
+            'result_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
+            'order_id' => \app\controllers\PayController::odredId()
+        ]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function actionIndex()
     {
@@ -41,7 +110,7 @@ class PayController extends \yii\web\Controller
         return $this->goHome();
     }
 
-    private function usrId()
+    protected function usrId()
     {
         $identity = \Yii::$app->getUser()->getIdentity()->profile;
         $id=0;
@@ -69,7 +138,7 @@ class PayController extends \yii\web\Controller
         return $id;
     }
 
-    private function odredId()
+    protected function odredId()
     {
         $micro = sprintf("%06d",(microtime(true) - floor(microtime(true))) * 1000000);
         $number = date("YmdHis");
@@ -102,3 +171,20 @@ class PayController extends \yii\web\Controller
 
     }
 }
+/*
+order_id
+description
+
+level
+
+
+paydata  - 	дата оплаты
+days  -  	сколько дней доступно
+
+earned		ref money sum/2
+money		liqpay
+
+
+
+https://www.youtube.com/watch?v=TcD-d4XkwQ4
+*/
