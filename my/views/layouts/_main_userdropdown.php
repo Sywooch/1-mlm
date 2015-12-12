@@ -3,23 +3,23 @@ $identity = \Yii::$app->getUser()->getIdentity()->profile;
 switch($identity["service"])
 {
     case "facebook":
-        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['facebook'=>$identity["id"]])->one();
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['facebook'=>$identity["id"]])->one();
         break;
     case "linkedin_oauth2":
-        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['linkedin'=>$identity["id"]])->one();
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['linkedin'=>$identity["id"]])->one();
     break;
     case "google":
-        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['google'=>$identity["id"]])->one();
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['google'=>$identity["id"]])->one();
     break;
     case "yandex":
-        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['yandex'=>$identity["id"]])->one();
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['yandex'=>$identity["id"]])->one();
     break;
     case "mailru":
-        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['mailru'=>$identity["id"]])->one();
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['mailru'=>$identity["id"]])->one();
     break;
 	case "vkontakte":
 	default:
-        $usrDt=\app\models\Users::find()->select('fn,ln,userpic')->where(['vkontakte'=>$identity["id"]])->one();
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['vkontakte'=>$identity["id"]])->one();
     break;
 	$object = new StdClass;
 	$usrDt=(!empty($usrDt))?$usrDt:$object;
@@ -52,15 +52,20 @@ switch($identity["service"])
             <a href="index.php?r=site%2Finbox">
                 <i class="icon-envelope-open"></i> Сообщения
                 <span class="badge badge-danger"> 3 </span>
-            </a>
-        </li>
-        <li>
-            <a href="index.php?r=site%2Ftodo">
-                <i class="icon-rocket"></i> Мои задания
                 <span class="badge badge-success"> 7 </span>
             </a>
         </li>
 -->
+        <li>
+            <a href="#"
+               id="ref-usr-btn"
+               data-clipboard-text="https://1-mlm.com/ref-<?= $usrDt->refdt; ?>.html"
+>
+            <i class="icon-rocket"></i><span
+
+            >&nbsp;Ваш линк</span> </a>
+        </li>
+
         <li class="divider"> </li>
 
         <li>

@@ -121,7 +121,7 @@ $form = ActiveForm::begin([
 
 <!--------------------------------------------------------------------------------------------------------------------->
     <div class="form-group form-md-line-input">
-        <label class='col-md-3 control-label'>Компании ссылка</label>
+        <label class='col-md-3 control-label'>Сылка на лендинг</label>
         <div class='col-md-9'>
             <div class="input-icon">
                 <i class="icon-link"></i>
@@ -135,20 +135,6 @@ $form = ActiveForm::begin([
         </div>
     </div>
 
-    <div class="form-group form-md-line-input">
-        <label class='col-md-3 control-label'>Ваша ссылка</label>
-        <div class='col-md-9'>
-            <div class="input-icon">
-                <i class="icon-link"></i>
-                <a href="<?= "https://1-mlm.com/ref-{$model->refdt}.html"; ?>"
-                   target="_blank">
-                    <?= "https://1-mlm.com/ref-{$model->refdt}.html"; ?>
-                </a>
-                <div class="form-control-focus"></div>
-                <span class="help-block">Ваша Реферальная ссылка</span>
-            </div>
-        </div>
-    </div>
 <!--------------------------------------------------------------------------------------------------------------------->
     <div class="margiv-top-10">
         <?= \yii\helpers\Html::hiddenInput('Users[formtype]', 'personinfo', ["id"=>"users-formtype"]); ?>

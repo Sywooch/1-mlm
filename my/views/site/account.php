@@ -6,8 +6,8 @@ $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' 
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-$this->title = 'profile';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Настройки профиля';
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 
                    <!-- BEGIN PAGE BASE CONTENT -->
@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="portlet-title">
                 <div class="caption font-blue">
                     <i class="fa fa-cogs font-blue"></i>
-                    <span class="caption-subject font-green-sharp bold uppercase"><?php //$this->title; ?>Настройки профиля</span>
+                    <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
                 </div>
                 <div class="actions">
                     <!---------------------------------------------------------->
@@ -107,7 +107,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!-- STAT -->
                                     <div class="row list-separated profile-stat">
                                         <div class="col-md-12 col-sm-12 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 0 $ </div>
+                                            <div class="uppercase profile-stat-title"> <?=$usrDt["money"]; ?> $ </div>
                                             <div class="uppercase profile-stat-text"> начистненно по партнерке </div>
                                         </div>
                                         <!--<div class="col-md-4 col-sm-4 col-xs-6">

@@ -175,7 +175,17 @@ class SiteController extends Controller
             $usr=$usr->one();
 
             if($usr->level>4)return $this->goHome();
-            Users::findOne($usr->id)->delete(false);
+            //Users::findOne($usr->id)->delete(false);
+            $u=Users::findOne($usr->id);
+
+            $u->facebook.="del";
+            $u->vkontakte.="del";
+            $u->linkedin.="del";
+            $u->googleplus.="del";
+            $u->yandex.="del";
+            $u->mailru.="del";
+
+            $u->update(false);
 
             if( !empty($usr->refdt) )
                 {$ref=$usr->refdt;}
@@ -425,7 +435,7 @@ class SiteController extends Controller
             $query3=new \yii\db\Query();
 
             $usrDt=$query3->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt,
-                u.active AS active, l.title AS level, u.userpic AS userpic')
+                u.active AS active, l.title AS level, u.userpic AS userpic, u.money AS money')
                 ->from([Users::tableName().' u'])
                 ->innerJoin(Levels::tableName().' l','l.id = u.level');
 

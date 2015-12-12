@@ -159,13 +159,13 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                             <span class="badge badge-danger"></span>
                         </a>
                     </li>
-
+<!--
                     <li>
                         <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> Команда
                             <span class="badge badge-success"></span>
                         </a>
                     </li>
-
+-->
                     <!--
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> More
@@ -392,6 +392,15 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
     <?php $this->endBody() ?>
 
     <script src="s/js/step.js"></script>
+
+    <script src="s/js/clipboard.min.js"></script>
+    <script>
+        var clipboard = new Clipboard("#ref-usr-btn");
+            $("#ref-usr-btn").click(function(){
+                alert('Ваша реферальная ссылка скопирована в буфер обмена');
+            });
+    </script>
+
     </body>
     </html>
 <?php $this->endPage() ?>
