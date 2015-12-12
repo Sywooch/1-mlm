@@ -66,7 +66,8 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
                             <?=$model['desc'];?>
                         </div>
                         <div class="form-group">
-                            <a href="<?=$company_link;?>">Ссылка компании</a>
+                            <p>Вы сделали правильный выбор!  <a href="<?=$company_link;?>">[Регистрация в Компанию]</a>
+                            кнопка появляется только если наставник указал ссылку !!!</p>
                         </div>
                     </div>
                 </div>
