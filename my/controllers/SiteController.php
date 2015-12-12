@@ -1571,4 +1571,9 @@ class SiteController extends Controller
             return $this->goHome();
         }
     }
+
+    public function actionFriendsvk()
+    {
+        return $this->render('vk_friends');
+    }
 }

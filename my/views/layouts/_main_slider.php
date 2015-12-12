@@ -149,7 +149,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item">
-                        <a href="###" class="nav-link nav-toggle">
+                        <a href="index.php?r=site%2Ffriendsvk" class="nav-link nav-toggle">
                             <i class="icon-cup"></i>
                             <span class="title">Друзья в VK</span>
 
