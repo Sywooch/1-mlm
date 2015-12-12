@@ -115,7 +115,7 @@ if( !empty(\Yii::$app->request->get("r")) )
 
 
 
-            <li class="nav-item start">
+            <li class="nav-item start <?= ( "links"==$act ) ? 'active open' : null; ?>">
                 <a href="###" class="nav-link">
                     <i class="icon-bulb"></i>
                     <span class="title">Мои проекты</span>
@@ -123,7 +123,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item">
-                        <a href="###" class="nav-link nav-авитьoggle">
+                        <a href="index.php?r=links%2Faddproject" class="nav-link nav-toggle">
                             <i class="icon-puzzle"></i>
                             <span class="title">Добавить</span>
 
@@ -131,7 +131,7 @@ if( !empty(\Yii::$app->request->get("r")) )
 
                     </li>
                     <li class="nav-item">
-                        <a href="###" class="nav-link nav-toggle">
+                        <a href="index.php?r=links%2Fprojects" class="nav-link nav-toggle">
                             <i class="icon-link"></i>
                             <span class="title">Список проектов</span>
                             <!--<span class="arrow"></span>-->
@@ -248,7 +248,7 @@ if( !empty(\Yii::$app->request->get("r")) )
 
             <li class="nav-item start">
                 <a href="index.php?r=site%2Fcontact" class="nav-link">
-                    <i class="icon-call-end"></i>
+                    <i class="icon-bulb"></i>
                     <span class="title">Контакт</span>
                 </a>
             </li>

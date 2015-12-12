@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Users;
 use app\models\Links;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -28,13 +29,92 @@ class LinksController extends Controller
 
     public function actionProjects()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Links::find(),
-        ]);
+        if (!\Yii::$app->user->isGuest) {
 
-        return $this->render('projects', [
-            'dataProvider' => $dataProvider,
-        ]);
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
+                    break;
+                case "google":
+                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
+                    break;
+                case "yandex":
+                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
+                    break;
+                case "mailru":
+                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
+                    break;
+            }
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => Links::find()->where(['uid'=>$model->one()['socid']]),
+            ]);
+
+            return $this->render('projects', [
+                'dataProvider' => $dataProvider,
+            ]);
+        }
+
+        return $this->goHome();
+    }
+
+    public function actionAddproject()
+    {
+        if (!\Yii::$app->user->isGuest) {
+
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
+                    break;
+                case "google":
+                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
+                    break;
+                case "yandex":
+                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
+                    break;
+                case "mailru":
+                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
+                    break;
+            }
+
+            if (\Yii::$app->request->post()) {
+                $link = Yii::$app->request->post("link");
+                if ($link == 'new') {
+                    $l = new Links();
+                    $l->uid = $model->one()['socid'];
+                    $l->url = Yii::$app->request->post("url");
+                    $l->clicks = 0;
+                    $l->title = Yii::$app->request->post("title");
+                    $l->save(false);
+                }
+            }
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => Links::find()->where(['uid'=>$model->one()['socid']]),
+            ]);
+
+            return $this->render('addproject', [
+                'dataProvider' => $dataProvider,
+            ]);
+        }
+
+        return $this->goHome();
     }
 
     /**

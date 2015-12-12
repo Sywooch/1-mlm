@@ -1,4 +1,5 @@
 <?php
+use yii\widgets\ActiveForm;
 use yii\grid\GridView;
 use yii\grid\ActionColumn;
 $this->registerJsFile('/mertonic/global/scripts/app.js');
@@ -49,6 +50,39 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="portlet-body">
+        <?php
+        $form = ActiveForm::begin([
+            'options' => ['class'=>'form-horizontal']
+        ]);?>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="form-group form-md-line-input">
+                    <label class="col-md-3 control-label">Имя проекта</label>
+                    <div class="col-md-9">
+                        <input type="text" name="title" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="form-group form-md-line-input">
+                    <label class="col-md-3 control-label">Ссылка</label>
+                    <div class="col-md-9">
+                        <input type="text" name="url" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input name="link" value="new" type="hidden">
+        <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save" style="float: right;">ДОБАВИТЬ ПРОЕКТ</button>
+
+        <?php $form->end(); ?>
+        <div style="clear: both;"></div>
         <div class="table-responsive">
             <?php $j=0; ?>
             <?= GridView::widget([
