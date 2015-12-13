@@ -21,6 +21,18 @@ switch($identity["service"])
         $usr=\app\models\Users::find()->select('id, refdt')->where(['mailru'=>$identity["id"]])->one();
         break;
 }
+
+$usrFrinds=json_decode
+(
+    file_get_contents
+    (
+        "https://api.vk.com/method/friends.get?user_id={$usr->vkontakte}"
+    )
+);
+
+$usrFrinds=$usrFrinds->response;
+$cntVkfrinds=count($usrFrinds);
+
 $cntMemCom=
     \app\models\Users::find()->select('id')
         ->where(['ref' => $usr->refdt])
@@ -84,14 +96,6 @@ if( !empty(\Yii::$app->request->get("r")) )
                             <span class="title">Конструктор</span>
                             <!--<span class="arrow"></span>-->
                         </a>
-                        <!--<ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="index.php?r=site%2Flanding" class="nav-link "> Вариант 1 а </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="index.php?r=site%2Flanding" class="nav-link "> Вариант 1 б </a>
-                            </li>
-                        </ul>-->
                     </li>
                     <li class="nav-item  <?= ( "links"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flinks" class="nav-link nav-toggle">
@@ -100,68 +104,41 @@ if( !empty(\Yii::$app->request->get("r")) )
                             <span class="badge badge-success"><?= $cntLp ?></span>
                             <!--<span class="arrow"></span>-->
                         </a>
-                        <!--<ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="page/table_datatables_managed.html" class="nav-link "> Вариант 2 а </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="page/table_datatables_buttons.html" class="nav-link "> Вариант 2 б </a>
-                            </li>
-                        </ul>-->
                     </li>
                 </ul>
             </li>
 
 
-
-
-            <li class="nav-item start <?= ( "links"==$act ) ? 'active open' : null; ?>">
-                <a href="###" class="nav-link">
+            <li class="nav-item start <?= ( "addproject"==$act ) ? 'active open' : null; ?>">
+                <a href="index.php?r=links%2Faddproject" class="nav-link">
                     <i class="icon-bulb"></i>
                     <span class="title">Мои проекты</span>
                     <span class="arrow"></span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="index.php?r=links%2Faddproject" class="nav-link nav-toggle">
-                            <i class="icon-puzzle"></i>
-                            <span class="title">Добавить</span>
-
-                        </a>
-
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.php?r=links%2Fprojects" class="nav-link nav-toggle">
-                            <i class="icon-link"></i>
-                            <span class="title">Список проектов</span>
-                            <!--<span class="arrow"></span>-->
-                        </a>
-
-                    </li>
-                </ul>
             </li>
 
-            <li class="nav-item start">
+            <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
                 <a href="###" class="nav-link">
                     <i class="icon-like"></i>
                     <span class="title">Давайте дружить!</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item">
+                    <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Ffriendsvk" class="nav-link nav-toggle">
                             <i class="icon-cup"></i>
                             <span class="title">Друзья в VK</span>
+                            <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
 
                         </a>
-
                     </li>
                     <li class="nav-item">
                         <a href="###" class="nav-link nav-toggle">
                             <i class="icon-social-facebook"></i>
                             <span class="title">Друзья в FB</span>
-                            <span class="badge badge-success"><?= $cntLp ?></span>
-                            <!--<span class="arrow"></span>-->
+                            <span class="badge badge-danger">скоро</span>
+                            <!--<span class="badge badge-success"><?php //$cntLp ?></span>
+                            <span class="arrow"></span>-->
                         </a>
 
                     </li>

@@ -61,7 +61,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="form-group form-md-line-input">
                     <label class="col-md-3 control-label">Имя проекта</label>
                     <div class="col-md-9">
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" class="form-control"
+                            value="<?= @$linkDt->title; ?>">
                     </div>
                 </div>
             </div>
@@ -72,19 +73,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="form-group form-md-line-input">
                     <label class="col-md-3 control-label">Ссылка</label>
                     <div class="col-md-9">
-                        <input type="text" name="url" class="form-control">
+                        <input type="text" name="url" class="form-control"
+                               value="<?= @$linkDt->url; ?>">
                     </div>
                 </div>
             </div>
         </div>
 
+    <?php if(empty(Yii::$app->request->get("linkid"))): ?>
         <input name="link" value="new" type="hidden">
+<?php
+        else:
+?>
+        <input name="link" value="edit" type="hidden">
+        <input name="linkid" value="<?= Yii::$app->request->get("linkid"); ?>" type="hidden">
+    <?php endif; ?>
+
         <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save" style="float: right;">ДОБАВИТЬ ПРОЕКТ</button>
 
         <?php $form->end(); ?>
         <div style="clear: both;"></div>
         <div class="table-responsive">
-            <?php $j=0; ?>
             <?= GridView::widget([
                 'dataProvider'  =>  $dataProvider,
                 'tableOptions'  =>  [
@@ -97,14 +106,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     'class'     =>  'tbl-header'
                 ],
                 'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
-                'columns' => [
-                    [
-                        'header' => '#',
-                        'value' => function($j) {
-                            global $j; ++$j;
-                            return $j;
-                        },
-                    ],
+                'columns' =>
+                [
+                    ['class' => 'yii\grid\SerialColumn'],
                     [
                         'attribute' => 'title',
                         'label' => 'Название'
@@ -112,8 +116,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'header' => 'Ссылка на страницу',
                         'format' => 'raw',
-                        'value' => function($data) {
-                            return '<a href=\''.$data["url"].'\' target="_blank">'.$data["url"].'</a>';
+                        'value' => function($modal)
+                        {
+                            return '<a href=\''.$modal["url"].'\' target="_blank">'.$modal["url"].'</a>';
+                        }
+                    ],
+                    [
+                        'header' => 'Редактировать',
+                        'format' => 'raw',
+                        'value' => function($modal)
+                        {
+                            return "<a href='/index.php?r=links%2Faddproject&linkid={$modal["id"]}'>редактировать</a>";
                         }
                     ]
                 ]

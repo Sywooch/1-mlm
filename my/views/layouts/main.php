@@ -37,10 +37,10 @@ switch($identity["service"])
         break;
 }
 
-$refID=( !empty($model->one()["ref"]) )?$model->one()["ref"]:"28020677"; //admin user refdt
+$ref=( !empty($model->one()["ref"]) )?$model->one()["ref"]:"28020677"; //admin user refdt
 
 $consultant = Users::find()
-    ->where(['refdt' => $refID])->one();
+    ->where(['refdt' => $ref])->one();
 
 $cntConTeam=Users::find()
     ->where(['ref' => $consultant["refdt"]])->count();
@@ -261,7 +261,17 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                             <hr />
                             <h3 class="list-heading">Проекты консультанта</h3>
                             <?php
-                                $consult_proj = Links::find()->where(['uid' => $refID])->all();
+                                $conslinks = Links::find()->where(['uid' => $consultant["id"]])->all();
+                           foreach($conslinks as $val):
+
+//---------------------NEED STYLE
+                               ?>
+                               <a href="<?= $val->url; ?>"><?= $val->title; ?></a><br />
+                               <?php endforeach;
+//---------------------NEED STYLE
+
+
+
                             ?>
                         </div>
                     </div>

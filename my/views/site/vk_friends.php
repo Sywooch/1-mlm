@@ -1,6 +1,4 @@
 <?php
-use yii\grid\GridView;
-use yii\grid\ActionColumn;
 $this->registerJsFile('/mertonic/global/scripts/app.js');
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -14,15 +12,14 @@ $css = <<<'STYLE'
 }
 STYLE;
 $this->registerCss($css);
-$this->title = 'Ваши страницы';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Друзья VK';
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <div class="portlet light bordered">
     <div class="portlet-title">
         <div class="caption">
             <i class="fa fa-cogs font-blue"></i>
-            <span class="caption-subject font-green-sharp bold uppercase">Друзья VK</span>
+            <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
         </div>
         <div class="tools">
             <!-- Кнопка видео подсказки и во всю ширину --->
@@ -49,67 +46,28 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="portlet-body">
-        <div class="row" style="border-bottom: solid 1px rgb(218, 218, 218); padding: 25px;">
-            <div class="col-md-2" style="text-align: center !important;">
-                <img src="https://pp.vk.me/c624825/v624825515/2a003/tstMP1ib20M.jpg" class="img-responsive" alt="" style="border-radius: 50% !important;">
-            </div>
-            <div class="col-md-10">
-                <h3>Гошан волкин</h3>
-                <button class="btn green" data-toggle="modal" href="#basic"> Добавить в  друзья </button>
-            </div>
-        </div>
-        <div class="row" style="border-bottom: solid 1px rgb(218, 218, 218); padding: 25px;">
-            <div class="col-md-2" style="text-align: center !important;">
-                <img src="https://pp.vk.me/c624825/v624825515/2a003/tstMP1ib20M.jpg" class="img-responsive" alt="" style="border-radius: 50% !important;">
-            </div>
-            <div class="col-md-10">
-                <h3>Гошан волкин</h3>
-                <button class="btn green" data-toggle="modal" href="#basic"> Добавить в  друзья </button>
-            </div>
-        </div>
-        <div class="row" style="border-bottom: solid 1px rgb(218, 218, 218); padding: 25px;">
-            <div class="col-md-2" style="text-align: center !important;">
-                <img src="https://pp.vk.me/c624825/v624825515/2a003/tstMP1ib20M.jpg" class="img-responsive" alt="" style="border-radius: 50% !important;">
-            </div>
-            <div class="col-md-10">
-                <h3>Гошан волкин</h3>
-                <button class="btn green" data-toggle="modal" href="#basic"> Добавить в  друзья </button>
-            </div>
-        </div>
-        <div class="row" style="border-bottom: solid 1px rgb(218, 218, 218); padding: 25px;">
-            <div class="col-md-2" style="text-align: center !important;">
-                <img src="https://pp.vk.me/c624825/v624825515/2a003/tstMP1ib20M.jpg" class="img-responsive" alt="" style="border-radius: 50% !important;">
-            </div>
-            <div class="col-md-10">
-                <h3>Гошан волкин</h3>
-                <button class="btn green" data-toggle="modal" href="#basic"> Добавить в  друзья </button>
-            </div>
-        </div>
-        <div class="row" style="border-bottom: solid 1px rgb(218, 218, 218); padding: 25px;">
-            <div class="col-md-2" style="text-align: center !important;">
-                <img src="https://pp.vk.me/c624825/v624825515/2a003/tstMP1ib20M.jpg" class="img-responsive" alt="" style="border-radius: 50% !important;">
-            </div>
-            <div class="col-md-10">
-                <h3>Гошан волкин</h3>
-                <button class="btn green" data-toggle="modal" href="#basic"> Добавить в  друзья </button>
-            </div>
-        </div>
-    </div>
-</div>
+        <?php
+        if( is_array($usrlist) ):
+            foreach($usrlist as $val):?>
+                <div class="row" style="border-bottom: solid 1px rgb(218, 218, 218); padding: 25px;">
+                    <div class="col-md-2" style="text-align: center !important;">
+                        <img src="<?= $val->userpic; ?>" class="img-responsive" alt="" style="border-radius: 50% !important;">
+                    </div>
+                    <div class="col-md-10">
+                        <h3><?= $val->fn; ?>&nbsp;<?= $val->ln; ?></h3>
+                        <?php
+                        /*echo $this->render('_vk_friends',[
+                            'vkID'=>$val->vkontakte
+                        ]);*/
 
-<div style="display: none; padding-right: 17px;" class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title">Modal Title</h4>
-            </div>
-            <div class="modal-body"> Modal body goes here </div>
-            <div class="modal-footer">
-                <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
-                <button type="button" class="btn green">Save changes</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
+                        ?>
+                            <a class="btn green" href="https://vk.com/id<?= $val->vkontakte;?>" target="_blank">
+                                Добавить в  друзья</a>
+                    </div>
+                </div>
+        <?php
+            endforeach;
+        endif;
+        ?>
     </div>
 </div>

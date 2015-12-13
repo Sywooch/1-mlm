@@ -97,20 +97,33 @@ class LinksController extends Controller
                 $link = Yii::$app->request->post("link");
                 if ($link == 'new') {
                     $l = new Links();
-                    $l->uid = $model->one()['socid'];
+                    $l->uid = $model->one()['id'];
                     $l->url = Yii::$app->request->post("url");
-                    $l->clicks = 0;
+                    $l->title = Yii::$app->request->post("title");
+                    $l->save(false);
+                }
+                if ($link == 'edit')
+                {
+                    $l = Links::findOne([
+                       'uid'=>$model->one()['id'],
+                       'id'=>Yii::$app->request->post("linkid")
+                    ]);
+                    $l->url = Yii::$app->request->post("url");
                     $l->title = Yii::$app->request->post("title");
                     $l->save(false);
                 }
             }
 
             $dataProvider = new ActiveDataProvider([
-                'query' => Links::find()->where(['uid'=>$model->one()['socid']]),
+                'query' => Links::find()->where(['uid'=>$model->one()['id']]),
             ]);
 
             return $this->render('addproject', [
                 'dataProvider' => $dataProvider,
+                'linkDt'=>  Links::find()->where([
+                    'uid'=>$model->one()['id'],
+                    'id'=>Yii::$app->request->get("linkid")
+                ])->one()
             ]);
         }
 
