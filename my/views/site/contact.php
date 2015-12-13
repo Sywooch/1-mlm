@@ -1,13 +1,16 @@
 <?php
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\captcha\Captcha;
-
 $this->title = 'Контакт - 1 mlm ресурс';
-$this->params['breadcrumbs'][] = $this->title;
-?>
+//$this->params['breadcrumbs'][] = $this->title;
 
-<style>
+
+$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
+
+$this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+
+$css = <<<'STYLE'
     #section2 {
         cursor: text;
         background: transparent url("vps-bg.jpg") no-repeat scroll 50% 50%;
@@ -96,8 +99,14 @@ $this->params['breadcrumbs'][] = $this->title;
         width: 25px;
         height: 25px;
     }
-</style>
+STYLE;
+$this->registerCss($css);
+
+
+?>
 <!--<link href="https://hostpro.ua/wp-content/themes/hostpro/assets/css/style.css" rel="stylesheet">-->
+
+
 <div class="row">
     <div class="col-md-12">
         <div class="portlet light bordered">
@@ -132,7 +141,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
             </div>
-                    <!------------------------------------------------------------>
+            <div class="portlet-body">
 <section id="section2" data-scen-id="0" class="builder-section no-padding bg-img ng-touched ng-dirty-parse" ng-mouseup="deTextCustomize()">
     <div class="wrap">
         <div class="white-block">
@@ -145,5 +154,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <br></div>
     </div>
 </section>
-
-                    </div>
+            </div>
+        </div>
+    </div>
+</div>

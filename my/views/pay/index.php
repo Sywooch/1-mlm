@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <div><p align="center" style="font-size: 18px;">
-                Ваш  текущий тарифный план - ... <br /></p></div>
+                Ваш  текущий тарифный план - <?= $level; ?> <br /></p></div>
         <div class="portlet-body">
             <div class="pricing-content-1">
                 <div class="row">
