@@ -1597,14 +1597,13 @@ class SiteController extends Controller
                 $usr=\app\models\Users::find()->select('id, refdt')->where(['mailru'=>$identity["id"]])->one();
                 break;
         }
-
         $usrFrinds=json_decode
         (
             file_get_contents
             (
-                "https://api.vk.com/method/friends.get?user_id=28020677"
+                "https://api.vk.com/method/friends.get?user_id=".$usr->vkontakte
             )
-        );//$usr->vkontakte
+        );
         $usrFrinds=$usrFrinds->response;
 
         $vkfDt=VkFriends::find()->where([
