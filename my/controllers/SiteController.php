@@ -1667,16 +1667,18 @@ class SiteController extends Controller
             }
 
             $usrlist=Users::find()
-                ->where(['not in','vkontakte',$usrFrinds]);
+                ->where(['not in','vkontakte',$usrFrinds])
+                ->andWhere(['<>','vkontakte',$usr->vkontakte]);
                 //->andWhere('not in','id',$dt)
             if( is_array($uArrfrId) )
             {
                 $dt=call_user_func_array('array_merge', $uArrfrId);
                 $dt=array_unique($dt);
-                $comma_separated=implode(", ", $dt);
-                $usrlist->andWhere("`id` not in ({$comma_separated})");
+                $cs=implode(", ", $dt);
+                $cs.=$usr->id;
+                $usrlist=$usrlist->andWhere("`id` not in ({$cs})");
             }
-            $usrlist->limit(10)
+            $usrlist=$usrlist->limit(10)
                     ->all();
 
             foreach($usrlist as $val)
