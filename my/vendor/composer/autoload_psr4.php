@@ -25,6 +25,7 @@ return array(
     'kartik\\switchinput\\' => array($vendorDir . '/kartik-v/yii2-widget-switchinput'),
     'kartik\\spinner\\' => array($vendorDir . '/kartik-v/yii2-widget-spinner'),
     'kartik\\sortable\\' => array($vendorDir . '/kartik-v/yii2-sortable'),
+    'kartik\\social\\' => array($vendorDir . '/kartik-v/yii2-social'),
     'kartik\\sidenav\\' => array($vendorDir . '/kartik-v/yii2-widget-sidenav'),
     'kartik\\select2\\' => array($vendorDir . '/kartik-v/yii2-widget-select2'),
     'kartik\\rating\\' => array($vendorDir . '/kartik-v/yii2-widget-rating'),
@@ -57,4 +58,5 @@ return array(
     'cakebake\\bootstrap\\select\\' => array($vendorDir . '/cakebake/yii2-bootstrap-select'),
     'Fxp\\Composer\\AssetPlugin\\' => array($vendorDir . '/fxp/composer-asset-plugin'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
+    'Facebook\\' => array($vendorDir . '/facebook/php-sdk-v4/src/Facebook'),
 );
