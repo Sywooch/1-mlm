@@ -712,6 +712,7 @@ class SiteController extends Controller
                         $lp->h2 = $p["h2"];
                         $lp->h3 = $p["h3"];
                         $lp->yt1 = $p["yt1"];
+                        $lp->yt2 = $p["yt2"];
                         $lp->h1c = $p["h1c"];
                         $lp->h2c = $p["h2c"];
                         $lp->h3c = $p["h3c"];
@@ -736,6 +737,7 @@ class SiteController extends Controller
                         $lp_n->h2 = $p["h2"];
                         $lp_n->h3 = $p["h3"];
                         $lp_n->yt1 = $p["yt"];
+                        $lp_n->yt2 = $p["yt2"];
                         $lp_n->h1c = $p["h1c"];
                         $lp_n->h2c = $p["h2c"];
                         $lp_n->h3c = $p["h3c"];
