@@ -96,7 +96,7 @@ $this->registerCss($style_user);
         }
 
         .socbtn.googleplus-btn {
-            background-color: #d13b20;
+            background-color: #5dd7fc;
         }
         .socbtn.vkontakte-btn {
             background-color: #466fa1;
@@ -105,7 +105,7 @@ $this->registerCss($style_user);
             background-color: #4875b4;
         }
         .socbtn.yandex-btn {
-            background-color: #D22626;
+            background-color: #13488D;
         }
         .socbtn.mailru-btn {
             background-color: #FFCF00;
@@ -204,9 +204,9 @@ $this->registerCss($style_user);
                                class="socbtn facebook-btn" data-uloginbutton="facebook">
                                 <span><img src="s/img/facebook-btn.png" width="25" ></span>Facebook</a>
                             <a style="" href="javascript:void(0)"
-                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=google'"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=twitter'"
                                class="socbtn googleplus-btn" data-uloginbutton="googleplus">
-                                <span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+ - скоро</a>
+                                <span><img src="s/img/twitter-btn.png" width="25" ></span>Twitter</a>
                             <a style="" href="javascript:void(0)"
                                onclick="window.location.href='index.php?r=site%2Flogin&amp;service=vkontakte'"
                                class="socbtn vkontakte-btn" data-uloginbutton="vkontakte">
@@ -219,9 +219,9 @@ $this->registerCss($style_user);
                                class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki">
                                 <span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
                             <a href="javascript:void(0)"
-                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=yandex'"
+                               onclick="window.location.href='index.php?r=site%2Flogin&amp;service=instagram'"
                                class="socbtn yandex-btn" data-uloginbutton="odnoklassniki">
-                                <span><img src="s/img/yandex-btn.png" width="25" ></span>Yandex - скоро</a>
+                                <span><img src="s/img/instagram-btn.png" width="25" ></span>Instagram</a>
                             <a href="javascript:void(0)"
                                onclick="window.location.href='index.php?r=site%2Flogin&amp;service=mailru'"
                                class="socbtn mailru-btn" data-uloginbutton="odnoklassniki">
