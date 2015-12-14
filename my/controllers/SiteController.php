@@ -1665,7 +1665,7 @@ class SiteController extends Controller
             {
                 $uArrfrId[]=unserialize($val->uarrid);
             }
-
+echo"<pre>";print_r($usrFrinds);echo"<hr />";echo$usr->vkontakte;die;
             $usrlist=Users::find()
                 ->where(['not in','vkontakte',$usrFrinds]);
                 //->andWhere('not in','id',$dt)
