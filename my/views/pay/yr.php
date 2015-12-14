@@ -8,7 +8,7 @@
                 <div class="arrow-down border-top-blue"></div>
                 <div class="price-table-pricing">
                     <h3>
-                        <small><strike style="color: #959695; font-size: 23px;">2$</strike></small> 0<span class="price-sign">&nbsp;$</span></h3>
+                        <small><strike style="color: #959695; font-size: 23px;">24$</strike></small> 0<span class="price-sign">&nbsp;$</span></h3>
                     <p>в год</p>
                 </div>
                 <div class="price-table-content">
@@ -57,7 +57,7 @@
                 <div class="arrow-down border-top-red"></div>
                 <div class="price-table-pricing">
                     <h3>
-                        <small><strike style="color: #959695; font-size: 23px;">10$</strike></small> 2<span class="price-sign">&nbsp;$</span></h3>
+                        <small><strike style="color: #959695; font-size: 23px;">120$</strike></small> 20<span class="price-sign">&nbsp;$</span></h3>
                     <p>в год</p>
                 </div>
                 <div class="price-table-content">
@@ -112,7 +112,7 @@
                 <div class="arrow-down border-top-green"></div>
                 <div class="price-table-pricing">
                     <h3>
-                        <small><strike style="color: #959695; font-size: 23px;">25$</strike></small> 10<span class="price-sign">$</span></h3>
+                        <small><strike style="color: #959695; font-size: 23px;">300$</strike></small> 100<span class="price-sign">$</span></h3>
                     <p>в год</p>
                     <div class="price-ribbon">Лучший</div>
                 </div>
@@ -168,7 +168,7 @@
                 <div class="arrow-down border-top-purple"></div>
                 <div class="price-table-pricing">
                     <h3>
-                        <small><strike style="color: #959695; font-size: 23px;">50$</strike></small>  25<span class="price-sign">&nbsp;$</span></h3>
+                        <small><strike style="color: #959695; font-size: 23px;">600$</strike></small>  250<span class="price-sign">&nbsp;$</span></h3>
                     <p>в год</p>
                 </div>
                 <div class="price-table-content">
