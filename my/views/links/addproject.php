@@ -15,15 +15,15 @@ $css = <<<'STYLE'
 }
 STYLE;
 $this->registerCss($css);
-$this->title = 'Ваши страницы';
+$this->title = 'Мои Проекты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="portlet light bordered">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-cogs font-blue"></i>
-            <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
+            <i class="icon-trophy font-blue-sharp"></i>
+            <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
         </div>
         <div class="tools">
             <!-- Кнопка видео подсказки и во всю ширину --->

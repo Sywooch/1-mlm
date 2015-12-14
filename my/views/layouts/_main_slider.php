@@ -111,9 +111,9 @@ if( !empty(\Yii::$app->request->get("r")) )
 
             <li class="nav-item start <?= ( "addproject"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=links%2Faddproject" class="nav-link">
-                    <i class="icon-bulb"></i>
+                    <i class="icon-trophy"></i>
                     <span class="title">Мои проекты</span>
-                    <span class="arrow"></span>
+
                 </a>
             </li>
 

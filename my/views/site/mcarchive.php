@@ -26,8 +26,8 @@ $this->registerCss($css);
     <div class="portlet light bordered">
         <div class="portlet-title tabbable-line">
             <div class="caption">
-                <i class="icon-settings"></i>
-                <span class="caption-subject font-purple-soft bold uppercase" style="font-size: 14px;">Архив мастер классов</span>
+                <i class="icon-social-youtube font-blue-sharp"></i>
+                <span class="caption-subject font-blue-sharp">Архив мастер классов</span>
             </div>
             <div align="right">
                 <!---------------------------------------------------------->
