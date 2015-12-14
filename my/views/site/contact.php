@@ -108,7 +108,7 @@ $this->registerCss($css);
         <div class="portlet light bordered">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="icon-call-end font-blue-sharp"></i>
+                    <i class="icon-call-out font-blue-sharp"></i>
                     <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
                 </div>
                 <div align="right">

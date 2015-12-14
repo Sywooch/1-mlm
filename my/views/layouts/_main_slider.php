@@ -64,6 +64,13 @@ if( !empty(\Yii::$app->request->get("r")) )
             </a>
         </li>
 
+        <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
+            <a href="index.php?r=site%2Fcompany" class="nav-link">
+                <i class="icon-info"></i>
+                <span class="title">О Нас</span>
+            </a>
+        </li>
+
         <li class="nav-item start <?php echo ( "account"==$act ) ? 'active open' : null;
         echo ( "help"==$act ) ? 'active open' : null;
         ?>">
@@ -72,13 +79,13 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <span class="title">Профиль</span>
             </a>
             </li>
-            <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">
-                <a href="index.php?r=site%2Fteam" class="nav-link nav-toggle">
-                    <i class="icon-users"></i>
-                    <span class="title">Команда</span>
-                    <span class="badge badge-success"><?= $cntMemCom ?></span>
-                </a>
-            </li>
+        <li class="nav-item start <?= ( "team"==$act ) ? 'active open' : null; ?>">
+            <a href="index.php?r=site%2Fteam" class="nav-link nav-toggle">
+                <i class="icon-users"></i>
+                <span class="title">Команда</span>
+                <span class="badge badge-success"><?= $cntMemCom ?></span>
+            </a>
+        </li>
 
         <li class="nav-item start <?php
         echo ( "landing"==$act ) ? 'active open' : null;
@@ -179,39 +186,10 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </ul>
             </li>
 
-            <li class="nav-item start <?= ( "company"==$act ) ? 'active open' : null; ?>">
-                <a href="index.php?r=site%2Fcompany" class="nav-link">
-                    <i class="icon-info"></i>
-                    <span class="title">О Нас</span>
-                </a>
-            </li>
 
 
-            <li class="nav-item start <?php
-            echo ( "pricing"==$act ) ? 'active open' : null;
-            echo ( "pricing2"==$act ) ? 'active open' : null;
-            ?>">
-                <a href="index.php?r=site%2Fpricing" class="nav-link">
-                    <i class="icon-briefcase"></i>
-                    <span class="title">Тарифы</span>
 
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  <?=( "pricing"==$act ) ? 'active open' : null;?>">
-                        <a href="index.php?r=site%2Fpricing" class="nav-link ">
-                            <i class="icon-wallet"></i>
-                            <span class="title">Выбор тарифа</span>
-                        </a>
-                    </li>
-                    <!--<li class="nav-item  <?=( "pricing2"==$act ) ? 'active open' : null;?>">
-                        <a href="index.php?r=site%2Fpricing2" class="nav-link ">
-                            <i class="icon-wallet"></i>
-                            <span class="title"> Оплата</span>
-                        </a>
-                    </li>-->
 
-                </ul>
-            </li>
 
 
 
@@ -223,9 +201,20 @@ if( !empty(\Yii::$app->request->get("r")) )
             </a>
         </li>
 
+
+            <li class="nav-item start <?php
+            echo ( "pricing"==$act ) ? 'active open' : null;
+            echo ( "pricing2"==$act ) ? 'active open' : null;
+            ?>">
+                <a href="index.php?r=site%2Fpricing" class="nav-link">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Тарифы</span>
+                </a>
+            </li>
+
             <li class="nav-item start">
                 <a href="index.php?r=site%2Fcontact" class="nav-link">
-                    <i class="icon-bulb"></i>
+                    <i class="icon-call-out"></i>
                     <span class="title">Контакт</span>
                 </a>
             </li>
@@ -297,7 +286,42 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </ul>
             </li>
 
-<!-----------  Начало Социальные виджеты  ------------>
+ <!--  Меню  Админа  начало --->
+
+            <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
+                <a href="###" class="nav-link">
+                    <i class="icon-like"></i>
+                    <span class="title">Меню админа </span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Ffriendsvk" class="nav-link nav-toggle">
+                            <i class="icon-cup"></i>
+                            <span class="title">Нове Пользователи</span>
+                            <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="###" class="nav-link nav-toggle">
+                            <i class="icon-social-facebook"></i>
+                            <span class="title">Смена наставника</span>
+                            <span class="badge badge-danger">скоро</span>
+
+                        </a>
+
+                    </li>
+                </ul>
+            </li>
+
+
+
+
+            <!--  Меню  Админа Конец --->
+
+
+            <!-----------  Начало Социальные виджеты  ------------>
                    <br>
                <li class="nav-item">
                 <!-- VK Widget начало -->
