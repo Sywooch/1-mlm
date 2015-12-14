@@ -12,7 +12,7 @@ $this->title = 'Выбор тарифа';
 ?>
     <!-- BEGIN PAGE BASE CONTENT -->
     <div class="portlet light portlet-fit bordered">
-        <div class="portlet-title">
+        <div class="portlet-title tabbable-line">
             <div class="caption">
                 <i class="fa fa-cogs font-green-sharp"></i>
                 <span class="caption-subject font-green-sharp uppercase"><?= $this->title; ?></span>
@@ -40,15 +40,41 @@ $this->title = 'Выбор тарифа';
                 </div>
                 <!------------------------------------------------------------>
             </div>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_1_1" data-toggle="tab"> Месяц  </a>
+                </li>
+                <li>
+                    <a href="#tab_1_2" data-toggle="tab"> Год  </a>
+                </li>
+            </ul>
         </div>
         <div><p align="center" style="font-size: 18px;">
                 Ваш  текущий тарифный план - <?= $level; ?> <br /></p></div>
         <div class="portlet-body">
-        <?php echo $this->render("m.php",[
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="tab_1_1">
+                    <?php
+                    echo $this->render("m.php",[
+                        'btn2'=>$btn2,
+                        'btn10'=>$btn10,
+                        'btn25'=>$btn25
+                    ]) ?>
+                </div>
+                <div class="tab-pane fade" id="tab_1_2">
+                    <?php
+                    echo $this->render("yr.php",[
+                        'btn2'=>$btn2,
+                        'btn10'=>$btn10,
+                        'btn25'=>$btn25
+                    ]) ?>
+                </div>
+            </div>
+        <?php /*echo $this->render("m.php",[
             'btn2'=>$btn2,
             'btn10'=>$btn10,
             'btn25'=>$btn25
-        ])?>
+        ])*/?>
         </div>
         <div><p align="center"><span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2015</p></div>
     </div>

@@ -266,7 +266,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 
 //---------------------NEED STYLE
                                ?>
-                               <a href="<?= $val->url; ?>"><?= $val->title; ?></a><br />
+                               <a style="margin-left: 25px;" href="<?= $val->url; ?>"><?= $val->title; ?></a><br />
                                <?php endforeach;
 //---------------------NEED STYLE
 
