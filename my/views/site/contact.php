@@ -2,7 +2,6 @@
 $this->title = 'Контакт - 1 mlm ресурс';
 //$this->params['breadcrumbs'][] = $this->title;
 
-
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -101,11 +100,8 @@ $css = <<<'STYLE'
     }
 STYLE;
 $this->registerCss($css);
-
-
 ?>
 <!--<link href="https://hostpro.ua/wp-content/themes/hostpro/assets/css/style.css" rel="stylesheet">-->
-
 
 <div class="row">
     <div class="col-md-12">
@@ -147,11 +143,25 @@ $this->registerCss($css);
         <div class="white-block">
             <h3>Есть вопросы?</h3>
             <p>Обращайтесь в техподдержку</p>
-            <p>с 10:00 до 20:00</p>
-            <!--<span class="phone">(067) 233-67-55</span>-->
-            <span class="phone">support@1-mlm.com</span>
-            <div><a class="skype" href="skype:support.mlm?chat" style="" data-edit-now="false"><i class="fa fa-skype"></i> support.mlm</a></div>
-            <br></div>
+            <p>с 10:00 до 20:00 (UTC +2)</p>
+<?php
+   if($level>1):
+?>
+            <span class="phone"><?= Yii::$app->params['adminEmail']; ?></span>
+<?php
+    endif;
+if($level>2):
+?>
+            <div>
+                <a class="skype" href="skype:support.mlm?chat" style="" data-edit-now="false">
+                    <i class="fa fa-skype"></i><?= Yii::$app->params['skype']; ?>
+                </a>
+            </div>
+<?php
+    endif;
+?>
+            <br>
+        </div>
     </div>
 </section>
             </div>

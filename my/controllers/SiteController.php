@@ -1195,7 +1195,7 @@ class SiteController extends Controller
         Yii::$app->user->logout();
         return $this->goHome();
     }
-
+/*
     public function actionContact()
     {
         if (!\Yii::$app->user->isGuest)
@@ -1208,11 +1208,50 @@ class SiteController extends Controller
             }
             return $this->render('contact', [
                 'model' => $model,
+                'level'=>$this->usrLvl()
+            ]);
+        }
+        return $this->goHome();
+    }
+*/
+    public function actionContact()
+    {
+        if( !\Yii::$app->user->isGuest )
+        {
+            return $this->render('contact',
+            [
+                'level'=>$this->usrLvl()
             ]);
         }
         return $this->goHome();
     }
 /***************************************************************/
+    private function usrLvl()
+    {
+        $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        switch($identity["service"])
+        {
+            case "facebook":
+                $usr=Users::find()->where(['facebook'=>$identity["id"]])->one();
+                break;
+            case "vkontakte":
+                $usr=Users::find()->where(['vkontakte'=>$identity["id"]])->one();
+                break;
+            case "linkedin_oauth2":
+                $usr=Users::find()->where(['linkedin'=>$identity["id"]])->one();
+                break;
+            case "google":
+                $usr=Users::find()->where(['google'=>$identity["id"]])->one();
+                break;
+            case "yandex":
+                $usr=Users::find()->where(['yandex'=>$identity["id"]])->one();
+                break;
+            case "mailru":
+                $usr=Users::find()->where(['mailru'=>$identity["id"]])->one();
+                break;
+        }
+        return $usr->level;
+    }
     public function actionPolitika()
     {
         $this->layout = "empty";
