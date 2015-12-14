@@ -11,8 +11,8 @@ class PayController extends \yii\web\Controller
     const PUBLICKEY = "i70959445638";
     const PRIVATEKEY = "LMwx5Wzmd7Zi1LTmuQvSmzhLgIOqL3gZF0VXjHiY";
 
-    private $_public_key=PUBLICKEY;
-    private $_private_key=PRIVATEKEY;
+    private $_public_key=\app\controllers\PayController::PUBLICKEY;
+    private $_private_key=\app\controllers\PayController::PRIVATEKEY;
 
     public function beforeAction($action)
     {
@@ -165,15 +165,21 @@ class PayController extends \yii\web\Controller
 
     public function actionCheck()
     {
-        $signature=base64_encode( sha1(  $this->_private_key. @$_POST['data'] . $this->_public_key, 1 ) );
-        if(@$_POST['signature']==$signature){
-            $dt=base64_decode( @$_POST['data'] );
-            $dt=json_decode($dt);
+        $signature=base64_encode( sha1(
+            $this->_private_key.
+            @$_POST['data'] .
+            $this->_private_key, 1 ) );
 
+        if(@$_POST['signature']==$signature)
+        {
+            $dt=json_decode( base64_decode( @$_POST['data'] ) );
             $answer=$this->payStatus($dt->order_id);
 
             echo "<pre>";
             print_r($answer);
+
+            echo "<hr />";
+            print_r($answer->result);
         }
     }
 }
