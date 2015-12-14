@@ -1645,8 +1645,6 @@ class SiteController extends Controller
         );
         $usrFrinds=$usrFrinds->response;
 
-        echo"<pre>";print_r($usrFrinds);die;
-
         $vkfDt=VkFriends::find()->where([
             'date'=>date("Y-m-d"),
             'uid'=>$usr->id
