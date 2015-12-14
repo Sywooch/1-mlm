@@ -1666,16 +1666,18 @@ class SiteController extends Controller
                 $uArrfrId[]=unserialize($val->uarrid);
             }
 
-            $dt=call_user_func_array('array_merge', $uArrfrId);
-            $dt = array_unique($dt);
-            $comma_separated = implode(", ", $dt);
-
             $usrlist=Users::find()
-                ->where(['not in','vkontakte',$usrFrinds])
+                ->where(['not in','vkontakte',$usrFrinds]);
                 //->andWhere('not in','id',$dt)
-                ->andWhere("`id` not in ({$comma_separated})")
-                ->limit(10)
-                ->all();
+            if( is_array($uArrfrId) )
+            {
+                $dt=call_user_func_array('array_merge', $uArrfrId);
+                $dt=array_unique($dt);
+                $comma_separated=implode(", ", $dt);
+                $usrlist->andWhere("`id` not in ({$comma_separated})");
+            }
+            $usrlist->limit(10)
+                    ->all();
 
             foreach($usrlist as $val)
             {

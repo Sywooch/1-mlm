@@ -105,7 +105,7 @@ class PayController extends \yii\web\Controller
                 'subscribe' => '1',
                 'subscribe_periodicity' => 'month',
 				'subscribe_date_start'=>date("Y-m-d H:i:s"),
-		
+
                 'server_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
                 'result_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
 
