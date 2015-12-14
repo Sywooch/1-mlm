@@ -1645,6 +1645,14 @@ class SiteController extends Controller
         );
         $usrFrinds=$usrFrinds->response;
 
+
+        echo"<pre>";
+        print_r($usrFrinds);
+        echo"<hr />";
+        echo$usr->vkontakte;
+        die;
+
+
         $vkfDt=VkFriends::find()->where([
             'date'=>date("Y-m-d"),
             'uid'=>$usr->id
@@ -1665,7 +1673,7 @@ class SiteController extends Controller
             {
                 $uArrfrId[]=unserialize($val->uarrid);
             }
-echo"<pre>";print_r($usrFrinds);echo"<hr />";echo$usr->vkontakte;die;
+
             $usrlist=Users::find()
                 ->where(['not in','vkontakte',$usrFrinds]);
                 //->andWhere('not in','id',$dt)
