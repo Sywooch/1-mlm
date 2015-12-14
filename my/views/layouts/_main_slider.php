@@ -3,22 +3,22 @@ $identity = \Yii::$app->getUser()->getIdentity()->profile;
 switch($identity["service"])
 {
     case "facebook":
-        $usr=\app\models\Users::find()->select('id, refdt')->where(['facebook'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['facebook'=>$identity["id"]])->one();
         break;
     case "vkontakte":
-        $usr=\app\models\Users::find()->select('id, refdt')->where(['vkontakte'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['vkontakte'=>$identity["id"]])->one();
         break;
     case "linkedin_oauth2":
-        $usr=\app\models\Users::find()->select('id, refdt')->where(['linkedin'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['linkedin'=>$identity["id"]])->one();
         break;
     case "google":
-        $usr=\app\models\Users::find()->select('id, refdt')->where(['google'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['google'=>$identity["id"]])->one();
         break;
     case "yandex":
-        $usr=\app\models\Users::find()->select('id, refdt')->where(['yandex'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['yandex'=>$identity["id"]])->one();
         break;
     case "mailru":
-        $usr=\app\models\Users::find()->select('id, refdt')->where(['mailru'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['mailru'=>$identity["id"]])->one();
         break;
 }
 
@@ -26,7 +26,7 @@ $usrFrinds=json_decode
 (
     file_get_contents
     (
-        "https://api.vk.com/method/friends.get?user_id={$usr->vkontakte}"
+        "https://api.vk.com/method/friends.get?user_id=".$usr->vkontakte
     )
 );
 
