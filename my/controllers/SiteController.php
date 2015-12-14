@@ -270,8 +270,8 @@ class SiteController extends Controller
                         ])
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
-                            ->where(['u.id'=>$arr]),
-                            //->orderBy(['regdate' => SORT_DESC]),
+                            ->where(['u.id'=>$arr])
+                            ->orderBy(['active' => SORT_DESC]),
                         'sort' => [
                             'attributes' => ['active', 'fn', 'ln'],
                         ],

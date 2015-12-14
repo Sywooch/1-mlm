@@ -192,7 +192,9 @@ $this->title = 'Команда. Ваша 1-я линия';
                             },
                         ],
                         [
-                            'header'     =>  'Вход',
+                            //'header'     =>  'Вход',
+                            'label'     =>  'Вход',
+                            'attribute' =>  'active',
                             'format' => 'raw',
                             'options' => ['style' => 'width: 100px; max-width: 100px;'],
                             'value'  =>  function($dt)
