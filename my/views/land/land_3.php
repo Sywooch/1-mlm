@@ -1,9 +1,9 @@
+<?php echo Yii::getAlias('@web'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="<?=$data["desc"]?>" />
     <meta name="keywords" content="<?=$data["keywords"]?>" />
 
@@ -13,114 +13,163 @@
 
     <meta name="robots" content="noindex,nofollow">
     <title><?=$data["name"]?></title>
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/lp777/777.css" />
+    <link href="<?=Yii::getAlias('@web') ?>/favicon.ico" rel="icon">
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
 
-    <!-- Bootstrap -->
-    <link href="<?=Yii::getAlias('@web') ?>/tp3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?=Yii::getAlias('@web') ?>/tp3/sticky-footer-navbar.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
     <style>
-        #youtube {
-            background: transparent url("<?=Yii::getAlias('@web') ?>/tp3/macbook650.png") no-repeat scroll center center;
-            height: 365px;
-            /*background-size:100% auto;*/
-
+        .modalDialog > div {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+            border-radius: 10px;
+            background: #fff;
+            background: -moz-linear-gradient(#fff, #505c99);
+            background: -webkit-linear-gradient(#fff, #505c99);
+            background: -o-linear-gradient(#fff, #505c99);
         }
-
-        #youtube_small {
-            background: transparent url("<?=Yii::getAlias('@web') ?>/tp3/macbook650.png") no-repeat scroll center center;
-            height: 200px;
-            /*background-size:100% auto;*/
-            background-size: 330px;
-
+        .close {
+            background: #606061;
+            color: #FFFFFF;
+            line-height: 25px;
+            position: absolute;
+            right: -12px;
+            text-align: center;
+            top: -10px;
+            width: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
         }
-
-        .btn.yellow {
-            color: #111 !important;
-            text-shadow: 0px -1px 0px #222;
-            background-color: #FFC000;
-            border-radius: 4px;
-            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.45);
-        }
-
-        .btn.big {
-            padding: 5px 20px;
-            font-size: 20px;
-        }
-
-        #ytscr {
-            width: 480px;
-            margin: 0 auto;
-            height: 310px;
-        }
-
-        #ytscr iframe {
-            margin-top: 20px;
-        }
-
-        #photo img {
-            width: 60px;
-            height: 60px;
-            border: 2px solid #DDD;
-            border-radius: 60px;
-            float: left;
-            margin-left: 10px;
-        }
-
-        #photo p {
-            margin: 0px;
-            padding: 10px;
-            float: left;
-            text-align: left;
-            font-size: 16px;
-            color: rgba(0, 0, 0, 0.45);
-        }
-
-        .social-likes {
-            float: right;
-            margin-top: 15px !important;
-        }
-
-        @media (max-width:641px) {
-            #youtube {
-                background: transparent url("<?=Yii::getAlias('@web') ?>/tp3/iphone-bg.png") no-repeat scroll center center;
-                height: 200px;
-                background-size: 330px;
-            }
-
-            #ytscr {
-                width: 245px;
-                margin: 0px auto;
-                height: 138px;
-            }
-
-            #ytscr iframe {
-                margin-top: 32px;
-            }
-        }
-
-        /*@media (max-width:768px) {
-            #youtube {
-                background-size:100% auto;
-            }
-        }*/
+        .close:hover { background: #00d9ff; }
     </style>
-    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/tp3/soc_net/social-likes_classic.css" />
+    <style>
+
+        .socbtn.facebook-btn {
+            background-color: #38559c;
+        }
+
+        .socbtn.googleplus-btn {
+            background-color: #d13b20;
+        }
+        .socbtn.vkontakte-btn {
+            background-color: #466fa1;
+        }
+        .socbtn.linkedin-btn {
+            background-color: #4875b4;
+        }
+        .socbtn.yandex-btn {
+            background-color: #D22626;
+        }
+        .socbtn.mailru-btn {
+            background-color: #FFCF00;
+        }
+
+        .socbtn, .socbtn:hover {
+            display: block;
+            font-size: 14px;
+            line-height: 30px;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            margin: 0px 0px 10px 0px;
+            background-color: #eeeeee;
+            transition: all 0.5s;
+        }
+
+        .cta-btn .btn {
+            padding: 10px 37px !important;
+        }
+
+        .white {
+            /*background-color: white;*/
+            padding-top: 8px;
+            position: absolute;
+            top: 600px;
+            height: 48px;
+            border-top: solid 2px yellow;
+            border-bottom: solid 2px yellow;
+            padding-left: 10px;
+        }
+
+        .user_item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .user_item img {
+            border-radius: 15px !important;
+            border: solid 1px white;
+        }
+
+        .user_item a {
+            color: white;
+        }
+
+        .marquee {
+            overflow:hidden;
+            /*zoom:1;*/
+            width:1200px;
+            /*font-size:12px;
+            line-height:16px;
+            position:relative;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+            background:#f6f6f6;*/
+            white-space:nowrap;
+        }
+
+        h1, h2, h3 {
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+        }
+
+        h1 {
+            margin-top: 9px !important;
+        }
+
+        #share {
+            padding: 0 !important;
+        }
+
+        #main h1 {
+            font-size:28px;
+        }
+
+        #main h2 {
+            font-size:24px;
+        }
+
+        #main h3 {
+            font-size:20px;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
 </head>
-<body <?php if ($data["bg"]) echo "style='background-color: ".$data['bg']."'" ?>>
-<div class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <!--<div>
-            Г. Волкин
-        </div>-->
-        <div id="photo">
-            <img src="<?=$user['userpic']?>">
-            <p>Ваш консультант:  <b><?php echo $user["fn"].' '.$user["ln"];?></b></p>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div class="content">
+            <div id="photo">
+                <img src="<?=$user['userpic']?>" />
+                <p>Ваш консультант:  <b><?php echo $user["fn"].' '.$user["ln"];?></b></p>
+            </div>
         </div>
         <div class="social-likes">
             <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
@@ -130,66 +179,102 @@
             <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
             <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
         </div>
-        <!--<div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>-->
-        <!--<div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>--><!--/.nav-collapse -->
     </div>
-</div>
-<div class="container" style="text-align: center;">
-    <div>
-        <h1 style="line-height: 14px; <?php if ($data["h1c"]) echo "color: ".$data['h1c'].";" ?>"><?=$data["h1"]?></h1>
-        <h2 style="line-height: 14px; <?php if ($data["h2c"]) echo "color: ".$data['h2c'].";" ?>"><?=$data["h2"]?></h2>
-        <h3 style="line-height: 14px; <?php if ($data["h3c"]) echo "color: ".$data['h3c'].";" ?>"><?=$data["h3"]?></h3>
-    </div>
-    <div id="youtube">
-        <div id="ytscr">
-            <iframe id="ytplayer" src="https://www.youtube-nocookie.com/embed/<?=$data["yt1"]?>?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=<?=$data["autoplay"]?>" allowfullscreen="" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+    <div id="main" style="background-color: <?=$data["bg"]?>; /*max-height: 600px;*/">
+        <h1 <?php if ($data["h1c"]) echo "style='color: ".$data['h1c']."'" ?>><?=$data["h1"]?></h1>
+        <h2 <?php if ($data["h2c"]) echo "style='color: ".$data['h2c']."'" ?>><?=$data["h2"]?></h2>
+        <h3 <?php if ($data["h3c"]) echo "style='color: ".$data['h3c']."'" ?>><?=$data["h3"]?></h3>
+        <div id="youtube">
+            <iframe id="ytplayer" width="500" height="400" src="//www.youtube.com/embed/<?=$data["yt1"]?>?rel=0&controls=0&showinfo=0&autoplay=<?=$data["autoplay"]?>&" frameborder="0" allowfullscreen></iframe>
+            <div class="watermark"></div>
+            <div class="clear"></div>
         </div>
-        <p style="margin-top: 25px;"><a href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a></p>
+        <div id="cta">
+            <p><a href="#modal" data-toggle="modal" data-target="#modal-1"
+                  title="Жмите здесь, чтобы узнать больше!"
+                  class="btn big yellow pulse"><?=$data["button"]?></a></p>
+
+            <h3 style="color: #fff">самое интересное Вас ждет внутри. Регистрация в 1 клик!</h3>
+        </div>
+        <div id="share">
+            <!--<script type="text/javascript">(function() {
+                    if (window.pluso)if (typeof window.pluso.start == "function") return;
+                    if (window.ifpluso==undefined) { window.ifpluso = 1;
+                        var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                        s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                        s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                        var h=d[g]('body')[0];
+                        h.appendChild(s);
+                    }})();</script>
+            <div class="pluso" data-background="none;" data-options="medium,square,line,horizontal,counter,sepcounter=1,theme=14" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email" data-user="1654282972"></div>-->
+            <!--<div class="social-likes">
+                <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+                <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+                <div class="mailru" title="Поделиться ссылкой в Моём мире">Мой мир</div>
+                <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+                <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
+                <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+            </div>-->
+        </div>
+    </div>
+    <div id="footer">
+        <p id="copyright">&copy; 2015 <a href="#modal" data-toggle="modal" data-target="#modal-1">
+                1-mlm.com&#8482;</a> | <a href="#modal" data-toggle="modal" data-target="#modal-1">
+                Войти в Личный Кабинет</a></p>
     </div>
 
-</div>
-<h3 style="text-align: center; font-size: 18px;">самое интересное Вас ждет внутри. Регистрация в 1 клик!</h3>
-
-<div id="footer">
-    <div class="container">
-        <p class="text-muted"  style="text-align: center; font-size: 12px;">
-            © 2015 <a href="#modal" data-toggle="modal" data-target="#modal-1">
-                1-mlm.com™</a> | <a href="#modal" data-toggle="modal" data-target="#modal-1">
-                Войти в Личный Кабинет</a>
-        </p>
+    <!-- BEGIN LOGIN BOX *****************************************************************-->
+    <div class="modal fade" id="modal-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h5 class="modal-title" id="myModalLabel"><span>Вход и Регистрация -  Используя социальные сети</span></h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!--<h5 class="col-md-12 wl"><span>Используя социальные сети</span></h5>-->
+                        <div data-ulogin-inited="1446737975834" class="col-md-12 wl" id="uLogin1" data-ulogin="lang=ru;display=buttons;fields=first_name,last_name,email,phone,photo,photo_big,city,country;providers=facebook,twitter,vkontakte,odnoklassniki,mailru,googleplus;optional=phone;hidden=;redirect_uri=;receiver=http%3A%2F%2Fjoinetwork.ru%2Fxd_custom.html;callback=LoginAutorizer">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <a style="" href="javascript:void(0)"
+                                   onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=facebook&refid=<?=$user["refdt"]?>'"
+                                   class="socbtn facebook-btn" data-uloginbutton="facebook">
+                                    <span><img src="s/img/facebook-btn.png" width="25" ></span>Facebook</a>
+                                <a style="" href="javascript:void(0)"
+                                   onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=google&refid=<?=$user["refdt"]?>'"
+                                   class="socbtn googleplus-btn" data-uloginbutton="googleplus">
+                                    <span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+ - скоро</a>
+                                <a style="" href="javascript:void(0)"
+                                   onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=vkontakte&refid=<?=$user["refdt"]?>'"
+                                   class="socbtn vkontakte-btn" data-uloginbutton="vkontakte">
+                                    <span><img src="s/img/vkontakte-btn.png" width="25" ></span>Vkontakte</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <!--------------------------------------------------------------------------------->
+                                <a href="javascript:void(0)"
+                                   onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=linkedin_oauth2&refid=<?=$user["refdt"]?>'"
+                                   class="socbtn odnoklassniki-btn" data-uloginbutton="odnoklassniki">
+                                    <span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
+                                <a href="javascript:void(0)"
+                                   onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=yandex&refid=<?=$user["refdt"]?>'"
+                                   class="socbtn yandex-btn" data-uloginbutton="odnoklassniki">
+                                    <span><img src="s/img/yandex-btn.png" width="25" ></span>Yandex - скоро</a>
+                                <a href="javascript:void(0)"
+                                   onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=mailru&refid=<?=$user["refdt"]?>'"
+                                   class="socbtn mailru-btn" data-uloginbutton="odnoklassniki">
+                                    <span><img src="s/img/mailru-btn.png" width="25" ></span>Mailru</a>
+                                <!--------------------------------------------------------------------------------->
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><span>Закрыть</span></button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?=Yii::getAlias('@web') ?>/tp3/js/bootstrap.min.js"></script>
-<script src="<?=Yii::getAlias('@web') ?>/tp3/soc_net/social-likes.min.js"></script>
+    <!-- END LOGIN BOX *****************************************************************-->
 </body>
 </html>
