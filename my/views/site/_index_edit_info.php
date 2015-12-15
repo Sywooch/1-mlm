@@ -122,6 +122,23 @@
 
                     <div class="help-block"></div></div>
             </div>
+
+            <div class="form-group">
+                <label>twitter</label>
+                <div class="input-icon">
+                    <i class="icon-link"></i>
+                    <input type="text" id="users-twitter" class="form-control" name="Users[twitter]" value="<?= $model["twitter"]; ?>">
+
+                    <div class="help-block"></div></div>
+            </div>
+            <div class="form-group">
+                <label>instagram</label>
+                <div class="input-icon">
+                    <i class="icon-link"></i>
+                    <input type="text" id="users-instagram" class="form-control" name="Users[instagram]" value="<?= $model["instagram"]; ?>">
+
+                    <div class="help-block"></div></div>
+            </div>
         </div>
     </div>
 </div>

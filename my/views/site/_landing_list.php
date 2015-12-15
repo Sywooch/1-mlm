@@ -27,6 +27,12 @@ switch($identity["service"])
     case "mailru":
         $usr=$query->from([Users::tableName()])->where(['mailru'=>$identity["id"]])->one();
     break;
+    case "twitter":
+        $usr=$query->from([Users::tableName()])->where(['twitter'=>$identity["id"]])->one();
+        break;
+    case "instagram":
+        $usr=$query->from([Users::tableName()])->where(['instagram'=>$identity["id"]])->one();
+        break;
 }
 
 

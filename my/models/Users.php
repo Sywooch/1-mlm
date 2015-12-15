@@ -148,6 +148,8 @@ class Users extends \yii\db\ActiveRecord
                 $users->googleplus =  ( !empty($p["Users-googleplus"]) )?$p["Users-googleplus"]:null;
                 $users->yandex     =  ( !empty($p["Users-yandex"]) )?$p["Users-yandex"]:null;
                 $users->mailru     =  ( !empty($p["Users-mailru"]) )?$p["Users-mailru"]:null;
+                $users->twitter    =  ( !empty($p["Users-twitter"]) )?$p["Users-twitter"]:null;
+                $users->instagram  =  ( !empty($p["Users-instagram"]) )?$p["Users-instagram"]:null;
                 $users->status=1;
             }
             $users->update(false);

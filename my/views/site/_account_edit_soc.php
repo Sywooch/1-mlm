@@ -84,6 +84,33 @@ $form = ActiveForm::begin([
         )->textInput(["class"=>"form-control",]); ?>
     </div>
 
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'twitter', ["template" => "<label class='col-md-2 control-label'>twitter</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваш twitter</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput(["class"=>"form-control",]); ?>
+    </div>
+    <div class="form-group form-md-line-input">
+        <?=$form->field(
+            $model, 'instagram', ["template" => "<label class='col-md-2 control-label'>instagram</label>
+                                                            <div class='col-md-10'>
+                                                                <div class=\"input-icon\">
+                                                                    <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
+                                                                    <div class=\"form-control-focus\"></div>
+                                                                    <span class=\"help-block\">Ваш instagram</span>
+                                                                </div>
+
+                                                            </div>"]
+        )->textInput(["class"=>"form-control",]); ?>
+    </div>
+
         <div class="margin-top-10">
             <?= \yii\helpers\Html::hiddenInput('Users[formtype]', 'soc', ["id"=>"users-formtype"]); ?>
             <?= '<button class="btn green"> Применить </button>'; ?>

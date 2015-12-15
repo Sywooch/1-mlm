@@ -25,6 +25,12 @@ switch($identity["service"])
     case "mailru":
         $usrDt = Users::find()->select('fn,ln,userpic')->where(['mailru'=>$identity["id"]])->one();
         break;
+    case "twitter":
+        $usrDt = Users::find()->select('fn,ln,userpic')->where(['twitter'=>$identity["id"]])->one();
+        break;
+    case "instagram":
+        $usrDt = Users::find()->select('fn,ln,userpic')->where(['instagram'=>$identity["id"]])->one();
+        break;
 }
 
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');

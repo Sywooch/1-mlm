@@ -22,6 +22,12 @@ switch($identity["service"])
     case "mailru":
         $usrDt = Users::find()->where(['mailru'=>$identity["id"]])->one();
         break;
+    case "twitter":
+        $usrDt = Users::find()->where(['twitter'=>$identity["id"]])->one();
+        break;
+    case "instagram":
+        $usrDt = Users::find()->where(['instagram'=>$identity["id"]])->one();
+        break;
 }
 $usrDt2 = Users::find()->where(['id'=>$second_user])->one();
 

@@ -24,7 +24,9 @@ $( document ).ready(function() {
             'Users-linkedin': $("#users-linkedin").val(),
             'Users-googleplus': $("#users-googleplus").val(),
             'Users-yandex': $("#users-yandex").val(),
-            'Users-mailru': $("#users-mailru").val()
+            'Users-mailru': $("#users-mailru").val(),
+            'Users-twitter': $("#users-twitter").val(),
+            'Users-instagram': $("#users-instagram").val()
          },
          success: function(dt){
             if(1==dt)
@@ -78,20 +80,4 @@ $( document ).ready(function() {
             });
         }
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });

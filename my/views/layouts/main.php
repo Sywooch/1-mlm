@@ -33,8 +33,11 @@ switch($identity["service"])
     case "mailru":
         $model = Users::find()->where(['mailru'=>$identity["id"]]);
         break;
-    default:
-        $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
+    case "twitter":
+        $model = Users::find()->where(['twitter'=>$identity["id"]]);
+        break;
+    case "instagram":
+        $model = Users::find()->where(['instagram'=>$identity["id"]]);
         break;
 }
 

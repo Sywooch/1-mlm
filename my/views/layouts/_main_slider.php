@@ -20,6 +20,12 @@ switch($identity["service"])
     case "mailru":
         $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['mailru'=>$identity["id"]])->one();
         break;
+    case "twitter":
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['twitter'=>$identity["id"]])->one();
+        break;
+    case "instagram":
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['instagram'=>$identity["id"]])->one();
+        break;
 }
 
 $usrFrinds=json_decode

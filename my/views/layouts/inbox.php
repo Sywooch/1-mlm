@@ -31,6 +31,12 @@ switch($identity["service"])
     case "mailru":
         $usrDt = Users::find()->where(['mailru'=>$identity["id"]])->one();
         break;
+    case "twitter":
+        $usrDt = Users::find()->where(['twitter'=>$identity["id"]])->one();
+        break;
+    case "instagram":
+        $usrDt = Users::find()->where(['instagram'=>$identity["id"]])->one();
+        break;
 }
 ?>
 <script type="text/javascript">

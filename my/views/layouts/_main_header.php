@@ -23,6 +23,12 @@ switch($identity["service"])
     case "mailru":
         $usr=$usr->where(['mailru' => $identity["id"]]);
     break;
+    case "twitter":
+        $usr=$usr->where(['twitter' => $identity["id"]]);
+        break;
+    case "instagram":
+        $usr=$usr->where(['instagram' => $identity["id"]]);
+        break;
 }
 $usr=$usr->one();
 $brand=\app\models\Lp::find()->where(['id'=>$usr['companyid']])->one();

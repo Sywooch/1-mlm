@@ -17,6 +17,12 @@ switch($identity["service"])
     case "mailru":
         $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['mailru'=>$identity["id"]])->one();
     break;
+    case "twitter":
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['twitter'=>$identity["id"]])->one();
+        break;
+    case "instagram":
+        $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['instagram'=>$identity["id"]])->one();
+        break;
 	case "vkontakte":
 	default:
         $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['vkontakte'=>$identity["id"]])->one();
