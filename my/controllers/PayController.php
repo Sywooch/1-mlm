@@ -193,13 +193,13 @@ class PayController extends \yii\web\Controller
             $dt=json_decode( base64_decode( @$_POST['data'] ) );
             $answer=$this->payStatus($dt->order_id);
 
-            echo "<pre>";
-            print_r($answer);
+            //echo "<pre>";
+            //print_r($answer);
 
             if('ok'==$answer->result)
             {
 
-                list($level, $uid, $moyr, $paydata) = explode(":", $answer->description);
+                list($level, $uid, $moyr, $paydate) = explode(":", $answer->description);
 
                 $a = Users::find()
                     ->where([
@@ -221,27 +221,26 @@ class PayController extends \yii\web\Controller
                     $user->level=$level;
                     $user->money=$answer->amount;
                     $user->order_id=$answer->order_id;
-                    $user->paydata=$paydata;
+                    $user->paydate=$paydate;
 
-                    $time = strtotime($paydata);
+                    $time = strtotime($paydate);
                     $days=($moyr=='year')?365:30;
                     $time+=$days*24*60*60;
 
-                    $user->endpaydata=date('Y-m-d',$time);
+                    $user->endpaydate=date('Y-m-d',$time);
                     $user->update(false);
                 }
             }
-
-        $this->PriceList("yes");
-
+        return $this->PriceList("yes");
         }
+        return $this->goHome();
     }
 }
 /*
 order_id
 description
 level
-paydata  - 	дата оплаты
+paydate  - 	дата оплаты
 days  -  	сколько дней доступно
 earned		ref money sum/2
 money		liqpay

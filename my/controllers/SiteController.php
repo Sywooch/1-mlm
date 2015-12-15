@@ -113,6 +113,12 @@ class SiteController extends Controller
                 case "mailru":
                     $model = Users::find()->where(['mailru'=>$identity["id"]]);
                     break;
+                case "twitter":
+                    $model = Users::find()->where(['twitter'=>$identity["id"]]);
+                    break;
+                case "instagram":
+                    $model = Users::find()->where(['instagram'=>$identity["id"]]);
+                    break;
             }
 
             $conRef=( !empty($model->one()["ref"]) )?$model->one()["ref"]:"28020677";
@@ -173,6 +179,12 @@ class SiteController extends Controller
                     case "mailru":
                         $usr=$usr->where(['mailru' => $identity["id"]]);
                     break;
+                    case "twitter":
+                        $usr=$usr->where(['twitter' => $identity["id"]]);
+                    break;
+                    case "instagram":
+                        $usr=$usr->where(['instagram' => $identity["id"]]);
+                    break;
                 }
             $usr=$usr->one();
 
@@ -186,7 +198,8 @@ class SiteController extends Controller
             $u->googleplus.="del";
             $u->yandex.="del";
             $u->mailru.="del";
-
+            $u->twitter.="del";
+            $u->instagram.="del";
             $u->update(false);
 
             if( !empty($usr->refdt) )
@@ -233,6 +246,12 @@ class SiteController extends Controller
                     break;
                 case "mailru":
                     $usr=$usr->where(['mailru' => $identity["id"]]);
+                    break;
+                case "twitter":
+                    $usr=$usr->where(['twitter' => $identity["id"]]);
+                    break;
+                case "instagram":
+                    $usr=$usr->where(['instagram' => $identity["id"]]);
                     break;
             }
             $usr=$usr->one();
