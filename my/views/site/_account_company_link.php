@@ -40,8 +40,8 @@ $usrCompLink=UsrCompaniesLink::find()
     ])->one();
 ?>
 
-<label class='col-md-3 control-label'>Рефиральная ссылка</label>
-<div class='col-md-9'>
+<label class='col-md-4 control-label'>Рефиральная ссылка</label>
+<div class='col-md-8'>
     <div class="input-icon">
         <i class="icon-user"></i><input
             class="form-control"
@@ -50,3 +50,4 @@ $usrCompLink=UsrCompaniesLink::find()
         <span class="help-block">Ваша рефиральная ссылка на регистрацию в компанию</span>
     </div>
 </div>
+
