@@ -76,6 +76,6 @@ $this->title = 'Выбор тарифа';
             'btn25'=>$btn25
         ])*/?>
         </div>
-        <div><p align="center"><span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2015</p></div>
+        <div><p align="center"><span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2016</p></div>
     </div>
     <!-- END PAGE BASE CONTENT -->
