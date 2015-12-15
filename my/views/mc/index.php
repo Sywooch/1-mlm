@@ -16,7 +16,7 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
             <div class="portlet-title">
                 <div class="caption">
                     <i class="fa fa-graduation-cap font-green-sharp"></i>
-                    <span class="caption-subject font-green-sharp bold uppercase">Мастер класс</span>
+                    <span class="caption-subject font-green-sharp bold uppercase"><?= $this->title; ?></span>
                 </div>
             </div>
             <div class="portlet-body">
