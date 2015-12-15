@@ -67,6 +67,12 @@ class McController extends Controller
                 case "mailru":
                     $model = Users::find()->where(['mailru'=>$identity["id"]]);
                     break;
+                case "twitter":
+                    $model = Users::find()->where(['twitter'=>$identity["id"]]);
+                    break;
+                case "instagram":
+                    $model = Users::find()->where(['instagram'=>$identity["id"]]);
+                    break;
             }
 
             return $this->render('mcarchive', [
@@ -114,6 +120,12 @@ class McController extends Controller
                 case "mailru":
                     $model=$model->where(['mailru' => $identity["id"]])->one();
                 break;
+                case "twitter":
+                    $model=$model->where(['twitter' => $identity["id"]])->one();
+                    break;
+                case "instagram":
+                    $model=$model->where(['instagram' => $identity["id"]])->one();
+                    break;
             }
 
             if(\Yii::$app->request->post())

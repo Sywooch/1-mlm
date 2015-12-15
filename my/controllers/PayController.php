@@ -155,6 +155,12 @@ class PayController extends \yii\web\Controller
             case "mailru":
                 $id = Users::find()->where(['mailru'=>$identity["id"]])->one()["id"];
             break;
+            case "twitter":
+                $id = Users::find()->where(['twitter'=>$identity["id"]])->one()["id"];
+            break;
+            case "instagram":
+                $id = Users::find()->where(['instagram'=>$identity["id"]])->one()["id"];
+            break;
         }
         return $id;
     }

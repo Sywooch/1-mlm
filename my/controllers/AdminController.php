@@ -34,6 +34,12 @@ class AdminController extends Controller
                 case "mailru":
                     $model = Users::find()->where(['mailru'=>$identity["id"]]);
                     break;
+                case "twitter":
+                    $model = Users::find()->where(['twitter'=>$identity["id"]]);
+                    break;
+                case "instagram":
+                    $model = Users::find()->where(['instagram'=>$identity["id"]]);
+                    break;
             }
 
             $dataProvider = new ActiveDataProvider([
