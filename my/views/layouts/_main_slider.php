@@ -146,7 +146,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="###" class="nav-link nav-toggle">
+                        <a href="index.php?r=site%2Ffriendsfb" class="nav-link nav-toggle">
                             <i class="icon-social-facebook"></i>
                             <span class="title">Друзья в FB</span>
                             <span class="badge badge-danger">скоро</span>

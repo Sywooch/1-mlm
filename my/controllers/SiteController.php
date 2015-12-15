@@ -1850,6 +1850,98 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionFriendsfb()
+    {
+        $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        switch($identity["service"])
+        {
+            case "facebook":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['facebook'=>$identity["id"]])->one();
+                break;
+            case "vkontakte":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['vkontakte'=>$identity["id"]])->one();
+                break;
+            case "linkedin_oauth2":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['linkedin'=>$identity["id"]])->one();
+                break;
+            case "google":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['google'=>$identity["id"]])->one();
+                break;
+            case "yandex":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['yandex'=>$identity["id"]])->one();
+                break;
+            case "mailru":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['mailru'=>$identity["id"]])->one();
+                break;
+            case "twitter":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['twitter'=>$identity["id"]])->one();
+                break;
+            case "instagram":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['instagram'=>$identity["id"]])->one();
+                break;
+        }
+        $usrFrinds=json_decode
+        (
+            file_get_contents
+            (
+                "https://api.vk.com/method/friends.get?user_id=".$usr->vkontakte
+            )
+        );
+        $usrFrinds=$usrFrinds->response;
+
+        $vkfDt=VkFriends::find()->where([
+            'date'=>date("Y-m-d"),
+            'uid'=>$usr->id
+        ]);
+
+        if($vkfDt->count()>=1)
+        {
+            $vkfDt=$vkfDt->one();
+            $usrlist=Users::find()
+                ->where(['id'=>unserialize($vkfDt->uarrid)])
+                ->all();
+        }
+        else
+        {
+            $vkAllfDt=VkFriends::find()->where(['uid'=>$usr->id])->all();
+
+            foreach($vkAllfDt as $val)
+            {
+                $uArrfrId[]=unserialize($val->uarrid);
+            }
+
+            $usrlist=Users::find()
+                ->where(['not in','vkontakte',$usrFrinds])
+                ->andWhere(['<>','vkontakte',$usr->vkontakte]);
+            //->andWhere('not in','id',$dt)
+            if( is_array($uArrfrId) )
+            {
+                $dt=call_user_func_array('array_merge', $uArrfrId);
+                $dt=array_unique($dt);
+                $cs=implode(", ", $dt);
+                $cs.=$usr->id;
+                $usrlist=$usrlist->andWhere("`id` not in ({$cs})");
+            }
+            $usrlist=$usrlist->limit(10)
+                ->all();
+
+            foreach($usrlist as $val)
+            {
+                $arr[]=$val->id;
+            }
+
+            $u=new VkFriends();
+            $u->date=date("Y-m-d");
+            $u->uid=$usr->id;
+            $u->uarrid=serialize($arr);
+            $u->save(false);
+        }
+
+        return $this->render('fb_friends',[
+            'usrlist'=>$usrlist
+        ]);
+    }
+
     public function actionMyref()
     {
         if( !\Yii::$app->user->isGuest )
