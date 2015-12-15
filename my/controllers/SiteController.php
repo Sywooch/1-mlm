@@ -1882,11 +1882,12 @@ class SiteController extends Controller
                     $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['vkontakte'=>$identity["id"]])->one();
                     break;
             }
-            \Yii::$app->session->setFlash(
+            \Yii::$app->session->setFlash
+            (
                 'success',
                 'Ваша Реферальная ссылка: https//1-mlm.com/ref'.$usrDt->refdt.'.html'
             );
-            Yii::$app->request->referrer;
+            //Yii::$app->request->referrer;
             //return $this->goBack();
         }
         return $this->goHome();
