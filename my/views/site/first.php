@@ -157,15 +157,7 @@ $this->registerCss($style_user);
 
         .marquee {
             overflow:hidden;
-            /*zoom:1;*/
             width:1200px;
-            /*font-size:12px;
-            line-height:16px;
-            position:relative;
-            -moz-user-select: none;
-            -khtml-user-select: none;
-            user-select: none;
-            background:#f6f6f6;*/
             white-space:nowrap;
         }
 
@@ -262,8 +254,6 @@ $this->registerCss($style_user);
                 <ul class="nav navbar-nav navbar-right">
 
                     <li><a href="#modal" data-toggle="modal" data-target="#modal-1"><i class="fa fa-sign-in"></i> вход</a></li>
-                    <!--<li><a  class="btn" href="javascript:void(0)"
-                           onclick="location.href='#openModal'">регистрация</a></li>-->
                     <li><a class="btn" href="#modal" data-toggle="modal" data-target="#modal-1">регистрация</a></li>
                 </ul>
             </div>
@@ -732,8 +722,6 @@ $this->registerCss($style_user);
 <link href="s/css/modal_dialog.css" rel="stylesheet">
 <script src="s/js/modal_dialog.js"></script>
 
-<!--<script src="s/js/jquery-2.1.4.min.js"></script>
-<script src="s/js/bootstrap.min.js"></script> -->
 <script src="s/js/waypoints.min.js"></script>
 <script src="s/js/jquery.animateNumber.min.js"></script>
 <script src="s/js/waypoints-sticky.min.js"></script>
