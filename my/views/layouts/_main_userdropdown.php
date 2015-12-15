@@ -63,10 +63,13 @@ switch($identity["service"])
         </li>
 -->
         <li>
-            <a href="#"
+ <!--
+        <a href="#"
                id="ref-usr-btn"
                data-clipboard-text="https://1-mlm.com/ref-<?= $usrDt->refdt; ?>.html"
 >
+ -->
+            <a href="index.php?r=site/myref">
             <i class="icon-rocket"></i><span
 
             >&nbsp;Ваш линк</span> </a>

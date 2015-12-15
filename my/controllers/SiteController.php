@@ -1849,4 +1849,46 @@ class SiteController extends Controller
             'usrlist'=>$usrlist
         ]);
     }
+
+    public function actionMyref()
+    {
+        if( !\Yii::$app->user->isGuest )
+        {
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['facebook'=>$identity["id"]])->one();
+                    break;
+                case "linkedin_oauth2":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['linkedin'=>$identity["id"]])->one();
+                    break;
+                case "google":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['google'=>$identity["id"]])->one();
+                    break;
+                case "yandex":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['yandex'=>$identity["id"]])->one();
+                    break;
+                case "mailru":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['mailru'=>$identity["id"]])->one();
+                    break;
+                case "twitter":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['twitter'=>$identity["id"]])->one();
+                    break;
+                case "instagram":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['instagram'=>$identity["id"]])->one();
+                    break;
+                case "vkontakte":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['vkontakte'=>$identity["id"]])->one();
+                    break;
+            }
+            \Yii::$app->session->setFlash(
+                'success',
+                'Ваша Реферальная ссылка: https//1-mlm.com/ref'.$usrDt->refdt.'.html'
+            );
+            Yii::$app->request->referrer;
+            //return $this->goBack();
+        }
+        return $this->goHome();
+    }
 }
