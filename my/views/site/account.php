@@ -51,7 +51,7 @@ $this->title = 'Настройки профиля';
                                 <div class="portlet light profile-sidebar-portlet bordered">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class="profile-userpic">
-                                        <img src="<?= $model->userpic; ?>" class="img-responsive" alt="" width="149px" height="149px">
+                                        <img src="<?= $model->userpic; ?>" class="img-responsive" alt="" style="height: 149px !important; width: 149px !important;">
                                     </div>
                                     <!-- END SIDEBAR USERPIC -->
                                     <!-- SIDEBAR USER TITLE -->

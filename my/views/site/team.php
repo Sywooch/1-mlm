@@ -66,19 +66,37 @@ $css = <<<'STYLE'
 }
 
 .yellow{
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50% !important;
   background-color: yellow;
   border: 0px;
+  margin: 7px auto 0px;
 }
 
 .green{
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50% !important;
   background-color: green;
   border: 0px;
+  margin: 7px auto 0px;
+}
+
+#sample_1 tbody tr td:nth-child(3) {
+    padding-top: 15px;
+}
+
+#sample_1 tbody tr td:nth-child(4) {
+    padding-top: 15px;
+}
+
+#sample_1 tbody tr td:nth-child(5) {
+    padding-top: 15px;
+}
+
+#sample_1 tbody tr td:nth-child(6) {
+    padding-top: 15px;
 }
 STYLE;
 $this->registerCss($css);
@@ -199,13 +217,24 @@ $this->title = 'Команда. Ваша 1-я линия';
                         ],
                         [
                             //'header'     =>  'Вход',
+                            'label'     =>  'Статус',
+                            'attribute' =>  'status',
+                            'format' => 'raw',
+                            'options' => ['style' => 'width: 20px; max-width: 20px;'],
+                            'value'  =>  function($dt)
+                            {
+                                return "<div class='{$dt["status"]}'></div>";
+                            }
+                        ],
+                        [
+                            //'header'     =>  'Вход',
                             'label'     =>  'Вход',
                             'attribute' =>  'active',
                             'format' => 'raw',
                             'options' => ['style' => 'width: 100px; max-width: 100px;'],
                             'value'  =>  function($dt)
                             {
-                                return "<div class='{$dt["status"]}'></div>".$dt["active"];
+                                return $dt["active"];
                             }
                         ],
                         [
