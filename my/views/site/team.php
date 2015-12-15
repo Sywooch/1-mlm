@@ -66,16 +66,16 @@ $css = <<<'STYLE'
 }
 
 .yellow{
-  width: 18px;
-  height: 18px;
+  width: 10px;
+  height: 10px;
   border-radius: 50% !important;
   background-color: yellow;
   border: 0px;
 }
 
 .green{
-  width: 18px;
-  height: 18px;
+  width: 10px;
+  height: 10px;
   border-radius: 50% !important;
   background-color: green;
   border: 0px;
