@@ -51,7 +51,7 @@ $this->title = 'Настройки профиля';
                                 <div class="portlet light profile-sidebar-portlet bordered">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class="profile-userpic">
-                                        <img src="<?= $model->userpic; ?>" class="img-responsive" alt="">
+                                        <img src="<?= $model->userpic; ?>" class="img-responsive" alt="" width="149" height="149">
                                     </div>
                                     <!-- END SIDEBAR USERPIC -->
                                     <!-- SIDEBAR USER TITLE -->
@@ -123,6 +123,7 @@ $this->title = 'Настройки профиля';
                                     <a href="http://vk.com/id<?= $lastFive[$i]["vkontakte"]; ?>">
                                         <img alt="user picture" class="img-circle"
                                            style="margin-left: 5px;margin-top: -8px;height: 39px;display: inline-block;"
+                                             width="39" height="39"
                                            src="<?= $lastFive[$i]["userpic"]; ?>">&nbsp;&nbsp;<span class="username username-hide-on-mobile"><?php
                                             echo $lastFive[$i]["fn"], ' ',$lastFive[$i]["ln"]
                                         ?></span>
@@ -216,34 +217,3 @@ $this->title = 'Настройки профиля';
                     </div>
                     <!-- END PAGE BASE CONTENT -->
                     </div>
-<?php
-$save=( !empty($save) )?$save:null;
-
-if ($save=="good"): ?>
-<div class="fade modal <?= ("good"==$save)?"in":null; ?>" style="display: block; padding-right: 17px;" id="GoodsaveWindow"  role="dialog" tabindex="-1">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                        onclick='
-                        $("#GoodsaveWindow").removeClass("fade modal in");
-                        $("#GoodsaveWindow").css("display", "none");
-                        //$("#GoodsaveWindow").addClass("fade modal");'
-                    >×</button>
-            </div>
-            <div class="modal-body">
-                <div
-                    style="color:green" align="center"
-                    >Данные успешно обновлены</div>
-                <br />
-                <button type="button"
-                        onclick='
-                        $("#GoodsaveWindow").removeClass("fade modal in");
-                        $("#GoodsaveWindow").css("display", "none");
-                        //$("#GoodsaveWindow").addClass("fade modal");'>
-                    Закрыть</button>
-            </div>
-        </div>
-    </div>
-</div>
-<?php endif; ?>

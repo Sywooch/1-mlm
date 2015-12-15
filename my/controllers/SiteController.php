@@ -289,7 +289,6 @@ class SiteController extends Controller
     {
         if (!\Yii::$app->user->isGuest)
         {
-            $save=null;
             $identity = \Yii::$app->getUser()->getIdentity()->profile;
 
             $model = Users::find();
@@ -352,7 +351,10 @@ class SiteController extends Controller
                         $users->yandex=$p["Users"]["yandex"];
                         $users->mailru=$p["Users"]["mailru"];
                         $users->update(false);
-                        $save='good';
+                        \Yii::$app->session->setFlash(
+                            'success',
+                            'Данные успешно обновлены'
+                        );
                     }
                 }
                  if( 'picture'==$p["Users"]["formtype"] )
@@ -389,7 +391,10 @@ class SiteController extends Controller
                          $users->active=date("Y-m-d");
                          $users->userpic=Yii::getAlias('@web')."/imgs/".$flname;
                          $users->update(false);
-                         $save='good';
+                         \Yii::$app->session->setFlash(
+                             'success',
+                             'Данные успешно обновлены'
+                         );
                      }
                  }
                 if( 'personinfo'==$p["Users"]["formtype"] )
@@ -452,7 +457,10 @@ class SiteController extends Controller
                         $users->companyid=$p["Users"]["companyid"];
                         $users->update(false);
                         unset($users);
-                        $save='good';
+                        \Yii::$app->session->setFlash(
+                            'success',
+                            'Данные успешно обновлены'
+                        );
                     }
                 }
             }
@@ -497,8 +505,7 @@ class SiteController extends Controller
             return $this->render('account', [
                 'model' => $model->one(),
                 'usrDt'=> $usrDt,
-                'lastFive'=>$lastFive,
-                'save'=>$save
+                'lastFive'=>$lastFive
             ]);
         }
         return $this->goHome();
@@ -984,6 +991,10 @@ class SiteController extends Controller
                         break;
                 }
                 $users->active=date("Y-m-d");
+                if( time() > strtotime($users->endpaydate) )
+                {
+                    $users->level=1;
+                }
                 $users->update(false);
             }
             else

@@ -3,22 +3,22 @@ $identity = \Yii::$app->getUser()->getIdentity()->profile;
 switch($identity["service"])
 {
     case "facebook":
-        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['facebook'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['facebook'=>$identity["id"]])->one();
         break;
     case "vkontakte":
-        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['vkontakte'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['vkontakte'=>$identity["id"]])->one();
         break;
     case "linkedin_oauth2":
-        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['linkedin'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['linkedin'=>$identity["id"]])->one();
         break;
     case "google":
-        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['google'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['google'=>$identity["id"]])->one();
         break;
     case "yandex":
-        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['yandex'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['yandex'=>$identity["id"]])->one();
         break;
     case "mailru":
-        $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['mailru'=>$identity["id"]])->one();
+        $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')->where(['mailru'=>$identity["id"]])->one();
         break;
 }
 
@@ -287,7 +287,7 @@ if( !empty(\Yii::$app->request->get("r")) )
             </li>
 
  <!--  Меню  Админа  начало --->
-
+            <?php if($usr['level'] == 5): ?>
             <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
                 <a href="###" class="nav-link">
                     <i class="icon-like"></i>
@@ -296,7 +296,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Ffriendsvk" class="nav-link nav-toggle">
+                        <a href="index.php?r=admin%2Findex" class="nav-link nav-toggle">
                             <i class="icon-cup"></i>
                             <span class="title">Нове Пользователи</span>
                             <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
@@ -314,6 +314,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
+            <?php endif; ?>
 
 
 

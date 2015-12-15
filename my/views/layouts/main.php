@@ -8,6 +8,7 @@ use app\assets\AppAsset;
 use app\models\Users;
 use app\models\Lp;
 use app\models\Links;
+use app\components\AlertWidget;
 
 AppAsset::register($this);
 
@@ -141,7 +142,8 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                 <!-- END PAGE HEAD-->
                 <!-- BEGIN PAGE BREADCRUMB -->
                 <!-- END PAGE BREADCRUMB -->
-                <?php echo $content; ?>
+                <?= AlertWidget::widget(); ?>
+                <?= $content; ?>
             </div>
             <!-- END CONTENT BODY -->
         </div>

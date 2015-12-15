@@ -96,7 +96,7 @@
                 <div class="price-table-footer">
 
                     <form id="" action="https://www.liqpay.com/api/checkout" method="post" accept-charset="utf-8">
-                        <?= $btn2; ?>
+                        <?= $btn20; ?>
                         <button type="submit" class="btn grey-salsa btn-outline price-button sbold uppercase">
                             Выбрать</button>
                     </form>
@@ -152,7 +152,7 @@
                 <div class="price-table-footer">
 
                     <form id="" action="https://www.liqpay.com/api/checkout" method="post" accept-charset="utf-8">
-                        <?= $btn10; ?>
+                        <?= $btn100; ?>
                         <button type="submit" class="btn green price-button sbold uppercase">
                             Выбрать</button>
                     </form>
@@ -206,7 +206,7 @@
                 <div class="arrow-down arrow-grey"></div>
                 <div class="price-table-footer">
                     <form id="" action="https://www.liqpay.com/api/checkout" method="post" accept-charset="utf-8">
-                        <?= $btn25; ?>
+                        <?= $btn250; ?>
                         <button type="submit"
                                 class="btn grey-salsa btn-outline price-button sbold uppercase">
                             Выбрать</button>

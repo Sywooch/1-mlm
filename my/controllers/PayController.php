@@ -23,10 +23,18 @@ class PayController extends \yii\web\Controller
         return parent::beforeAction($action);
     }
 
-    public function PriceList()
+    public function PriceList($congratulation=null)
     {
         if(!\Yii::$app->user->isGuest)
         {
+            if(!empty($congratulation))
+            {
+                \Yii::$app->session->setFlash(
+                    'success',
+                    'Поздравляем оплата прийнята'
+                );
+            }
+
             $usrDt=(new \yii\db\Query())->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt,
                 u.active AS active, l.title AS level, u.userpic AS userpic, u.money AS money')
                 ->from([Users::tableName().' u'])
@@ -36,15 +44,19 @@ class PayController extends \yii\web\Controller
 
         return $this->render('//pay/index', [
                 'level'=>$usrDt["level"],
-                'btn2'=>\app\controllers\PayController::lippayDt("2"),
-                'btn10'=>\app\controllers\PayController::lippayDt("10"),
-                'btn25'=>\app\controllers\PayController::lippayDt("25"),
+                'btn2'=>(($usrDt["level"]<2)?\app\controllers\PayController::lippayDt("2","2"):null),
+                'btn10'=>(($usrDt["level"]<3)?\app\controllers\PayController::lippayDt("3","10"):null),
+                'btn25'=>(($usrDt["level"]<4)?\app\controllers\PayController::lippayDt("4","25"):null),
+
+                'btn20'=>(($usrDt["level"]<2)?\app\controllers\PayController::lippayDt("2","20","year"):null),
+                'btn100'=>(($usrDt["level"]<3)?\app\controllers\PayController::lippayDt("3","100","year"):null),
+                'btn250'=>(($usrDt["level"]<4)?\app\controllers\PayController::lippayDt("4","250","year"):null)
             ]);
         }
         return $this->goHome();
     }
 
-    protected function lippayDt($cost)
+    protected function lippayDt($level,$cost,$moyr='month')
     {
         $liqpay = new LiqPay
         (
@@ -56,11 +68,11 @@ class PayController extends \yii\web\Controller
             'version' => '3',
             'amount' => $cost,
             'currency' => 'USD',//UAH
-            'description' => $cost.':' . \app\controllers\PayController::usrId(),
+            'description' => $level.':'.\app\controllers\PayController::usrId().':'.$moyr.':'.date("Y-m-d"),
             'language'=>'ru',
             'subscribe' => '1',
             'subscribe_date_start'=>date("Y-m-d H:i:s"),
-            'subscribe_periodicity' => 'month',
+            'subscribe_periodicity' => $moyr,
             'server_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
             'result_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
             'order_id' => \app\controllers\PayController::odredId()
@@ -178,8 +190,44 @@ class PayController extends \yii\web\Controller
             echo "<pre>";
             print_r($answer);
 
-            echo "<hr />";
-            print_r($answer->result);
+            if('ok'==$answer->result)
+            {
+
+                list($level, $uid, $moyr, $paydata) = explode(":", $answer->description);
+
+                $a = Users::find()
+                    ->where([
+                        'order_id'=>$answer->order_id
+                ])->count();
+
+                if($a<1)
+                {
+                    $user = Users::findOne([
+                        'id'=>$uid
+                    ]);
+                //------------------------------
+                    $refusr = Users::findOne([
+                        'refdt'=>$user->ref
+                    ]);
+                    $refusr->earned=$refusr->earned+($answer->amount/2);
+                    $refusr->save(false);
+                //------------------------------
+                    $user->level=$level;
+                    $user->money=$answer->amount;
+                    $user->order_id=$answer->order_id;
+                    $user->paydata=$paydata;
+
+                    $time = strtotime($paydata);
+                    $days=($moyr=='year')?365:30;
+                    $time+=$days*24*60*60;
+
+                    $user->endpaydata=date('Y-m-d',$time);
+                    $user->update(false);
+                }
+            }
+
+        $this->PriceList("yes");
+
         }
     }
 }
@@ -191,12 +239,6 @@ paydata  - 	дата оплаты
 days  -  	сколько дней доступно
 earned		ref money sum/2
 money		liqpay
-
-pri vhode snizit` tarif elsli false
-
-
 https://www.youtube.com/watch?v=TcD-d4XkwQ4
-
-links 10 max into slider
 */
 

@@ -31,7 +31,7 @@ switch($identity["service"])
        class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
            <span class="username username-hide-on-mobile"><?php echo $usrDt->fn,' ',$usrDt->ln; ?></span>
                 <!-- DOC: Не удаляйте ниже пустого пространства (&nbsp;) как нарочно использовал -->
-                <img alt="user picture" class="img-circle" src="<?= $usrDt->userpic; ?>" />
+                <img alt="user picture" class="img-circle" src="<?= $usrDt->userpic; ?>" width="39" height="39" />
             </a>
     <ul class="dropdown-menu dropdown-menu-default">
         <li>

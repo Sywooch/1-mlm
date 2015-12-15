@@ -64,9 +64,9 @@ $this->title = 'Выбор тарифа';
                 <div class="tab-pane fade" id="tab_1_2">
                     <?php
                     echo $this->render("yr.php",[
-                        'btn2'=>$btn2,
-                        'btn10'=>$btn10,
-                        'btn25'=>$btn25
+                        'btn20'=>$btn20,
+                        'btn100'=>$btn100,
+                        'btn250'=>$btn250
                     ]) ?>
                 </div>
             </div>
