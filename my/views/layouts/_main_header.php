@@ -35,25 +35,22 @@ $brand=\app\models\Lp::find()->where(['id'=>$usr['companyid']])->one();
 
 $brand=$brand["brandicon"];
 
-?><div class="page-header navbar navbar-fixed-top">
+?>
+
+<div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <!--
-                            <a href="index.php">
-                            <img src="../img/logo.png" alt="logo" class="logo-default" width="50" height="50"  />
-                            <span style="color: #2a83d0; font-size: 23px;"><b>1 mlm</b></span></a>
-            -->
-
             <img src="<?php
             echo
             (
                 (!empty($brand))?$brand:"/img/logo.png"
             );
-            ?>" alt="logo" class="logo-default" width="50" height="50">
+            ?>" alt="logo" class="logo-default" width="auto" height="50">
 
             <div class="menu-toggler sidebar-toggler">
+
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
         </div>
