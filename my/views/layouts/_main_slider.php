@@ -96,6 +96,7 @@ if( !empty(\Yii::$app->request->get("r")) )
         <li class="nav-item start <?php
         echo ( "landing"==$act ) ? 'active open' : null;
         echo ( "links"==$act ) ? 'active open' : null;
+        echo ( "landingedit"==$act ) ? 'active open' : null;
         ?>">
             <a href="index.php?r=site%2Flanding" class="nav-link">
                 <i class="icon-wrench"></i>
@@ -107,6 +108,13 @@ if( !empty(\Yii::$app->request->get("r")) )
                         <a href="index.php?r=site%2Flanding" class="nav-link nav-toggle">
                             <i class="icon-chemistry"></i>
                             <span class="title">Конструктор</span>
+                            <!--<span class="arrow"></span>-->
+                        </a>
+                    </li>
+                    <li class="nav-item  <?= ( "landingedit"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Flandingedit" class="nav-link nav-toggle">
+                            <i class="icon-link"></i>
+                            <span class="title">Редактор</span>
                             <!--<span class="arrow"></span>-->
                         </a>
                     </li>

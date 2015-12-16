@@ -883,6 +883,210 @@ class SiteController extends Controller
         }
         return $this->goHome();
     }
+/********************************************************************/
+
+    public function actionLandingedit()
+    {
+        if (!\Yii::$app->user->isGuest){
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            $mes = "";
+
+            $query10=new \yii\db\Query();
+            $usr=$query10->from([Users::tableName()]);
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usr=$usr->where(['facebook' => $identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $usr=$usr->where(['linkedin' => $identity["id"]]);
+                    break;
+                case "google":
+                    $usr=$usr->where(['googleplus' => $identity["id"]]);
+                    break;
+                case "yandex":
+                    $usr=$usr->where(['yandex' => $identity["id"]]);
+                    break;
+                case "mailru":
+                    $usr=$usr->where(['mailru' => $identity["id"]]);
+                    break;
+                case "twitter":
+                    $usr=$usr->where(['twitter' => $identity["id"]]);
+                    break;
+                case "instagram":
+                    $usr=$usr->where(['instagram' => $identity["id"]]);
+                    break;
+            }
+            $usr=$usr->one();
+
+            $query13=new \yii\db\Query();
+            $usrLev=$query13
+                ->from([Levels::tableName()])
+                ->where(['id' => $usr["level"]])->one();
+
+            $model = Lp::find()
+                ->where(['uid' => $usr["id"]]);
+            //->andWhere(['id' => $landid]);
+
+            $landid = \Yii::$app->request->get("landid");
+            $model_lp=false;
+            $save=null;
+
+            if (($model->count() == $usrLev["maxLandPage"]) && ($usrLev["maxLandPage"] != 5)) {
+                $mes = "Вы исчерпали доступное количество страниц своего тарифного плана<br />
+Вам нужно больше?<br />   Измените свой тарифный план   [кнопка на тарифы]";
+            }
+
+            if (isset($landid)) {
+                if ($landid == 0) {
+                    $tab = 1;
+                    if ($model->count() <= $usrLev["maxLandPage"]) {
+                        $mes = "Вы исчерпали доступное количество страниц своего тарифного плана<br />
+Вам нужно больше?<br />   Измените свой тарифный план   [кнопка на тарифы]";
+                    } else {
+                        /*\Yii::$app->db->createCommand("
+                                INSERT `lp` SET
+                                    `name`='Новый лэндПэйдж',
+                                    `uid`='{$usr["id"]}'
+                        ")
+                            ->execute();
+                        $mes = "Поздравляю вы создали новую страничку";*/
+                    }
+                } else {
+                    $tab = 2;
+                    $model_lp = Lp::find()
+                        ->where(['uid' => $usr["id"]])
+                        ->andWhere(['id' => $landid]);
+                }
+            } else {
+                $tab = 1;
+            }
+
+            if(\Yii::$app->request->post())
+            {
+                $land = Yii::$app->request->post("land");
+                $p = Yii::$app->request->post("Lp");
+                switch ($land)
+                {
+                    case "change":
+                        $lp = Lp::findOne(
+                            [
+                                'uid' => $usr["id"],
+                                'id' => $p["id"]
+                            ]);
+                        $lp->name = $p["name"];
+                        $lp->h1 = $p["h1"];
+                        $lp->h2 = $p["h2"];
+                        $lp->h3 = $p["h3"];
+                        $lp->yt1 = $p["yt1"];
+                        $lp->yt2 = $p["yt2"];
+                        $lp->h1c = $p["h1c"];
+                        $lp->h2c = $p["h2c"];
+                        $lp->h3c = $p["h3c"];
+                        $lp->yandexmetrika = $p["yandexmetrika"];
+                        $lp->button = $p["button"];
+                        $lp->desc = $p["desc"];
+                        $lp->keywords = $p["keywords"];
+                        $lp->brandicon = $p["brandicon"];
+                        $lp->socpic = $p["socpic"];
+                        $lp->autoplay = $p["autoplay"];
+                        $lp->bg = $p["bg"];
+
+                        $lp->update(false);
+                        $save = "good";
+                        $mes = "Ваша страничка обновлена";
+                        break;
+                    case "new":
+                        $lp_n = new Lp;
+                        $lp_n->name = $p["name"];
+                        $lp_n->uid = $usr["id"];
+                        $lp_n->h1 = $p["h1"];
+                        $lp_n->h2 = $p["h2"];
+                        $lp_n->h3 = $p["h3"];
+                        $lp_n->yt1 = $p["yt"];
+                        $lp_n->yt2 = $p["yt2"];
+                        $lp_n->h1c = $p["h1c"];
+                        $lp_n->h2c = $p["h2c"];
+                        $lp_n->h3c = $p["h3c"];
+                        $lp_n->yandexmetrika = $p["yandexmetrika"];
+                        $lp_n->button = $p["button"];
+                        $lp_n->landtype = $p["landtype"];
+                        $lp_n->desc = $p["desc"];
+                        $lp_n->keywords = $p["keywords"];
+                        $lp_n->brandicon = $p["brandicon"];
+                        $lp_n->socpic = $p["socpic"];
+                        $lp_n->autoplay = $p["autoplay"];
+                        $lp_n->bg = $p["bg"];
+
+                        $lp_n->save(false);
+                        $save = "create";
+                        $mes = "Ваша страничка создана";
+                        break;
+                }
+            }
+            $query11=new \yii\db\Query();
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $_usr=$query11->from([Users::tableName()])->where(['facebook'=>$identity["id"]])->one();
+                    break;
+                case "vkontakte":
+                    $_usr=$query11->from([Users::tableName()])->where(['vkontakte'=>$identity["id"]])->one();
+                    break;
+                case "linkedin_oauth2":
+                    $_usr=$query11->from([Users::tableName()])->where(['linkedin'=>$identity["id"]])->one();
+                    break;
+                case "google":
+                    $_usr=$query11->from([Users::tableName()])->where(['google'=>$identity["id"]])->one();
+                    break;
+                case "yandex":
+                    $_usr=$query11->from([Users::tableName()])->where(['yandex'=>$identity["id"]])->one();
+                    break;
+                case "mailru":
+                    $_usr=$query11->from([Users::tableName()])->where(['mailru'=>$identity["id"]])->one();
+                    break;
+                case "twitter":
+                    $_usr=$query11->from([Users::tableName()])->where(['twitter'=>$identity["id"]])->one();
+                    break;
+                case "instagram":
+                    $_usr=$query11->from([Users::tableName()])->where(['instagram'=>$identity["id"]])->one();
+                    break;
+            }
+            $query12=new \yii\db\Query();
+            $data=$query12->from([Lp::tableName()])
+                ->where(['uid' => $_usr["id"]]);
+            $save=( !empty($save) )?$save:null;
+
+            if( !empty($mes) )
+            {\Yii::$app->session->setFlash('success',$mes);}
+
+            if ($model_lp) {
+                return $this->render('landingedit', [
+                    'data' => $data->one(),
+                    'model' => $model,
+                    'level' => $usrLev,
+                    'count_p' => $data->count(),
+                    'm' => $mes,
+                    //'lp' => $model_lp->one(),
+                    'save' => $save,
+                    't' => $tab
+                ]);
+            } else {
+                return $this->render('landingedit', [
+                    'data' => $data->one(),
+                    'model' => $model,
+                    'level' => $usrLev,
+                    'count_p' => $data->count(),
+                    'm' => $mes,
+                    't' => $tab
+                ]);
+            }
+        }
+        return $this->goHome();
+    }
 
 /********************************************************************/
 
