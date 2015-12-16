@@ -1311,7 +1311,21 @@ class SiteController extends Controller
                 $users = new Users();
                 $users->ip=$_SERVER['REMOTE_ADDR'];
                 $users->refdt=$this->ukey();
-                $users->ref=Yii::$app->session->get('refuserId');
+
+
+                if( !empty(Yii::$app->session->get('refuserId')) )
+                {
+                    $users->ref=Yii::$app->session->get('refuserId');
+                }else
+                {
+                    $arr=
+                    [
+                        '1'=>'28020677',
+                        '2'=>'269658141',
+                        '3'=>'ZtXcztlg0G'
+                    ];
+                    $users->ref=$arr[rand(1,3)];
+                }
 
                 $refUsr = Users::find()
                     ->where([
