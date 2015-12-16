@@ -44,13 +44,13 @@ class PayController extends \yii\web\Controller
 
         return $this->render('//pay/index', [
                 'level'=>$usrDt["level"],
-                'btn2'=>(($usrDt["level"]<2)?\app\controllers\PayController::lippayDt("2","2"):null),
-                'btn10'=>(($usrDt["level"]<3)?\app\controllers\PayController::lippayDt("3","10"):null),
-                'btn25'=>(($usrDt["level"]<4)?\app\controllers\PayController::lippayDt("4","25"):null),
+                'btn2'=>\app\controllers\PayController::lippayDt("2","2"),
+                'btn10'=>\app\controllers\PayController::lippayDt("3","10"),
+                'btn25'=>\app\controllers\PayController::lippayDt("4","25"),
 
-                'btn20'=>(($usrDt["level"]<2)?\app\controllers\PayController::lippayDt("2","20","year"):null),
-                'btn100'=>(($usrDt["level"]<3)?\app\controllers\PayController::lippayDt("3","100","year"):null),
-                'btn250'=>(($usrDt["level"]<4)?\app\controllers\PayController::lippayDt("4","250","year"):null)
+                'btn20'=>\app\controllers\PayController::lippayDt("2","20","year"),
+                'btn100'=>\app\controllers\PayController::lippayDt("3","100","year"),
+                'btn250'=>\app\controllers\PayController::lippayDt("4","250","year")
             ]);
         }
         return $this->goHome();
@@ -63,6 +63,8 @@ class PayController extends \yii\web\Controller
             \app\controllers\PayController::PUBLICKEY,
             \app\controllers\PayController::PRIVATEKEY
         );
+
+        $cost=($cost*0.03)+$cost;
 
         return $liqpay->cnb_form_my([
             'version' => '3',
