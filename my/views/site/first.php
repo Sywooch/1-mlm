@@ -638,11 +638,12 @@ $this->registerCss($style_user);
 <section class="cta-section section-spacing text-center">
     <div class="container">
         <header class="section-header">
-            <h2>Попробуйте запустить уже сегодня!</h2>
-            <h3>И получите <strong>сотни новых партнеров</strong> используя наши удивительные инструменты.</h3>
+        <h2>Если Вы готовы тотально перевернуть свой подход к Интернет Рекрутингу и уже сегодня начать строить свою Структуру в Онлайн...
+		</h2>
+            <h3>то нажмите на кнопку, чтобы узнать больше о нашей системе</h3>
         </header>
         <div class="row">
-            <div class="col-md-12"> <a class="btn" href="#modal" data-toggle="modal" data-target="#modal-1">Начать сейчас!</a>
+            <div class="col-md-12"> <a class="btn" href="#modal" data-toggle="modal" data-target="#modal-1">Узнать Больше!</a>
                 <p>Есть вопрос?  &nbsp;<a href="skype:support.mlm?add" title="Позвонить Сейчас? Просто Кликните Здесь!" ><span style="background-color: #ffff00;">   &nbsp;skype: support.mlm &nbsp;</span> </a></p>
             </div>
         </div>
