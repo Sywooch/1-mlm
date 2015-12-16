@@ -72,7 +72,7 @@ switch($identity["service"])
             <a href="index.php?r=site/myref">
             <i class="icon-rocket"></i><span
 
-            >&nbsp;Ваш линк</span> </a>
+            >&nbsp;Реф. линк системы</span> </a>
         </li>
 
         <li class="divider"> </li>
