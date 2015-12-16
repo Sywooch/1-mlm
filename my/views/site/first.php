@@ -4,17 +4,16 @@ $style_user = <<<'STYLE'
     display: inline;
     margin-right: 25px;
 }
-
 .user_item img {
     border-radius: 15px !important;
 }
-
 STYLE;
 $this->registerCss($style_user);
-?><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
-    <!--<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,700" rel="stylesheet">-->
     <link href="//fonts.googleapis.com/css?family=Roboto:100,300&subset=cyrillic' rel='stylesheet' type='text/css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,15 +22,12 @@ $this->registerCss($style_user);
     <meta name="description" content="1-й МЛМ Ресурс">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <!--<link href="s/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="s/css/font-awesome.min.css" rel="stylesheet">
     <link href="s/css/magnific-popup.css" rel="stylesheet">
     <link href="s/css/main.css" rel="stylesheet">
+    <link href="s/css/modal_dialog.css" rel="stylesheet">
     <style>
         .col-md-offset-4{margin-left: 0% !important;}
         .container {
@@ -163,21 +159,11 @@ $this->registerCss($style_user);
 
     </style>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
-    <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.3.1/jquery.marquee.min.js'></script>
-    <script>
-        $(document).ready(function(){
-            $('.marquee').marquee({
-                duplicated: true,
-                duration: 20000
-            });
-        })
-    </script>
+    
 </head>
 <body>
-<!-- BEGIN LOGIN BOX *****************************************************************-->
 
+<!-- ************ Блок Авторизации на сайте 1-mlm.com - НАЧАЛО ************ -->
 <div class="modal fade" id="modal-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -231,13 +217,10 @@ $this->registerCss($style_user);
         </div>
     </div>
 </div>
-<!-- END LOGIN BOX *****************************************************************-->
+<!-- ************ Блок Авторизации на сайте 1-mlm.com - КОНЕЦ ************ -->
 <!--hero section-->
-
 <header class="hero-section">
-
-    <!--navigation-->
-
+<!--navigation-->
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -248,12 +231,10 @@ $this->registerCss($style_user);
                     <li><a href="#features">преимущества</a></li>
                     <li><a href="#reviews">отзывы</a></li>
                     <li><a href="#pricing">прайс</a></li>
-                    <li><a href="http://blog.1-mlm.com">блог</a></li>
-                    <!--<li><a href="#contact">Contact</a></li>-->
+                    <li><a href="http://blog.1-mlm.com" target="_blank" >блог</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-
-                    <li><a href="#modal" data-toggle="modal" data-target="#modal-1"><i class="fa fa-sign-in"></i> вход</a></li>
+                    <li><a href="#modal" data-toggle="modal" data-target="#modal-1"><i class="fa fa-sign-in">                       </i> вход</a></li>
                     <li><a class="btn" href="#modal" data-toggle="modal" data-target="#modal-1">регистрация</a></li>
                 </ul>
             </div>
@@ -264,8 +245,8 @@ $this->registerCss($style_user);
     <section class="container text-center welcome-message">
         <div class="row">
             <div class="col-md-12">
-                <!--<h1>1-й млм ресурс</h1>-->
-                <h1>New<span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)<span class="currency">beta</span></span></h1>
+                <h1>1-й млм ресурс</h1>
+                <!--<h1><span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)</span></h1>-->
                 <h2>Автоматизация Рекрутинга на 80%</h2>
                 <div class="play-btn"> <a href="https://www.youtube.com/watch?v=aBttZ3f28tQ" class="play litebox-hero"><img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
@@ -276,13 +257,9 @@ $this->registerCss($style_user);
             </div>
         </div>
     </section>
-
     <!--Приветственное сообщение end-->
-
 </header>
-
 <!--hero section end-->
-
 <!-- 20 last users start -->
 <section class="white">
     <div class="row">
@@ -293,7 +270,7 @@ $this->registerCss($style_user);
         </div>
         <div class="col-md-10">
             <div class="marquee">
-                <!--Здесь будет выводиться список пользователей-->
+                <!--Здесь выводиться список пользователей-->
                 <?php
                 $lastTwentyRegUsers=\app\models\Users::find()->orderBy(['id' => SORT_DESC])->limit(20)->all();
 
@@ -303,24 +280,17 @@ $this->registerCss($style_user);
                         'user' => $lt
                     ]);
                 }
-
                 ?>
-
             </div>
         </div>
     </div>
 </section>
 <!-- 20 last users end -->
 
-
 <!--MLM Компании on-->
 
 <section class="featured-on section-spacing text-center">
     <div class="container">
-        <!--<header class="section-header">
-            <h3>дистрибьюторы компаний использующие 1 mlm</h3>
-        </header>-->
-
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -335,25 +305,17 @@ $this->registerCss($style_user);
         </div>
     </div>
 </section>
-
 <!--MLM Компании on end-->
 
-
-
 <!--Features-->
-
 <div class="features section-spacing">
     <div class="container">
-
         <!--feature 1-->
-
         <div class="row">
             <div class="col-md-7 col-md-push-5 text-center"> <img src="s/img/feature-1.png" alt="1-й МЛМ Ресурс"> </div>
             <div class="col-md-5 col-md-pull-7">
                 <article>
                     <h1>Идея 1 mlm</h1>
-
-
                     <p>Предоставить Вам профессиональную маркетинговую систему для маштабного развития и автоматизации
                         сетевого и партнёрского бизнеса.</p>
                     <p> Все интернет предприниматели  сталкиваются с трудностью -
@@ -366,13 +328,10 @@ $this->registerCss($style_user);
                         <li>Cписок холодный контактов (кандидаты)</li>
                         <li>Cтатистика выполненых действий</li>
                         <li>Взаимодействие с командой</li>
-                        <!--<li>Проведение вебинаров (обучение)</li>-->
                     </ul>
-
                 </article>
             </div>
         </div>
-
         <!--feature 1 end-->
 
         <!--feature 2-->
@@ -390,7 +349,6 @@ $this->registerCss($style_user);
                     <br>
                     <p> Единожды правильно настроенная система способна освободить до 80% Вашего времени.</p>
                     <p> Которое лучше использовать на работу с командой, увеличивая темпы роста Вашей структуры! </p>
-
                 </article>
             </div>
         </div>
@@ -421,29 +379,23 @@ $this->registerCss($style_user);
         <!--feature 3 end-->
     </div>
 </div>
-
 <!--Features end-->
 
 <!--Video section-->
-
 <section class="video-tour text-center">
     <div class="play-btn"> <a href="https://www.youtube.com/watch?v=aBttZ3f28tQ" class="play litebox-tour"><img src="s/img/play-btn-vs.png" alt="play"></a>
-        <!--<h2>Video 1 mlm</h2>-->
+        <h2>Автоматизация Рекрутинга на 80%</h2>
     </div>
-
     <!--HTML5 Video-->
     <video autoplay loop muted id="bgvid" poster="s/video/poster.jpg">
         <source src="s/video/vb.mp4" type="video/mp4">
         <source src="s/video/vb.webm" type="video/webm">
     </video>
     <!--HTML5 Video end-->
-
 </section>
-
 <!--Video section end-->
 
 <!-- Преимущества 1 mlm ресурса - начало -->
-
 <section class="benefits section-spacing text-center" id="features">
     <div class="container">
         <header class="section-header">
@@ -465,11 +417,9 @@ $this->registerCss($style_user);
         </div>
     </div>
 </section>
-
 <!-- Преимущества 1 mlm ресурса - конец -->
 
 <!--Tour-->
-
 <section class="tour section-spacing text-center">
     <div class="container">
         <div class="row">
@@ -503,10 +453,8 @@ $this->registerCss($style_user);
                     <cite style="font-size: 16px;">— Игорь Сальников, Предприниматель</cite> </blockquote>
 
                 <!--review 1 end-->
-
             </div>
             <div class="col-sm-4">
-
                 <!--review 2-->
 
                 <figure class="text-center"><img src="s/img/otz-01.png" alt="face" class="img-circle" width="60%" height="60%"> </figure>
@@ -652,11 +600,6 @@ $this->registerCss($style_user);
 
 <!--cta section end-->
 
-<!--Team-->
-
-<!--Team end-->
-
-
 <!--sub-form-->
 <section class="sub-form section-spacing text-center">
     <div class="container">
@@ -670,21 +613,8 @@ $this->registerCss($style_user);
                 <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
                 <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
             </div>
-            <!--<h2>Подпишитесь на нашу рассылку</h2>
-            <h3>Подписаться на ежемесячные обновления продуктов и эксклюзивные предложения </h3>-->
+            
         </header>
-        <div class="row">
-            <!--<div class="col-md-6 center-block col-sm-11">
-                <form id="mc-form">
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Email Address" required id="mc-email">
-            <span class="input-group-btn">
-            <button type="submit" class="btn btn-default">Подписаться <i class="fa fa-envelope"></i> </button>
-            </span> </div>
-                    <label for="mc-email" id="mc-notification"></label>
-                </form>
-            </div>-->
-        </div>
     </div>
 </section>
 <!--sub-form end-->
@@ -720,8 +650,21 @@ $this->registerCss($style_user);
     </div>
 </footer>
 <!--site-footer end-->
-<link href="s/css/modal_dialog.css" rel="stylesheet">
+
 <script src="s/js/modal_dialog.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
+    <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.3.1/jquery.marquee.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('.marquee').marquee({
+                duplicated: true,
+                duration: 20000
+            });
+        })
+    </script>
 
 <script src="s/js/waypoints.min.js"></script>
 <script src="s/js/jquery.animateNumber.min.js"></script>
