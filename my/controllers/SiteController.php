@@ -2195,7 +2195,11 @@ class SiteController extends Controller
             \Yii::$app->session->setFlash
             (
                 'success',
-                'Ваша Реферальная ссылка: https//1-mlm.com/ref'.$usrDt->refdt.'.html'
+                "Ваша партнерская ссылка для приглашения в саму систему <a href=\"https://1-mlm.com/ref-{$usrDt->refdt}.html\"
+                 target=\"_blank\">https://1-mlm.com/ref-{$usrDt->refdt}.html</a><br />
+                Ссылка для привлечения в Ваш проект находится в настройках профиля под  выбором компаний<br />
+                P.S. После выбора другой компании и сохранения профиля ссылка поменяется автоматически!<br />
+                Вы можете таким образом нужные вам ссылки сохранить  в разделе \"Мои проекты\"."
             );
             //Yii::$app->request->referrer;
             //return $this->goBack();

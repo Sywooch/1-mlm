@@ -1,4 +1,7 @@
-<?php echo Yii::getAlias('@web'); ?>
+<?php
+use kartik\social\VKPlugin;
+
+echo Yii::getAlias('@web'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="ru">
 <head>
@@ -184,7 +187,6 @@
                 <div class="col-md-6">
                     ----------------------
                     <?php
-                    use kartik\social\VKPlugin;
                     echo VKPlugin::widget([
                         'type' => VKPlugin::COMMENTS,
                         'apiId' => 5129822,

@@ -268,15 +268,9 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                             <?php
                                 $conslinks = Links::find()->where(['uid' => $consultant["id"]])->all();
                            foreach($conslinks as $val):
-
-//---------------------NEED STYLE
                                ?>
-                               <a style="margin-left: 25px;" href="<?= $val->url; ?>"><?= $val->title; ?></a><br />
+                               <a style="margin-left: 25px;" href="<?= $val->url; ?>" target="_blank"><?= $val->title; ?></a><br />
                                <?php endforeach;
-//---------------------NEED STYLE
-
-
-
                             ?>
                         </div>
                     </div>

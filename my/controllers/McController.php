@@ -28,7 +28,7 @@ class McController extends Controller
 
     public function actionIndex()
     {
-        $this->layout = 'empty';
+       $this->layout = 'empty';
         $this->ref();
         if (!\Yii::$app->user->isGuest)
         {

@@ -1,19 +1,15 @@
 <?php
 $params = require(__DIR__ . '/params.php');
 $auth   = require(__DIR__ . '/auth.php');
+$modules   = require(__DIR__ . '/modules.php');
 
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
 	'language' => 'ru', // Set the language here
     'bootstrap' => ['log'],
-    'modules' => [
-        'gridview' =>  [
-            'class' => '\kartik\grid\Module'
-        ]
-    ],
+    'modules' => $modules,
     'components' => [
-
         'eauth' => $auth,
         'i18n' => [
             'translations' => [
