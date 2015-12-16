@@ -349,7 +349,7 @@ transform:translateY(0);
   position: relative;
   height: 400px;
   overflow: hidden;
-  background: #333 url(../img/bg-video-preview.jpg) center center no-repeat scroll;
+  background: #333 url(../img/bg.jpg) center center no-repeat scroll;
   background-size: cover;
   -webkit-perspective: 1000;
   perspective: 1000;
@@ -416,7 +416,7 @@ transform:translateY(0);
    ========================================================================== */ 
    
 .pricing {
-  background: url(../img/bg-pricing.jpg) center center no-repeat scroll;
+  background: url(../img/bg.jpg) center center no-repeat scroll;
   background-size: cover;
   position: relative;
 }
@@ -526,7 +526,7 @@ blockquote cite {
   12.cta section
    ========================================================================== */
    
-.cta-section { background-color: #f56363; }
+.cta-section { background-color: #ad0000; }
 
 .cta-section .section-header { margin-bottom: 2.25em; }
 
