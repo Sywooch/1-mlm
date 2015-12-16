@@ -103,15 +103,6 @@ return array (
       '@yii/imperavi' => $vendorDir . '/asofter/yii2-imperavi-redactor/yii/imperavi',
     ),
   ),
-  'kartik-v/yii2-krajee-base' => 
-  array (
-    'name' => 'kartik-v/yii2-krajee-base',
-    'version' => '1.7.9.0',
-    'alias' => 
-    array (
-      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
-    ),
-  ),
   'kartik-v/yii2-dropdown-x' => 
   array (
     'name' => 'kartik-v/yii2-dropdown-x',
@@ -274,15 +265,6 @@ return array (
       '@kartik/affix' => $vendorDir . '/kartik-v/yii2-widget-affix',
     ),
   ),
-  'kartik-v/yii2-widget-activeform' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-activeform',
-    'version' => '1.4.6.0',
-    'alias' => 
-    array (
-      '@kartik/form' => $vendorDir . '/kartik-v/yii2-widget-activeform',
-    ),
-  ),
   'kartik-v/yii2-widgets' => 
   array (
     'name' => 'kartik-v/yii2-widgets',
@@ -391,10 +373,28 @@ return array (
       '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine',
     ),
   ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '1.8.0.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
+    ),
+  ),
+  'kartik-v/yii2-widget-activeform' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-activeform',
+    'version' => '1.4.7.0',
+    'alias' => 
+    array (
+      '@kartik/form' => $vendorDir . '/kartik-v/yii2-widget-activeform',
+    ),
+  ),
   'kartik-v/yii2-social' => 
   array (
     'name' => 'kartik-v/yii2-social',
-    'version' => '1.3.1.0',
+    'version' => '9999999-dev',
     'alias' => 
     array (
       '@kartik/social' => $vendorDir . '/kartik-v/yii2-social',

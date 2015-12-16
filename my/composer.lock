@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "db8ee1b79989472892c3b595a61863c2",
-    "content-hash": "f97c5162e64eeedb0a5320c402aa306a",
+    "hash": "acd0c8df0b9dd3be476645a08ed7d04b",
+    "content-hash": "3d3f4e32c8b2509494b0a02b5dc8858d",
     "packages": [
         {
             "name": "2amigos/yii2-file-input-widget",
@@ -173,16 +173,16 @@
         },
         {
             "name": "bootstrap-select/bootstrap-select",
-            "version": "1.7.7",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silviomoreto/bootstrap-select.git",
-                "reference": "8c961c506638b370a80faf0d237a42ef7c09904c"
+                "reference": "a118630b4b880ba5042b648a002726976fd82a05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silviomoreto/bootstrap-select/zipball/8c961c506638b370a80faf0d237a42ef7c09904c",
-                "reference": "8c961c506638b370a80faf0d237a42ef7c09904c",
+                "url": "https://api.github.com/repos/silviomoreto/bootstrap-select/zipball/a118630b4b880ba5042b648a002726976fd82a05",
+                "reference": "a118630b4b880ba5042b648a002726976fd82a05",
                 "shasum": ""
             },
             "suggest": {
@@ -208,7 +208,7 @@
                 "replacement",
                 "select"
             ],
-            "time": "2015-11-19 21:27:09"
+            "time": "2015-12-08 21:46:56"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -385,16 +385,16 @@
         },
         {
             "name": "bower-asset/yii2-pjax",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/jquery-pjax.git",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0"
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/3f20897307cca046fca5323b318475ae9dac0ca0",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/6818718408086db6bdcf33649cecb86b6b4f9b67",
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67",
                 "shasum": ""
             },
             "require": {
@@ -1300,16 +1300,16 @@
         },
         {
             "name": "kartik-v/yii2-krajee-base",
-            "version": "v1.7.9",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "6f10fd0a0bfccd729764c65fa65eb4ccf2cbade9"
+                "reference": "602e7203680642ac4a2a5f9355316eaa9939b6ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/6f10fd0a0bfccd729764c65fa65eb4ccf2cbade9",
-                "reference": "6f10fd0a0bfccd729764c65fa65eb4ccf2cbade9",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/602e7203680642ac4a2a5f9355316eaa9939b6ff",
+                "reference": "602e7203680642ac4a2a5f9355316eaa9939b6ff",
                 "shasum": ""
             },
             "require": {
@@ -1342,7 +1342,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-11-25 07:03:35"
+            "time": "2015-12-11 19:01:49"
         },
         {
             "name": "kartik-v/yii2-mpdf",
@@ -1488,7 +1488,7 @@
         },
         {
             "name": "kartik-v/yii2-social",
-            "version": "v1.3.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-social.git",
@@ -1631,16 +1631,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-activeform",
-            "version": "v1.4.6",
+            "version": "v1.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-activeform.git",
-                "reference": "59a224de3104552c55de3a6aa67138ee1b73fd70"
+                "reference": "6acc1539c37d731c79a67989409ad76e389fd5f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-activeform/zipball/59a224de3104552c55de3a6aa67138ee1b73fd70",
-                "reference": "59a224de3104552c55de3a6aa67138ee1b73fd70",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-activeform/zipball/6acc1539c37d731c79a67989409ad76e389fd5f0",
+                "reference": "6acc1539c37d731c79a67989409ad76e389fd5f0",
                 "shasum": ""
             },
             "require": {
@@ -1674,7 +1674,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-12-05 11:11:22"
+            "time": "2015-12-11 19:07:50"
         },
         {
             "name": "kartik-v/yii2-widget-affix",
@@ -3537,7 +3537,8 @@
         "kartik-v/yii2-mpdf": 20,
         "geedmo/yamm3": 20,
         "asofter/yii2-amcharts": 20,
-        "asofter/yii2-imperavi-redactor": 20
+        "asofter/yii2-imperavi-redactor": 20,
+        "kartik-v/yii2-social": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

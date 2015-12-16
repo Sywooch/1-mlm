@@ -13,6 +13,28 @@
   > .dropdown-toggle {
     width: 100%;
     padding-right: 25px;
+    z-index: 1;
+  }
+
+  > select {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0.11px;
+    height: 100%;
+    opacity: 0;
+    border: none;
+  }
+
+  > select.mobile-device {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    display: block !important;
+    width: 100%;
+    height: 100% !important;
+    opacity: 0;
+    z-index: 2;
   }
 
   // Error display
@@ -325,19 +347,4 @@
     width: 100%;
     float: none;
   }
-}
-
-select.bs-select-hidden,
-select.selectpicker {
-  display: none !important;
-}
-
-select.mobile-device {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  display: block !important;
-  width: 100%;
-  height: 100% !important;
-  opacity: 0;
 }

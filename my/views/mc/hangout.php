@@ -182,10 +182,20 @@
                     ?>
                 </div>
                 <div class="col-md-6">
+                    ----------------------
                     <?php
                     use kartik\social\VKPlugin;
-                    echo VKPlugin::widget(['apiId'=>'5129822', 'type'=>VKPlugin::COMMENTS]);
+                    echo VKPlugin::widget([
+                        'type' => VKPlugin::COMMENTS,
+                        'apiId' => 5129822,
+                        'options' => [
+                            'limit' => 10,
+                            'width' => '665',
+                            'attach' => '*'
+                        ]
+                    ]);
                     ?>
+                    -----------------------
                 </div>
             </div>
         </div>

@@ -264,7 +264,7 @@
     this.init();
   };
 
-  Selectpicker.VERSION = '1.7.7';
+  Selectpicker.VERSION = '1.8.1';
 
   // part of this is duplicated in i18n/defaults-en_US.js. Make sure to update both.
   Selectpicker.DEFAULTS = {
@@ -321,14 +321,15 @@
       var that = this,
           id = this.$element.attr('id');
 
-      this.$element.addClass('bs-select-hidden');
       // store originalIndex (key) and newIndex (value) in this.liObj for fast accessibility
       // allows us to do this.$lis.eq(that.liObj[index]) instead of this.$lis.filter('[data-original-index="' + index + '"]')
       this.liObj = {};
       this.multiple = this.$element.prop('multiple');
       this.autofocus = this.$element.prop('autofocus');
       this.$newElement = this.createView();
-      this.$element.after(this.$newElement);
+      this.$element
+        .after(this.$newElement)
+        .appendTo(this.$newElement);
       this.$button = this.$newElement.children('button');
       this.$menu = this.$newElement.children('.dropdown-menu');
       this.$menuInner = this.$menu.children('.inner');
@@ -370,6 +371,32 @@
           that.$element.trigger('shown.bs.select', e);
         }
       });
+
+      if (that.$element[0].hasAttribute('required')) {
+        this.$element.on('invalid', function () {
+          that.$button
+            .addClass('bs-invalid')
+            .focus();
+          
+          that.$element.on({
+            'focus.bs.select': function () {
+              that.$button.focus();
+              that.$element.off('focus.bs.select');
+            },
+            'shown.bs.select': function () {
+              that.$element
+                .val(that.$element.val()) // set the value to hide the validation message in Chrome when menu is opened
+                .off('shown.bs.select');
+            },
+            'rendered.bs.select': function () {
+              // if select is no longer invalid, remove the bs-invalid class
+              if (this.validity.valid) that.$button.removeClass('bs-invalid');
+              that.$element.off('rendered.bs.select');
+            }
+          });
+          
+        });
+      }
 
       setTimeout(function () {
         that.$element.trigger('loaded.bs.select');
@@ -925,14 +952,14 @@
             });
           };
 
-      this.$newElement.on('click', function () {
+      this.$button.on('click', function () {
         var $this = $(this);
 
         if (that.isDisabled()) {
           return;
         }
 
-        getPlacement($this);
+        getPlacement(that.$newElement);
 
         that.$bsContainer
           .appendTo(that.options.container)
@@ -997,10 +1024,13 @@
     },
 
     tabIndex: function () {
-      if (this.$element.is('[tabindex]')) {
+      if (this.$element.data('tabindex') !== this.$element.attr('tabindex') && 
+        (this.$element.attr('tabindex') !== -98 && this.$element.attr('tabindex') !== '-98')) {
         this.$element.data('tabindex', this.$element.attr('tabindex'));
         this.$button.attr('tabindex', this.$element.data('tabindex'));
       }
+      
+      this.$element.attr('tabindex', -98);
     },
 
     clickListener: function () {
@@ -1020,7 +1050,7 @@
         }
       });
 
-      this.$newElement.on('click', function () {
+      this.$button.on('click', function () {
         that.setSize();
         that.$element.on('shown.bs.select', function () {
           if (!that.options.liveSearch && !that.multiple) {
@@ -1197,7 +1227,7 @@
       var that = this,
           $no_results = $('<li class="no-results"></li>');
 
-      this.$newElement.on('click.dropdown.data-api touchstart.dropdown.data-api', function () {
+      this.$button.on('click.dropdown.data-api touchstart.dropdown.data-api', function () {
         that.$menuInner.find('.active').removeClass('active');
         if (!!that.$searchbox.val()) {
           that.$searchbox.val('');
@@ -1389,7 +1419,7 @@
 
       $items = $('[role=menu] li', $parent);
 
-      isActive = that.$menu.parent().hasClass('open');
+      isActive = that.$newElement.hasClass('open');
 
       if (!isActive && (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode >= 96 && e.keyCode <= 105 || e.keyCode >= 65 && e.keyCode <= 90)) {
         if (!that.options.container) {
@@ -1397,7 +1427,7 @@
           that.$menu.parent().addClass('open');
           isActive = true;
         } else {
-          that.$newElement.trigger('click');
+          that.$button.trigger('click');
         }
         that.$searchbox.focus();
       }
@@ -1531,8 +1561,7 @@
     },
 
     mobile: function () {
-      this.$element.addClass('mobile-device').appendTo(this.$newElement);
-      if (this.options.container) this.$menu.hide();
+      this.$element.addClass('mobile-device');
     },
 
     refresh: function () {
@@ -1562,7 +1591,7 @@
       this.$element.remove();
     },
 
-    destroy: function() {
+    destroy: function () {
         this.$newElement.remove();
 
         if (this.$bsContainer) {
