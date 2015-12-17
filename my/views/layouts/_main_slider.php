@@ -150,7 +150,6 @@ if( !empty(\Yii::$app->request->get("r")) )
                             <i class="icon-cup"></i>
                             <span class="title">Друзья в VK</span>
                             <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
-
                         </a>
                     </li>
                     <li class="nav-item">
@@ -158,17 +157,11 @@ if( !empty(\Yii::$app->request->get("r")) )
                             <i class="icon-social-facebook"></i>
                             <span class="title">Друзья в FB</span>
                             <span class="badge badge-danger">скоро</span>
-                            <!--<span class="badge badge-success"><?php //$cntLp ?></span>
-                            <span class="arrow"></span>-->
                         </a>
 
                     </li>
                 </ul>
             </li>
-
-
-
-
             <li class="nav-item start <?php
             echo( "edit"==$act ) ? 'active open' : null;
             echo( "mcarchive"==$act ) ? 'active open' : null;
@@ -176,15 +169,8 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <a href="#" class="nav-link">
                     <i class="icon-camcorder"></i>
                     <span class="title">Мастер Класс</span>
-                    <span class="badge badge-danger">скоро</span>
                 </a>
                 <ul class="sub-menu">
-                    <!--<li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=mc%2Fedit" class="nav-link ">
-                            <i class="icon-wrench"></i>
-                            <span class="title">Создание МК</span>
-                        </a>
-                    </li>-->
                     <li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">
                         <a href="#" class="nav-link ">
                             <i class="icon-wrench"></i>
@@ -199,14 +185,6 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
-
-
-
-
-
-
-
-
             <li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Fblog" class="nav-link">
                 <i class="icon-book-open"></i>
@@ -214,8 +192,6 @@ if( !empty(\Yii::$app->request->get("r")) )
 
             </a>
         </li>
-
-
             <li class="nav-item start <?php
             echo ( "pricing"==$act ) ? 'active open' : null;
             echo ( "pricing2"==$act ) ? 'active open' : null;
@@ -225,27 +201,15 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <span class="title">Тарифы</span>
                 </a>
             </li>
-
             <li class="nav-item start">
                 <a href="index.php?r=site%2Fcontact" class="nav-link">
                     <i class="icon-call-out"></i>
                     <span class="title">Контакт</span>
                 </a>
             </li>
-
-
-            <!--<li class="nav-item start <?= ( "news"==$act ) ? 'active open' : null; ?>">
-                <a href="index.php?r=site%2Fnews" class="nav-link">
-                    <i class="icon-user"></i>
-                    <span class="title">Новости</span>
-
-                </a>
-            </li>-->
-
             <li class="heading">
                 <h3 class="uppercase">В ближайшее время</h3>
             </li>
-
             <li class="nav-item start <?= ( "calendar"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=site%2Fcalendar" class="nav-link nav-toggle">
                     <i class="icon-calendar"></i>
@@ -261,15 +225,6 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <span class="badge badge-danger">скоро</span>
                 </a>
             </li>
-
-            <!--<li class="nav-item start <?= ( "inbox"==$act ) ? 'active open' : null; ?>">
-                <a href="index.php?r=site%2Finbox" class="nav-link nav-toggle">
-                    <i class="icon-envelope-open"></i>
-                    <span class="title">Мои Сообщения</span>
-                    <span class="badge badge-danger">скоро</span>
-                </a>
-            </li>-->
-
 
             <li class="nav-item start <?= ( "training"==$act ) ? 'active open' : null; ?>">
                 <a href="index.php?r=site%2Ftraining" class="nav-link">
@@ -329,13 +284,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </ul>
             </li>
             <?php endif; ?>
-
-
-
-
             <!--  Меню  Админа Конец --->
-
-
             <!-----------  Начало Социальные виджеты  ------------>
                    <br>
                <li class="nav-item">
