@@ -96,16 +96,6 @@ $this->title = '1-mlm';
                             </div>
                         </div>
                     </div>
-                    <!------------------------------------------------------------>
-
-
-
-                   <!-- <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <i class="icon-wrench"></i>
-                    </a>
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <i class="icon-trash"></i>
-                    </a>-->
                 </div>
             </div>
             <div class="portlet-body form">
