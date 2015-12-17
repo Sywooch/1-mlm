@@ -27,11 +27,18 @@ class PayController extends \yii\web\Controller
     {
         if(!\Yii::$app->user->isGuest)
         {
-            if(!empty($congratulation))
+            if($congratulation=="yes")
             {
                 \Yii::$app->session->setFlash(
                     'success',
                     'Поздравляем оплата прийнята'
+                );
+            }
+            if($congratulation=="rate")
+            {
+                \Yii::$app->session->setFlash(
+                    'error',
+                    'Cмените тарифный план'
                 );
             }
 

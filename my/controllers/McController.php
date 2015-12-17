@@ -41,6 +41,8 @@ class McController extends Controller
         }else
         {
             return $this->redirect( Yii::getAlias('@web') );
+
+            //add login form
         }
     }
 
@@ -77,6 +79,8 @@ class McController extends Controller
                     break;
             }
 
+            $mod=$model->one();
+
             return $this->render('mcarchive', [
                 'dataProviderSys' => new ActiveDataProvider([
                     'query' =>Hangouts::find()
@@ -84,13 +88,17 @@ class McController extends Controller
                 ]),
                 'dataProviderPartner' => new ActiveDataProvider([
                     'query' =>Hangouts::find()
-                        ->where([ 'uid' => $model->one()["ref"] ])
+                        ->where([ 'uid' =>  Users::find()
+                            ->where([
+                                'refdt'=>$mod["ref"]
+                            ])->one()["id"]])
                 ]),
                 'dataProviderMy' => new ActiveDataProvider([
                     'query' =>Hangouts::find()
-                        ->where([ 'uid' => $model->one()["id"] ])
+                        ->where([ 'uid' => $mod["id"] ])
                 ]),
-                'refdt'=>$model->one()["refdt"]
+
+                'refdt'=>$mod["refdt"]
             ]);
         }
         return $this->goHome();
@@ -129,81 +137,81 @@ class McController extends Controller
                     $model=$model->where(['instagram' => $identity["id"]])->one();
                     break;
             }
-
-            if(\Yii::$app->request->post())
-            {
-                $p = \Yii::$app->request->post();
-                $mcID=(int)$p["Hangouts"]["id"];
-
-                if ( (1 <= $model->level) && ( 1 > $mcID) )
-                {
-                    $hangouts = new Hangouts;
-                    $hangouts->uid=$model->id;
-/*
-                    $hangouts->name = $p["Hangouts"]["name"];
-                    $hangouts->date=@$p["Hangouts"]["date"];
-                    $hangouts->time=@$p["Hangouts"]["time"];
-                    $hangouts->class=@$p["Hangouts"]["class"];
-*/
-                    $hangouts->title=@$p["Hangouts"]["title"];
-                    $hangouts->description=@$p["Hangouts"]["description"];
-                    $hangouts->speaker=@$p["Hangouts"]["speaker"];
-                    $hangouts->yt=@$p["Hangouts"]["yt"];
-                    $hangouts->url=@$p["Hangouts"]["url"];
-                    $hangouts->download=@$p["Hangouts"]["download"];
-                    $hangouts->button=@$p["Hangouts"]["button"];
-                    $hangouts->link=@$p["Hangouts"]["link"];
-
-                    $hangouts->save(false);
-                    $mcID=$hangouts->id;
-
-                }elseif( (1 <= $model->level) && ( 1 <= $mcID ) )
-                {
-                    $hangouts=Hangouts::findOne([
-                        'id'=>(int)$p["Hangouts"]["id"]
-                    ]);
-
-                    $hangouts->uid=$model->id;
-/*                  $hangouts->name = $p["Hangouts"]["name"];
-                    $hangouts->date=@$p["Hangouts"]["date"];
-                    $hangouts->time=@$p["Hangouts"]["time"];
-                    $hangouts->class=@$p["Hangouts"]["class"];
-*/
-                    $hangouts->title=@$p["Hangouts"]["title"];
-                    $hangouts->description=@$p["Hangouts"]["description"];
-                    $hangouts->url=@$p["Hangouts"]["url"];
-                    $hangouts->download=@$p["Hangouts"]["download"];
-                    $hangouts->speaker=@$p["Hangouts"]["speaker"];
-                    $hangouts->yt=@$p["Hangouts"]["yt"];
-                    $hangouts->button=@$p["Hangouts"]["button"];
-                    $hangouts->link=@$p["Hangouts"]["link"];
-
-                    $hangouts->update(false);
-                    $mcID=(int)$p["Hangouts"]["id"];
-                }
-
-                return $this->render('mcedit', [
-                    'model' => Hangouts::find()
-                        ->where( [ 'id' => $mcID ] )
-                        ->one()
-                ]);
-            }
-
-            if( !empty(\Yii::$app->request->get("id")) )
-            {
-                    return $this->render('mcedit', [
-                    'model' => Hangouts::find()
-                        ->where( [ 'id'=>(int)\Yii::$app->request->get("id") ] )
-                        ->one()
-                ]);
-            }
-
-           if($model->level<1)
+           if(1==$model->level)
            {
-               return $this->render('mcempty');
+               return \app\controllers\PayController::PriceList("rate");
            }
+           else
+           {
+               if(\Yii::$app->request->post())
+               {
+                   $p = \Yii::$app->request->post();
+                   $mcID=(int)$p["Hangouts"]["id"];
 
-            return $this->render('mcnew');
+                   if (1 > $mcID)
+                   {
+                       $hangouts = new Hangouts;
+                       $hangouts->uid=$model->id;
+                       /*
+                                           $hangouts->name = $p["Hangouts"]["name"];
+                                           $hangouts->date=@$p["Hangouts"]["date"];
+                                           $hangouts->time=@$p["Hangouts"]["time"];
+                                           $hangouts->class=@$p["Hangouts"]["class"];
+                       */
+                       $hangouts->title=@$p["Hangouts"]["title"];
+                       $hangouts->description=@$p["Hangouts"]["description"];
+                       $hangouts->speaker=@$p["Hangouts"]["speaker"];
+                       $hangouts->yt=@$p["Hangouts"]["yt"];
+                       $hangouts->url=@$p["Hangouts"]["url"];
+                       $hangouts->download=@$p["Hangouts"]["download"];
+                       $hangouts->button=@$p["Hangouts"]["button"];
+                       $hangouts->link=@$p["Hangouts"]["link"];
+
+                       $hangouts->save(false);
+                       $mcID=$hangouts->id;
+
+                   }elseif( 1 <= $mcID  )
+                   {
+                       $hangouts=Hangouts::findOne([
+                           'id'=>(int)$p["Hangouts"]["id"]
+                       ]);
+
+                       $hangouts->uid=$model->id;
+                       /*                  $hangouts->name = $p["Hangouts"]["name"];
+                                           $hangouts->date=@$p["Hangouts"]["date"];
+                                           $hangouts->time=@$p["Hangouts"]["time"];
+                                           $hangouts->class=@$p["Hangouts"]["class"];
+                       */
+                       $hangouts->title=@$p["Hangouts"]["title"];
+                       $hangouts->description=@$p["Hangouts"]["description"];
+                       $hangouts->url=@$p["Hangouts"]["url"];
+                       $hangouts->download=@$p["Hangouts"]["download"];
+                       $hangouts->speaker=@$p["Hangouts"]["speaker"];
+                       $hangouts->yt=@$p["Hangouts"]["yt"];
+                       $hangouts->button=@$p["Hangouts"]["button"];
+                       $hangouts->link=@$p["Hangouts"]["link"];
+
+                       $hangouts->update(false);
+                       $mcID=(int)$p["Hangouts"]["id"];
+                   }
+
+                   return $this->render('mcedit', [
+                       'model' => Hangouts::find()
+                           ->where( [ 'id' => $mcID ] )
+                           ->one()
+                   ]);
+               }
+
+               if( !empty(\Yii::$app->request->get("id")) )
+               {
+                   return $this->render('mcedit', [
+                       'model' => Hangouts::find()
+                           ->where( [ 'id'=>(int)\Yii::$app->request->get("id") ] )
+                           ->one()
+                   ]);
+               }
+               return $this->render('mcnew');
+           }
         }
         return $this->goHome();
     }

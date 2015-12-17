@@ -28,9 +28,10 @@ echo GridView::widget([
             //'header' => 'Просмотр',
             'format' => 'raw',
             'options' => ['style' => 'width: 1000px; max-width: 1000px;'],
-            'value'  =>  function($data, $my, $refdt)
+            'value'  =>  function($data)
             {
-               $edit=( !empty($my) )?"<a href=\"index.php?r=mc/edit&id={$data->id}\">Редактировать</a><br />":null;
+                global $my;
+               $edit=( "yes"==$my )?"<a href=\"index.php?r=mc/mcedit&id={$data->id}\">Редактировать</a><br />":null;
                 return
                     $str="{$edit}Мастер-класс от {$data->date}<br />".
                         "Смотреть в записи: ".
@@ -38,7 +39,7 @@ echo GridView::widget([
                             'data' => $data
                         ]).
                         "<br />".
-                        "Пригласить партнеров или кандидатов: index.php?mc&ref=".$refdt;
+                        "<a href=\"index.php?r=mc&mcid={$data->id}\" target=\"_blank\">НА МАСТЕР КЛАСС</a>";
             }
         ]
     ]
