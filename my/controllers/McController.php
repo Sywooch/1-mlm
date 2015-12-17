@@ -96,7 +96,7 @@ class McController extends Controller
         return $this->goHome();
     }
 
-    public function actionEdit()
+    public function actionMcedit()
     {
         if (!\Yii::$app->user->isGuest)
         {

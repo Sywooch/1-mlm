@@ -163,7 +163,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </ul>
             </li>
             <li class="nav-item start <?php
-            echo( "edit"==$act ) ? 'active open' : null;
+            echo( "mcedit"==$act ) ? 'active open' : null;
             echo( "mcarchive"==$act ) ? 'active open' : null;
             ?>">
                 <a href="#" class="nav-link">
@@ -171,8 +171,8 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <span class="title">Мастер Класс</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item <?=( "mc"==$act ) ? 'active open' : null; ?>">
-                        <a href="#" class="nav-link ">
+                    <li class="nav-item <?=( "mcedit"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=mc%2Fmcedit" class="nav-link ">
                             <i class="icon-wrench"></i>
                             <span class="title">Создание МК</span>
                         </a>
