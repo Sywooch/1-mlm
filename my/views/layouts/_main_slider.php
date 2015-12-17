@@ -113,7 +113,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                     <li class="nav-item  <?= ( "landingedit"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Flandingedit" class="nav-link nav-toggle">
-                            <i class="icon-link"></i>
+                            <i class="icon-note"></i>
                             <span class="title">Редактор</span>
                             <!--<span class="arrow"></span>-->
                         </a>

@@ -6,7 +6,7 @@ $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' 
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-$this->title = 'Создание страницы';
+$this->title = 'Редактирование страницы';
 $this->params['breadcrumbs'][] = $this->title;
 $save=(isSet($save))?$save:"www";
 ?>
@@ -36,7 +36,7 @@ $this->registerJs($js);
         <div class="portlet light bordered">
             <div class="portlet-title tabbable-line">
                 <div class="caption">
-                    <i class="icon-chemistry font-blue-sharp"></i>
+                    <i class="icon-note font-blue-sharp"></i>
                     <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
                 </div>
                 <div align="right">
