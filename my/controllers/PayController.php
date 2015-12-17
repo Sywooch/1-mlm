@@ -38,7 +38,7 @@ class PayController extends \yii\web\Controller
             {
                 \Yii::$app->session->setFlash(
                     'error',
-                    'Cмените тарифный план'
+                    'Извините в Вашем тарифном плане нет доступа к этой странице! Для доступа повысьте свой тариф.'
                 );
             }
 

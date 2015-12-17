@@ -101,7 +101,7 @@ $this->registerCss($css);
                 </div>
                 <div class="tab-pane fade" id="tab_1_3">
                     <?php
-                    echo $this->render('_mcarchive_list', [
+                   echo $this->render('_mcarchive_list', [
                         'dataProvider' => $dataProviderMy
                     ]); ?>
                 </div>

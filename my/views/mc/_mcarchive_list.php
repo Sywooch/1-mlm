@@ -21,7 +21,7 @@ echo GridView::widget([
             'options' => ['style' => 'width: 120px; max-width: 120px;'],
             'format' => 'raw',
             'value'=>function($data) {
-                return "<img src='http://i1.ytimg.com/vi/{$data->yt}/1.jpg'>";
+                return "<img src='http://i1.ytimg.com/vi/{$data["yt"]}/1.jpg'>";
             }
         ],
         [
@@ -30,17 +30,17 @@ echo GridView::widget([
             'options' => ['style' => 'width: 1000px; max-width: 1000px;'],
             'value'  =>  function($data)
             {
-                /*$edit=( "yes"==$data->my )?
-                    "<a href=\"index.php?r=mc/mcedit&id={$data->id}\">Редактировать</a><br />":
-                    null;*/
+                $edit=( "yes"==@$data["my"] )?
+                    "<a href=\"index.php?r=mc/mcedit&id={$data["id"]}\">Редактировать</a><br />":
+                    null;
                 return
-                    $str="{$edit}Мастер-класс от {$data->date}<br />".
+                    $str="{$edit}Мастер-класс от {$data["date"]}<br />".
                         "Смотреть в записи: ".
                         $this->render('_mcarchive_video', [
                             'data' => $data
                         ]).
                         "<br />".
-                        "<a href=\"index.php?r=mc&mcid={$data->id}\" target=\"_blank\">НА МАСТЕР КЛАСС</a>";
+                        "<a href=\"index.php?r=mc&mcid={$data["id"]}\" target=\"_blank\">НА МАСТЕР КЛАСС</a>";
             }
         ]
     ]

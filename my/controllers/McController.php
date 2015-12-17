@@ -5,6 +5,9 @@ namespace app\controllers;
 use app\models\Commands;
 use app\models\Hangouts;
 use yii\data\ActiveDataProvider;
+use yii\data\ArrayDataProvider;
+use yii\data\SqlDataProvider;
+use yii\db\Query;
 use yii\web\Controller;
 use app\models\Users;
 use Yii;
@@ -56,16 +59,23 @@ class McController extends Controller
             }
             return $this->render('mcarchive', [
                 'dataProviderSys' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
+                    'query' =>(new Query())
                         ->select([
-                            'COUNT(`h`.`id`) as `my`',
-                            '`h`.`yt`', '`h`.`date`', '`h`.`uid` as `iii`','`h`.`title`'
+                            '"" as `my`',
+                            '`h`.`yt`', '`h`.`date`', '`h`.`id`','`h`.`title`'
                         ])
                     ->from([Hangouts::tableName().' h'])
-                    //->where(['uid'=>2])
+                   ->where(['uid'=>[
+                        2,3,22196
+                    ]])
                 ]),
                 'dataProviderPartner' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
+                    'query' =>(new Query())
+                        ->select([
+                            '"" as `my`',
+                            '`h`.`yt`', '`h`.`date`', '`h`.`id`','`h`.`title`'
+                        ])
+                        ->from([Hangouts::tableName().' h'])
                         ->where([ 'uid' =>
                             Users::find()->where([
                                 'refdt' => $model->ref
@@ -73,7 +83,12 @@ class McController extends Controller
                         ])
                 ]),
                 'dataProviderMy' => new ActiveDataProvider([
-                    'query' =>Hangouts::find()
+                    'query' =>(new Query())
+                        ->select([
+                            '"yes" as `my`',
+                            '`h`.`yt`', '`h`.`date`', '`h`.`id`','`h`.`title`'
+                        ])
+                        ->from([Hangouts::tableName().' h'])
                        ->where([ 'uid' => $model->id ])
                 ])
             ]);
