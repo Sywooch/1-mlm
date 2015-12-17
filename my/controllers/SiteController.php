@@ -1486,7 +1486,11 @@ class SiteController extends Controller
                     //print_r(\Yii::$app->getUser()->getIdentity()->profile["service"]);exit();
 
                     $this->usrEnter();
-
+                    if( !empty(Yii::$app->session->get('mcID')) )
+                    {
+                        return $this->redirect( "https://1-mlm.com/mc-".
+                            Yii::$app->session->get('mcID').".html" );
+                    }
                     $eauth->redirect();
                 }
                 else {
@@ -1506,6 +1510,11 @@ class SiteController extends Controller
 /////////////////////////////////////if login
         if (!\Yii::$app->user->isGuest){
             $this->usrEnter();
+            if( !empty(Yii::$app->session->get('mcID')) )
+            {
+                return $this->redirect( "https://1-mlm.com/mc-".
+                    Yii::$app->session->get('mcID').".html" );
+            }
             return $this->goHome();
         }
 /////////////////////////////////////////////

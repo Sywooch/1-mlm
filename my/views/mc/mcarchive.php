@@ -90,23 +90,19 @@ $this->registerCss($css);
                 <div class="tab-pane fade active in" id="tab_1_1">
                     <?php
                     echo $this->render('_mcarchive_list', [
-                        'dataProvider' => $dataProviderSys,
-                        'refdt'=>$refdt
+                        'dataProvider' => $dataProviderSys
                     ]); ?>
                 </div>
                 <div class="tab-pane fade" id="tab_1_2">
                     <?php
                     echo $this->render('_mcarchive_list', [
-                        'dataProvider' => $dataProviderPartner,
-                        'refdt'=>$refdt
+                        'dataProvider' => $dataProviderPartner
                     ]); ?>
                 </div>
                 <div class="tab-pane fade" id="tab_1_3">
                     <?php
                     echo $this->render('_mcarchive_list', [
-                        'dataProvider' => $dataProviderMy,
-                        'refdt'=>$refdt,
-                        'my'=>"yes"
+                        'dataProvider' => $dataProviderMy
                     ]); ?>
                 </div>
             </div>

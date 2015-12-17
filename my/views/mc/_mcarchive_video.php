@@ -19,6 +19,10 @@ Modal::begin([
             width="560">
     </iframe>
 
+<pre><?php
+    print_r($data);
+    ?></pre>
+
 <?php
 \yii\bootstrap\Modal::end();
 ?>

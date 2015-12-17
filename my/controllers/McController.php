@@ -12,16 +12,18 @@ use Yii;
 
 class McController extends Controller
 {
-    public function ref()
+    public function ref($mcid)
     {
         if( !empty(\Yii::$app->request->get("refid")) )
         {
-            $refdt=\Yii::$app->request->get("refid");
+            $h=Hangouts::findOne(['id'=>$mcid]);
+            $usr=Users::find()->where(['id' => $h->uid])->one();
             $usrDt=Users::find()
-                ->where(['refdt' => $refdt]);
+                ->where(['refdt' => $usr->refdt]);
             if( $usrDt->count()>0 )
             {
-                Yii::$app->session->set('refuserId', $refdt);
+                Yii::$app->session->set('refuserId', $usr->refdt);
+                Yii::$app->session->set('mcID', $mcid);
             }
         }
     }
@@ -29,18 +31,15 @@ class McController extends Controller
     public function actionIndex()
     {
         $this->layout = '_hangout';
-        $this->ref();
         $mcid=(int)\Yii::$app->request->get("mcid");
+        $this->ref($mcid);
         if (!\Yii::$app->user->isGuest)
         {
-            //$mcid=(int)\Yii::$app->request->get("mcid");
-
             return $this->render('hangout',[
                 'data'=>Hangouts::findOne(['id'=>$mcid])
             ]);
         }else
         {
-            //return $this->redirect( Yii::getAlias('@web') );
             $this->layout = 'empty';
             return $this->render('loginform');
         }
@@ -50,49 +49,33 @@ class McController extends Controller
     {
         if(!\Yii::$app->user->isGuest)
         {
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            switch($identity["service"])
+            $model=$this->getUsrModel();
+            if(1==$model->level)
             {
-                case "facebook":
-                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
-                    break;
-                case "vkontakte":
-                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
-                    break;
-                case "linkedin_oauth2":
-                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
-                    break;
-                case "google":
-                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
-                    break;
-                case "yandex":
-                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
-                    break;
-                case "mailru":
-                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
-                    break;
-                case "twitter":
-                    $model = Users::find()->where(['twitter'=>$identity["id"]]);
-                    break;
-                case "instagram":
-                    $model = Users::find()->where(['instagram'=>$identity["id"]]);
-                    break;
+                return \app\controllers\PayController::PriceList("price");
             }
-
             return $this->render('mcarchive', [
                 'dataProviderSys' => new ActiveDataProvider([
                     'query' =>Hangouts::find()
-                    //->where([''=>''])
+                        ->select([
+                            'COUNT(`h`.`id`) as `my`',
+                            '`h`.`yt`', '`h`.`date`', '`h`.`uid` as `iii`','`h`.`title`'
+                        ])
+                    ->from([Hangouts::tableName().' h'])
+                    //->where(['uid'=>2])
                 ]),
                 'dataProviderPartner' => new ActiveDataProvider([
                     'query' =>Hangouts::find()
-                        ->where([ 'uid' => $model->one()["ref"] ])
+                        ->where([ 'uid' =>
+                            Users::find()->where([
+                                'refdt' => $model->ref
+                            ])->one()["id"]
+                        ])
                 ]),
                 'dataProviderMy' => new ActiveDataProvider([
                     'query' =>Hangouts::find()
-                        ->where([ 'uid' => $model->one()["id"] ])
-                ]),
-                'refdt'=>$model->one()["refdt"]
+                       ->where([ 'uid' => $model->id ])
+                ])
             ]);
         }
         return $this->goHome();
@@ -102,34 +85,10 @@ class McController extends Controller
     {
         if (!\Yii::$app->user->isGuest)
         {
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            $model = Users::find();
-            switch($identity["service"])
+            $model=$this->getUsrModel();
+            if(1==$model->level)
             {
-                case "facebook":
-                    $model=$model->where(['facebook' => $identity["id"]])->one();
-                break;
-                case "vkontakte":
-                    $model=$model->where(['vkontakte' => $identity["id"]])->one();
-                break;
-                case "linkedin_oauth2":
-                    $model=$model->where(['linkedin' => $identity["id"]])->one();
-                break;
-                case "google":
-                    $model=$model->where(['googleplus' => $identity["id"]])->one();
-                break;
-                case "yandex":
-                    $model=$model->where(['yandex' => $identity["id"]])->one();
-                break;
-                case "mailru":
-                    $model=$model->where(['mailru' => $identity["id"]])->one();
-                break;
-                case "twitter":
-                    $model=$model->where(['twitter' => $identity["id"]])->one();
-                    break;
-                case "instagram":
-                    $model=$model->where(['instagram' => $identity["id"]])->one();
-                    break;
+                return \app\controllers\PayController::PriceList("price");
             }
 
             if(\Yii::$app->request->post())
@@ -137,52 +96,37 @@ class McController extends Controller
                 $p = \Yii::$app->request->post();
                 $mcID=(int)$p["Hangouts"]["id"];
 
-                if ( (1 <= $model->level) && ( 1 > $mcID) )
+                if ( 0==$mcID )
                 {
                     $hangouts = new Hangouts;
-                    $hangouts->uid=$model->id;
-/*
-                    $hangouts->name = $p["Hangouts"]["name"];
-                    $hangouts->date=@$p["Hangouts"]["date"];
-                    $hangouts->time=@$p["Hangouts"]["time"];
-                    $hangouts->class=@$p["Hangouts"]["class"];
-*/
-                    $hangouts->title=@$p["Hangouts"]["title"];
-                    $hangouts->description=@$p["Hangouts"]["description"];
-                    $hangouts->speaker=@$p["Hangouts"]["speaker"];
-                    $hangouts->yt=@$p["Hangouts"]["yt"];
-                    $hangouts->url=@$p["Hangouts"]["url"];
-                    $hangouts->download=@$p["Hangouts"]["download"];
-                    $hangouts->button=@$p["Hangouts"]["button"];
-                    $hangouts->link=@$p["Hangouts"]["link"];
-
-                    $hangouts->save(false);
-                    $mcID=$hangouts->id;
-
-                }elseif( (1 <= $model->level) && ( 1 <= $mcID ) )
+                }
+                else
                 {
                     $hangouts=Hangouts::findOne([
                         'id'=>(int)$p["Hangouts"]["id"]
                     ]);
-
-                    $hangouts->uid=$model->id;
-/*                  $hangouts->name = $p["Hangouts"]["name"];
-                    $hangouts->date=@$p["Hangouts"]["date"];
-                    $hangouts->time=@$p["Hangouts"]["time"];
-                    $hangouts->class=@$p["Hangouts"]["class"];
-*/
-                    $hangouts->title=@$p["Hangouts"]["title"];
-                    $hangouts->description=@$p["Hangouts"]["description"];
-                    $hangouts->url=@$p["Hangouts"]["url"];
-                    $hangouts->download=@$p["Hangouts"]["download"];
-                    $hangouts->speaker=@$p["Hangouts"]["speaker"];
-                    $hangouts->yt=@$p["Hangouts"]["yt"];
-                    $hangouts->button=@$p["Hangouts"]["button"];
-                    $hangouts->link=@$p["Hangouts"]["link"];
-
-                    $hangouts->update(false);
-                    $mcID=(int)$p["Hangouts"]["id"];
                 }
+                $hangouts->uid=$model->id;
+                /*              $hangouts->name = $p["Hangouts"]["name"];
+                                $hangouts->date=@$p["Hangouts"]["date"];
+                                $hangouts->time=@$p["Hangouts"]["time"];
+                                $hangouts->class=@$p["Hangouts"]["class"];*/
+                $hangouts->title=@$p["Hangouts"]["title"];
+                $hangouts->description=@$p["Hangouts"]["description"];
+                $hangouts->url=@$p["Hangouts"]["url"];
+                $hangouts->download=@$p["Hangouts"]["download"];
+                $hangouts->speaker=@$p["Hangouts"]["speaker"];
+                $hangouts->yt=@$p["Hangouts"]["yt"];
+                $hangouts->button=@$p["Hangouts"]["button"];
+                $hangouts->link=@$p["Hangouts"]["link"];
+                $hangouts->save(false);
+
+                \Yii::$app->session->setFlash(
+                    'success',
+                    'изменения сохранены'
+                );
+
+                $mcID=(0==$mcID)?$hangouts->id:$p["Hangouts"]["id"];
 
                 return $this->render('mcedit', [
                     'model' => Hangouts::find()
@@ -200,13 +144,39 @@ class McController extends Controller
                 ]);
             }
 
-           if($model->level<1)
-           {
-               return $this->render('mcempty');
-           }
-
             return $this->render('mcnew');
         }
         return $this->goHome();
+    }
+    private function getUsrModel()
+    {
+        $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        switch($identity["service"])
+        {
+            case "facebook":
+                return Users::find()->where(['facebook' => $identity["id"]])->one();
+            break;
+            case "vkontakte":
+                return Users::find()->where(['vkontakte' => $identity["id"]])->one();
+            break;
+            case "linkedin_oauth2":
+                return Users::find()->where(['linkedin' => $identity["id"]])->one();
+            break;
+            case "google":
+                return Users::find()->where(['googleplus' => $identity["id"]])->one();
+            break;
+            case "yandex":
+                return Users::find()->where(['yandex' => $identity["id"]])->one();
+            break;
+            case "mailru":
+                return Users::find()->where(['mailru' => $identity["id"]])->one();
+            break;
+            case "twitter":
+                return Users::find()->where(['twitter' => $identity["id"]])->one();
+            break;
+            case "instagram":
+                return Users::find()->where(['instagram' => $identity["id"]])->one();
+            break;
+        }
     }
 }

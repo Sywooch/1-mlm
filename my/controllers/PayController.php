@@ -34,7 +34,7 @@ class PayController extends \yii\web\Controller
                     'Поздравляем оплата прийнята'
                 );
             }
-            if($congratulation=="rate")
+            if($congratulation=="price")
             {
                 \Yii::$app->session->setFlash(
                     'error',

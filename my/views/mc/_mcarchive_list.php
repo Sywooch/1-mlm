@@ -30,8 +30,9 @@ echo GridView::widget([
             'options' => ['style' => 'width: 1000px; max-width: 1000px;'],
             'value'  =>  function($data)
             {
-                global $my;
-               $edit=( "yes"==$my )?"<a href=\"index.php?r=mc/mcedit&id={$data->id}\">Редактировать</a><br />":null;
+                /*$edit=( "yes"==$data->my )?
+                    "<a href=\"index.php?r=mc/mcedit&id={$data->id}\">Редактировать</a><br />":
+                    null;*/
                 return
                     $str="{$edit}Мастер-класс от {$data->date}<br />".
                         "Смотреть в записи: ".

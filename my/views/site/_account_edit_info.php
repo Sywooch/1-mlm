@@ -121,13 +121,12 @@ $form = ActiveForm::begin([
 
 <!------------------------------------------------------------------------------------------------->
     <div class="form-group form-md-line-input">
-        <label class='col-md-4 control-label'>Сылка на лендинг</label>
-        <div class='col-md-8'>
+        <label class='col-md-3 control-label'>Сылка на лендинг</label>
+        <div class='col-md-9'>
             <div class="input-icon">
-                <i class="icon-link"></i>
+                <!--<i class="icon-link"></i>-->
                 <a href="<?= "https://1-mlm.com/{$model->companyid}-{$model->refdt}.html"; ?>"
-                    target="_blank">
-                    <?= "https://1-mlm.com/{$model->companyid}-{$model->refdt}.html"; ?>
+                    target="_blank"><?= "https://1-mlm.com/{$model->companyid}-{$model->refdt}.html"; ?>
                     </a>
                 <div class="form-control-focus"></div>
                 <span class="help-block">Ссылка для выбраной компании</span>
