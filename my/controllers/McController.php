@@ -28,11 +28,12 @@ class McController extends Controller
 
     public function actionIndex()
     {
-       $this->layout = 'empty';
+        $this->layout = '_hangout';
         $this->ref();
+        $mcid=(int)\Yii::$app->request->get("mcid");
         if (!\Yii::$app->user->isGuest)
         {
-            $mcid=(int)\Yii::$app->request->get("mcid");
+            //$mcid=(int)\Yii::$app->request->get("mcid");
 
             return $this->render('hangout',[
                 'data'=>Hangouts::findOne(['id'=>$mcid])
