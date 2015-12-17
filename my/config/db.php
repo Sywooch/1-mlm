@@ -1,4 +1,5 @@
 <?php
+
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm',
@@ -6,14 +7,7 @@ return [
     'password' => '',
     'charset' => 'utf8',
 ];
-/*
-return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=mlm',
-    'username' => 'mlm',
-    'password' => '12345678@',
-    'charset' => 'utf8',
-];*/
+
 /*return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm_yii2',
