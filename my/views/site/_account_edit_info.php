@@ -121,7 +121,7 @@ $form = ActiveForm::begin([
 
 <!------------------------------------------------------------------------------------------------->
     <div class="form-group form-md-line-input">
-        <label class='col-md-4 control-label'>Сылка на лендинг</label>
+        <label class='col-md-4 control-label'>Ссылка на лендинг</label>
         <div class='col-md-8'>
             <div class="input-icon">
                 <i class="icon-link"></i>
