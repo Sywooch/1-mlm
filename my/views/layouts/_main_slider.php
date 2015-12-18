@@ -272,25 +272,25 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <ul class="sub-menu">
                     <li class="nav-item start <?= ( "adnew"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=admin%2Fadnew" class="nav-link nav-toggle">
-                            <i class="icon-cup"></i>
-                            <span class="title">Нове Пользователи</span>
-                            <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
+                            <i class="icon-user-follow"></i>
+                            <span class="title">Новые</span>
+
 
                         </a>
                     </li>
                     <li class="nav-item start <?= ( "active"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=admin%2Fadactive" class="nav-link nav-toggle">
-                            <i class="icon-cup"></i>
-                            <span class="title">Нове Пользователи</span>
-                            <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
+                            <i class="icon-user-following"></i>
+                            <span class="title">Активные</span>
+
 
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="###" class="nav-link nav-toggle">
-                            <i class="icon-social-facebook"></i>
+                            <i class="icon-shuffle"></i>
                             <span class="title">Смена наставника</span>
-                            <span class="badge badge-danger">скоро</span>
+                            <span class="badge badge-danger">s</span>
 
                         </a>
 

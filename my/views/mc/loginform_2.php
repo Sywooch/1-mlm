@@ -253,8 +253,13 @@ $this->registerCss($style_user);
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">меню</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 <!--<a class="navbar-brand" href=""><img class="logo-nav" alt="1-й МЛМ Ресурс" src="../img/logo.png" width="50" height="50"><img class="logo-head" alt="logo" src="../img/logo.png" width="80" height="80"></a>--> </div>
                 <div id="photo" style="float: left;">
+<<<<<<< Updated upstream
                     <img src="<?= $usrref["userpic"]; ?>" />
                     <p>Ведет мастер-класс:<br>  <b><?= $usrref["fn"]; ?> <?= $usrref["ln"]; ?></b></p>
+=======
+                    <img src="https://pp.vk.me/c624825/v624825515/2a003/tstMP1ib20M.jpg" />
+                    <p>Вас пригласил:<br>  <b>Гошан Волкин</b></p>
+>>>>>>> Stashed changes
                 </div>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
                 <ul class="nav navbar-nav nav-left">
@@ -330,8 +335,6 @@ $this->registerCss($style_user);
 <script src="<?=Yii::getAlias('@web') ?>/tp1/soc_net/social-likes.min.js"></script>
 
 <input type="hidden" id="usrall" value="<?= \app\models\Users::find()->count(); ?>" />
-
-<!-- BEGIN CALLPY CODE {literal}  --><script>(function(w,t,p,v,c,f,s,r,h,l,d){w[p]="//callpy.com/";w[v]="3.86";w[c]=false;if(t==w){var tmp=l.callpy_data;if(tmp==null||!l.callpy_html||!l[c]){w[f]=false}else{w[f]=true;w[s]=JSON.parse(tmp);var tm=new Date().getTime();if(tm-w[s].lastSave<20000){if(w[s].insertcode){eval(w[s].insertcode)}else{w[f]=false}}else{w[f]=false}}}else{w[f]=false}var callpy_script=d.createElement("script");try{var tmp=parent.window.location.href?1:0}catch(e){var tmp=0}callpy_script.type="text/javascript";callpy_script.async=true;if(!w[f]||!l[h]){l[h]=new Date().getTime()}callpy_script.src=w[p]+"c/"+w.location.host.replace(/www./i,"")+"/"+(t==w?(w[f]?1:2):(tmp==1?4:3))+".js?id=2983&m="+l[h];callpy_script.onload=function(){iowisp.init()};d.body.appendChild(callpy_script)})(window,window.top,"callpy_path","callpy_version","tiny","sven","callpy_storage","callpy_chat_scroller","callpy_lastchat",localStorage,document);</script><!-- {/literal} END CALLPY CODE  -->
 
 </body>
 </html>
