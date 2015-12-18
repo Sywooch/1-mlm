@@ -169,6 +169,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <a href="#" class="nav-link">
                     <i class="icon-camcorder"></i>
                     <span class="title">Мастер Класс</span>
+                    <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item <?=( "mcedit"==$act ) ? 'active open' : null; ?>">

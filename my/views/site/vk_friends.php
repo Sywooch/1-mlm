@@ -61,8 +61,9 @@ $this->title = 'Друзья VK';
                         ]);*/
 
                         ?>
-                            <a class="btn green" href="https://vk.com/id<?= $val->vkontakte;?>" target="_blank">
-                                Добавить в  друзья</a>
+                            <!--<a class="btn green" href="https://vk.com/id<?= $val->vkontakte;?>" target="_blank">
+                                Добавить в  друзья</a>-->
+                            <a class="btn green" href="https://vk.com/id<?= $val->vkontakte;?>" onclick="popupWin = window.open(this.href,'contacts','location,width=490,height=368,top=0'); popupWin.focus(); return false;"> Добавить в  друзья </a>
                     </div>
                 </div>
         <?php
@@ -71,3 +72,4 @@ $this->title = 'Друзья VK';
         ?>
     </div>
 </div>
+
