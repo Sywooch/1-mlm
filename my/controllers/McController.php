@@ -134,6 +134,8 @@ class McController extends Controller
                 $hangouts->yt=@$p["Hangouts"]["yt"];
                 $hangouts->button=@$p["Hangouts"]["button"];
                 $hangouts->link=@$p["Hangouts"]["link"];
+                $hangouts->date=@$p["Hangouts"]["date"];
+                $hangouts->time=@$p["Hangouts"]["time"];
                 $hangouts->save(false);
 
                 \Yii::$app->session->setFlash(

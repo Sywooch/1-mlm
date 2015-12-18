@@ -1,5 +1,7 @@
 <?php
 use yii\widgets\ActiveForm;
+use kartik\widgets\DatePicker;
+use kartik\widgets\TimePicker;
 
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 
@@ -78,6 +80,31 @@ $form = ActiveForm::begin();?>
 
                         <div class="help-block"></div></div>
                 </div>            </div>
+
+            <!--<div class="form-group">
+                <div class="form-group field-hangouts-yt required">
+                    <label>Дата проведения мастер-класса</label>
+                    <div class="input-icon">
+                        <input id="hangouts-yt" class="form-control date-picker" name="Hangouts[date]" value="" type="text">
+
+                        <div class="help-block"></div></div>
+                </div>            </div>-->
+            <div class="form-group">
+                <label>Дата проведения мастер-класса</label>
+                <div class="input-icon">
+                    <?php
+                    echo DatePicker::widget([
+                        'name' => 'Hangouts[date]',
+                        'type' => DatePicker::TYPE_INPUT,
+                        'value' => '2015-12-01',
+                        'pluginOptions' => [
+                            'autoclose'=>true,
+                            'format' => 'yyyy-mm-dd'
+                        ]
+                    ]);
+                    ?>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
@@ -112,6 +139,23 @@ $form = ActiveForm::begin();?>
 
                         <div class="help-block"></div></div>
                 </div>            </div>
+
+            <div class="form-group">
+                <div class="form-group field-hangouts-link required">
+                    <label>Время проведения мастер-класса</label>
+                    <div class="input-icon">
+                        <!--<input id="hangouts-link" class="form-control timepicker timepicker-default" name="Hangouts[time]" value="" type="text">-->
+                        <?php echo TimePicker::widget([
+                            'name' => 'Hangouts[time]',
+                            'pluginOptions' => [
+                                'showMeridian' => false,
+                                'timeFormat' => 'H-i'
+                            ],
+                        ]); ?>
+
+                        <div class="help-block"></div></div>
+                </div>
+            </div>
         </div>
     </div>
 

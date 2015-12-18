@@ -1,5 +1,7 @@
 <?php
 use yii\widgets\ActiveForm;
+use kartik\widgets\DatePicker;
+use kartik\widgets\TimePicker;
 
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
 
@@ -82,6 +84,23 @@ $form = ActiveForm::begin();?>
                         <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
                 ?>
             </div>
+
+            <div class="form-group">
+                <label>Дата проведения мастер-класса</label>
+                <div class="input-icon">
+                    <?php
+                    echo DatePicker::widget([
+                        'name' => 'Hangouts[date]',
+                        'type' => DatePicker::TYPE_INPUT,
+                        'value' => $model['date'],
+                        'pluginOptions' => [
+                            'autoclose'=>true,
+                            'format' => 'yyyy-mm-dd'
+                        ]
+                    ]);
+                    ?>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
@@ -107,6 +126,23 @@ $form = ActiveForm::begin();?>
                     $model, 'link', ["template" => "<label>link</label>
                         <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
                 ?>
+            </div>
+            <div class="form-group">
+                <div class="form-group required">
+                    <label>Время проведения мастер-класса</label>
+                    <div class="input-icon">
+                        <!--<input id="hangouts-link" class="form-control timepicker timepicker-default" name="Hangouts[time]" value="" type="text">-->
+                        <?php echo TimePicker::widget([
+                            'name' => 'Hangouts[time]',
+                            'value' => $model['time'],
+                            'pluginOptions' => [
+                                'showMeridian' => false,
+                                'timeFormat' => 'H-i'
+                            ],
+                        ]); ?>
+
+                        <div class="help-block"></div></div>
+                </div>
             </div>
         </div>
     </div>
