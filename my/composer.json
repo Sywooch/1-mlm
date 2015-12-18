@@ -35,7 +35,7 @@
         "kartik-v/yii2-mpdf": "dev-master",
         "kartik-v/yii2-widget-rangeinput": "*",
         "kartik-v/yii2-widget-datetimepicker": "*",
-        "kartik-v/yii2-widget-datepicker": "*",
+        "kartik-v/yii2-widget-datepicker": "@dev",
         "kartik-v/yii2-export": "*",
         "kartik-v/yii2-widgets": "*",
         "sammaye/yii2-audittrail": "*",
@@ -46,7 +46,8 @@
         "asofter/yii2-imperavi-redactor": "dev-master",
         "delagics/yii2-liqpay": "^1.0",
         "yiisoft/yii2-imagine": "^2.0",
-        "kartik-v/yii2-social": "dev-master"
+        "kartik-v/yii2-social": "dev-master",
+        "kartik-v/yii2-widget-timepicker": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

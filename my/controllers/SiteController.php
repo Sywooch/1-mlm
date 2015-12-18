@@ -1160,7 +1160,7 @@ class SiteController extends Controller
 
             $refUsr = Users::find()
                 ->where([
-                    'refdt' => Yii::$app->session->get('refuserId')
+                    'refdt' => $usr["ref"]
                 ])->one();
 
             $company=UsrCompaniesLink::find()->where([

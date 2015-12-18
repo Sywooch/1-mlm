@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "acd0c8df0b9dd3be476645a08ed7d04b",
-    "content-hash": "3d3f4e32c8b2509494b0a02b5dc8858d",
+    "hash": "f970cf6fbf09ef475afea29ec99fa799",
+    "content-hash": "8bf4179c1104800b9666a810d62ed3e7",
     "packages": [
         {
             "name": "2amigos/yii2-file-input-widget",
@@ -1826,16 +1826,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-datepicker",
-            "version": "v1.3.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-datepicker.git",
-                "reference": "368b181ef658c05707fe41dd16eee4d9ffd9da38"
+                "reference": "98ba4680c5cc7bc1de68fff18199857b08a803a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/368b181ef658c05707fe41dd16eee4d9ffd9da38",
-                "reference": "368b181ef658c05707fe41dd16eee4d9ffd9da38",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/98ba4680c5cc7bc1de68fff18199857b08a803a8",
+                "reference": "98ba4680c5cc7bc1de68fff18199857b08a803a8",
                 "shasum": ""
             },
             "require": {
@@ -1871,7 +1871,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-07-19 04:49:03"
+            "time": "2015-12-12 10:34:53"
         },
         {
             "name": "kartik-v/yii2-widget-datetimepicker",
@@ -3535,6 +3535,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "kartik-v/yii2-mpdf": 20,
+        "kartik-v/yii2-widget-datepicker": 20,
         "geedmo/yamm3": 20,
         "asofter/yii2-amcharts": 20,
         "asofter/yii2-imperavi-redactor": 20,
