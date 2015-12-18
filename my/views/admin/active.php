@@ -51,7 +51,7 @@ $css = <<<'STYLE'
 }
 STYLE;
 $this->registerCss($css);
-$this->title = 'Последние 10 зарегестрированных пользователей';
+$this->title = '��������� 10 ������������������ �������������';
 
 ?>
 
@@ -73,8 +73,8 @@ $this->title = 'Последние 10 зарегестрированных по�
                         <div class="modal-dialog ">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                    <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">?</button>
+                                    <h4 style="margin-top: 0px;"><div align="center">������</div></h4>
                                 </div>
                                 <div class="modal-body">
                                     <iframe width="560" height="315"
@@ -93,8 +93,8 @@ $this->title = 'Последние 10 зарегестрированных по�
                 <?php echo GridView::widget([
                     'dataProvider'  => $dataProvider,
                     //'filterModel' => $searchModel,
-                    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
-                    'emptyText' => 'Еще нет кандидатов в команде',
+                    'summary'   =>  '<div>�������� ������ {begin} - {end} �� {totalCount}</div>',
+                    'emptyText' => '��� ��� ���������� � �������',
                     'tableOptions'  =>  [
                         'class'     =>  'table table-striped table-bordered table-hover',
                         'id' => 'sample_1'
@@ -106,11 +106,11 @@ $this->title = 'Последние 10 зарегестрированных по�
                         'class'     =>  'tbl-header'
                     ],
                     /*'responsive'    =>  true,*/
-                    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
+                    'summary'   =>  '<div>�������� ������ {begin} - {end} �� {totalCount}</div>',
                     'columns'   => [
                         /*    [
                                 'attribute' =>  'date',
-                                'label'     =>  'Дата',
+                                'label'     =>  '����',
                                 'width'     =>  '300px',
                                 'value'     =>  function($model){
                                     return date( "Y-m-d \n H:i", strtotime($model->date) );
@@ -158,8 +158,8 @@ $this->title = 'Последние 10 зарегестрированных по�
                             },
                         ],
                         [
-                            //'header'     =>  'Вход',
-                            'label'     =>  'Вход',
+                            //'header'     =>  '����',
+                            'label'     =>  '����',
                             'attribute' =>  'active',
                             'format' => 'raw',
                             'options' => ['style' => 'width: 100px; max-width: 100px;'],
@@ -170,16 +170,16 @@ $this->title = 'Последние 10 зарегестрированных по�
                         ],
                         [
                             'attribute' =>  'fn',
-                            'label'     =>  'Имя',
+                            'label'     =>  '���',
                             'options' => ['style' => 'width: 220px; max-width: 220px;']
                         ],
                         [
                             'attribute' =>  'ln',
-                            'label'     =>  'Фамилия',
+                            'label'     =>  '�������',
                             'options' => ['style' => 'width: 220px; max-width: 220px;']
                         ],
                         [
-                            'header' => 'Действия',
+                            'header' => '��������',
                             'format' => 'raw',
                             'options' => ['style' => 'width: 100px; max-width: 100px;'],
                             'value'  =>  function($dataProvider)

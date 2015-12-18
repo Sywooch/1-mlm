@@ -9,41 +9,15 @@ use app\models\Users;
 
 class AdminController extends Controller
 {
-    public function actionIndex()
+    public function actionAdnew()
     {
-        if (!\Yii::$app->user->isGuest) {
-
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            switch($identity["service"])
-            {
-                case "facebook":
-                    $model = Users::find()->where(['facebook'=>$identity["id"]]);
-                    break;
-                case "vkontakte":
-                    $model = Users::find()->where(['vkontakte'=>$identity["id"]]);
-                    break;
-                case "linkedin_oauth2":
-                    $model = Users::find()->where(['linkedin'=>$identity["id"]]);
-                    break;
-                case "google":
-                    $model = Users::find()->where(['googleplus'=>$identity["id"]]);
-                    break;
-                case "yandex":
-                    $model = Users::find()->where(['yandex'=>$identity["id"]]);
-                    break;
-                case "mailru":
-                    $model = Users::find()->where(['mailru'=>$identity["id"]]);
-                    break;
-                case "twitter":
-                    $model = Users::find()->where(['twitter'=>$identity["id"]]);
-                    break;
-                case "instagram":
-                    $model = Users::find()->where(['instagram'=>$identity["id"]]);
-                    break;
-            }
+        if (!\Yii::$app->user->isGuest)
+        {
+            if(!$this->isAdmin()){return $this->goHome();}
 
             $dataProvider = new ActiveDataProvider([
-                'query' => Users::find()->orderBy(['id' => SORT_DESC])->limit(10),
+                'query' => Users::find()->orderBy(['id' => SORT_DESC]),
+                    //->limit(10),
                 'pagination' => [
                     'pageSize' => 10,
                 ],
@@ -55,5 +29,69 @@ class AdminController extends Controller
         }
 
         return $this->goHome();
+    }
+
+    public function actionAdactive()
+    {
+        if (!\Yii::$app->user->isGuest)
+        {
+            if(!$this->isAdmin()){return $this->goHome();}
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => Users::find()->orderBy(['active' => SORT_DESC]),
+                //->limit(25),
+                'pagination' => [
+                    'pageSize' => 25,
+                ],
+            ]);
+
+            return $this->render('active', [
+                'dataProvider' => $dataProvider,
+            ]);
+        }
+
+        return $this->goHome();
+    }
+    private function isAdmin()
+    {
+        $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        switch($identity["service"])
+        {
+            case "facebook":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')
+                    ->where(['facebook'=>$identity["id"]])->one();
+            break;
+            case "vkontakte":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')
+                    ->where(['vkontakte'=>$identity["id"]])->one();
+            break;
+            case "linkedin_oauth2":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')
+                    ->where(['linkedin'=>$identity["id"]])->one();
+            break;
+            case "google":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')
+                    ->where(['google'=>$identity["id"]])->one();
+            break;
+            case "yandex":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')
+                    ->where(['yandex'=>$identity["id"]])->one();
+            break;
+            case "mailru":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')
+                    ->where(['mailru'=>$identity["id"]])->one();
+            break;
+            case "twitter":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')
+                    ->where(['twitter'=>$identity["id"]])->one();
+            break;
+            case "instagram":
+                $usr=\app\models\Users::find()->select('id, refdt, vkontakte, level')
+                    ->where(['instagram'=>$identity["id"]])->one();
+            break;
+        }
+        if($usr['level'] == 5)
+            {return true;}
+        return false;
     }
 }

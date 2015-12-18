@@ -138,8 +138,11 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </a>
             </li>
 
-            <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
-                <a href="###" class="nav-link">
+            <li class="nav-item start <?php
+            echo ( "friendsvk"==$act ) ? 'active open' : null;
+            echo ( "friendsfb"==$act ) ? 'active open' : null;
+            ?>">
+                <a href="#" class="nav-link">
                     <i class="icon-like"></i>
                     <span class="title">Давайте дружить!</span>
                     <span class="arrow"></span>
@@ -152,7 +155,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                             <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item start <?= ( "friendsfb"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Ffriendsfb" class="nav-link nav-toggle">
                             <i class="icon-social-facebook"></i>
                             <span class="title">Друзья в FB</span>
@@ -255,18 +258,28 @@ if( !empty(\Yii::$app->request->get("r")) )
                     </li>
                 </ul>
             </li>
-
  <!--  Меню  Админа  начало --->
             <?php if($usr['level'] == 5): ?>
-            <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
+            <li class="nav-item start <?php
+            echo ( "adnew"==$act ) ? 'active open' : null;
+            echo ( "adactive"==$act ) ? 'active open' : null;
+            ?>">
                 <a href="###" class="nav-link">
                     <i class="icon-like"></i>
                     <span class="title">Меню админа </span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item start <?= ( "friendsvk"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=admin%2Findex" class="nav-link nav-toggle">
+                    <li class="nav-item start <?= ( "adnew"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=admin%2Fadnew" class="nav-link nav-toggle">
+                            <i class="icon-cup"></i>
+                            <span class="title">Нове Пользователи</span>
+                            <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item start <?= ( "active"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=admin%2Fadactive" class="nav-link nav-toggle">
                             <i class="icon-cup"></i>
                             <span class="title">Нове Пользователи</span>
                             <span class="badge badge-success"><?= $cntVkfrinds; ?></span>
@@ -285,7 +298,7 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </ul>
             </li>
             <?php endif; ?>
-            <!--  Меню  Админа Конец --->
+<!--  Меню  Админа Конец --->
             <!-----------  Начало Социальные виджеты  ------------>
                    <br>
                <li class="nav-item">

@@ -88,27 +88,6 @@ class PayController extends \yii\web\Controller
         ]);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function actionIndex()
     {
         if(!\Yii::$app->user->isGuest)
@@ -201,15 +180,11 @@ class PayController extends \yii\web\Controller
         {
             $dt=json_decode( base64_decode( @$_POST['data'] ) );
             $answer=$this->payStatus($dt->order_id);
-
             //echo "<pre>";
             //print_r($answer);
-
             if('ok'==$answer->result)
             {
-
                 list($level, $uid, $moyr, $paydate) = explode(":", $answer->description);
-
                 $a = Users::find()
                     ->where([
                         'order_id'=>$answer->order_id
@@ -224,11 +199,14 @@ class PayController extends \yii\web\Controller
                     $refusr = Users::findOne([
                         'refdt'=>$user->ref
                     ]);
-                    $refusr->earned=$refusr->earned+($answer->amount/2);
-                    $refusr->save(false);
+                    if($refusr->level>1)
+                    {
+                        $refusr->money=$refusr->money+(($answer->amount)/2);
+                        $refusr->save(false);
+                    }
                 //------------------------------
                     $user->level=$level;
-                    $user->money=$answer->amount;
+                    $user->paid=$answer->amount;
                     $user->order_id=$answer->order_id;
                     $user->paydate=$paydate;
 
@@ -245,14 +223,3 @@ class PayController extends \yii\web\Controller
         return $this->goHome();
     }
 }
-/*
-order_id
-description
-level
-paydate  - 	дата оплаты
-days  -  	сколько дней доступно
-earned		ref money sum/2
-money		liqpay
-https://www.youtube.com/watch?v=TcD-d4XkwQ4
-*/
-

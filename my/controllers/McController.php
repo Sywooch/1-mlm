@@ -44,7 +44,7 @@ class McController extends Controller
         }else
         {
             $this->layout = 'empty';
-            return $this->render('loginform');
+            return $this->render('loginform_2');
         }
     }
 
