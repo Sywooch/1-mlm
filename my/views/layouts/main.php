@@ -223,7 +223,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                                 <?php
                                             endif;?>
                                             <?php if( !empty($consultant["facebook"]) ): ?>
-                                                <a href="https://facebook.com/<?php echo $consultant["facebook"];?>" target="_blank">
+                                                <a href="https://www.facebook.com/app_scoped_user_id/<?php echo $consultant["facebook"];?>/" target="_blank">
                                                     <img src="http://www.cambridgeenglish.org.ru/images/facebook-round-16x16.png"
                                                          style="border: none;" /></a>&nbsp;
                                                 <?php
@@ -281,7 +281,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                     width: 100%;
                                     height: 600px;"
                             ></iframe>-->
-                            <?php echo $this->render('inbox') ?>
+                            <?php //echo $this->render('inbox') ?>
                         </div>
                     </div>
                     <div class="tab-pane page-quick-sidebar-settings" id="quick_sidebar_tab_3">

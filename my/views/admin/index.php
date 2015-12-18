@@ -45,10 +45,10 @@ $css = <<<'STYLE'
   background-color: green;
   border: 0px;
 }
-
+/*
 .pagination {
   display: none;
-}
+}*/
 STYLE;
 $this->registerCss($css);
 $this->title = 'Последние 10 зарегестрированных пользователей';

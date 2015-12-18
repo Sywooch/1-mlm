@@ -70,7 +70,7 @@ class McController extends Controller
                         ])
                     ->from([Hangouts::tableName().' h'])
                    ->where(['uid'=>[
-                        2,3,22196
+                        1//,3,22196
                     ]])
                 ]),
                 'dataProviderPartner' => new ActiveDataProvider([
@@ -93,7 +93,7 @@ class McController extends Controller
                             '`h`.`yt`', '`h`.`date`', '`h`.`id`','`h`.`title`'
                         ])
                         ->from([Hangouts::tableName().' h'])
-                       ->where([ 'uid' => $model->id ])
+                        ->where([ 'uid' => $model->id ])
                 ])
             ]);
         }

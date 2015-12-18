@@ -45,13 +45,13 @@ $css = <<<'STYLE'
   background-color: green;
   border: 0px;
 }
-
+/*
 .pagination {
   display: none;
-}
+}*/
 STYLE;
 $this->registerCss($css);
-$this->title = 'Последние 10 зарегестрированных пользователей';
+$this->title = 'РџРѕСЃР»РµРґРЅРёРµ 10 Р·Р°СЂРµРіРµСЃС‚СЂРёСЂРѕРІР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№';
 
 ?>
 
@@ -74,7 +74,7 @@ $this->title = 'Последние 10 зарегестрированных пользователей';
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">?</button>
-                                    <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                                    <h4 style="margin-top: 0px;"><div align="center">РџРѕРјРѕС‰СЊ</div></h4>
                                 </div>
                                 <div class="modal-body">
                                     <iframe width="560" height="315"
@@ -93,8 +93,8 @@ $this->title = 'Последние 10 зарегестрированных пользователей';
                 <?php echo GridView::widget([
                     'dataProvider'  => $dataProvider,
                     //'filterModel' => $searchModel,
-                    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
-                    'emptyText' => 'Еще нет кандидатов в команде',
+                    'summary'   =>  '<div>РџРѕРєР°Р·Р°РЅС‹ Р·Р°РїРёСЃРё {begin} - {end} РёР· {totalCount}</div>',
+                    'emptyText' => 'Р•С‰Рµ РЅРµС‚ РєР°РЅРґРёРґР°С‚РѕРІ РІ РєРѕРјР°РЅРґРµ',
                     'tableOptions'  =>  [
                         'class'     =>  'table table-striped table-bordered table-hover',
                         'id' => 'sample_1'
@@ -106,11 +106,11 @@ $this->title = 'Последние 10 зарегестрированных пользователей';
                         'class'     =>  'tbl-header'
                     ],
                     /*'responsive'    =>  true,*/
-                    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
+                    'summary'   =>  '<div>РџРѕРєР°Р·Р°РЅС‹ Р·Р°РїРёСЃРё {begin} - {end} РёР· {totalCount}</div>',
                     'columns'   => [
                         /*    [
                                 'attribute' =>  'date',
-                                'label'     =>  'Дата',
+                                'label'     =>  'Р”Р°С‚Р°',
                                 'width'     =>  '300px',
                                 'value'     =>  function($model){
                                     return date( "Y-m-d \n H:i", strtotime($model->date) );
@@ -158,8 +158,8 @@ $this->title = 'Последние 10 зарегестрированных пользователей';
                             },
                         ],
                         [
-                            //'header'     =>  'Вход',
-                            'label'     =>  'Вход',
+                            //'header'     =>  'Р’С…РѕРґ',
+                            'label'     =>  'Р’С…РѕРґ',
                             'attribute' =>  'active',
                             'format' => 'raw',
                             'options' => ['style' => 'width: 100px; max-width: 100px;'],
@@ -170,16 +170,16 @@ $this->title = 'Последние 10 зарегестрированных пользователей';
                         ],
                         [
                             'attribute' =>  'fn',
-                            'label'     =>  'Имя',
+                            'label'     =>  'РРјСЏ',
                             'options' => ['style' => 'width: 220px; max-width: 220px;']
                         ],
                         [
                             'attribute' =>  'ln',
-                            'label'     =>  'Фамилия',
+                            'label'     =>  'Р¤Р°РјРёР»РёСЏ',
                             'options' => ['style' => 'width: 220px; max-width: 220px;']
                         ],
                         [
-                            'header' => 'Действия',
+                            'header' => 'Р”РµР№СЃС‚РІРёСЏ',
                             'format' => 'raw',
                             'options' => ['style' => 'width: 100px; max-width: 100px;'],
                             'value'  =>  function($dataProvider)

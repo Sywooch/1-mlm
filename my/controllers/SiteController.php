@@ -1332,7 +1332,8 @@ class SiteController extends Controller
                         'refdt' => Yii::$app->session->get('refuserId')
                     ])->one();
 
-                $users->companyid=@$refUsr->companyid;
+                if(!empty($refUsr))
+                {$users->companyid=@$refUsr->companyid;}
 
                 $users->userpic=$pitureUrl;
                 $users->fn=$firstName;

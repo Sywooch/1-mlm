@@ -164,7 +164,6 @@ $this->title = 'Команда. Ваша 1-я линия';
                         'class'     =>  'tbl-header'
                     ],
                     /*'responsive'    =>  true,*/
-                    'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
                     'columns'   => [
                         /*    [
                                 'attribute' =>  'date',

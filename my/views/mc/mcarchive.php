@@ -81,7 +81,7 @@ $this->registerCss($css);
                     <a href="#tab_1_2" data-toggle="tab"> Партнера  </a>
                 </li>
                 <li>
-                    <a href="#tab_1_2" data-toggle="tab"> Мои  </a>
+                    <a href="#tab_1_3" data-toggle="tab"> Мои  </a>
                 </li>
             </ul>
         </div>
