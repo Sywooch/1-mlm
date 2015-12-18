@@ -175,6 +175,14 @@ $this->registerCss($style_user);
             color: rgba(200, 200, 200, 0.9);
         }
 
+        #enter {
+            color: white !important;
+        }
+
+        #enter:hover {
+            background: none !important;
+        }
+
     </style>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
 
@@ -239,14 +247,14 @@ $this->registerCss($style_user);
 <!--hero section-->
 <header class="hero-section" style="background: transparent url('img/296260-0-bgheader.original.jpg') no-repeat scroll center center / cover;">
     <!--navigation-->
-    <nav class="navbar navbar-default">
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">меню</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 <!--<a class="navbar-brand" href=""><img class="logo-nav" alt="1-й МЛМ Ресурс" src="../img/logo.png" width="50" height="50"><img class="logo-head" alt="logo" src="../img/logo.png" width="80" height="80"></a>--> </div>
                 <div id="photo" style="float: left;">
-                    <img src="https://pp.vk.me/c624825/v624825515/2a003/tstMP1ib20M.jpg" />
-                    <p>Вёдет мастер-класс:<br>  <b>Гошан Волкин</b></p>
+                    <img src="<?= $usrref["userpic"]; ?>" />
+                    <p>Ведет мастер-класс:<br>  <b><?= $usrref["fn"]; ?> <?= $usrref["ln"]; ?></b></p>
                 </div>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
                 <ul class="nav navbar-nav nav-left">
@@ -257,7 +265,7 @@ $this->registerCss($style_user);
                     <li><a href="http://blog.1-mlm.com" target="_blank" >блог</a></li>-->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#modal" data-toggle="modal" data-target="#modal-1"><i class="fa fa-sign-in">                       </i> Войти для просмотра мастер-класса</a></li>
+                    <li><a id="enter" href="#modal" data-toggle="modal" data-target="#modal-1"><i class="fa fa-sign-in">                       </i> Войти для просмотра мастер-класса</a></li>
                     <!--<li><a class="btn" href="#modal" data-toggle="modal" data-target="#modal-1">регистрация</a></li>-->
                 </ul>
             </div>
@@ -268,14 +276,23 @@ $this->registerCss($style_user);
     <section class="container text-center welcome-message">
         <div class="row">
             <div class="col-md-12">
-                <h1>Заголовок 1</h1>
+                <h1><?= $mc["title"]; ?></h1>
                 <!--<h1><span style="color: rgb(227, 101, 101) !important;">(</span>1 mlm ресурс<span style="color: rgb(227, 101, 101) !important;">)</span></h1>-->
-                <h2>Заголовок 2</h2>
-                <div class="play-btn"> <a href="#modal" data-toggle="modal" data-target="#modal-1" class=""><img src="s/img/play-btn.png" alt="play"></a> </div>
+                <h2><?= $mc["description"]; ?></h2>
+                <div class="play-btn"> <a href="#modal" data-toggle="modal" data-target="#modal-1" class="">
+                        <img src="s/img/play-btn.png" alt="play"></a> </div>
                 <div class="cta-btn"><a class="btn" href="#modal" data-toggle="modal"
                                         data-target="#modal-1">Для просмотра мастер-класса авторизируйтесь</a>
                     <br><br>
                     <!--<h2>уже используют &nbsp; <span class="total-number-1"> 0 </span> &nbsp; пользователей</h2>-->
+                </div>
+                <div class="social-likes">
+                    <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+                    <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+                    <div class="mailru" title="Поделиться ссылкой в Моём мире">Мой мир</div>
+                    <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+                    <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
+                    <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
                 </div>
             </div>
         </div>
@@ -310,6 +327,7 @@ $this->registerCss($style_user);
 <script src="s/js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="s/js/gmap.js"></script>
+<script src="<?=Yii::getAlias('@web') ?>/tp1/soc_net/social-likes.min.js"></script>
 
 <input type="hidden" id="usrall" value="<?= \app\models\Users::find()->count(); ?>" />
 

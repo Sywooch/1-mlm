@@ -1489,6 +1489,7 @@ class SiteController extends Controller
                     if( !empty(Yii::$app->session->get('mcID')) )
                     {
                         return $this->redirect( "https://1-mlm.com/mc-".
+                            //$this->redirect( "http://localhost/index.php?r=mc&mcid=".
                             Yii::$app->session->get('mcID').".html" );
                     }
                     $eauth->redirect();
@@ -1513,6 +1514,7 @@ class SiteController extends Controller
             if( !empty(Yii::$app->session->get('mcID')) )
             {
                 return $this->redirect( "https://1-mlm.com/mc-".
+                    //$this->redirect( "http://localhost/index.php?r=mc&mcid=".
                     Yii::$app->session->get('mcID').".html" );
             }
             return $this->goHome();
@@ -1660,7 +1662,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionListmessages()
+  /*  public function actionListmessages()
     {
         if (\Yii::$app->request->isAjax) {
             //return $this->render('ajax_test');
@@ -1725,7 +1727,7 @@ class SiteController extends Controller
                 /*$query12=new \yii\db\Query();
                 $data=$query12->from([Lp::tableName()])
                     ->where(['uid' => $_usr["id"]]);
-                $save=( !empty($save) )?$save:null;*/
+                $save=( !empty($save) )?$save:null;*
 
             }
             return $this->goHome();
@@ -1779,7 +1781,7 @@ class SiteController extends Controller
                 $listmsg=\yii::$app->db->createCommand('SELECT *
                                                        FROM msgs
                                                        WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
-                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*/
+                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
                 $mes = new Msgs();
                 $mes->uid4 = $usr['id'];
                 $mes->uid2 = $toid;
@@ -1802,10 +1804,10 @@ class SiteController extends Controller
 
 
                 /*->from([Msgs::tableName()])
-                ->where(['id' => $usr["level"]])->one();*/
+                ->where(['id' => $usr["level"]])->one();*
 
                 /*$model = Lp::find()
-                    ->where(['uid' => $usr["id"]]);*/
+                    ->where(['uid' => $usr["id"]]);*
                 //->andWhere(['id' => $landid]);
 
 
@@ -1813,7 +1815,7 @@ class SiteController extends Controller
                 /*$query12=new \yii\db\Query();
                 $data=$query12->from([Lp::tableName()])
                     ->where(['uid' => $_usr["id"]]);
-                $save=( !empty($save) )?$save:null;*/
+                $save=( !empty($save) )?$save:null;*
 
             }
             return $this->goHome();
@@ -1885,7 +1887,7 @@ class SiteController extends Controller
                 /*$query12=new \yii\db\Query();
                 $data=$query12->from([Lp::tableName()])
                     ->where(['uid' => $_usr["id"]]);
-                $save=( !empty($save) )?$save:null;*/
+                $save=( !empty($save) )?$save:null;*
 
             }
             return $this->goHome();
@@ -1939,12 +1941,12 @@ class SiteController extends Controller
                 $listmsg=\yii::$app->db->createCommand('SELECT *
                                                        FROM msgs
                                                        WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
-                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*/
+                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
                 /*$mes = new Msgs();
                 $mes->uid4 = $usr['id'];
                 $mes->uid2 = $toid;
                 $mes->msg = \Yii::$app->request->get("text");
-                $mes->save();*/
+                $mes->save();*
 
                 \yii::$app->db->createCommand('UPDATE msgs
                                                SET `status` = 0
@@ -1955,7 +1957,7 @@ class SiteController extends Controller
                 /*$listmsg=\yii::$app->db->createCommand('SELECT *
                                                        FROM msgs
                                                        WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$fromid.')) OR
-                                                             ((uid4 = '.$fromid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*/
+                                                             ((uid4 = '.$fromid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
 
 
                 /*echo $this->render('message', [
@@ -1967,10 +1969,10 @@ class SiteController extends Controller
 
 
                 /*->from([Msgs::tableName()])
-                ->where(['id' => $usr["level"]])->one();*/
+                ->where(['id' => $usr["level"]])->one();*
 
                 /*$model = Lp::find()
-                    ->where(['uid' => $usr["id"]]);*/
+                    ->where(['uid' => $usr["id"]]);*
                 //->andWhere(['id' => $landid]);
 
 
@@ -1978,13 +1980,13 @@ class SiteController extends Controller
                 /*$query12=new \yii\db\Query();
                 $data=$query12->from([Lp::tableName()])
                     ->where(['uid' => $_usr["id"]]);
-                $save=( !empty($save) )?$save:null;*/
+                $save=( !empty($save) )?$save:null;*
 
             }
             return $this->goHome();
         }
     }
-
+*/
     public function actionFriendsvk()
     {
         $identity = \Yii::$app->getUser()->getIdentity()->profile;

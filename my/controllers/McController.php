@@ -17,8 +17,8 @@ class McController extends Controller
 {
     public function ref($mcid)
     {
-        if( !empty(\Yii::$app->request->get("refid")) )
-        {
+        //if( !empty(\Yii::$app->request->get("refid")) )
+        //{
             $h=Hangouts::findOne(['id'=>$mcid]);
             $usr=Users::find()->where(['id' => $h->uid])->one();
             $usrDt=Users::find()
@@ -28,7 +28,7 @@ class McController extends Controller
                 Yii::$app->session->set('refuserId', $usr->refdt);
                 Yii::$app->session->set('mcID', $mcid);
             }
-        }
+        //}
     }
 
     public function actionIndex()
@@ -36,15 +36,19 @@ class McController extends Controller
         $this->layout = '_hangout';
         $mcid=(int)\Yii::$app->request->get("mcid");
         $this->ref($mcid);
+        $h=Hangouts::findOne(['id'=>$mcid]);
         if (!\Yii::$app->user->isGuest)
         {
             return $this->render('hangout',[
-                'data'=>Hangouts::findOne(['id'=>$mcid])
+                'data'=>$h
             ]);
         }else
         {
             $this->layout = 'empty';
-            return $this->render('loginform_2');
+            return $this->render('loginform_2',[
+                'mc'=>$h,
+                'usrref'=>Users::findOne(['id'=>$h["uid"]]),
+            ]);
         }
     }
 
