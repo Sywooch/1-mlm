@@ -31,19 +31,180 @@
 
     <link href="https://1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
 
-    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/soc_net/social-likes_classic.css" />
+    <link rel="stylesheet" type="text/css" href="//1-mlm.com/soc_net/social-likes_classic.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="<?=Yii::getAlias('@web') ?>/soc_net/social-likes.min.js"></script>
+    <script src="//1-mlm.com/soc_net/social-likes.min.js"></script>
 
 
     <script async="" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflpCdzwa/www-widgetapi.js" id="www-widgetapi-script" type="text/javascript"></script><script src="https://www.google-analytics.com/analytics.js" async="" type="text/javascript"></script><script src="https://www.googleadservices.com/pagead/conversion_async.js" async="" type="text/javascript"></script><script src="https://www.googletagmanager.com/gtm.js?id=GTM-HWDXK" async=""></script><script src="https://mc.yandex.ru/metrika/watch.js" async="" type="text/javascript"></script><script src="https://www.youtube.com/player_api"></script><script>window.startTime = new Date().getTime();</script>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="s/css/modal_dialog.css" rel="stylesheet">
+    <style>
+        .col-md-offset-4{margin-left: 0% !important;}
+        .container {
+            padding-right: 0px !important;;
+            padding-left: 0px !important;;
+        }
+        .modalDialog {
+            position: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 99999;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;
+            display: none;
+            pointer-events: none;
+        }
+        .modalDialog:target {
+            display: block;
+            pointer-events: auto;
+        }
+        .modalDialog > div {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+            border-radius: 10px;
+            background: #fff;
+            background: -moz-linear-gradient(#fff, #505c99);
+            background: -webkit-linear-gradient(#fff, #505c99);
+            background: -o-linear-gradient(#fff, #505c99);
+
+        }
+        .close {
+            background: #606061;
+            color: #FFFFFF;
+            line-height: 25px;
+            position: absolute;
+            right: -12px;
+            text-align: center;
+            top: -10px;
+            width: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+        }
+        .close:hover { background: #00d9ff; }
+    </style>
+    <style>
+        .socbtn {
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .socbtn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .socbtn.facebook-btn {
+            background-color: #38559c;
+        }
+
+        .socbtn.googleplus-btn {
+            background-color: #5dd7fc;
+        }
+        .socbtn.vkontakte-btn {
+            background-color: #466fa1;
+        }
+        .socbtn.linkedin-btn {
+            background-color: #4875b4;
+        }
+        .socbtn.yandex-btn {
+            background-color: #13488D;
+        }
+        .socbtn.mailru-btn {
+            background-color: #FFCF00;
+        }
+
+    </style>
 </head>
 
 
 
-<body id="landing16" class="vid spring land-en tnk new-video-lp" style="background: #141414;"><div class="tip"><div class="tipMid"></div></div>
+<body id="landing16" class="vid spring land-en tnk new-video-lp" style="background: #141414;">
+
+<!-- BEGIN LOGIN BOX *****************************************************************-->
+<div class="modal fade" id="modal-1" style="width: 620px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title" id="myModalLabel"><span>Вход и Регистрация -  Используя социальные сети</span></h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!--<h5 class="col-md-12 wl"><span>Используя социальные сети</span></h5>-->
+                    <div data-ulogin-inited="1446737975834" class="col-md-12 wl" id="uLogin1" data-ulogin="lang=ru;display=buttons;fields=first_name,last_name,email,phone,photo,photo_big,city,country;providers=facebook,twitter,vkontakte,odnoklassniki,mailru,googleplus;optional=phone;hidden=;redirect_uri=;receiver=http%3A%2F%2Fjoinetwork.ru%2Fxd_custom.html;callback=LoginAutorizer">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="socbtn facebook-btn">
+                            <a style="" href="javascript:void(0)"
+                               onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=facebook&refid=<?=$user["refdt"]?>'"
+                               class="socbtnn" data-uloginbutton="facebook">
+                                <span><img src="s/img/facebook-btn.png" width="25" ></span>Facebook</a>
+                            </div>
+                            <div class="socbtn googleplus-btn">
+                            <a style="" href="javascript:void(0)"
+                               onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=google&refid=<?=$user["refdt"]?>'"
+                               class="socbtn" data-uloginbutton="googleplus">
+                                <span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+ - скоро</a>
+                            </div>
+                            <div class="socbtn vkontakte-btn">
+                            <a style="" href="javascript:void(0)"
+                               onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=vkontakte&refid=<?=$user["refdt"]?>'"
+                               class="socbtn" data-uloginbutton="vkontakte">
+                                <span><img src="s/img/vkontakte-btn.png" width="25" ></span>Vkontakte</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <!--------------------------------------------------------------------------------->
+                            <div class="socbtn odnoklassniki-btn">
+                            <a href="javascript:void(0)"
+                               onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=linkedin_oauth2&refid=<?=$user["refdt"]?>'"
+                               class="socbtn" data-uloginbutton="odnoklassniki">
+                                <span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
+                            </div>
+                            <div class="socbtn yandex-btn">
+                            <a href="javascript:void(0)"
+                               onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=yandex&refid=<?=$user["refdt"]?>'"
+                               class="socbtn" data-uloginbutton="odnoklassniki">
+                                <span><img src="s/img/yandex-btn.png" width="25" ></span>Yandex - скоро</a>
+                            </div>
+                            <div class="socbtn mailru-btn">
+                            <a href="javascript:void(0)"
+                               onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=mailru&refid=<?=$user["refdt"]?>'"
+                               class="socbtn" data-uloginbutton="odnoklassniki">
+                                <span><img src="s/img/mailru-btn.png" width="25" ></span>Mailru</a>
+                            </div>
+                            <!--------------------------------------------------------------------------------->
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span>Закрыть</span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END LOGIN BOX *****************************************************************-->
+
+<div class="tip"><div class="tipMid"></div></div>
 <div class="propeller hide">
     <div><img src="http://static.warthunder.com/i/64.gif" height="64" width="64"></div>
 </div>
@@ -292,7 +453,7 @@
 </div>
 
 <div class="wp_footer" id="foo" style="background:none;height:404px;">
-    <div class="footer" style="width:100%;">
+    <div class="footer" style="width:100%; padding-top: 22px; position: absolute; bottom: 0px;">
         <table style="margin:0 auto;height:222px !important;" class="stamp">
             <tbody><tr>
                 <td class="c">
@@ -303,7 +464,7 @@
                     </div>
 
                     <!--<div class="reg-link active" style="margin-top:155px;"><span> Кнопка </span></div>-->
-                    <a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a>
+                    <a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self" href="#modal" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a>
 
                     <div style="display: block;" class="show-again"><span> VER </span></div>
                 </td>

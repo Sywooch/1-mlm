@@ -39,6 +39,29 @@ $js =<<<'SCRIPT'
 $(document).ready(function() {
     $('#sample_1').DataTable();
 } );
+
+
+
+
+
+
+$('.send2wall').click(function(e) {
+    e.preventDefault();
+    var clicked = $(this);
+    var wallid = clicked.attr('vkid');
+    var refdt = clicked.attr('refdt');
+    VK.api("wall.post", {
+
+      owner_id: wallid,
+      attachments: "photo-76966334_359840040",
+      message: "Добро пожаловать в систему 1-й млм Ресурс! "+
+      "\nПомогу начать приглашать новых кандидатов в Ваш бизнес "+
+      "уже сегодня!\nВаша ссылка: https://1-mlm.com/ref-"+refdt+".html"
+
+    }, function (data) {
+      if (data.response) clicked.replaceWith('Сообщение №'+data.response.post_id);
+    });
+  });
 SCRIPT;
 
 $this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -271,6 +294,18 @@ $this->title = 'Команда. Ваша 1-я линия';
                                  }
                              ],*/
                             /*'template'    =>  '<div class="btn-group">{hidden}&nbsp;&nbsp;{edit}</div>'*/
+                        ],
+                        [
+                            'header' => 'Стена',
+                            'format' => 'raw',
+                            'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                            'value'  =>  function($dt)
+                            {
+                                return "<a
+                                refdt=\"".$dt["refdt"]."\"
+                                vkid=\"".$dt["vkontakte"]."\"
+                                 class=\"send2wall\"><i class=\"icon-note\"></i></a>";
+                            }
                         ]
                     ],
                     //'pjax'=>true,
@@ -288,3 +323,11 @@ $this->title = 'Команда. Ваша 1-я линия';
     </div>
 </div>
 <!-- END PAGE BASE CONTENT -->
+<!--<?= \kartik\social\VKPlugin::widget([
+    'type' =>  \kartik\social\VKPlugin::SHARE,
+    'options' => [
+        'type' => 'round',
+        'text' => 'Share',
+        'eng' => 1
+    ]
+]); ?>-->

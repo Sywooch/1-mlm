@@ -62,7 +62,7 @@ $usr = app\models\Users::find()->where(['id'=>$data['uid']])->one();
                     <img src="<?= $usr['userpic']; ?>" />
                     <p>Вас приглашает: <?php echo $usr['fn'],' ',$usr['ln']; ?></p>
                 </div>
-                <p style="float: right; margin-top: 20px;">© 2015 1-МЛМ. Все права защищены.</p>
+                <p style="float: right; margin-top: 20px;">© <?= date("Y"); ?> 1-МЛМ. Все права защищены.</p>
             </div>
         </div>
     </div>
