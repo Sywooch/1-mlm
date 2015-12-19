@@ -1204,6 +1204,53 @@ class SiteController extends Controller
          }
         return $this->goHome();
     }
+
+
+
+    /*****  Блог  начало   ******/
+
+    public function actionСreateblog0()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+            return $this->render('createblog0');
+        }
+        return $this->goHome();
+    }
+
+    public function actionСreateblog1()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+            return $this->render('createblog1');
+        }
+        return $this->goHome();
+    }
+
+    public function actionСreateblog2()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+            return $this->render('createblog2');
+        }
+        return $this->goHome();
+    }
+
+    public function actionСreateblog3()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+            return $this->render('createblog3');
+        }
+        return $this->goHome();
+    }
+
+    /*****  Блог  конец  ******/
+
+
+
+
+
 /*
     public function actionLogin()
     {
@@ -2211,7 +2258,7 @@ class SiteController extends Controller
                  target=\"_blank\">https://1-mlm.com/ref-{$usrDt->refdt}.html</a><br />
                 Ссылка для привлечения в Ваш проект находится в настройках профиля под  выбором компаний<br />
                 P.S. После выбора другой компании и сохранения профиля ссылка поменяется автоматически!<br />
-                Вы можете таким образом нужные вам ссылки сохранить  в разделе \"Мои проекты\"."
+                Вы можете таким образом нужные Вам ссылки сохранить  в разделе \"Мои проекты\"."
             );
             //Yii::$app->request->referrer;
             //return $this->goBack();
