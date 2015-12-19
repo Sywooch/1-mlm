@@ -198,38 +198,38 @@ if( !empty(\Yii::$app->request->get("r")) )
         </li>
 
             <li class="nav-item start <?php
-            echo ( "createblog0"==$act ) ? 'active open' : null;
-            echo ( "createblog1"==$act ) ? 'active open' : null;
-            echo ( "createblog2"==$act ) ? 'active open' : null;
-            echo ( "createblog3"==$act ) ? 'active open' : null;
+            echo ( "blog0"==$act ) ? 'active open' : null;
+            echo ( "blog1"==$act ) ? 'active open' : null;
+            echo ( "blog2"==$act ) ? 'active open' : null;
+            echo ( "blog3"==$act ) ? 'active open' : null;
             ?>">
-                <a href="index.php?r=site%2Fcreateblog0" class="nav-link">
+                <a href="index.php?r=site%2Fblog0" class="nav-link">
                     <i class="icon-star"></i>
                     <span class="title">МЛМ Блог</span>
                     <span class="badge badge-danger">скоро</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  <?= ( "createblog0"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fcreateblog0" class="nav-link nav-toggle">
+                    <li class="nav-item  <?= ( "blog0"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Fblog0" class="nav-link nav-toggle">
                             <i class="icon-present"></i>
                             <span class="title">Бесплатно</span>
                         </a>
                     </li>
-                    <li class="nav-item  <?= ( "createblog1"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fcreateblog1" class="nav-link nav-toggle">
+                    <li class="nav-item  <?= ( "blog1"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Fblog1" class="nav-link nav-toggle">
                             <i class="icon-note"></i>
-                            <span class="title">Сделай Сам</span>
+                            <span class="title">Профисиональный блог</span>
                         </a>
                     </li>
-                    <li class="nav-item  <?= ( "createblog2"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fcreateblog2" class="nav-link nav-toggle">
+                    <li class="nav-item  <?= ( "blog2"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Fblog2" class="nav-link nav-toggle">
                             <i class="icon-support"></i>
                             <span class="title">Сделайте мне</span>
                         </a>
                     </li>
-                    <li class="nav-item  <?= ( "createblog3s"==$act ) ? 'active open' : null; ?>">
-                        <a href="index.php?r=site%2Fcreateblog3" class="nav-link nav-toggle">
+                    <li class="nav-item  <?= ( "blog3s"==$act ) ? 'active open' : null; ?>">
+                        <a href="index.php?r=site%2Fblog3" class="nav-link nav-toggle">
                             <i class="icon-refresh"></i>
                             <span class="title">Обновите мой блог</span>
                         </a>

@@ -1209,7 +1209,7 @@ class SiteController extends Controller
 
     /*****  Блог  начало   ******/
 
-    public function actionСreateblog0()
+    public function actionBlog0()
     {
         if(!\Yii::$app->user->isGuest)
         {
@@ -1218,7 +1218,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionСreateblog1()
+    public function actionBlog1()
     {
         if(!\Yii::$app->user->isGuest)
         {
@@ -1227,7 +1227,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionСreateblog2()
+    public function actionBlog2()
     {
         if(!\Yii::$app->user->isGuest)
         {
@@ -1236,7 +1236,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionСreateblog3()
+    public function actionBlog3()
     {
         if(!\Yii::$app->user->isGuest)
         {
