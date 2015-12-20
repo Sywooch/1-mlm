@@ -213,25 +213,27 @@ if( !empty(\Yii::$app->request->get("r")) )
                     <li class="nav-item  <?= ( "blog0"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fblog0" class="nav-link nav-toggle">
                             <i class="icon-present"></i>
-                            <span class="title">Бесплатно</span>
+                            <span class="title">Сделай Сам</span>
+                            <span class="badge badge-success">бесплатно</span>
                         </a>
                     </li>
                     <li class="nav-item  <?= ( "blog1"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fblog1" class="nav-link nav-toggle">
                             <i class="icon-note"></i>
-                            <span class="title">Профисиональный блог</span>
+                            <span class="title">Сделай Сам</span>
+                            <span class="badge badge-danger">Pro</span>
                         </a>
                     </li>
                     <li class="nav-item  <?= ( "blog2"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fblog2" class="nav-link nav-toggle">
                             <i class="icon-support"></i>
-                            <span class="title">Сделайте мне</span>
+                            <span class="title">Сделайте Мне блог</span>
                         </a>
                     </li>
                     <li class="nav-item  <?= ( "blog3s"==$act ) ? 'active open' : null; ?>">
                         <a href="index.php?r=site%2Fblog3" class="nav-link nav-toggle">
                             <i class="icon-refresh"></i>
-                            <span class="title">Обновите мой блог</span>
+                            <span class="title">Обновите Мой блог</span>
                         </a>
                     </li>
                 </ul>
