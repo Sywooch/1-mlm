@@ -344,6 +344,7 @@ if( !empty(\Yii::$app->request->get("r")) )
             <?php endif; ?>
 <!--  Меню  Админа Конец --->
             <!-----------  Начало Социальные виджеты  ------------>
+                  
                    <br>
                <li class="nav-item">
                 <!-- VK Widget начало -->
@@ -353,7 +354,15 @@ if( !empty(\Yii::$app->request->get("r")) )
                 </script>
                 <!--  VK Widget конец -->
                    <br>
+               </li>
+               
+               <li class="nav-item">              
+                <!-- facebook Widget начало -->
+<div class="fb-page" data-href="https://www.facebook.com/1mlmcom" data-width="300" data-height="auto" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/1mlmcom"><a href="https://www.facebook.com/1mlmcom">1 mlm ресурс</a></blockquote></div></div>
+                <!--  facebook Widget конец -->
+                  </li>  <br>                   <br>
                <li class="nav-item">
+               
                <!-- Yotube Widget начало -->
                 <div class="g-ytsubscribe" data-channelid="UC4Q97tIPa3_xn3uUdjybPQw" data-layout="full" data-count="default" data-onytevent="onYtEvent"></div>
                 <!-- Yotube Widget конец -->
@@ -370,6 +379,17 @@ if( !empty(\Yii::$app->request->get("r")) )
             VK.Widgets.Group("vk_groups", {mode: 1, width: "235", height: "200", color1: 'FFFFFF', color2: '276798', color3: '5B7FA6'}, 76966334);
         </script>
         <!--  VK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5&appId=1657698847844895";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+       <!--  facebook -->
+       
+       
         <script src="https://apis.google.com/js/platform.js"></script>
 
 <script>

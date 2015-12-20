@@ -7,7 +7,6 @@ $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' =>
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
 $this->title = 'Настройки профиля';
-//$this->params['breadcrumbs'][] = $this->title;
 ?>
 
                    <!-- BEGIN PAGE BASE CONTENT -->
@@ -77,20 +76,16 @@ $this->title = 'Настройки профиля';
                                     <!-- SIDEBAR MENU -->
                                     <div class="profile-usermenu">
                                         <ul class="nav">
-                                           <!-- <li>
-                                                <a href="page_user_profile_1.html">
-                                                    <i class="icon-home"></i> Профиль </a>
-                                            </li>-->
                                             <li class="active">
                                                 <a href="index.php?r=site%2Faccount">
                                                     <i class="icon-settings"></i> Настройки аккаунта </a>
                                             </li>
-                                            <!--
+                                            
                                             <li>
                                                 <a href="index.php?r=site%2Fhelp">
                                                     <i class="icon-info"></i> Помощь </a>
                                             </li>
-                                            -->
+                                            
                                         </ul>
                                     </div>
                                     <!-- END MENU -->
@@ -104,14 +99,6 @@ $this->title = 'Настройки профиля';
                                             <div class="uppercase profile-stat-title"> <?=$usrDt["money"]; ?> $ </div>
                                             <div class="uppercase profile-stat-text"> начистненно по партнерке </div>
                                         </div>
-                                        <!--<div class="col-md-4 col-sm-4 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 51 </div>
-                                            <div class="uppercase profile-stat-text"> Tasks </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 61 </div>
-                                            <div class="uppercase profile-stat-text"> Uploads </div>
-                                        </div>-->
                                     </div>
                                     <!-- END STAT -->
                                     <div>
@@ -120,7 +107,7 @@ $this->title = 'Настройки профиля';
                                     <?php
                                          for($i=0;$i<sizeof($lastFive);$i++):
                                     ?>
-                                    <a href="http://vk.com/id<?= $lastFive[$i]["vkontakte"]; ?>">
+                                    <a href="http://vk.com/id<?= $lastFive[$i]["vkontakte"]; ?>" target="_blank">
                                         <img alt="user picture" class="img-circle"
                                            style="margin-left: 5px;margin-top: -8px;height: 39px;display: inline-block;"
                                              width="39" height="39"
@@ -144,16 +131,9 @@ $this->title = 'Настройки профиля';
                             <div class="portlet light bordered">
                                 <div class="portlet-title tabbable-line">
                                     <div class="caption">
-                                        <!--<i class="fa fa-cogs font-blue"></i>
-                                        <span class="caption-subject font-green-sharp bold uppercase" style="font-size: 14px;">Настройки профиля</span>-->
                                     </div>
                                     <div align="right">
                                         <!---------------------------------------------------------->
-                                        <!--<a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
-                                            <i class="icon-support"></i></a>
-                                        <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>-->
-
-                                        <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w1help"><i class="icon-cloud-upload"></i></button>-->
                                         <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                                             <div class="modal-dialog ">
                                                 <div class="modal-content">
