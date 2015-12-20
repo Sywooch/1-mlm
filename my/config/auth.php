@@ -21,19 +21,19 @@ return [
             // register your app here: https://vk.com/editapp?act=create&site=1
             'class' => 'nodge\eauth\services\VKontakteOAuth2Service',		
 //local
-            'clientId' => '5148975',
-            'clientSecret' => 'iWTKQGXioPPWZAdNJO3S',
+            //'clientId' => '5148975',
+            //'clientSecret' => 'iWTKQGXioPPWZAdNJO3S',
             /***********************************************/
 //Hosting
-			//'clientId' => '5130699',
-			//'clientSecret' => '4B25v7qHSl0NODAekOuh',
+	   'clientId' => '5130699',
+	   'clientSecret' => '4B25v7qHSl0NODAekOuh',
         ],
         
         'twitter' => [
 				// register your app here: https://dev.twitter.com/apps/new
 				'class' => 'nodge\eauth\services\TwitterOAuth1Service',
-				'key' => 'c0fLHgrdplLvVVKU2WqxCeQxG',
-				'secret' => 'ziiqhPyUsdADanfzGNERsjLfeIlCJqGcpJhjRyFOwlArAUKE6y',
+				'key' => 'yOtlY0kIoQhaHqRkqNx1W8YvY',
+				'secret' => 'DEzOuFkZEttpnPennSRwXMEpVSQGWxGwdoFTICYaNT2kPkN5GF',
 			],
         
         'instagram' => [

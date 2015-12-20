@@ -362,7 +362,14 @@ if( !empty(\Yii::$app->request->get("r")) )
                 <!-- facebook Widget начало -->
 <div class="fb-page" data-href="https://www.facebook.com/1mlmcom" data-width="300" data-height="auto" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/1mlmcom"><a href="https://www.facebook.com/1mlmcom">1 mlm ресурс</a></blockquote></div></div>
                 <!--  facebook Widget конец -->
-                  </li>  <br>                   <br>
+                  </li>                                 
+                              <a class="twitter-timeline"  href="https://twitter.com/1mlmcom" data-widget-id="678435485350567936">Твиты от @1mlmcom</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
+                  
+                  
+                  
+                  
                <li class="nav-item">
                
                <!-- Yotube Widget начало -->
