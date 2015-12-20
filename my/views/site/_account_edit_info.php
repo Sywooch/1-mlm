@@ -121,8 +121,8 @@ $form = ActiveForm::begin([
 
 <!------------------------------------------------------------------------------------------------->
     <div class="form-group form-md-line-input">
-        <label class='col-md-3 control-label'>Ссылка на лендинг</label>
-        <div class='col-md-9'>
+        <label class='col-md-4 control-label'>Ссылка на лендинг</label>
+        <div class='col-md-8'>
             <div class="input-icon">
                 <!--<i class="icon-link"></i>-->
                 <a href="<?= "https://1-mlm.com/{$model->companyid}-{$model->refdt}.html"; ?>"
@@ -131,6 +131,15 @@ $form = ActiveForm::begin([
                 <div class="form-control-focus"></div>
                 <span class="help-block">Ссылка для выбраной компании</span>
             </div>
+            
+        <div class="input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn blue" type="button">Go!</button>
+                                                    </span>
+                                                </div>    
+        
+            
         </div>
     </div>
 
@@ -141,7 +150,7 @@ $form = ActiveForm::begin([
             'form' => $form
         ]);?>
     </div>
-
+<br>
     <div class="margiv-top-10">
         <?= \yii\helpers\Html::hiddenInput('Users[formtype]', 'personinfo', ["id"=>"users-formtype"]); ?>
         <?= '<button class="btn green"> Сохранить изменения </button>'; ?>

@@ -59,7 +59,7 @@ $items=[
     'Компании'=>$companies
 ];
 
-echo $form->field( $model, 'companyid', ["template" => "<label class='col-md-3 control-label'>Выбор Компании</label>
-                                                        <div class='col-md-9'>\n{input}\n{hint}\n{error}</div>"] )
+echo $form->field( $model, 'companyid', ["template" => "<label class='col-md-4 control-label'>Выбор Компании</label>
+                                                        <div class='col-md-8'>\n{input}\n{hint}\n{error}</div>"] )
     ->dropDownList($items,$params);
 ?>

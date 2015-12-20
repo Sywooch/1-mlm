@@ -4,7 +4,8 @@ use yii\widgets\ActiveForm;
 $form = ActiveForm::begin([
     'options' => ['class'=>'form-horizontal']
 ]);?>
-
+<h3>Где взять ID? </h3> 
+<h5>Перейдите по <a href="http://id.1-mlm.com"  target="_blank" >этой ссылке</a> и узнайте ID  в 1 клик</h5>
     <div class="form-group form-md-line-input">
         <?=$form->field(
             $model, 'facebook', ["template" => "<label class='col-md-2 control-label'>facebook</label>
@@ -12,7 +13,7 @@ $form = ActiveForm::begin([
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваш facebook</span>
+                                                                    <span class=\"help-block\">Ваш ID в  Facebook</span>
                                                                 </div>
 
                                                             </div>"]
@@ -25,7 +26,7 @@ $form = ActiveForm::begin([
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваш vkontakte</span>
+                                                                    <span class=\"help-block\">Ваш ID в Vkontakte</span>
                                                                 </div>
 
                                                             </div>"]
@@ -38,7 +39,7 @@ $form = ActiveForm::begin([
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваш linkedin</span>
+                                                                    <span class=\"help-block\">Ваш ID в Linkedin</span>
                                                                 </div>
 
                                                             </div>"]
@@ -51,7 +52,7 @@ $form = ActiveForm::begin([
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваш googleplus</span>
+                                                                    <span class=\"help-block\">Ваш ID в GooglePlus</span>
                                                                 </div>
 
                                                             </div>"]
@@ -64,7 +65,7 @@ $form = ActiveForm::begin([
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваш yandex</span>
+                                                                    <span class=\"help-block\">Ваш ID в Yandex</span>
                                                                 </div>
 
                                                             </div>"]
@@ -77,7 +78,7 @@ $form = ActiveForm::begin([
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваш mail.ru</span>
+                                                                    <span class=\"help-block\">Ваш ID в Mail.ru</span>
                                                                 </div>
 
                                                             </div>"]
@@ -91,7 +92,7 @@ $form = ActiveForm::begin([
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваш twitter</span>
+                                                                    <span class=\"help-block\">Ваш ID в Twitter</span>
                                                                 </div>
 
                                                             </div>"]
@@ -104,7 +105,7 @@ $form = ActiveForm::begin([
                                                                 <div class=\"input-icon\">
                                                                     <i class=\"icon-link\"></i>\n{input}\n{hint}\n{error}
                                                                     <div class=\"form-control-focus\"></div>
-                                                                    <span class=\"help-block\">Ваш instagram</span>
+                                                                    <span class=\"help-block\">Ваш ID в Instagram</span>
                                                                 </div>
 
                                                             </div>"]
