@@ -51,13 +51,11 @@ $('.send2wall').click(function(e) {
     var wallid = clicked.attr('vkid');
     var refdt = clicked.attr('refdt');
     VK.api("wall.post", {
-
       owner_id: wallid,
       attachments: "photo-76966334_359840040",
       message: "Добро пожаловать в систему 1-й млм Ресурс! "+
       "\nПомогу начать приглашать новых кандидатов в Ваш бизнес "+
       "уже сегодня!\nВаша ссылка: https://1-mlm.com/ref-"+refdt+".html"
-
     }, function (data) {
       if (data.response) clicked.replaceWith('Сообщение №'+data.response.post_id);
     });

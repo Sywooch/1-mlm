@@ -70,7 +70,7 @@ class McController extends Controller
                         ])
                     ->from([Hangouts::tableName().' h'])
                    ->where(['uid'=>[
-                        1//,3,22196
+                        1,3,22196
                     ]])
                 ]),
                 'dataProviderPartner' => new ActiveDataProvider([

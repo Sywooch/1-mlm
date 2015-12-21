@@ -25,30 +25,30 @@ use app\models\VkFriends;
 class SiteController extends Controller
 {
     private $siteUrl="https://gmail.com/";
-/*
- public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
+    /*
+     public function behaviors()
+        {
+            return [
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'only' => ['logout'],
+                    'rules' => [
+                        [
+                            'actions' => ['logout'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
                     ],
                 ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'logout' => ['post'],
+                    ],
                 ],
-            ],
-        ];
-    }
-*/
+            ];
+        }
+    */
 
     public function behaviors() {
         return [
@@ -72,7 +72,7 @@ class SiteController extends Controller
             ],
         ];
     }
-/****************************************************************/
+    /****************************************************************/
     public function beforeAction($action) {
         if("innsave"==$action->id){
             $this->enableCsrfValidation = false;
@@ -81,11 +81,11 @@ class SiteController extends Controller
     }
 
     public function actionInnsave() {
-            if (!\Yii::$app->user->isGuest) {
-                if (\Yii::$app->request->isAjax) {
-                    return Users::saveChange(\Yii::$app->request->post());
-                }
+        if (!\Yii::$app->user->isGuest) {
+            if (\Yii::$app->request->isAjax) {
+                return Users::saveChange(\Yii::$app->request->post());
             }
+        }
     }
 
     public function actionIndex()
@@ -128,11 +128,11 @@ class SiteController extends Controller
 
             if ( 1==$model->one()["status"] )
             {
-                    return $this->actionCompany();
+                return $this->actionCompany();
             }
             else
             {
-                    return $this->render('index', [
+                return $this->render('index', [
                     'model' => $model->one(),
                     'consultant' => $consultant
                 ]);
@@ -157,35 +157,35 @@ class SiteController extends Controller
     {
         if (!\Yii::$app->user->isGuest)
         {
-           $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
             $usr = Users::find()->select('refdt, ref, level');
-                switch($identity["service"])
-                {
-                    case "facebook":
-                        $usr=$usr->where(['facebook' => $identity["id"]]);
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usr=$usr->where(['facebook' => $identity["id"]]);
                     break;
-                    case "vkontakte":
-                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                case "vkontakte":
+                    $usr=$usr->where(['vkontakte' => $identity["id"]]);
                     break;
-                    case "linkedin_oauth2":
-                        $usr=$usr->where(['linkedin' => $identity["id"]]);
+                case "linkedin_oauth2":
+                    $usr=$usr->where(['linkedin' => $identity["id"]]);
                     break;
-                    case "google":
-                        $usr=$usr->where(['googleplus' => $identity["id"]]);
+                case "google":
+                    $usr=$usr->where(['googleplus' => $identity["id"]]);
                     break;
-                    case "yandex":
-                        $usr=$usr->where(['yandex' => $identity["id"]]);
+                case "yandex":
+                    $usr=$usr->where(['yandex' => $identity["id"]]);
                     break;
-                    case "mailru":
-                        $usr=$usr->where(['mailru' => $identity["id"]]);
+                case "mailru":
+                    $usr=$usr->where(['mailru' => $identity["id"]]);
                     break;
-                    case "twitter":
-                        $usr=$usr->where(['twitter' => $identity["id"]]);
+                case "twitter":
+                    $usr=$usr->where(['twitter' => $identity["id"]]);
                     break;
-                    case "instagram":
-                        $usr=$usr->where(['instagram' => $identity["id"]]);
+                case "instagram":
+                    $usr=$usr->where(['instagram' => $identity["id"]]);
                     break;
-                }
+            }
             $usr=$usr->one();
 
             if($usr->level>4)return $this->goHome();
@@ -203,8 +203,8 @@ class SiteController extends Controller
             $u->update(false);
 
             if( !empty($usr->refdt) )
-                {$ref=$usr->refdt;}
-            else{$ref=2;}
+            {$ref=$usr->refdt;}
+            else{$ref=1;}
 
             $users = Users::findOne(['ref'=>$ref]);
             $users->ref=$usr->ref;
@@ -284,19 +284,19 @@ class SiteController extends Controller
                             'u.skype AS skype',
                             'u.email AS email',
                             'u.vkontakte AS vkontakte',
-							'u.active AS active',
+                            'u.active AS active',
                             'u.refdt AS refdt'
                         ])
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
                             ->where(['u.id'=>$arr])
                             ->orderBy(['active' => SORT_DESC]),
-                        'sort' => [
-                            'attributes' => ['active', 'fn', 'ln'],
-                        ],
-                        'pagination' => [
-                            'pageSize' => 10,
-                        ]
+                    'sort' => [
+                        'attributes' => ['active', 'fn', 'ln'],
+                    ],
+                    'pagination' => [
+                        'pageSize' => 10,
+                    ]
                 ]),
                 'searchModel' => $filter
             ]);
@@ -315,28 +315,28 @@ class SiteController extends Controller
             {
                 case "facebook":
                     $model=$model->where(['facebook' => $identity["id"]]);
-                break;
+                    break;
                 case "vkontakte":
                     $model=$model->where(['vkontakte' => $identity["id"]]);
-                break;
+                    break;
                 case "linkedin_oauth2":
                     $model=$model->where(['linkedin' => $identity["id"]]);
-                break;
+                    break;
                 case "google":
                     $model=$model->where(['googleplus' => $identity["id"]]);
-                break;
+                    break;
                 case "yandex":
                     $model=$model->where(['yandex' => $identity["id"]]);
-                break;
+                    break;
                 case "mailru":
                     $model=$model->where(['mailru' => $identity["id"]]);
-                break;
+                    break;
                 case "twitter":
                     $model=$model->where(['twitter' => $identity["id"]]);
-                break;
+                    break;
                 case "instagram":
                     $model=$model->where(['instagram' => $identity["id"]]);
-                break;
+                    break;
             }
 
             if(\Yii::$app->request->post())
@@ -350,28 +350,28 @@ class SiteController extends Controller
                         {
                             case "facebook":
                                 $users = Users::findOne(['facebook' => $identity["id"]]);
-                            break;
+                                break;
                             case "vkontakte":
                                 $users = Users::findOne(['vkontakte' => $identity["id"]]);
-                            break;
+                                break;
                             case "linkedin_oauth2":
                                 $users = Users::findOne(['linkedin' => $identity["id"]]);
-                            break;
+                                break;
                             case "google":
                                 $users = Users::findOne(['googleplus' => $identity["id"]]);
-                            break;
+                                break;
                             case "yandex":
                                 $users = Users::findOne(['yandex' => $identity["id"]]);
-                            break;
+                                break;
                             case "mailru":
                                 $users = Users::findOne(['mailru' => $identity["id"]]);
-                            break;
+                                break;
                             case "twitter":
                                 $users = Users::findOne(['twitter' => $identity["id"]]);
-                            break;
+                                break;
                             case "instagram":
                                 $users = Users::findOne(['instagram' => $identity["id"]]);
-                            break;
+                                break;
                         }
 
                         $users->active=date("Y-m-d");
@@ -390,52 +390,52 @@ class SiteController extends Controller
                         );
                     }
                 }
-                 if( 'picture'==$p["Users"]["formtype"] )
-                 {
-                     $upf = new Users();
-                     $upf->userpic = UploadedFile::getInstance($upf, 'userpic');
-                     if ($upf->validate())
-                     {
-                         $flname = $identity["id"] . time() . '.' . $upf->userpic->extension;
-                         $upf->userpic
-                             ->saveAs(Yii::getAlias('@webroot') .
-                                 DIRECTORY_SEPARATOR . 'imgs' . DIRECTORY_SEPARATOR . $flname);
-                         switch($identity["service"])
-                         {
-                             case "facebook":
-                                 $users = Users::findOne(['facebook'=>$identity["id"]]);
-                             break;
-                             case "vkontakte":
-                                 $users = Users::findOne(['vkontakte'=>$identity["id"]]);
-                             break;
-                             case "linkedin_oauth2":
-                                 $users = Users::findOne(['linkedin'=>$identity["id"]]);
-                             break;
-                             case "google":
-                                 $users = Users::findOne(['googleplus'=>$identity["id"]]);
-                             break;
-                             case "yandex":
-                                 $users = Users::findOne(['yandex'=>$identity["id"]]);
-                             break;
-                             case "mailru":
-                                 $users = Users::findOne(['mailru'=>$identity["id"]]);
-                             break;
-                             case "twitter":
-                                 $users = Users::findOne(['twitter'=>$identity["id"]]);
-                             break;
-                             case "instagram":
-                                 $users = Users::findOne(['instagram'=>$identity["id"]]);
-                             break;
-                         }
-                         $users->active=date("Y-m-d");
-                         $users->userpic=Yii::getAlias('@web')."/imgs/".$flname;
-                         $users->update(false);
-                         \Yii::$app->session->setFlash(
-                             'success',
-                             'Данные успешно обновлены'
-                         );
-                     }
-                 }
+                if( 'picture'==$p["Users"]["formtype"] )
+                {
+                    $upf = new Users();
+                    $upf->userpic = UploadedFile::getInstance($upf, 'userpic');
+                    if ($upf->validate())
+                    {
+                        $flname = $identity["id"] . time() . '.' . $upf->userpic->extension;
+                        $upf->userpic
+                            ->saveAs(Yii::getAlias('@webroot') .
+                                DIRECTORY_SEPARATOR . 'imgs' . DIRECTORY_SEPARATOR . $flname);
+                        switch($identity["service"])
+                        {
+                            case "facebook":
+                                $users = Users::findOne(['facebook'=>$identity["id"]]);
+                                break;
+                            case "vkontakte":
+                                $users = Users::findOne(['vkontakte'=>$identity["id"]]);
+                                break;
+                            case "linkedin_oauth2":
+                                $users = Users::findOne(['linkedin'=>$identity["id"]]);
+                                break;
+                            case "google":
+                                $users = Users::findOne(['googleplus'=>$identity["id"]]);
+                                break;
+                            case "yandex":
+                                $users = Users::findOne(['yandex'=>$identity["id"]]);
+                                break;
+                            case "mailru":
+                                $users = Users::findOne(['mailru'=>$identity["id"]]);
+                                break;
+                            case "twitter":
+                                $users = Users::findOne(['twitter'=>$identity["id"]]);
+                                break;
+                            case "instagram":
+                                $users = Users::findOne(['instagram'=>$identity["id"]]);
+                                break;
+                        }
+                        $users->active=date("Y-m-d");
+                        $users->userpic=Yii::getAlias('@web')."/imgs/".$flname;
+                        $users->update(false);
+                        \Yii::$app->session->setFlash(
+                            'success',
+                            'Данные успешно обновлены'
+                        );
+                    }
+                }
                 if( 'personinfo'==$p["Users"]["formtype"] )
                 {
                     if ($model->count() > 0)
@@ -470,13 +470,13 @@ class SiteController extends Controller
 
                         if
                         (
-                                UsrCompaniesLink::find()->where([
+                            UsrCompaniesLink::find()->where([
                                 "uid"=>$users->id,
                                 "lp_id"=>$users->companyid
                             ])->count()>0
                         )
                         {
-                                $usrCompLink=UsrCompaniesLink::findOne([
+                            $usrCompLink=UsrCompaniesLink::findOne([
                                 "uid"=>$users->id,
                                 "lp_id"=>$users->companyid
                             ]);
@@ -521,28 +521,28 @@ class SiteController extends Controller
             {
                 case "facebook":
                     $usrDt=$usrDt->where(['facebook'=>$identity["id"]]);
-                break;
+                    break;
                 case "vkontakte":
                     $usrDt=$usrDt->where(['vkontakte'=>$identity["id"]]);
-                break;
+                    break;
                 case "linkedin_oauth2":
                     $usrDt=$usrDt->where(['linkedin'=>$identity["id"]]);
-                break;
+                    break;
                 case "google":
                     $usrDt=$usrDt->where(['googleplus'=>$identity["id"]]);
-                break;
+                    break;
                 case "yandex":
                     $usrDt=$usrDt->where(['yandex'=>$identity["id"]]);
-                break;
+                    break;
                 case "mailru":
                     $usrDt=$usrDt->where(['mailru'=>$identity["id"]]);
-                break;
+                    break;
                 case "twitter":
                     $usrDt=$usrDt->where(['twitter'=>$identity["id"]]);
-                break;
+                    break;
                 case "instagram":
                     $usrDt=$usrDt->where(['instagram'=>$identity["id"]]);
-                break;
+                    break;
             }
             $usrDt=$usrDt->one();
 
@@ -595,10 +595,10 @@ class SiteController extends Controller
                     break;
                 case "twitter":
                     $usrDt=$usrDt->where(['twitter' => $identity["id"]]);
-                break;
+                    break;
                 case "instagram":
                     $usrDt=$usrDt->where(['instagram' => $identity["id"]]);
-                break;
+                    break;
             }
             $usrDt=$usrDt->one();
 
@@ -623,10 +623,10 @@ class SiteController extends Controller
         $this->raddref();
         return $this->goHome();
     }
-	
-	private function raddref()
-	{
-		if( !empty(\Yii::$app->request->get("refid")) )
+
+    private function raddref()
+    {
+        if( !empty(\Yii::$app->request->get("refid")) )
         {
             $refdt=\Yii::$app->request->get("refid");
             $usrDt=Users::find()
@@ -636,7 +636,7 @@ class SiteController extends Controller
                 Yii::$app->session->set('refuserId', $refdt);
             }
         }
-	}
+    }
 
     public function actionCalendar()
     {
@@ -684,7 +684,7 @@ class SiteController extends Controller
         }
         return $this->goHome();
     }
-/********************************************************************/
+    /********************************************************************/
     public function actionLanding()
     {
         if (!\Yii::$app->user->isGuest){
@@ -693,33 +693,33 @@ class SiteController extends Controller
 
             $query10=new \yii\db\Query();
             $usr=$query10->from([Users::tableName()]);
-                        switch($identity["service"])
-                        {
-                            case "facebook":
-                                $usr=$usr->where(['facebook' => $identity["id"]]);
-                            break;
-                            case "vkontakte":
-                                $usr=$usr->where(['vkontakte' => $identity["id"]]);
-                            break;
-                            case "linkedin_oauth2":
-                                $usr=$usr->where(['linkedin' => $identity["id"]]);
-                            break;
-                            case "google":
-                                $usr=$usr->where(['googleplus' => $identity["id"]]);
-                            break;
-                            case "yandex":
-                                $usr=$usr->where(['yandex' => $identity["id"]]);
-                            break;
-                            case "mailru":
-                                $usr=$usr->where(['mailru' => $identity["id"]]);
-                            break;
-                            case "twitter":
-                                $usr=$usr->where(['twitter' => $identity["id"]]);
-                            break;
-                            case "instagram":
-                                $usr=$usr->where(['instagram' => $identity["id"]]);
-                            break;
-                        }
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usr=$usr->where(['facebook' => $identity["id"]]);
+                    break;
+                case "vkontakte":
+                    $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                    break;
+                case "linkedin_oauth2":
+                    $usr=$usr->where(['linkedin' => $identity["id"]]);
+                    break;
+                case "google":
+                    $usr=$usr->where(['googleplus' => $identity["id"]]);
+                    break;
+                case "yandex":
+                    $usr=$usr->where(['yandex' => $identity["id"]]);
+                    break;
+                case "mailru":
+                    $usr=$usr->where(['mailru' => $identity["id"]]);
+                    break;
+                case "twitter":
+                    $usr=$usr->where(['twitter' => $identity["id"]]);
+                    break;
+                case "instagram":
+                    $usr=$usr->where(['instagram' => $identity["id"]]);
+                    break;
+            }
             $usr=$usr->one();
 
             $query13=new \yii\db\Query();
@@ -729,7 +729,7 @@ class SiteController extends Controller
 
             $model = Lp::find()
                 ->where(['uid' => $usr["id"]]);
-                //->andWhere(['id' => $landid]);
+            //->andWhere(['id' => $landid]);
 
             $landid = \Yii::$app->request->get("landid");
             $model_lp=false;
@@ -798,7 +798,7 @@ class SiteController extends Controller
                         $lp->update(false);
                         $save = "good";
                         $mes = "Ваша страничка обновлена";
-                    break;
+                        break;
                     case "new":
                         $lp_n = new Lp;
                         $lp_n->name = $p["name"];
@@ -824,7 +824,7 @@ class SiteController extends Controller
                         $lp_n->save(false);
                         $save = "create";
                         $mes = "Ваша страничка создана";
-                    break;
+                        break;
                 }
             }
             $query11=new \yii\db\Query();
@@ -832,28 +832,28 @@ class SiteController extends Controller
             {
                 case "facebook":
                     $_usr=$query11->from([Users::tableName()])->where(['facebook'=>$identity["id"]])->one();
-                break;
+                    break;
                 case "vkontakte":
                     $_usr=$query11->from([Users::tableName()])->where(['vkontakte'=>$identity["id"]])->one();
-                break;
+                    break;
                 case "linkedin_oauth2":
                     $_usr=$query11->from([Users::tableName()])->where(['linkedin'=>$identity["id"]])->one();
-                break;
+                    break;
                 case "google":
                     $_usr=$query11->from([Users::tableName()])->where(['google'=>$identity["id"]])->one();
-                break;
+                    break;
                 case "yandex":
                     $_usr=$query11->from([Users::tableName()])->where(['yandex'=>$identity["id"]])->one();
-                break;
+                    break;
                 case "mailru":
                     $_usr=$query11->from([Users::tableName()])->where(['mailru'=>$identity["id"]])->one();
-                break;
+                    break;
                 case "twitter":
                     $_usr=$query11->from([Users::tableName()])->where(['twitter'=>$identity["id"]])->one();
-                break;
+                    break;
                 case "instagram":
                     $_usr=$query11->from([Users::tableName()])->where(['instagram'=>$identity["id"]])->one();
-                break;
+                    break;
             }
             $query12=new \yii\db\Query();
             $data=$query12->from([Lp::tableName()])
@@ -883,7 +883,7 @@ class SiteController extends Controller
         }
         return $this->goHome();
     }
-/********************************************************************/
+    /********************************************************************/
 
     public function actionLandingedit()
     {
@@ -1088,7 +1088,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-/********************************************************************/
+    /********************************************************************/
 
     public function actionLanding2()
     {
@@ -1146,10 +1146,10 @@ class SiteController extends Controller
                     break;
                 case "twitter":
                     $usr=$usr->where(['twitter' => $identity["id"]]);
-                break;
+                    break;
                 case "instagram":
                     $usr=$usr->where(['instagram' => $identity["id"]]);
-                break;
+                    break;
             }
             $usr=$usr->one();
             /*
@@ -1197,11 +1197,11 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
-         if(!\Yii::$app->user->isGuest)
-         {
-             $this->layout="main2";
-             return $this->render('about');
-         }
+        if(!\Yii::$app->user->isGuest)
+        {
+            $this->layout="main2";
+            return $this->render('about');
+        }
         return $this->goHome();
     }
 
@@ -1251,177 +1251,177 @@ class SiteController extends Controller
 
 
 
-/*
-    public function actionLogin()
-    {
-        if (!\Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
-    }
-***********************************************************************************************************************/
-        private function usrEnter()
+    /*
+        public function actionLogin()
         {
-            $identity = \Yii::$app->getUser()->getIdentity()->profile;
-            list($firstName, $lastName) = explode(" ",  $identity["name"]);
+            if (!\Yii::$app->user->isGuest) {
+                return $this->goHome();
+            }
 
+            $model = new LoginForm();
+            if ($model->load(Yii::$app->request->post()) && $model->login()) {
+                return $this->goBack();
+            }
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+        }
+    ***********************************************************************************************************************/
+    private function usrEnter()
+    {
+        $identity = \Yii::$app->getUser()->getIdentity()->profile;
+        list($firstName, $lastName) = explode(" ",  $identity["name"]);
+
+        switch($identity["service"])
+        {
+            case "facebook":
+                $usrDt = Users::find()->where(['facebook'=>$identity["id"]]);
+                break;
+            case "vkontakte":
+                $usrDt = Users::find()->where(['vkontakte'=>$identity["id"]]);
+                break;
+            case "linkedin_oauth2":
+                $usrDt = Users::find()->where(['linkedin'=>$identity["id"]]);
+                break;
+            case "google":
+                $usrDt = Users::find()->where(['googleplus'=>$identity["id"]]);
+                break;
+            case "yandex":
+                $usrDt = Users::find()->where(['yandex'=>$identity["id"]]);
+                break;
+            case "mailru":
+                $usrDt = Users::find()->where(['mailru'=>$identity["id"]]);
+                break;
+            case "twitter":
+                $usrDt = Users::find()->where(['twitter'=>$identity["id"]]);
+                break;
+            case "instagram":
+                $usrDt = Users::find()->where(['instagram'=>$identity["id"]]);
+                break;
+        }
+        if( $usrDt->count()>0 )
+        {
             switch($identity["service"])
             {
                 case "facebook":
-                    $usrDt = Users::find()->where(['facebook'=>$identity["id"]]);
-                break;
+                    $users = Users::findOne(['facebook'=>$identity["id"]]);
+                    break;
                 case "vkontakte":
-                    $usrDt = Users::find()->where(['vkontakte'=>$identity["id"]]);
-                break;
+                    $users = Users::findOne(['vkontakte'=>$identity["id"]]);
+                    break;
                 case "linkedin_oauth2":
-                    $usrDt = Users::find()->where(['linkedin'=>$identity["id"]]);
-                break;
+                    $users = Users::findOne(['linkedin'=>$identity["id"]]);
+                    break;
                 case "google":
-                    $usrDt = Users::find()->where(['googleplus'=>$identity["id"]]);
-                break;
+                    $users = Users::findOne(['googleplus'=>$identity["id"]]);
+                    break;
                 case "yandex":
-                    $usrDt = Users::find()->where(['yandex'=>$identity["id"]]);
-                break;
+                    $users = Users::findOne(['yandex'=>$identity["id"]]);
+                    break;
                 case "mailru":
-                    $usrDt = Users::find()->where(['mailru'=>$identity["id"]]);
-                break;
+                    $users = Users::findOne(['mailru'=>$identity["id"]]);
+                    break;
                 case "twitter":
-                    $usrDt = Users::find()->where(['twitter'=>$identity["id"]]);
+                    $users = Users::findOne(['twitter'=>$identity["id"]]);
                     break;
                 case "instagram":
-                    $usrDt = Users::find()->where(['instagram'=>$identity["id"]]);
+                    $users = Users::findOne(['instagram'=>$identity["id"]]);
                     break;
             }
-            if( $usrDt->count()>0 )
+            $users->active=date("Y-m-d");
+            if( time() > strtotime($users->endpaydate) )
             {
-                switch($identity["service"])
-                {
-                    case "facebook":
-                        $users = Users::findOne(['facebook'=>$identity["id"]]);
-                        break;
-                    case "vkontakte":
-                        $users = Users::findOne(['vkontakte'=>$identity["id"]]);
-                        break;
-                    case "linkedin_oauth2":
-                        $users = Users::findOne(['linkedin'=>$identity["id"]]);
-                        break;
-                    case "google":
-                        $users = Users::findOne(['googleplus'=>$identity["id"]]);
-                        break;
-                    case "yandex":
-                        $users = Users::findOne(['yandex'=>$identity["id"]]);
-                        break;
-                    case "mailru":
-                        $users = Users::findOne(['mailru'=>$identity["id"]]);
-                        break;
-                    case "twitter":
-                        $users = Users::findOne(['twitter'=>$identity["id"]]);
-                        break;
-                    case "instagram":
-                        $users = Users::findOne(['instagram'=>$identity["id"]]);
-                        break;
-                }
-                $users->active=date("Y-m-d");
-                if( time() > strtotime($users->endpaydate) )
-                {
-                    $users->level=1;
-                }
-                $users->update(false);
+                $users->level=1;
             }
-            else
+            $users->update(false);
+        }
+        else
+        {
+            switch($identity["service"])
             {
-                switch($identity["service"])
-                {
-                    case "facebook":
-                        $pitureUrl="http://graph.facebook.com/".$identity["id"]."/picture?type=square";
+                case "facebook":
+                    $pitureUrl="http://graph.facebook.com/".$identity["id"]."/picture?type=square";
                     break;
-                    case "vkontakte":
-                        $usrPic=json_decode
-                        (
-                            file_get_contents('http://api.vkontakte.ru/method/users.get?uids='.
-                                $identity["id"].
-                                '&fields=photo_100')
-                        );
-                        $pitureUrl=$usrPic->response[0]->photo_100;
+                case "vkontakte":
+                    $usrPic=json_decode
+                    (
+                        file_get_contents('http://api.vkontakte.ru/method/users.get?uids='.
+                            $identity["id"].
+                            '&fields=photo_100')
+                    );
+                    $pitureUrl=$usrPic->response[0]->photo_100;
                     break;
-                    default:
-                        $pitureUrl="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
+                default:
+                    $pitureUrl="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
                     break;
-                }
-                $users = new Users();
-                $users->ip=$_SERVER['REMOTE_ADDR'];
-                $users->refdt=$this->ukey();
+            }
+            $users = new Users();
+            $users->ip=$_SERVER['REMOTE_ADDR'];
+            $users->refdt=$this->ukey();
 
 
-                if( !empty(Yii::$app->session->get('refuserId')) )
-                {
-                    $users->ref=Yii::$app->session->get('refuserId');
-                }else
-                {
-                    $arr=
+            if( !empty(Yii::$app->session->get('refuserId')) )
+            {
+                $users->ref=Yii::$app->session->get('refuserId');
+            }else
+            {
+                $arr=
                     [
                         '1'=>'28020677',
                         '2'=>'269658141',
                         '3'=>'ZtXcztlg0G'
                     ];
-                    $users->ref=$arr[rand(1,3)];
-                }
-
-                $refUsr = Users::find()
-                    ->where([
-                        'refdt' => Yii::$app->session->get('refuserId')
-                    ])->one();
-
-                if(!empty($refUsr))
-                {$users->companyid=@$refUsr->companyid;}
-
-                $users->userpic=$pitureUrl;
-                $users->fn=$firstName;
-                $users->ln=$lastName;
-                //$users->socid=$identity["id"];
-                //$users->service=$identity["service"];
-                $users->regdate=date("Y-m-d");
-                $users->active=date("Y-m-d");
-
-                switch($identity["service"])
-                {
-                    case "facebook":
-                        $users->facebook=$identity["id"];
-                    break;
-                    case "vkontakte":
-                        $users->vkontakte=$identity["id"];
-                    break;
-                    case "linkedin_oauth2":
-                        $users->linkedin=$identity["id"];
-                    break;
-                    case "google":
-                        $users->googleplus=$identity["id"];
-                    break;
-                    case "yandex":
-                        $users->yandex=$identity["id"];
-                    break;
-                    case "mailru":
-                        $users->mailru=$identity["id"];
-                    break;
-                    case "twitter":
-                        $users->twitter=$identity["id"];
-                    break;
-                    case "instagram":
-                        $users->instagram=$identity["id"];
-                    break;
-                }
-                $users->save(false);
-                $this->sandMailFirst($users,$identity);
+                $users->ref=$arr[rand(1,3)];
             }
+
+            $refUsr = Users::find()
+                ->where([
+                    'refdt' => Yii::$app->session->get('refuserId')
+                ])->one();
+
+            if(!empty($refUsr))
+            {$users->companyid=@$refUsr->companyid;}
+
+            $users->userpic=$pitureUrl;
+            $users->fn=$firstName;
+            $users->ln=$lastName;
+            //$users->socid=$identity["id"];
+            //$users->service=$identity["service"];
+            $users->regdate=date("Y-m-d");
+            $users->active=date("Y-m-d");
+
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $users->facebook=$identity["id"];
+                    break;
+                case "vkontakte":
+                    $users->vkontakte=$identity["id"];
+                    break;
+                case "linkedin_oauth2":
+                    $users->linkedin=$identity["id"];
+                    break;
+                case "google":
+                    $users->googleplus=$identity["id"];
+                    break;
+                case "yandex":
+                    $users->yandex=$identity["id"];
+                    break;
+                case "mailru":
+                    $users->mailru=$identity["id"];
+                    break;
+                case "twitter":
+                    $users->twitter=$identity["id"];
+                    break;
+                case "instagram":
+                    $users->instagram=$identity["id"];
+                    break;
+            }
+            $users->save(false);
+            $this->sandMailFirst($users,$identity);
         }
-/*********************************/
+    }
+    /*********************************/
 
     public function sandMailFirst($users,$iden)
     {
@@ -1444,22 +1444,22 @@ class SiteController extends Controller
         {
             case "vkontakte":
                 $message .= '<p>Его данные: <a href="http://vk.com/id' . $iden["id"] . '">';
-            break;
+                break;
             case "facebook":
                 $message .= '<p>Его данные: <a href="http://facebook.com/' . $iden["id"] . '">';
-            break;
+                break;
             case "linkedin_oauth2":
-            break;
+                break;
             case "google":
-            break;
+                break;
             case "yandex":
-            break;
+                break;
             case "mailru":
-            break;
+                break;
             case "twitter":
-            break;
+                break;
             case "instagram":
-            break;
+                break;
         }
 
         $message .= '<strong>'.$users->fn.' '.$users->ln.'</strong></a></p>';
@@ -1508,13 +1508,13 @@ class SiteController extends Controller
         }
         return $string;
     }
-/*********************************/
+    /*********************************/
     public function actionLogin() {
         /*
         if(\Yii::$app->user->isGuest)
             {return $this->redirect($this->siteUrl);}
         */
-		$this->raddref();
+        $this->raddref();
         $serviceName = \Yii::$app->getRequest()->getQueryParam('service');
         if (isset($serviceName)) {
             /** @var $eauth \nodge\eauth\ServiceBase */
@@ -1532,7 +1532,11 @@ class SiteController extends Controller
                     // special redirect with closing popup window
 
                     //print_r(\Yii::$app->getUser()->getIdentity()->profile["service"]);exit();
-
+                    $ridmlm=$this->getSocId();
+                    if($ridmlm)
+                    {
+                        return $this->redirect( $ridmlm );
+                    }
                     $this->usrEnter();
                     if( !empty(Yii::$app->session->get('mcID')) )
                     {
@@ -1558,6 +1562,11 @@ class SiteController extends Controller
         }
 /////////////////////////////////////if login
         if (!\Yii::$app->user->isGuest){
+            $ridmlm=$this->getSocId();
+            if($ridmlm)
+            {
+                return $this->redirect( $ridmlm );
+            }
             $this->usrEnter();
             if( !empty(Yii::$app->session->get('mcID')) )
             {
@@ -1582,37 +1591,37 @@ class SiteController extends Controller
         Yii::$app->user->logout();
         return $this->goHome();
     }
-/*
-    public function actionContact()
-    {
-        if (!\Yii::$app->user->isGuest)
+    /*
+        public function actionContact()
         {
-            $model = new ContactForm();
-            if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('contactFormSubmitted');
+            if (!\Yii::$app->user->isGuest)
+            {
+                $model = new ContactForm();
+                if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+                    Yii::$app->session->setFlash('contactFormSubmitted');
 
-                return $this->refresh();
+                    return $this->refresh();
+                }
+                return $this->render('contact', [
+                    'model' => $model,
+                    'level'=>$this->usrLvl()
+                ]);
             }
-            return $this->render('contact', [
-                'model' => $model,
-                'level'=>$this->usrLvl()
-            ]);
+            return $this->goHome();
         }
-        return $this->goHome();
-    }
-*/
+    */
     public function actionContact()
     {
         if( !\Yii::$app->user->isGuest )
         {
             return $this->render('contact',
-            [
-                'level'=>$this->usrLvl()
-            ]);
+                [
+                    'level'=>$this->usrLvl()
+                ]);
         }
         return $this->goHome();
     }
-/***************************************************************/
+    /***************************************************************/
     private function usrLvl()
     {
         $identity = \Yii::$app->getUser()->getIdentity()->profile;
@@ -1710,330 +1719,330 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-  /*  public function actionListmessages()
+    /*  public function actionListmessages()
+      {
+          if (\Yii::$app->request->isAjax) {
+              //return $this->render('ajax_test');
+              //echo "OK";
+              $this->layout = 'empty';
+              if (!\Yii::$app->user->isGuest){
+                  $identity = \Yii::$app->getUser()->getIdentity()->profile;
+                  $mes = "";
+
+                  $query10=new \yii\db\Query();
+                  $usr=$query10->from([Users::tableName()]);
+                  switch($identity["service"])
+                  {
+                      case "facebook":
+                          $usr=$usr->where(['facebook' => $identity["id"]]);
+                          break;
+                      case "vkontakte":
+                          $usr=$usr->where(['vkontakte' => $identity["id"]]);
+                          break;
+                      case "linkedin_oauth2":
+                          $usr=$usr->where(['linkedin' => $identity["id"]]);
+                          break;
+                      case "google":
+                          $usr=$usr->where(['googleplus' => $identity["id"]]);
+                          break;
+                      case "yandex":
+                          $usr=$usr->where(['yandex' => $identity["id"]]);
+                          break;
+                      case "mailru":
+                          $usr=$usr->where(['mailru' => $identity["id"]]);
+                          break;
+                      case "twitter":
+                          $usr=$usr->where(['twitter' => $identity["id"]]);
+                          break;
+                      case "instagram":
+                          $usr=$usr->where(['instagram' => $identity["id"]]);
+                          break;
+                  }
+                  $usr=$usr->one();
+
+                  $toid = (int)\Yii::$app->request->get("toid");
+
+                  //$query13=new \yii\db\Query();
+                  $listmsg=\yii::$app->db->createCommand('SELECT *
+                                                         FROM msgs
+                                                         WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
+                                                               ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();
+
+                  echo $this->render('message', [
+                      'data' => $listmsg,
+                      'second_user' => $toid
+                  ]);
+                  /*->from([Msgs::tableName()])
+                  ->where(['id' => $usr["level"]])->one();*/
+
+    /*$model = Lp::find()
+        ->where(['uid' => $usr["id"]]);*/
+    //->andWhere(['id' => $landid]);
+
+
+
+    /*$query12=new \yii\db\Query();
+    $data=$query12->from([Lp::tableName()])
+        ->where(['uid' => $_usr["id"]]);
+    $save=( !empty($save) )?$save:null;*
+
+}
+return $this->goHome();
+}
+}
+
+public function actionSendmessage()
+{
+if (\Yii::$app->request->isAjax) {
+//return $this->render('ajax_test');
+//echo "OK";
+$this->layout = 'empty';
+if (!\Yii::$app->user->isGuest){
+    $identity = \Yii::$app->getUser()->getIdentity()->profile;
+    $mes = "";
+
+    $query10=new \yii\db\Query();
+    $usr=$query10->from([Users::tableName()]);
+    switch($identity["service"])
     {
-        if (\Yii::$app->request->isAjax) {
-            //return $this->render('ajax_test');
-            //echo "OK";
-            $this->layout = 'empty';
-            if (!\Yii::$app->user->isGuest){
-                $identity = \Yii::$app->getUser()->getIdentity()->profile;
-                $mes = "";
-
-                $query10=new \yii\db\Query();
-                $usr=$query10->from([Users::tableName()]);
-                switch($identity["service"])
-                {
-                    case "facebook":
-                        $usr=$usr->where(['facebook' => $identity["id"]]);
-                        break;
-                    case "vkontakte":
-                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
-                        break;
-                    case "linkedin_oauth2":
-                        $usr=$usr->where(['linkedin' => $identity["id"]]);
-                        break;
-                    case "google":
-                        $usr=$usr->where(['googleplus' => $identity["id"]]);
-                        break;
-                    case "yandex":
-                        $usr=$usr->where(['yandex' => $identity["id"]]);
-                        break;
-                    case "mailru":
-                        $usr=$usr->where(['mailru' => $identity["id"]]);
-                        break;
-                    case "twitter":
-                        $usr=$usr->where(['twitter' => $identity["id"]]);
-                        break;
-                    case "instagram":
-                        $usr=$usr->where(['instagram' => $identity["id"]]);
-                        break;
-                }
-                $usr=$usr->one();
-
-                $toid = (int)\Yii::$app->request->get("toid");
-
-                //$query13=new \yii\db\Query();
-                $listmsg=\yii::$app->db->createCommand('SELECT *
-                                                       FROM msgs
-                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
-                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();
-
-                echo $this->render('message', [
-                    'data' => $listmsg,
-                    'second_user' => $toid
-                ]);
-                /*->from([Msgs::tableName()])
-                ->where(['id' => $usr["level"]])->one();*/
-
-                /*$model = Lp::find()
-                    ->where(['uid' => $usr["id"]]);*/
-                //->andWhere(['id' => $landid]);
-
-
-
-                /*$query12=new \yii\db\Query();
-                $data=$query12->from([Lp::tableName()])
-                    ->where(['uid' => $_usr["id"]]);
-                $save=( !empty($save) )?$save:null;*
-
-            }
-            return $this->goHome();
-        }
+        case "facebook":
+            $usr=$usr->where(['facebook' => $identity["id"]]);
+            break;
+        case "vkontakte":
+            $usr=$usr->where(['vkontakte' => $identity["id"]]);
+            break;
+        case "linkedin_oauth2":
+            $usr=$usr->where(['linkedin' => $identity["id"]]);
+            break;
+        case "google":
+            $usr=$usr->where(['googleplus' => $identity["id"]]);
+            break;
+        case "yandex":
+            $usr=$usr->where(['yandex' => $identity["id"]]);
+            break;
+        case "mailru":
+            $usr=$usr->where(['mailru' => $identity["id"]]);
+            break;
+        case "twitter":
+            $usr=$usr->where(['twitter' => $identity["id"]]);
+            break;
+        case "instagram":
+            $usr=$usr->where(['instagram' => $identity["id"]]);
+            break;
     }
+    $usr=$usr->one();
 
-    public function actionSendmessage()
+    $toid = (int)\Yii::$app->request->get("toid");
+
+    /*$query13=new \yii\db\Query();
+    $listmsg=\yii::$app->db->createCommand('SELECT *
+                                           FROM msgs
+                                           WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
+                                                 ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
+    $mes = new Msgs();
+    $mes->uid4 = $usr['id'];
+    $mes->uid2 = $toid;
+    $mes->msg = \Yii::$app->request->get("text");
+    $mes->status=1;
+    $mes->save(false);
+
+    $listmsg=\yii::$app->db->createCommand('SELECT *
+                                           FROM msgs
+                                           WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
+                                                 ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();
+
+
+    echo $this->render('message', [
+        'data' => $listmsg,
+        'second_user' => $toid
+    ]);
+
+
+
+
+    /*->from([Msgs::tableName()])
+    ->where(['id' => $usr["level"]])->one();*
+
+    /*$model = Lp::find()
+        ->where(['uid' => $usr["id"]]);*
+    //->andWhere(['id' => $landid]);
+
+
+
+    /*$query12=new \yii\db\Query();
+    $data=$query12->from([Lp::tableName()])
+        ->where(['uid' => $_usr["id"]]);
+    $save=( !empty($save) )?$save:null;*
+
+}
+return $this->goHome();
+}
+}
+
+public function actionListusrmes(){
+if (\Yii::$app->request->isAjax) {
+//return $this->render('ajax_test');
+//echo "OK";
+$this->layout = 'empty';
+if (!\Yii::$app->user->isGuest){
+    $identity = \Yii::$app->getUser()->getIdentity()->profile;
+    $mes = "";
+
+    $query10=new \yii\db\Query();
+    $usr=$query10->from([Users::tableName()]);
+    switch($identity["service"])
     {
-        if (\Yii::$app->request->isAjax) {
-            //return $this->render('ajax_test');
-            //echo "OK";
-            $this->layout = 'empty';
-            if (!\Yii::$app->user->isGuest){
-                $identity = \Yii::$app->getUser()->getIdentity()->profile;
-                $mes = "";
-
-                $query10=new \yii\db\Query();
-                $usr=$query10->from([Users::tableName()]);
-                switch($identity["service"])
-                {
-                    case "facebook":
-                        $usr=$usr->where(['facebook' => $identity["id"]]);
-                        break;
-                    case "vkontakte":
-                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
-                        break;
-                    case "linkedin_oauth2":
-                        $usr=$usr->where(['linkedin' => $identity["id"]]);
-                        break;
-                    case "google":
-                        $usr=$usr->where(['googleplus' => $identity["id"]]);
-                        break;
-                    case "yandex":
-                        $usr=$usr->where(['yandex' => $identity["id"]]);
-                        break;
-                    case "mailru":
-                        $usr=$usr->where(['mailru' => $identity["id"]]);
-                        break;
-                    case "twitter":
-                        $usr=$usr->where(['twitter' => $identity["id"]]);
-                        break;
-                    case "instagram":
-                        $usr=$usr->where(['instagram' => $identity["id"]]);
-                        break;
-                }
-                $usr=$usr->one();
-
-                $toid = (int)\Yii::$app->request->get("toid");
-
-                /*$query13=new \yii\db\Query();
-                $listmsg=\yii::$app->db->createCommand('SELECT *
-                                                       FROM msgs
-                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
-                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
-                $mes = new Msgs();
-                $mes->uid4 = $usr['id'];
-                $mes->uid2 = $toid;
-                $mes->msg = \Yii::$app->request->get("text");
-                $mes->status=1;
-                $mes->save(false);
-
-                $listmsg=\yii::$app->db->createCommand('SELECT *
-                                                       FROM msgs
-                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
-                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();
-
-
-                echo $this->render('message', [
-                    'data' => $listmsg,
-                    'second_user' => $toid
-                ]);
-
-
-
-
-                /*->from([Msgs::tableName()])
-                ->where(['id' => $usr["level"]])->one();*
-
-                /*$model = Lp::find()
-                    ->where(['uid' => $usr["id"]]);*
-                //->andWhere(['id' => $landid]);
-
-
-
-                /*$query12=new \yii\db\Query();
-                $data=$query12->from([Lp::tableName()])
-                    ->where(['uid' => $_usr["id"]]);
-                $save=( !empty($save) )?$save:null;*
-
-            }
-            return $this->goHome();
-        }
+        case "facebook":
+            $usr=$usr->where(['facebook' => $identity["id"]]);
+            break;
+        case "vkontakte":
+            $usr=$usr->where(['vkontakte' => $identity["id"]]);
+            break;
+        case "linkedin_oauth2":
+            $usr=$usr->where(['linkedin' => $identity["id"]]);
+            break;
+        case "google":
+            $usr=$usr->where(['googleplus' => $identity["id"]]);
+            break;
+        case "yandex":
+            $usr=$usr->where(['yandex' => $identity["id"]]);
+            break;
+        case "mailru":
+            $usr=$usr->where(['mailru' => $identity["id"]]);
+            break;
+        case "twitter":
+            $usr=$usr->where(['twitter' => $identity["id"]]);
+            break;
+        case "instagram":
+            $usr=$usr->where(['instagram' => $identity["id"]]);
+            break;
     }
-	
-	public function actionListusrmes(){
-        if (\Yii::$app->request->isAjax) {
-            //return $this->render('ajax_test');
-            //echo "OK";
-            $this->layout = 'empty';
-            if (!\Yii::$app->user->isGuest){
-                $identity = \Yii::$app->getUser()->getIdentity()->profile;
-                $mes = "";
+    $usr=$usr->one();
 
-                $query10=new \yii\db\Query();
-                $usr=$query10->from([Users::tableName()]);
-                switch($identity["service"])
-                {
-                    case "facebook":
-                        $usr=$usr->where(['facebook' => $identity["id"]]);
-                        break;
-                    case "vkontakte":
-                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
-                        break;
-                    case "linkedin_oauth2":
-                        $usr=$usr->where(['linkedin' => $identity["id"]]);
-                        break;
-                    case "google":
-                        $usr=$usr->where(['googleplus' => $identity["id"]]);
-                        break;
-                    case "yandex":
-                        $usr=$usr->where(['yandex' => $identity["id"]]);
-                        break;
-                    case "mailru":
-                        $usr=$usr->where(['mailru' => $identity["id"]]);
-                        break;
-                    case "twitter":
-                        $usr=$usr->where(['twitter' => $identity["id"]]);
-                        break;
-                    case "instagram":
-                        $usr=$usr->where(['instagram' => $identity["id"]]);
-                        break;
-                }
-                $usr=$usr->one();
+    //$toid = (int)\Yii::$app->request->get("toid");
 
-                //$toid = (int)\Yii::$app->request->get("toid");
+    //$query13=new \yii\db\Query();
+    $lastTenRegUsers=Users::find()
+        ->where(['ref'=>$usr['refdt']])
+        ->orderBy(['id' => SORT_ASC])
+        ->limit(10)
+        ->all();
 
-                //$query13=new \yii\db\Query();
-                $lastTenRegUsers=Users::find()
-                    ->where(['ref'=>$usr['refdt']])
-                    ->orderBy(['id' => SORT_ASC])
-                    ->limit(10)
-                    ->all();
+    echo $this->render('lum', [
+        'data' => $lastTenRegUsers,
+        'user' => $usr["id"],
+    ]);
+    /*->from([Msgs::tableName()])
+    ->where(['id' => $usr["level"]])->one();*/
 
-                echo $this->render('lum', [
-                    'data' => $lastTenRegUsers,
-                    'user' => $usr["id"],
-                ]);
-                /*->from([Msgs::tableName()])
-                ->where(['id' => $usr["level"]])->one();*/
-
-                /*$model = Lp::find()
-                    ->where(['uid' => $usr["id"]]);*/
-                //->andWhere(['id' => $landid]);
+    /*$model = Lp::find()
+        ->where(['uid' => $usr["id"]]);*/
+    //->andWhere(['id' => $landid]);
 
 
 
-                /*$query12=new \yii\db\Query();
-                $data=$query12->from([Lp::tableName()])
-                    ->where(['uid' => $_usr["id"]]);
-                $save=( !empty($save) )?$save:null;*
+    /*$query12=new \yii\db\Query();
+    $data=$query12->from([Lp::tableName()])
+        ->where(['uid' => $_usr["id"]]);
+    $save=( !empty($save) )?$save:null;*
 
-            }
-            return $this->goHome();
-        }
-    }
+}
+return $this->goHome();
+}
+}
 
-    public function actionReadmessage()
+public function actionReadmessage()
+{
+if (\Yii::$app->request->isAjax) {
+//return $this->render('ajax_test');
+//echo "OK";
+//$this->layout = 'empty';
+if (!\Yii::$app->user->isGuest){
+    $identity = \Yii::$app->getUser()->getIdentity()->profile;
+    $mes = "";
+
+    $query10=new \yii\db\Query();
+    $usr=$query10->from([Users::tableName()]);
+    switch($identity["service"])
     {
-        if (\Yii::$app->request->isAjax) {
-            //return $this->render('ajax_test');
-            //echo "OK";
-            //$this->layout = 'empty';
-            if (!\Yii::$app->user->isGuest){
-                $identity = \Yii::$app->getUser()->getIdentity()->profile;
-                $mes = "";
-
-                $query10=new \yii\db\Query();
-                $usr=$query10->from([Users::tableName()]);
-                switch($identity["service"])
-                {
-                    case "facebook":
-                        $usr=$usr->where(['facebook' => $identity["id"]]);
-                        break;
-                    case "vkontakte":
-                        $usr=$usr->where(['vkontakte' => $identity["id"]]);
-                        break;
-                    case "linkedin_oauth2":
-                        $usr=$usr->where(['linkedin' => $identity["id"]]);
-                        break;
-                    case "google":
-                        $usr=$usr->where(['googleplus' => $identity["id"]]);
-                        break;
-                    case "yandex":
-                        $usr=$usr->where(['yandex' => $identity["id"]]);
-                        break;
-                    case "mailru":
-                        $usr=$usr->where(['mailru' => $identity["id"]]);
-                        break;
-                    case "twitter":
-                        $usr=$usr->where(['twitter' => $identity["id"]]);
-                        break;
-                    case "instagram":
-                        $usr=$usr->where(['instagram' => $identity["id"]]);
-                        break;
-                }
-                $usr=$usr->one();
-
-                $fromid = (int)\Yii::$app->request->get("fromid");
-
-                /*$query13=new \yii\db\Query();
-                $listmsg=\yii::$app->db->createCommand('SELECT *
-                                                       FROM msgs
-                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
-                                                             ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
-                /*$mes = new Msgs();
-                $mes->uid4 = $usr['id'];
-                $mes->uid2 = $toid;
-                $mes->msg = \Yii::$app->request->get("text");
-                $mes->save();*
-
-                \yii::$app->db->createCommand('UPDATE msgs
-                                               SET `status` = 0
-                                               WHERE ((uid4 = '.$fromid.') AND (uid2 = '.$usr["id"].'))')->execute();
-
-                return true;
-
-                /*$listmsg=\yii::$app->db->createCommand('SELECT *
-                                                       FROM msgs
-                                                       WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$fromid.')) OR
-                                                             ((uid4 = '.$fromid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
-
-
-                /*echo $this->render('message', [
-                    'data' => $listmsg,
-                    'second_user' => $fromid
-                ]);*/
-
-
-
-
-                /*->from([Msgs::tableName()])
-                ->where(['id' => $usr["level"]])->one();*
-
-                /*$model = Lp::find()
-                    ->where(['uid' => $usr["id"]]);*
-                //->andWhere(['id' => $landid]);
-
-
-
-                /*$query12=new \yii\db\Query();
-                $data=$query12->from([Lp::tableName()])
-                    ->where(['uid' => $_usr["id"]]);
-                $save=( !empty($save) )?$save:null;*
-
-            }
-            return $this->goHome();
-        }
+        case "facebook":
+            $usr=$usr->where(['facebook' => $identity["id"]]);
+            break;
+        case "vkontakte":
+            $usr=$usr->where(['vkontakte' => $identity["id"]]);
+            break;
+        case "linkedin_oauth2":
+            $usr=$usr->where(['linkedin' => $identity["id"]]);
+            break;
+        case "google":
+            $usr=$usr->where(['googleplus' => $identity["id"]]);
+            break;
+        case "yandex":
+            $usr=$usr->where(['yandex' => $identity["id"]]);
+            break;
+        case "mailru":
+            $usr=$usr->where(['mailru' => $identity["id"]]);
+            break;
+        case "twitter":
+            $usr=$usr->where(['twitter' => $identity["id"]]);
+            break;
+        case "instagram":
+            $usr=$usr->where(['instagram' => $identity["id"]]);
+            break;
     }
+    $usr=$usr->one();
+
+    $fromid = (int)\Yii::$app->request->get("fromid");
+
+    /*$query13=new \yii\db\Query();
+    $listmsg=\yii::$app->db->createCommand('SELECT *
+                                           FROM msgs
+                                           WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$toid.')) OR
+                                                 ((uid4 = '.$toid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
+    /*$mes = new Msgs();
+    $mes->uid4 = $usr['id'];
+    $mes->uid2 = $toid;
+    $mes->msg = \Yii::$app->request->get("text");
+    $mes->save();*
+
+    \yii::$app->db->createCommand('UPDATE msgs
+                                   SET `status` = 0
+                                   WHERE ((uid4 = '.$fromid.') AND (uid2 = '.$usr["id"].'))')->execute();
+
+    return true;
+
+    /*$listmsg=\yii::$app->db->createCommand('SELECT *
+                                           FROM msgs
+                                           WHERE ((uid4 = '.$usr["id"].') AND (uid2 = '.$fromid.')) OR
+                                                 ((uid4 = '.$fromid.') AND (uid2 = '.$usr["id"].'))')->queryAll();*
+
+
+    /*echo $this->render('message', [
+        'data' => $listmsg,
+        'second_user' => $fromid
+    ]);*/
+
+
+
+
+    /*->from([Msgs::tableName()])
+    ->where(['id' => $usr["level"]])->one();*
+
+    /*$model = Lp::find()
+        ->where(['uid' => $usr["id"]]);*
+    //->andWhere(['id' => $landid]);
+
+
+
+    /*$query12=new \yii\db\Query();
+    $data=$query12->from([Lp::tableName()])
+        ->where(['uid' => $_usr["id"]]);
+    $save=( !empty($save) )?$save:null;*
+
+}
+return $this->goHome();
+}
+}
 */
     public function actionFriendsvk()
     {
@@ -2098,7 +2107,7 @@ class SiteController extends Controller
             $usrlist=Users::find()
                 ->where(['not in','vkontakte',$usrFrinds])
                 ->andWhere(['<>','vkontakte',$usr->vkontakte]);
-                //->andWhere('not in','id',$dt)
+            //->andWhere('not in','id',$dt)
             if( is_array($uArrfrId) )
             {
                 $dt=call_user_func_array('array_merge', $uArrfrId);
@@ -2108,7 +2117,7 @@ class SiteController extends Controller
                 $usrlist=$usrlist->andWhere("`id` not in ({$cs})");
             }
             $usrlist=$usrlist->limit(10)
-                    ->all();
+                ->all();
 
             foreach($usrlist as $val)
             {
@@ -2264,5 +2273,29 @@ class SiteController extends Controller
             //return $this->goBack();
         }
         return $this->goHome();
+    }
+
+    private function getSocId()
+    {
+        if( "fbidmlm"==Yii::$app->session->get('redirect') )
+        {
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            switch($identity["service"])
+            {
+                case "facebook":
+                    Yii::$app->user->logout();
+                    Yii::$app->session->set('redirect', null);
+                    return "http://id.1-mlm.com/index.php?fbid=".$identity["id"];
+                break;
+                default:
+                    return false;
+                break;
+            }
+        }
+    }
+    public function actionSid()
+    {
+        Yii::$app->session->set('redirect', \Yii::$app->request->get('redirect'));
+        return $this->redirect( "https://1-mlm.com/index.php?r=site%2Flogin&service=facebook" );
     }
 }

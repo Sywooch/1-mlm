@@ -40,7 +40,8 @@ echo GridView::widget([
                             'data' => $data
                         ]).
                         "<br />".
-                        "<a href=\"index.php?r=mc&mcid={$data["id"]}\" target=\"_blank\">НА МАСТЕР КЛАСС</a>";
+                        "<a href=\"https://1-mlm.com/mc-{$data["id"]}.html\"
+                        target=\"_blank\">НА МАСТЕР КЛАСС</a>";
             }
         ]
     ]
