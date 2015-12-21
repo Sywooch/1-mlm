@@ -41,17 +41,19 @@ $params = [
     'prompt' => '-выберите из списка-'
 ];
 
-$lp=\app\models\Lp::find()
+$lp=Lp::find()
     //->where(['<','id',501])
-    ->where("id<501")
+    ->where("id<1001")
+    ->orderBy(['name' => SORT_ASC])
     ->all();
 
 $youcomp=ArrayHelper::map(Lp::find()
     ->where(['uid' => $usr["id"]])
+    ->orderBy(['name' => SORT_ASC])
     ->all(),
     'id','name');
 
-$companies = \yii\Helpers\ArrayHelper::map($lp,'id','name');
+$companies = ArrayHelper::map($lp,'id','name');
 if( sizeof($youcomp)<1  )
     {$youcomp=[''=>'вы еще не создали страницу'];}
 $items=[

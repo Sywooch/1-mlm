@@ -253,13 +253,8 @@ $this->registerCss($style_user);
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">меню</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 <!--<a class="navbar-brand" href=""><img class="logo-nav" alt="1-й МЛМ Ресурс" src="../img/logo.png" width="50" height="50"><img class="logo-head" alt="logo" src="../img/logo.png" width="80" height="80"></a>--> </div>
                 <div id="photo" style="float: left;">
-<<<<<<< Updated upstream
                     <img src="<?= $usrref["userpic"]; ?>" />
                     <p>Ведет мастер-класс:<br>  <b><?= $usrref["fn"]; ?> <?= $usrref["ln"]; ?></b></p>
-=======
-                    <img src="https://pp.vk.me/c624825/v624825515/2a003/tstMP1ib20M.jpg" />
-                    <p>Вас пригласил:<br>  <b>Гошан Волкин</b></p>
->>>>>>> Stashed changes
                 </div>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
                 <ul class="nav navbar-nav nav-left">

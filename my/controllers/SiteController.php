@@ -806,7 +806,7 @@ class SiteController extends Controller
                         $lp_n->h1 = $p["h1"];
                         $lp_n->h2 = $p["h2"];
                         $lp_n->h3 = $p["h3"];
-                        $lp_n->yt1 = $p["yt"];
+                        $lp_n->yt1 = $p["yt1"];
                         $lp_n->yt2 = $p["yt2"];
                         $lp_n->h1c = $p["h1c"];
                         $lp_n->h2c = $p["h2c"];
@@ -820,6 +820,13 @@ class SiteController extends Controller
                         $lp_n->socpic = $p["socpic"];
                         $lp_n->autoplay = $p["autoplay"];
                         $lp_n->bg = $p["bg"];
+
+                        if(2==$usr["id"])
+                        {
+                            $lcnt=Lp::find()
+                                ->where(["uid"=>"2"])->count();
+                            $lp_n->id = ++$lcnt;
+                        }
 
                         $lp_n->save(false);
                         $save = "create";
@@ -1352,7 +1359,7 @@ class SiteController extends Controller
                     $pitureUrl=$usrPic->response[0]->photo_100;
                     break;
                 default:
-                    $pitureUrl="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
+                    $pitureUrl="https://1-mlm.com/img/up0.png";
                     break;
             }
             $users = new Users();
