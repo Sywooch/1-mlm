@@ -178,6 +178,12 @@ $this->title = 'Команда. Ваша 1-я линия';
                         'class'     =>  'table table-striped table-bordered table-hover',
                         'id' => 'sample_1'
                     ],
+                    'pager' => [
+                        'firstPageLabel' => '<<',
+                        'lastPageLabel' => '>>',
+                        'prevPageLabel' => '<',
+                        'nextPageLabel' => '>'
+                    ],
                     'rowOptions'   =>  [
                         'style'    =>  'text-align: center; background-color:'
                     ],

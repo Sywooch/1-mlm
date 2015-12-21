@@ -19,7 +19,7 @@ class AdminController extends Controller
                 'query' => Users::find()->orderBy(['id' => SORT_DESC]),
                     //->limit(10),
                 'pagination' => [
-                    'pageSize' => 10,
+                    'pageSize' => 25,
                 ],
             ]);
 

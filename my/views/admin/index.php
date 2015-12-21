@@ -51,7 +51,7 @@ $css = <<<'STYLE'
 }*/
 STYLE;
 $this->registerCss($css);
-$this->title = 'Последние 10 зарегестрированных пользователей';
+$this->title = 'Последние 25 зарегестрированных пользователей';
 
 ?>
 
@@ -98,6 +98,12 @@ $this->title = 'Последние 10 зарегестрированных по�
                     'tableOptions'  =>  [
                         'class'     =>  'table table-striped table-bordered table-hover',
                         'id' => 'sample_1'
+                    ],
+                    'pager' => [
+                        'firstPageLabel' => '<<',
+                        'lastPageLabel' => '>>',
+                        'prevPageLabel' => '<',
+                        'nextPageLabel' => '>'
                     ],
                     'rowOptions'   =>  [
                         'style'    =>  'text-align: center; background-color:'
