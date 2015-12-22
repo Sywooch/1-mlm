@@ -110,9 +110,9 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
     <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
     <?php $this->beginBody() ?>
     <!-- BEGIN HEADER -->
-    <?php echo $this->render('_main_header', [
+    <?php /*echo $this->render('_main_header', [
         'this'=>$this
-    ]);?>
+    ]);*/?>
     <!-- END HEADER -->
     <!-- BEGIN HEADER & CONTENT DIVIDER -->
     <div class="clearfix"> </div>

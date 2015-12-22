@@ -64,7 +64,7 @@ $this->title = '1-mlm';
             <div class="portlet-title">
                 <div class="caption">
                     <i class="icon-list font-blue-sharp"></i>
-                        <span class="caption-subject font-blue-sharp"> Всего несколько  шагов -
+                        <span class="caption-subject font-blue-sharp"> 3 шага для настройки системы -
                             <span class="step-title"> переход к следующему шагу - после просмотра видео! </span>
                         </span>
                 </div>
@@ -124,14 +124,14 @@ $this->title = '1-mlm';
                                                 <i class="fa fa-check"></i> Настройка профиля </span>
                                     </a>
                                 </li>
-                                <li>
+                                <!--<li>
                                     <a href="#tab4" data-toggle="tab" class="step active">
                                         <span class="number"> 4 </span>
                                             <span class="desc">
                                                 <i class="fa fa-check"></i> Выбор компани </span>
                                     </a>
                                 </li>
-                                <!--<li>
+                                <li>
                                     <a href="#tab4" data-toggle="tab" class="step">
                                         <span class="number"> 4 </span>
                                             <span class="desc">
@@ -148,13 +148,21 @@ $this->title = '1-mlm';
                                     <div class="col-md-offset-3 col-md-9">
                                         <a href="javascript:;" class="btn default button-previous">
                                             <i class="fa fa-angle-left"></i> Назад </a>
-                                        <button id="nxt_bnt" class="btn btn-outline green button-next" disabled=""> Дальше
+                                        <button id="nxt_bnt"
+                                                class="btn btn-outline green button-next" disabled=""> Дальше
                                             <i class="fa fa-angle-right"></i>
                                         </button>
                                         <input type="hidden" id="stepIndex" value="1" />
+
+                                        <button id="nxt_submit"
+                                                class="btn green button-submit" disabled=""> Дальше
+                                            <i class="fa fa-check"></i>
+                                        </button>
+                                        <!--
                                         <a href="index.php?r=site/landing" class="btn green button-submit"> Отправить
                                             <i class="fa fa-check"></i>
                                         </a>
+                                        -->
                                     </div>
                                 </div>
                             </div>
@@ -193,22 +201,10 @@ $this->title = '1-mlm';
                                 <div class="tab-pane" id="tab4">
                                     <div class="form-group">
                                         Или создайте свою собственную уникальную страницу для своих целей по готовому шаблону за пару минут.
-                                    <!--
-                                        <label class="control-label col-md-3">Выбрать компанию
-                                            <span class="required"> * </span>
-                                        </label>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" name="card_name" />
-                                            <span class="help-block"> </span>
-                                        </div>
-                                    -->
-
                                                 <?php
                                                 echo $this->render('_index_edit_companies', [
                                                     'model' => $model
                                                 ]); ?>
-
-
                                     </div>
                                 </div>
                                 <!--<div class="tab-pane" id="tab4">

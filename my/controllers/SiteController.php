@@ -138,7 +138,7 @@ class SiteController extends Controller
                     'comVideo' => Lp::find()->where(['id'=>$consultant['companyid']])->one()['yt2'],
                     'consultant' => $consultant
                 ]);
-            }
+           }
 
         }else{
             $this->layout = "empty";
@@ -287,6 +287,7 @@ class SiteController extends Controller
                             'u.email AS email',
                             'u.vkontakte AS vkontakte',
                             'u.active AS active',
+                            'facebook AS facebook',
                             'u.refdt AS refdt'
                         ])
                             ->from([Users::tableName().' u'])
@@ -1349,7 +1350,7 @@ class SiteController extends Controller
             switch($identity["service"])
             {
                 case "facebook":
-                    $pitureUrl="http://graph.facebook.com/".$identity["id"]."/picture?type=square";
+                    $pitureUrl="http://graph.facebook.com/".$identity["id"]."/picture?type=large";
                     break;
                 case "vkontakte":
                     $usrPic=json_decode
