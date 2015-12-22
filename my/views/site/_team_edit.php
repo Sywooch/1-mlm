@@ -103,7 +103,7 @@ $this->registerCss($css);
                 <td><i class="fa fa-facebook"></i></td>
                 <td>Facebook</td>
                 <td>facebook.com</td>
-                <td><a href="http://facebook.com/<?=$dt["facebook"]?>"><i class="fa fa-paper-plane"></i></a></td>
+                <td><a href="https://www.facebook.com/app_scoped_user_id/<?=$dt["facebook"]?>"><i class="fa fa-paper-plane"></i></a></td>
             </tr>
             <?php endif; ?>
         </table>

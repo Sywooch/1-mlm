@@ -107,19 +107,26 @@ $this->title = '1-mlm';
                                     <a href="#tab1" data-toggle="tab" class="step">
                                         <span class="number"> 1 </span>
                                             <span class="desc">
-                                                <i class="fa fa-check"></i> Введение </span>
+                                                <i class="fa fa-check"></i> О нас </span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#tab2" data-toggle="tab" class="step">
                                         <span class="number"> 2 </span>
                                             <span class="desc">
+                                                <i class="fa fa-check"></i> Введение </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab3" data-toggle="tab" class="step">
+                                        <span class="number"> 3 </span>
+                                            <span class="desc">
                                                 <i class="fa fa-check"></i> Настройка профиля </span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#tab3" data-toggle="tab" class="step active">
-                                        <span class="number"> 3 </span>
+                                    <a href="#tab4" data-toggle="tab" class="step active">
+                                        <span class="number"> 4 </span>
                                             <span class="desc">
                                                 <i class="fa fa-check"></i> Выбор компани </span>
                                     </a>
@@ -157,29 +164,33 @@ $this->title = '1-mlm';
                                     <button class="close" data-dismiss="alert"></button> Ошибка! Пожалуйста, проверьте ниже. </div>
                                 <div class="alert alert-success display-none">
                                     <button class="close" data-dismiss="alert"></button><div id="msg"> ***Поздравляем! Вы на шаг ближе к цели! </div></div>
+
                                 <div class="tab-pane active" id="tab1">
                                     <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
-
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <div align="center">
                                             <div id="player"></div>
                                         </div>
                                     </div>
-
                                 </div>
-                                <div class="tab-pane" id="tab2">
-                                    <center><h4 class="block">переход к следующему шагу - после заполения формы!</h4></center>
-                                        <!--<div class="embed-responsive embed-responsive-16by9">
-                                            <div align="center">-->
-                                                <?php
-                                               echo $this->render('_index_edit_info', [
-                                                    'model' => $model
-                                                ]); ?>
-                                          <!--  </div>
-                                        </div>-->
 
+                                <div class="tab-pane active" id="tab2">
+                                    <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <div align="center">
+                                            <div id="player2"></div>
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <div class="tab-pane" id="tab3">
+                                    <center><h4 class="block">переход к следующему шагу - после заполения формы!</h4></center>
+                                        <?php
+                                       echo $this->render('_index_edit_info', [
+                                            'model' => $model
+                                        ]); ?>
+                                </div>
+                                <div class="tab-pane" id="tab4">
                                     <div class="form-group">
                                         Или создайте свою собственную уникальную страницу для своих целей по готовому шаблону за пару минут.
                                     <!--
@@ -199,8 +210,6 @@ $this->title = '1-mlm';
 
 
                                     </div>
-
-
                                 </div>
                                 <!--<div class="tab-pane" id="tab4">
                                     <h3 class="block">Создание страницы захвата</h3>
@@ -220,11 +229,27 @@ $this->title = '1-mlm';
 <script>
     // create youtube player
     var player;
+    var player2;
     function onYouTubePlayerAPIReady() {
         player = new YT.Player('player',{
             height: '360',
             width: '640',
-            videoId: 'HBseUoVjSZo',
+            videoId: '<?= $comVideo; ?>',
+            playerVars: {
+                'autoplay': 0,
+                'controls': 1,
+                'showinfo': '0',
+                'rel': 0
+            },
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+
+        player2 = new YT.Player('player2',{
+            height: '360',
+            width: '640',
+            videoId: 'HBseUoVjSZo',//about system
             playerVars: {
                 'autoplay': 0,
                 'controls': 1,
@@ -233,10 +258,11 @@ $this->title = '1-mlm';
             },
             events: {
                 //'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
+                'onStateChange': onPlayer2StateChange
             }
         });
     }
+
     /*
      // autoplay video
      function onPlayerReady(event) {
@@ -245,6 +271,12 @@ $this->title = '1-mlm';
      */
     // when video ends
     function onPlayerStateChange(event) {
+        if(event.data === 0) {
+            $("#nxt_bnt").attr("disabled", false);
+            $("#stepIndex").val("2");
+        }
+    }
+    function onPlayer2StateChange(event) {
         if(event.data === 0) {
             $("#nxt_bnt").attr("disabled", false);
             $("#stepIndex").val("2");

@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/views/layouts/_main_modal.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/_main_modal_eauth.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/main.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/layouts/start.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/pay/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/pay/m.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/pay/yr.php" charset="UTF-8" />

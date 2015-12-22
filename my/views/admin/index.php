@@ -112,6 +112,8 @@ $this->title = 'Последние 25 зарегестрированных по�
                         'class'     =>  'tbl-header'
                     ],
                     /*'responsive'    =>  true,*/
+                    'floatHeader'=>true,
+                    'floatHeaderOptions'=>['scrollingTop'=>'50'],
                     'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
                     'columns'   => [
                         /*    [

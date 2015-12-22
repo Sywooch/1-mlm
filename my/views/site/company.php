@@ -46,7 +46,7 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
                     <div class="col-md-8">
                         <div class="embed-responsive embed-responsive-16by9">
                             <div align="center">
-                                <iframe src="https://www.youtube.com/embed/<?=$model['yt2'] ?>"
+                                <iframe src="https://www.youtube.com/embed/<?=$model['yt2']; ?>"
                                         title="YouTube video player"
                                         allowfullscreen="1"
                                         id="player"
