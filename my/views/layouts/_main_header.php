@@ -42,7 +42,7 @@ $brand=$brand["brandicon"];
             (
                 (!empty($brand))?$brand:"/img/logo.png"
             );
-            ?>" alt="logo" class="logo-default" width="auto" height="50">
+            ?>" alt="logo" class="logo-default" width="auto" height="auto" style="max-width:180px; max-height:50px;">
             <div class="menu-toggler sidebar-toggler"></div>
         </div>
         <!-- END LOGO -->
