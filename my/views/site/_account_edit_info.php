@@ -131,7 +131,7 @@ $form = ActiveForm::begin([
             <span class="input-group-btn">
                 <button class="btn blue" onclick="window.location='<?php
                 echo "https://1-mlm.com/{$model->companyid}-{$model->refdt}.html";
-                ?>';" type="button">Go!</button>
+                ?>';target='_blank';" type="button">Go!</button>
             </span>
         </div>
 

@@ -3,8 +3,9 @@
 namespace app\controllers;
 
 use app\models\Levels;
-use delagics\liqpay\LiqPay;
+use app\models\Paydt;
 use app\models\Users;
+use delagics\liqpay\LiqPay;
 
 class PayController extends \yii\web\Controller
 {
@@ -182,6 +183,12 @@ class PayController extends \yii\web\Controller
             $answer=$this->payStatus($dt->order_id);
             //echo "<pre>";
             //print_r($answer);
+
+            $pd=new Paydt();
+            $pd->date=date("Y-m-d");
+            $pd->dt=serialize($answer);
+            $pd->save(false);
+
             if('ok'==$answer->result)
             {
                 list($level, $uid, $moyr, $paydate) = explode(":", $answer->description);
@@ -215,7 +222,7 @@ class PayController extends \yii\web\Controller
                     $days=($moyr=='year')?365:30;
                     $time+=$days*24*60*60;
 
-                    $user->endpaydate=date('Y-m-d',$time);
+                    $user->endpaydate=date("Y-m-d",$time);
                     $user->update(false);
                 }
             }

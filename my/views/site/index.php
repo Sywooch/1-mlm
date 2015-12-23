@@ -43,10 +43,10 @@ $this->title = '1-mlm';
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="row">
     <div class="col-md-12">
+<!--
         <div class="m-heading-1 border-green m-bordered">
             <?php if( !empty($consultant) ): ?>
 			<h3>Добро пожаловать, <?php echo $model["fn"],' ',$model["ln"]; ?> </h3>
-			<p>
 			<table border="0">
                 <tr>
                     <td>Ваш личный консультант:</td>
@@ -60,6 +60,7 @@ $this->title = '1-mlm';
 			</table>
 			<?php endif; ?>
         </div>
+-->
         <div class="portlet light bordered" id="form_wizard_1">
             <div class="portlet-title">
                 <div class="caption">

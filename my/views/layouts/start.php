@@ -60,28 +60,6 @@ $compName=Lp::find()
     ->where([
         'id'=>$consultant["companyid"]
     ])->one()->name;
-/*
-$this->registerJsFile('/my/web/mertonic/global/scripts/app.js');
-$this->registerJsFile('/my/web/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
-*/
-
-/*
-<!-- BEGIN THEME GLOBAL SCRIPTS-->
-<script src="mertonic/global/scripts/app.js" type="text/javascript"></script>
-<!-- END THEME GLOBAL SCRIPTS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS-->
-<script src="mertonic/pages/scripts/dashboard.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<!-- BEGIN THEME LAYOUT SCRIPTS-->
-<script src="mertonic/layouts/layout4/scripts/layout.js" type="text/javascript"></script>
-<script src="mertonic/layouts/layout4/scripts/demo.js" type="text/javascript"></script>
-<script src="mertonic/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
-<!-- END THEME LAYOUT SCRIPTS -->
-*/
-
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -106,45 +84,13 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
         <!-- END THEME GLOBAL STYLES -->
         <link rel="shortcut icon" href="favicon.ico" />
     </head>
-    <!-- END HEAD -->
-    <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
     <?php $this->beginBody() ?>
-    <!-- BEGIN HEADER -->
-    <?php /*echo $this->render('_main_header', [
-        'this'=>$this
-    ]);*/?>
-    <!-- END HEADER -->
-    <!-- BEGIN HEADER & CONTENT DIVIDER -->
-    <div class="clearfix"> </div>
-    <!-- END HEADER & CONTENT DIVIDER -->
-    <!-- BEGIN CONTAINER -->
+
     <div class="page-container">
-        <!-- BEGIN SIDEBAR -->
-        <?php //echo $this->render('_main_slider', compact('models'));?>
-        <!-- END SIDEBAR -->
-        <!-- BEGIN CONTENT -->
+
         <div class="page-content-wrapper">
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
-                <!-- BEGIN PAGE HEAD-->
-                <div class="page-head">
-                    <!-- BEGIN PAGE TITLE -->
-                    <!--<div class="page-title">
-                        <h1>Dashboard
-                            <small>dashboard & statistics</small>
-                        </h1>
-                    </div>-->
-                    <!-- END PAGE TITLE -->
-                    <!-- BEGIN PAGE TOOLBAR -->
-                    <!--<div class="page-toolbar">-->
-                    <!-- BEGIN THEME PANEL -->
-                    <!-- END THEME PANEL -->
-                    <!--</div>-->
-                    <!-- END PAGE TOOLBAR -->
-                </div>
-                <!-- END PAGE HEAD-->
-                <!-- BEGIN PAGE BREADCRUMB -->
-                <!-- END PAGE BREADCRUMB -->
                 <?= AlertWidget::widget(); ?>
                 <?= $content; ?>
             </div>
@@ -165,39 +111,6 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                             <span class="badge badge-danger"></span>
                         </a>
                     </li>
-                    <!--
-                                        <li>
-                                            <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> Команда
-                                                <span class="badge badge-success"></span>
-                                            </a>
-                                        </li>
-                    -->
-                    <!--
-                    <li class="dropdown">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> More
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
-                                    <i class="icon-bell"></i> Alerts </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
-                                    <i class="icon-info"></i> Notifications </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
-                                    <i class="icon-speech"></i> Activities </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
-                                    <i class="icon-settings"></i> Settings </a>
-                            </li>
-                        </ul>
-                    </li>
-                    -->
                 </ul>
 
                 <div class="tab-content">
@@ -378,32 +291,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
     <script src="mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
 
     <script src="mertonic/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL PLUGINS-->
-    <!---
 
-<pre>
-    <?php
-    //print_r($this->getView());
-    ?>
-</pre>
-
-<script src="mertonic/global/scripts/app.js" type="text/javascript"></script>
-<script src="mertonic/pages/scripts/dashboard.js" type="text/javascript"></script>
-<script src="mertonic/layouts/layout4/scripts/layout.js" type="text/javascript"></script>
-<script src="mertonic/layouts/layout4/scripts/demo.js" type="text/javascript"></script>
-<script src="mertonic/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
-
------------------------------------------------------------
-<!---
-<script src="mertonic/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
-<script src="mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
-<script src="mertonic/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
-<script src="mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
-<script src="mertonic/pages/scripts/form-wizard.min.js" type="text/javascript"></script>
-
-<!--------------------------------------------------------------------->
-
-    <?php //echo $this->render('_main_modal_eauth', compact('models'));?>
     <?php $this->endBody() ?>
 
     <script src="s/js/step.js"></script>
