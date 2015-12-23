@@ -185,7 +185,7 @@ class PayController extends \yii\web\Controller
             //print_r($answer);
 
             $pd=new Paydt();
-            $pd->date=date("Y-m-d");
+            $pd->date=date("Y-m-d H:i:s");
             $pd->dt=serialize($answer);
             $pd->save(false);
 
