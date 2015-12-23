@@ -107,14 +107,14 @@ $this->title = 'Настройки профиля';
                                     <?php
                                          for($i=0;$i<sizeof($lastFive);$i++):
                                     ?>
-                                    <a href="http://vk.com/id<?= $lastFive[$i]["vkontakte"]; ?>" target="_blank">
+                                    
                                         <img alt="user picture" class="img-circle"
                                            style="margin-left: 5px;margin-top: -8px;height: 39px;display: inline-block;"
                                              width="39" height="39"
                                            src="<?= $lastFive[$i]["userpic"]; ?>">&nbsp;&nbsp;<span class="username username-hide-on-mobile"><?php
                                             echo $lastFive[$i]["fn"], ' ',$lastFive[$i]["ln"]
                                         ?></span>
-                                     </a>
+                                    
                                         <br /><br />
                                     <?php
                                          endfor; ?>
