@@ -201,7 +201,8 @@ class PayController extends \yii\web\Controller
                     ]);
                     if($refusr->level>1)
                     {
-                        $refusr->money=$refusr->money+(($answer->amount)/2);
+                        $amount=$answer->amount-($answer->amount*0.04);
+                        $refusr->money=$refusr->money+($amount/2);
                         $refusr->save(false);
                     }
                 //------------------------------
