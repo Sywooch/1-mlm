@@ -1200,7 +1200,44 @@ class SiteController extends Controller
     {
         if(!\Yii::$app->user->isGuest)
         {
-            return $this->render('blog');
+            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            $usr = Users::find();
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usr=$usr->where(['facebook' => $identity["id"]])->one();
+                    break;
+                case "vkontakte":
+                    $usr=$usr->where(['vkontakte' => $identity["id"]])->one();
+                    break;
+                case "linkedin_oauth2":
+                    $usr=$usr->where(['linkedin' => $identity["id"]])->one();
+                    break;
+                case "google":
+                    $usr=$usr->where(['googleplus' => $identity["id"]])->one();
+                    break;
+                case "yandex":
+                    $usr=$usr->where(['yandex' => $identity["id"]])->one();
+                    break;
+                case "mailru":
+                    $usr=$usr->where(['mailru' => $identity["id"]])->one();
+                    break;
+                case "twitter":
+                    $usr=$usr->where(['twitter' => $identity["id"]])->one();
+                    break;
+                case "instagram":
+                    $usr=$usr->where(['instagram' => $identity["id"]])->one();
+                    break;
+            }
+            $refUsr = Users::find()
+                ->where([
+                    'refdt' => $usr["ref"]
+                ])->one();
+
+            $site=(!empty($refUsr->site))?$refUsr->site:"http://blog.1-mlm.com/";
+            return $this->render('blog',[
+                'site'=>$site
+            ]);
         }
         return $this->goHome();
     }

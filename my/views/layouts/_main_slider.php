@@ -79,6 +79,7 @@ if( !empty(\Yii::$app->request->get("r")) )
 
         <li class="nav-item start <?php echo ( "account"==$act ) ? 'active open' : null;
         echo ( "help"==$act ) ? 'active open' : null;
+        echo ( "brand"==$act ) ? 'active open' : null;
         ?>">
             <a href="index.php?r=site%2Faccount" class="nav-link">
                 <i class="icon-user"></i>

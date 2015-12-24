@@ -1,4 +1,4 @@
 <div class="user_item">
-    <img width="30" src="mp.php/<?=$user['userpic']; ?>">
+    <img width="30" src="<?=$user['userpic']; ?>">
     <?php echo $user["fn"]." "; ?>
 </div>

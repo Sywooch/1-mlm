@@ -7,4 +7,4 @@ $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' 
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 ?>
-<iframe id="player" src="mp.php/blog.1-mlm.com" style="border: 0; width: 100%; height: 1200px;"></iframe>
+<iframe id="player" src="mp.php/<?= $site; ?>" style="border: 0; width: 100%; height: 1200px;"></iframe>

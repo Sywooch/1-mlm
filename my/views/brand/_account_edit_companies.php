@@ -1,6 +1,9 @@
 <?php
+
+
+use yii\Helpers\ArrayHelper;
+use app\models\Lp;
 use app\models\Users;
-use app\models\UsrCompaniesLink;
 
 $identity = \Yii::$app->getUser()->getIdentity()->profile;
 $query = new \yii\db\Query();
@@ -33,23 +36,32 @@ switch($identity["service"])
         break;
 }
 
-$usrCompLink=UsrCompaniesLink::find()
-    ->where([
-        "uid"=>$usr["id"],
-        "lp_id"=>$usr["companyid"]
-    ])->one();
+
+$params = [
+    'prompt' => '-выберите из списка-'
+];
+
+$lp=Lp::find()
+    //->where(['<','id',501])
+    ->where("id<1001")
+    ->orderBy(['name' => SORT_ASC])
+    ->all();
+
+$youcomp=ArrayHelper::map(Lp::find()
+    ->where(['uid' => $usr["id"]])
+    ->orderBy(['name' => SORT_ASC])
+    ->all(),
+    'id','name');
+
+$companies = ArrayHelper::map($lp,'id','name');
+if( sizeof($youcomp)<1  )
+    {$youcomp=[''=>'вы еще не создали страницу'];}
+$items=[
+    'Вашы'=>$youcomp,
+    'Компании'=>$companies
+];
+
+echo $form->field( $model, 'companyid', ["template" => "<label class='col-md-4 control-label'>Выбор Компании</label>
+                                                        <div class='col-md-8'>\n{input}\n{hint}\n{error}</div>"] )
+    ->dropDownList($items,$params);
 ?>
-
-<label class='col-md-4 control-label'>Рефиральная ссылка</label>
-<div class='col-md-8'>
-    <div class="input-icon">
-        !--<i class="icon-user"></i>--
-        <input
-            class="form-control"
-            name="Users-comp[link]" value="<?= $usrCompLink->link; ?>" type="text">
-        <div class="form-control-focus"></div>
-        <span class="help-block">Ваша рефиральная ссылка на регистрацию в компанию</span>
-        
-    </div>
-</div>
-

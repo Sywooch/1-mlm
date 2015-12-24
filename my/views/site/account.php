@@ -80,12 +80,16 @@ $this->title = 'Настройки профиля';
                                                 <a href="index.php?r=site%2Faccount">
                                                     <i class="icon-settings"></i> Настройки аккаунта </a>
                                             </li>
-                                            
+                                            <!--
                                             <li>
                                                 <a href="index.php?r=site%2Fhelp">
                                                     <i class="icon-info"></i> Помощь </a>
                                             </li>
-                                            
+                                            -->
+                                            <li>
+                                                <a href="index.php?r=brand%2Fbrand">
+                                                    <i class="icon-info"></i> Бренд </a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <!-- END MENU -->

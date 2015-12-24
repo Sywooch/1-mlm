@@ -98,6 +98,7 @@ $form = ActiveForm::begin([
                                                     </div>"]
         )->textInput(["class"=>"form-control"]); ?>
     </div>
+<!--
     <div class="form-group form-md-line-input">
         <?=$form->field(
             $model, 'purse', ["template" => "<label class='col-md-3 control-label'>Номер Кошелька</label>
@@ -119,7 +120,7 @@ $form = ActiveForm::begin([
         ]);?>
     </div>
 
-<!------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------
     <div class="form-group form-md-line-input">
         <label class='col-md-4 control-label'>Ссылка на лендинг</label>
         <div class='col-md-8'>
@@ -138,13 +139,14 @@ $form = ActiveForm::begin([
         </div>
     </div>
 
-<!---------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------
 
     <div class="form-group form-md-line-input">
         <?php echo $this->render('_account_company_link', [
             'form' => $form
         ]);?>
     </div>
+    -->
 <br>
     <div class="margiv-top-10">
         <?= \yii\helpers\Html::hiddenInput('Users[formtype]', 'personinfo', ["id"=>"users-formtype"]); ?>
