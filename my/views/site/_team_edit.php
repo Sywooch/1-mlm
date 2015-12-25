@@ -106,6 +106,14 @@ $this->registerCss($css);
                 <td><a href="https://www.facebook.com/app_scoped_user_id/<?=$dt["facebook"]?>"><i class="fa fa-paper-plane"></i></a></td>
             </tr>
             <?php endif; ?>
+
+            <tr>
+                <td><i class="fa fa-paper-plane"></i></td>
+                <td>Лендинг</td>
+                <td></td>
+                <td><a href="<?= "https://1-mlm.com/{$dt["companyid"]}-{$dt["refdt"]}.html"; ?>" target="_blank"><i class="fa fa-paper-plane"></i></a></td>
+            </tr>
+
         </table>
     </div>
 </div>

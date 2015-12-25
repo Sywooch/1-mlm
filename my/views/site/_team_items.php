@@ -35,6 +35,17 @@ use yii\grid\GridView;
                 'label'     =>  'Уровень'
             ],
             [
+                "header"=>"Лендинг",
+                "format"=>"raw",
+                'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                'value'  =>  function($dt)
+                {
+                    return  "<a href='https://1-mlm.com/{$dt["companyid"]}-{$dt["refdt"]}.html'
+                                        target='_blank'
+                                        ><i class='fa fa-paper-plane'></i></a>";
+                }
+            ],
+            [
                 'header' => 'Действия',
                 'format' => 'raw',
                 'options' => ['style' => 'width: 100px; max-width: 100px;'],

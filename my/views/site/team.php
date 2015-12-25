@@ -229,7 +229,9 @@ $this->title = 'Команда. Ваша 1-я линия';
                                             'u.skype AS skype',
                                             'u.email AS email',
                                             'u.vkontakte AS vkontakte',
-                                            'u.active AS active'
+                                            'u.active AS active',
+                                            'companyid',
+                                            'refdt'
                                         ])
                                             ->from([Users::tableName().' u'])
                                             ->innerJoin(\app\models\Levels::tableName().' l','l.id = u.level')
@@ -298,6 +300,17 @@ $this->title = 'Команда. Ваша 1-я линия';
                                  }
                              ],*/
                             /*'template'    =>  '<div class="btn-group">{hidden}&nbsp;&nbsp;{edit}</div>'*/
+                        ],
+                        [
+                            "header"=>"Лендинг",
+                            "format"=>"raw",
+                            'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                            'value'  =>  function($dt)
+                            {
+                                return  "<a href='https://1-mlm.com/{$dt["companyid"]}-{$dt["refdt"]}.html'
+                                        target='_blank'
+                                        ><i class='fa fa-paper-plane'></i></a>";
+                            }
                         ],
                         [
                             'header' => 'Стена',

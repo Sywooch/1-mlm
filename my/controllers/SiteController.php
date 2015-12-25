@@ -128,7 +128,8 @@ class SiteController extends Controller
 
             if ( 1==$model->one()["status"] )
             {
-                return $this->actionCompany();
+                return $this->render("mainpage");
+                //actionCompany();
             }
             else
             {
@@ -288,7 +289,9 @@ class SiteController extends Controller
                             'u.vkontakte AS vkontakte',
                             'u.active AS active',
                             'facebook AS facebook',
-                            'u.refdt AS refdt'
+                            'u.refdt AS refdt',
+                            'companyid',
+                            'refdt'
                         ])
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
