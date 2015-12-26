@@ -65,15 +65,21 @@ $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['dep
                         </div>
                         <hr style="50%">
                         <div class="form-group">
-                            <h4>Вы сделали правильный выбор!
+                            <h4>Вы сделали правильный выбор!</h4>
                                 <?php
                                 if( !empty($company_link) ):
                                 ?>
-                                [<a href="<?=$company_link;?>">Регистрация в Компанию</a>]
+                                
+                                <!-- <a href="<?=$company_link;?>">Регистрация в Компанию</a>-->
+
+                                    <button class="btn btn-circle green-seagreen btn-outline" onclick="window.location='<?php
+                                    echo "<?=$company_link;?>";
+                                    ?>';target='_blank';" type="button"> Регистрация в Компанию </button>
+
                                 <?php
                                 endif;
                                 ?>
-                            </h4>
+                            
                         </div>
                     </div>
                 </div>
