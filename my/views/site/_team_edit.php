@@ -110,7 +110,7 @@ $this->registerCss($css);
             <tr>
                 <td><i class="fa fa-paper-plane"></i></td>
                 <td>Лендинг</td>
-                <td></td>
+                <td><?= $dt["lpname"]; ?></td>
                 <td><a href="<?= "https://1-mlm.com/{$dt["companyid"]}-{$dt["refdt"]}.html"; ?>" target="_blank"><i class="fa fa-paper-plane"></i></a></td>
             </tr>
 

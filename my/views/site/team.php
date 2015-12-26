@@ -231,10 +231,12 @@ $this->title = 'Команда. Ваша 1-я линия';
                                             'u.vkontakte AS vkontakte',
                                             'u.active AS active',
                                             'companyid',
-                                            'refdt'
+                                            'refdt',
+                                            'lp.name AS lpname'
                                         ])
                                             ->from([Users::tableName().' u'])
                                             ->innerJoin(\app\models\Levels::tableName().' l','l.id = u.level')
+                                            ->innerJoin(\app\models\Lp::tableName().' lp','lp.id = u.companyid')
                                             ->where(['u.id'=>$arr])
                                 ]);
                                 return Yii::$app->controller->renderPartial('_team_items', [

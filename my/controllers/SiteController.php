@@ -291,10 +291,12 @@ class SiteController extends Controller
                             'facebook AS facebook',
                             'u.refdt AS refdt',
                             'companyid',
-                            'refdt'
+                            'refdt',
+                            'lp.name AS lpname'
                         ])
                             ->from([Users::tableName().' u'])
                             ->innerJoin(Levels::tableName().' l','l.id = u.level')
+                            ->innerJoin(Lp::tableName().' lp','lp.id = u.companyid')
                             ->where(['u.id'=>$arr])
                             ->orderBy(['active' => SORT_DESC]),
                     'sort' => [
