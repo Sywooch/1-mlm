@@ -37,12 +37,12 @@ $this->registerCss($css);
         <?php if ( !is_numeric($dt['country']) ) :?>
         Страна: <?=$dt['country']?> <br>
         <?php endif;?>
-        <!--Уровень: <?php //$dt["title"]?><br>-->
+        <!--Уровень: <?php //$dt["title"]?><br>--
         Телефон: <?=$dt["mobile"]?><br>
         Скайп: <?=$dt["skype"]?><br>
         E-mail: <?=$dt["email"]?><br>
         Вконтакте: <a href="<?=$dt["vkontakte"]?>">Ссылка</a><br>
-    <!--</div>-->
+    </div>-->
     <div class="col-md-8" style="text-align: center;">
         <h2 style="margin-top: 52px;"><?php echo $dt["fn"].' '.$dt["ln"] ?></h2>
     </div>
