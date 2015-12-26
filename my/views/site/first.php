@@ -17,9 +17,17 @@ $this->registerCss($style_user);
     <link href="//fonts.googleapis.com/css?family=Roboto:100,300&subset=cyrillic' rel='stylesheet' type='text/css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>1-й МЛМ Ресурс</title>
     <meta name="description" content="1-й МЛМ Ресурс">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title"       content="1-й МЛМ Ресурс"/>
+    <meta property="og:description" content="1-й МЛМ Ресурс" />
+    <meta property="og:image"       content="https://1-mlm.com/img/logo.png" />
+
+    <meta name="keywords"           content="1-й МЛМ Ресурс" />
+    <meta name="robots"             content="noindex,nofollow">
+
+    <title>1-й МЛМ Ресурс</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
