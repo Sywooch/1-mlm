@@ -20,6 +20,38 @@ $css = <<<'STYLE'
     top: 45px !important;
     right: 50px !important;
 }
+
+/* мигающий текст  */
+
+#blink1 {
+  -webkit-animation: blink1 3s linear infinite;
+  animation: blink1 3s linear infinite;
+}
+@-webkit-keyframes blink1 {
+  0% { color: rgba(34, 34, 34, 1); }
+  50% { color: rgba(34, 34, 34, 0); }
+  100% { color: rgba(34, 34, 34, 1); }
+}
+@keyframes blink1 {
+  0% { color: rgba(34, 34, 34, 1); }
+  50% { color: rgba(34, 34, 34, 0); }
+  100% { color: rgba(34, 34, 34, 1); }
+}
+
+#blink2 {
+  -webkit-animation: blink2 3s linear infinite;
+  animation: blink2 3s linear infinite;
+}
+@-webkit-keyframes blink2 {
+  0% { color: rgba(255, 0, 37, 1); }
+  50% { color: rgba(255, 0, 37, 0.1); }
+  100% { color: rgba(255, 0, 37, 1); }
+}
+@keyframes blink2 {
+  0% { color: rgba(255, 0, 37, 1); }
+  50% { color: rgba(255, 0, 37, 0.1); }
+  100% { color: rgba(255, 0, 37, 1); }
+}
 STYLE;
 $this->registerCss($css);
 
@@ -37,6 +69,9 @@ $this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/jquery.vali
 $this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/additional-methods.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/mertonic/pages/scripts/form-wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+
+$this->registerJsFile("/mertonic/global/plugins/jquery.pulsate.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+
 $this->registerJsFile('//www.youtube.com/player_api');
 $this->title = '1-mlm';
 ?>
@@ -46,23 +81,23 @@ $this->title = '1-mlm';
 
 			<table border="0">
                 <tr>
-                    <td>Добро пожаловать, <?php echo $model["fn"],' ',$model["ln"]; ?></td>
+                    <td><span style="color: #47acd0; font-size: 18px;">Добро пожаловать,</span><span style="color: #4aa0d0; font-size: 20px; font-style: italic;"> <?php echo $model["fn"],' ',$model["ln"]; ?></span></td>
                 </tr>
                 <tr>
                     <td class="quick-sidebar-toggler" style="cursor: pointer;">
-                        Ваш личный консультант:
-                        <b><?= $consultant->fn,' ',$consultant->ln; ?></b>
+                       <span style="color: #5b5c5b; font-size: 16px;"> Ваш личный консультант:</span>
+                         <span style="font-size: 16px; font-style: italic;" id="blink1"><?= $consultant->fn,' ',$consultant->ln; ?></span>
+                        <span style="color: #959695; font-size: 16px;"> &#9668; кликните на имя чтобы получить консультацию</span>
                     </td>
                 </tr>
+
 			</table>
 
         <div class="portlet light bordered" id="form_wizard_1">
             <div class="portlet-title">
                 <div class="caption">
                     <i class="icon-list font-blue-sharp"></i>
-                        <span class="caption-subject font-blue-sharp"> 3 шага для настройки системы -
-                            <span class="step-title"> переход к следующему шагу - после просмотра видео! </span>
-                        </span>
+                        <span class="caption-subject font-blue-sharp"> 3 Шага для настройки системы</span>
                 </div>
                 <div class="actions">
 <!--
@@ -145,7 +180,7 @@ $this->title = '1-mlm';
                                         <a href="javascript:;" class="btn default button-previous">
                                             <i class="fa fa-angle-left"></i> Назад </a>
                                         <button id="nxt_bnt"
-                                                class="btn btn-outline green button-next" disabled=""> Дальше
+                                                class="btn default btn-outline green button-next" disabled=""> Дальше
                                             <i class="fa fa-angle-right"></i>
                                         </button>
                                         <input type="hidden" id="stepIndex" value="1" />
@@ -169,8 +204,8 @@ $this->title = '1-mlm';
                                 <div class="alert alert-success display-none">
                                     <button class="close" data-dismiss="alert"></button><div id="msg"> ***Поздравляем! Вы на шаг ближе к цели! </div></div>
 
-                                <div class="tab-pane active" id="tab1">
-                                    <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
+                                <div class="tab-pane active" id="tab1"><br>
+                                    <center><h4 class="block" id="blink2">переход к следующему шагу - после просмотра видео!</h4></center>
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <div align="center">
                                             <div id="player"></div>
@@ -178,8 +213,8 @@ $this->title = '1-mlm';
                                     </div>
                                 </div>
 
-                                <div class="tab-pane active" id="tab2">
-                                    <center><h4 class="block">переход к следующему шагу - после просмотра видео!</h4></center>
+                                <div class="tab-pane active" id="tab2"><br>
+                                    <center><h4 class="block" id="blink2">переход к следующему шагу - после просмотра видео!</h4></center>
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <div align="center">
                                             <div id="player2"></div>
@@ -187,14 +222,14 @@ $this->title = '1-mlm';
                                     </div>
                                 </div>
 
-                                <div class="tab-pane" id="tab3">
-                                    <center><h4 class="block">переход к следующему шагу - после заполения формы!</h4></center>
+                                <div class="tab-pane" id="tab3"><br>
+                                   <h4 class="block" id="blink2">последний шаг - заполнить форму, e-mail и skype (обьязательные поля)</h4>
                                         <?php
                                        echo $this->render('_index_edit_info', [
                                             'model' => $model
                                         ]); ?>
                                 </div>
-                                <div class="tab-pane" id="tab4">
+                                <div class="tab-pane" id="tab4"><br>
                                     <div class="form-group">
                                         Или создайте свою собственную уникальную страницу для своих целей по готовому шаблону за пару минут.
                                                 <?php
