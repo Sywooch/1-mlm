@@ -235,7 +235,7 @@
 </div>
 <h3 style="text-align: center; font-size: 14px; line-height: 28px;">самое интересное Вас ждет внутри. Регистрация в 1 клик!</h3>
 
-<div id="footer">
+<!--<div id="footer">
     <div class="container">
         <p class="text-muted"  style="text-align: center; font-size: 12px;">
             © 2015 <a href="#modal" data-toggle="modal" data-target="#modal-1">
@@ -243,7 +243,7 @@
                 Войти в Личный Кабинет</a>
         </p>
     </div>
-</div>
+</div>-->
 
 <!-- BEGIN LOGIN BOX *****************************************************************-->
 <div class="modal fade" id="modal-1">

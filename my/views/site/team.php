@@ -143,8 +143,8 @@ $this->title = 'Команда. Ваша 1-я линия';
                     <i class="icon-users font-blue-sharp"></i>
                     <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
                 </div>
+                <!-- Кнопка видео подсказки и во всю ширину --->
                 <div class="actions">
-                    <!---------------------------------------------------------->
                     <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
                         <i class="icon-support"></i></a>
                     <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
@@ -164,7 +164,8 @@ $this->title = 'Команда. Ваша 1-я линия';
                             </div>
                         </div>
                     </div>
-                    <!------------------------------------------------------------>
+
+                <!-- Кнопка видео подсказки и во всю ширину --->
                 </div>
                 <div class="tools"> </div>
             </div>
@@ -219,7 +220,7 @@ $this->title = 'Команда. Ваша 1-я линия';
                                     'query' =>
                                         (new \yii\db\Query())->select
                                         ([
-                                            "IF (`active`<DATE_SUB(NOW(), INTERVAL 10 DAY),'yellow', 'green') AS `status`",
+                                            "IF (`active`<DATE_SUB(NOW(), INTERVAL 3 DAY),'yellow', 'green') AS `status`",
                                             'u.fn AS fn',
                                             'u.ln AS ln',
                                             'l.title AS title',
@@ -282,9 +283,9 @@ $this->title = 'Команда. Ваша 1-я линия';
                             'label'     =>  'Уровень'
                         ],
                         [
-                            'header' => 'Действия',
+                            'header' => 'Больше',
                             'format' => 'raw',
-                            'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                            'options' => ['style' => 'width: 70px; max-width: 70px;'],
                             'value'  =>  function($dataProvider)
                             {
                                 return $this->render('_team_edit', [
@@ -304,9 +305,9 @@ $this->title = 'Команда. Ваша 1-я линия';
                             /*'template'    =>  '<div class="btn-group">{hidden}&nbsp;&nbsp;{edit}</div>'*/
                         ],
                         [
-                            "header"=>"Лендинг",
+                            "header"=>"LP",
                             "format"=>"raw",
-                            'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                            'options' => ['style' => 'width: 70px; max-width: 70px;'],
                             'value'  =>  function($dt)
                             {
                                 return  "<a href='https://1-mlm.com/{$dt["companyid"]}-{$dt["refdt"]}.html'
@@ -317,7 +318,7 @@ $this->title = 'Команда. Ваша 1-я линия';
                         [
                             'header' => 'Стена',
                             'format' => 'raw',
-                            'options' => ['style' => 'width: 100px; max-width: 100px;'],
+                            'options' => ['style' => 'width: 70px; max-width: 70px;'],
                             'value'  =>  function($dt)
                             {
                                 return "<a
