@@ -161,49 +161,16 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
 
                 <ul class="nav nav-tabs">
                     <li class="active">
-                        <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Консультант
+                        <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Ваш консультант
                             <span class="badge badge-danger"></span>
                         </a>
                     </li>
-<!--
-                    <li>
-                        <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> Команда
-                            <span class="badge badge-success"></span>
-                        </a>
-                    </li>
--->
-                    <!--
-                    <li class="dropdown">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> More
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
-                                    <i class="icon-bell"></i> Alerts </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
-                                    <i class="icon-info"></i> Notifications </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
-                                    <i class="icon-speech"></i> Activities </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
-                                    <i class="icon-settings"></i> Settings </a>
-                            </li>
-                        </ul>
-                    </li>
-                    -->
                 </ul>
 
                 <div class="tab-content">
                     <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
                         <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
-                            <h3 class="list-heading">Ваш консультант</h3>
+                            <!--<h3 class="list-heading">Ваш консультант</h3>-->
                             <ul class="media-list list-items">
                                 <li class="media">
                                     <div class="media-status">

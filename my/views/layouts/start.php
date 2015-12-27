@@ -107,7 +107,7 @@ $compName=Lp::find()
 
                 <ul class="nav nav-tabs">
                     <li class="active">
-                        <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Консультант
+                        <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Ваш консультант
                             <span class="badge badge-danger"></span>
                         </a>
                     </li>
@@ -116,7 +116,7 @@ $compName=Lp::find()
                 <div class="tab-content">
                     <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
                         <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
-                            <h3 class="list-heading">Ваш консультант</h3>
+                            <!--<h3 class="list-heading">Ваш консультант</h3>-->
                             <ul class="media-list list-items">
                                 <li class="media">
                                     <div class="media-status">

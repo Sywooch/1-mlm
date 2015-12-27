@@ -24,11 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <i class="icon-link font-blue-sharp"></i>
             <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
         </div>
-        <div class="tools">
-            <!-- Кнопка видео подсказки и во всю ширину --->
-            <a class="btn-circle btn-icon-only" data-toggle="modal" data-target="#w1help"  href="#w1help">
+        <!-- Кнопка видео подсказки и во всю ширину --->
+        <div class="actions">
+            <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
                 <i class="icon-support"></i></a>
-            <a class="btn-icon-only fullscreen" href="javascript:;"> </a>
+            <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
             <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                 <div class="modal-dialog ">
                     <div class="modal-content">
@@ -45,8 +45,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
             </div>
-            <!-- Кнопка видео подсказки и во всю ширину --->
         </div>
+        <!-- Кнопка видео подсказки и во всю ширину --->
     </div>
     <div class="portlet-body">
         <div class="table-responsive">

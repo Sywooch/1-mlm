@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Контакт - 1 mlm ресурс';
+$this->title = 'Помощь';
 //$this->params['breadcrumbs'][] = $this->title;
 
 $this->registerJsFile('/mertonic/global/scripts/app_acc.js');
@@ -109,21 +109,18 @@ $this->registerCss($css);
             <div class="portlet-title">
                 <div class="caption">
                     <i class="icon-call-out font-blue-sharp"></i>
-                    <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
+                    <span class="caption-subject font-blue-sharp"><?= $this->title; ?>.  Skype: support.mlm</span>
                 </div>
-                <div align="right">
-                    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal"
-                       data-target="#w1help" href="#w1help">
+                <!-- Кнопка видео подсказки и во всю ширину --->
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
                         <i class="icon-support"></i></a>
-                    <a title="" data-original-title=""
-                       class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
-
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
                     <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                         <div class="modal-dialog ">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">×</button>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                     <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
                                 </div>
                                 <div class="modal-body">
@@ -136,6 +133,7 @@ $this->registerCss($css);
                         </div>
                     </div>
                 </div>
+                <!-- Кнопка видео подсказки и во всю ширину --->
             </div>
             <div class="portlet-body">
 <section id="section2" data-scen-id="0" class="builder-section no-padding bg-img ng-touched ng-dirty-parse" ng-mouseup="deTextCustomize()">

@@ -18,13 +18,13 @@ $form = ActiveForm::begin();?>
     <div class="portlet-title">
         <div class="caption">
             <i class="icon-settings"></i>
-            <span class="caption-subject font-purple-soft bold uppercase" style="font-size: 14px;">Создание мастер класса</span>
+            <span class="caption-subject font-blue-sharp">Создание мастер класса</span>
         </div>
-        <div class="tools">
-            <!-- Кнопка видео подсказки и во всю ширину --->
-            <a class="btn-circle btn-icon-only" data-toggle="modal" data-target="#w1help"  href="#w1help">
+        <!-- Кнопка видео подсказки и во всю ширину --->
+        <div class="actions">
+            <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
                 <i class="icon-support"></i></a>
-            <a class="btn-icon-only fullscreen" href="javascript:;"> </a>
+            <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
             <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
                 <div class="modal-dialog ">
                     <div class="modal-content">
@@ -41,8 +41,8 @@ $form = ActiveForm::begin();?>
                     </div>
                 </div>
             </div>
-            <!-- Кнопка видео подсказки и во всю ширину --->
         </div>
+        <!-- Кнопка видео подсказки и во всю ширину --->
     </div>
     <div class="portlet-body">
     <div class="row">

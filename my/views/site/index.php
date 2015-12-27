@@ -70,8 +70,6 @@ $this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/additional-
 $this->registerJsFile("/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 $this->registerJsFile("/mertonic/pages/scripts/form-wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
-$this->registerJsFile("/mertonic/global/plugins/jquery.pulsate.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-
 $this->registerJsFile('//www.youtube.com/player_api');
 $this->title = '1-mlm';
 ?>
@@ -99,8 +97,8 @@ $this->title = '1-mlm';
                     <i class="icon-list font-blue-sharp"></i>
                         <span class="caption-subject font-blue-sharp"> 3 Шага для настройки системы</span>
                 </div>
+                <!-- Кнопка видео подсказки и во всю ширину --->
                 <div class="actions">
-                    <!---------------------------------------------------------->
                     <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
                         <i class="icon-support"></i></a>
                     <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
@@ -120,8 +118,8 @@ $this->title = '1-mlm';
                             </div>
                         </div>
                     </div>
-                    <!------------------------------------------------------------>
                 </div>
+                <!-- Кнопка видео подсказки и во всю ширину --->
             </div>
             <div class="portlet-body form">
                 <form action="#" id="submit_form" method="POST">

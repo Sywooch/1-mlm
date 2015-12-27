@@ -255,7 +255,7 @@ if( !empty(\Yii::$app->request->get("r")) )
             <li class="nav-item start">
                 <a href="index.php?r=site%2Fcontact" class="nav-link">
                     <i class="icon-call-out"></i>
-                    <span class="title">Контакт</span>
+                    <span class="title">Помощь</span>
                 </a>
             </li>
             <li class="heading">
