@@ -4,8 +4,16 @@ use yii\widgets\ActiveForm;
 $form = ActiveForm::begin([
     'options' => ['class'=>'form-horizontal']
 ]);?>
-<h3>Где взять ID? </h3> 
-<h5>Перейдите по <a href="http://id.1-mlm.com"  target="_blank" >этой ссылке</a> и узнайте ID  в 1 клик</h5>
+
+   
+   <div class="alert alert-warning alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                       <h3>Где взять ID? </h3> 
+<h5>Перейдите по <a href="http://id.1-mlm.com"  target="_blank" >этой ссылке</a> и узнайте свой ID в соц. сетях в 1 клик</h5>
+ </div>
+   
+   
+   
     <div class="form-group form-md-line-input">
         <?=$form->field(
             $model, 'facebook', ["template" => "<label class='col-md-2 control-label'>facebook</label>
