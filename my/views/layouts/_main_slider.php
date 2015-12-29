@@ -65,7 +65,7 @@ if( !empty(\Yii::$app->request->get("r")) )
         <li class="nav-item start <?= ( (""==$act) || ("index"==$act) ) ? 'active open' : null; ?>">
             <a href="index.php?r=site%2Findex" class="nav-link ">
                 <i class="icon-home"></i>
-                <span class="title">Стартовая страница</span>
+                <span class="title">Главная</span>
                 <!--<span class="badge badge-success">home</span>-->
             </a>
         </li>
