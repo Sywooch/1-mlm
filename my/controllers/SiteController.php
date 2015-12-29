@@ -128,7 +128,26 @@ class SiteController extends Controller
 
             if ( 1==$model->one()["status"] )
             {
-                return $this->render("mainpage");
+                return $this->render("mainpage",[
+
+                    "money"=>$model->one()["money"],
+                    "cntMemCom"=>
+                        \app\models\Users::find()->select('id')
+                            ->where(['ref' => $model->one()["refdt"]])
+                            ->count(),
+                    "cntMemAct"=>
+                        (new \yii\db\Query())->select
+                        ([
+                            "IF (`u`.`active`<DATE_SUB(NOW(), INTERVAL 3 DAY),'yellow', 'green') AS `status`",
+                        ])
+                            ->from([Users::tableName().' u'])
+                            ->where(['u.ref' => $model->one()["refdt"]])
+                            ->orderBy(['u.active' => SORT_DESC])
+                            ->having(["status"=>"green"])
+                            ->count(),
+                    "allUsers"=>Users::find()->count()
+
+                ]);
                 //actionCompany();
             }
             else

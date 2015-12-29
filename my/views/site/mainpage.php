@@ -67,7 +67,7 @@ $this->title = 'Главная';
                                 <div class="display">
                                     <div class="number">
                                         <h3 class="font-green-sharp">
-                                            <span data-counter="counterup" data-value="7800">0</span>
+                                            <span data-counter="counterup" data-value="7800"><?= $money; ?></span>
                                             <small class="font-green-sharp">$</small>
                                         </h3>
                                         <small>Партнеский Бонус</small>
@@ -84,9 +84,9 @@ $this->title = 'Главная';
                                 <div class="display">
                                     <div class="number">
                                         <h3 class="font-red-haze">
-                                            <span data-counter="counterup" data-value="1349">0</span>
+                                            <span data-counter="counterup" data-value="1349"><?= $cntMemCom; ?></span>
                                         </h3>
-                                        <small>Новые Кандидаты</small>
+                                        <small>Ваша команда</small>
                                     </div>
                                     <div class="icon">
                                         <i class="icon-like"></i>
@@ -100,9 +100,9 @@ $this->title = 'Главная';
                                 <div class="display">
                                     <div class="number">
                                         <h3 class="font-blue-sharp">
-                                            <span data-counter="counterup" data-value="567">0</span>
+                                            <span data-counter="counterup" data-value="567"><?= $cntMemAct; ?></span>
                                         </h3>
-                                        <small>Активние</small>
+                                        <small>Вашы активние</small>
                                     </div>
                                     <div class="icon">
                                         <i class="icon-basket"></i>
@@ -116,7 +116,7 @@ $this->title = 'Главная';
                                 <div class="display">
                                     <div class="number">
                                         <h3 class="font-purple-soft">
-                                            <span data-counter="counterup" data-value="276">22222</span>
+                                            <span data-counter="counterup" data-value="276"><?= $allUsers; ?></span>
                                         </h3>
                                         <small>Всего в системе</small>
                                     </div>
