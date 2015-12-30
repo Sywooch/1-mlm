@@ -8,35 +8,26 @@
     <meta name="keywords" content="<?=$data["keywords"]?>">
     <meta name="robots" content="noindex, follow">
 
-    <!--<meta property="fb:app_id" content="356692267740215">-->
+    <!--<meta property="fb:app_id" content="356692">-->
     <meta property="og:title" content="<?=$data["name"]?>">
     <meta property="og:description" content="<?=$data["desc"]?>">
-    <!--<meta property="og:url" content="http://warthunder.com/">-->
+    <meta property="og:url" content="https://1-mlm.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="<?=$user["userpic"]?>">
-
-    <!--<link href="//1-mlm.com/lp/01/css/style.css" rel="stylesheet" type="text/css">
-    <link href="//1-mlm.com/lp/01/css/photo.css" rel="stylesheet" type="text/css">-->
     <link href="lp/01/css/style.css" rel="stylesheet" type="text/css">
     <link href="lp/01/css/photo.css" rel="stylesheet" type="text/css">
-
-
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!--<link rel="stylesheet" href="http://static.warthunder.com/css/modern/jquery_ui/jquery-ui.min.css">-->
-
     <title><?=$data["name"]?></title>
-    <!--<base href="http://warthunder.com/" local="false" host="">-->
 
-    <link href="https://1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
-
+<link href="//1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="//1-mlm.com/soc_net/social-likes_classic.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//1-mlm.com/soc_net/social-likes.min.js"></script>
 
 
-    <script async="" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflpCdzwa/www-widgetapi.js" id="www-widgetapi-script" type="text/javascript"></script><script src="https://www.google-analytics.com/analytics.js" async="" type="text/javascript"></script><script src="https://www.googleadservices.com/pagead/conversion_async.js" async="" type="text/javascript"></script><script src="https://www.googletagmanager.com/gtm.js?id=GTM-HWDXK" async=""></script><script src="https://mc.yandex.ru/metrika/watch.js" async="" type="text/javascript"></script><script src="https://www.youtube.com/player_api"></script><script>window.startTime = new Date().getTime();</script>
+    <script async="" src="//s.ytimg.com/yts/jsbin/www-widgetapi-vflpCdzwa/www-widgetapi.js" id="www-widgetapi-script" type="text/javascript"></script><script src="https://www.google-analytics.com/analytics.js" async="" type="text/javascript"></script><script src="https://www.googleadservices.com/pagead/conversion_async.js" async="" type="text/javascript"></script><script src="https://www.googletagmanager.com/gtm.js?id=GTM-HWDXK" async=""></script><script src="https://mc.yandex.ru/metrika/watch.js" async="" type="text/javascript"></script><script src="https://www.youtube.com/player_api"></script><script>window.startTime = new Date().getTime();</script>
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
 
@@ -134,8 +125,6 @@
     </style>
 </head>
 
-
-
 <body id="landing16" class="vid spring land-en tnk new-video-lp" style="background: #141414;">
 
 <!-- BEGIN LOGIN BOX *****************************************************************-->
@@ -224,8 +213,6 @@
         </tr>
         </tbody></table>
 </div>
-
-
 
 
 <div style="height: 400px; width: 1349px;" id="video_bg">
@@ -362,93 +349,6 @@
 
     <div class="space"></div>
 
-    <!-- <a href="/pt/" class="logo wo" title="War Thunder" style="background-image:url('http://static.warthunder.com/i/logo3.png');"></a>-->
-
-    <style>
-        #language-selector:hover {height:324.5px;}
-    </style>
-
-
-    <!--<div id="language-selector" style="">
-        <span class="flag-2 pt"></span>-->
-    <!--<span class="menu-2">
-         português 
-
-        <span class="arrow-down o05"></span>
-    </span>-->
-        <!--<ul>
-
-            <a href="http://warthunder.ru/ru/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=ru" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 ru"></span>
-                    <span class="menu-2"> русский </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/en/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=en" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 en"></span>
-                    <span class="menu-2"> english </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/de/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=de" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 de"></span>
-                    <span class="menu-2"> deutsch </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/fr/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=fr" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 fr"></span>
-                    <span class="menu-2"> français </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/es/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=es" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 es"></span>
-                    <span class="menu-2"> español </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/tr/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=tr" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 tr"></span>
-                    <span class="menu-2"> türkçe </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/nl/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=nl" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 nl"></span>
-                    <span class="menu-2"> nederlands </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/pl/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=pl" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 pl"></span>
-                    <span class="menu-2"> polski </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/cz/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=cz" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 cz"></span>
-                    <span class="menu-2"> čeština </span>
-                </li>
-            </a>
-
-            <a href="http://warthunder.com/jp/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=jp" class="language-selector-link">
-                <li>
-                    <span style="" class="flag-2 jp"></span>
-                    <span class="menu-2"> 日本の </span>
-                </li>
-            </a>
-        </ul>-->
-    <!--</div>-->
     <div class="space"></div>
 </div>
 
@@ -485,38 +385,9 @@
                     <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
                     <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
                 </div>
-                <!--<div class="pluso-110010011001-14"><span class="pluso-wrap" style="background:none;"><div style="background: rgb(65, 101, 139) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="ВКонтакте" class="pluso-vkontakte"></a><b title="0">0</b></div><div style="background: rgb(244, 150, 15) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Одноклассники" class="pluso-odnoklassniki"></a><b title="0">0</b></div><div style="background: rgb(57, 87, 154) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Facebook" class="pluso-facebook"></a><b title="0">0</b></div><div style="background: rgb(0, 171, 240) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Twitter" class="pluso-twitter"></a><b title="0">0</b></div><div style="background: rgb(190, 51, 8) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Google+" class="pluso-google"></a><b title="0">0</b></div><div style="background: rgb(47, 105, 161) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Мой Мир@Mail.Ru" class="pluso-moimir"></a><b title="0">0</b></div><div style="background: rgb(95, 50, 176) none repeat scroll 0% 0%;"><a href="https://1-mlm.com/index.php?r=site%2Fland&amp;landid=10" title="Отправить на email" class="pluso-email"></a><b title="0">0</b></div><a href="https://pluso.ru/" class="pluso-more"></a></span><span class="pluso-counter"><b title="0">0</b></span></div>-->
+               
             </div>
-            <!--<table>
-                <tbody><tr>
-                    <td class="t c" height="74">
 
-                        <div style="display:inline-block;height:66px;width:138px; margin:0 18px 0 0;"><a href="http://gaijinent.com/" target="_blank" class="logo-gaijin bw"></a></div>
-
-                        <div class="pc"><div></div></div>
-                        <div class="mac"><div></div></div>
-                        <div class="ps4"><div></div></div>
-
-                        <div id="awards" class="awards-new-en-sm fleft" style="margin:1px 0 0 10px;">
-                            <div class="game"></div>
-                            <div class="develop"></div>
-                            <div class="tech"></div>
-                            <div class="sound"></div>
-                        </div>
-                        <div class="gamescom"><div></div></div>
-                                                                                                                        <div class="rating-en"><div></div></div>
-                                                                                                        </td>
-
-                </tr>
-                <tr>
-                    <td class="c" colspan="2" style="vertical-align:middle;">
-                        <a href="http://warthunder.com/pt/support/privacypolicy/" class="copy-link">Política de Privacidade</a>
-                        <a href="http://warthunder.com/pt/support/termsofuse/" class="copy-link">Termos de Utilização</a>
-                        <a href="http://warthunder.com/pt/support/eula/" class="copy-link">EULA</a>
-                        <a href="http://warthunder.com/pt/support/customersupport/" class="copy-link">Apoio ao Cliente</a>
-                                            </td>
-                </tr>
-            </tbody></table>-->
         </div>
     </div>
 </div>
@@ -643,14 +514,8 @@
     }
 </script>
 
-<!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter21262261 = new Ya.Metrika({ id:21262261, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/21262261" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
-<script>
-    var mailDomains = [ 'yahoo.com','gmail.com','mail.ru','yandex.ru','msn.com','hotmail.com','aol.com', ];
-    var top_level_domains = [ 'at','am','ni','az','be','by','cr','bh','ch','gq','ao','pr','cn','co','cz','cs','tl','st','mz','cv','de','pa','dk','en','es','fr','gw','gb','mo','ge','it','in','id','il','is','kw','kz','pl','ru','tr','nl','pe','ec','gt','cu','bo','do','hn','py','ro','bg','hu','hg','gr','sa','hr','ng','ma','md','mt','my','om','th','tj','tz','tm','tw','vn','ae','dz','pt','br','ja','jo','jp','ko','kr','kg','zhtw','zhcn','zh-tw','zh-cn','fi','pk','ph','sg','sk','si','se','sv','da','no','ar','mx','cl','lv','lt','us','uk','nz','au','ve','ee','ie','ca','ua','uy','uz','qa','za','ca_fr','af','al','as','ad','ai','aq','ag','aw','bs','bd','bb','bz','bj','bm','bt','bq','ba','bw','bv','io','bn','bf','bi','kh','cm','ky','cf','td','cx','cc','km','cg','cd','ck','ci','cw','cy','dj','dm','eg','er','et','fk','fo','fj','gf','pf','tf','gh','ga','gm','gi','gl','gd','gp','gu','gg','gn','gy','ht','hm','va','hk','ir','iq','im','jm','je','ke','ki','kp','la','lb','ls','lr','ly','li','lu','mk','mg','mw','mv','ml','mh','mq','mr','mu','fm','mc','mn','me','ms','mm','na','nr','np','nc','ne','nu','nf','mp','pw','ps','pg','pn','re','rw','bl','sh','kn','lc','mf','pm','vc','ws','sm','sn','rs','sc','sl','sx','sb','so','gs','ss','lk','sd','sr','sj','sz','sy','tg','tk','to','tt','tn','tc','tv','ug','um','uy','vu','vg','vi','wf','eh','ye','zm','zw','nord','balt','en-gb','com','net','edu' ];
 
 
-
-</script>
 
 <table style=" position: relative;margin: 76px auto;" class="modal popup w750  hide" id="text-container">
     <tbody><tr>
@@ -669,86 +534,6 @@
     </tr>
     </tbody></table>
 
-<!-- Google Tag Manager -->
-<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-HWDXK"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-HWDXK');</script>
-<!-- End Google Tag Manager -->
-<script type="text/javascript">
-    Nerufio.I18n.AddListMessage({
-        "bad_credentials": "Email or password is incorrect",
-        "bad_nick": "Bad nick name",
-        "bad_captcha": "CAPTCHA error",
-        "bad_domain": "Email domain is not allowed",
-        "wrong_email": "The format of the e-mail address is incorrect",
-        "account_is_frozen": "<br/>Please contact <a href=\"http://support.gaijinent.com/\" target=\"_blank\">technical support</a>",
-        "erased": "Profile deleted",
-        "password_legth": "\"Password\" must be 6 to 64 characters long",
-        "password_repeat_legth": "\"Repeat the password\" must be 6 characters or greater",
-        "password_must_be_equal": "Fields \"Password\" and \"Repeat the password\" must be equal",
-        "no_email_provided_fb_landing_text": "Unfortunately, we can&apos;t obtain your email address with Facebook.<br/>Please, register using registration form.",
-        "no_email_provided_gg_landing_text": "Unfortunately, we can&apos;t obtain your email address with Google+.<br/>Please, register using registration form.",
-        "no_email_provided_landing_text": "Unfortunately, we can&apos;t obtain your email address.<br/>Please, register using registration form.",
-        "no_email_provided_landing_title": "We can&apos;t obtain your email address",
-        "login_already_in_use_fb_landing_text": "The e-mail address used in the Facebook network has already registered in WarThunder.com and Online.Gaijinent.com. To join the Open Beta test you simply need to <a id=\"login_url\" href=\"http://warthunder.com/\" >login</a> to the existing account.",
-        "login_already_in_use_gg_landing_text": "The e-mail address used in the Google+ network has already registered in WarThunder.com and Online.Gaijinent.com. To join the Open Beta test you simply need to <a id=\"login_url\" href=\"http://warthunder.com/\" >login</a> to the existing account.",
-        "login_already_in_use_landing_text": "The e-mail you&apos;ve entered is already registered at WarThunder.com or Gaijin.Net Store. To join the Global beta test you simply need to <a id=\"login_url\" href=\"http://warthunder.com/\" >login</a> to the existing account.",
-        "login_already_in_use_title": "Specified email is already registered",
-        "login_already_in_use_title_login_or_recover": "O endereço de correio electrónico que introduziu já existe. Se se esqueceu da sua palavra-passe  <a href=\"https://login.gaijin.net/pt/sso/login/?return_url=aHR0cDovL3dhcnRodW5kZXIuY29tL3B0&crc=56e482a615071fd5c528b4082c60cb01&public_key=&domain=&base_return_url=1&refresh_token=0\">recupere-a aqui</a>, ou então por favor <a href=\"https://login.gaijin.net/pt/sso/forgot\">inicie a sessão aqui</a>.",
-        "login_already_in_use_every_text": "The e-mail you&apos;ve entered is already registered at WarThunder.com or Gaijin.Net Store. To join the Global beta test you simply need to <a href=\"noscript\" onclick=\"Gaijin.Modal.Open('#login-container'); return false;\">login</a> to the existing account.",
-        "login_nick_warning": "The Nickname you have selected may lead to an account ban, we advise you select another.",
-        "login_nick_denied": "The Nickname you have selected is against the War Thunder Rules, please choose another.",
-        "cbtSmsFailTitle": "Error",
-        "cbtSmsFailTExt": "Invalid sms code, please try again",
-        "password_restored_title": "Reset your password",
-        "password_restored_text": "Password retrieval message‏ was sent to your email.",
-        "registration_title": "Registration",
-        "registration_text": "Registred successfully. Password have been sent to email you have entered.",
-        "redeem_title": "Redeem code",
-        "redeem_success_gc": "Congratulations! Сode successfully activated!",
-        "captcha_alt": "Verification code with letters and numbers",
-        "redeem_already_activated": "Code already redeemed.",
-        "redeem_discount_activated": "Discount code redeemed successfully. Discount: ",
-        "redeem_notowner": "Code has already been redeemed by another user.",
-        "redeem_error": "Error: the code you&apos;ve entered is not valid. In case this problem persists please activate your code at <a href=\"http://store.gaijin.net/activate.php\" onclick=\"return Gaijin.GoGaijinOnline(this.href)\">Gaijin.Net Store</a>.",
-        "psn_restricted": "This code is not supposed to be activated via web-site for your account. Please contact support.",
-        "redeem_expired": " You have to re-login, please, click ",
-        "redeem_expired_link": " link ",
-        "busy_nick": "The nickname is already taken",
-        "email": "Email",
-        "verifyEmailTitle": "Congratulations",
-        "verifyEmailText": "You have successfully verified your email address.",
-        "not_in_leaderboard": "Not enought battles played",
-        "fill_nick": "Por favor, preenche o campo \"Nome de Jogo\"",
-        "short_nick": "The nickname must be 4 to 16 characters long",
-        "fill_email": "Por favor, preenche o campo \"Email\"",
-        "tokenError": "Registration error",
-        "tokenErrorText": "<p style=\"text-align:center;\">We&apos;re sorry, but there&apos;s an error in your login.<br/><br/>If you have any technical problems or account issues regarding War Thunder, <br/>please, contact our <a href=\"https://support.gaijinent.com/categories/20114423-War-Thunder\">Customer Support team</a>.</p>",
-        "timeHour": "h",
-        "timeDay": "d",
-        "fbRegTitleTry": "You tried to Register via",
-        "fbRegNoEmail": "But there was error with fetching your email address.",
-        "gpRegNoEmailTry": "Try to verify your email address in Google+ and check Google security settings.",
-        "fbRegEmailNotGood": "The Email address associated with your Facebook (Google, Yahoo) account is already registered with us.",
-        "fbRegEmailIsMine": " If you forgot password for your account, please use account recovery link below ",
-        "notFound": " Error: 404 - Not Found ",
-
-
-        "firstdigit": "  Error in 'Nickname' field. Your nickname cannot start with a digit  ",
-        "nickError": " Erro no no campo 'Nome de Jogo'. Podes apenas usar letras Latinas e números ",
-        "passwordError": " Erro no campo 'Password' ",
-        "fill_email_correctly": " Please, enter correct email ",
-
-        "not logged in": "You are not logged in the game client. Log in and try again",
-        "invalid user": "Invalid or blocked user or authorized under different accounts",
-        "replay playing is in progress": "You're watching a replay at the moment ",
-        "game or loading is in progress": "Game or loading is in progress"
-    });
-</script>
 
 
 
