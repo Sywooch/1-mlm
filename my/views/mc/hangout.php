@@ -46,6 +46,7 @@ $usr = app\models\Users::find()->where(['id'=>$data['uid']])->one();
                 </div>
             </div>
             <div class="row" style="margin-bottom: 45px;">
+                <!--
                 <div class="col-md-6">
                     <h3>Киевское время:</h3>
                     <p><iframe frameborder="no" scrolling="no" style="width:280px;height:150px;"
@@ -56,6 +57,7 @@ $usr = app\models\Users::find()->where(['id'=>$data['uid']])->one();
                     <p><iframe frameborder="no" scrolling="no" style="width:280px;height:150px;"
                                src="https://time.yandex.ru/widget/?geoid=213&lang=ru&layout=horiz&type=digital&face=serif"></iframe></p>
                 </div>
+                -->
             </div>
             <div class="container">
                 <div id="photo">

@@ -6,11 +6,11 @@ $usr = app\models\Users::find()->where(['id'=>$data['uid']])->one();
 ?>
 <div style="background: transparent url('<?=Yii::getAlias('@web') ?>/img/5.jpg') no-repeat scroll center top; text-align: center; margin-bottom: 45px;">
     <div class="container">
-        <h1>Fortune</h1>
-        <h2>Fortune</h2>
+        <h1>Новогодняя акция от 1 млм</h1>
+        <h2></h2>
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe src="//www.youtube.com/embed/W55b4BcCPM4" allowfullscreen=""
-                    frameborder="0" height="480" width="853"></iframe>
+            <iframe src="//www.youtube.com/embed/Bva-4tCNESI" allowfullscreen=""
+                    frameborder="0" height="350" width="700"></iframe>
         </div>
         <h4 style="color: rgb(255, 180, 0);" >Внимание! задержка видео с чатом 15 секунд!</h4>
     </div>

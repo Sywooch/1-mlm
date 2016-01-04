@@ -1,4 +1,5 @@
 <?php
+set_time_limit ( 3600*3 );
 
 // comment out the following two lines when deployed to production
  defined('YII_DEBUG') or define('YII_DEBUG', true);

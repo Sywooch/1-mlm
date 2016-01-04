@@ -103,6 +103,7 @@ $form = ActiveForm::begin();?>
             </div>
         </div>
         <div class="col-md-6">
+            <!--
             <div class="form-group">
                 <?=$form->field(
                     $model, 'url', ["template" => "<label>url</label>
@@ -127,6 +128,7 @@ $form = ActiveForm::begin();?>
                         <div class=\"input-icon\">\n{input}\n{hint}\n{error}</div>"]);
                 ?>
             </div>
+            -->
             <div class="form-group">
                 <div class="form-group required">
                     <label>Время проведения мастер-класса</label>

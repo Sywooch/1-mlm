@@ -108,29 +108,37 @@ $form = ActiveForm::begin();?>
         </div>
         <div class="col-md-6">
             <div class="form-group">
+                <!--
                 <div class="form-group field-hangouts-url required">
                     <label>url</label>
                     <div class="input-icon">
                         <input id="hangouts-url" class="form-control" name="Hangouts[url]" value="" type="text">
 
-                        <!--<div class="help-block">Url cannot be blank.</div>--></div>
-                </div>            </div>
+                        --<div class="help-block">Url cannot be blank.</div>--
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="form-group field-hangouts-download required">
                     <label>download</label>
                     <div class="input-icon">
                         <input id="hangouts-download" class="form-control" name="Hangouts[download]" value="" type="text">
 
-                        <!--<div class="help-block">Download cannot be blank.</div>--></div>
-                </div>            </div>
+                        --<div class="help-block">Download cannot be blank.</div>--
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <div class="form-group field-hangouts-button required">
-                    <label>button</label>
+                    <label>надпись на кнопке</label>
                     <div class="input-icon">
                         <input id="hangouts-button" class="form-control" name="Hangouts[button]" value="" type="text">
 
                         <div class="help-block"></div></div>
-                </div>            </div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="form-group field-hangouts-link required">
                     <label>link</label>
@@ -138,8 +146,9 @@ $form = ActiveForm::begin();?>
                         <input id="hangouts-link" class="form-control" name="Hangouts[link]" value="" type="text">
 
                         <div class="help-block"></div></div>
-                </div>            </div>
-
+                </div>
+            </div>
+-->
             <div class="form-group">
                 <div class="form-group field-hangouts-link required">
                     <label>Время проведения мастер-класса</label>

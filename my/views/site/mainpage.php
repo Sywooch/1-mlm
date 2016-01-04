@@ -33,6 +33,12 @@ $this->title = 'Главная';
                 <div class="caption font-blue-sharp">
                     <i class="icon-user font-blue-sharp"></i>
                     <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
+
+                    <h1>
+                        <a href="https://1-mlm.com/game-<?= $refdt; ?>.html"
+                           target="_blank">&#8594; Новогодняя акция &#8592;</a>
+                    </h1>
+
                 </div>
                 <!-- Кнопка видео подсказки и во всю ширину --->
         <div class="actions">

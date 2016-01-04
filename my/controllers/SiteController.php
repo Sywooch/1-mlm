@@ -130,6 +130,7 @@ class SiteController extends Controller
             {
                 return $this->render("mainpage",[
 
+                    "refdt"=>$model->one()["refdt"],
                     "money"=>$model->one()["money"],
                     "cntMemCom"=>
                         \app\models\Users::find()->select('id')
