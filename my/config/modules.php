@@ -14,8 +14,8 @@ return [
 
         // the global settings for the Facebook plugins widget
         'facebook' => [
-            'appId' => 'FACEBOOK_APP_ID',
-            'secret' => 'FACEBOOK_APP_SECRET',
+            'appId' => '1657698847844895',
+            'secret' => '80e572561ddb517da2bff30e53f9f017',
         ],
 
         // the global settings for the Google+ Plugins widget
