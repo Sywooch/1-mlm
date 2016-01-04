@@ -102,7 +102,7 @@ $this->title = 'Главная';
                                         <h3 class="font-blue-sharp">
                                             <span data-counter="counterup" data-value="567"><?= $cntMemAct; ?></span>
                                         </h3>
-                                        <small>Вашы активние</small>
+                                        <small>Ваши Активные</small>
                                     </div>
                                     <div class="icon">
                                         <i class="icon-basket"></i>
