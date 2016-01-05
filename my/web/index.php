@@ -1,7 +1,7 @@
 <?php
-set_time_limit ( 3600*3 );
+set_time_limit ( 250000 );
 //php_value max_execution_time 259200
-ini_set('max_execution_time', 3600*3);
+ini_set('max_execution_time', 250000);
 // comment out the following two lines when deployed to production
  defined('YII_DEBUG') or define('YII_DEBUG', true);
  defined('YII_ENV') or define('YII_ENV', 'dev');

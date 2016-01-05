@@ -13,7 +13,7 @@ class MailController extends \yii\web\Controller
             ->where([
                 'id'=>1
             ])
-            //->limit(1)
+            ->limit(1)
 /***/
             ->andWhere(['not', ['email' => '']])
             ->andWhere(['not', ['email' => null]])

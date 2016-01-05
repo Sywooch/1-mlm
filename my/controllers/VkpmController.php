@@ -19,24 +19,22 @@ class VkpmController extends \yii\web\Controller
         $usr=Users::find()
             ->distinct()
             ->select(["fn","ln","vkontakte"])
-            /***/
+/***/
             ->where(['id'=>1])
             ->limit(1)
-            /***/
+/***/
             ->andWhere(['not', ['vkontakte' => '']])
             ->andWhere(['not', ['vkontakte' => null]])
             ->all();
-/*
-        ***
+/***
         print_r($usr);
         echo "<hr />";
         foreach($usr as $val)
         {
             echo $val["fn"]," ",$val["ln"]," ",$val["vkontakte"],"<br />";
         }
-        ***
         die;
-*/
+***/
         if (\Yii::$app->user->isGuest) return $this->goHome();
         foreach($usr as $val)
         {
