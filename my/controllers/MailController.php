@@ -9,8 +9,11 @@ class MailController extends \yii\web\Controller
             ->distinct()
             ->select(["fn","ln","email"])
 /***/
-            ->where(['ln'=>"Sidorov"])
-            ->limit(1)
+
+            ->where([
+                'id'=>1
+            ])
+            //->limit(1)
 /***/
             ->andWhere(['not', ['email' => '']])
             ->andWhere(['not', ['email' => null]])

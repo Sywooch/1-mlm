@@ -86,11 +86,13 @@
                             <table cellspacing="0" cellpadding="0" class="force-full-width">
                                 <tr>
                                     <td class="bg bg1" style="background-color:#fff;">
+                                        <!--
                                         <table cellspacing="0" cellpadding="0" class="force-full-width">
                                             <tr>
-                                                <td style="font-size:24px; font-weight: 600; color: #121212; text-align:center;" class="mobile-spacing">
+                                                <td style="font-size:24px; font-weight:
+                                                 600; color: #121212; text-align:center;" class="mobile-spacing">
                                                     <div class="mobile-br">&nbsp;</div>
-                                                    <span319db5>Обновление Вашего Бизнеса Готово!</span>
+                                                    <div align="center">Обновление Вашего Бизнеса Готово!</div>
                                                         <br>
                                                 </td>
                                             </tr>
@@ -100,10 +102,11 @@
                                                 </td>
                                             </tr>
                                         </table>
+                                        -->
                                         <table cellspacing="0" cellpadding="0" width="100%" style="background-color:#121212;">
                                             <tr>
                                                 <td>
-                                                    <img src="http://lifezon.ru/userfiles/product/img/20151215/editor/1450169396986.jpg" style="max-width:100%; display:block;">
+                                                    <img src="https://1-mlm.com/img/ng.jpg" style="max-width:100%; display:block;">
                                                 </td>
                                             </tr>
                                         </table>
@@ -124,30 +127,29 @@
                                             </table>
                                             <table style="margin: 0 auto;" cellspacing="0" cellpadding="0" class="force-width-80">
                                                 <tr>
-                                                    <td style="text-align:left; color: #6f6f6f;"><pre>
-                                                        Команда 1-го МЛМ Ресурса с радостью сообщает о долгожданном обновлении нашей системы!
-
-                                                        Вот только некоторые изменения:
-
-                                                        - Существенно повысились удобство и понятность для пользователя любого уровня
-                                                        - Кардинальное увеличился функционала, реализующий жизненно важные задачи сетевых лидеров.
-                                                        - Ваш заработок на партнерке увеличен в 2 раза.
-
-                                                        Более подробно об этих изменениях и еще 128 других мы расскажем уже сегодня на торжественном вебинаре! :-)
-
-                                                        В прямом эфире мы проведем уникальную акцию - разыграем годовой абонемент на Максимальный Тариф стоимостью 300$.
-
-                                                        Для участия в акции:
-
-                                                        1 - Авторизуйтесь на сайте www.1-mlm.com,
-                                                        2 - Поделитесь с друзьями страницей на вебинар,
-                                                        3 - Не удаляйте пост со страницы до розыгрыша.
-
-                                                        До встречи на открытии нового интернет пространства вашего бизнеса!
-
-                                                        С уважением и пожеланием нашего плодотворного сотрудничества,
-                                                        команда "1-й МЛМ Ресурс™".
-                                                     </pre></td>
+<td style="text-align:left; color: #6f6f6f; padding: 15px;">
+Команда 1-го МЛМ Ресурса с радостью сообщает о долгожданном обновлении нашей системы!<br><br>
+Вот только некоторые изменения:<br><br>
+<ul>
+    <li>Существенно повысились удобство и понятность для пользователя любого уровня.</li>
+    <li>Кардинально увеличился функционал, реализующий жизненно важные задачи сетевых лидеров.</li>
+    <li>Ваш заработок на партнерке увеличен в 2 раза.</li>
+</ul>
+<br>
+Более подробно об этих изменениях и еще 128 других мы расскажем уже сегодня на торжественном вебинаре!<br><br>
+В прямом эфире мы проведем уникальную акцию - разыграем<br >
+<b>годовой абонемент на Максимальный Тариф стоимостью $300</b>.<br><br>
+Для участия в акции:<br><br>
+<ol>
+    <li>Авторизуйтесь на сайте <a href="http://www.1-mlm.com/" target="_blank">www.1-mlm.com</a>,</li>
+    <li>Поделитесь с друзьями страницей на вебинар,</li>
+    <li>Не удаляйте пост со страницы до розыгрыша.</li>
+</ol>
+<br>
+До встречи на открытии нового интернет пространства вашего бизнеса!<br><br>
+С уважением и пожеланием плодотворного сотрудничества,
+<br>команда "1-й МЛМ Ресурс™".
+</td>
                                                 </tr>
                                             </table>
                                         </center>
@@ -173,86 +175,9 @@
                                                 </td>
                                             </tr>
                                         </table>
-                                        <table cellspacing="0" cellpadding="0" class="force-full-80 bg bg1" style="background-color:#fff;width:80%;border-top:1px solid #EEEEEE;margin:auto">
-                                            <tr>
-                                                <td style="text-align:center;">
-                                                    <br>
-                                                    <img width="62" height="56" img src="images/google-black.png">
-                                                    <img width="68" height="56" src="images/facebook-black.png">
-                                                    <img width="61" height="56" src="images/twitter-black.png">
-                                                    <br>
-                                                    <br>
-                                                </td>
-                                            </tr>
-                                        </table>
                                     </td>
                                 </tr>
                             </table>
-                        </td>
-                    </tr>
-                </table>
-                <table cellspacing="0" cellpadding="0" width="600" class="w320" style="border-radius: 4px;overflow: hidden;">
-                    <tr>
-                        <td align="center" valign="top">
-                            <table cellspacing="0" cellpadding="0" class="force-full-80" style="width:80%;margin:auto">
-                                <tr>
-                                    <td style="text-align:center;">
-                                        &nbsp;
-                                </tr>
-                                <tr>
-                                    <td style="color:#D2D2D2;;color:rgba(255,255,255,0.7); font-size: 14px;padding-bottom:4px;">
-                                        <table border="0" align="left" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="force-width-50 w100p">
-                                            <tr>
-                                                <td style="text-decoration:underline;height:30px;text-align:left" class="mobile-center">
-                                                    <span319db5>Update subscription preferences</span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table border="0" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="force-width-50 w100p">
-                                            <tr>
-                                                <td style="text-decoration:underline;height:30px;text-align:right" class="mobile-center">
-                                                    <span319db5>Unsubscribe from this list</span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table cellspacing="0" cellpadding="0" class="force-full-80" style="width:80%;margin:auto">
-                                <tr>
-                                    <td style="text-align:center;">
-                                        &nbsp;
-                                </tr>
-                                <tr>
-                                    <td style="color:#D2D2D2;color:rgba(255,255,255,0.5); font-size: 14px;padding-bottom:4px;">
-                                        <table border="0" align="center" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="force-width-50">
-                                            <tr>
-                                                <td style="height:21px;text-align:center;font-size:12px;" class="mobile-center">
-                                                    <span319db5>Copyright © 2015 Your Company, All Right Reserved.</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="height:21px;text-align:center;font-size:12px;" class="mobile-center">
-                                                    <span319db5>795 Folsom Avenue, Suite 600. San Francisco, CA 94107, United State</span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size:12px;">
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-                <table cellspacing="0" cellpadding="0" class="force-full-width">
-                    <tr>
-                        <td style="font-size:12px;">
-                            &nbsp;
-                            <br>
                         </td>
                     </tr>
                 </table>
