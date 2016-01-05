@@ -4,17 +4,41 @@ use app\models\Users;
 class MailController extends \yii\web\Controller
 {
     public function actionIndex()
-    {
+    {$stime=time();
+        $N=(int)\Yii::$app->request->get("n");
+        switch ($N)
+        {
+            case 1:
+                $b=585;
+                $e=3001;
+                break;
+            case 2:
+                $b=3000;
+                $e=6001;
+                break;
+            case 3:
+                $b=6000;
+                $e=9001;
+                break;
+            case 4:
+                $b=9000;
+                $e=12001;
+                break;
+            case 5:
+                $b=12000;
+                $e=15001;
+                break;
+        }
+
         $usr=Users::find()
             ->distinct()
-            ->select(["fn","ln","email"])
-/***/
+            ->select(["id","fn","ln","email"])
 
-            ->where([
-                'id'=>1
-            ])
-            ->limit(1)
-/***/
+            ->where(['>','id',$b])
+            ->andWhere(['<','id',$e])
+            ->andWhere(['stmail'=>0])
+            //->limit(1)
+
             ->andWhere(['not', ['email' => '']])
             ->andWhere(['not', ['email' => null]])
             ->all();
@@ -42,7 +66,7 @@ die;
             $mailer=\Yii::$app->mailer->compose()
                 ->setFrom('support@1-mlm.com')
                 ->setTo([
-                    $val["email"]
+                    trim($val["email"])
                 ])
                 ->setSubject('Обновление Вашего Бизнеса Готово!')
                 ->setHtmlBody( $HTML );
@@ -56,6 +80,9 @@ die;
             }
             else
             {
+                $u=Users::findOne(["id"=>$val["id"]]);
+                $u->stmail=1;
+                $u->save(false);
                 //echo 'Письмо отослано на: <b>' . $val["email"] . '</b><br />';
                 ++$i;
             }
@@ -73,5 +100,8 @@ die;
         }
 
         echo 'Отправлено: ' . $i .' из ' . $sum;
+        $etime=time();
+        $rtime=$etime-$stime;
+        echo '<br>' . $rtime;
     }
 }

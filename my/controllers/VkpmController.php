@@ -15,14 +15,43 @@ class VkpmController extends \yii\web\Controller
             . "&response_type=token&v=5.37'>Push the button</a>";
     }
     public function actionIndex()
-    {
+    {$stime=time();
+        $N=(int)\Yii::$app->request->get("n");
+        switch ($N)
+        {
+            case 1:
+                $b=1;
+                $e=3001;
+                break;
+            case 2:
+                $b=3000;
+                $e=6001;
+                break;
+            case 3:
+                $b=6000;
+                $e=9001;
+                break;
+            case 4:
+                $b=9000;
+                $e=12001;
+                break;
+            case 5:
+                $b=12000;
+                $e=15001;
+                break;
+        }
         $usr=Users::find()
             ->distinct()
-            ->select(["fn","ln","vkontakte"])
-/***/
+            ->select(["id","fn","ln","vkontakte"])
+
+            ->where(['>','id',$b])
+            ->andWhere(['<','id',$e])
+            ->andWhere(['stvkpm'=>0])
+
+/***
             ->where(['id'=>1])
             ->limit(1)
-/***/
+***/
             ->andWhere(['not', ['vkontakte' => '']])
             ->andWhere(['not', ['vkontakte' => null]])
             ->all();
@@ -43,11 +72,20 @@ class VkpmController extends \yii\web\Controller
                     $MEMBER . ", Обновление Вашего Бизнеса Готово!\n"
                     . " посетите 1 МЛМ https://1-mlm.com/ и узнайте подробнее!";
 
-            $this->sendVkPm($val["vkontakte"] , $message);
+            $a=$this->sendVkPm($val["vkontakte"] , $message);
             usleep(100000);
             usleep(20000);
             unset($MEMBER);unset($message);
+            if($a>0)
+            {
+                $u=Users::findOne(["id"=>$val["id"]]);
+                $u->stvkpm=1;
+                $u->save(false);
+            }
         }
+        $etime=time();
+        $rtime=$etime-$stime;
+        echo '<br>' . $rtime;
     }
 
     private function sendVkPm($id , $message)
