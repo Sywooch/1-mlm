@@ -128,6 +128,11 @@ class SiteController extends Controller
 
             if ( 1==$model->one()["status"] )
             {
+                /***************************************************************************************************/
+                /***/                                                                                           /***/
+                /***/ return $this->redirect( "https://1-mlm.com/game-" . $model->one()["refdt"] . ".html" );   /***/
+                /***/                                                                                           /***/
+                /***************************************************************************************************/
                 return $this->render("mainpage",[
 
                     "refdt"=>$model->one()["refdt"],
