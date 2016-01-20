@@ -236,6 +236,7 @@
                         data-target="#modal-1" 
                         title="Жмите здесь, чтобы узнать больше!"
 			class="btn big yellow pulse"
+			style="width: 300px;"
                         >Регистрация</a>
                         </span>
                     </form>
