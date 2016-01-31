@@ -1,9 +1,7 @@
 <!DOCTYPE HTML>
-<html class="landing_page js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+<html><head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Language" content="pt">
-
-
+    <meta http-equiv="Content-Language" content="ru">
     <meta name="description" content="<?=$data["desc"]?>">
     <meta name="keywords" content="<?=$data["keywords"]?>">
     <meta name="robots" content="noindex, follow">
@@ -23,17 +21,25 @@
 
 <link href="//1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="//1-mlm.com/soc_net/social-likes_classic.css" />
+    
+    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//1-mlm.com/soc_net/social-likes.min.js"></script>
 
 
-    <script async="" src="//s.ytimg.com/yts/jsbin/www-widgetapi-vflpCdzwa/www-widgetapi.js" id="www-widgetapi-script" type="text/javascript"></script><script src="https://www.google-analytics.com/analytics.js" async="" type="text/javascript"></script><script src="https://www.googleadservices.com/pagead/conversion_async.js" async="" type="text/javascript"></script><script src="https://www.googletagmanager.com/gtm.js?id=GTM-HWDXK" async=""></script><script src="https://mc.yandex.ru/metrika/watch.js" async="" type="text/javascript"></script><script src="https://www.youtube.com/player_api"></script><script>window.startTime = new Date().getTime();</script>
+    <script async="" src="//s.ytimg.com/yts/jsbin/www-widgetapi-vflpCdzwa/www-widgetapi.js" id="www-widgetapi-script" type="text/javascript"></script>
+    <script src="https://www.google-analytics.com/analytics.js" async="" type="text/javascript"></script>
+    <script src="https://www.googleadservices.com/pagead/conversion_async.js" async="" type="text/javascript"></script>       <script src="https://www.googletagmanager.com/gtm.js?id=GTM-HWDXK" async=""></script>
+    <script src="https://mc.yandex.ru/metrika/watch.js" async="" type="text/javascript"></script>
+    <script src="https://www.youtube.com/player_api"></script>
+    <script>window.startTime = new Date().getTime();</script>
+    
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
-
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href="s/css/modal_dialog.css" rel="stylesheet">
+    
     <style>
         .col-md-offset-4{margin-left: 0% !important;}
         .container {
@@ -146,12 +152,7 @@
                                class="socbtnn" data-uloginbutton="facebook">
                                 <span><img src="s/img/facebook-btn.png" width="25" ></span>Facebook</a>
                             </div>
-                            <div class="socbtn googleplus-btn">
-                            <a style="" href="javascript:void(0)"
-                               onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=google&refid=<?=$user["refdt"]?>'"
-                               class="socbtn" data-uloginbutton="googleplus">
-                                <span><img src="s/img/googleplus-btn.png" width="25" ></span>Google+ - скоро</a>
-                            </div>
+                         
                             <div class="socbtn vkontakte-btn">
                             <a style="" href="javascript:void(0)"
                                onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=vkontakte&refid=<?=$user["refdt"]?>'"
@@ -167,12 +168,7 @@
                                class="socbtn" data-uloginbutton="odnoklassniki">
                                 <span><img src="s/img/linkedin-icon.png" width="25" ></span>Linkedin</a>
                             </div>
-                            <div class="socbtn yandex-btn">
-                            <a href="javascript:void(0)"
-                               onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=yandex&refid=<?=$user["refdt"]?>'"
-                               class="socbtn" data-uloginbutton="odnoklassniki">
-                                <span><img src="s/img/yandex-btn.png" width="25" ></span>Yandex - скоро</a>
-                            </div>
+                          
                             <div class="socbtn mailru-btn">
                             <a href="javascript:void(0)"
                                onclick="window.location.href='<?=Yii::getAlias('@web') ?>/index.php?r=site%2Flogin&amp;service=mailru&refid=<?=$user["refdt"]?>'"
@@ -231,122 +227,6 @@
         <img src="http://static.warthunder.com/i/modern/sprite/volOn.png" alt="volume" id="volumeicon" height="15" width="14">
         <input orient="vertical" min="0" value="0" max="1" step="0.05" id="volume" type="range">
     </div>
-    <form class="hide" onsubmit="return Gaijin.Registration($(this));" action="" method="post" style="">
-        <input name="token" value="0" type="hidden">
-        <div id="notifier">
-            <div id="messagearea">
-
-            </div>
-            <div id="pattern" class="hide">
-                <div class="%classname% korobka">
-                    <div class="close2">x</div>
-                    <span class="title">%title%</span>
-                    <span class="message">%message%</span>
-                </div>
-            </div>
-        </div>
-        <div style="top: 7px;" class="head" id="registration-container">
-            <div class="close"></div>
-
-
-            <table class="signup-table">
-                <tbody><tr>
-                    <td colspan="2">
-                        <a class="social fb" href="#"></a>
-
-                        <a class="social gp" href="https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&amp;response_type=code&amp;redirect_uri=http://warthunder.com/pt/login/gg/registration&amp;client_id=169954886993.apps.googleusercontent.com&amp;hl=en&amp;from_login=1&amp;as=6e9899be50bd1a58"></a>
-
-                        <p class="small" style="margin-left:80px;font-size:12px;"> Usar dados de outros serviços <br> para criar uma conta rapidamente </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <b> Nome de Jogo </b>
-                        <input name="nick" value="" data-message=" Erro no no campo 'Nome de Jogo'. Podes apenas usar letras Latinas e números " data-message_firstdigit=" Erro no no campo 'Nome de Jogo'. O teu nome de jogo não pode começar com um número " data-message_busy=" O Nome de Jogo já é usado " data-message_checking=" Verificando... " data-message_ok=" Nome de Jogo OK. " tabindex="1" type="text">
-                        <span class="que hide">? <div><i> Coloca o teu nome de jogo. Podes apenas usar letras Latinas e números </i><span></span></div></span>
-                        <!-- Error messages on registration -->
-                        <div class="reg_messager">
-                            <span class="loader_gspb"></span>
-                            <span class="email_gspb"></span>
-                        </div>
-                        <div class="lp que_error">
-    <span class="lp que_block">
-        <p class="lp que_text"></p>
-    </span>
-                        </div>                        </td>
-                    <td>
-                        <b> Password </b>
-                        <input id="create-container-input-password" name="password" value="" data-message=" Erro no campo 'Password' " data-message_length=" A Password deve ter pelo menos 6 carateres " tabindex="3" type="password">
-                        <span class="que hide">? <div><i> Coloca a tua password </i><span></span></div></span>
-                        <div class="lp que_error">
-    <span class="lp que_block">
-        <p class="lp que_text"></p>
-    </span>
-                        </div>                        </td>
-                </tr>
-                <tr>
-                    <td>
-                        <b> Email </b>
-                        <input id="create-container-input-login" name="login" value="" data-message=" Erro no campo 'Email' " tabindex="2" type="text">
-                        <span class="que reg_lp hide">? <div><i> Coloca o teu endereço de email para ser usado na comunicação como nome da tua conta </i><span></span></div></span>
-                        <div class="lp que_error">
-    <span class="lp que_block">
-        <p class="lp que_text"></p>
-    </span>
-                        </div>                            <div id="login-domain-error" class="hide"> Por favor, certifica-te que disponibilizas um endereço de email válido. <br><a href="/noscript/" class="script" onclick="return Gaijin.FixEmail(this,'create-container-input-login','login-domain-error')"> Talvez queiras dizer  <span class="email"></span></a>.</div>
-                    </td>
-                    <td>
-                        <b> Repete a password </b>
-                        <input id="create-container-input-login" name="passwordrepeat" value="" data-message=" Erro no campo 'Password' " data-message_length=" Repete a password' deve ter pelo menos 6 carateres " data-message_not_equal=" Os campos 'password' e 'repeat the password' não são concordantes " tabindex="4" type="password">
-                        <span class="que hide">? <div><i> Repete a tua password </i><span></span></div></span>
-                        <div class="lp que_error">
-    <span class="lp que_block">
-        <p class="lp que_text"></p>
-    </span>
-                        </div>                        </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="captcha" style="width:155px;margin:0 0 0 72px;">
-                            <b style="padding-top:0;"> Coloca o código </b>
-                            <input name="captcha" class="capt" data-message=" Coloca o código' tem de consistir em 6 carateres " tabindex="5" style="margin-right:5px;" type="text">
-                            <a style="margin-left:-3px;display:inherit;" href="/pt/play4free?r=mtmww_466721_S0002453_167003&amp;visitor_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;ce_cid=2119Ex23BRXylpe81GJ5fT1zYies000.&amp;lang=pt" onclick="return  Gaijin.View.CaptchaReload();"><span class="que reload">&nbsp;<div><i> Recarregar </i><span></span></div></span></a>
-                            <div class="captcha_bg" style="margin-top:-40px;margin-left:152px;width:160px;background:none;">
-                                <img style="margin: 0;height:40px;width:115px;" id="captcha" class="captcha" src="/captcha?2060659101" alt=" Código de verificação consistindo em letras e números " onclick="return  Gaijin.View.CaptchaReload();" height="40" width="115">
-                            </div>
-                            <span class="que cpt hide" style="margin-top:-28px;margin-left:267px;">? <div><i> Coloca o código </i><span></span></div></span>
-                            <div class="que_error" style="width:270px !important;">
-                                        <span class="que_block" style="padding-top:4px;max-width:270px !important;">
-                                            <p class="que_text" style="max-width:250px !important;"></p>
-                                        </span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="2" class="agreement">
-                        <p class="small" style="margin-top: 15px; font-size:12px;">
-                            <input id="agreement" name="subscribe" checked="" style="width: auto;height: auto;" type="checkbox">
-                            <label for="agreement" class="small">Concordo em receber emails informativos do War Thunder</label>
-                        </p>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="padding:10px 0;" class="c" colspan="2">
-                        <input value=" Joga Grátis " class="but-reg-big" tabindex="6" type="submit">
-
-                        <script type="text/javascript">
-                            dataLayer = window.dataLayer || [];
-                        </script>                                <a href="http://yupmaster.gaijinent.com/launcher/current.php?id=WarThunderLauncher" target="_blank" id="download-client-link" onclick="dataLayer.push({ 'hitType': 'event', 'eventCategory':'OnSite', 'eventAction':'LauncherDownload', 'eventLabel':'LauncherDownload', 'eventValue': 0})" title="" class="download-link tohide"> Last Step: Download and Install Game Client 3 GB (PC)</a>
-                    </td>
-                </tr>
-                </tbody></table>
-        </div>
-
-    </form>
-
     <div class="space"></div>
 
     <div class="space"></div>
@@ -366,7 +246,7 @@
                     <!--<div class="reg-link active" style="margin-top:155px;"><span> Кнопка </span></div>-->
                     <a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self" href="#modal" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a>
 
-                    <div style="display: block;" class="show-again"><span> VER </span></div>
+                    <div style="display: block;" class="show-again"><span> ЗАПУСК </span></div>
                 </td>
             </tr>
             </tbody></table>
@@ -514,25 +394,6 @@
     }
 </script>
 
-
-
-
-<table style=" position: relative;margin: 76px auto;" class="modal popup w750  hide" id="text-container">
-    <tbody><tr>
-        <td class="c" height="30">
-            <a style="position: absolute;right: 15px;top: 20px;}" class="fright close" href="/pt/"></a>            <h1></h1>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div class="loginform">
-
-                <div class="container-content"></div>
-
-            </div>
-        </td>
-    </tr>
-    </tbody></table>
 
 
 
