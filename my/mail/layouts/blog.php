@@ -104,7 +104,7 @@
 <body yahoo="fix" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 	
 	<!-- ======= main section ======= -->
-	<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(<?=Yii::getAlias('@web') ?>img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="<?=Yii::getAlias('@web') ?>img/main-bg.png">
+	<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(https://1-mlm.com/img/main-bg.jpg); background-size: 100% 100%; background-position: top center;" background="https://1-mlm.com/img/main-bg.jpg">
 		
 	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(http://themastermail.com/alerta/notif2/img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="http://themastermail.com/alerta/notif2/img/main-bg.png">--->
 		
