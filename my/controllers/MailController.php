@@ -34,6 +34,8 @@ class MailController extends \yii\web\Controller
             ->distinct()
             ->select(["id","fn","ln","email"])
 
+//            ->where(["id"=>1])
+
             ->where(['>','id',$b])
             ->andWhere(['<','id',$e])
             ->andWhere(['stmail'=>0])
@@ -55,7 +57,7 @@ die;
 
         if (\Yii::$app->user->isGuest) return $this->goHome();
 
-        $HTML = \Yii::$app->view->render('@app/mail/layouts/aws');
+        $HTML = \Yii::$app->view->render('@app/mail/layouts/blog');
         $i=0;$j=0;
 
         foreach($usr as $val)

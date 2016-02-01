@@ -354,10 +354,10 @@ rgen.global_validation = {
 		dropoff_location : { required: true },
 	},
 	msg: {
-		email: {email: "Please, enter a valid email"}
+		email: {email: "Пожалуйста, введите действительный адрес электронной почты"}
 	},
-	successMsg : "<div class='msg-success alert alert-success' role='alert'>Thank you for contact us. We will contact you as soon as possible.</div>",
-	errorMsg   : "<div class='msg-error alert alert-danger' role='alert'>Oops! Looks like something went wrong. Please try again later.</div>"
+	successMsg : "<div class='msg-success alert alert-success' role='alert'>Мы свяжемся с вами.</div>",
+	errorMsg   : "<div class='msg-error alert alert-danger' role='alert'>Похоже, что-то пошло не так. Пожалуйста, повторите попытку позже.</div>"
 }
 
 rgen.formVaidate = function (obj) {

@@ -42,7 +42,7 @@
 			<div class="nav vm-item">
 				<div class="nav-other">
 					
-					<a href="mailto:support@1-mlm.com?subject=Заказ млм Блога" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> ЗАКАЗАТЬ</a>
+					<a href="#order" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> ЗАКАЗАТЬ</a>
 				</div>
 			</div><!-- /.nav --> 
 			
@@ -152,13 +152,15 @@
 							<p class="title-sub mini">После получения Ваших даных  наш менеджер по работе с клиентами свяжется с Вами для полного оформления заказа</p>
 						</div>
 						<div class="pop-body">
-							<form action="form-data/formdata.php" class="form-widget" data-popup="popup-contact">
-								<input type="hidden" name="to" value="r.genesis.art@gmail.com">
-								<input class="form-control" data-label="Name" required data-msg="Пожалуйста, введите ваше имя." type="text" name="name" placeholder="Введите свое имя">
+							<form action="https://1-mlm.com/index.php?r=order-blog%2Faccepted"
+							 class="form-widget" data-popup="popup-contact">
+								<input type="hidden" name="to" >
+								<input class="form-control" data-label="Name" name="name" required data-msg="Пожалуйста, введите ваше имя." type="text" name="name" placeholder="Введите свое имя">
 								<input class="form-control" data-label="Email" required data-msg="Пожалуйста, введите свой email." type="email" name="email" placeholder="Введите свой email">
-								<input class="form-control"  data-label="Phone" required data-msg="Пожалуйста, введите свой Skype" type="text" name="phone" placeholder="Введите свой skype">
+								<input class="form-control"  data-label="skype"required data-msg="Пожалуйста, введите свой Skype" type="text" name="skype" placeholder="Введите свой skype">
 								<!--<textarea class="form-control" data-label="Сообщение" required data-msg="Пожалуйста, введите ваше сообщение." name="message" placeholder="Дополнительно" cols="30" rows="10"></textarea>-->
-								<button type="submit" class="btn btn-line light"><i class="fa fa-envelope-o"></i> Отправить</button>
+								<button type="submit" 
+								class="btn btn-line light"><i class="fa fa-envelope-o"></i> Отправить</button>
 							</form>	
 							<div class="msg-block"></div>
 						</div>
@@ -675,21 +677,23 @@
 
 				<div class="flex-col-md-5 l flex-cc first-md">
 					<!-- Popup contact form -->
+					<div id="order"></div>
 					<div id="popup-contact-form" class="popup-form">
 						
 						
 						<hr class="light mr-tb-40">
 					
 						<div class="pop-header">
+
 							<h3 class="title small">Форма заказа</h3>
 							<p class="title-sub mini">После получения Ваших даных  наш менеджер по работе с клиентами свяжется с Вами для полного оформления заказа</p>
 						</div>
 						<div class="pop-body">
-							<form action="form-data/formdata.php" class="form-widget" data-popup="popup-contact">
-								<input type="hidden" name="to" value="r.genesis.art@gmail.com">
+							<form action="https://1-mlm.com/index.php?r=order-blog%2Faccepted" class="form-widget" data-popup="popup-contact">
+								<input type="hidden" name="to">
 								<input class="form-control" data-label="Name" required data-msg="Пожалуйста, введите ваше имя." type="text" name="name" placeholder="Введите свое имя">
 								<input class="form-control" data-label="Email" required data-msg="Пожалуйста, введите свой email." type="email" name="email" placeholder="Введите свой email">
-								<input class="form-control"  data-label="Phone" required data-msg="Пожалуйста, введите свой Skype" type="text" name="phone" placeholder="Введите свой skype">
+								<input class="form-control"  data-label="skype" required data-msg="Пожалуйста, введите свой Skype" type="text" name="skype" placeholder="Введите свой skype">
 								<!--<textarea class="form-control" data-label="Сообщение" required data-msg="Пожалуйста, введите ваше сообщение." name="message" placeholder="Дополнительно" cols="30" rows="10"></textarea>-->
 								<button type="submit" class="btn btn-line light"><i class="fa fa-envelope-o"></i> Отправить</button>
 							</form>		
@@ -740,8 +744,6 @@
 <script async src="js/rgen.js"></script>
 
 </body>
-
-
 
 
 

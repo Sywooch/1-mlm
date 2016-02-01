@@ -130,7 +130,7 @@ class SiteController extends Controller
             {
                 /***************************************************************************************************/
                 /***/                                                                                           /***/
-                /***/ return $this->redirect( "https://1-mlm.com/game-" . $model->one()["refdt"] . ".html" );   /***/
+                /***/ //return $this->redirect( "https://1-mlm.com/game-" . $model->one()["refdt"] . ".html" );   /***/
                 /***/                                                                                           /***/
                 /***************************************************************************************************/
                 return $this->render("mainpage",[
