@@ -9,7 +9,7 @@ class MailController extends \yii\web\Controller
         switch ($N)
         {
             case 1:
-                $b=585;
+                $b=1;
                 $e=3001;
                 break;
             case 2:
@@ -26,7 +26,7 @@ class MailController extends \yii\web\Controller
                 break;
             case 5:
                 $b=12000;
-                $e=15001;
+                $e=35001;
                 break;
         }
 
@@ -71,7 +71,7 @@ die;
                     trim($val["email"])
                 ])
                 //->setSubject('Обновление Вашего Бизнеса Готово!')
-				->setSubject($val["fn"].', отпишитесь от рассылки!')
+				->setSubject($val["fn"].', Отпишитесь от рассылки!')
                 ->setHtmlBody( $HTML );
             //->send();
 
