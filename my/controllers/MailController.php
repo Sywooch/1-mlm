@@ -34,13 +34,13 @@ class MailController extends \yii\web\Controller
             ->distinct()
             ->select(["id","fn","ln","email"])
 
-//            ->where(["id"=>1])
-
+           ->where(["id"=>1])
+/*
             ->where(['>','id',$b])
             ->andWhere(['<','id',$e])
             ->andWhere(['stmail'=>0])
             //->limit(1)
-
+*/
             ->andWhere(['not', ['email' => '']])
             ->andWhere(['not', ['email' => null]])
             ->all();
@@ -70,7 +70,8 @@ die;
                 ->setTo([
                     trim($val["email"])
                 ])
-                ->setSubject('Обновление Вашего Бизнеса Готово!')
+                //->setSubject('Обновление Вашего Бизнеса Готово!')
+				->setSubject($val["fn"].', отпишитесь от рассылки!')
                 ->setHtmlBody( $HTML );
             //->send();
 

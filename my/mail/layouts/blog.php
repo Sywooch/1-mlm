@@ -105,7 +105,8 @@
 	
 	<!-- ======= main section ======= -->
 
-	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(<?=Yii::getAlias('@web') ?>mail/img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="<?=Yii::getAlias('@web') ?>mail/img/main-bg.png">--->
+	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0"
+	bgcolor="2b2e34" style="background-image: url(<?=Yii::getAlias('@web') ?>mail/img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="<?=Yii::getAlias('@web') ?>mail/img/main-bg.png">--->
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(http://themastermail.com/alerta/notif2/img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="http://themastermail.com/alerta/notif2/img/main-bg.png">
 		
 		<tr><td height="120" style="font-size: 120px; line-height: 120px;">&nbsp;</td></tr>
