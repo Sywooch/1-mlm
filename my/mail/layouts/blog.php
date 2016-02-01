@@ -104,10 +104,9 @@
 <body yahoo="fix" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 	
 	<!-- ======= main section ======= -->
-
-	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0"
-	bgcolor="2b2e34" style="background-image: url(<?=Yii::getAlias('@web') ?>mail/img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="<?=Yii::getAlias('@web') ?>mail/img/main-bg.png">--->
-	<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(http://themastermail.com/alerta/notif2/img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="http://themastermail.com/alerta/notif2/img/main-bg.png">
+	<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(<?=Yii::getAlias('@web') ?>img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="<?=Yii::getAlias('@web') ?>img/main-bg.png">
+		
+	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(http://themastermail.com/alerta/notif2/img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="http://themastermail.com/alerta/notif2/img/main-bg.png">--->
 		
 		<tr><td height="120" style="font-size: 120px; line-height: 120px;">&nbsp;</td></tr>
 		
@@ -155,9 +154,9 @@
 											
 				        					
                                             Более  23 000 наших пользователей, получают рассылку на тему: <b style="color: #454647;">« Автоматизация МЛМ рекрутинга » </b>
-                                            Если Вас больше не интересует эта информация, <l style="color: #767b86;">Отпишитесь от нашей рассылки!</l>
+                                            Если Вас больше не интересует эта информация, <span style="color: #767b86;">Отпишитесь от нашей рассылки!</span>
 <hr>
-                                            Для этого посетите <a href="http://1-mlm.com"  target="_blank" >1-mlm.com</a> и <l style="color: #F64747;"> Авторизируйтесь</l><br> <span style="text-decoration: underline;">и только  потом</span> перейдите по кнопке ниже!
+                                            Для этого посетите <a href="http://1-mlm.com"  target="_blank" >1-mlm.com</a> и <span style="color: #F64747;"> Авторизируйтесь</span><br> <span style="text-decoration: underline;">и только  потом</span> перейдите по кнопке ниже!
 				        					
 										</div>
 			        				</td>	
