@@ -231,7 +231,7 @@ $this->registerJsFile('/my/web/mertonic/layouts/global/scripts/quick-sidebar.js'
                                 </li>
                             </ul>
                             <hr />
-                            <h3 class="list-heading">Проекты консультанта</h3>
+                            <h3 class="list-heading">Я Рекомендую:</h3>
                             <?php
                                 $conslinks = Links::find()->where(['uid' => $consultant["id"]])->all();
                            foreach($conslinks as $val):

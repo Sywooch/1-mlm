@@ -15,7 +15,7 @@ $css = <<<'STYLE'
 }
 STYLE;
 $this->registerCss($css);
-$this->title = 'Мои Проекты';
+$this->title = 'Я Рекомендую';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="portlet-title">
         <div class="caption">
             <i class="icon-trophy font-blue-sharp"></i>
-            <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
+            <span class="caption-subject font-blue-sharp"><?= $this->title; ?> (эти ссылки видит моя 1 линия )</span>
         </div>
         <!-- Кнопка видео подсказки и во всю ширину --->
         <div class="actions">
@@ -89,7 +89,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <input name="linkid" value="<?= Yii::$app->request->get("linkid"); ?>" type="hidden">
     <?php endif; ?>
 
-        <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save" style="float: right;">ДОБАВИТЬ ПРОЕКТ</button>
+        <button type="submit" class="btn btn-danger waves-effect waves-effect" name="save" style="float: right;">ДОБАВИТЬ ССЫЛКУ</button>
 
         <?php $form->end(); ?>
         <div style="clear: both;"></div>

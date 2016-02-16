@@ -7,7 +7,7 @@ $usr = app\models\Users::find()->where(['id'=>$data['uid']])->one();
             <h1><?=$data['title']?></h1>
             <h2><?=$data['description']?></h2>
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="//www.youtube.com/embed/<?=$data['yt']?>" allowfullscreen="" frameborder="0" height="480" width="853"></iframe>
+                <iframe src="//www.youtube.com/embed/<?=$data['yt']?>?autoplay=1;" allowfullscreen="" frameborder="0" height="360" width="640" ></iframe>
             </div>
             <h4 style="color: rgb(255, 180, 0);" >Внимание! задержка видео с чатом 15 секунд!</h4>
         </div>

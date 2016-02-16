@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="ru">
 <html>
 <head>
 <script>
@@ -6,10 +7,16 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Hostrocket</title>
-<link rel="stylesheet" type="text/css" href="../s/land_5/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../s/land_5/css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="../s/land_5/css/style.css">
+<title>Infinii</title>
+
+
+<link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/tp5/css/style.css" />
+<link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/tp5/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/tp5/css/bootstrap.min.css" />
+
+<link rel="stylesheet" type="text/css" href="//1-mlm.com/views/land/s/land_5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://1-mlm.com/views/land/s/land_5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="https://1-mlm.com/views/land/s/land_5/css/style.css">
 
 <link type="image/x-icon" rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABKUlEQVQ4jb3SzyvlURjH8VdYiKRrrh/ZzP9AtsJfwHYm1CT8ARQ7ljasLPwJmt1sLGz8aGzUdJMuM/KjFPmxkMRkgcV51O3mq1vKU6fO0znvz/N8nnP4xBjCbzzgHw4qBfNYwT2WMYIOnFQCt2IPRXTjF+bxHY9ZUA168AOnAefQjP0Q+YntcjCHCcnfc6xdNJTcaUcvnvCtvOp6tLWEaxTQiK4Qfy2yh9Xy6lUYxR2OsIk6jEUnnWGhiL9oyfI/IE17AsMBj0flgjT5tiy4DXO4KpnBIGrxp0TszfgSrZ1hQ/osz5iM/CLyviyBKdxKQ4M1XAZ0jtkQyfR+iOnY56OTOfSH8H8sZMGkd13EDG6kD/M1zkawhab3BI4l3zuS7/qy8+r34A/FC5cqTDh6ZYEVAAAAAElFTkSuQmCC">
 
@@ -20,7 +27,7 @@
 	<div class="container">
     	<div class="row">
     	 	<div class="col-xs-6" style="padding-top:15px;">
-        		<img src="images/logo.png" alt="Hostrocket"  />
+        		<img src="../tp5/images/logo.png" alt="Hostrocket"  />
         	</div>
         	<div class="col-xs-6" style="padding-top:10px;">
         		<div class="box f-right t-right" style="width: 146px; height: 43px; opacity:0.5; background-color: #7E7E7E; border-radius: 7px 7px 7px 7px;">
@@ -31,7 +38,7 @@
 		<div class="row">
     	 	<div class="col-md-7 col-sm-7 col-xs-8" style="padding-top:50px;">  		
 <p class="big-text">
-<span style="color:#423852;">Fast.</span><br>
+<span style="color:#423852;">Здесь!!!</span><br>
 <span style="color:#ffffff;">Affordable<br>
 Web Hosting<br>
 Services.</span>
@@ -324,11 +331,12 @@ This is a paragraph. Click here to add / edit your own text. This should be used
         </div>
 		<div class="row">
     	 	<div class="col-md-12 clients">
-        		<div class="client-logo"><img src="clients/1.png" alt=""></div>
-                <div class="client-logo"><img src="clients/2.png" alt=""></div>
-                <div class="client-logo"><img src="clients/3.png" alt=""></div>
-                <div class="client-logo"><img src="clients/4.png" alt=""></div>
-                <div class="client-logo"><img src="clients/5.png" alt=""></div>
+        		<div class="client-logo"><img src="//1-mlm.com/views/land/s/land_5/clients/1.png" alt=""></div>
+                <div class="client-logo"><img src="//1-mlm.com/views/land/s/land_5/clients/2.png" alt=""></div>
+                <div class="client-logo"><img src="//1-mlm.com/views/land/s/land_5/clients/3.png" alt=""></div>
+                <div class="client-logo"><img src="../views/land/s/land_5/clients/4.png" alt=""></div>
+                <div class="client-logo"><img src="../land_5/clients/5.png" alt=""></div>
+                
         	</div>
     	</div>
 	</div>
@@ -340,21 +348,21 @@ This is a paragraph. Click here to add / edit your own text. This should be used
         		All Rights reserved. 2015 © <strong>Website name</strong>.
         	</div>
         	<div class="col-md-6 col-sm-6 col-xs-12 footer-right">
-        		<a href="#" class="social"><img src="images/facebookvariation.png" style="height: 32px; width: 32px;" alt=""></a>
-              <a href="#" class="social"><img src="images/linkedinvariation.png" style="height: 32px; width: 32px;" alt=""></a>
-              <a href="#" class="social"><img src="images/twittervariation.png" style="height: 32px; width: 32px;" alt=""></a>
+        		<a href="#" class="social"><img src="//1-mlm.com/views/land/s/land_5/images/facebookvariation.png" style="height: 32px; width: 32px;" alt=""></a>
+              <a href="#" class="social"><img src="//1-mlm.com/views/land/s/land_5/images/linkedinvariation.png" style="height: 32px; width: 32px;" alt=""></a>
+              <a href="#" class="social"><img src="//1-mlm.com/views/land/s/land_5/images/twittervariation.png" style="height: 32px; width: 32px;" alt=""></a>
         	</div>
     	</div>
 	</div>
 </div>
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="//1-mlm.com/views/land/s/land_5/js/jquery-1.11.2.min.js"></script>
+<script src="//1-mlm.com/views/land/s/land_5/js/bootstrap.min.js"></script>
 
-<script src="js/easeljs-0.6.0.min.js"></script>
-<script src="js/tweenjs-0.4.0.min.js"></script>
-<script src="js/movieclip-0.6.0.min.js"></script>
-<script src="js/preloadjs-0.3.0.min.js"></script>
-<script src="js/rocketanimation.js"></script>
+<script src="//1-mlm.com/views/land/s/land_5/js/easeljs-0.6.0.min.js"></script>
+<script src="//1-mlm.com/views/land/s/land_5/js/tweenjs-0.4.0.min.js"></script>
+<script src="//1-mlm.com/views/land/s/land_5/js/movieclip-0.6.0.min.js"></script>
+<script src="//1-mlm.com/views/land/s/land_5/js/preloadjs-0.3.0.min.js"></script>
+<script src="//1-mlm.com/views/land/s/land_5/js/rocketanimation.js"></script>
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -368,8 +376,8 @@ function init() {
 	images = images||{};
 
 	var manifest = [
-		{src:"images/cloud.png", id:"cloud"},
-		{src:"images/rocket.png", id:"rocket_1"}
+		{src:"//1-mlm.com/views/land/s/land_5/images/cloud.png", id:"cloud"},
+		{src:"//1-mlm.com/views/land/s/land_5/images/rocket.png", id:"rocket_1"}
 	];
 
 	var loader = new createjs.LoadQueue(false);

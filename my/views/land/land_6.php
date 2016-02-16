@@ -185,8 +185,7 @@
 <div class="header_style">
 	<div class="container">
 	<img src="https://infinii.com/image/logo.png" class="logo_padd_left" alt="" style="max-width:180px; max-height:50px;">
-		<div class="twelve columns">
-		<br>	
+		<div class="twelve columns">	
     <h3 style="line-height: 23px; <?php if ($data["h1c"]) echo "color: ".$data['h1c'].";" ?>"><?=$data["h1"]?></h3>
              <!--<h3 style="color: white; font-size: 23px;" >Легальный Заработок в Интернете</h3>-->
              <!--<a href="http://bit.do/bromq" class="yt_button"></a>

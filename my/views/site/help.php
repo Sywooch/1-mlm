@@ -8,10 +8,13 @@ $this->title = 'help';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="m-heading-1 border-green m-bordered">
     <h3 class="font-green">Ваш Профиль</h3>
 </div>
+
+
                     <div class="row">
                         <div class="col-md-12">
                             <!-- BEGIN PROFILE SIDEBAR -->

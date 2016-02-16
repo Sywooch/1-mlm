@@ -35,7 +35,7 @@
 		<div class="container">
 			
 			<div class="nav-header">
-                <center><p style="color:#fff;font-size:1.5em">цена по акции - <b>69$</b> </p></center>
+                <center><p style="color:#fff;font-size:1.5em">цена по акции - <b>79$</b> </p></center>
 				<a class="nav-handle" data-nav=".nav"><i class="fa fa-bars"></i></a>	
 			</div>
 			
@@ -57,7 +57,7 @@
 				
 				<!--<h1 class="main-text" style="font-size:3em">Если вашего бизнеса нет в Интернете - значит вас нет в бизнесе.<p class="sub-text" style="text-align:right">Билл Гейтс</p></h1>
 				<br>-->
-                <h1 class="main-text" style="font-size:3em">Ваш  млм блог за <strike>424$</strike>   <b>69$</b> </h1>
+                <h1 class="main-text" style="font-size:3em">Ваш  млм блог за <strike>424$</strike>   <b>79$</b> </h1>
                
               
 			</div><!-- /.container -->
@@ -128,12 +128,12 @@
 
 				<div class="flex-col-md-6 r flex-col-md-offset-1 last-md flex-cc">
 					<div class="content">
-						<strong class="tag-text italic">действует до  12:00   3 февраля</strong>
+						<strong class="tag-text italic">действует до  24:00   16 февраля</strong>
 						<h2 class="title fs60 bold-5">Ограничено по времени и количеству!</h2>
 						<hr class="light mr-tb-40">
 						<!-- Countdown -->
 						<div class="countdown-widget mr-b-10">
-							<div data-day="03" data-month="02" data-year="2016" data-hr="12" data-min="0" data-sec="0"></div>	
+							<div data-day="17" data-month="02" data-year="2016" data-hr="01" data-min="0" data-sec="0"></div>	
 						</div><!-- /.Countdown 
 						<p class="fs14">Описание млм блога  *</p>-->
 						
@@ -179,7 +179,7 @@
 	<section class="other-section other-section-4">
 		<div class="container">
 			<h1 class="title medium" style="font-size:3em">Сколько это стоит?</h1>
-			<h2 class="title medium">Обычно от <strike><b>300$</b></strike>  - по Акции сейчас <b>69$</b> </h2>
+			<h2 class="title medium">Обычно от <strike><b>300$</b></strike>  - по Акции сейчас <b>79$</b> </h2>
 		</div><!-- / container -->
 	</section><!-- / Other section -->
 	
@@ -663,12 +663,12 @@
 
 				<div class="flex-col-md-6 r flex-col-md-offset-1 last-md flex-cc">
 					<div class="content">
-						<strong class="tag-text italic">действует до  12:00   3 февраля</strong>
+						<strong class="tag-text italic">действует до  12:00   16 февраля</strong>
 						<h2 class="title fs0 bold-5">Ограничено по времени и количеству!</h2>
 						<hr class="light mr-tb-40">
 						<!-- Countdown -->
 						<div class="countdown-widget mr-b-10">
-							<div data-day="03" data-month="02" data-year="2016" data-hr="12" data-min="0" data-sec="0"></div>	
+							<div data-day="17" data-month="02" data-year="2016" data-hr="01" data-min="0" data-sec="0"></div>	
 						</div><!-- /.Countdown 
 						<p class="fs14">Описание млм блога  *</p>-->
 						

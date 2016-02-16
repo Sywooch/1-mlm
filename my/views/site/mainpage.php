@@ -6,7 +6,6 @@ $this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' 
 $this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-
 $this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/jquery.vmap.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js', ['depends' => 'yii\web\JqueryAsset']);
@@ -14,18 +13,13 @@ $this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.e
 $this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js', ['depends' => 'yii\web\JqueryAsset']);
-
-
-
-            
-            
-            
-            
-            
+           
 
 $this->title = 'Главная';
 ?>
 <!-- Начало  страницы -->
+
+
     <div class="row">
         <div class="col-md-12">
             <div class="portlet light bordered">
@@ -34,10 +28,10 @@ $this->title = 'Главная';
                     <i class="icon-user font-blue-sharp"></i>
                     <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
 
-                    <h1>
-                        <a href="https://1-mlm.com/game-<?= $refdt; ?>.html"
-                           target="_blank">&#8594; Новогодняя акция &#8592;</a>
-                    </h1>
+                    <!--<h2>
+                       <center><a href="https://1-mlm.com/game-<?= $refdt; ?>.html"
+                           target="_blank">&#8594; Смотрите сейчас, вебинар - Новые правила в МЛМ &#8592;</a></center>
+                        </h2>-->
 
                 </div>
                 <!-- Кнопка видео подсказки и во всю ширину --->
@@ -55,7 +49,7 @@ $this->title = 'Главная';
                         <div class="modal-body">
                             <iframe width="560" height="315"
                                     src="https://www.youtube-nocookie.com/embed/<?php
-                                    echo "iBfk37Fa3H0";
+                                    echo "aBttZ3f28tQ";
                                     ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -136,8 +130,12 @@ $this->title = 'Главная';
                     </div>
                     
                     
-                    
-                    
+                       <div class="row">
+	                        <center>
+                    <iframe width="561" height="315" src="https://www.youtube.com/embed/mBe2K4v_jAs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	                        </center>
+                       </div>
+                    <br> <br>
                     <div class="row">
                        
                             <!-- BEGIN REGIONAL STATS PORTLET-->
@@ -201,11 +199,7 @@ $this->title = 'Главная';
                                 </div>
                             </div>
                             <!-- END REGIONAL STATS PORTLET-->
-                        </div>
-                    
-                    
-                    
-                    
+                        </div>                  
 
             </div>
         </div>

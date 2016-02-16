@@ -112,7 +112,7 @@ $this->title = '1-mlm';
                                 <div class="modal-body">
                                     <iframe width="560" height="315"
                                             src="https://www.youtube-nocookie.com/embed/<?php
-                                            echo "iBfk37Fa3H0";
+                                            echo "mBe2K4v_jAs";
                                             ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@ $this->title = '1-mlm';
                                     <a href="#tab3" data-toggle="tab" class="step">
                                         <span class="number"> 3 </span>
                                             <span class="desc">
-                                                <i class="fa fa-check"></i> Настройка профиля </span>
+                                                <i class="fa fa-check"></i> Настройка</span>
                                     </a>
                                 </li>
                                 <!--<li>
@@ -179,7 +179,7 @@ $this->title = '1-mlm';
 
                                         <button id="nxt_submit"
                                                 class="btn green button-submit" disabled=""> Дальше
-                                            <i class="fa fa-check"></i>
+                                            
                                         </button>
                                         <!--
                                         <a href="index.php?r=site/landing" class="btn green button-submit"> Отправить
@@ -215,7 +215,7 @@ $this->title = '1-mlm';
                                 </div>
 
                                 <div class="tab-pane" id="tab3"><br>
-                                   <h4 class="block" id="blink2">последний шаг - заполнить форму, e-mail и skype (обьязательные поля)</h4>
+                                   <h4 class="block" id="blink2">последний шаг - заполнить форму, e-mail и skype (обязательные поля)</h4>
                                         <?php
                                        echo $this->render('_index_edit_info', [
                                             'model' => $model
@@ -255,8 +255,8 @@ $this->title = '1-mlm';
             width: '640',
             videoId: '<?= $comVideo; ?>',
             playerVars: {
-                'autoplay': 0,
-                'controls': 1,
+                'autoplay': 1,
+                'controls': 0,
                 'showinfo': '0',
                 'rel': 0
             },
@@ -268,7 +268,7 @@ $this->title = '1-mlm';
         player2 = new YT.Player('player2',{
             height: '360',
             width: '640',
-            videoId: 'HBseUoVjSZo',//about system
+            videoId: 'aBttZ3f28tQ',//about system
             playerVars: {
                 'autoplay': 0,
                 'controls': 1,
