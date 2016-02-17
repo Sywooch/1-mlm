@@ -1429,7 +1429,7 @@ class SiteController extends Controller
                     $pitureUrl=$usrPic->response[0]->photo_100;
                     break;
                 default:
-                    $pitureUrl="https://1-mlm.com/img/up0.png";
+                    $pitureUrl="http://1-mlm.com/img/up0.png";
                     break;
             }
             $users = new Users();
@@ -1617,7 +1617,7 @@ class SiteController extends Controller
                     $this->usrEnter();
                     if( !empty(Yii::$app->session->get('mcID')) )
                     {
-                        return $this->redirect( "https://1-mlm.com/mc-".
+                        return $this->redirect( "http://1-mlm.com/mc-".
                             //$this->redirect( "http://localhost/index.php?r=mc&mcid=".
                             Yii::$app->session->get('mcID').".html" );
                     }
@@ -1647,7 +1647,7 @@ class SiteController extends Controller
             $this->usrEnter();
             if( !empty(Yii::$app->session->get('mcID')) )
             {
-                return $this->redirect( "https://1-mlm.com/mc-".
+                return $this->redirect( "http://1-mlm.com/mc-".
                     //$this->redirect( "http://localhost/index.php?r=mc&mcid=".
                     Yii::$app->session->get('mcID').".html" );
             }
@@ -2340,8 +2340,8 @@ return $this->goHome();
             \Yii::$app->session->setFlash
             (
                 'success',
-                "Ваша партнерская ссылка для приглашения в саму систему <a href=\"https://1-mlm.com/ref-{$usrDt->refdt}.html\"
-                 target=\"_blank\">https://1-mlm.com/ref-{$usrDt->refdt}.html</a><br />
+                "Ваша партнерская ссылка для приглашения в саму систему <a href=\"http://1-mlm.com/ref-{$usrDt->refdt}.html\"
+                 target=\"_blank\">http://1-mlm.com/ref-{$usrDt->refdt}.html</a><br />
                 Ссылка для привлечения в Ваш проект находится в настройках профиля под  выбором компаний<br />
                 P.S. После выбора другой компании и сохранения профиля ссылка поменяется автоматически!<br />
                 Вы можете таким образом нужные Вам ссылки сохранить  в разделе \"Мои проекты\"."
@@ -2373,6 +2373,6 @@ return $this->goHome();
     public function actionSid()
     {
         Yii::$app->session->set('redirect', \Yii::$app->request->get('redirect'));
-        return $this->redirect( "https://1-mlm.com/index.php?r=site%2Flogin&service=facebook" );
+        return $this->redirect( "http://1-mlm.com/index.php?r=site%2Flogin&service=facebook" );
     }
 }

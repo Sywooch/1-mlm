@@ -127,11 +127,11 @@ $form = ActiveForm::begin([
 
         <div class="input-group">
             <input type="text"
-                   value="<?= "https://1-mlm.com/{$model->companyid}-{$model->refdt}.html"; ?>"
+                   value="<?= "http://1-mlm.com/{$model->companyid}-{$model->refdt}.html"; ?>"
                    class="form-control" />
             <span class="input-group-btn">
                 <button class="btn blue" onclick="window.location='<?php
-                echo "https://1-mlm.com/{$model->companyid}-{$model->refdt}.html";
+                echo "http://1-mlm.com/{$model->companyid}-{$model->refdt}.html";
                 ?>';target='_blank';" type="button">Go!</button>
             </span>
         </div>

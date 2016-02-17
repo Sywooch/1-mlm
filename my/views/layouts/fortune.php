@@ -16,9 +16,9 @@ HangoutAsset::register($this);
 
         <meta property="og:title" content="1 mlm Ресурс™  2016"/>
         <meta property="og:description" content="Автоматизация Рекрутинга на 80% Идея 1 mlm - предоставить Вам профессиональную маркетинговую систему для маштабного развития и автоматизации сетевого и партнёрского бизнеса." />
-        <meta property="og:image" content="https://1-mlm.com/img/1-mlm-og.png" />
+        <meta property="og:image" content="//1-mlm.com/img/1-mlm-og.png" />
 
-        <meta property="og:url" content="https://1-mlm.com/ref-<?php
+        <meta property="og:url" content="//1-mlm.com/ref-<?php
         $identity = \Yii::$app->getUser()->getIdentity()->profile;
         $usr = \app\models\Users::find();
         switch($identity["service"])

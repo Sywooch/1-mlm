@@ -76,7 +76,7 @@
                 <table style="margin:0 auto;" cellspacing="0" height="60" cellpadding="0" width="100%">
                     <tr>
                         <td style="text-align: center;">
-                            <a href="#"><img width="91" height="91" src="https://1-mlm.com/img/logo.png" alt="company logo" /></a>
+                            <a href="#"><img width="91" height="91" src="http://1-mlm.com/img/logo.png" alt="company logo" /></a>
                         </td>
                     </tr>
                 </table>
@@ -106,7 +106,7 @@
                                         <table cellspacing="0" cellpadding="0" width="100%" style="background-color:#121212;">
                                             <tr>
                                                 <td>
-                                                    <img src="https://1-mlm.com/img/ng.jpg" style="max-width:100%; display:block;">
+                                                    <img src="http://1-mlm.com/img/ng.jpg" style="max-width:100%; display:block;">
                                                 </td>
                                             </tr>
                                         </table>
@@ -163,7 +163,7 @@
                                                             <w:anchorlock/>
                                                             <center>
                                                         <![endif]-->
-                                                        <a class="btn" href="https://1-mlm.com/"
+                                                        <a class="btn" href="http://1-mlm.com/"
                                                            style="background-color:#00989a;color:#ffffff;display:inline-block;font-family:'Source Sans Pro', Helvetica, Arial, sans-serif;font-size:18px;font-weight:400;line-height:45px;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;
                                     -webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;">Узнать больше</a>
                                                         <!--[if mso]>

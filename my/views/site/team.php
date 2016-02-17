@@ -55,7 +55,7 @@ $('.send2wall').click(function(e) {
       attachments: "photo-76966334_359840040",
       message: "Добро пожаловать в систему 1-й млм Ресурс! "+
       "\nПомогу начать приглашать новых кандидатов в Ваш бизнес "+
-      "уже сегодня!\nВаша ссылка: https://1-mlm.com/ref-"+refdt+".html"
+      "уже сегодня!\nВаша ссылка: http://1-mlm.com/ref-"+refdt+".html"
     }, function (data) {
       if (data.response) clicked.replaceWith('Сообщение №'+data.response.post_id);
     });
@@ -310,7 +310,7 @@ $this->title = 'Команда. Ваша 1-я линия';
                             'options' => ['style' => 'width: 70px; max-width: 70px;'],
                             'value'  =>  function($dt)
                             {
-                                return  "<a href='https://1-mlm.com/{$dt["companyid"]}-{$dt["refdt"]}.html'
+                                return  "<a href='http://1-mlm.com/{$dt["companyid"]}-{$dt["refdt"]}.html'
                                         target='_blank'
                                         ><i class='fa fa-paper-plane'></i></a>";
                             }

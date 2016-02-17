@@ -83,8 +83,8 @@ class PayController extends \yii\web\Controller
             'subscribe' => '1',
             'subscribe_date_start'=>date("Y-m-d H:i:s"),
             'subscribe_periodicity' => $moyr,
-            'server_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
-            'result_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
+            'server_url'=>'http://1-mlm.com/index.php?r=pay%2Fcheck',
+            'result_url'=>'http://1-mlm.com/index.php?r=pay%2Fcheck',
             'order_id' => \app\controllers\PayController::odredId()
         ]);
     }
@@ -107,8 +107,8 @@ class PayController extends \yii\web\Controller
                 'subscribe_periodicity' => 'month',
 				'subscribe_date_start'=>date("Y-m-d H:i:s"),
 
-                'server_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
-                'result_url'=>'https://1-mlm.com/index.php?r=pay%2Fcheck',
+                'server_url'=>'http://1-mlm.com/index.php?r=pay%2Fcheck',
+                'result_url'=>'http://1-mlm.com/index.php?r=pay%2Fcheck',
 
                 'order_id' => $this->odredId()
             ]);

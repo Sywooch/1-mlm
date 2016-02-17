@@ -111,7 +111,7 @@
 <body yahoo="fix" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 	
 	<!-- ======= main section ======= -->
-	<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(https://1-mlm.com/img/main-bg.jpg); background-size: 100% 100%; background-position: top center;" background="https://1-mlm.com/img/main-bg.jpg">
+	<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(http://1-mlm.com/img/main-bg.jpg); background-size: 100% 100%; background-position: top center;" background="http://1-mlm.com/img/main-bg.jpg">
 		
 	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" style="background-image: url(http://themastermail.com/alerta/notif2/img/main-bg.png); background-size: 100% 100%; background-position: top center;" background="http://themastermail.com/alerta/notif2/img/main-bg.png">--->
 		
@@ -192,7 +192,7 @@
 				                					<!-- ======= main section button ======= -->
 				                					
 					                    			<div style="line-height: 24px;">
-						                    			<a href="https://1-mlm.com/comeoff.html" target="_blank" style="color: #ffffff; text-decoration: none;">ОТПИСАТЬСЯ</a> 
+						                    			<a href="http://1-mlm.com/comeoff.html" target="_blank" style="color: #ffffff; text-decoration: none;">ОТПИСАТЬСЯ</a>
 					                    			</div>
 					                    		</td>
 					                    		
@@ -219,7 +219,7 @@
 					<tr>
 						<!-- ======= logo ======= -->
 						<td align="center">
-							<a href="" style="display: block; border-style: none !important; border: 0 !important;"><img width="58" border="0" style="display: block; width: 58px;" src="https://1-mlm.com/img/logo.png" alt="logo" /></a>
+							<a href="" style="display: block; border-style: none !important; border: 0 !important;"><img width="58" border="0" style="display: block; width: 58px;" src="http://1-mlm.com/img/logo.png" alt="logo" /></a>
 						</td>			
 					</tr>
 					

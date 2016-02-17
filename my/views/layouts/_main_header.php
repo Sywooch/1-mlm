@@ -59,7 +59,7 @@ $brand=$brand["brandicon"];
                    <i class="fa fa-angle-down"></i>
                 </button>-->
                 
-                 <button class="btn green-meadow btn-sm dropdown-toggle" onclick="window.location='https://1-mlm.com/index.php?r=site%2Fpricing';
+                 <button class="btn green-meadow btn-sm dropdown-toggle" onclick="window.location='//1-mlm.com/index.php?r=site%2Fpricing';
                                     target='_blank';" type="button">Обновится до платной версии&nbsp;</button>
                 <!--<ul class="dropdown-menu" role="menu">
                     <li>

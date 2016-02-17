@@ -117,7 +117,7 @@ use kartik\widgets\ColorInput;
                     "template" => "<label>Ваша ссылка</label>\n{input}\n{hint}\n{error}"])
                     ->textInput([
                         "readonly" => true,
-                        "value"=>'https://1-mlm.com/'.$lp->id.'.html'
+                        "value"=>'http://1-mlm.com/'.$lp->id.'.html'
                     ]); ?>
             </div>
             <div class="form-group">

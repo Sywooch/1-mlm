@@ -49,7 +49,7 @@ VK.Widgets.Comments("vk_comments", {limit: 10, width: "330", attach: "*"});
             </div>
 
             <div class="col-md-4">
-                <div class="fb-comments" data-href="https://1-mlm.com" data-numposts="15"></div>
+                <div class="fb-comments" data-href="http://1-mlm.com" data-numposts="15"></div>
             </div>
         </div>
         <div class="container" style="text-align: center; margin-bottom: 45px;">

@@ -70,7 +70,7 @@ class VkpmController extends \yii\web\Controller
             $MEMBER=$val["fn"];
             $message=
                     $MEMBER . ", Обновление Вашего Бизнеса Готово!\n"
-                    . " посетите 1 МЛМ https://1-mlm.com/ и узнайте подробнее!";
+                    . " посетите 1 МЛМ http://1-mlm.com/ и узнайте подробнее!";
 
             $a=$this->sendVkPm($val["vkontakte"] , $message);
             usleep(100000);

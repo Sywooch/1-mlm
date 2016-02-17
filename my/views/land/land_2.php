@@ -9,7 +9,7 @@
     <!--<meta property="fb:app_id" content="356692">-->
     <meta property="og:title" content="<?=$data["name"]?>">
     <meta property="og:description" content="<?=$data["desc"]?>">
-    <meta property="og:url" content="https://1-mlm.com/">
+    <meta property="og:url" content="//1-mlm.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="<?=$user["userpic"]?>">
     <link href="lp/01/css/style.css" rel="stylesheet" type="text/css">
@@ -283,8 +283,8 @@
     dataLayer.push({'event': 'view_landing'});
 
 </script>
-<script type="text/javascript" src="https://1-mlm.com/lp/01/js/all.min.js"></script>
-<script type="text/javascript" src="https://1-mlm.com/lp/01/js/lp_all.min.js"></script>
+<script type="text/javascript" src="//1-mlm.com/lp/01/js/all.min.js"></script>
+<script type="text/javascript" src="//1-mlm.com/lp/01/js/lp_all.min.js"></script>
 
 <script>
     $(document).ready(function () {

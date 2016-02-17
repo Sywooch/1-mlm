@@ -29,7 +29,7 @@
     <title><?=$data["name"]?></title>
     <!--<base href="http://warthunder.com/" local="false" host="">-->
 
-    <link href="https://1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
+    <link href="//1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
 
     <link rel="stylesheet" type="text/css" href="//1-mlm.com/soc_net/social-likes_classic.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -532,8 +532,8 @@
     dataLayer.push({'event': 'view_landing'});
 
 </script>
-<script type="text/javascript" src="https://1-mlm.com/lp/01/js/all.min.js"></script>
-<script type="text/javascript" src="https://1-mlm.com/lp/01/js/lp_all.min.js"></script>
+<script type="text/javascript" src="//1-mlm.com/lp/01/js/all.min.js"></script>
+<script type="text/javascript" src="//1-mlm.com/lp/01/js/lp_all.min.js"></script>
 
 <script>
     $(document).ready(function () {
