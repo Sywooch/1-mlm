@@ -45,6 +45,11 @@ switch($identity["service"])
                 <i class="icon-user"></i> Мой профиль </a>
         </li>
         <li>
+            <a href="index.php?r=brand%2Fbrand">
+                <i class="icon-user"></i> Мой Брендинг </a>
+        </li>
+        
+        <li>
             <a href="index.php?r=site%2Fteam">
                 <i class="icon-diamond"></i> Моя Команда </a>
 

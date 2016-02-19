@@ -59,8 +59,11 @@ $brand=$brand["brandicon"];
                    <i class="fa fa-angle-down"></i>
                 </button>-->
                 
-                 <button class="btn green-meadow btn-sm dropdown-toggle" onclick="window.location='//1-mlm.com/index.php?r=site%2Fpricing';
+                 <button class="btn green-meadow btn-sm dropdown-toggle" onclick="window.location='index.php?r=site%2Fpricing';
                                     target='_blank';" type="button">Обновится до платной версии&nbsp;</button>
+                                    
+                                   &nbsp;&nbsp;&nbsp;
+            </div>
                 <!--<ul class="dropdown-menu" role="menu">
                     <li>
                         <a href="javascript:;">
@@ -88,6 +91,11 @@ $brand=$brand["brandicon"];
                         </a>
                     </li>
                 </ul>-->
+                
+                <div class="btn-group">
+	                 <button class="btn blue btn-sm dropdown-toggle" onclick="window.location='skype:support.mlm?chat';
+                                    target='_blank';" type="button">Помощь по Skype (чат с админом )&nbsp;</button>
+                                    
             </div>
         </div>
         <!-- END PAGE ACTIONS -->
@@ -110,8 +118,9 @@ $brand=$brand["brandicon"];
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->
                     <li class="dropdown dropdown-extended quick-sidebar-toggler">
-                        <span class="sr-only">Toggle Quick Sidebar</span>
-                        <i class="icon-logout"></i>
+                        <span class="sr-only">меню спонсора</span>
+                        <big><b><i class="icon-logout" style="color: #F64747;"></i></b></big>
+                        <!--<i class="icon-call-out" style="color: #F64747;"></i>-->
                     </li>
                     <!-- END QUICK SIDEBAR TOGGLER -->
                 </ul>
