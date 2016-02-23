@@ -192,9 +192,10 @@ class PayController extends \yii\web\Controller
             if('ok'==$answer->result)
             {
                 list($level, $uid, $moyr, $paydate) = explode(":", $answer->description);
+                $paydate=date("Y-m-d");
                 $a = Users::find()
                     ->where([
-                        'order_id'=>$answer->order_id
+			'order_id'=>$answer->liqpay_order_id//$answer->order_id
                 ])->count();
 
                 if($a<1)
@@ -215,7 +216,7 @@ class PayController extends \yii\web\Controller
                 //------------------------------
                     $user->level=$level;
                     $user->paid=$answer->amount;
-                    $user->order_id=$answer->order_id;
+                    $user->order_id=$answer->liqpay_order_id;
                     $user->paydate=$paydate;
 
                     $time = strtotime($paydate);
