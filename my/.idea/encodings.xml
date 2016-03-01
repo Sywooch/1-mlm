@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/assets/AppAsset.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config/web.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/controllers/BrandController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/controllers/LandBuilderController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/controllers/MailController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/controllers/McController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/controllers/PayController.php" charset="UTF-8" />

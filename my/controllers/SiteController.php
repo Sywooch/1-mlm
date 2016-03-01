@@ -1790,7 +1790,8 @@ class SiteController extends Controller
                         $query->select('id, name')
                             ->from([Lp::tableName()])
                             ->where(['uid'=>$usr['id']])
-                ])
+                ]),
+                'refdt'=>$usr['refdt']
             ]);
         }
         return $this->goHome();

@@ -50,7 +50,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="portlet-body">
         <div class="table-responsive">
-            <?php $j=0; ?>
             <?= GridView::widget([
                 'dataProvider'  =>  $dataProvider,
                 'tableOptions'  =>  [
@@ -64,13 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'summary'   =>  '<div>Показаны записи {begin} - {end} из {totalCount}</div>',
                 'columns' => [
-                    [
-                        'header' => '#',
-                        'value' => function($j) {
-                            global $j; ++$j;
-                            return $j;
-                        },
-                    ],
+                    ['class' => 'yii\grid\SerialColumn'],
                     [
                         'attribute' => 'name',
                         'label' => 'Название'
@@ -78,8 +71,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'header' => 'Ссылка на страницу',
                         'format' => 'raw',
-                        'value' => function($data) {
-                            return '<a href=\'http://1-mlm.com/'.$data["id"].'.html\' target="_blank">http://1-mlm.com/'.$data["id"].'.html</a>';
+                        'value' => function($data)use($refdt){
+                            return '<a href=\'http://1-mlm.com/'
+                            .$data["id"].'.html\' target="_blank">http://1-mlm.com/'.$data["id"]
+                            .'-'.$refdt
+                            .'.html</a>';
                         }
                     ]
                 ]
@@ -88,10 +84,4 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
-
-
-
-
-
-
 <!-- конец страницы-->

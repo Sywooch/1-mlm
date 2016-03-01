@@ -40,7 +40,7 @@ $( document ).ready(function() {
          });
         }
         else if( 5==$("#stepIndex").val() ) {
-                window.location = "index.php?r=site/landing";
+                window.location = "index.php?r=site/index";
         }
     });
 /*********************************************************************/
