@@ -94,7 +94,7 @@ if( !empty(\Yii::$app->request->get("r")) )
             </a>
         </li>
 
-        <li class="nav-item start <?php
+        <li class="nav-item active open <?php
         echo ( "landing"==$act ) ? 'active open' : null;
         echo ( "links"==$act ) ? 'active open' : null;
         echo ( "landingedit"==$act ) ? 'active open' : null;
@@ -102,7 +102,7 @@ if( !empty(\Yii::$app->request->get("r")) )
             <a href="index.php?r=site%2Flanding" class="nav-link">
                 <i class="icon-wrench"></i>
                 <span class="title">Создание страниц</span>
-                <span class="arrow"></span>
+                <span class="arrow open"></span>
             </a>
                 <ul class="sub-menu">
                     <li class="nav-item  <?= ( "landing"==$act ) ? 'active open' : null; ?>">
