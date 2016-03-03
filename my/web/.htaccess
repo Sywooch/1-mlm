@@ -20,13 +20,12 @@ RewriteRule ^ref-(.*)\.html$ index.php?r=site/ref&refid=$1 [L,QSA]
 RewriteRule ^mc-(.*)\.html$ index.php?r=mc&mcid=$1 [L,QSA]
 
 
-
+#------------------------------------------------------------------
 RewriteRule ^comeoff.html$ index.php?r=comeoff/comeoff  [L,QSA]
 RewriteRule ^game.html$ 	index.php?r=fortune [L,QSA]
 RewriteRule ^game-(.*)\.html$ 	index.php?r=fortune&refdt=$1 [L,QSA]
-
 RewriteRule ^yandex-(.*)\.txt$ index.php?r=yandex&yanid=$1 [L,QSA]
-
+#------------------------------------------------------------------
 
 
 

@@ -98,7 +98,7 @@ $act=\Yii::$app->controller->route;
             <a href="<?= Yii::$app->urlManager->createUrl(['site/landing']) ?>" class="nav-link">
                 <i class="icon-wrench"></i>
                 <span class="title">Создание страниц</span>
-                <span class="arrow"></span>
+                <span class="arrow open"></span>
             </a>
                 <ul class="sub-menu">
                     <li class="nav-item  <?= ( "site/landing"==$act ) ? 'active open' : null; ?>">
