@@ -158,12 +158,13 @@ class SiteController extends Controller
             }
             else
             {
-                $this->layout="start";
+                /*$this->layout="start";
                 return $this->render('index', [
                     'model' => $model->one(),
                     'comVideo' => Lp::find()->where(['id'=>$consultant['companyid']])->one()['yt2'],
                     'consultant' => $consultant
-                ]);
+                ]);*/
+                return $this->actionCompany();
            }
 
         }else{

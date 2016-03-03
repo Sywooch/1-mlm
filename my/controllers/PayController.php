@@ -52,6 +52,7 @@ class PayController extends \yii\web\Controller
 
         return $this->render('//pay/index', [
                 'level'=>$usrDt["level"],
+                'endDate'=>$usrDt["endpaydate"],
                 'btn2'=>\app\controllers\PayController::lippayDt("2","2"),
                 'btn10'=>\app\controllers\PayController::lippayDt("3","10"),
                 'btn25'=>\app\controllers\PayController::lippayDt("4","25"),
