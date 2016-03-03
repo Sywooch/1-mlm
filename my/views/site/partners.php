@@ -195,7 +195,8 @@ $css = <<<'STYLE'
 STYLE;
 $this->registerCss($css);
 ?>
-   <link href="http://1-mlm.com/css/partners-tab.css" rel="stylesheet">
+
+
 <!--<link href="https://hostpro.ua/wp-content/themes/hostpro/assets/css/style.css" rel="stylesheet">-->
 
 <div class="row">
@@ -254,27 +255,20 @@ $this->registerCss($css);
             </div>
             
                                         <!-- BEGIN PORTLET-->
-                            <div class="portlet light bordered">
-                                <div class="portlet-title">
+                                        
+                                        
+                                        
+                            
+                                
                                     <div class="caption">
                                        
                                     </div>
-                                    <!--<div class="actions">
-                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                                            <i class="icon-cloud-upload"></i>
-                                        </a>
-                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                                            <i class="icon-wrench"></i>
-                                        </a>
-                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                                            <i class="icon-trash"></i>
-                                        </a>
-                                    </div>-->
-                                </div>
+                                 
+                                
                                 <div class="portlet-body">
                                     
                                     <!-- Button to trigger modal -->
-                                    <a href="#myModal1" role="button" class="btn blue" data-toggle="modal"> условия партнерской программы </a>
+                                    <a href="#myModal1" role="button" class="btn white" data-toggle="modal"> условия партнерской программы </a>
                                     
                                     <!-- Modal -->
                                     <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
@@ -285,12 +279,13 @@ $this->registerCss($css);
                                                     <h4 class="modal-title">Условия партнерской программы</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                   <div class="wind-body" style="padding: 0 30px;">
+                                                   <div class="wind-body" style="padding: 0 0px;">
         1. Участником партнерской программы может стать любой зарегистрированный пользователь на тарифе "мастер".
         <br>
-        2. Используя свою партнерские ссылку, Вы становитесь участником данной
+        2. Используя свою <a href="http://1-mlm.com/index.php?r=site/myref">партнерские ссылку</a>
+, Вы становитесь участником данной
         партнерской программы и полностью принимаете все ее правила и условия.
-        <br>
+        <br>    
        3. Когда привлеченный Вами клиент выполняет оплату тарифа, Вам начисляется
         вознаграждение в размере 50% от суммы его первого и всех последующих платежей.
         <br>
@@ -367,47 +362,18 @@ $this->registerCss($css);
     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button class="btn default" data-dismiss="modal" aria-hidden="true">Закрыть</button>
-                                                    <button class="btn yellow">Save</button>
+                                                    <button class="btn yellow" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                    <h4 class="modal-title">Alert Header</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p> Body goes here... </p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button data-dismiss="modal" class="btn green">OK</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="myModal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                    <h4 class="modal-title">Confirm Header</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p> Body goes here... </p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
-                                                    <button data-dismiss="modal" class="btn blue">Confirm</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                           
+                         
+                            
+                            
+                            
                             <!-- END MODAL DIALOG PORTLET-->
             
             <div class="portlet-body">
@@ -476,6 +442,7 @@ $this->registerCss($css);
         </div>
     </div>
 </section>
+            </div>
             </div>
         </div>
     </div>

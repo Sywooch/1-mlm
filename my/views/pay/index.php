@@ -40,17 +40,18 @@ $this->title = 'Выбор тарифа';
                 </div>
                 <!------------------------------------------------------------>
             </div>
+            <left>
             <ul class="nav nav-tabs">
                 <li class="active">
-                    <a href="#tab_1_1" data-toggle="tab"> Месяц  </a>
+                    <a href="#tab_1_1" data-toggle="tab"> Тарифы за Месяц  </a>
                 </li>
                 <li>
-                    <a href="#tab_1_2" data-toggle="tab"> Год  </a>
+                    <a href="#tab_1_2" data-toggle="tab"> Тарифы за Год  </a>
                 </li>
-            </ul>
+            </ul></left>
         </div>
         <div><p align="center" style="font-size: 18px;">
-                Ваш  текущий тарифный план - <?= $level; ?> (активен до <?= $endDate ?>) <br /></p></div>
+                <span style="font-size: 16px;">Ваш  текущий тарифный план: </span> <?= $level; ?> <span style="color: #F64747; font-size: 16px;">(активен до <?= $endDate ?>) </span><br /></p></div>
         <div class="portlet-body">
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="tab_1_1">
@@ -76,6 +77,6 @@ $this->title = 'Выбор тарифа';
             'btn25'=>$btn25
         ])*/?>
         </div>
-        <div><p align="center"><span style="color: #F64747;">Внимание !!!</span> Все тарифы снижены до 31.12.2016</p></div>
+        
     </div>
     <!-- END PAGE BASE CONTENT -->
