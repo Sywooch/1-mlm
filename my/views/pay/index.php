@@ -51,7 +51,8 @@ $this->title = 'Выбор тарифа';
             </ul></left>
         </div>
         <div><p align="center" style="font-size: 18px;">
-                <span style="font-size: 16px;">Ваш  текущий тарифный план: </span> <?= $level; ?> <span style="color: #F64747; font-size: 16px;">(активен до <?= $endDate ?>) </span><br /></p></div>
+                <span style="font-size: 16px;">Ваш  текущий тарифный план: </span><span style="color: #168F76;"> «
+ <?= $level; ?> » </span><span style="color: #3598DC; font-size: 16px;"> активен до:</span> <span style="color: #F64747; font-size: 16px;">  <?= $endDate ?> </span><br /></p></div>
         <div class="portlet-body">
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="tab_1_1">
