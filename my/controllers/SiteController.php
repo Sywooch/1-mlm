@@ -24,7 +24,6 @@ use app\models\VkFriends;
 
 class SiteController extends Controller
 {
-    private $siteUrl="https://gmail.com/";
     /*
      public function behaviors()
         {
@@ -77,8 +76,13 @@ class SiteController extends Controller
         if("innsave"==$action->id){
             $this->enableCsrfValidation = false;
         }
+        /*if("error"==$action->id){
+            //$action->actionMethod='urlRewrite';
+        }*/
         return parent::beforeAction($action);
     }
+
+
 
     public function actionInnsave() {
         if (!\Yii::$app->user->isGuest) {

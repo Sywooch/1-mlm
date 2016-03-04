@@ -128,7 +128,7 @@ $this->title = 'Главная';
                             </div>
                         </div>
                     </div>
-                    
+               
                     
                        <div class="row">
 	                        <center>

@@ -22,7 +22,7 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl'   => true,
             'showScriptName'    => false,
-            'suffix'            => '.php'
+            'suffix'            => '.php',
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation

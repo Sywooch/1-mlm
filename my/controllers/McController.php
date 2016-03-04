@@ -30,11 +30,13 @@ class McController extends Controller
             }
         //}
     }
-
-    public function actionIndex()
+    static public function getDt($mid)
+    {
+        return \app\controllers\McController::actionIndex($mid);
+    }
+    public function actionIndex($mcid=null)
     {
         $this->layout = '_hangout';
-        $mcid=(int)\Yii::$app->request->get("mcid");
         $this->ref($mcid);
         $h=Hangouts::findOne(['id'=>$mcid]);
         if (!\Yii::$app->user->isGuest)
