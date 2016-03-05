@@ -76,9 +76,6 @@ class SiteController extends Controller
         if("innsave"==$action->id){
             $this->enableCsrfValidation = false;
         }
-        /*if("error"==$action->id){
-            //$action->actionMethod='urlRewrite';
-        }*/
         return parent::beforeAction($action);
     }
 
@@ -662,11 +659,10 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    private function raddref()
+    private function raddref($refdt)
     {
-        if( !empty(\Yii::$app->request->get("refid")) )
+        if( !empty($refdt) )
         {
-            $refdt=\Yii::$app->request->get("refid");
             $usrDt=Users::find()
                 ->where(['refdt' => $refdt]);
             if( $usrDt->count()>0 )
@@ -674,6 +670,11 @@ class SiteController extends Controller
                 Yii::$app->session->set('refuserId', $refdt);
             }
         }
+    }
+
+    public function actionAddref($refdt)
+    {
+        $this->raddref($refdt);
     }
 
     public function actionCalendar()

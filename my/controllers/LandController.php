@@ -6,12 +6,6 @@ use app\models\Lp;
 
 class LandController extends Controller
 {
-    static public function getLend($landid=null, $uid=null)
-    {
-        echo $landid;
-        \app\controllers\LandController::actionIndex($uid=null, $landid=null);
-
-    }
     public function actionIndex($landid=null, $uid=null)
     {
         $this->layout = "empty";

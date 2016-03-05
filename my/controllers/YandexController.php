@@ -5,9 +5,8 @@ use app\models\Lp;
 
 class YandexController extends Controller
 {
-    public function actionIndex()
+    public function actionIndex($yanid=null)
     {
-        $yanid=( !empty(\Yii::$app->request->get("yanid")) )?\Yii::$app->request->get("yanid"):null;
         $cnt=Lp::find()->where(['yandexmetrika'=>$yanid])->count();
         if($cnt>0)
         {

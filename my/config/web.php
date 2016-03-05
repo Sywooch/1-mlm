@@ -22,7 +22,15 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl'   => true,
             'showScriptName'    => false,
-            'suffix'            => '.php',
+            //'suffix'            => '.php',
+            //'enableStrictParsing' => false,
+            'rules'=>[
+                '<landid:\d+>.html'=>'land/index',
+                '<landid:\d+>-<uid:\w+>.html'=>'land/index',
+                'mc-<mcid:\w+>.html'=>'mc/index',
+                'ref-<refdt:\w+>.html'=>'site/addref',
+                'yandex-<yanid:\w+>.txt'=>'yandex/index',
+            ]
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation

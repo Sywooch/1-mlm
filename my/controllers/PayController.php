@@ -43,7 +43,7 @@ class PayController extends \yii\web\Controller
                 );
             }
 
-            $usrDt=(new \yii\db\Query())->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt,
+            $usrDt=(new \yii\db\Query())->select('u.fn AS fn, u.ln AS ln, u.refdt AS refdt, u.endpaydate AS endDate,
                 u.active AS active, l.title AS level, u.userpic AS userpic, u.money AS money')
                 ->from([Users::tableName().' u'])
                 ->innerJoin(Levels::tableName().' l','l.id = u.level');
@@ -52,7 +52,7 @@ class PayController extends \yii\web\Controller
 
         return $this->render('//pay/index', [
                 'level'=>$usrDt["level"],
-                'endDate'=>$usrDt["endpaydate"],
+                'endDate'=>$usrDt["endDate"],
                 'btn2'=>\app\controllers\PayController::lippayDt("2","2"),
                 'btn10'=>\app\controllers\PayController::lippayDt("3","10"),
                 'btn25'=>\app\controllers\PayController::lippayDt("4","25"),
