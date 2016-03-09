@@ -47,7 +47,9 @@
         "delagics/yii2-liqpay": "^1.0",
         "yiisoft/yii2-imagine": "^2.0",
         "kartik-v/yii2-social": "dev-master",
-        "kartik-v/yii2-widget-timepicker": "*"
+        "kartik-v/yii2-widget-timepicker": "*",
+		"insolita/yii2-migration-generator": "*"
+		
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
