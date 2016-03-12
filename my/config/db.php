@@ -4,7 +4,7 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=mlm',
     'username' => 'root',
-    'password' => '0',
+    'password' => '',
     'charset' => 'utf8',
 ];
 /*

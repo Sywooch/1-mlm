@@ -675,6 +675,7 @@ class SiteController extends Controller
     public function actionAddref($refdt)
     {
         $this->raddref($refdt);
+        return $this->goHome();
     }
 
     public function actionCalendar()
