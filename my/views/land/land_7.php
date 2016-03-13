@@ -152,7 +152,7 @@
 							<p class="title-sub mini">После получения Ваших даных  наш менеджер по работе с клиентами свяжется с Вами для полного оформления заказа</p>
 						</div>
 						<div class="pop-body">
-							<form action="//1-mlm.com/index.php?r=order-blog%2Faccepted"
+							<form action="https://1-mlm.com/index.php?r=order-blog%2Faccepted"
 							 class="form-widget" data-popup="popup-contact">
 								<input type="hidden" name="to" >
 								<input class="form-control" data-label="Name" name="name" required data-msg="Пожалуйста, введите ваше имя." type="text" name="name" placeholder="Введите свое имя">
@@ -689,7 +689,7 @@
 							<p class="title-sub mini">После получения Ваших даных  наш менеджер по работе с клиентами свяжется с Вами для полного оформления заказа</p>
 						</div>
 						<div class="pop-body">
-							<form action="//1-mlm.com/index.php?r=order-blog%2Faccepted" class="form-widget" data-popup="popup-contact">
+							<form action="https://1-mlm.com/index.php?r=order-blog%2Faccepted" class="form-widget" data-popup="popup-contact">
 								<input type="hidden" name="to">
 								<input class="form-control" data-label="Name" required data-msg="Пожалуйста, введите ваше имя." type="text" name="name" placeholder="Введите свое имя">
 								<input class="form-control" data-label="Email" required data-msg="Пожалуйста, введите свой email." type="email" name="email" placeholder="Введите свой email">

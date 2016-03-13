@@ -15,8 +15,8 @@
 <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/tp5/css/bootstrap.min.css" />
 
 <link rel="stylesheet" type="text/css" href="//1-mlm.com/views/land/s/land_5/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="//1-mlm.com/views/land/s/land_5/css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="//1-mlm.com/views/land/s/land_5/css/style.css">
+<link rel="stylesheet" type="text/css" href="https://1-mlm.com/views/land/s/land_5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="https://1-mlm.com/views/land/s/land_5/css/style.css">
 
 <link type="image/x-icon" rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABKUlEQVQ4jb3SzyvlURjH8VdYiKRrrh/ZzP9AtsJfwHYm1CT8ARQ7ljasLPwJmt1sLGz8aGzUdJMuM/KjFPmxkMRkgcV51O3mq1vKU6fO0znvz/N8nnP4xBjCbzzgHw4qBfNYwT2WMYIOnFQCt2IPRXTjF+bxHY9ZUA168AOnAefQjP0Q+YntcjCHCcnfc6xdNJTcaUcvnvCtvOp6tLWEaxTQiK4Qfy2yh9Xy6lUYxR2OsIk6jEUnnWGhiL9oyfI/IE17AsMBj0flgjT5tiy4DXO4KpnBIGrxp0TszfgSrZ1hQ/osz5iM/CLyviyBKdxKQ4M1XAZ0jtkQyfR+iOnY56OTOfSH8H8sZMGkd13EDG6kD/M1zkawhab3BI4l3zuS7/qy8+r34A/FC5cqTDh6ZYEVAAAAAElFTkSuQmCC">
 
