@@ -229,7 +229,7 @@
           					<form id="contact_form" pix-confirm="hidden_pix_8">
                                            
                       
-                        <span class="editContent"><!-- href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" -->
+                        <span class="editContent"><!-- href="/site/ref?refid=<?=$user["refdt"]?>" -->
                         <a href="#"
                         data-toggle="modal"
                         data-target="#modal-1" 

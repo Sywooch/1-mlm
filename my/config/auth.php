@@ -21,12 +21,12 @@ return [
             // register your app here: https://vk.com/editapp?act=create&site=1
             'class' => 'nodge\eauth\services\VKontakteOAuth2Service',		
 //local
-            'clientId' => '5148975',
-            'clientSecret' => 'iWTKQGXioPPWZAdNJO3S',
+        //    'clientId' => '5148975',
+       //     'clientSecret' => 'iWTKQGXioPPWZAdNJO3S',
             /***********************************************/
 //Hosting
-	   //'clientId' => '5130699',
-	   //'clientSecret' => '4B25v7qHSl0NODAekOuh',
+	   'clientId' => '5130699',
+	   'clientSecret' => '4B25v7qHSl0NODAekOuh',
         ],
         
         'twitter' => [
@@ -60,8 +60,8 @@ return [
         'google' => [
             // register your app here: https://code.google.com/apis/console/
             'class' => 'nodge\eauth\services\GoogleOAuth2Service',
-            'clientId' => 'glowing-run-111709',
-            'clientSecret' => 'AIzaSyCCzNaYZQEM6j_WYHlfzr_KEpfFA6C1y24',
+            'clientId' => '821420806018-j5f54ifrt3kjp4gimvct7bkqvouu61op.apps.googleusercontent.com',
+            'clientSecret' => 'Ta_A-4XSSNFGgplM0gb0KAQh',
             'title' => 'Google',
         ],
         'linkedin_oauth2' => [

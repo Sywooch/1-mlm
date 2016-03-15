@@ -1,18 +1,18 @@
 <?php
-$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
 
-$this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-$this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/jquery.vmap.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/jquery.vmap.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js', ['depends' => 'yii\web\JqueryAsset']);
            
 
 $this->title = 'Главная';
@@ -128,18 +128,29 @@ $this->title = 'Главная';
                             </div>
                         </div>
                     </div>
-               
+                    
                     
                        <div class="row">
 	                        <center>
                     <iframe width="561" height="315" src="https://www.youtube.com/embed/mBe2K4v_jAs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 	                        </center>
                        </div>
-                    <br> <br>
+                    <br> 
+                     <div class="row">
+	                        <center>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLWWS1TuM4AWzi4EEvfmqT78OJEI1cPMLW&layout=gallery" frameborder="0" allowfullscreen></iframe>
+                     </center>
+                       </div>
+                    <br>
                     <div class="row">
+	                    
+	                    
+	                    <center>
+	                    <a href="<?= Yii::$app->urlManager->createUrl(['site/partners'])
+                ?>"><img  src="//1-mlm.com/img/partnerss.jpg" alt="Партнеская Программа" width="750" height="425" /></a></center>
                        
                             <!-- BEGIN REGIONAL STATS PORTLET-->
-                            <div class="portlet light bordered">
+                            <!--<div class="portlet light bordered">
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="icon-share font-red-sunglo"></i>
@@ -160,7 +171,7 @@ $this->title = 'Главная';
                                 </div>
                                 <div class="portlet-body">
                                     <div id="region_statistics_loading">
-                                        <img src="/mertonic/global/img/loading.gif" alt="loading" /> </div>
+                                        <img src="//1-mlm.com/mertonic/global/img/loading.gif" alt="loading" /> </div>
                                     <div id="region_statistics_content" class="display-none">
                                         <div class="btn-toolbar margin-bottom-10">
                                             <div class="btn-group btn-group-circle" data-toggle="buttons">
@@ -197,7 +208,7 @@ $this->title = 'Главная';
                                         <div id="vmap_germany" class="vmaps display-none"> </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <!-- END REGIONAL STATS PORTLET-->
                         </div>                  
 

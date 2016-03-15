@@ -19,10 +19,10 @@ $this->registerCss($style_user);
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- TITLE OF SITE -->
-    <title>1-й МЛМ Ресурс</title>
+    <title>Автоматизация МЛМ - 1-й МЛМ Ресурс</title>
 
     <meta name="description" content="1-й МЛМ Ресурс" />
-    <meta name="keywords" content="Автоматизация, млм, mlm, html landing page, one page, landing page" />
+    <meta name="keywords" content="Автоматизация МЛМ, 1-й МЛМ Ресурс, млм ресурс, Автоматизация, млм, mlm, html landing page, one page, landing page" />
     <meta name="author" content="Автоматизация млм">
 
     <meta property="og:title"       content="1-й МЛМ Ресурс"/>
@@ -271,6 +271,13 @@ $this->registerCss($style_user);
 
 
     </style>
+    
+    
+    
+    <!-- LOGINS START  -->       
+        
+    <!-- LOGINS  HEAD -->
+
 
 </head>
 
@@ -326,8 +333,8 @@ $this->registerCss($style_user);
                             <li><a href="http://1-mlm.com/777-28020677.html" target="_blank">млм Блог</a></li>
                             <!-- меню 1-й млм ресурс конец -->
 
-                            <li><a href="http://1-mlm.com/login.html" class="btn-nav btn-grey btn-login" target="_blank">Вход</a></li>
-                            <li><a href="http://1-mlm.com/login.html" class="btn-nav btn-blue btn-green smooth-scroll" target="_blank">Регистрация</a></li>
+                            <li><a href="http://1-mlm.com/login.html" class="btn-nav btn-grey btn-login">Вход</a></li>
+                            <li><a href="http://1-mlm.com/login.html" class="btn-nav btn-blue btn-green smooth-scroll">Регистрация</a></li>
                         </ul><!-- /End Menu Links -->
                     </div><!-- /End Navbar Collapse -->
 
@@ -375,7 +382,31 @@ $this->registerCss($style_user);
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center single-line">
                         <p class="lead text-white m-r-md f-w-500">Приступить к использованию бесплатно</p>
-                        <a href="http://1-mlm.com/login.html" class="btn btn-ghost btn-md smooth-scroll" target="_blank">Создать аккаунт<i class="fa fa-arrow-right m-l"></i></a>
+                        <a href="#myModal1" class="btn btn-ghost btn-md smooth-scroll" role="button" data-toggle="modal">Создать аккаунт???<i class="fa fa-arrow-right m-l"></i></a>
+                        
+                        <!--  MODAL DIALOG PORTLET START -->        
+                                    <!-- Button to trigger modal -->
+                                    <a href="#myModal1" role="button" class="btn white" data-toggle="modal"> условия партнерской программы </a>
+                                    
+                                    <!-- Modal -->
+                                    <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                
+                                                <div class="modal-body">
+                                                  
+<iframe id="player" src="http://1-mlm.com/login.html" style="border: 0; width: 100%; height: 350px;"></iframe>
+                                       </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn yellow" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                        <!-- END MODAL DIALOG PORTLET-->
+                        
                     </div>
                 </div>
             </div>
@@ -620,7 +651,7 @@ $this->registerCss($style_user);
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center single-line">
                         <p class="lead text-white m-r-md f-w-500">Приступить к использованию бесплатно</p>
-                        <a href="http://1-mlm.com/login.html" class="btn btn-ghost btn-md smooth-scroll" target="_blank">Создать аккаунт<i class="fa fa-arrow-right m-l"></i></a>
+                        <a href="http://1-mlm.com/login.html" class="btn btn-ghost btn-md smooth-scroll">Создать аккаунт<i class="fa fa-arrow-right m-l"></i></a>
                     </div>
                 </div>
             </div>
@@ -688,7 +719,7 @@ $this->registerCss($style_user);
                                     <p class="m-b p-opacity f-w-300">"Я просто в Шоке, от этих ребят, они с ума сошли!<br> Отличный сервис и практически на шару... нет слов" </p>
                                     <div class="cite text-edit">
                                         <span class="cite-info">— Александр Новиков, Алмазный огранщик<br>
-                                        alexnovikov.com</span>
+                                        www.alex-novikov.ru</span>
                                     </div>
                                 </blockquote>
                             </div>
@@ -746,7 +777,7 @@ $this->registerCss($style_user);
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center single-line">
                         <p class="lead text-white m-r-md f-w-500">Приступить к использованию бесплатно</p>
-                        <a href="http://1-mlm.com/login.html" class="btn btn-ghost btn-md smooth-scroll" target="_blank">Создать аккаунт<i class="fa fa-arrow-right m-l"></i></a>
+                        <a href="http://1-mlm.com/login.html" class="btn btn-ghost btn-md smooth-scroll">Создать аккаунт<i class="fa fa-arrow-right m-l"></i></a>
                     </div>
                 </div>
             </div>
@@ -841,7 +872,7 @@ $this->registerCss($style_user);
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center single-line">
                         <p class="lead text-white m-r-md f-w-500">Приступить к использованию бесплатно</p>
-                        <a href="http://1-mlm.com/login.html" class="btn btn-ghost btn-md smooth-scroll" target="_blank">Создать аккаунт<i class="fa fa-arrow-right m-l"></i></a>
+                        <a href="http://1-mlm.com/login.html" class="btn btn-ghost btn-md smooth-scroll">Создать аккаунт<i class="fa fa-arrow-right m-l"></i></a>
                     </div>
                 </div>
             </div>
@@ -861,7 +892,7 @@ $this->registerCss($style_user);
                             <p><span style="color: #979897; font-size: 16px;">© 2016 Автоматизация млм рекрутинга. Все для вашего бизнеса.</span>
                             </p>    
 
-                        <p><span style="color: #979897; font-size: 7px;"><a href="http://1-mlm.com/politika.html" target="_blank">политика конфиденциальности</a>&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="http://1-mlm.com/otkaz.html" target="_blank">отказ от ответственности</a></span></p>
+                        <p><span style="color: #979897; font-size: 7px;"><a href="http://1-mlm.com/site/politika" target="_blank">политика конфиденциальности</a>&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="http://1-mlm.com/site/otkaz" target="_blank">отказ от ответственности</a></span></p>
                         </div>                    </div>
                 </div>
                 <div class="col-md-4">
@@ -900,5 +931,14 @@ $this->registerCss($style_user);
     <script src="first/js/custom.js"></script>
 
 
+
+<!-- Код SocBox -->
+<noindex><script async src='data:text/javascript;charset=utf-8;base64,ZnVuY3Rpb24gZ2V0Q29va2llKG5hbWUpIHsKCXZhciBjb29raWUgPSAnICcgKyBkb2N1bWVudC5jb29raWU7Cgl2YXIgc2VhcmNoID0gJyAnICsgbmFtZSArICc9JzsKCXZhciBzZXRTdHIgPSBudWxsOwoJdmFyIG9mZnNldCA9IDA7Cgl2YXIgZW5kID0gMDsKCWlmIChjb29raWUubGVuZ3RoID4gMCkgewoJCW9mZnNldCA9IGNvb2tpZS5pbmRleE9mKHNlYXJjaCk7CgkJaWYgKG9mZnNldCAhPSAtMSkgewoJCQlvZmZzZXQgKz0gc2VhcmNoLmxlbmd0aDsKCQkJZW5kID0gY29va2llLmluZGV4T2YoJzsnLCBvZmZzZXQpCgkJCWlmIChlbmQgPT0gLTEpIHsKCQkJCWVuZCA9IGNvb2tpZS5sZW5ndGg7CgkJCX0KCQkJc2V0U3RyID0gdW5lc2NhcGUoY29va2llLnN1YnN0cmluZyhvZmZzZXQsIGVuZCkpOwoJCX0KCX0KCXJldHVybihzZXRTdHIpOwp9CmZ1bmN0aW9uIG15bG9hZChhMSxhMikgewoJc2V0VGltZW91dChmdW5jdGlvbigpIHsKCQl2YXIgYTMgPSBkb2N1bWVudDsKCQlhNCA9IGEzLmdldEVsZW1lbnRzQnlUYWdOYW1lKCdzY3JpcHQnKVswXTsKCQlhNSA9IGEzLmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpOwoJCWE2ID0gZXNjYXBlKGEzLnJlZmVycmVyKTsKCQlhNS50eXBlID0gJ3RleHQvamF2YXNjcmlwdCc7CgkJYTUuYXN5bmMgPSB0cnVlOwoJCWE1LnNyYyA9IGEyKyc/dWlkPScrYTErJyZhNj0nK2E2KycmYTc9Jytsb2NhdGlvbi5ob3N0KycmYTg9JytnZXRDb29raWUoJ215MXdpdGlkJythMSkrJyZhOT0nK01hdGgucmFuZG9tKCk7CgkJYTQucGFyZW50Tm9kZS5pbnNlcnRCZWZvcmUoYTUsIGE0KTsKCX0sMSkKfSBteWxvYWQoJzQyODcnLCdodHRwOi8vcGFuZWwuc29jYm94LnJ1L3ZrL3N0ZXAxLnBocCcpOw=='></script></noindex>
+<!-- /Код SocBox -->
+<!-- Код VK Retargetinga -->
+<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=ST5ZvH*EReH4qqE1Zp3AC/Y8GWi8sgxUymHKS2ewLAQfNT/pvxUxTtTBtC/ce4shRM68CK0eWSoazZotErOwFYqBfsqAyKm7w63HwpqVbM55uQ6RHEqJNKEVt6D1QRcUfFarzpPeWP07/zs3YbTsjccb70WQ/lI9N0Av2y62JMc-';</script>
+<!-- /Код VK Retargetinga -->
+
 </body>
+
 </html>

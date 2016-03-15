@@ -253,7 +253,7 @@
     
 												<br><br><br>
 												
-												 <a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self" href="#modal" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="button button-light rounded"><?=$data["button"]?></a>
+												 <a onclick="btnclicked=1;" href="/site/ref?refid=<?=$user["refdt"]?>" target="_self" href="#modal" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="button button-light rounded"><?=$data["button"]?></a>
 					</div>
 
 

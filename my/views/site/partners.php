@@ -1,19 +1,19 @@
 <?php
 $this->title = 'Партнерская программа';
-//$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title;
 
 
-$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
 
-$this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
 $css = <<<'STYLE'
     #section1 {
         cursor: text;
-        background: transparent url("img/partners.jpg") no-repeat scroll 50% 50%;
+        background: transparent url("//1-mlm.com/img/partners.jpg") no-repeat scroll 50% 50%;
     }
 
     .builder-section.bg-img .wrap::after {
@@ -104,7 +104,7 @@ $css = <<<'STYLE'
     
     #section2 {
         cursor: text;
-        background: transparent url("img/partners2.jpg") no-repeat scroll 50% 50%;
+        background: transparent url("//1-mlm.com/img/partners2.jpg") no-repeat scroll 50% 50%;
     }
 
     .builder-section.bg-img .wrap::after {
@@ -196,9 +196,6 @@ STYLE;
 $this->registerCss($css);
 ?>
 
-
-<!--<link href="https://hostpro.ua/wp-content/themes/hostpro/assets/css/style.css" rel="stylesheet">-->
-
 <div class="row">
     <div class="col-md-12">
         <div class="portlet light bordered">
@@ -243,9 +240,10 @@ $this->registerCss($css);
             <p><span style="font-size: 25px;">Мы ценим наших клиентов и партнеров,<br> поэтому отдаем</span> <span style="color: #F64747; font-size: 35px;">
 50%</span> <br>от всех оплат привлеченных Вами пользователей.</p>
             <p>Просто поделись ссылкой и получай пассивный доход.</p>
-            <p> Ваша партнерская ссылка <?= "<a href=\"http://1-mlm.com/ref-{$usrDt->refdt}.html\"
-                 target=\"_blank\">http://1-mlm.com/ref-{$usrDt->refdt}.html</a>"; ?><br /></p>
-                 
+          <p> Ваша партнерская ссылка <a href="http://1-mlm.com/ref-<?= $usrDt->refdt ?>.html"
+target="_blank">http://1-mlm.com/ref-<?= $usrDt->refdt ?>.html</a>
+<br />
+</p>                
                  
 
             <br>

@@ -29,7 +29,7 @@ $this->registerCss($css);
 <!--echo $dt["fn"], ' ', $dt["ln"];-->
 <div class="row mtb">
     <div class="col-md-4">
-        <img style="border-radius: 75px !important;" src="mp.php/<?=$dt['userpic']?>" height="150">
+        <img style="border-radius: 75px !important;" src="//1-mlm.com/mp.php/<?=$dt['userpic']?>" height="150">
     </div>
     <!--<div class="col-md-8" style="text-align: left; margin-left: -18px;">
         Имя: <?=$dt["fn"]?><br>

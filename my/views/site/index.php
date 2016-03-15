@@ -55,20 +55,20 @@ $css = <<<'STYLE'
 STYLE;
 $this->registerCss($css);
 
-$this->registerJsFile('/mertonic/global/plugins/jquery.pulsate.min.js');
-$this->registerJsFile('/mertonic/global/plugins/jquery-bootpag/jquery.bootpag.min.js');
-$this->registerJsFile('/mertonic/global/plugins/holder.js');
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jquery.pulsate.min.js');
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jquery-bootpag/jquery.bootpag.min.js');
+$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/holder.js');
 
-$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
-$this->registerJsFile('/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/mertonic/global/plugins/select2/js/select2.full.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/mertonic/global/plugins/jquery-validation/js/additional-methods.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
-$this->registerJsFile("/mertonic/pages/scripts/form-wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js'/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("//1-mlm.com/mertonic/global/plugins/select2/js/select2.full.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("//1-mlm.com/mertonic/global/plugins/jquery-validation/js/jquery.validate.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("//1-mlm.com/mertonic/global/plugins/jquery-validation/js/additional-methods.min.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("//1-mlm.com/mertonic/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
+$this->registerJsFile("//1-mlm.com/mertonic/pages/scripts/form-wizard.js"/*, ['depends' => 'yii\web\JqueryAsset']*/);
 
 $this->registerJsFile('//www.youtube.com/player_api');
 $this->title = '1-mlm';
