@@ -27,7 +27,7 @@ class BrandController extends \yii\web\Controller
                         //$a->load($p);
                         $a->companyid=$p["Users"]["companyid"];
                         $a->site=$p["Users"]["site"];
-                        $a->playlist=$p["Users"]["playlistId"];
+                        $a->playlistId=$p["Users"]["playlistId"];
                         $a->save(false);
 
                         $usrCompLink=(UsrCompaniesLink::find()

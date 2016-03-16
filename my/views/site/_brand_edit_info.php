@@ -64,7 +64,7 @@ $form = ActiveForm::begin([
                 <!--<i class="icon-user"></i>-->
                 <input
                     class="form-control"
-                    name="Users[playlist]" value="<?= $model->playlistId; ?>" type="text">
+                    name="Users[playlistId]" value="<?= $model->playlistId; ?>" type="text">
                 <div class="form-control-focus"></div>
                 <span class="help-block">Ваш playlistId</span>
 
