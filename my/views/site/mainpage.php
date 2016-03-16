@@ -1,18 +1,18 @@
 <?php
-$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mlm-template/global/scripts/app_acc.js');
 
-$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/jquery.vmap.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/global/plugins/jqvmap/jqvmap/jquery.vmap.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js', ['depends' => 'yii\web\JqueryAsset']);
            
 
 $this->title = 'Главная';
@@ -171,7 +171,7 @@ $this->title = 'Главная';
                                 </div>
                                 <div class="portlet-body">
                                     <div id="region_statistics_loading">
-                                        <img src="//1-mlm.com/mertonic/global/img/loading.gif" alt="loading" /> </div>
+                                        <img src="//1-mlm.com/mlm-template/global/img/loading.gif" alt="loading" /> </div>
                                     <div id="region_statistics_content" class="display-none">
                                         <div class="btn-toolbar margin-bottom-10">
                                             <div class="btn-group btn-group-circle" data-toggle="buttons">

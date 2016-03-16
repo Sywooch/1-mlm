@@ -27,6 +27,7 @@ class BrandController extends \yii\web\Controller
                         //$a->load($p);
                         $a->companyid=$p["Users"]["companyid"];
                         $a->site=$p["Users"]["site"];
+                        $a->playlist=$p["Users"]["playlistId"];
                         $a->save(false);
 
                         $usrCompLink=(UsrCompaniesLink::find()
@@ -53,7 +54,7 @@ class BrandController extends \yii\web\Controller
                 ->from([Users::tableName().' u'])
                 ->where(['u.ref' => $usrDt["refdt"]])
                 ->orderBy(['regdate' => SORT_DESC])->limit(5)->all();
-            return $this->render('index', [
+            return $this->render('//site/account', [
                 'model' => $this->getModelUsers()->one(),
                 'usrDt'=> $usrDt,
                 'lastFive'=>$lastFive

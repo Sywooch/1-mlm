@@ -1,11 +1,11 @@
 <?php
 
-$this->registerJsFile('/mertonic/global/scripts/app.js');
-$this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerCssFile('/mertonic/pages/css/pricing.min.css');
+$this->registerJsFile('/mlm-template/global/scripts/app.js');
+$this->registerJsFile('/mlm-template/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mlm-template/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mlm-template/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('/mlm-template/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerCssFile('/mlm-template/pages/css/pricing.min.css');
 
 $this->title = 'Выбор тарифа';
 //$this->params['breadcrumbs'][] = $this->title;

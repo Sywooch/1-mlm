@@ -1,11 +1,11 @@
 <?php
 use yii\widgets\ActiveForm;
 $this->title = 'Компания';
-$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
-$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mlm-template/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 ?>
 <!-- Начало  страницы -->
     <div class="row">
@@ -93,7 +93,7 @@ $this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar
 	             <div class="col-md-8">
                         <div class="embed-responsive embed-responsive-16by9">
                             <div align="center">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLWWS1TuM4AWzi4EEvfmqT78OJEI1cPMLW&layout=gallery" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=<?= $playlistId ?>&layout=gallery" frameborder="0" allowfullscreen></iframe>
                             </div></div></div>
                              <div class="col-md-4">Описание </div>
                        </div>

@@ -1,10 +1,10 @@
 <?php
-$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mlm-template/global/scripts/app_acc.js');
 
-$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mlm-template/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
 $this->title = 'Настройки профиля';
 ?>
@@ -158,6 +158,11 @@ $this->title = 'Настройки профиля';
                                         <li>
                                             <a href="#tab_1_3" data-toggle="tab"> Социальные Аккаунты </a>
                                         </li>
+
+                                        <li>
+                                            <a href="#tab_1_4" data-toggle="tab"> Бренд </a>
+                                        </li>
+
                                     </ul>
                                 </div>
                                 <div class="portlet-body">
@@ -178,6 +183,13 @@ $this->title = 'Настройки профиля';
                                         <div class="tab-pane fade" id="tab_1_3">
                                             <?php
                                             echo $this->render('_account_edit_soc', [
+                                                'model' => $model
+                                            ]); ?>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="tab_1_4">
+                                            <?php
+                                            echo $this->render('_brand_edit_info', [
                                                 'model' => $model
                                             ]); ?>
                                         </div>

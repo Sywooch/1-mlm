@@ -1266,7 +1266,8 @@ class SiteController extends Controller
             return $this->render('company', [
                 'model' => Lp::find()->where(['id'=>$usr['companyid']])->one(),
                 'ref' =>$usr['refdt'],
-                'company_link'=>$company->link
+                'company_link'=>$company->link,
+                'playlistId'=>$refUsr->playlistId
             ]);
         }
         else{return $this->goHome();}
