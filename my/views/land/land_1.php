@@ -229,7 +229,7 @@
         <div id="ytscr">
             <iframe id="ytplayer" src="https://www.youtube-nocookie.com/embed/<?=$data["yt1"]?>?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=<?=$data["autoplay"]?>" allowfullscreen="" frameborder="0" style="width: 100%; height: 100%;"></iframe>
         </div>
-        <p style="margin-top: 25px;"><a href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a></p>
+        <p style="margin-top: 25px;"><a href="site/ref?refid=<?=$user["refdt"]?>" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a></p>
     </div>
 
 </div>

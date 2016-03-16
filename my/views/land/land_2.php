@@ -1,5 +1,8 @@
-<!DOCTYPE HTML>
-<html><head>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Language" content="ru">
     <meta name="description" content="<?=$data["desc"]?>">
@@ -12,33 +15,51 @@
     <meta property="og:url" content="//1-mlm.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="<?=$user["userpic"]?>">
-    <link href="lp/01/css/style.css" rel="stylesheet" type="text/css">
-    <link href="lp/01/css/photo.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title><?=$data["name"]?></title>
-
-<link href="//1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
+    
+	<title><?=$data["name"]?></title>
+	
+	<link href="//1-mlm.com/lp/01/css/modern_style.min.css" rel="stylesheet" type="text/css"  media="screen" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="//1-mlm.com/soc_net/social-likes_classic.css" />
-    
-    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//1-mlm.com/soc_net/social-likes.min.js"></script>
 
+	<link href="lp/01/css/photo.css" rel="stylesheet" type="text/css">
 
-    <script async="" src="//s.ytimg.com/yts/jsbin/www-widgetapi-vflpCdzwa/www-widgetapi.js" id="www-widgetapi-script" type="text/javascript"></script>
-    <script src="https://www.google-analytics.com/analytics.js" async="" type="text/javascript"></script>
-    <script src="https://www.googleadservices.com/pagead/conversion_async.js" async="" type="text/javascript"></script>       <script src="https://www.googletagmanager.com/gtm.js?id=GTM-HWDXK" async=""></script>
-    <script src="https://mc.yandex.ru/metrika/watch.js" async="" type="text/javascript"></script>
-    <script src="https://www.youtube.com/player_api"></script>
-    <script>window.startTime = new Date().getTime();</script>
-    
-    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/font/stylesheet.css" />
-    <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web') ?>/css/land_style.css" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link href="s/css/modal_dialog.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	<link href="tp2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="tp2/vendor/fontawesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<link href="tp2/vendor/animateit/animate.min.css" rel="stylesheet">
+
+	<!-- Vendor css -->
+	<link href="tp2/vendor/owlcarousel/owl.carousel.css" rel="stylesheet">
+	<link href="tp2/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+	<!-- Template base -->
+	<link href="tp2/css/theme-base.css" rel="stylesheet">
+
+	<!-- Template elements -->
+	<link href="tp2/css/theme-elements.css" rel="stylesheet">	
+	
+<!-- Responsive classes -->
+	<link href="tp2/css/responsive.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->	
+
+
+	<!-- Template color -->
+	<link href="tp2/css/color-variations/blue.css" rel="stylesheet" type="text/css" media="screen" title="blue">
+
+	<!-- LOAD GOOGLE FONTS -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+
+	<!-- CSS CUSTOM STYLE -->
+    <link rel="stylesheet" type="text/css" href="tp2/css/custom.css" media="screen" />
+
+    <!--VENDOR SCRIPT-->
+    <script src="tp2/vendor/jquery/jquery-1.11.2.min.js"></script>
+    <script src="tp2/vendor/plugins-compressed.js"></script>
     
     <style>
         .col-md-offset-4{margin-left: 0% !important;}
@@ -129,11 +150,10 @@
         }
 
     </style>
+
 </head>
-
-<body id="landing16" class="vid spring land-en tnk new-video-lp" style="background: #141414;">
-
-<!-- BEGIN LOGIN BOX *****************************************************************-->
+	
+	<!-- BEGIN LOGIN BOX *****************************************************************-->
 <div class="modal fade" id="modal-1" style="width: 620px;">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -189,74 +209,72 @@
 </div>
 <!-- END LOGIN BOX *****************************************************************-->
 
-<div class="tip"><div class="tipMid"></div></div>
-<div class="propeller hide">
-    <div><img src="http://static.warthunder.com/i/64.gif" height="64" width="64"></div>
-</div>
+<body class="wide">
+	
 
-<div style="width: 1349px; height: 400px;" id="mask" class=""></div>
+	<!-- WRAPPER -->
+	<div class="wrapper">
 
-<div class="hide" id="media-container">
-    <div class="popup-bg" onclick="$('#media-container').fadeTo( 250, 0, function() { $('#media-container .playvideo').html('');$(this).addClass('hide') } ); $('html').css('overflow','auto');return false"></div>
-    <table class="popup">
-        <tbody><tr>
-            <td class="popup-head" id="popup-head"><div class="data"></div>  <a href="noscript" class="close" onclick="$('#media-container > div.popup-bg').trigger('click');return false"></a></td>
-        </tr>
-        <tr>
-            <td>
-                <div id="media-container-content"><div class="l-arrow"></div>  <div class="r-arrow"></div>  </div>
-            </td>
-        </tr>
-        </tbody></table>
-</div>
+		<!-- HEADER -->
+		<header id="header">
+			<div id="header-wrap">
+				<div class="container">
 
-
-<div style="height: 400px; width: 1349px;" id="video_bg">
-    <div style="background: transparent url(&quot;//img.youtube.com/vi/<?=$data["yt1"]?>/0.jpg&quot;) no-repeat scroll center top / 100% auto; z-index: 1; position: absolute; width: 1349px; min-width: 320px; height: 657px; display: block;" class="js-bg-video"></div>
-    <iframe style="width: 100%; height: 755.299px;" id="player" type="text/html" src="https://www.youtube.com/embed/<?=$data["yt1"]?>?&amp;controls=0&amp;enablejsapi=1&amp;fs=0&amp;vq=hd720&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;wmode=transparent&amp;&amp;html5=1&amp;modestbranding=1" allowfullscreen="" frameborder="0" height="100%" width="100%"></iframe>    </div>
-
-<div class="wrapper js-overlay" style="background:url('http://static.warthunder.com/i/layer2.png');margin-bottom:-405px;">
-    <!-- No Script Pixels -->
-    <!-- /No Script Pixels -->
-    <div style="font-weight: 500; line-height:16px; padding-top: 50px;" id="main">
-        <h1 <?php if ($data["h1c"]) echo "style='color: ".$data['h1c']."'" ?>><?=$data["h1"]?></h1>
-        <h2 <?php if ($data["h2c"]) echo "style='color: ".$data['h2c']."'" ?>><?=$data["h2"]?></h2>
-        <h3 <?php if ($data["h3c"]) echo "style='color: ".$data['h3c']."'" ?>><?=$data["h3"]?></h3>
-    </div>
-    <div style="display: none;" class="controller">
-        <img src="http://static.warthunder.com/i/modern/sprite/volOn.png" alt="volume" id="volumeicon" height="15" width="14">
-        <input orient="vertical" min="0" value="0" max="1" step="0.05" id="volume" type="range">
-    </div>
-    <div class="space"></div>
-
-    <div class="space"></div>
-</div>
-
-<div class="wp_footer" id="foo" style="background:none;height:404px;">
-    <div class="footer" style="width:100%; padding-top: 22px; position: absolute; bottom: 0px;">
-        <table style="margin:0 auto;height:222px !important;" class="stamp">
-            <tbody><tr>
-                <td class="c">
-
-                    <div style="width:50%;position:absolute; display: none">
-                        <div class="tanks" style="margin: 0;right:210px;"></div>
-                        <div class="play-tanks pt" style="margin: 0;right:210px;"></div>
-                    </div>
-
-                    <!--<div class="reg-link active" style="margin-top:155px;"><span> Кнопка </span></div>-->
-                    <a onclick="btnclicked=1;" href="index.php?r=site/ref&refid=<?=$user["refdt"]?>" target="_self" href="#modal" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="btn big yellow pulse"><?=$data["button"]?></a>
-
-                    <div style="display: block;" class="show-again"><span> ЗАПУСК </span></div>
-                </td>
-            </tr>
-            </tbody></table>
-
-        <div class="footer-bg">
-            <div id="photo">
+					<!--LOGO-->
+					<div class="col-md-4">
+					<div id="photo">
                 <img src="<?=$user['userpic']?>">
                 <p>Ваш личный консультант:<br><?php echo $user["fn"].' '.$user["ln"];?></p>
             </div>
-            <div class="pluso">
+					</div>
+					<!--END: LOGO-->
+
+				
+				</div>
+				
+			</div>
+		</header>
+		<!-- END: HEADER -->
+
+
+		<!-- SECTION IMAGE FULLSCREEN -->
+		<section id="slider" class="fullscreen background-overlay youtube-background" data-youtube-url="http://youtu.be/<?=$data["yt1"]?>" data-youtube-autoplay="true" data-youtube-autopause="true" data-videoattributes="version=3&amp;enablejsapi=1&amp;html5=1&amp;volume=60&hd=auto&wmode=opaque&showinfo=0&rel=0;">
+			<div class="container-fluid">
+				<div class="container-fullscreen">
+					<div class="text-middle text-center text-light">
+						<button id="youtube-background-controls">
+							<i class="fa fa-play fa-4x" style="color: #fff;"></i>
+							<i class="fa fa-pause fa-4x"  style="color: #fff;"></i>
+						</button>                       
+	
+	<h1 <?php if ($data["h1c"]) echo "style='color: ".$data['h1c']."'" ?> class="text-lg font-wight-700"><?=$data["h1"]?></h1>
+    <h2 <?php if ($data["h2c"]) echo "style='color: ".$data['h2c']."'" ?> class="text-lg font-wight-700"><?=$data["h2"]?></h2>
+    <h3 <?php if ($data["h3c"]) echo "style='color: ".$data['h3c']."'" ?> class="text-lg font-wight-700"><?=$data["h3"]?></h3>
+    
+												<br><br><br>
+												
+												 <a onclick="btnclicked=1;" href="/site/ref?refid=<?=$user["refdt"]?>" target="_self" href="#modal" data-toggle="modal" data-target="#modal-1" title="Жмите здесь, чтобы узнать больше!" class="button button-light rounded"><?=$data["button"]?></a>
+					</div>
+
+
+				</div>
+			</div>
+
+		</section>
+		<!-- END: SECTION IMAGE FULLSCREEN -->
+
+
+
+		<!-- FOOTER -->
+		<footer class="background-dark text-grey" id="footer">
+			
+			<div class="copyright-content">
+				<div class="container">
+					<div class="row">
+						<div class="copyright-text col-md-2"> &copy; 2016
+						</div>
+						<div class="col-md-10">
+							<div class="pluso">
                 <div class="social-likes">
                     <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
                     <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
@@ -267,136 +285,27 @@
                 </div>
                
             </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- END: FOOTER -->
 
-        </div>
-    </div>
-</div>
+	</div>
+	<!-- END: WRAPPER -->
 
-<iframe id="iframe_download" src="" style="visibility:hidden"></iframe>
-<script type="text/javascript">
+	<!-- GO TOP BUTTON -->
+	<a class="gototop gototop-button" href="#"><i class="fa fa-chevron-up"></i></a>
+	
+	<!-- Theme Base, Components and Settings -->
+	<script src="tp2/js/theme-functions.js"></script>
 
-    dataLayer = [{
-        'pageCategory': 'landing',
-        'pageSubCategory':'main_com'
-    }];
-
-    dataLayer.push({'event': 'view_landing'});
-
-</script>
-<script type="text/javascript" src="//1-mlm.com/lp/01/js/all.min.js"></script>
-<script type="text/javascript" src="//1-mlm.com/lp/01/js/lp_all.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-        window.volumebar = $('.controller');
-    });
-    var player,
-        tag = document.createElement('script'),
-        firstScriptTag = document.getElementsByTagName('script')[0],
-        jqwindow = $(window),
-        jqplayer = $('#player'),
-        volumebar = $('.controller'),
-        again = $('.show-again'),
-        lockStage = false,
-        registerBtn = $('.reg-link'),
-        volume = 15;
-
-    tag.src = "https://www.youtube.com/player_api";
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    function onYouTubePlayerAPIReady() {
-
-        player = new YT.Player('player', {
-            events: {
-                onReady: playerReady,
-                onStateChange: stateChange
-            }
-        });
-
-        function stateChange(state) {
-
-            if (state.data === YT.PlayerState.ENDED) {
-
-                playEnd();
-            }
-
-        }
-
-        function playEnd() {
-
-            $('.js-bg-video').fadeIn(500);
-            volumebar.hide();
-            again.show();
-
-            $('#landing16').addClass('new-video-lp');
-            registerBtn.addClass('active');
-        }
-
-        function playStart() {
-
-            player.resize();
-
-            $('.js-bg-video').fadeOut(500);
-
-            again.hide();
-            volumebar.show();
-            player.playVideo();
-
-            $('#landing16').removeClass('new-video-lp');
-            registerBtn.removeClass('active');
-        }
-
-        again.unbind('click').on('click', playStart);
-
-        function playerReady() {
-
-            player.resize = function () {
-
-                var w = jqwindow.width(),
-                    h = jqwindow.height(),
-                    lte = (h / w > k);
-
-                jqplayer.css('width', lte ? h / k : '100%');
-                jqplayer.css('height', lte ? '100%' : jqwindow.width() * k);
-
-            };
-
-            window.onresize = player.resize;
-
-            var k = 1075 / 1920;
-            player.setVolume(volume);
-
-            if (!lockStage) {
-                player.playVideo();
-                player.pauseVideo();
-            }
-            $(window).on('mousemove keypress scroll focus', function () {
-                if (!lockStage) {
-                    lockStage = true;
-                    playStart();
-                }
-            });
-
-            document.getElementById('volume').value = volume / 100;
-
-            document.getElementById('volume').addEventListener('change', function (e) {
-                player.setVolume(e.target.value * 100);
-                if (e.target.value == 0) {
-                    /* if the volume is set to zero, we explicitly set the muted attribute on the video */
-                    document.getElementById('volumeicon').src = "http://static.warthunder.com/i/modern/sprite/volOff.png";
-                } else {
-                    /* if the audio was muted, we unmute it automatically on volume change */
-                    document.getElementById('volumeicon').src = "http://static.warthunder.com/i/modern/sprite/volOn.png";
-                }
-                return false;
-            }, true);
-        }
-    }
-</script>
-
-
+	<!-- Custom js file -->
+	<script src="tp2/js/custom.js"></script>
 
 
 
 </body>
+
 </html>

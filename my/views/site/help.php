@@ -1,22 +1,49 @@
 <?php
-$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
-$this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->title = 'help';
+$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->title = 'Ваш Профиль';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 
 <!-- BEGIN PAGE BASE CONTENT -->
-<div class="m-heading-1 border-green m-bordered">
-    <h3 class="font-green">Ваш Профиль</h3>
-</div>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-blue-sharp">
+                    <i class="icon-user font-blue-sharp"></i>
+                    <span class="caption-subject font-blue-sharp"><?= $this->title; ?></span>
+                </div>
+                <div class="actions">
+                    <!---------------------------------------------------------->
+                    <a class="btn btn-circle btn-icon-only btn-default" data-toggle="modal" data-target="#w1help"  href="#w1help">
+                        <i class="icon-support"></i></a>
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                    <div style="display: none;" id="w1help" class="fade modal" role="dialog" tabindex="-1">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 style="margin-top: 0px;"><div align="center">Помощь</div></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube-nocookie.com/embed/<?php
+                                            echo "iBfk37Fa3H0";
+                                            ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------>
+                </div>
+                <div class="tools"> </div>
+            </div>
+            <div class="portlet-body">
                             <!-- BEGIN PROFILE SIDEBAR -->
                             <div class="profile-sidebar">
                                 <!-- PORTLET MAIN -->
@@ -47,23 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                     <!-- END SIDEBAR BUTTONS -->
                                     <!-- SIDEBAR MENU -->
-                                    <div class="profile-usermenu">
-                                        <ul class="nav">
-
-                                            <li>
-                                                <a href="index.php?r=site%2Faccount">
-                                                    <i class="icon-settings"></i> Настройки аккаунта </a>
-                                            </li>
-                                            <li class="active">
-                                                <a href="#">
-                                                    <i class="icon-info"></i> Помощь </a>
-                                            </li>
-                                            <li>
-                                                <a href="index.php?r=brand%2Fbrand">
-                                                    <i class="icon-info"></i> Бренд </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <br>
                                     <!-- END MENU -->
                                 </div>
                                 <!-- END PORTLET MAIN -->
@@ -73,7 +84,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="row list-separated profile-stat">
                                         <div class="col-md-12 col-sm-12 col-xs-6">
                                             <div class="uppercase profile-stat-title"> 0 $ </div>
-                                            <div class="uppercase profile-stat-text"> начистненно по партнерке </div>
+                                            <div class="uppercase profile-stat-text"> начислено по партнерке </div>
                                         </div>
                                         <!--<div class="col-md-4 col-sm-4 col-xs-6">
                                             <div class="uppercase profile-stat-title"> 51 </div>
@@ -87,7 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!-- END STAT -->
                                     <div>
                                         <h4 class="profile-desc-title">Ваши партнеры</h4>
-                                        <span class="profile-desc-text"> 5 последных регистраций </span><br /><br />
+                                        <span class="profile-desc-text"> 5 последних регистраций </span><br /><br />
                                         <div>
                                             <?php
                                             for($i=0;$i<sizeof($lastFive);$i++):

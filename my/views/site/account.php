@@ -1,10 +1,10 @@
 <?php
-$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
 
-$this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
 $this->title = 'Настройки профиля';
 ?>
@@ -76,20 +76,12 @@ $this->title = 'Настройки профиля';
                                     <!-- SIDEBAR MENU -->
                                     <div class="profile-usermenu">
                                         <ul class="nav">
-                                            <li class="active">
-                                                <a href="index.php?r=site%2Faccount">
-                                                    <i class="icon-settings"></i> Настройки аккаунта </a>
-                                            </li>
-                                            <!--
+                                            
                                             <li>
-                                                <a href="index.php?r=site%2Fhelp">
+                                                <a href="<?= Yii::$app->urlManager->createUrl(['site/help']) ?>">
                                                     <i class="icon-info"></i> Помощь </a>
                                             </li>
-                                            -->
-                                            <li>
-                                                <a href="index.php?r=brand%2Fbrand">
-                                                    <i class="icon-info"></i> Бренд </a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                     <!-- END MENU -->

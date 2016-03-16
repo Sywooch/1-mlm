@@ -33,7 +33,7 @@ switch($identity["service"])
         break;
 }
 
-$this->registerJsFile('/mertonic/global/scripts/app_acc.js');
+$this->registerJsFile('//1-mlm.com/mertonic/global/scripts/app_acc.js');
 
 $js =<<<'SCRIPT'
 $(document).ready(function() {
@@ -62,14 +62,14 @@ $('.send2wall').click(function(e) {
   });
 SCRIPT;
 
-$this->registerJsFile('/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/pages/scripts/dashboard.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 
-$this->registerJsFile('/metronic/theme/assets/global/scripts/datatable.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/metronic/theme/assets/global/plugins/datatables/datatables.min.js', ['depends' => 'yii\web\JqueryAsset']);
-$this->registerJsFile('/metronic/theme/assets/global/plugins/adtatable/plugins/bootstrap/datatables.bootstrap.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/theme/assets/global/scripts/datatable.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/theme/assets/global/plugins/datatables/datatables.min.js', ['depends' => 'yii\web\JqueryAsset']);
+$this->registerJsFile('//1-mlm.com/mertonic/theme/assets/global/plugins/adtatable/plugins/bootstrap/datatables.bootstrap.js', ['depends' => 'yii\web\JqueryAsset']);
 
 
 $this->registerJs($js);
@@ -121,8 +121,8 @@ $css = <<<'STYLE'
 }
 STYLE;
 $this->registerCss($css);
-$this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/datatables.min.css');
-$this->registerCssFile('/metronic/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css');
+$this->registerCssFile('//1-mlm.com/mertonic/theme/assets/global/plugins/datatables/datatables.min.css');
+$this->registerCssFile('//1-mlm.com/mertonic/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css');
 
 $this->title = 'Команда. Ваша 1-я линия';
 
@@ -343,11 +343,3 @@ $this->title = 'Команда. Ваша 1-я линия';
     </div>
 </div>
 <!-- END PAGE BASE CONTENT -->
-<!--<?= \kartik\social\VKPlugin::widget([
-    'type' =>  \kartik\social\VKPlugin::SHARE,
-    'options' => [
-        'type' => 'round',
-        'text' => 'Share',
-        'eng' => 1
-    ]
-]); ?>-->

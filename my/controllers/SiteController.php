@@ -105,7 +105,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $model = Users::find()->where(['linkedin'=>$identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $model = Users::find()->where(['googleplus'=>$identity["id"]]);
                     break;
                 case "yandex":
@@ -200,7 +200,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usr=$usr->where(['linkedin' => $identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $usr=$usr->where(['googleplus' => $identity["id"]]);
                     break;
                 case "yandex":
@@ -268,7 +268,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usr=$usr->where(['linkedin' => $identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $usr=$usr->where(['googleplus' => $identity["id"]]);
                     break;
                 case "yandex":
@@ -357,7 +357,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $model=$model->where(['linkedin' => $identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $model=$model->where(['googleplus' => $identity["id"]]);
                     break;
                 case "yandex":
@@ -392,7 +392,7 @@ class SiteController extends Controller
                             case "linkedin_oauth2":
                                 $users = Users::findOne(['linkedin' => $identity["id"]]);
                                 break;
-                            case "google":
+                            case "google_oauth":
                                 $users = Users::findOne(['googleplus' => $identity["id"]]);
                                 break;
                             case "yandex":
@@ -446,7 +446,7 @@ class SiteController extends Controller
                             case "linkedin_oauth2":
                                 $users = Users::findOne(['linkedin'=>$identity["id"]]);
                                 break;
-                            case "google":
+                            case "google_oauth":
                                 $users = Users::findOne(['googleplus'=>$identity["id"]]);
                                 break;
                             case "yandex":
@@ -486,7 +486,7 @@ class SiteController extends Controller
                             case "linkedin_oauth2":
                                 $users = Users::findOne(['linkedin'=>$identity["id"]]);
                                 break;
-                            case "google":
+                            case "google_oauth":
                                 $users = Users::findOne(['googleplus'=>$identity["id"]]);
                                 break;
                             case "yandex":
@@ -563,7 +563,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usrDt=$usrDt->where(['linkedin'=>$identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $usrDt=$usrDt->where(['googleplus'=>$identity["id"]]);
                     break;
                 case "yandex":
@@ -619,7 +619,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usrDt=$usrDt->where(['linkedin' => $identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $usrDt=$usrDt->where(['googleplus' => $identity["id"]]);
                     break;
                 case "yandex":
@@ -744,7 +744,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usr=$usr->where(['linkedin' => $identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $usr=$usr->where(['googleplus' => $identity["id"]]);
                     break;
                 case "yandex":
@@ -886,7 +886,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $_usr=$query11->from([Users::tableName()])->where(['linkedin'=>$identity["id"]])->one();
                     break;
-                case "google":
+                case "google_oauth":
                     $_usr=$query11->from([Users::tableName()])->where(['google'=>$identity["id"]])->one();
                     break;
                 case "yandex":
@@ -951,7 +951,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usr=$usr->where(['linkedin' => $identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $usr=$usr->where(['googleplus' => $identity["id"]]);
                     break;
                 case "yandex":
@@ -1086,7 +1086,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $_usr=$query11->from([Users::tableName()])->where(['linkedin'=>$identity["id"]])->one();
                     break;
-                case "google":
+                case "google_oauth":
                     $_usr=$query11->from([Users::tableName()])->where(['google'=>$identity["id"]])->one();
                     break;
                 case "yandex":
@@ -1137,6 +1137,54 @@ class SiteController extends Controller
 
     /********************************************************************/
 
+    public function actionPartners()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+	            $identity = \Yii::$app->getUser()->getIdentity()->profile;
+            switch($identity["service"])
+            {
+                case "facebook":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['facebook'=>$identity["id"]])->one();
+                    break;
+                case "linkedin_oauth2":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['linkedin'=>$identity["id"]])->one();
+                    break;
+                case "google_oauth":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['google'=>$identity["id"]])->one();
+                    break;
+                case "yandex":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['yandex'=>$identity["id"]])->one();
+                    break;
+                case "mailru":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['mailru'=>$identity["id"]])->one();
+                    break;
+                case "twitter":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['twitter'=>$identity["id"]])->one();
+                    break;
+                case "instagram":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['instagram'=>$identity["id"]])->one();
+                    break;
+                case "vkontakte":
+                    $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['vkontakte'=>$identity["id"]])->one();
+                    break;
+            }
+            return $this->render('partners', [
+'usrDt'=>$usrDt
+]);
+        }
+        return $this->goHome();
+    }
+   
+    public function actionBrand()
+    {
+        if(!\Yii::$app->user->isGuest)
+        {
+            return $this->render('brand');
+        }
+        return $this->goHome();
+    }
+    
     public function actionLanding2()
     {
         if(!\Yii::$app->user->isGuest)
@@ -1182,7 +1230,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usr=$usr->where(['linkedin' => $identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $usr=$usr->where(['googleplus' => $identity["id"]]);
                     break;
                 case "yandex":
@@ -1250,7 +1298,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usr=$usr->where(['linkedin' => $identity["id"]])->one();
                     break;
-                case "google":
+                case "google_oauth":
                     $usr=$usr->where(['googleplus' => $identity["id"]])->one();
                     break;
                 case "yandex":
@@ -1367,7 +1415,7 @@ class SiteController extends Controller
             case "linkedin_oauth2":
                 $usrDt = Users::find()->where(['linkedin'=>$identity["id"]]);
                 break;
-            case "google":
+            case "google_oauth":
                 $usrDt = Users::find()->where(['googleplus'=>$identity["id"]]);
                 break;
             case "yandex":
@@ -1396,7 +1444,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $users = Users::findOne(['linkedin'=>$identity["id"]]);
                     break;
-                case "google":
+                case "google_oauth":
                     $users = Users::findOne(['googleplus'=>$identity["id"]]);
                     break;
                 case "yandex":
@@ -1485,7 +1533,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $users->linkedin=$identity["id"];
                     break;
-                case "google":
+                case "google_oauth":
                     $users->googleplus=$identity["id"];
                     break;
                 case "yandex":
@@ -1534,7 +1582,7 @@ class SiteController extends Controller
                 break;
             case "linkedin_oauth2":
                 break;
-            case "google":
+            case "google_oauth":
                 break;
             case "yandex":
                 break;
@@ -1720,7 +1768,7 @@ class SiteController extends Controller
             case "linkedin_oauth2":
                 $usr=Users::find()->where(['linkedin'=>$identity["id"]])->one();
                 break;
-            case "google":
+            case "google_oauth":
                 $usr=Users::find()->where(['google'=>$identity["id"]])->one();
                 break;
             case "yandex":
@@ -1767,7 +1815,7 @@ class SiteController extends Controller
                 case "linkedin_oauth2":
                     $usr=Users::find()->where(['linkedin'=>$identity["id"]])->one();
                     break;
-                case "google":
+                case "google_oauth":
                     $usr=Users::find()->where(['google'=>$identity["id"]])->one();
                     break;
                 case "yandex":
@@ -2143,7 +2191,7 @@ return $this->goHome();
             case "linkedin_oauth2":
                 $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['linkedin'=>$identity["id"]])->one();
                 break;
-            case "google":
+            case "google_oauth":
                 $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['google'=>$identity["id"]])->one();
                 break;
             case "yandex":
@@ -2235,7 +2283,7 @@ return $this->goHome();
             case "linkedin_oauth2":
                 $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['linkedin'=>$identity["id"]])->one();
                 break;
-            case "google":
+            case "google_oauth":
                 $usr=\app\models\Users::find()->select('id, refdt, vkontakte')->where(['google'=>$identity["id"]])->one();
                 break;
             case "yandex":
@@ -2293,7 +2341,7 @@ return $this->goHome();
                 $cs.=$usr->id;
                 $usrlist=$usrlist->andWhere("`id` not in ({$cs})");
             }
-            $usrlist=$usrlist->limit(10)
+            $usrlist=$usrlist->limit(20)
                 ->all();
 
             foreach($usrlist as $val)
@@ -2326,7 +2374,7 @@ return $this->goHome();
                 case "linkedin_oauth2":
                     $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['linkedin'=>$identity["id"]])->one();
                     break;
-                case "google":
+                case "google_oauth":
                     $usrDt=\app\models\Users::find()->select('fn,ln,userpic,refdt')->where(['google'=>$identity["id"]])->one();
                     break;
                 case "yandex":

@@ -98,55 +98,7 @@ $form = ActiveForm::begin([
                                                     </div>"]
         )->textInput(["class"=>"form-control"]); ?>
     </div>
-<!--
-    <div class="form-group form-md-line-input">
-        <?=$form->field(
-            $model, 'purse', ["template" => "<label class='col-md-3 control-label'>Номер Кошелька</label>
-                                                        <div class='col-md-9'>
-                                                            <div class=\"input-icon\">
-                                                                <i class=\"icon-wallet\"></i>\n{input}\n{hint}\n{error}
-                                                                <div class=\"form-control-focus\"></div>
-                                                                <span class=\"help-block\">Введите ваш номер кошелька для получения партнерских начисслений</span>
-                                                            </div>
 
-                                                        </div>"]
-        )->textInput(["placeholder" => "Perfect money или Payeer","class"=>"form-control"]); ?>
-    </div>
-
-    <div class="form-group form-md-line-input">
-        <?php echo $this->render('_account_edit_companies', [
-            'form' => $form,
-            'model' => $model
-        ]);?>
-    </div>
-
-<!-------------------------------------------------------------------------------------------------
-    <div class="form-group form-md-line-input">
-        <label class='col-md-4 control-label'>Ссылка на лендинг</label>
-        <div class='col-md-8'>
-
-        <div class="input-group">
-            <input type="text"
-                   value="<?= "http://1-mlm.com/{$model->companyid}-{$model->refdt}.html"; ?>"
-                   class="form-control" />
-            <span class="input-group-btn">
-                <button class="btn blue" onclick="window.location='<?php
-                echo "http://1-mlm.com/{$model->companyid}-{$model->refdt}.html";
-                ?>';target='_blank';" type="button">Go!</button>
-            </span>
-        </div>
-
-        </div>
-    </div>
-
-<!----------------------------------------------------------------------------------------------
-
-    <div class="form-group form-md-line-input">
-        <?php echo $this->render('_account_company_link', [
-            'form' => $form
-        ]);?>
-    </div>
-    -->
 <br>
     <div class="margiv-top-10">
         <?= \yii\helpers\Html::hiddenInput('Users[formtype]', 'personinfo', ["id"=>"users-formtype"]); ?>
