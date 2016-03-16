@@ -264,7 +264,7 @@ $act=\Yii::$app->controller->route;
              <li class="nav-item start">
                 <a href="<?= Yii::$app->urlManager->createUrl(['site/partners'])
                 ?>" class="nav-link">
-                    <i class="icon-briefcase"></i>
+                    <i class="icon-wallet"></i>
                     <span class="title">Партнерская программа</span>
                 </a>
             </li>
