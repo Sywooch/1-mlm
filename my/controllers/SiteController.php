@@ -659,7 +659,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    private function raddref($refdt)
+    private function raddref($refdt=null)
     {
         if( !empty($refdt) )
         {
@@ -2201,7 +2201,7 @@ return $this->goHome();
                 $cs.=$usr->id;
                 $usrlist=$usrlist->andWhere("`id` not in ({$cs})");
             }
-            $usrlist=$usrlist->limit(10)
+            $usrlist=$usrlist->limit(20)
                 ->all();
 
             foreach($usrlist as $val)
