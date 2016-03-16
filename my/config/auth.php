@@ -21,8 +21,8 @@ return [
             // register your app here: https://vk.com/editapp?act=create&site=1
             'class' => 'nodge\eauth\services\VKontakteOAuth2Service',		
 //local
-        //    'clientId' => '5148975',
-       //     'clientSecret' => 'iWTKQGXioPPWZAdNJO3S',
+            //'clientId' => '5148975',
+            //'clientSecret' => 'iWTKQGXioPPWZAdNJO3S',
             /***********************************************/
 //Hosting
 	   'clientId' => '5130699',
