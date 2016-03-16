@@ -7,4 +7,4 @@ $this->registerJsFile('//1-mlm.com/mlm-template/layouts/layout4/scripts/layout.j
 $this->registerJsFile('//1-mlm.com/mlm-template/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('//1-mlm.com/mlm-template/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
 ?>
-<iframe id="player" src="mp.php/<?= $site; ?>" style="border: 0; width: 100%; height: 1200px;"></iframe>
+<iframe id="player" src="//1-mlm.com/mp.php/<?= $site; ?>" style="border: 0; width: 100%; height: 1200px;"></iframe>
