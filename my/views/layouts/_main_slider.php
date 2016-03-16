@@ -260,6 +260,15 @@ $act=\Yii::$app->controller->route;
                     <span class="title">Тарифы</span>
                 </a>
             </li>
+            
+             <li class="nav-item start">
+                <a href="<?= Yii::$app->urlManager->createUrl(['site/partners'])
+                ?>" class="nav-link">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Партнерская программа</span>
+                </a>
+            </li>
+            
             <li class="nav-item start">
                 <a href="<?= Yii::$app->urlManager->createUrl(['site/contact'])
                 ?>" class="nav-link">
@@ -360,61 +369,8 @@ $act=\Yii::$app->controller->route;
             </li>
             <?php endif; ?>
 <!--  Меню  Админа Конец --->
-            <!-----------  Начало Социальные виджеты  ------------>
-                  
-                   <br>
-               <li class="nav-item">
-                <!-- VK Widget начало -->
-                <div id="vk_groups"></div>
-                <script type="text/javascript">
-                    VK.Widgets.Group("vk_groups", {mode: 1, width: "235", height: "200", color1: 'FFFFFF', color2: '276798', color3: '5B7FA6'}, 76966334);
-                </script>
-                <!--  VK Widget конец -->
-                   <br>
-               </li>
-               
-               <li class="nav-item">              
-                <!-- facebook Widget начало -->
-<div class="fb-page" data-href="https://www.facebook.com/1mlmcom/" data-width="235" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/1mlmcom/"><a href="https://www.facebook.com/1mlmcom/">1 mlm ресурс</a></blockquote></div></div>
-                <!--  facebook Widget конец -->
-                  </li> 
-                  
-                  <br>
-                 <li class="nav-item">              
-                                                                                            
-                           <center>  <a href="https://twitter.com/1mlmcom" class="twitter-follow-button" data-show-count="false" data-lang="ru" data-size="large">Читать @1mlmcom</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                     </center>
-                    </li> 
-                  
-                     <br>
-                  
-               <li class="nav-item">
-               
-               <!-- Yotube Widget начало -->
-                   <center><div class="g-ytsubscribe" data-channelid="UC4Q97tIPa3_xn3uUdjybPQw" data-layout="full" data-count="default" data-onytevent="onYtEvent"></div></center>
-                <!-- Yotube Widget конец -->
-                    </li>
-                </ul>
-<!-----------  Конец Социальные виджеты  ------------>
-
+          
 <!-----------  Конец меню  ------------>
-
-        <script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script>
-        <!-- VK Widget -->
-        <div id="vk_groups"></div>
-        <script type="text/javascript">
-            VK.Widgets.Group("vk_groups", {mode: 1, width: "235", height: "200", color1: 'FFFFFF', color2: '276798', color3: '5B7FA6'}, 76966334);
-        </script>
-        <!--  VK -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5&appId=1657698847844895";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-       <!--  facebook -->
        
        
         <script src="https://apis.google.com/js/platform.js"></script>

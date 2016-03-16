@@ -37,12 +37,12 @@ $brand=$brand["brandicon"];
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <img src="<?php
+            <a href="//1-mlm.com"><img src="<?php
             echo
             (
                 (!empty($brand))?$brand:"/img/logo.png"
             );
-            ?>" alt="logo" class="logo-default" width="auto" height="auto" style="max-width:180px; max-height:50px;">
+            ?>" alt="logo" class="logo-default" width="auto" height="auto" style="max-width:180px; max-height:50px;"></a>
             <div class="menu-toggler sidebar-toggler"></div>
         </div>
         <!-- END LOGO -->
@@ -51,52 +51,34 @@ $brand=$brand["brandicon"];
            data-target=".navbar-collapse"> </a>
            
                    <!-- BEGIN PAGE ACTIONS -->
-        <!-- DOC: Remove "hide" class to enable the page header actions -->
-        <div class="page-actions">
+               <div class="page-actions">
+	               
+	        <div class="btn-group">
+	                 <button class="btn green-soft page-quick-sidebar"  onclick="window.location='#';
+	                 " type="button">  Ваш Консультант&nbsp; <i class="icon-microphone"></i></button>
+                                    
+            </div>
+            
             <div class="btn-group">
-                 <!--<button type="button" class="btn green-meadow btn-sm dropdown-toggle" onclick="window.location='https://1-mlm.com/index.php?r=site%2Fpricing' data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                     <span class="hidden-sm hidden-xs">Обновится до платной версии&nbsp;</span>
-                   <i class="fa fa-angle-down"></i>
-                </button>-->
-                
-                 <button class="btn green-meadow btn-sm dropdown-toggle" onclick="window.location='index.php?r=site%2Fpricing';
-                                    target='_blank';" type="button">Обновится до платной версии&nbsp;</button>
-                                    
-                                   &nbsp;&nbsp;&nbsp;
+                 
+                    <button class="btn red" onclick="window.location='pricing';
+                      " type="button"> Активировать&nbsp;<i class="icon-rocket"></i> </button>
             </div>
-                <!--<ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-docs"></i> New Post </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-tag"></i> New Comment </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-share"></i> Share </a>
-                    </li>
-                    <li class="divider"> </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-flag"></i> Comments
-                            <span class="badge badge-success">4</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-users"></i> Feedbacks
-                            <span class="badge badge-danger">2</span>
-                        </a>
-                    </li>
-                </ul>-->
                 
-                <div class="btn-group">
-	                 <button class="btn blue btn-sm dropdown-toggle" onclick="window.location='skype:support.mlm?chat';
-                                    target='_blank';" type="button">Помощь по Skype (чат с админом )&nbsp;</button>
+            <div class="btn-group">
+	                 <button class="btn blue" onclick="window.location='skype:support.mlm?chat';
+                     target='_blank';" type="button">  Вопросы по кабинету&nbsp; <i class="icon-speech"></i></button>
                                     
             </div>
+            
+            <div class="btn-group">
+	                 <button class="btn yellow-lemon"  onclick="window.location='partners';
+	                 " type="button">  Партнерка&nbsp; <i class="icon-wallet"></i></button>
+                                    
+            </div>
+            
+             
+            
         </div>
         <!-- END PAGE ACTIONS -->
         
