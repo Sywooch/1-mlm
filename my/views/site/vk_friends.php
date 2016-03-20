@@ -4,6 +4,8 @@ $this->registerJsFile('/mlm-template/pages/scripts/dashboard.js', ['depends' => 
 $this->registerJsFile('/mlm-template/layouts/layout4/scripts/layout.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mlm-template/layouts/layout4/scripts/demo.js', ['depends' => 'yii\web\JqueryAsset']);
 $this->registerJsFile('/mlm-template/layouts/global/scripts/quick-sidebar.js', ['depends' => 'yii\web\JqueryAsset']);
+
+
 $css = <<<'STYLE'
 .tbl-header *
 {
@@ -47,7 +49,7 @@ $this->title = 'Друзья VK';
         <!-- Кнопка видео подсказки и во всю ширину --->
     </div>
     <div class="portlet-body">
-	    <div id='count_added' style="text-align: left;">Добавлено <span style="font-weight: bold">0</span> из 20</div>
+	    <div id='count_added' style="text-align: left;">Добавлено <span style="font-weight: bold">0</span> из 10</div>
         <?php
         if( is_array($usrlist) ):
             foreach($usrlist as $val):?>
@@ -63,19 +65,13 @@ $this->title = 'Друзья VK';
                         ]);*/
 
                         ?>
-<!--<a class="btn green" href="https://vk.com/id<?= $val->vkontakte;?>" target="_blank">
-Добавить в  друзья</a>-->
-<!--
-                            <a class="btn green" href="https://vk.com/id<?=
-                            $val->vkontakte;?>"
-                               onclick="popupWin = window.open(this.href,'contacts',
-                               'location,width=555,height=555,top=0');
-                               popupWin.focus(); return false;"> Добавить в  друзья </a>
--->
 
-<a class="btn green" href='https://vk.com/id<?= $val->vkontakte;?>'
-   onclick="OpenSocWin('<?= $val->vkontakte;?>');return false;"> Добавить в  друзья </a>
-
+                            
+                           <a class="btn green" href='https://vk.com/id<?= $val->vkontakte;?>' onclick="OpenSocWin('<?= $val->vkontakte;?>');return false;"> Добавить в  друзья </a>
+                            
+                            
+                            
+                            
                     </div>
                 </div>
         <?php
@@ -83,10 +79,7 @@ $this->title = 'Друзья VK';
         endif;
         ?>
     </div>
-
 </div>
-
-
 
 
 <script>
@@ -105,9 +98,13 @@ function ClosedSocWin(soc_win, _vkid, callback){
 			$('a[href="https://vk.com/id'+ _vkid +'"]').parent().parent().slideUp(700);
 			var _ca = $('#count_added > span');
 			_ca.text(parseInt(_ca.text())+1);
+			if(_ca.text() == 10){
+				alert("Успешно! Завтра Вам будет доступно еще 20  контактов.  Также ожидайте,  что другие наши  пользователи будут сегодня добавлять Вас в друзья. Просьба подтвердить все запросы.");
+			}
 			return;
 		}
 		setTimeout(check_soc_win_closed, 500);
 	}();
 };
 </script>
+
