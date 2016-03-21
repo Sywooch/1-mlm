@@ -122,7 +122,7 @@ $compName=Lp::find()
                                     <div class="media-status">
                                         <span class="badge badge-success"><?= $cntConTeam;?></span>
                                     </div>
-                                    <img class="media-object" src="<?php echo "mp.php/".$consultant["userpic"]; ?>" alt="...">
+                                    <img class="media-object" src="<?php echo "//1-mlm.com/mp.php/".$consultant["userpic"]; ?>" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading"><?php
                                             echo '&nbsp;<b>',$consultant["fn"],' ',$consultant["ln"],'</b>';

@@ -93,13 +93,13 @@ $this->title = 'Настройки профиля';
                                     <div class="row list-separated profile-stat">
                                         <div class="col-md-12 col-sm-12 col-xs-6">
                                             <div class="uppercase profile-stat-title"> <?=$usrDt["money"]; ?> $ </div>
-                                            <div class="uppercase profile-stat-text"> начистненно по партнерке </div>
+                                            <div class="uppercase profile-stat-text"> начисления по партнерке </div>
                                         </div>
                                     </div>
                                     <!-- END STAT -->
                                     <div>
                                         <h4 class="profile-desc-title">Ваши партнеры</h4>
-                                        <span class="profile-desc-text"> 5 последных регистраций </span><br /><br />
+                                        <span class="profile-desc-text"> 5 последних регистраций </span><br /><br />
                                     <?php
                                          for($i=0;$i<sizeof($lastFive);$i++):
                                     ?>
@@ -152,6 +152,11 @@ $this->title = 'Настройки профиля';
                                         <li class="active">
                                             <a href="#tab_1_1" data-toggle="tab"> Персональные данные </a>
                                         </li>
+                                        
+                                        <li>
+                                            <a href="#tab_1_4" data-toggle="tab"> Бренд </a>
+                                        </li>
+
                                         <li>
                                             <a href="#tab_1_2" data-toggle="tab"> Изменение аватара </a>
                                         </li>
@@ -159,10 +164,7 @@ $this->title = 'Настройки профиля';
                                             <a href="#tab_1_3" data-toggle="tab"> Социальные Аккаунты </a>
                                         </li>
 
-                                        <li>
-                                            <a href="#tab_1_4" data-toggle="tab"> Бренд </a>
-                                        </li>
-
+                                        
                                     </ul>
                                 </div>
                                 <div class="portlet-body">

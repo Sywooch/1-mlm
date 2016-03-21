@@ -32,6 +32,22 @@ $usr=$usr->one();
 $brand=\app\models\Lp::find()->where(['id'=>$usr['companyid']])->one();
 $brand=$brand["brandicon"];
 ?>
+
+ <style>
+.skype_button
+{
+  cursor: pointer;
+  bottom: 75px;
+  right: 70px;
+  position: relative;
+  height: 190px;
+  width: 140px;
+  margin-top: 30px;
+  margin-left: -80px;
+}	 
+	 
+ </style>
+ 
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner ">
@@ -67,7 +83,7 @@ $brand=$brand["brandicon"];
                 
             <div class="btn-group">
 	                 <button class="btn blue" onclick="window.location='skype:support.mlm?chat';
-                     target='_blank';" type="button">  Вопросы по кабинету&nbsp; <i class="icon-speech"></i></button>
+                     target='_blank';" type="button">  Есть Вопросы?&nbsp; <i class="icon-speech"></i></button>
                                     
             </div>
             
@@ -76,6 +92,11 @@ $brand=$brand["brandicon"];
 	                 " type="button">  Партнерка&nbsp; <i class="icon-wallet"></i></button>
                                     
             </div>
+            <div class="skype_button">
+		<a href="skype:support.mlm?call">
+		<img src="http://skypebutton.com/images/skype.svg" alt="" width="70" height="70" >
+		</a>
+	        </div>
             
              
             
